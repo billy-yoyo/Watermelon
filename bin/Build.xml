@@ -1,0 +1,1277 @@
+<xml>
+<set name="HXCPP_API_LEVEL" value="331" />
+<files id="haxe">
+<compilerflag value="-Iinclude"/>
+  <file name="src/sys/io/FileOutput.cpp" >
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/Error.h"/>
+   <depend name="include/haxe/io/Output.h"/>
+   <depend name="include/sys/io/FileOutput.h"/>
+  </file>
+  <file name="src/sys/io/FileInput.cpp" >
+   <depend name="include/haxe/io/Eof.h"/>
+   <depend name="include/haxe/io/Error.h"/>
+   <depend name="include/haxe/io/Input.h"/>
+   <depend name="include/sys/io/FileInput.h"/>
+  </file>
+  <file name="src/sys/io/File.cpp" >
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/Output.h"/>
+   <depend name="include/sys/io/File.h"/>
+   <depend name="include/sys/io/FileOutput.h"/>
+  </file>
+  <file name="src/sys/FileSystem.cpp" >
+   <depend name="include/haxe/io/Path.h"/>
+   <depend name="include/sys/FileSystem.h"/>
+  </file>
+  <file name="src/src/compiler/signals/ValueErrorSignal.cpp" >
+   <depend name="include/src/compiler/signals/ExitSignal.h"/>
+   <depend name="include/src/compiler/signals/ValueErrorSignal.h"/>
+  </file>
+  <file name="src/src/compiler/signals/LoopContinueSignal.cpp" >
+   <depend name="include/src/compiler/signals/ExitSignal.h"/>
+   <depend name="include/src/compiler/signals/LoopContinueSignal.h"/>
+  </file>
+  <file name="src/src/compiler/signals/LoopBreakSignal.cpp" >
+   <depend name="include/src/compiler/signals/ExitSignal.h"/>
+   <depend name="include/src/compiler/signals/LoopBreakSignal.h"/>
+  </file>
+  <file name="src/src/compiler/signals/IteratorExitSignal.cpp" >
+   <depend name="include/src/compiler/signals/ExitSignal.h"/>
+   <depend name="include/src/compiler/signals/IteratorExitSignal.h"/>
+  </file>
+  <file name="src/src/compiler/signals/InvalidFieldAccessSignal.cpp" >
+   <depend name="include/src/compiler/signals/ExitSignal.h"/>
+   <depend name="include/src/compiler/signals/InvalidFieldAccessSignal.h"/>
+  </file>
+  <file name="src/src/compiler/signals/InvalidArgumentSignal.cpp" >
+   <depend name="include/src/compiler/signals/ExitSignal.h"/>
+   <depend name="include/src/compiler/signals/InvalidArgumentSignal.h"/>
+  </file>
+  <file name="src/src/compiler/signals/FunctionReturnSignal.cpp" >
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/signals/ExitSignal.h"/>
+   <depend name="include/src/compiler/signals/FunctionReturnSignal.h"/>
+  </file>
+  <file name="src/src/compiler/signals/ExitCodeSignal.cpp" >
+   <depend name="include/src/compiler/signals/ExitCodeSignal.h"/>
+   <depend name="include/src/compiler/signals/ExitSignal.h"/>
+  </file>
+  <file name="src/src/compiler/object/builtin/TupleObject.cpp" >
+   <depend name="include/Std.h"/>
+   <depend name="include/haxe/IMap.h"/>
+   <depend name="include/haxe/ds/StringMap.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/object/ObjectType.h"/>
+   <depend name="include/src/compiler/object/builtin/BoolObject.h"/>
+   <depend name="include/src/compiler/object/builtin/IntObject.h"/>
+   <depend name="include/src/compiler/object/builtin/IteratorObject.h"/>
+   <depend name="include/src/compiler/object/builtin/ListObject.h"/>
+   <depend name="include/src/compiler/object/builtin/StringObject.h"/>
+   <depend name="include/src/compiler/object/builtin/TupleObject.h"/>
+   <depend name="include/src/compiler/object/builtin/ValuedObject.h"/>
+   <depend name="include/src/compiler/signals/ExitSignal.h"/>
+   <depend name="include/src/compiler/signals/InvalidFieldAccessSignal.h"/>
+  </file>
+  <file name="src/src/compiler/object/builtin/StringObject.cpp" >
+   <depend name="include/Std.h"/>
+   <depend name="include/haxe/IMap.h"/>
+   <depend name="include/haxe/ds/StringMap.h"/>
+   <depend name="include/src/ast/GlobalProcessor.h"/>
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/base/RootToken.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/commands/value/ListValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/MapValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/TupleValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/ValueCommand.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/object/ObjectType.h"/>
+   <depend name="include/src/compiler/object/builtin/BoolObject.h"/>
+   <depend name="include/src/compiler/object/builtin/FloatObject.h"/>
+   <depend name="include/src/compiler/object/builtin/IntObject.h"/>
+   <depend name="include/src/compiler/object/builtin/ListObject.h"/>
+   <depend name="include/src/compiler/object/builtin/MapObject.h"/>
+   <depend name="include/src/compiler/object/builtin/StringObject.h"/>
+   <depend name="include/src/compiler/object/builtin/TupleObject.h"/>
+   <depend name="include/src/compiler/object/builtin/ValuedObject.h"/>
+  </file>
+  <file name="src/src/compiler/object/builtin/_PairObject/Pair.cpp" >
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/object/builtin/_PairObject/Pair.h"/>
+  </file>
+  <file name="src/src/compiler/object/builtin/PairObject.cpp" >
+   <depend name="include/haxe/IMap.h"/>
+   <depend name="include/haxe/ds/StringMap.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/object/ObjectType.h"/>
+   <depend name="include/src/compiler/object/builtin/PairObject.h"/>
+   <depend name="include/src/compiler/object/builtin/StringObject.h"/>
+   <depend name="include/src/compiler/object/builtin/ValuedObject.h"/>
+   <depend name="include/src/compiler/object/builtin/_PairObject/Pair.h"/>
+  </file>
+  <file name="src/src/compiler/object/builtin/ObjectTypeObject.cpp" >
+   <depend name="include/Type.h"/>
+   <depend name="include/haxe/IMap.h"/>
+   <depend name="include/haxe/ds/StringMap.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/object/ObjectType.h"/>
+   <depend name="include/src/compiler/object/builtin/ObjectTypeObject.h"/>
+   <depend name="include/src/compiler/object/builtin/StringObject.h"/>
+   <depend name="include/src/compiler/object/builtin/ValuedObject.h"/>
+  </file>
+  <file name="src/src/compiler/object/builtin/NoneObject.cpp" >
+   <depend name="include/haxe/IMap.h"/>
+   <depend name="include/haxe/ds/StringMap.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/object/ObjectType.h"/>
+   <depend name="include/src/compiler/object/builtin/BoolObject.h"/>
+   <depend name="include/src/compiler/object/builtin/FloatObject.h"/>
+   <depend name="include/src/compiler/object/builtin/IntObject.h"/>
+   <depend name="include/src/compiler/object/builtin/NoneObject.h"/>
+   <depend name="include/src/compiler/object/builtin/StringObject.h"/>
+   <depend name="include/src/compiler/object/builtin/ValuedObject.h"/>
+  </file>
+  <file name="src/src/compiler/object/builtin/MapObject.cpp" >
+   <depend name="include/haxe/IMap.h"/>
+   <depend name="include/haxe/ds/StringMap.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/object/ObjectType.h"/>
+   <depend name="include/src/compiler/object/builtin/BoolObject.h"/>
+   <depend name="include/src/compiler/object/builtin/IntObject.h"/>
+   <depend name="include/src/compiler/object/builtin/IteratorObject.h"/>
+   <depend name="include/src/compiler/object/builtin/MapObject.h"/>
+   <depend name="include/src/compiler/object/builtin/ValuedObject.h"/>
+  </file>
+  <file name="src/src/compiler/object/builtin/ListObject.cpp" >
+   <depend name="include/Std.h"/>
+   <depend name="include/haxe/IMap.h"/>
+   <depend name="include/haxe/ds/StringMap.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/object/ObjectType.h"/>
+   <depend name="include/src/compiler/object/builtin/BoolObject.h"/>
+   <depend name="include/src/compiler/object/builtin/IntObject.h"/>
+   <depend name="include/src/compiler/object/builtin/IteratorObject.h"/>
+   <depend name="include/src/compiler/object/builtin/ListObject.h"/>
+   <depend name="include/src/compiler/object/builtin/StringObject.h"/>
+   <depend name="include/src/compiler/object/builtin/TupleObject.h"/>
+   <depend name="include/src/compiler/object/builtin/ValuedObject.h"/>
+  </file>
+  <file name="src/src/compiler/object/builtin/IteratorObject.cpp" >
+   <depend name="include/haxe/IMap.h"/>
+   <depend name="include/haxe/ds/StringMap.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/object/ObjectType.h"/>
+   <depend name="include/src/compiler/object/builtin/BoolObject.h"/>
+   <depend name="include/src/compiler/object/builtin/IteratorObject.h"/>
+   <depend name="include/src/compiler/object/builtin/ValuedObject.h"/>
+  </file>
+  <file name="src/src/compiler/object/builtin/IntObject.cpp" >
+   <depend name="include/Std.h"/>
+   <depend name="include/haxe/IMap.h"/>
+   <depend name="include/haxe/ds/StringMap.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/object/ObjectType.h"/>
+   <depend name="include/src/compiler/object/builtin/BoolObject.h"/>
+   <depend name="include/src/compiler/object/builtin/FloatObject.h"/>
+   <depend name="include/src/compiler/object/builtin/IntObject.h"/>
+   <depend name="include/src/compiler/object/builtin/StringObject.h"/>
+   <depend name="include/src/compiler/object/builtin/ValuedObject.h"/>
+  </file>
+  <file name="src/src/compiler/object/builtin/FunctionObject.cpp" >
+   <depend name="include/haxe/IMap.h"/>
+   <depend name="include/haxe/ds/StringMap.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/object/ObjectType.h"/>
+   <depend name="include/src/compiler/object/builtin/FunctionArgument.h"/>
+   <depend name="include/src/compiler/object/builtin/FunctionCode.h"/>
+   <depend name="include/src/compiler/object/builtin/FunctionObject.h"/>
+   <depend name="include/src/compiler/object/builtin/ListObject.h"/>
+   <depend name="include/src/compiler/object/builtin/MapObject.h"/>
+   <depend name="include/src/compiler/object/builtin/PairObject.h"/>
+   <depend name="include/src/compiler/object/builtin/StringObject.h"/>
+   <depend name="include/src/compiler/object/builtin/ValuedObject.h"/>
+   <depend name="include/src/compiler/signals/ExitSignal.h"/>
+   <depend name="include/src/compiler/signals/InvalidArgumentSignal.h"/>
+  </file>
+  <file name="src/src/compiler/object/builtin/FunctionCode.cpp" >
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/object/builtin/FunctionArgument.h"/>
+   <depend name="include/src/compiler/object/builtin/FunctionCode.h"/>
+  </file>
+  <file name="src/src/compiler/object/builtin/FunctionArgument.cpp" >
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/object/builtin/FunctionArgument.h"/>
+  </file>
+  <file name="src/src/compiler/object/builtin/FloatObject.cpp" >
+   <depend name="include/Std.h"/>
+   <depend name="include/haxe/IMap.h"/>
+   <depend name="include/haxe/ds/StringMap.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/object/ObjectType.h"/>
+   <depend name="include/src/compiler/object/builtin/BoolObject.h"/>
+   <depend name="include/src/compiler/object/builtin/FloatObject.h"/>
+   <depend name="include/src/compiler/object/builtin/IntObject.h"/>
+   <depend name="include/src/compiler/object/builtin/StringObject.h"/>
+   <depend name="include/src/compiler/object/builtin/ValuedObject.h"/>
+  </file>
+  <file name="src/src/compiler/object/builtin/RangeObject.cpp" >
+   <depend name="include/haxe/IMap.h"/>
+   <depend name="include/haxe/ds/StringMap.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/object/ObjectType.h"/>
+   <depend name="include/src/compiler/object/builtin/BoolObject.h"/>
+   <depend name="include/src/compiler/object/builtin/FloatObject.h"/>
+   <depend name="include/src/compiler/object/builtin/RangeObject.h"/>
+   <depend name="include/src/compiler/object/builtin/ValuedObject.h"/>
+  </file>
+  <file name="src/src/compiler/object/builtin/IntRangeObject.cpp" >
+   <depend name="include/haxe/IMap.h"/>
+   <depend name="include/haxe/ds/StringMap.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/object/ObjectType.h"/>
+   <depend name="include/src/compiler/object/builtin/BoolObject.h"/>
+   <depend name="include/src/compiler/object/builtin/IntObject.h"/>
+   <depend name="include/src/compiler/object/builtin/IntRangeObject.h"/>
+   <depend name="include/src/compiler/object/builtin/ValuedObject.h"/>
+  </file>
+  <file name="src/src/compiler/object/builtin/BuiltinFunction.cpp" >
+   <depend name="include/haxe/IMap.h"/>
+   <depend name="include/haxe/ds/StringMap.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/object/ObjectType.h"/>
+   <depend name="include/src/compiler/object/builtin/BuiltinFunction.h"/>
+   <depend name="include/src/compiler/object/builtin/ValuedObject.h"/>
+  </file>
+  <file name="src/src/compiler/object/builtin/BoolObject.cpp" >
+   <depend name="include/Std.h"/>
+   <depend name="include/haxe/IMap.h"/>
+   <depend name="include/haxe/ds/StringMap.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/object/ObjectType.h"/>
+   <depend name="include/src/compiler/object/builtin/BoolObject.h"/>
+   <depend name="include/src/compiler/object/builtin/FloatObject.h"/>
+   <depend name="include/src/compiler/object/builtin/IntObject.h"/>
+   <depend name="include/src/compiler/object/builtin/StringObject.h"/>
+   <depend name="include/src/compiler/object/builtin/ValuedObject.h"/>
+  </file>
+  <file name="src/src/compiler/object/builtin/ValuedObject.cpp" >
+   <depend name="include/haxe/IMap.h"/>
+   <depend name="include/haxe/ds/StringMap.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/object/ObjectType.h"/>
+   <depend name="include/src/compiler/object/builtin/ValuedObject.h"/>
+  </file>
+  <file name="src/src/compiler/object/ObjectType.cpp" >
+   <depend name="include/Std.h"/>
+   <depend name="include/Type.h"/>
+   <depend name="include/haxe/IMap.h"/>
+   <depend name="include/haxe/ds/StringMap.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/object/ObjectType.h"/>
+  </file>
+  <file name="src/src/compiler/object/Object.cpp" >
+   <depend name="include/Std.h"/>
+   <depend name="include/Type.h"/>
+   <depend name="include/haxe/IMap.h"/>
+   <depend name="include/haxe/ds/StringMap.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/object/ObjectType.h"/>
+   <depend name="include/src/compiler/object/builtin/BoolObject.h"/>
+   <depend name="include/src/compiler/object/builtin/FloatObject.h"/>
+   <depend name="include/src/compiler/object/builtin/IntObject.h"/>
+   <depend name="include/src/compiler/object/builtin/IteratorObject.h"/>
+   <depend name="include/src/compiler/object/builtin/ListObject.h"/>
+   <depend name="include/src/compiler/object/builtin/MapObject.h"/>
+   <depend name="include/src/compiler/object/builtin/StringObject.h"/>
+   <depend name="include/src/compiler/object/builtin/TupleObject.h"/>
+   <depend name="include/src/compiler/object/builtin/ValuedObject.h"/>
+  </file>
+  <file name="src/src/compiler/commands/value/LiteralValueCommand.cpp" >
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/base/VariableToken.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/bytecode/Bytecode.h"/>
+   <depend name="include/src/compiler/bytecode/BytecodeMap.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/commands/value/LiteralValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/ValueCommand.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/object/ObjectType.h"/>
+  </file>
+  <file name="src/src/compiler/bytecode/MatchFound.cpp" >
+   <depend name="include/src/compiler/bytecode/MatchFound.h"/>
+  </file>
+  <file name="src/src/compiler/bytecode/StringPool.cpp" >
+   <depend name="include/src/compiler/bytecode/Bytecode.h"/>
+   <depend name="include/src/compiler/bytecode/StringPool.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/commands/RootCommand.h"/>
+   <depend name="include/src/compiler/commands/value/LiteralValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/ObjectValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/ValueCommand.h"/>
+  </file>
+  <file name="src/src/compiler/bytecode/BytecodeMap.cpp" >
+   <depend name="include/haxe/IMap.h"/>
+   <depend name="include/haxe/ds/StringMap.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/bytecode/Bytecode.h"/>
+   <depend name="include/src/compiler/bytecode/BytecodeMap.h"/>
+   <depend name="include/src/compiler/commands/AssignmentCommand.h"/>
+   <depend name="include/src/compiler/commands/BreakCommand.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/commands/ContinueCommand.h"/>
+   <depend name="include/src/compiler/commands/DeleteCommand.h"/>
+   <depend name="include/src/compiler/commands/ForLoopComand.h"/>
+   <depend name="include/src/compiler/commands/FunctionCodeCommand.h"/>
+   <depend name="include/src/compiler/commands/FunctionDefinitionCommand.h"/>
+   <depend name="include/src/compiler/commands/IfCommand.h"/>
+   <depend name="include/src/compiler/commands/IteratorCommand.h"/>
+   <depend name="include/src/compiler/commands/LoopCodeCommand.h"/>
+   <depend name="include/src/compiler/commands/ReturnCommand.h"/>
+   <depend name="include/src/compiler/commands/RootCommand.h"/>
+   <depend name="include/src/compiler/commands/TypeDefinitionCommand.h"/>
+   <depend name="include/src/compiler/commands/WhileLoopCommand.h"/>
+   <depend name="include/src/compiler/commands/value/BinaryExpressionValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/BoolExpressionValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/ContainsValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/EqualityValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/FunctionCallValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/ListValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/MapValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/MathsExpressionValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/ObjectArrayAccessValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/ObjectArrayAssignmentCommand.h"/>
+   <depend name="include/src/compiler/commands/value/ObjectIndexPair.h"/>
+   <depend name="include/src/compiler/commands/value/ObjectValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/TupleValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/ValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/VariableAccess.h"/>
+   <depend name="include/src/compiler/commands/value/VariableValueCommand.h"/>
+  </file>
+  <file name="src/src/compiler/commands/value/BinaryExpressionValueCommand.cpp" >
+   <depend name="include/Std.h"/>
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/maths/BinaryOperatorToken.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/bytecode/Bytecode.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/commands/value/BinaryExpressionValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/ValueCommand.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/signals/ExitSignal.h"/>
+   <depend name="include/src/compiler/signals/SyntaxErrorSignal.h"/>
+   <depend name="include/src/compiler/signals/ValueErrorSignal.h"/>
+  </file>
+  <file name="src/src/compiler/commands/value/VariableAccess.cpp" >
+   <depend name="include/Std.h"/>
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/base/AccessToken.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/VariableNamePool.h"/>
+   <depend name="include/src/compiler/bytecode/Bytecode.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/commands/value/LiteralValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/ValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/VariableAccess.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/object/builtin/BoolObject.h"/>
+   <depend name="include/src/compiler/object/builtin/ValuedObject.h"/>
+   <depend name="include/src/compiler/signals/ExitSignal.h"/>
+   <depend name="include/src/compiler/signals/InvalidFieldAccessSignal.h"/>
+   <depend name="include/src/compiler/signals/SyntaxErrorSignal.h"/>
+  </file>
+  <file name="src/src/compiler/commands/FunctionArgumentCommand.cpp" >
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/base/VariableToken.h"/>
+   <depend name="include/src/ast/maths/MathsOperatorToken.h"/>
+   <depend name="include/src/ast/script/AssignmentToken.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/bytecode/Bytecode.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/commands/FunctionArgumentCommand.h"/>
+   <depend name="include/src/compiler/commands/value/ValueCommand.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/object/builtin/FunctionArgument.h"/>
+  </file>
+  <file name="src/src/compiler/commands/CondAndExpr.cpp" >
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/bytecode/Bytecode.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/commands/CondAndExpr.h"/>
+   <depend name="include/src/compiler/commands/value/ValueCommand.h"/>
+  </file>
+  <file name="src/src/compiler/commands/value/Argument.cpp" >
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/bytecode/Bytecode.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/commands/value/Argument.h"/>
+   <depend name="include/src/compiler/commands/value/ValueCommand.h"/>
+  </file>
+  <file name="src/src/compiler/commands/WhileLoopCommand.cpp" >
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/base/BlockToken.h"/>
+   <depend name="include/src/ast/base/BracketToken.h"/>
+   <depend name="include/src/ast/base/KwdToken.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/bytecode/Bytecode.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/commands/LoopCodeCommand.h"/>
+   <depend name="include/src/compiler/commands/WhileLoopCommand.h"/>
+   <depend name="include/src/compiler/commands/value/ValueCommand.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/signals/ExitSignal.h"/>
+   <depend name="include/src/compiler/signals/LoopBreakSignal.h"/>
+   <depend name="include/src/compiler/signals/LoopContinueSignal.h"/>
+   <depend name="include/src/compiler/signals/SyntaxErrorSignal.h"/>
+  </file>
+  <file name="src/src/compiler/commands/TypeDefinitionCommand.cpp" >
+   <depend name="include/haxe/IMap.h"/>
+   <depend name="include/haxe/ds/StringMap.h"/>
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/base/BlockToken.h"/>
+   <depend name="include/src/ast/base/BracketToken.h"/>
+   <depend name="include/src/ast/base/CommaToken.h"/>
+   <depend name="include/src/ast/base/KwdToken.h"/>
+   <depend name="include/src/ast/base/VariableToken.h"/>
+   <depend name="include/src/compiler/Core.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/bytecode/Bytecode.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/commands/TypeDefinitionCommand.h"/>
+   <depend name="include/src/compiler/commands/value/LiteralValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/ValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/VariableAccess.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/object/ObjectType.h"/>
+   <depend name="include/src/compiler/object/builtin/ObjectTypeObject.h"/>
+   <depend name="include/src/compiler/object/builtin/ValuedObject.h"/>
+   <depend name="include/src/compiler/signals/ExitSignal.h"/>
+   <depend name="include/src/compiler/signals/InvalidArgumentSignal.h"/>
+   <depend name="include/src/compiler/signals/SyntaxErrorSignal.h"/>
+  </file>
+  <file name="src/src/compiler/commands/RootCommand.cpp" >
+   <depend name="include/src/Main.h"/>
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/base/EndLineToken.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/bytecode/Bytecode.h"/>
+   <depend name="include/src/compiler/bytecode/StringPool.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/commands/RootCommand.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/signals/ExitCodeSignal.h"/>
+   <depend name="include/src/compiler/signals/ExitSignal.h"/>
+  </file>
+  <file name="src/src/compiler/commands/ReturnCommand.cpp" >
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/base/KwdToken.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/bytecode/Bytecode.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/commands/ReturnCommand.h"/>
+   <depend name="include/src/compiler/commands/value/ValueCommand.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/signals/ExitSignal.h"/>
+   <depend name="include/src/compiler/signals/FunctionReturnSignal.h"/>
+  </file>
+  <file name="src/src/compiler/commands/LoopCodeCommand.cpp" >
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/base/EndLineToken.h"/>
+   <depend name="include/src/compiler/Core.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/bytecode/Bytecode.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/commands/LoopCodeCommand.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+  </file>
+  <file name="src/src/compiler/commands/IteratorCommand.cpp" >
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/base/KwdToken.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/bytecode/Bytecode.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/commands/IteratorCommand.h"/>
+   <depend name="include/src/compiler/commands/value/ValueCommand.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/object/builtin/BoolObject.h"/>
+   <depend name="include/src/compiler/object/builtin/IntObject.h"/>
+   <depend name="include/src/compiler/object/builtin/ValuedObject.h"/>
+   <depend name="include/src/compiler/signals/ExitSignal.h"/>
+   <depend name="include/src/compiler/signals/IteratorExitSignal.h"/>
+  </file>
+  <file name="src/src/compiler/commands/IfCommand.cpp" >
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/base/BlockToken.h"/>
+   <depend name="include/src/ast/base/BracketToken.h"/>
+   <depend name="include/src/ast/base/EndLineToken.h"/>
+   <depend name="include/src/ast/base/KwdToken.h"/>
+   <depend name="include/src/compiler/Core.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/bytecode/Bytecode.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/commands/CondAndExpr.h"/>
+   <depend name="include/src/compiler/commands/IfCommand.h"/>
+   <depend name="include/src/compiler/commands/value/ValueCommand.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/signals/ExitSignal.h"/>
+   <depend name="include/src/compiler/signals/SyntaxErrorSignal.h"/>
+  </file>
+  <file name="src/src/compiler/object/builtin/Builtins.cpp" >
+   <depend name="include/haxe/IMap.h"/>
+   <depend name="include/haxe/ds/StringMap.h"/>
+   <depend name="include/src/Main.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/object/ObjectType.h"/>
+   <depend name="include/src/compiler/object/builtin/BoolObject.h"/>
+   <depend name="include/src/compiler/object/builtin/BuiltinFunction.h"/>
+   <depend name="include/src/compiler/object/builtin/Builtins.h"/>
+   <depend name="include/src/compiler/object/builtin/FloatObject.h"/>
+   <depend name="include/src/compiler/object/builtin/FunctionObject.h"/>
+   <depend name="include/src/compiler/object/builtin/IntObject.h"/>
+   <depend name="include/src/compiler/object/builtin/IntRangeObject.h"/>
+   <depend name="include/src/compiler/object/builtin/IteratorObject.h"/>
+   <depend name="include/src/compiler/object/builtin/ListObject.h"/>
+   <depend name="include/src/compiler/object/builtin/MapObject.h"/>
+   <depend name="include/src/compiler/object/builtin/NoneObject.h"/>
+   <depend name="include/src/compiler/object/builtin/ObjectTypeObject.h"/>
+   <depend name="include/src/compiler/object/builtin/PairObject.h"/>
+   <depend name="include/src/compiler/object/builtin/RangeObject.h"/>
+   <depend name="include/src/compiler/object/builtin/StringObject.h"/>
+   <depend name="include/src/compiler/object/builtin/TupleObject.h"/>
+   <depend name="include/src/compiler/object/builtin/ValuedObject.h"/>
+   <depend name="include/src/compiler/signals/ExitCodeSignal.h"/>
+   <depend name="include/src/compiler/signals/ExitSignal.h"/>
+   <depend name="include/src/compiler/signals/InvalidArgumentSignal.h"/>
+  </file>
+  <file name="src/src/compiler/commands/FunctionDefinitionCommand.cpp" >
+   <depend name="include/Std.h"/>
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/base/BlockToken.h"/>
+   <depend name="include/src/ast/base/BracketToken.h"/>
+   <depend name="include/src/ast/base/CommaToken.h"/>
+   <depend name="include/src/ast/base/KwdToken.h"/>
+   <depend name="include/src/ast/base/VariableToken.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/bytecode/Bytecode.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/commands/FunctionArgumentCommand.h"/>
+   <depend name="include/src/compiler/commands/FunctionCodeCommand.h"/>
+   <depend name="include/src/compiler/commands/FunctionDefinitionCommand.h"/>
+   <depend name="include/src/compiler/commands/value/LiteralValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/ValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/VariableAccess.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/object/ObjectType.h"/>
+   <depend name="include/src/compiler/object/builtin/FunctionArgument.h"/>
+   <depend name="include/src/compiler/object/builtin/FunctionCode.h"/>
+   <depend name="include/src/compiler/signals/ExitSignal.h"/>
+   <depend name="include/src/compiler/signals/SyntaxErrorSignal.h"/>
+  </file>
+  <file name="src/src/compiler/commands/FunctionCodeCommand.cpp" >
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/base/EndLineToken.h"/>
+   <depend name="include/src/compiler/Core.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/bytecode/Bytecode.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/commands/FunctionCodeCommand.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/signals/ExitSignal.h"/>
+   <depend name="include/src/compiler/signals/FunctionReturnSignal.h"/>
+  </file>
+  <file name="src/src/compiler/commands/ForLoopComand.cpp" >
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/base/BlockToken.h"/>
+   <depend name="include/src/ast/base/BracketToken.h"/>
+   <depend name="include/src/ast/base/KwdToken.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/bytecode/Bytecode.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/commands/ForLoopComand.h"/>
+   <depend name="include/src/compiler/commands/IteratorCommand.h"/>
+   <depend name="include/src/compiler/commands/LoopCodeCommand.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/signals/ExitSignal.h"/>
+   <depend name="include/src/compiler/signals/IteratorExitSignal.h"/>
+   <depend name="include/src/compiler/signals/LoopBreakSignal.h"/>
+   <depend name="include/src/compiler/signals/LoopContinueSignal.h"/>
+   <depend name="include/src/compiler/signals/SyntaxErrorSignal.h"/>
+  </file>
+  <file name="src/src/compiler/commands/DeleteCommand.cpp" >
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/base/BracketToken.h"/>
+   <depend name="include/src/ast/base/KwdToken.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/bytecode/Bytecode.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/commands/DeleteCommand.h"/>
+   <depend name="include/src/compiler/commands/value/ValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/VariableAccess.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/signals/ExitSignal.h"/>
+   <depend name="include/src/compiler/signals/SyntaxErrorSignal.h"/>
+  </file>
+  <file name="src/src/compiler/commands/ContinueCommand.cpp" >
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/base/KwdToken.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/bytecode/Bytecode.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/commands/ContinueCommand.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/signals/ExitSignal.h"/>
+   <depend name="include/src/compiler/signals/LoopContinueSignal.h"/>
+   <depend name="include/src/compiler/signals/SyntaxErrorSignal.h"/>
+  </file>
+  <file name="src/src/compiler/commands/BreakCommand.cpp" >
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/base/KwdToken.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/bytecode/Bytecode.h"/>
+   <depend name="include/src/compiler/commands/BreakCommand.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/signals/ExitSignal.h"/>
+   <depend name="include/src/compiler/signals/LoopBreakSignal.h"/>
+   <depend name="include/src/compiler/signals/SyntaxErrorSignal.h"/>
+  </file>
+  <file name="src/src/compiler/commands/AssignmentCommand.cpp" >
+   <depend name="include/Std.h"/>
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/base/CommaToken.h"/>
+   <depend name="include/src/ast/script/AssignmentToken.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/bytecode/Bytecode.h"/>
+   <depend name="include/src/compiler/commands/AssignmentCommand.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/commands/value/ValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/VariableAccess.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/object/builtin/BoolObject.h"/>
+   <depend name="include/src/compiler/object/builtin/IntObject.h"/>
+   <depend name="include/src/compiler/object/builtin/StringObject.h"/>
+   <depend name="include/src/compiler/object/builtin/ValuedObject.h"/>
+   <depend name="include/src/compiler/signals/ExitSignal.h"/>
+   <depend name="include/src/compiler/signals/InvalidArgumentSignal.h"/>
+   <depend name="include/src/compiler/signals/InvalidFieldAccessSignal.h"/>
+   <depend name="include/src/compiler/signals/SyntaxErrorSignal.h"/>
+  </file>
+  <file name="src/src/compiler/commands/value/VariableValueCommand.cpp" >
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/bytecode/Bytecode.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/commands/value/ValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/VariableAccess.h"/>
+   <depend name="include/src/compiler/commands/value/VariableValueCommand.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+  </file>
+  <file name="src/src/compiler/commands/value/TupleValueCommand.cpp" >
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/base/CommaToken.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/bytecode/Bytecode.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/commands/value/TupleValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/ValueCommand.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/object/ObjectType.h"/>
+   <depend name="include/src/compiler/object/builtin/TupleObject.h"/>
+   <depend name="include/src/compiler/object/builtin/ValuedObject.h"/>
+  </file>
+  <file name="src/src/compiler/commands/value/ObjectValueCommand.cpp" >
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/base/KwdToken.h"/>
+   <depend name="include/src/ast/base/StringToken.h"/>
+   <depend name="include/src/ast/maths/FloatToken.h"/>
+   <depend name="include/src/ast/maths/IntegerToken.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/bytecode/Bytecode.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/commands/value/ObjectValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/ValueCommand.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/object/ObjectType.h"/>
+  </file>
+  <file name="src/src/compiler/commands/value/ObjectIndexPair.cpp" >
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/base/BracketToken.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/bytecode/Bytecode.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/commands/value/ObjectIndexPair.h"/>
+   <depend name="include/src/compiler/commands/value/ValueCommand.h"/>
+   <depend name="include/src/compiler/signals/ExitSignal.h"/>
+   <depend name="include/src/compiler/signals/SyntaxErrorSignal.h"/>
+  </file>
+  <file name="src/src/compiler/commands/value/ObjectArrayAssignmentCommand.cpp" >
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/script/AssignmentToken.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/bytecode/Bytecode.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/commands/value/ObjectArrayAssignmentCommand.h"/>
+   <depend name="include/src/compiler/commands/value/ObjectIndexPair.h"/>
+   <depend name="include/src/compiler/commands/value/ValueCommand.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/signals/ExitSignal.h"/>
+   <depend name="include/src/compiler/signals/SyntaxErrorSignal.h"/>
+  </file>
+  <file name="src/src/compiler/commands/value/ObjectArrayAccessValueCommand.cpp" >
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/bytecode/Bytecode.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/commands/value/ObjectArrayAccessValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/ObjectIndexPair.h"/>
+   <depend name="include/src/compiler/commands/value/ValueCommand.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+  </file>
+  <file name="src/src/compiler/commands/value/MathsExpressionValueCommand.cpp" >
+   <depend name="include/Std.h"/>
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/maths/MathsOperatorToken.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/bytecode/Bytecode.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/commands/value/MathsExpressionValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/ValueCommand.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/signals/ExitSignal.h"/>
+   <depend name="include/src/compiler/signals/SyntaxErrorSignal.h"/>
+  </file>
+  <file name="src/src/compiler/commands/value/ValueCommandPair.cpp" >
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/script/AssignmentToken.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/bytecode/Bytecode.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/commands/value/ValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/ValueCommandPair.h"/>
+  </file>
+  <file name="src/src/compiler/commands/value/MapValueCommand.cpp" >
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/bytecode/Bytecode.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/commands/value/MapValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/ValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/ValueCommandPair.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/object/ObjectType.h"/>
+   <depend name="include/src/compiler/object/builtin/MapObject.h"/>
+  </file>
+  <file name="src/src/compiler/commands/value/ListValueCommand.cpp" >
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/base/CommaToken.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/bytecode/Bytecode.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/commands/value/ListValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/ValueCommand.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/object/ObjectType.h"/>
+   <depend name="include/src/compiler/object/builtin/ListObject.h"/>
+  </file>
+  <file name="src/src/compiler/commands/value/FunctionCallValueCommand.cpp" >
+   <depend name="include/Std.h"/>
+   <depend name="include/haxe/IMap.h"/>
+   <depend name="include/haxe/ds/StringMap.h"/>
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/base/BracketToken.h"/>
+   <depend name="include/src/ast/base/CommaToken.h"/>
+   <depend name="include/src/ast/base/VariableToken.h"/>
+   <depend name="include/src/ast/maths/MathsOperatorToken.h"/>
+   <depend name="include/src/ast/script/AssignmentToken.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/bytecode/Bytecode.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/commands/value/Argument.h"/>
+   <depend name="include/src/compiler/commands/value/FunctionCallValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/ValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/VariableAccess.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/object/ObjectType.h"/>
+   <depend name="include/src/compiler/object/builtin/BoolObject.h"/>
+   <depend name="include/src/compiler/object/builtin/PairObject.h"/>
+   <depend name="include/src/compiler/object/builtin/ValuedObject.h"/>
+   <depend name="include/src/compiler/object/builtin/_PairObject/Pair.h"/>
+   <depend name="include/src/compiler/signals/ExitSignal.h"/>
+   <depend name="include/src/compiler/signals/InvalidArgumentSignal.h"/>
+   <depend name="include/src/compiler/signals/SyntaxErrorSignal.h"/>
+  </file>
+  <file name="src/src/compiler/signals/SyntaxErrorSignal.cpp" >
+   <depend name="include/src/compiler/signals/ExitSignal.h"/>
+   <depend name="include/src/compiler/signals/SyntaxErrorSignal.h"/>
+  </file>
+  <file name="src/src/compiler/signals/ExitSignal.cpp" >
+   <depend name="include/src/compiler/signals/ExitSignal.h"/>
+  </file>
+  <file name="src/src/compiler/commands/value/EqualityValueCommand.cpp" >
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/script/EqualityOperatorToken.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/bytecode/Bytecode.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/commands/value/EqualityValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/ValueCommand.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/object/ObjectType.h"/>
+   <depend name="include/src/compiler/signals/ExitSignal.h"/>
+   <depend name="include/src/compiler/signals/SyntaxErrorSignal.h"/>
+  </file>
+  <file name="src/src/compiler/commands/value/ContainsValueCommand.cpp" >
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/base/KwdToken.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/bytecode/Bytecode.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/commands/value/ContainsValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/ValueCommand.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+  </file>
+  <file name="src/src/compiler/commands/value/BoolExpressionValueCommand.cpp" >
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/script/BooleanOperatorToken.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/bytecode/Bytecode.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/commands/value/BoolExpressionValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/ValueCommand.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/object/ObjectType.h"/>
+  </file>
+  <file name="src/src/compiler/commands/value/ValueCommand.cpp" >
+   <depend name="include/Std.h"/>
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/commands/FunctionDefinitionCommand.h"/>
+   <depend name="include/src/compiler/commands/value/BinaryExpressionValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/BoolExpressionValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/ContainsValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/EqualityValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/FunctionCallValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/ListValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/MapValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/MathsExpressionValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/ObjectArrayAccessValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/ObjectValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/TupleValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/ValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/VariableValueCommand.h"/>
+   <depend name="include/src/compiler/signals/ExitSignal.h"/>
+   <depend name="include/src/compiler/signals/SyntaxErrorSignal.h"/>
+  </file>
+  <file name="src/src/compiler/commands/Command.cpp" >
+   <depend name="include/Std.h"/>
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/bytecode/Bytecode.h"/>
+   <depend name="include/src/compiler/bytecode/BytecodeMap.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+  </file>
+  <file name="src/src/compiler/bytecode/Bytecode.cpp" >
+   <depend name="include/Std.h"/>
+   <depend name="include/Type.h"/>
+   <depend name="include/ValueType.h"/>
+   <depend name="include/_Map/Map_Impl_.h"/>
+   <depend name="include/haxe/IMap.h"/>
+   <depend name="include/haxe/ds/StringMap.h"/>
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/BytesBuffer.h"/>
+   <depend name="include/haxe/io/Error.h"/>
+   <depend name="include/haxe/io/FPHelper.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/bytecode/Bytecode.h"/>
+   <depend name="include/src/compiler/bytecode/BytecodeMap.h"/>
+   <depend name="include/src/compiler/bytecode/StringPool.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/commands/value/LiteralValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/ValueCommand.h"/>
+   <depend name="include/src/compiler/commands/value/VariableAccess.h"/>
+  </file>
+  <file name="src/src/compiler/VariableNamePool.cpp" >
+   <depend name="include/haxe/IMap.h"/>
+   <depend name="include/haxe/ds/StringMap.h"/>
+   <depend name="include/src/compiler/VariableNamePool.h"/>
+  </file>
+  <file name="src/src/compiler/Scope.cpp" >
+   <depend name="include/Std.h"/>
+   <depend name="include/haxe/IMap.h"/>
+   <depend name="include/haxe/ds/StringMap.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/object/ObjectType.h"/>
+   <depend name="include/src/compiler/object/builtin/Builtins.h"/>
+   <depend name="include/src/compiler/object/builtin/ObjectTypeObject.h"/>
+   <depend name="include/src/compiler/object/builtin/ValuedObject.h"/>
+  </file>
+  <file name="src/src/compiler/Core.cpp" >
+   <depend name="include/Type.h"/>
+   <depend name="include/haxe/IMap.h"/>
+   <depend name="include/haxe/ds/StringMap.h"/>
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/base/RootToken.h"/>
+   <depend name="include/src/compiler/Core.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/_Core/OperativeCapture.h"/>
+   <depend name="include/src/compiler/bytecode/Bytecode.h"/>
+   <depend name="include/src/compiler/bytecode/StringPool.h"/>
+   <depend name="include/src/compiler/commands/AssignmentCommand.h"/>
+   <depend name="include/src/compiler/commands/BreakCommand.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/commands/ContinueCommand.h"/>
+   <depend name="include/src/compiler/commands/DeleteCommand.h"/>
+   <depend name="include/src/compiler/commands/ForLoopComand.h"/>
+   <depend name="include/src/compiler/commands/FunctionDefinitionCommand.h"/>
+   <depend name="include/src/compiler/commands/IfCommand.h"/>
+   <depend name="include/src/compiler/commands/ReturnCommand.h"/>
+   <depend name="include/src/compiler/commands/RootCommand.h"/>
+   <depend name="include/src/compiler/commands/TypeDefinitionCommand.h"/>
+   <depend name="include/src/compiler/commands/WhileLoopCommand.h"/>
+   <depend name="include/src/compiler/commands/value/ObjectArrayAssignmentCommand.h"/>
+   <depend name="include/src/compiler/commands/value/ValueCommand.h"/>
+   <depend name="include/src/compiler/signals/ExitSignal.h"/>
+   <depend name="include/src/compiler/signals/SyntaxErrorSignal.h"/>
+  </file>
+  <file name="src/src/compiler/_Core/OperativeCapture.cpp" >
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/compiler/_Core/OperativeCapture.h"/>
+  </file>
+  <file name="src/src/ast/base/RootToken.cpp" >
+   <depend name="include/src/ast/GlobalProcessor.h"/>
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/TokenProcessor.h"/>
+   <depend name="include/src/ast/base/BlockToken.h"/>
+   <depend name="include/src/ast/base/RootToken.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/commands/RootCommand.h"/>
+  </file>
+  <file name="src/src/ast/_TokenProcessor/TokenClass.cpp" >
+   <depend name="include/Type.h"/>
+   <depend name="include/src/ast/_TokenProcessor/TokenClass.h"/>
+  </file>
+  <file name="src/src/ast/TokenPriority.cpp" >
+   <depend name="include/src/ast/TokenPriority.h"/>
+  </file>
+  <file name="src/src/ast/GlobalProcessor.cpp" >
+   <depend name="include/src/ast/GlobalProcessor.h"/>
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/TokenProcessor.h"/>
+   <depend name="include/src/ast/base/AccessToken.h"/>
+   <depend name="include/src/ast/base/BlockToken.h"/>
+   <depend name="include/src/ast/base/BracketToken.h"/>
+   <depend name="include/src/ast/base/CommaToken.h"/>
+   <depend name="include/src/ast/base/EndLineToken.h"/>
+   <depend name="include/src/ast/base/KwdToken.h"/>
+   <depend name="include/src/ast/base/ListToken.h"/>
+   <depend name="include/src/ast/base/RootToken.h"/>
+   <depend name="include/src/ast/base/StringToken.h"/>
+   <depend name="include/src/ast/base/VariableToken.h"/>
+   <depend name="include/src/ast/base/WhitespaceToken.h"/>
+   <depend name="include/src/ast/maths/BinaryOperatorToken.h"/>
+   <depend name="include/src/ast/maths/FloatToken.h"/>
+   <depend name="include/src/ast/maths/HexToken.h"/>
+   <depend name="include/src/ast/maths/IntegerToken.h"/>
+   <depend name="include/src/ast/maths/MathsOperatorToken.h"/>
+   <depend name="include/src/ast/script/AssignmentToken.h"/>
+   <depend name="include/src/ast/script/BooleanOperatorToken.h"/>
+   <depend name="include/src/ast/script/EqualityOperatorToken.h"/>
+  </file>
+  <file name="src/src/ast/maths/BinaryOperatorToken.cpp" >
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/maths/BinaryOperatorToken.h"/>
+  </file>
+  <file name="src/src/ast/maths/HexToken.cpp" >
+   <depend name="include/EReg.h"/>
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/maths/HexToken.h"/>
+  </file>
+  <file name="src/src/ast/base/AccessToken.cpp" >
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/base/AccessToken.h"/>
+  </file>
+  <file name="src/src/ast/base/ListToken.cpp" >
+   <depend name="include/src/ast/GlobalProcessor.h"/>
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/TokenProcessor.h"/>
+   <depend name="include/src/ast/base/BlockToken.h"/>
+   <depend name="include/src/ast/base/ListToken.h"/>
+  </file>
+  <file name="src/src/ast/base/CommaToken.cpp" >
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/base/CommaToken.h"/>
+  </file>
+  <file name="src/src/ast/base/KwdToken.cpp" >
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/TokenPriority.h"/>
+   <depend name="include/src/ast/base/KwdToken.h"/>
+  </file>
+  <file name="src/src/ast/maths/MathsOperatorToken.cpp" >
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/maths/MathsOperatorToken.h"/>
+  </file>
+  <file name="src/src/ast/maths/FloatToken.cpp" >
+   <depend name="include/EReg.h"/>
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/maths/FloatToken.h"/>
+  </file>
+  <file name="src/src/ast/maths/IntegerToken.cpp" >
+   <depend name="include/EReg.h"/>
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/maths/IntegerToken.h"/>
+  </file>
+  <file name="src/src/ast/script/EqualityOperatorToken.cpp" >
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/script/EqualityOperatorToken.h"/>
+  </file>
+  <file name="src/src/ast/script/BooleanOperatorToken.cpp" >
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/script/BooleanOperatorToken.h"/>
+  </file>
+  <file name="src/src/ast/script/AssignmentToken.cpp" >
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/script/AssignmentToken.h"/>
+  </file>
+  <file name="src/src/ast/base/EndLineToken.cpp" >
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/base/EndLineToken.h"/>
+  </file>
+  <file name="src/src/ast/base/WhitespaceToken.cpp" >
+   <depend name="include/EReg.h"/>
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/base/WhitespaceToken.h"/>
+  </file>
+  <file name="src/src/ast/base/VariableToken.cpp" >
+   <depend name="include/EReg.h"/>
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/TokenPriority.h"/>
+   <depend name="include/src/ast/base/VariableToken.h"/>
+  </file>
+  <file name="src/src/ast/base/StringToken.cpp" >
+   <depend name="include/EReg.h"/>
+   <depend name="include/Std.h"/>
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/base/StringToken.h"/>
+  </file>
+  <file name="src/src/ast/base/BracketToken.cpp" >
+   <depend name="include/src/ast/GlobalProcessor.h"/>
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/TokenProcessor.h"/>
+   <depend name="include/src/ast/base/BlockToken.h"/>
+   <depend name="include/src/ast/base/BracketToken.h"/>
+  </file>
+  <file name="src/src/ast/base/BlockToken.cpp" >
+   <depend name="include/src/ast/GlobalProcessor.h"/>
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/TokenProcessor.h"/>
+   <depend name="include/src/ast/base/BlockToken.h"/>
+  </file>
+  <file name="src/src/ast/Token.cpp" >
+   <depend name="include/Std.h"/>
+   <depend name="include/Type.h"/>
+   <depend name="include/ValueType.h"/>
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/TokenPriority.h"/>
+  </file>
+  <file name="src/src/ast/TokenProcessor.cpp" >
+   <depend name="include/Type.h"/>
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/TokenPriority.h"/>
+   <depend name="include/src/ast/TokenProcessor.h"/>
+   <depend name="include/src/ast/_TokenProcessor/TokenClass.h"/>
+  </file>
+  <file name="src/src/Mode.cpp" >
+   <depend name="include/src/Mode.h"/>
+  </file>
+  <file name="src/src/Main.cpp" >
+   <depend name="include/Sys.h"/>
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/Input.h"/>
+   <depend name="include/haxe/io/Output.h"/>
+   <depend name="include/src/Main.h"/>
+   <depend name="include/src/Mode.h"/>
+   <depend name="include/src/ast/GlobalProcessor.h"/>
+   <depend name="include/src/ast/Token.h"/>
+   <depend name="include/src/ast/base/RootToken.h"/>
+   <depend name="include/src/compiler/Core.h"/>
+   <depend name="include/src/compiler/Scope.h"/>
+   <depend name="include/src/compiler/bytecode/Bytecode.h"/>
+   <depend name="include/src/compiler/commands/Command.h"/>
+   <depend name="include/src/compiler/commands/RootCommand.h"/>
+   <depend name="include/src/compiler/object/Object.h"/>
+   <depend name="include/src/compiler/signals/ExitCodeSignal.h"/>
+   <depend name="include/src/compiler/signals/ExitSignal.h"/>
+   <depend name="include/src/compiler/signals/SyntaxErrorSignal.h"/>
+   <depend name="include/sys/FileSystem.h"/>
+   <depend name="include/sys/io/File.h"/>
+   <depend name="include/sys/io/FileOutput.h"/>
+  </file>
+  <file name="src/haxe/io/Path.cpp" >
+   <depend name="include/haxe/io/Path.h"/>
+  </file>
+  <file name="src/haxe/io/Output.cpp" >
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/Error.h"/>
+   <depend name="include/haxe/io/Output.h"/>
+  </file>
+  <file name="src/haxe/io/Input.cpp" >
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/BytesBuffer.h"/>
+   <depend name="include/haxe/io/Eof.h"/>
+   <depend name="include/haxe/io/Input.h"/>
+  </file>
+  <file name="src/haxe/io/FPHelper.cpp" >
+   <depend name="include/haxe/io/FPHelper.h"/>
+  </file>
+  <file name="src/haxe/io/Error.cpp" >
+   <depend name="include/haxe/io/Error.h"/>
+  </file>
+  <file name="src/haxe/io/Eof.cpp" >
+   <depend name="include/haxe/io/Eof.h"/>
+  </file>
+  <file name="src/haxe/io/BytesBuffer.cpp" >
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/BytesBuffer.h"/>
+  </file>
+  <file name="src/haxe/io/Bytes.cpp" >
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/Error.h"/>
+  </file>
+  <file name="src/haxe/ds/StringMap.cpp" >
+   <depend name="include/haxe/IMap.h"/>
+   <depend name="include/haxe/ds/StringMap.h"/>
+  </file>
+  <file name="src/haxe/ds/ObjectMap.cpp" >
+   <depend name="include/haxe/IMap.h"/>
+   <depend name="include/haxe/ds/ObjectMap.h"/>
+  </file>
+  <file name="src/haxe/ds/IntMap.cpp" >
+   <depend name="include/haxe/IMap.h"/>
+   <depend name="include/haxe/ds/IntMap.h"/>
+  </file>
+  <file name="src/haxe/ds/EnumValueMap.cpp" >
+   <depend name="include/Reflect.h"/>
+   <depend name="include/Std.h"/>
+   <depend name="include/Type.h"/>
+   <depend name="include/haxe/IMap.h"/>
+   <depend name="include/haxe/ds/BalancedTree.h"/>
+   <depend name="include/haxe/ds/EnumValueMap.h"/>
+  </file>
+  <file name="src/haxe/ds/TreeNode.cpp" >
+   <depend name="include/Std.h"/>
+   <depend name="include/haxe/ds/TreeNode.h"/>
+  </file>
+  <file name="src/haxe/ds/BalancedTree.cpp" >
+   <depend name="include/Reflect.h"/>
+   <depend name="include/haxe/ds/BalancedTree.h"/>
+   <depend name="include/haxe/ds/TreeNode.h"/>
+  </file>
+  <file name="src/haxe/IMap.cpp" >
+   <depend name="include/haxe/IMap.h"/>
+  </file>
+  <file name="src/Type.cpp" >
+   <depend name="include/Reflect.h"/>
+   <depend name="include/Type.h"/>
+   <depend name="include/ValueType.h"/>
+  </file>
+  <file name="src/ValueType.cpp" >
+   <depend name="include/ValueType.h"/>
+  </file>
+  <file name="src/Sys.cpp" >
+   <depend name="include/Sys.h"/>
+   <depend name="include/haxe/io/Input.h"/>
+   <depend name="include/haxe/io/Output.h"/>
+   <depend name="include/sys/io/FileInput.h"/>
+   <depend name="include/sys/io/FileOutput.h"/>
+  </file>
+  <file name="src/Std.cpp" >
+   <depend name="include/Std.h"/>
+  </file>
+  <file name="src/Reflect.cpp" >
+   <depend name="include/Reflect.h"/>
+  </file>
+  <file name="src/_Map/Map_Impl_.cpp" >
+   <depend name="include/_Map/Map_Impl_.h"/>
+   <depend name="include/haxe/IMap.h"/>
+   <depend name="include/haxe/ds/BalancedTree.h"/>
+   <depend name="include/haxe/ds/EnumValueMap.h"/>
+   <depend name="include/haxe/ds/IntMap.h"/>
+   <depend name="include/haxe/ds/ObjectMap.h"/>
+   <depend name="include/haxe/ds/StringMap.h"/>
+  </file>
+  <file name="src/EReg.cpp" >
+   <depend name="include/EReg.h"/>
+  </file>
+  <file name="src/__boot__.cpp" >
+   <depend name="include/src/ast/TokenPriority.h"/>
+   <depend name="include/src/Mode.h"/>
+   <depend name="include/haxe/io/Error.h"/>
+   <depend name="include/ValueType.h"/>
+   <depend name="include/src/compiler/bytecode/BytecodeMap.h"/>
+   <depend name="include/src/compiler/bytecode/Bytecode.h"/>
+   <depend name="include/src/compiler/VariableNamePool.h"/>
+   <depend name="include/src/compiler/Core.h"/>
+   <depend name="include/src/ast/GlobalProcessor.h"/>
+   <depend name="include/src/ast/maths/HexToken.h"/>
+   <depend name="include/src/ast/base/KwdToken.h"/>
+   <depend name="include/src/ast/maths/FloatToken.h"/>
+   <depend name="include/src/ast/maths/IntegerToken.h"/>
+   <depend name="include/src/ast/base/WhitespaceToken.h"/>
+   <depend name="include/src/ast/base/VariableToken.h"/>
+   <depend name="include/src/ast/base/StringToken.h"/>
+   <depend name="include/src/Main.h"/>
+  </file>
+  <file name="src/__files__.cpp" if='HXCPP_DEBUGGER'>
+  </file>
+   <file name="${HXCPP}/src/hx/NoFiles.cpp" unless="HXCPP_DEBUGGER" />
+  <file name="src/__resources__.cpp" >
+  </file>
+</files>
+<files id="__lib__">
+<compilerflag value="-Iinclude"/>
+  <file name="src/__lib__.cpp" >
+   <depend name="include/src/Main.h"/>
+  </file>
+</files>
+<files id="__main__">
+<compilerflag value="-Iinclude"/>
+  <file name="src/__main__.cpp" >
+   <depend name="include/src/Main.h"/>
+  </file>
+</files>
+<files id="__resources__">
+</files>
+<files id="__externs__">
+</files>
+<set name="HAXE_OUTPUT" value="Main" />
+<include name="${HXCPP}/build-tool/BuildCommon.xml"/>
+<include name="${HXCPP}/src/hx/libs/regexp/Build.xml"/>
+<include name="${HXCPP}/src/hx/libs/std/Build.xml"/>
+<include name="${HXCPP}/src/hx/libs/std/Build.xml"/>
+<include name="${HXCPP}/src/hx/libs/std/Build.xml"/>
+</xml>
