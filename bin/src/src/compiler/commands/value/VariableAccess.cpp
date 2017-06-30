@@ -10,6 +10,9 @@
 #ifndef INCLUDED_src_ast_base_AccessToken
 #include <src/ast/base/AccessToken.h>
 #endif
+#ifndef INCLUDED_src_ast_base_RootToken
+#include <src/ast/base/RootToken.h>
+#endif
 #ifndef INCLUDED_src_compiler_Scope
 #include <src/compiler/Scope.h>
 #endif
@@ -50,29 +53,35 @@
 #include <src/compiler/signals/SyntaxErrorSignal.h>
 #endif
 
-HX_DEFINE_STACK_FRAME(_hx_pos_abbb7cf773e777fc_55_new,"src.compiler.commands.value.VariableAccess","new",0x7ef96010,"src.compiler.commands.value.VariableAccess.new","src/compiler/commands/value/VariableAccess.hx",55,0x0769183e)
-HX_LOCAL_STACK_FRAME(_hx_pos_abbb7cf773e777fc_88_getVars,"src.compiler.commands.value.VariableAccess","getVars",0xf96b0312,"src.compiler.commands.value.VariableAccess.getVars","src/compiler/commands/value/VariableAccess.hx",88,0x0769183e)
-HX_LOCAL_STACK_FRAME(_hx_pos_abbb7cf773e777fc_92_walk,"src.compiler.commands.value.VariableAccess","walk",0xa12a8759,"src.compiler.commands.value.VariableAccess.walk","src/compiler/commands/value/VariableAccess.hx",92,0x0769183e)
-HX_LOCAL_STACK_FRAME(_hx_pos_abbb7cf773e777fc_99_getVariable,"src.compiler.commands.value.VariableAccess","getVariable",0x9a4594a2,"src.compiler.commands.value.VariableAccess.getVariable","src/compiler/commands/value/VariableAccess.hx",99,0x0769183e)
-HX_LOCAL_STACK_FRAME(_hx_pos_abbb7cf773e777fc_117_setVariable,"src.compiler.commands.value.VariableAccess","setVariable",0xa4b29bae,"src.compiler.commands.value.VariableAccess.setVariable","src/compiler/commands/value/VariableAccess.hx",117,0x0769183e)
-HX_LOCAL_STACK_FRAME(_hx_pos_abbb7cf773e777fc_137_deleteVariable,"src.compiler.commands.value.VariableAccess","deleteVariable",0xce365fd7,"src.compiler.commands.value.VariableAccess.deleteVariable","src/compiler/commands/value/VariableAccess.hx",137,0x0769183e)
-HX_LOCAL_STACK_FRAME(_hx_pos_abbb7cf773e777fc_158_getName,"src.compiler.commands.value.VariableAccess","getName",0xf42149b1,"src.compiler.commands.value.VariableAccess.getName","src/compiler/commands/value/VariableAccess.hx",158,0x0769183e)
-HX_LOCAL_STACK_FRAME(_hx_pos_abbb7cf773e777fc_170_getBytecode,"src.compiler.commands.value.VariableAccess","getBytecode",0x88d0769b,"src.compiler.commands.value.VariableAccess.getBytecode","src/compiler/commands/value/VariableAccess.hx",170,0x0769183e)
-HX_LOCAL_STACK_FRAME(_hx_pos_abbb7cf773e777fc_175_reconstruct,"src.compiler.commands.value.VariableAccess","reconstruct",0x9b5f25b4,"src.compiler.commands.value.VariableAccess.reconstruct","src/compiler/commands/value/VariableAccess.hx",175,0x0769183e)
-HX_LOCAL_STACK_FRAME(_hx_pos_abbb7cf773e777fc_20_fromTokens,"src.compiler.commands.value.VariableAccess","fromTokens",0x2593e2b4,"src.compiler.commands.value.VariableAccess.fromTokens","src/compiler/commands/value/VariableAccess.hx",20,0x0769183e)
-HX_LOCAL_STACK_FRAME(_hx_pos_abbb7cf773e777fc_33_fromBytecode,"src.compiler.commands.value.VariableAccess","fromBytecode",0xc891ca0f,"src.compiler.commands.value.VariableAccess.fromBytecode","src/compiler/commands/value/VariableAccess.hx",33,0x0769183e)
-HX_LOCAL_STACK_FRAME(_hx_pos_abbb7cf773e777fc_48_fromInt,"src.compiler.commands.value.VariableAccess","fromInt",0x309a0555,"src.compiler.commands.value.VariableAccess.fromInt","src/compiler/commands/value/VariableAccess.hx",48,0x0769183e)
+HX_DEFINE_STACK_FRAME(_hx_pos_abbb7cf773e777fc_64_new,"src.compiler.commands.value.VariableAccess","new",0x7ef96010,"src.compiler.commands.value.VariableAccess.new","src/compiler/commands/value/VariableAccess.hx",64,0x0769183e)
+HX_LOCAL_STACK_FRAME(_hx_pos_abbb7cf773e777fc_97_getVars,"src.compiler.commands.value.VariableAccess","getVars",0xf96b0312,"src.compiler.commands.value.VariableAccess.getVars","src/compiler/commands/value/VariableAccess.hx",97,0x0769183e)
+HX_LOCAL_STACK_FRAME(_hx_pos_abbb7cf773e777fc_102_copy,"src.compiler.commands.value.VariableAccess","copy",0x93fce605,"src.compiler.commands.value.VariableAccess.copy","src/compiler/commands/value/VariableAccess.hx",102,0x0769183e)
+HX_LOCAL_STACK_FRAME(_hx_pos_abbb7cf773e777fc_106_setScope,"src.compiler.commands.value.VariableAccess","setScope",0x39b16ce2,"src.compiler.commands.value.VariableAccess.setScope","src/compiler/commands/value/VariableAccess.hx",106,0x0769183e)
+HX_LOCAL_STACK_FRAME(_hx_pos_abbb7cf773e777fc_112_walk,"src.compiler.commands.value.VariableAccess","walk",0xa12a8759,"src.compiler.commands.value.VariableAccess.walk","src/compiler/commands/value/VariableAccess.hx",112,0x0769183e)
+HX_LOCAL_STACK_FRAME(_hx_pos_abbb7cf773e777fc_118_throwInvalidVar,"src.compiler.commands.value.VariableAccess","throwInvalidVar",0x6bf394a6,"src.compiler.commands.value.VariableAccess.throwInvalidVar","src/compiler/commands/value/VariableAccess.hx",118,0x0769183e)
+HX_LOCAL_STACK_FRAME(_hx_pos_abbb7cf773e777fc_130_getVariable,"src.compiler.commands.value.VariableAccess","getVariable",0x9a4594a2,"src.compiler.commands.value.VariableAccess.getVariable","src/compiler/commands/value/VariableAccess.hx",130,0x0769183e)
+HX_LOCAL_STACK_FRAME(_hx_pos_abbb7cf773e777fc_151_setVariable,"src.compiler.commands.value.VariableAccess","setVariable",0xa4b29bae,"src.compiler.commands.value.VariableAccess.setVariable","src/compiler/commands/value/VariableAccess.hx",151,0x0769183e)
+HX_LOCAL_STACK_FRAME(_hx_pos_abbb7cf773e777fc_172_deleteVariable,"src.compiler.commands.value.VariableAccess","deleteVariable",0xce365fd7,"src.compiler.commands.value.VariableAccess.deleteVariable","src/compiler/commands/value/VariableAccess.hx",172,0x0769183e)
+HX_LOCAL_STACK_FRAME(_hx_pos_abbb7cf773e777fc_194_getName,"src.compiler.commands.value.VariableAccess","getName",0xf42149b1,"src.compiler.commands.value.VariableAccess.getName","src/compiler/commands/value/VariableAccess.hx",194,0x0769183e)
+HX_LOCAL_STACK_FRAME(_hx_pos_abbb7cf773e777fc_198_getFriendlyName,"src.compiler.commands.value.VariableAccess","getFriendlyName",0x8c8ae9bc,"src.compiler.commands.value.VariableAccess.getFriendlyName","src/compiler/commands/value/VariableAccess.hx",198,0x0769183e)
+HX_LOCAL_STACK_FRAME(_hx_pos_abbb7cf773e777fc_209_getReconstructedString,"src.compiler.commands.value.VariableAccess","getReconstructedString",0x9c7c7bee,"src.compiler.commands.value.VariableAccess.getReconstructedString","src/compiler/commands/value/VariableAccess.hx",209,0x0769183e)
+HX_LOCAL_STACK_FRAME(_hx_pos_abbb7cf773e777fc_227_getBytecode,"src.compiler.commands.value.VariableAccess","getBytecode",0x88d0769b,"src.compiler.commands.value.VariableAccess.getBytecode","src/compiler/commands/value/VariableAccess.hx",227,0x0769183e)
+HX_LOCAL_STACK_FRAME(_hx_pos_abbb7cf773e777fc_231_reconstruct,"src.compiler.commands.value.VariableAccess","reconstruct",0x9b5f25b4,"src.compiler.commands.value.VariableAccess.reconstruct","src/compiler/commands/value/VariableAccess.hx",231,0x0769183e)
+HX_LOCAL_STACK_FRAME(_hx_pos_abbb7cf773e777fc_22_fromTokens,"src.compiler.commands.value.VariableAccess","fromTokens",0x2593e2b4,"src.compiler.commands.value.VariableAccess.fromTokens","src/compiler/commands/value/VariableAccess.hx",22,0x0769183e)
+HX_LOCAL_STACK_FRAME(_hx_pos_abbb7cf773e777fc_35_fromBytecode,"src.compiler.commands.value.VariableAccess","fromBytecode",0xc891ca0f,"src.compiler.commands.value.VariableAccess.fromBytecode","src/compiler/commands/value/VariableAccess.hx",35,0x0769183e)
+HX_LOCAL_STACK_FRAME(_hx_pos_abbb7cf773e777fc_50_fromInt,"src.compiler.commands.value.VariableAccess","fromInt",0x309a0555,"src.compiler.commands.value.VariableAccess.fromInt","src/compiler/commands/value/VariableAccess.hx",50,0x0769183e)
+HX_LOCAL_STACK_FRAME(_hx_pos_abbb7cf773e777fc_56_copyArray,"src.compiler.commands.value.VariableAccess","copyArray",0x48070554,"src.compiler.commands.value.VariableAccess.copyArray","src/compiler/commands/value/VariableAccess.hx",56,0x0769183e)
 namespace src{
 namespace compiler{
 namespace commands{
 namespace value{
 
 void VariableAccess_obj::__construct( ::src::compiler::Scope scope,::Array< ::Dynamic> vars, ::Dynamic definition, ::Dynamic obfuscated){
-            	HX_GC_STACKFRAME(&_hx_pos_abbb7cf773e777fc_55_new)
-HXLINE(  56)		super::__construct(scope);
-HXLINE(  58)		this->vars = vars;
-HXLINE(  59)		if ((vars->length == (int)0)) {
-HXLINE(  59)			HX_STACK_DO_THROW( ::src::compiler::signals::SyntaxErrorSignal_obj::__alloc( HX_CTX ,HX_("Empty variable access",55,93,72,06)));
+            	HX_GC_STACKFRAME(&_hx_pos_abbb7cf773e777fc_64_new)
+HXLINE(  65)		super::__construct(scope);
+HXLINE(  67)		this->vars = vars;
+HXLINE(  68)		if ((vars->length == (int)0)) {
+HXLINE(  68)			HX_STACK_DO_THROW( ::src::compiler::signals::SyntaxErrorSignal_obj::__alloc( HX_CTX ,HX_("Empty variable access",55,93,72,06)));
             		}
             	}
 
@@ -96,210 +105,341 @@ bool VariableAccess_obj::_hx_isInstanceOf(int inClassId) {
 }
 
 ::Array< ::Dynamic> VariableAccess_obj::getVars(){
-            	HX_STACKFRAME(&_hx_pos_abbb7cf773e777fc_88_getVars)
-HXDLIN(  88)		return this->vars;
+            	HX_STACKFRAME(&_hx_pos_abbb7cf773e777fc_97_getVars)
+HXDLIN(  97)		return this->vars;
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(VariableAccess_obj,getVars,return )
 
-::Array< ::Dynamic> VariableAccess_obj::walk(){
-            	HX_STACKFRAME(&_hx_pos_abbb7cf773e777fc_92_walk)
-HXLINE(  93)		::Array< ::Dynamic> cmds = ::Array_obj< ::Dynamic>::__new();
-HXLINE(  94)		{
-HXLINE(  94)			int _g = (int)0;
-HXDLIN(  94)			::Array< ::Dynamic> _g1 = this->vars;
-HXDLIN(  94)			while((_g < _g1->length)){
-HXLINE(  94)				 ::src::compiler::commands::value::ValueCommand x = _g1->__get(_g).StaticCast<  ::src::compiler::commands::value::ValueCommand >();
-HXDLIN(  94)				_g = (_g + (int)1);
-HXDLIN(  94)				cmds->push(x);
-            			}
-            		}
-HXLINE(  95)		return cmds;
+ ::src::compiler::commands::Command VariableAccess_obj::copy( ::src::compiler::Scope scope){
+            	HX_GC_STACKFRAME(&_hx_pos_abbb7cf773e777fc_102_copy)
+HXDLIN( 102)		return  ::src::compiler::commands::value::VariableAccess_obj::__alloc( HX_CTX ,scope,::src::compiler::commands::value::ValueCommand_obj::copyArray(scope,this->vars),null(),null());
             	}
 
 
- ::src::compiler::object::Object VariableAccess_obj::getVariable(){
-            	HX_GC_STACKFRAME(&_hx_pos_abbb7cf773e777fc_99_getVariable)
-HXLINE( 100)		 ::src::compiler::object::Object obj;
-HXLINE( 101)		if ((this->vars->__get((int)0).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->getName() == HX_("LiteralValueCommand",c9,b1,43,d2))) {
-HXLINE( 101)			 ::src::compiler::Scope obj1 = this->scope;
-HXDLIN( 101)			obj = obj1->getVariable(hx::TCast<  ::src::compiler::commands::value::LiteralValueCommand >::cast(this->vars->__get((int)0).StaticCast<  ::src::compiler::commands::value::ValueCommand >())->getContent());
-            		}
-            		else {
-HXLINE( 102)			obj = this->vars->__get((int)0).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run();
-            		}
-HXLINE( 104)		 ::src::compiler::object::Object v;
-HXLINE( 105)		{
-HXLINE( 105)			int _g1 = (int)1;
-HXDLIN( 105)			int _g = this->vars->length;
-HXDLIN( 105)			while((_g1 < _g)){
-HXLINE( 105)				_g1 = (_g1 + (int)1);
-HXDLIN( 105)				int i = (_g1 - (int)1);
-HXLINE( 106)				v = this->vars->__get(i).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run();
-HXLINE( 107)				if (!(obj->hasfield(v)->rawBool())) {
-HXLINE( 107)					::String _hx_tmp = ((HX_("Invalid field, ",65,53,a6,f7) + ::Std_obj::string(obj)) + HX_(" has no field ",bf,1b,77,a6));
-HXDLIN( 107)					HX_STACK_DO_THROW( ::src::compiler::signals::InvalidFieldAccessSignal_obj::__alloc( HX_CTX ,(_hx_tmp + v->rawString())));
-            				}
-HXLINE( 108)				obj = obj->getfield(v);
+void VariableAccess_obj::setScope( ::src::compiler::Scope scope){
+            	HX_STACKFRAME(&_hx_pos_abbb7cf773e777fc_106_setScope)
+HXLINE( 107)		this->super::setScope(scope);
+HXLINE( 108)		{
+HXLINE( 108)			int _g = (int)0;
+HXDLIN( 108)			::Array< ::Dynamic> _g1 = this->vars;
+HXDLIN( 108)			while((_g < _g1->length)){
+HXLINE( 108)				 ::src::compiler::commands::value::ValueCommand v = _g1->__get(_g).StaticCast<  ::src::compiler::commands::value::ValueCommand >();
+HXDLIN( 108)				_g = (_g + (int)1);
+HXDLIN( 108)				v->setScope(scope);
             			}
             		}
-HXLINE( 110)		return obj;
+            	}
+
+
+::Array< ::Dynamic> VariableAccess_obj::walk(){
+            	HX_STACKFRAME(&_hx_pos_abbb7cf773e777fc_112_walk)
+HXLINE( 113)		::Array< ::Dynamic> cmds = ::Array_obj< ::Dynamic>::__new();
+HXLINE( 114)		{
+HXLINE( 114)			int _g = (int)0;
+HXDLIN( 114)			::Array< ::Dynamic> _g1 = this->vars;
+HXDLIN( 114)			while((_g < _g1->length)){
+HXLINE( 114)				 ::src::compiler::commands::value::ValueCommand x = _g1->__get(_g).StaticCast<  ::src::compiler::commands::value::ValueCommand >();
+HXDLIN( 114)				_g = (_g + (int)1);
+HXDLIN( 114)				cmds->push(x);
+            			}
+            		}
+HXLINE( 115)		return cmds;
+            	}
+
+
+void VariableAccess_obj::throwInvalidVar(int length){
+            	HX_GC_STACKFRAME(&_hx_pos_abbb7cf773e777fc_118_throwInvalidVar)
+HXLINE( 119)		::String s = HX_("",00,00,00,00);
+HXLINE( 120)		{
+HXLINE( 120)			int _g = (int)0;
+HXDLIN( 120)			::Array< ::Dynamic> _g1 = this->vars->slice((int)0,length);
+HXDLIN( 120)			while((_g < _g1->length)){
+HXLINE( 120)				 ::src::compiler::commands::value::ValueCommand v = _g1->__get(_g).StaticCast<  ::src::compiler::commands::value::ValueCommand >();
+HXDLIN( 120)				_g = (_g + (int)1);
+HXLINE( 121)				::Array< ::Dynamic> tokens = v->reconstruct();
+HXLINE( 122)				s = (s + (::src::ast::base::RootToken_obj::fromRaw(tokens)->reconstruct(null()) + HX_(".",2e,00,00,00)));
+            			}
+            		}
+HXLINE( 124)		s = s.substr((int)0,(s.length - (int)1));
+HXLINE( 125)		if ((length == (int)1)) {
+HXLINE( 125)			HX_STACK_DO_THROW( ::src::compiler::signals::InvalidFieldAccessSignal_obj::__alloc( HX_CTX ,(((HX_("Variable ",44,c2,35,24) + s) + HX_(" does not exist in scope ",6a,ce,f6,9b)) + ::Std_obj::string(this->scope))));
+            		}
+            		else {
+HXLINE( 126)			HX_STACK_DO_THROW( ::src::compiler::signals::InvalidFieldAccessSignal_obj::__alloc( HX_CTX ,(((HX_("Field ",46,02,23,b5) + s) + HX_(" does not exist in scope ",6a,ce,f6,9b)) + ::Std_obj::string(this->scope))));
+            		}
+            	}
+
+
+HX_DEFINE_DYNAMIC_FUNC1(VariableAccess_obj,throwInvalidVar,(void))
+
+ ::src::compiler::object::Object VariableAccess_obj::getVariable(){
+            	HX_GC_STACKFRAME(&_hx_pos_abbb7cf773e777fc_130_getVariable)
+HXLINE( 131)		 ::src::compiler::object::Object obj;
+HXLINE( 132)		if ((this->vars->__get((int)0).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->getName() == HX_("LiteralValueCommand",c9,b1,43,d2))) {
+HXLINE( 132)			 ::src::compiler::Scope obj1 = this->scope;
+HXDLIN( 132)			obj = obj1->getVariable(hx::TCast<  ::src::compiler::commands::value::LiteralValueCommand >::cast(this->vars->__get((int)0).StaticCast<  ::src::compiler::commands::value::ValueCommand >())->getContent());
+            		}
+            		else {
+HXLINE( 133)			obj = this->vars->__get((int)0).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run();
+            		}
+HXLINE( 135)		 ::src::compiler::object::Object v;
+HXLINE( 136)		{
+HXLINE( 136)			int _g1 = (int)1;
+HXDLIN( 136)			int _g = this->vars->length;
+HXDLIN( 136)			while((_g1 < _g)){
+HXLINE( 136)				_g1 = (_g1 + (int)1);
+HXDLIN( 136)				int i = (_g1 - (int)1);
+HXLINE( 137)				if (hx::IsNull( obj )) {
+HXLINE( 137)					this->throwInvalidVar(i);
+            				}
+HXLINE( 138)				v = this->vars->__get(i).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run();
+HXLINE( 139)				if (!(obj->hasfield(v)->rawBool())) {
+HXLINE( 139)					::String _hx_tmp = ((HX_("Invalid field, ",65,53,a6,f7) + ::Std_obj::string(obj)) + HX_(" has no field ",bf,1b,77,a6));
+HXDLIN( 139)					HX_STACK_DO_THROW( ::src::compiler::signals::InvalidFieldAccessSignal_obj::__alloc( HX_CTX ,(_hx_tmp + v->rawString())));
+            				}
+HXLINE( 140)				obj = obj->getfield(v);
+            			}
+            		}
+HXLINE( 143)		if (hx::IsNull( obj )) {
+HXLINE( 143)			this->throwInvalidVar(this->vars->length);
+            		}
+HXLINE( 144)		return obj;
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(VariableAccess_obj,getVariable,return )
 
 void VariableAccess_obj::setVariable( ::src::compiler::object::Object value){
-            	HX_GC_STACKFRAME(&_hx_pos_abbb7cf773e777fc_117_setVariable)
-HXLINE( 118)		if ((this->vars->length == (int)1)) {
-HXLINE( 119)			 ::src::compiler::Scope _hx_tmp = this->scope;
-HXDLIN( 119)			_hx_tmp->setVariable(this->vars->__get((int)0).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run()->rawString(),value);
-HXLINE( 120)			return;
+            	HX_GC_STACKFRAME(&_hx_pos_abbb7cf773e777fc_151_setVariable)
+HXLINE( 152)		if ((this->vars->length == (int)1)) {
+HXLINE( 153)			 ::src::compiler::Scope _hx_tmp = this->scope;
+HXDLIN( 153)			_hx_tmp->setVariable(this->vars->__get((int)0).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run()->rawString(),value);
+HXLINE( 154)			return;
             		}
-HXLINE( 122)		 ::src::compiler::object::Object obj;
-HXLINE( 123)		if ((this->vars->__get((int)0).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->getName() == HX_("LiteralValueCommand",c9,b1,43,d2))) {
-HXLINE( 123)			 ::src::compiler::Scope obj1 = this->scope;
-HXDLIN( 123)			obj = obj1->getVariable(hx::TCast<  ::src::compiler::commands::value::LiteralValueCommand >::cast(this->vars->__get((int)0).StaticCast<  ::src::compiler::commands::value::ValueCommand >())->getContent());
+HXLINE( 156)		 ::src::compiler::object::Object obj;
+HXLINE( 157)		if ((this->vars->__get((int)0).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->getName() == HX_("LiteralValueCommand",c9,b1,43,d2))) {
+HXLINE( 157)			 ::src::compiler::Scope obj1 = this->scope;
+HXDLIN( 157)			obj = obj1->getVariable(hx::TCast<  ::src::compiler::commands::value::LiteralValueCommand >::cast(this->vars->__get((int)0).StaticCast<  ::src::compiler::commands::value::ValueCommand >())->getContent());
             		}
             		else {
-HXLINE( 124)			obj = this->vars->__get((int)0).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run();
+HXLINE( 158)			obj = this->vars->__get((int)0).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run();
             		}
-HXLINE( 126)		 ::src::compiler::object::Object v;
-HXLINE( 127)		{
-HXLINE( 127)			int _g1 = (int)1;
-HXDLIN( 127)			int _g = (this->vars->length - (int)1);
-HXDLIN( 127)			while((_g1 < _g)){
-HXLINE( 127)				_g1 = (_g1 + (int)1);
-HXDLIN( 127)				int i = (_g1 - (int)1);
-HXLINE( 128)				v = this->vars->__get(i).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run();
-HXLINE( 129)				if (!(obj->hasfield(v)->rawBool())) {
-HXLINE( 129)					::String _hx_tmp1 = ((HX_("Invalid field access, ",67,50,74,95) + ::Std_obj::string(obj)) + HX_(" has no field ",bf,1b,77,a6));
-HXDLIN( 129)					HX_STACK_DO_THROW( ::src::compiler::signals::InvalidFieldAccessSignal_obj::__alloc( HX_CTX ,(_hx_tmp1 + v->rawString())));
+HXLINE( 160)		 ::src::compiler::object::Object v;
+HXLINE( 161)		{
+HXLINE( 161)			int _g1 = (int)1;
+HXDLIN( 161)			int _g = (this->vars->length - (int)1);
+HXDLIN( 161)			while((_g1 < _g)){
+HXLINE( 161)				_g1 = (_g1 + (int)1);
+HXDLIN( 161)				int i = (_g1 - (int)1);
+HXLINE( 162)				if (hx::IsNull( obj )) {
+HXLINE( 162)					this->throwInvalidVar(i);
             				}
-HXLINE( 130)				obj = obj->getfield(v);
+HXLINE( 163)				v = this->vars->__get(i).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run();
+HXLINE( 164)				if (!(obj->hasfield(v)->rawBool())) {
+HXLINE( 164)					::String _hx_tmp1 = ((HX_("Invalid field access, ",67,50,74,95) + ::Std_obj::string(obj)) + HX_(" has no field ",bf,1b,77,a6));
+HXDLIN( 164)					HX_STACK_DO_THROW( ::src::compiler::signals::InvalidFieldAccessSignal_obj::__alloc( HX_CTX ,(_hx_tmp1 + v->rawString())));
+            				}
+HXLINE( 165)				obj = obj->getfield(v);
             			}
             		}
-HXLINE( 132)		if (hx::IsNull( obj )) {
-HXLINE( 132)			HX_STACK_DO_THROW( ::src::compiler::signals::InvalidFieldAccessSignal_obj::__alloc( HX_CTX ,HX_("Null object found",3a,2f,1b,18)));
+HXLINE( 167)		if (hx::IsNull( obj )) {
+HXLINE( 167)			this->throwInvalidVar((this->vars->length - (int)1));
             		}
-HXLINE( 133)		::Array< ::Dynamic> _hx_tmp2 = this->vars;
-HXDLIN( 133)		obj->setfield(_hx_tmp2->__get((this->vars->length - (int)1)).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run(),value);
+HXLINE( 168)		::Array< ::Dynamic> _hx_tmp2 = this->vars;
+HXDLIN( 168)		obj->setfield(_hx_tmp2->__get((this->vars->length - (int)1)).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run(),value);
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(VariableAccess_obj,setVariable,(void))
 
 void VariableAccess_obj::deleteVariable(){
-            	HX_GC_STACKFRAME(&_hx_pos_abbb7cf773e777fc_137_deleteVariable)
-HXLINE( 138)		if ((this->vars->length == (int)1)) {
-HXLINE( 139)			 ::src::compiler::Scope _hx_tmp = this->scope;
-HXDLIN( 139)			_hx_tmp->deleteVariable(this->vars->__get((int)0).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run()->rawString());
-HXLINE( 140)			return;
+            	HX_GC_STACKFRAME(&_hx_pos_abbb7cf773e777fc_172_deleteVariable)
+HXLINE( 173)		if ((this->vars->length == (int)1)) {
+HXLINE( 174)			 ::src::compiler::Scope _hx_tmp = this->scope;
+HXDLIN( 174)			_hx_tmp->deleteVariable(this->vars->__get((int)0).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run()->rawString());
+HXLINE( 175)			return;
             		}
-HXLINE( 142)		 ::src::compiler::object::Object obj;
-HXLINE( 143)		if ((this->vars->__get((int)0).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->getName() == HX_("LiteralValueCommand",c9,b1,43,d2))) {
-HXLINE( 143)			 ::src::compiler::Scope obj1 = this->scope;
-HXDLIN( 143)			obj = obj1->getVariable(hx::TCast<  ::src::compiler::commands::value::LiteralValueCommand >::cast(this->vars->__get((int)0).StaticCast<  ::src::compiler::commands::value::ValueCommand >())->getContent());
+HXLINE( 177)		 ::src::compiler::object::Object obj;
+HXLINE( 178)		if ((this->vars->__get((int)0).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->getName() == HX_("LiteralValueCommand",c9,b1,43,d2))) {
+HXLINE( 178)			 ::src::compiler::Scope obj1 = this->scope;
+HXDLIN( 178)			obj = obj1->getVariable(hx::TCast<  ::src::compiler::commands::value::LiteralValueCommand >::cast(this->vars->__get((int)0).StaticCast<  ::src::compiler::commands::value::ValueCommand >())->getContent());
             		}
             		else {
-HXLINE( 144)			obj = this->vars->__get((int)0).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run();
+HXLINE( 179)			obj = this->vars->__get((int)0).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run();
             		}
-HXLINE( 146)		 ::src::compiler::object::Object v;
-HXLINE( 147)		{
-HXLINE( 147)			int _g1 = (int)1;
-HXDLIN( 147)			int _g = (this->vars->length - (int)1);
-HXDLIN( 147)			while((_g1 < _g)){
-HXLINE( 147)				_g1 = (_g1 + (int)1);
-HXDLIN( 147)				int i = (_g1 - (int)1);
-HXLINE( 148)				v = this->vars->__get(i).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run();
-HXLINE( 149)				if (!(obj->hasfield(v)->rawBool())) {
-HXLINE( 149)					::String _hx_tmp1 = ((HX_("Invalid field access, ",67,50,74,95) + ::Std_obj::string(obj)) + HX_(" has no field ",bf,1b,77,a6));
-HXDLIN( 149)					HX_STACK_DO_THROW( ::src::compiler::signals::InvalidFieldAccessSignal_obj::__alloc( HX_CTX ,(_hx_tmp1 + v->rawString())));
+HXLINE( 181)		 ::src::compiler::object::Object v;
+HXLINE( 182)		{
+HXLINE( 182)			int _g1 = (int)1;
+HXDLIN( 182)			int _g = (this->vars->length - (int)1);
+HXDLIN( 182)			while((_g1 < _g)){
+HXLINE( 182)				_g1 = (_g1 + (int)1);
+HXDLIN( 182)				int i = (_g1 - (int)1);
+HXLINE( 183)				if (hx::IsNull( obj )) {
+HXLINE( 183)					this->throwInvalidVar(i);
             				}
-HXLINE( 150)				obj = obj->getfield(v);
+HXLINE( 184)				v = this->vars->__get(i).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run();
+HXLINE( 185)				if (!(obj->hasfield(v)->rawBool())) {
+HXLINE( 185)					::String _hx_tmp1 = ((HX_("Invalid field access, ",67,50,74,95) + ::Std_obj::string(obj)) + HX_(" has no field ",bf,1b,77,a6));
+HXDLIN( 185)					HX_STACK_DO_THROW( ::src::compiler::signals::InvalidFieldAccessSignal_obj::__alloc( HX_CTX ,(_hx_tmp1 + v->rawString())));
+            				}
+HXLINE( 186)				obj = obj->getfield(v);
             			}
             		}
-HXLINE( 152)		if (hx::IsNull( obj )) {
-HXLINE( 152)			HX_STACK_DO_THROW( ::src::compiler::signals::InvalidFieldAccessSignal_obj::__alloc( HX_CTX ,HX_("Null object found",3a,2f,1b,18)));
+HXLINE( 188)		if (hx::IsNull( obj )) {
+HXLINE( 188)			this->throwInvalidVar((this->vars->length - (int)1));
             		}
-HXLINE( 153)		::Array< ::Dynamic> _hx_tmp2 = this->vars;
-HXDLIN( 153)		obj->delfield(_hx_tmp2->__get((this->vars->length - (int)1)).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run());
+HXLINE( 189)		::Array< ::Dynamic> _hx_tmp2 = this->vars;
+HXDLIN( 189)		obj->delfield(_hx_tmp2->__get((this->vars->length - (int)1)).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run());
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(VariableAccess_obj,deleteVariable,(void))
 
 ::String VariableAccess_obj::getName(){
-            	HX_STACKFRAME(&_hx_pos_abbb7cf773e777fc_158_getName)
-HXDLIN( 158)		return HX_("VariableAccess",20,05,1f,5c);
+            	HX_STACKFRAME(&_hx_pos_abbb7cf773e777fc_194_getName)
+HXDLIN( 194)		return HX_("VariableAccess",20,05,1f,5c);
             	}
 
 
+::String VariableAccess_obj::getFriendlyName(){
+            	HX_STACKFRAME(&_hx_pos_abbb7cf773e777fc_198_getFriendlyName)
+HXLINE( 199)		::String s = HX_("",00,00,00,00);
+HXLINE( 200)		{
+HXLINE( 200)			int _g = (int)0;
+HXDLIN( 200)			::Array< ::Dynamic> _g1 = this->vars;
+HXDLIN( 200)			while((_g < _g1->length)){
+HXLINE( 200)				 ::src::compiler::commands::value::ValueCommand v = _g1->__get(_g).StaticCast<  ::src::compiler::commands::value::ValueCommand >();
+HXDLIN( 200)				_g = (_g + (int)1);
+HXLINE( 201)				::Array< ::Dynamic> tokens = v->reconstruct();
+HXLINE( 202)				s = (s + (::src::ast::base::RootToken_obj::fromRaw(tokens)->reconstruct(null()) + HX_(".",2e,00,00,00)));
+            			}
+            		}
+HXLINE( 204)		s = s.substr((int)0,(s.length - (int)1));
+HXLINE( 205)		return (HX_("variable ",64,e2,62,82) + s);
+            	}
+
+
+::String VariableAccess_obj::getReconstructedString(){
+            	HX_STACKFRAME(&_hx_pos_abbb7cf773e777fc_209_getReconstructedString)
+HXLINE( 210)		::Array< ::Dynamic> recon = this->reconstruct();
+HXLINE( 211)		::String reconStr = HX_("",00,00,00,00);
+HXLINE( 212)		{
+HXLINE( 212)			int _g = (int)0;
+HXDLIN( 212)			while((_g < recon->length)){
+HXLINE( 212)				 ::src::ast::Token token = recon->__get(_g).StaticCast<  ::src::ast::Token >();
+HXDLIN( 212)				_g = (_g + (int)1);
+HXLINE( 213)				::String reconStr1;
+HXDLIN( 213)				if (hx::IsNotNull( token )) {
+HXLINE( 213)					reconStr1 = token->reconstruct(null());
+            				}
+            				else {
+HXLINE( 213)					reconStr1 = HX_("",00,00,00,00);
+            				}
+HXDLIN( 213)				reconStr = (reconStr + reconStr1);
+            			}
+            		}
+HXLINE( 215)		return reconStr;
+            	}
+
+
+HX_DEFINE_DYNAMIC_FUNC0(VariableAccess_obj,getReconstructedString,return )
+
  ::src::compiler::bytecode::Bytecode VariableAccess_obj::getBytecode(){
-            	HX_STACKFRAME(&_hx_pos_abbb7cf773e777fc_170_getBytecode)
-HXDLIN( 170)		::Array< ::Dynamic> _hx_tmp = this->vars;
-HXDLIN( 170)		return ::src::compiler::bytecode::Bytecode_obj::fromArray(_hx_tmp,this->getCodeID());
+            	HX_STACKFRAME(&_hx_pos_abbb7cf773e777fc_227_getBytecode)
+HXDLIN( 227)		::Array< ::Dynamic> _hx_tmp = this->vars;
+HXDLIN( 227)		return ::src::compiler::bytecode::Bytecode_obj::fromArray(_hx_tmp,this->getCodeID());
             	}
 
 
 ::Array< ::Dynamic> VariableAccess_obj::reconstruct(){
-            	HX_GC_STACKFRAME(&_hx_pos_abbb7cf773e777fc_175_reconstruct)
-HXDLIN( 175)		 ::src::ast::base::AccessToken _hx_tmp =  ::src::ast::base::AccessToken_obj::__alloc( HX_CTX ,HX_(".",2e,00,00,00));
-HXDLIN( 175)		return _hx_tmp->join(::src::compiler::commands::Command_obj::reconstructCommands(this->vars),null());
+            	HX_GC_STACKFRAME(&_hx_pos_abbb7cf773e777fc_231_reconstruct)
+HXLINE( 232)		::Array< ::Dynamic> tokens = ::Array_obj< ::Dynamic>::__new();
+HXLINE( 233)		{
+HXLINE( 233)			int _g = (int)0;
+HXDLIN( 233)			::Array< ::Dynamic> _g1 = this->vars;
+HXDLIN( 233)			while((_g < _g1->length)){
+HXLINE( 233)				 ::src::compiler::commands::value::ValueCommand v = _g1->__get(_g).StaticCast<  ::src::compiler::commands::value::ValueCommand >();
+HXDLIN( 233)				_g = (_g + (int)1);
+HXLINE( 234)				tokens = tokens->concat(v->reconstruct());
+HXLINE( 235)				tokens->push( ::src::ast::base::AccessToken_obj::__alloc( HX_CTX ,HX_(".",2e,00,00,00)));
+            			}
+            		}
+HXLINE( 237)		if ((tokens->length > (int)0)) {
+HXLINE( 237)			tokens->pop().StaticCast<  ::src::ast::Token >();
+            		}
+HXLINE( 238)		return tokens;
             	}
 
 
  ::src::compiler::commands::value::VariableAccess VariableAccess_obj::fromTokens( ::src::compiler::Scope scope,::Array< ::Dynamic> tokens, ::Dynamic definition){
-            	HX_GC_STACKFRAME(&_hx_pos_abbb7cf773e777fc_20_fromTokens)
-HXLINE(  21)		::Array< ::Dynamic> spl = ::src::compiler::commands::Command_obj::splitTokens(tokens,HX_("AccessToken",95,02,10,8a),null(),null());
-HXLINE(  22)		::Array< ::Dynamic> vars = ::Array_obj< ::Dynamic>::__new();
-HXLINE(  23)		{
-HXLINE(  23)			int _g = (int)0;
-HXDLIN(  23)			while((_g < spl->length)){
-HXLINE(  23)				::Array< ::Dynamic> subtokens = spl->__get(_g).StaticCast< ::Array< ::Dynamic> >();
-HXDLIN(  23)				_g = (_g + (int)1);
-HXLINE(  24)				bool _hx_tmp;
-HXDLIN(  24)				if ((subtokens->length == (int)1)) {
-HXLINE(  24)					_hx_tmp = (subtokens->__get((int)0).StaticCast<  ::src::ast::Token >()->getName() == HX_("VariableToken",fd,96,04,01));
+            	HX_GC_STACKFRAME(&_hx_pos_abbb7cf773e777fc_22_fromTokens)
+HXLINE(  23)		::Array< ::Dynamic> spl = ::src::compiler::commands::Command_obj::splitTokens(tokens,HX_("AccessToken",95,02,10,8a),null(),null());
+HXLINE(  24)		::Array< ::Dynamic> vars = ::Array_obj< ::Dynamic>::__new();
+HXLINE(  25)		{
+HXLINE(  25)			int _g = (int)0;
+HXDLIN(  25)			while((_g < spl->length)){
+HXLINE(  25)				::Array< ::Dynamic> subtokens = spl->__get(_g).StaticCast< ::Array< ::Dynamic> >();
+HXDLIN(  25)				_g = (_g + (int)1);
+HXLINE(  26)				bool _hx_tmp;
+HXDLIN(  26)				if ((subtokens->length == (int)1)) {
+HXLINE(  26)					_hx_tmp = (subtokens->__get((int)0).StaticCast<  ::src::ast::Token >()->getName() == HX_("VariableToken",fd,96,04,01));
             				}
             				else {
-HXLINE(  24)					_hx_tmp = false;
+HXLINE(  26)					_hx_tmp = false;
             				}
-HXDLIN(  24)				if (_hx_tmp) {
-HXLINE(  24)					vars->push( ::src::compiler::commands::value::LiteralValueCommand_obj::__alloc( HX_CTX ,scope,subtokens->__get((int)0).StaticCast<  ::src::ast::Token >()->getContent()));
+HXDLIN(  26)				if (_hx_tmp) {
+HXLINE(  26)					vars->push( ::src::compiler::commands::value::LiteralValueCommand_obj::__alloc( HX_CTX ,scope,subtokens->__get((int)0).StaticCast<  ::src::ast::Token >()->getContent()));
             				}
             				else {
-HXLINE(  25)					vars->push(::src::compiler::commands::value::ValueCommand_obj::fromTokens(scope,subtokens));
+HXLINE(  27)					vars->push(::src::compiler::commands::value::ValueCommand_obj::fromTokens(scope,subtokens));
             				}
             			}
             		}
-HXLINE(  29)		return  ::src::compiler::commands::value::VariableAccess_obj::__alloc( HX_CTX ,scope,vars,definition,null());
+HXLINE(  31)		return  ::src::compiler::commands::value::VariableAccess_obj::__alloc( HX_CTX ,scope,vars,definition,null());
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC3(VariableAccess_obj,fromTokens,return )
 
  ::src::compiler::commands::value::VariableAccess VariableAccess_obj::fromBytecode( ::src::compiler::Scope scope,::Array< ::Dynamic> arr){
-            	HX_GC_STACKFRAME(&_hx_pos_abbb7cf773e777fc_33_fromBytecode)
-HXLINE(  42)		::Array< ::Dynamic> vars = ::Array_obj< ::Dynamic>::__new();
-HXLINE(  43)		while((arr->length > (int)0)){
-HXLINE(  43)			vars->push(arr->shift().StaticCast<  ::src::compiler::bytecode::Bytecode >()->convert(scope));
+            	HX_GC_STACKFRAME(&_hx_pos_abbb7cf773e777fc_35_fromBytecode)
+HXLINE(  44)		::Array< ::Dynamic> vars = ::Array_obj< ::Dynamic>::__new();
+HXLINE(  45)		while((arr->length > (int)0)){
+HXLINE(  45)			vars->push(arr->shift().StaticCast<  ::src::compiler::bytecode::Bytecode >()->convert(scope));
             		}
-HXLINE(  44)		return  ::src::compiler::commands::value::VariableAccess_obj::__alloc( HX_CTX ,scope,vars,null(),null());
+HXLINE(  46)		return  ::src::compiler::commands::value::VariableAccess_obj::__alloc( HX_CTX ,scope,vars,null(),null());
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(VariableAccess_obj,fromBytecode,return )
 
  ::src::compiler::commands::value::VariableAccess VariableAccess_obj::fromInt( ::src::compiler::Scope scope,int i){
-            	HX_GC_STACKFRAME(&_hx_pos_abbb7cf773e777fc_48_fromInt)
-HXLINE(  49)		::String name = ::src::compiler::VariableNamePool_obj::nameFromID(i);
-HXLINE(  50)		return  ::src::compiler::commands::value::VariableAccess_obj::__alloc( HX_CTX ,scope,::Array_obj< ::Dynamic>::__new(1)->init(0, ::src::compiler::commands::value::LiteralValueCommand_obj::__alloc( HX_CTX ,scope,name)),false,true);
+            	HX_GC_STACKFRAME(&_hx_pos_abbb7cf773e777fc_50_fromInt)
+HXLINE(  51)		::String name = ::src::compiler::VariableNamePool_obj::nameFromID(i);
+HXLINE(  52)		return  ::src::compiler::commands::value::VariableAccess_obj::__alloc( HX_CTX ,scope,::Array_obj< ::Dynamic>::__new(1)->init(0, ::src::compiler::commands::value::LiteralValueCommand_obj::__alloc( HX_CTX ,scope,name)),false,true);
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(VariableAccess_obj,fromInt,return )
+
+::Array< ::Dynamic> VariableAccess_obj::copyArray( ::src::compiler::Scope scope,::Array< ::Dynamic> vars){
+            	HX_STACKFRAME(&_hx_pos_abbb7cf773e777fc_56_copyArray)
+HXLINE(  57)		::Array< ::Dynamic> newVars = ::Array_obj< ::Dynamic>::__new();
+HXLINE(  58)		{
+HXLINE(  58)			int _g = (int)0;
+HXDLIN(  58)			while((_g < vars->length)){
+HXLINE(  58)				 ::src::compiler::commands::value::VariableAccess x = vars->__get(_g).StaticCast<  ::src::compiler::commands::value::VariableAccess >();
+HXDLIN(  58)				_g = (_g + (int)1);
+HXDLIN(  58)				newVars->push(x->copy(scope));
+            			}
+            		}
+HXLINE(  59)		return newVars;
+            	}
+
+
+STATIC_HX_DEFINE_DYNAMIC_FUNC2(VariableAccess_obj,copyArray,return )
 
 
 hx::ObjectPtr< VariableAccess_obj > VariableAccess_obj::__new( ::src::compiler::Scope scope,::Array< ::Dynamic> vars, ::Dynamic definition, ::Dynamic obfuscated) {
@@ -338,11 +478,15 @@ hx::Val VariableAccess_obj::__Field(const ::String &inName,hx::PropertyAccess in
 	switch(inName.length) {
 	case 4:
 		if (HX_FIELD_EQ(inName,"vars") ) { return hx::Val( vars ); }
+		if (HX_FIELD_EQ(inName,"copy") ) { return hx::Val( copy_dyn() ); }
 		if (HX_FIELD_EQ(inName,"walk") ) { return hx::Val( walk_dyn() ); }
 		break;
 	case 7:
 		if (HX_FIELD_EQ(inName,"getVars") ) { return hx::Val( getVars_dyn() ); }
 		if (HX_FIELD_EQ(inName,"getName") ) { return hx::Val( getName_dyn() ); }
+		break;
+	case 8:
+		if (HX_FIELD_EQ(inName,"setScope") ) { return hx::Val( setScope_dyn() ); }
 		break;
 	case 11:
 		if (HX_FIELD_EQ(inName,"getVariable") ) { return hx::Val( getVariable_dyn() ); }
@@ -352,6 +496,13 @@ hx::Val VariableAccess_obj::__Field(const ::String &inName,hx::PropertyAccess in
 		break;
 	case 14:
 		if (HX_FIELD_EQ(inName,"deleteVariable") ) { return hx::Val( deleteVariable_dyn() ); }
+		break;
+	case 15:
+		if (HX_FIELD_EQ(inName,"throwInvalidVar") ) { return hx::Val( throwInvalidVar_dyn() ); }
+		if (HX_FIELD_EQ(inName,"getFriendlyName") ) { return hx::Val( getFriendlyName_dyn() ); }
+		break;
+	case 22:
+		if (HX_FIELD_EQ(inName,"getReconstructedString") ) { return hx::Val( getReconstructedString_dyn() ); }
 	}
 	return super::__Field(inName,inCallProp);
 }
@@ -361,6 +512,9 @@ bool VariableAccess_obj::__GetStatic(const ::String &inName, Dynamic &outValue, 
 	switch(inName.length) {
 	case 7:
 		if (HX_FIELD_EQ(inName,"fromInt") ) { outValue = fromInt_dyn(); return true; }
+		break;
+	case 9:
+		if (HX_FIELD_EQ(inName,"copyArray") ) { outValue = copyArray_dyn(); return true; }
 		break;
 	case 10:
 		if (HX_FIELD_EQ(inName,"fromTokens") ) { outValue = fromTokens_dyn(); return true; }
@@ -397,11 +551,16 @@ static hx::StaticInfo *VariableAccess_obj_sStaticStorageInfo = 0;
 static ::String VariableAccess_obj_sMemberFields[] = {
 	HX_HCSTRING("vars","\xac","\x2b","\x49","\x4e"),
 	HX_HCSTRING("getVars","\x62","\xdb","\xcb","\x20"),
+	HX_HCSTRING("copy","\xb5","\xbb","\xc4","\x41"),
+	HX_HCSTRING("setScope","\x92","\xda","\x0d","\x87"),
 	HX_HCSTRING("walk","\x09","\x5d","\xf2","\x4e"),
+	HX_HCSTRING("throwInvalidVar","\xf6","\x3c","\x5d","\x8f"),
 	HX_HCSTRING("getVariable","\xf2","\xd4","\x00","\x8f"),
 	HX_HCSTRING("setVariable","\xfe","\xdb","\x6d","\x99"),
 	HX_HCSTRING("deleteVariable","\x87","\x31","\xe4","\xc2"),
 	HX_HCSTRING("getName","\x01","\x22","\x82","\x1b"),
+	HX_HCSTRING("getFriendlyName","\x0c","\x92","\xf4","\xaf"),
+	HX_HCSTRING("getReconstructedString","\x9e","\x7d","\xdb","\xa2"),
 	HX_HCSTRING("getBytecode","\xeb","\xb6","\x8b","\x7d"),
 	HX_HCSTRING("reconstruct","\x04","\x66","\x1a","\x90"),
 	::String(null()) };
@@ -423,6 +582,7 @@ static ::String VariableAccess_obj_sStaticFields[] = {
 	HX_HCSTRING("fromTokens","\x64","\x1c","\x2b","\xd5"),
 	HX_HCSTRING("fromBytecode","\xbf","\xcf","\xae","\xf7"),
 	HX_HCSTRING("fromInt","\xa5","\xdd","\xfa","\x57"),
+	HX_HCSTRING("copyArray","\xa4","\x91","\x8a","\xab"),
 	::String(null())
 };
 

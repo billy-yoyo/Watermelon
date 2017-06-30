@@ -4,12 +4,14 @@ import src.compiler.object.Object;
 import src.compiler.object.ObjectType;
 import src.compiler.object.builtin.Builtins;
 import src.compiler.object.builtin.ObjectTypeObject;
+import src.compiler.object.builtin.coroutine.CoroutineObject;
 /**
  * ...
  * @author Billyoyo
  */
 class Scope
 {
+    public static var objectIDLimit:Int = 0xFFFFFFFF;
     
     private var root:Scope;
     private var parent:Scope;
@@ -19,8 +21,11 @@ class Scope
     private var builtins:Builtins;
     private var indepFuncScopes:Int;
     private var indepTypeScopes:Int;
+    private var indepCoroScopes:Int;
     public var stringPool:Array<String>;
     public var children:Array<Scope>;
+    public var objectID:Int;
+    public var coroutineObject:CoroutineObject;
     
     public function new(name:String, ?parent:Scope) 
     {
@@ -31,7 +36,10 @@ class Scope
         this.stringPool = new Array<String>();
         this.indepFuncScopes = 0;
         this.indepTypeScopes = 0;
+        this.indepCoroScopes = 0;
         this.children = new Array<Scope>();
+        this.objectID = 0;
+        this.coroutineObject = null;
         
         var lastScope:Scope = this;
         var scope:Scope = this;
@@ -46,7 +54,7 @@ class Scope
             builtins = new Builtins(this);
             for (type in builtins.types) {
                 //types.set(pool.newName('${toString()}.${type.getName()}'), builtins.objTypeType.createValue(type));
-                types.set(type.getName(), builtins.objTypeType.createValue(type));
+                types.set(type.getName(), builtins.objTypeType.createValue(type, scope));
             }
             for (name in builtins.objects.keys()) {
                 //variables.set(pool.newName('${toString()}.$name'), builtins.objects.get(name));
@@ -58,7 +66,23 @@ class Scope
             builtins = getRoot().builtins;
         }
         
-        
+    }
+    
+    public function getClosestCoroutine():CoroutineObject
+    {
+        var scope:Scope = this;
+        while (scope != null) {
+            if (scope.coroutineObject != null) return scope.coroutineObject;
+            scope = scope.getParent();
+        }
+        return null;
+    }
+    
+    public function nextObjectID():Int
+    {
+        objectID++;
+        if (objectID > objectIDLimit) objectID = 0;
+        return objectID;
     }
     
     public function nextFuncScopeName():String
@@ -73,10 +97,16 @@ class Scope
         return '&TYPE$indepTypeScopes&';
     }
     
+    public function nextCoroScopeName():String
+    {
+        indepCoroScopes++;
+        return '&CORO$indepCoroScopes&';
+    }
+    
     public function createObject(type:String, objName:String, ?args:Array<Object>):Object {
         var type:ObjectType = getType(type);
         if (type == null) throw 'Unknown type $type';
-        var obj:Object = type.createObject(args);
+        var obj:Object = type.createObject(this, args);
         variables.set(objName, obj);
         return obj;
     }
@@ -89,6 +119,11 @@ class Scope
     public function getParent():Scope
     {
         return parent;
+    }
+    
+    public function setParent(parent:Scope)
+    {
+        this.parent = parent;
     }
     
     public function getRoot():Scope
@@ -132,7 +167,6 @@ class Scope
     {
         var scope:Scope = this;
         while (scope != null) {
-            
             if (scope.getVariables().exists(name) || scope.getTypes().exists(name)) return true;
             scope = scope.getParent();
         }
@@ -176,7 +210,7 @@ class Scope
     public function setType(name:String, type:ObjectType, ?obfuscated:Bool):Scope
     {
         //if (obfuscated == null || !obfuscated) name = pool.getName('${toString()}.$name');
-        types.set(name, getType("ObjectTypeType").createValue(type));
+        types.set(name, getType("ObjectTypeType").createValue(type, this));
         return this;
     }
     

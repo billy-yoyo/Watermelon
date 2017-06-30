@@ -7,11 +7,14 @@
 #endif
 
 HX_DECLARE_CLASS1(haxe,IMap)
+HX_DECLARE_CLASS2(haxe,ds,IntMap)
 HX_DECLARE_CLASS2(haxe,ds,StringMap)
+HX_DECLARE_CLASS2(haxe,io,Bytes)
 HX_DECLARE_CLASS2(src,compiler,Scope)
 HX_DECLARE_CLASS3(src,compiler,object,Object)
 HX_DECLARE_CLASS3(src,compiler,object,ObjectType)
 HX_DECLARE_CLASS4(src,compiler,object,builtin,BoolObject)
+HX_DECLARE_CLASS4(src,compiler,object,builtin,BytesObject)
 HX_DECLARE_CLASS4(src,compiler,object,builtin,FloatObject)
 HX_DECLARE_CLASS4(src,compiler,object,builtin,IntObject)
 HX_DECLARE_CLASS4(src,compiler,object,builtin,IteratorObject)
@@ -61,6 +64,10 @@ class HXCPP_CLASS_ATTRIBUTES Object_obj : public hx::Object
 		 ::haxe::ds::StringMap members;
 		 ::src::compiler::Scope scope;
 		 ::src::compiler::object::ObjectType type;
+		int objID;
+		virtual void setScope( ::src::compiler::Scope scope);
+		::Dynamic setScope_dyn();
+
 		virtual  ::src::compiler::object::Object copy();
 		::Dynamic copy_dyn();
 
@@ -87,6 +94,9 @@ class HXCPP_CLASS_ATTRIBUTES Object_obj : public hx::Object
 
 		 ::src::compiler::object::builtin::TupleObject _tuple(::Array< ::Dynamic> values,::Array< ::Dynamic> args);
 		::Dynamic _tuple_dyn();
+
+		 ::src::compiler::object::builtin::BytesObject _bytes( ::haxe::io::Bytes value,::Array< ::Dynamic> args);
+		::Dynamic _bytes_dyn();
 
 		bool isInstance(::String type);
 		::Dynamic isInstance_dyn();
@@ -163,6 +173,9 @@ class HXCPP_CLASS_ATTRIBUTES Object_obj : public hx::Object
 		virtual  ::src::compiler::object::builtin::TupleObject tuple();
 		::Dynamic tuple_dyn();
 
+		virtual  ::src::compiler::object::builtin::BytesObject bytes();
+		::Dynamic bytes_dyn();
+
 		virtual  ::src::compiler::object::builtin::MapObject map();
 		::Dynamic map_dyn();
 
@@ -213,6 +226,9 @@ class HXCPP_CLASS_ATTRIBUTES Object_obj : public hx::Object
 
 		virtual  ::src::compiler::object::Object rmod( ::src::compiler::object::Object other);
 		::Dynamic rmod_dyn();
+
+		virtual  ::src::compiler::object::Object negate();
+		::Dynamic negate_dyn();
 
 		virtual  ::src::compiler::object::builtin::IntObject len();
 		::Dynamic len_dyn();
@@ -280,10 +296,22 @@ class HXCPP_CLASS_ATTRIBUTES Object_obj : public hx::Object
 		bool rawBool();
 		::Dynamic rawBool_dyn();
 
+		 ::haxe::io::Bytes rawBytes();
+		::Dynamic rawBytes_dyn();
+
+		::Array< ::Dynamic> rawList();
+		::Dynamic rawList_dyn();
+
+		::Array< ::Dynamic> rawTuple();
+		::Dynamic rawTuple_dyn();
+
+		 ::haxe::ds::IntMap rawMap();
+		::Dynamic rawMap_dyn();
+
 		::String rawString();
 		::Dynamic rawString_dyn();
 
-		virtual ::String getHash();
+		virtual int getHash();
 		::Dynamic getHash_dyn();
 
 };

@@ -58,9 +58,15 @@ class HXCPP_CLASS_ATTRIBUTES CondAndExpr_obj : public  ::src::compiler::commands
 
 		 ::src::compiler::commands::value::ValueCommand cond;
 		::Array< ::Dynamic> code;
+		 ::src::compiler::commands::Command copy( ::src::compiler::Scope scope);
+
+		void setScope( ::src::compiler::Scope scope);
+
 		::Array< ::Dynamic> walk();
 
 		::String getName();
+
+		::String getFriendlyName();
 
 		 ::src::compiler::bytecode::Bytecode getBytecode();
 

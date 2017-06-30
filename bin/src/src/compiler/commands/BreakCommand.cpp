@@ -32,20 +32,22 @@
 #include <src/compiler/signals/SyntaxErrorSignal.h>
 #endif
 
-HX_DEFINE_STACK_FRAME(_hx_pos_d5870ae631e9e7a5_14_new,"src.compiler.commands.BreakCommand","new",0x470d9f7f,"src.compiler.commands.BreakCommand.new","src/compiler/commands/BreakCommand.hx",14,0xdd2455d0)
-HX_LOCAL_STACK_FRAME(_hx_pos_d5870ae631e9e7a5_31_run,"src.compiler.commands.BreakCommand","run",0x4710b66a,"src.compiler.commands.BreakCommand.run","src/compiler/commands/BreakCommand.hx",31,0xdd2455d0)
-HX_LOCAL_STACK_FRAME(_hx_pos_d5870ae631e9e7a5_36_getName,"src.compiler.commands.BreakCommand","getName",0x7e3b6ca0,"src.compiler.commands.BreakCommand.getName","src/compiler/commands/BreakCommand.hx",36,0xdd2455d0)
-HX_LOCAL_STACK_FRAME(_hx_pos_d5870ae631e9e7a5_41_getBytecode,"src.compiler.commands.BreakCommand","getBytecode",0x64683d0a,"src.compiler.commands.BreakCommand.getBytecode","src/compiler/commands/BreakCommand.hx",41,0xdd2455d0)
-HX_LOCAL_STACK_FRAME(_hx_pos_d5870ae631e9e7a5_46_reconstruct,"src.compiler.commands.BreakCommand","reconstruct",0x76f6ec23,"src.compiler.commands.BreakCommand.reconstruct","src/compiler/commands/BreakCommand.hx",46,0xdd2455d0)
-HX_LOCAL_STACK_FRAME(_hx_pos_d5870ae631e9e7a5_17_fromBytecode,"src.compiler.commands.BreakCommand","fromBytecode",0x11c7a4c0,"src.compiler.commands.BreakCommand.fromBytecode","src/compiler/commands/BreakCommand.hx",17,0xdd2455d0)
-HX_LOCAL_STACK_FRAME(_hx_pos_d5870ae631e9e7a5_23_fromTokens,"src.compiler.commands.BreakCommand","fromTokens",0x7ef4ff25,"src.compiler.commands.BreakCommand.fromTokens","src/compiler/commands/BreakCommand.hx",23,0xdd2455d0)
+HX_DEFINE_STACK_FRAME(_hx_pos_d5870ae631e9e7a5_15_new,"src.compiler.commands.BreakCommand","new",0x470d9f7f,"src.compiler.commands.BreakCommand.new","src/compiler/commands/BreakCommand.hx",15,0xdd2455d0)
+HX_LOCAL_STACK_FRAME(_hx_pos_d5870ae631e9e7a5_32_copy,"src.compiler.commands.BreakCommand","copy",0xdda027b6,"src.compiler.commands.BreakCommand.copy","src/compiler/commands/BreakCommand.hx",32,0xdd2455d0)
+HX_LOCAL_STACK_FRAME(_hx_pos_d5870ae631e9e7a5_37_run,"src.compiler.commands.BreakCommand","run",0x4710b66a,"src.compiler.commands.BreakCommand.run","src/compiler/commands/BreakCommand.hx",37,0xdd2455d0)
+HX_LOCAL_STACK_FRAME(_hx_pos_d5870ae631e9e7a5_42_getName,"src.compiler.commands.BreakCommand","getName",0x7e3b6ca0,"src.compiler.commands.BreakCommand.getName","src/compiler/commands/BreakCommand.hx",42,0xdd2455d0)
+HX_LOCAL_STACK_FRAME(_hx_pos_d5870ae631e9e7a5_47_getFriendlyName,"src.compiler.commands.BreakCommand","getFriendlyName",0xbff813ab,"src.compiler.commands.BreakCommand.getFriendlyName","src/compiler/commands/BreakCommand.hx",47,0xdd2455d0)
+HX_LOCAL_STACK_FRAME(_hx_pos_d5870ae631e9e7a5_52_getBytecode,"src.compiler.commands.BreakCommand","getBytecode",0x64683d0a,"src.compiler.commands.BreakCommand.getBytecode","src/compiler/commands/BreakCommand.hx",52,0xdd2455d0)
+HX_LOCAL_STACK_FRAME(_hx_pos_d5870ae631e9e7a5_57_reconstruct,"src.compiler.commands.BreakCommand","reconstruct",0x76f6ec23,"src.compiler.commands.BreakCommand.reconstruct","src/compiler/commands/BreakCommand.hx",57,0xdd2455d0)
+HX_LOCAL_STACK_FRAME(_hx_pos_d5870ae631e9e7a5_18_fromBytecode,"src.compiler.commands.BreakCommand","fromBytecode",0x11c7a4c0,"src.compiler.commands.BreakCommand.fromBytecode","src/compiler/commands/BreakCommand.hx",18,0xdd2455d0)
+HX_LOCAL_STACK_FRAME(_hx_pos_d5870ae631e9e7a5_24_fromTokens,"src.compiler.commands.BreakCommand","fromTokens",0x7ef4ff25,"src.compiler.commands.BreakCommand.fromTokens","src/compiler/commands/BreakCommand.hx",24,0xdd2455d0)
 namespace src{
 namespace compiler{
 namespace commands{
 
 void BreakCommand_obj::__construct( ::src::compiler::Scope scope){
-            	HX_STACKFRAME(&_hx_pos_d5870ae631e9e7a5_14_new)
-HXDLIN(  14)		super::__construct(scope);
+            	HX_STACKFRAME(&_hx_pos_d5870ae631e9e7a5_15_new)
+HXDLIN(  15)		super::__construct(scope);
             	}
 
 Dynamic BreakCommand_obj::__CreateEmpty() { return new BreakCommand_obj; }
@@ -67,63 +69,75 @@ bool BreakCommand_obj::_hx_isInstanceOf(int inClassId) {
 	}
 }
 
+ ::src::compiler::commands::Command BreakCommand_obj::copy( ::src::compiler::Scope scope){
+            	HX_GC_STACKFRAME(&_hx_pos_d5870ae631e9e7a5_32_copy)
+HXDLIN(  32)		return  ::src::compiler::commands::BreakCommand_obj::__alloc( HX_CTX ,scope);
+            	}
+
+
  ::src::compiler::object::Object BreakCommand_obj::run(){
-            	HX_GC_STACKFRAME(&_hx_pos_d5870ae631e9e7a5_31_run)
-HXDLIN(  31)		HX_STACK_DO_THROW( ::src::compiler::signals::LoopBreakSignal_obj::__alloc( HX_CTX ));
-HXDLIN(  31)		return null();
+            	HX_GC_STACKFRAME(&_hx_pos_d5870ae631e9e7a5_37_run)
+HXDLIN(  37)		HX_STACK_DO_THROW( ::src::compiler::signals::LoopBreakSignal_obj::__alloc( HX_CTX ));
+HXDLIN(  37)		return null();
             	}
 
 
 ::String BreakCommand_obj::getName(){
-            	HX_STACKFRAME(&_hx_pos_d5870ae631e9e7a5_36_getName)
-HXDLIN(  36)		return HX_("BreakCommand",6c,66,14,58);
+            	HX_STACKFRAME(&_hx_pos_d5870ae631e9e7a5_42_getName)
+HXDLIN(  42)		return HX_("BreakCommand",6c,66,14,58);
+            	}
+
+
+::String BreakCommand_obj::getFriendlyName(){
+            	HX_STACKFRAME(&_hx_pos_d5870ae631e9e7a5_47_getFriendlyName)
+HXDLIN(  47)		return HX_("break",bf,24,ec,b8);
             	}
 
 
  ::src::compiler::bytecode::Bytecode BreakCommand_obj::getBytecode(){
-            	HX_STACKFRAME(&_hx_pos_d5870ae631e9e7a5_41_getBytecode)
-HXDLIN(  41)		return ::src::compiler::bytecode::Bytecode_obj::fromNull(this->getCodeID());
+            	HX_STACKFRAME(&_hx_pos_d5870ae631e9e7a5_52_getBytecode)
+HXDLIN(  52)		return ::src::compiler::bytecode::Bytecode_obj::fromNull(this->getCodeID());
             	}
 
 
 ::Array< ::Dynamic> BreakCommand_obj::reconstruct(){
-            	HX_GC_STACKFRAME(&_hx_pos_d5870ae631e9e7a5_46_reconstruct)
-HXDLIN(  46)		return ::Array_obj< ::Dynamic>::__new(1)->init(0, ::src::ast::base::KwdToken_obj::__alloc( HX_CTX ,HX_("break",bf,24,ec,b8)));
+            	HX_GC_STACKFRAME(&_hx_pos_d5870ae631e9e7a5_57_reconstruct)
+HXDLIN(  57)		return ::Array_obj< ::Dynamic>::__new(1)->init(0, ::src::ast::base::KwdToken_obj::__alloc( HX_CTX ,HX_("break",bf,24,ec,b8)));
             	}
 
 
  ::src::compiler::commands::BreakCommand BreakCommand_obj::fromBytecode( ::src::compiler::Scope scope,::Array< ::Dynamic> arr){
-            	HX_GC_STACKFRAME(&_hx_pos_d5870ae631e9e7a5_17_fromBytecode)
-HXLINE(  18)		arr->shift().StaticCast<  ::src::compiler::bytecode::Bytecode >();
-HXLINE(  19)		return  ::src::compiler::commands::BreakCommand_obj::__alloc( HX_CTX ,scope);
+            	HX_GC_STACKFRAME(&_hx_pos_d5870ae631e9e7a5_18_fromBytecode)
+HXLINE(  19)		arr->shift().StaticCast<  ::src::compiler::bytecode::Bytecode >();
+HXLINE(  20)		return  ::src::compiler::commands::BreakCommand_obj::__alloc( HX_CTX ,scope);
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(BreakCommand_obj,fromBytecode,return )
 
  ::src::compiler::commands::BreakCommand BreakCommand_obj::fromTokens( ::src::compiler::Scope scope,::Array< ::Dynamic> tokens){
-            	HX_GC_STACKFRAME(&_hx_pos_d5870ae631e9e7a5_23_fromTokens)
-HXLINE(  24)		bool _hx_tmp;
-HXDLIN(  24)		if ((tokens->length == (int)2)) {
-HXLINE(  24)			_hx_tmp = (tokens->__get((int)1).StaticCast<  ::src::ast::Token >()->getName() != HX_("EndLineToken",2a,db,3a,32));
+            	HX_GC_STACKFRAME(&_hx_pos_d5870ae631e9e7a5_24_fromTokens)
+HXLINE(  25)		bool _hx_tmp;
+HXDLIN(  25)		if ((tokens->length == (int)2)) {
+HXLINE(  25)			_hx_tmp = (tokens->__get((int)1).StaticCast<  ::src::ast::Token >()->getName() != HX_("EndLineToken",2a,db,3a,32));
             		}
             		else {
-HXLINE(  24)			_hx_tmp = true;
+HXLINE(  25)			_hx_tmp = true;
             		}
-HXDLIN(  24)		if (_hx_tmp) {
-HXLINE(  24)			HX_STACK_DO_THROW( ::src::compiler::signals::SyntaxErrorSignal_obj::__alloc( HX_CTX ,HX_("Break must by itself in an expression",a6,ff,66,0d)));
+HXDLIN(  25)		if (_hx_tmp) {
+HXLINE(  25)			HX_STACK_DO_THROW( ::src::compiler::signals::SyntaxErrorSignal_obj::__alloc( HX_CTX ,HX_("Break must by itself in an expression",a6,ff,66,0d)));
             		}
-HXLINE(  25)		bool _hx_tmp1;
-HXDLIN(  25)		if ((tokens->__get((int)0).StaticCast<  ::src::ast::Token >()->getName() == HX_("KwdToken",c1,aa,4a,b9))) {
-HXLINE(  25)			_hx_tmp1 = hx::IsNotEq( tokens->__get((int)0).StaticCast<  ::src::ast::Token >()->getContent(),HX_("break",bf,24,ec,b8) );
+HXLINE(  26)		bool _hx_tmp1;
+HXDLIN(  26)		if ((tokens->__get((int)0).StaticCast<  ::src::ast::Token >()->getName() == HX_("KwdToken",c1,aa,4a,b9))) {
+HXLINE(  26)			_hx_tmp1 = hx::IsNotEq( tokens->__get((int)0).StaticCast<  ::src::ast::Token >()->getContent(),HX_("break",bf,24,ec,b8) );
             		}
             		else {
-HXLINE(  25)			_hx_tmp1 = true;
+HXLINE(  26)			_hx_tmp1 = true;
             		}
-HXDLIN(  25)		if (_hx_tmp1) {
-HXLINE(  25)			HX_STACK_DO_THROW( ::src::compiler::signals::SyntaxErrorSignal_obj::__alloc( HX_CTX ,HX_("Invalid break expression",c2,3a,ca,ed)));
+HXDLIN(  26)		if (_hx_tmp1) {
+HXLINE(  26)			HX_STACK_DO_THROW( ::src::compiler::signals::SyntaxErrorSignal_obj::__alloc( HX_CTX ,HX_("Invalid break expression",c2,3a,ca,ed)));
             		}
-HXLINE(  26)		return  ::src::compiler::commands::BreakCommand_obj::__alloc( HX_CTX ,scope);
+HXLINE(  27)		return  ::src::compiler::commands::BreakCommand_obj::__alloc( HX_CTX ,scope);
             	}
 
 
@@ -153,12 +167,18 @@ hx::Val BreakCommand_obj::__Field(const ::String &inName,hx::PropertyAccess inCa
 	case 3:
 		if (HX_FIELD_EQ(inName,"run") ) { return hx::Val( run_dyn() ); }
 		break;
+	case 4:
+		if (HX_FIELD_EQ(inName,"copy") ) { return hx::Val( copy_dyn() ); }
+		break;
 	case 7:
 		if (HX_FIELD_EQ(inName,"getName") ) { return hx::Val( getName_dyn() ); }
 		break;
 	case 11:
 		if (HX_FIELD_EQ(inName,"getBytecode") ) { return hx::Val( getBytecode_dyn() ); }
 		if (HX_FIELD_EQ(inName,"reconstruct") ) { return hx::Val( reconstruct_dyn() ); }
+		break;
+	case 15:
+		if (HX_FIELD_EQ(inName,"getFriendlyName") ) { return hx::Val( getFriendlyName_dyn() ); }
 	}
 	return super::__Field(inName,inCallProp);
 }
@@ -181,8 +201,10 @@ static hx::StaticInfo *BreakCommand_obj_sStaticStorageInfo = 0;
 #endif
 
 static ::String BreakCommand_obj_sMemberFields[] = {
+	HX_HCSTRING("copy","\xb5","\xbb","\xc4","\x41"),
 	HX_HCSTRING("run","\x4b","\xe7","\x56","\x00"),
 	HX_HCSTRING("getName","\x01","\x22","\x82","\x1b"),
+	HX_HCSTRING("getFriendlyName","\x0c","\x92","\xf4","\xaf"),
 	HX_HCSTRING("getBytecode","\xeb","\xb6","\x8b","\x7d"),
 	HX_HCSTRING("reconstruct","\x04","\x66","\x1a","\x90"),
 	::String(null()) };

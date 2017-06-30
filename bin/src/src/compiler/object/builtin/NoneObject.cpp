@@ -106,9 +106,9 @@ HXLINE(  36)		return this->_float((int)0,null());
             	}
 
 
-::String NoneObject_obj::getHash(){
+int NoneObject_obj::getHash(){
             	HX_STACKFRAME(&_hx_pos_dae5fce86c0e06c6_41_getHash)
-HXDLIN(  41)		return HX_("",00,00,00,00);
+HXDLIN(  41)		return (int)0;
             	}
 
 

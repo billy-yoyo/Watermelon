@@ -33,10 +33,10 @@ HX_LOCAL_STACK_FRAME(_hx_pos_bf1ff747287569c6_75_getMember,"src.compiler.object.
 HX_LOCAL_STACK_FRAME(_hx_pos_bf1ff747287569c6_80_deleteMember,"src.compiler.object.ObjectType","deleteMember",0xe5fe34f0,"src.compiler.object.ObjectType.deleteMember","src/compiler/object/ObjectType.hx",80,0x182e169a)
 HX_LOCAL_STACK_FRAME(_hx_pos_bf1ff747287569c6_85_hasMember,"src.compiler.object.ObjectType","hasMember",0x0a274469,"src.compiler.object.ObjectType.hasMember","src/compiler/object/ObjectType.hx",85,0x182e169a)
 HX_LOCAL_STACK_FRAME(_hx_pos_bf1ff747287569c6_89_createObject,"src.compiler.object.ObjectType","createObject",0xb244eae6,"src.compiler.object.ObjectType.createObject","src/compiler/object/ObjectType.hx",89,0x182e169a)
-HX_LOCAL_STACK_FRAME(_hx_pos_bf1ff747287569c6_96_createValue,"src.compiler.object.ObjectType","createValue",0xd696152a,"src.compiler.object.ObjectType.createValue","src/compiler/object/ObjectType.hx",96,0x182e169a)
-HX_LOCAL_STACK_FRAME(_hx_pos_bf1ff747287569c6_105_getScope,"src.compiler.object.ObjectType","getScope",0x46a10ba9,"src.compiler.object.ObjectType.getScope","src/compiler/object/ObjectType.hx",105,0x182e169a)
-HX_LOCAL_STACK_FRAME(_hx_pos_bf1ff747287569c6_110_getName,"src.compiler.object.ObjectType","getName",0x4c3771d6,"src.compiler.object.ObjectType.getName","src/compiler/object/ObjectType.hx",110,0x182e169a)
-HX_LOCAL_STACK_FRAME(_hx_pos_bf1ff747287569c6_115_toString,"src.compiler.object.ObjectType","toString",0xa65f5b37,"src.compiler.object.ObjectType.toString","src/compiler/object/ObjectType.hx",115,0x182e169a)
+HX_LOCAL_STACK_FRAME(_hx_pos_bf1ff747287569c6_97_createValue,"src.compiler.object.ObjectType","createValue",0xd696152a,"src.compiler.object.ObjectType.createValue","src/compiler/object/ObjectType.hx",97,0x182e169a)
+HX_LOCAL_STACK_FRAME(_hx_pos_bf1ff747287569c6_107_getScope,"src.compiler.object.ObjectType","getScope",0x46a10ba9,"src.compiler.object.ObjectType.getScope","src/compiler/object/ObjectType.hx",107,0x182e169a)
+HX_LOCAL_STACK_FRAME(_hx_pos_bf1ff747287569c6_112_getName,"src.compiler.object.ObjectType","getName",0x4c3771d6,"src.compiler.object.ObjectType.getName","src/compiler/object/ObjectType.hx",112,0x182e169a)
+HX_LOCAL_STACK_FRAME(_hx_pos_bf1ff747287569c6_117_toString,"src.compiler.object.ObjectType","toString",0xa65f5b37,"src.compiler.object.ObjectType.toString","src/compiler/object/ObjectType.hx",117,0x182e169a)
 namespace src{
 namespace compiler{
 namespace object{
@@ -74,8 +74,9 @@ HXLINE(  28)								members->set(key1,parent->getMembers()->get(key1).StaticCast
 HXLINE(  33)		this->objectClass = objectClass;
 HXLINE(  34)		if (hx::IsNull( objectClass )) {
 HXLINE(  35)			int _g1 = (int)0;
-HXDLIN(  35)			while((_g1 < parentTypes->length)){
-HXLINE(  35)				 ::src::compiler::object::ObjectType type = parentTypes->__get(_g1).StaticCast<  ::src::compiler::object::ObjectType >();
+HXDLIN(  35)			::Array< ::Dynamic> _g11 = this->parentTypes;
+HXDLIN(  35)			while((_g1 < _g11->length)){
+HXLINE(  35)				 ::src::compiler::object::ObjectType type = _g11->__get(_g1).StaticCast<  ::src::compiler::object::ObjectType >();
 HXDLIN(  35)				_g1 = (_g1 + (int)1);
 HXLINE(  36)				if (hx::IsNotNull( type->getObjectClass() )) {
 HXLINE(  37)					this->objectClass = type->getObjectClass();
@@ -179,73 +180,79 @@ HXDLIN(  85)		return this->members->exists(name);
 
 HX_DEFINE_DYNAMIC_FUNC1(ObjectType_obj,hasMember,return )
 
- ::src::compiler::object::Object ObjectType_obj::createObject(::Array< ::Dynamic> args){
+ ::src::compiler::object::Object ObjectType_obj::createObject( ::src::compiler::Scope scope,::Array< ::Dynamic> args){
             	HX_GC_STACKFRAME(&_hx_pos_bf1ff747287569c6_89_createObject)
-HXLINE(  90)		 ::haxe::ds::StringMap members =  ::haxe::ds::StringMap_obj::__alloc( HX_CTX );
-HXLINE(  91)		{
-HXLINE(  91)			 ::Dynamic member = this->members->keys();
-HXDLIN(  91)			while(( (bool)(member->__Field(HX_("hasNext",6d,a5,46,18),hx::paccDynamic)()) )){
-HXLINE(  91)				::String member1 = ( (::String)(member->__Field(HX_("next",f3,84,02,49),hx::paccDynamic)()) );
-HXDLIN(  91)				members->set(member1,this->members->get(member1).StaticCast<  ::src::compiler::object::Object >()->copy());
+HXLINE(  90)		if (hx::IsNull( scope )) {
+HXLINE(  90)			scope = this->scope;
+            		}
+HXLINE(  91)		 ::haxe::ds::StringMap members =  ::haxe::ds::StringMap_obj::__alloc( HX_CTX );
+HXLINE(  92)		{
+HXLINE(  92)			 ::Dynamic member = this->members->keys();
+HXDLIN(  92)			while(( (bool)(member->__Field(HX_("hasNext",6d,a5,46,18),hx::paccDynamic)()) )){
+HXLINE(  92)				::String member1 = ( (::String)(member->__Field(HX_("next",f3,84,02,49),hx::paccDynamic)()) );
+HXDLIN(  92)				members->set(member1,this->members->get(member1).StaticCast<  ::src::compiler::object::Object >()->copy());
             			}
             		}
-HXLINE(  92)		hx::Class _hx_tmp;
-HXDLIN(  92)		if (hx::IsNull( this->objectClass )) {
-HXLINE(  92)			_hx_tmp = hx::ClassOf< ::src::compiler::object::Object >();
+HXLINE(  93)		hx::Class _hx_tmp;
+HXDLIN(  93)		if (hx::IsNull( this->objectClass )) {
+HXLINE(  93)			_hx_tmp = hx::ClassOf< ::src::compiler::object::Object >();
             		}
             		else {
-HXLINE(  92)			_hx_tmp = this->objectClass;
+HXLINE(  93)			_hx_tmp = this->objectClass;
             		}
-HXDLIN(  92)		return ( ( ::src::compiler::object::Object)(::Type_obj::createInstance(_hx_tmp,::cpp::VirtualArray_obj::__new(4)->init(0,this->scope)->init(1,hx::ObjectPtr<OBJ_>(this))->init(2,members)->init(3,args))) );
+HXDLIN(  93)		return ( ( ::src::compiler::object::Object)(::Type_obj::createInstance(_hx_tmp,::cpp::VirtualArray_obj::__new(4)->init(0,scope)->init(1,hx::ObjectPtr<OBJ_>(this))->init(2,members)->init(3,args))) );
             	}
 
 
-HX_DEFINE_DYNAMIC_FUNC1(ObjectType_obj,createObject,return )
+HX_DEFINE_DYNAMIC_FUNC2(ObjectType_obj,createObject,return )
 
- ::src::compiler::object::Object ObjectType_obj::createValue( ::Dynamic value,::Array< ::Dynamic> args){
-            	HX_GC_STACKFRAME(&_hx_pos_bf1ff747287569c6_96_createValue)
-HXLINE(  97)		 ::haxe::ds::StringMap members =  ::haxe::ds::StringMap_obj::__alloc( HX_CTX );
-HXLINE(  98)		{
-HXLINE(  98)			 ::Dynamic member = this->members->keys();
-HXDLIN(  98)			while(( (bool)(member->__Field(HX_("hasNext",6d,a5,46,18),hx::paccDynamic)()) )){
-HXLINE(  98)				::String member1 = ( (::String)(member->__Field(HX_("next",f3,84,02,49),hx::paccDynamic)()) );
-HXDLIN(  98)				members->set(member1,this->members->get(member1).StaticCast<  ::src::compiler::object::Object >()->copy());
+ ::src::compiler::object::Object ObjectType_obj::createValue( ::Dynamic value, ::src::compiler::Scope scope,::Array< ::Dynamic> args){
+            	HX_GC_STACKFRAME(&_hx_pos_bf1ff747287569c6_97_createValue)
+HXLINE(  98)		if (hx::IsNull( scope )) {
+HXLINE(  98)			scope = this->scope;
+            		}
+HXLINE(  99)		 ::haxe::ds::StringMap members =  ::haxe::ds::StringMap_obj::__alloc( HX_CTX );
+HXLINE( 100)		{
+HXLINE( 100)			 ::Dynamic member = this->members->keys();
+HXDLIN( 100)			while(( (bool)(member->__Field(HX_("hasNext",6d,a5,46,18),hx::paccDynamic)()) )){
+HXLINE( 100)				::String member1 = ( (::String)(member->__Field(HX_("next",f3,84,02,49),hx::paccDynamic)()) );
+HXDLIN( 100)				members->set(member1,this->members->get(member1).StaticCast<  ::src::compiler::object::Object >()->copy());
             			}
             		}
-HXLINE(  99)		bool _hx_tmp = hx::IsNull( this->objectClass );
-HXLINE( 100)		hx::Class _hx_tmp1;
-HXDLIN( 100)		if (hx::IsNull( this->objectClass )) {
-HXLINE( 100)			_hx_tmp1 = hx::ClassOf< ::src::compiler::object::Object >();
+HXLINE( 101)		bool _hx_tmp = hx::IsNull( this->objectClass );
+HXLINE( 102)		hx::Class _hx_tmp1;
+HXDLIN( 102)		if (hx::IsNull( this->objectClass )) {
+HXLINE( 102)			_hx_tmp1 = hx::ClassOf< ::src::compiler::object::Object >();
             		}
             		else {
-HXLINE( 100)			_hx_tmp1 = this->objectClass;
+HXLINE( 102)			_hx_tmp1 = this->objectClass;
             		}
-HXDLIN( 100)		return ( ( ::src::compiler::object::Object)(::Type_obj::createInstance(_hx_tmp1,::cpp::VirtualArray_obj::__new(5)->init(0,this->scope)->init(1,hx::ObjectPtr<OBJ_>(this))->init(2,members)->init(3,value)->init(4,args))) );
+HXDLIN( 102)		return ( ( ::src::compiler::object::Object)(::Type_obj::createInstance(_hx_tmp1,::cpp::VirtualArray_obj::__new(5)->init(0,scope)->init(1,hx::ObjectPtr<OBJ_>(this))->init(2,members)->init(3,value)->init(4,args))) );
             	}
 
 
-HX_DEFINE_DYNAMIC_FUNC2(ObjectType_obj,createValue,return )
+HX_DEFINE_DYNAMIC_FUNC3(ObjectType_obj,createValue,return )
 
  ::src::compiler::Scope ObjectType_obj::getScope(){
-            	HX_STACKFRAME(&_hx_pos_bf1ff747287569c6_105_getScope)
-HXDLIN( 105)		return this->scope;
+            	HX_STACKFRAME(&_hx_pos_bf1ff747287569c6_107_getScope)
+HXDLIN( 107)		return this->scope;
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(ObjectType_obj,getScope,return )
 
 ::String ObjectType_obj::getName(){
-            	HX_STACKFRAME(&_hx_pos_bf1ff747287569c6_110_getName)
-HXDLIN( 110)		return this->name;
+            	HX_STACKFRAME(&_hx_pos_bf1ff747287569c6_112_getName)
+HXDLIN( 112)		return this->name;
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(ObjectType_obj,getName,return )
 
 ::String ObjectType_obj::toString(){
-            	HX_STACKFRAME(&_hx_pos_bf1ff747287569c6_115_toString)
-HXDLIN( 115)		::String _hx_tmp = ((HX_("",00,00,00,00) + ::Std_obj::string(this->scope)) + HX_(".",2e,00,00,00));
-HXDLIN( 115)		return (_hx_tmp + this->getName());
+            	HX_STACKFRAME(&_hx_pos_bf1ff747287569c6_117_toString)
+HXDLIN( 117)		::String _hx_tmp = ((HX_("",00,00,00,00) + ::Std_obj::string(this->scope)) + HX_(".",2e,00,00,00));
+HXDLIN( 117)		return (_hx_tmp + this->getName());
             	}
 
 

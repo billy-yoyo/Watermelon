@@ -12,9 +12,9 @@
 #endif
 
 HX_DEFINE_STACK_FRAME(_hx_pos_9addce771fe971fc_7_new,"src.ast.maths.HexToken","new",0x7f28d8c9,"src.ast.maths.HexToken.new","src/ast/maths/HexToken.hx",7,0x97ddb9a4)
-HX_LOCAL_STACK_FRAME(_hx_pos_9addce771fe971fc_24_getName,"src.ast.maths.HexToken","getName",0xd28e12ea,"src.ast.maths.HexToken.getName","src/ast/maths/HexToken.hx",24,0x97ddb9a4)
-HX_LOCAL_STACK_FRAME(_hx_pos_9addce771fe971fc_14_match,"src.ast.maths.HexToken","match",0xa799fdee,"src.ast.maths.HexToken.match","src/ast/maths/HexToken.hx",14,0x97ddb9a4)
-HX_LOCAL_STACK_FRAME(_hx_pos_9addce771fe971fc_19_partialMatch,"src.ast.maths.HexToken","partialMatch",0x7b97307b,"src.ast.maths.HexToken.partialMatch","src/ast/maths/HexToken.hx",19,0x97ddb9a4)
+HX_LOCAL_STACK_FRAME(_hx_pos_9addce771fe971fc_34_getName,"src.ast.maths.HexToken","getName",0xd28e12ea,"src.ast.maths.HexToken.getName","src/ast/maths/HexToken.hx",34,0x97ddb9a4)
+HX_LOCAL_STACK_FRAME(_hx_pos_9addce771fe971fc_24_match,"src.ast.maths.HexToken","match",0xa799fdee,"src.ast.maths.HexToken.match","src/ast/maths/HexToken.hx",24,0x97ddb9a4)
+HX_LOCAL_STACK_FRAME(_hx_pos_9addce771fe971fc_29_partialMatch,"src.ast.maths.HexToken","partialMatch",0x7b97307b,"src.ast.maths.HexToken.partialMatch","src/ast/maths/HexToken.hx",29,0x97ddb9a4)
 HX_LOCAL_STACK_FRAME(_hx_pos_9addce771fe971fc_10_boot,"src.ast.maths.HexToken","boot",0xbcadd7a9,"src.ast.maths.HexToken.boot","src/ast/maths/HexToken.hx",10,0x97ddb9a4)
 namespace src{
 namespace ast{
@@ -22,7 +22,12 @@ namespace maths{
 
 void HexToken_obj::__construct(::String content){
             	HX_STACKFRAME(&_hx_pos_9addce771fe971fc_7_new)
-HXDLIN(   7)		super::__construct(content);
+HXLINE(  12)		this->isBytes = false;
+HXLINE(  15)		if ((content.charAt((int)0) == HX_("b",62,00,00,00))) {
+HXLINE(  16)			content = (HX_("0",30,00,00,00) + content.substr((int)1,(content.length - (int)1)));
+HXLINE(  17)			this->isBytes = true;
+            		}
+HXLINE(  19)		super::__construct(content);
             	}
 
 Dynamic HexToken_obj::__CreateEmpty() { return new HexToken_obj; }
@@ -45,37 +50,37 @@ bool HexToken_obj::_hx_isInstanceOf(int inClassId) {
 }
 
 ::String HexToken_obj::getName(){
-            	HX_STACKFRAME(&_hx_pos_9addce771fe971fc_24_getName)
-HXDLIN(  24)		return HX_("HexToken",3e,32,54,20);
+            	HX_STACKFRAME(&_hx_pos_9addce771fe971fc_34_getName)
+HXDLIN(  34)		return HX_("HexToken",3e,32,54,20);
             	}
 
 
  ::EReg HexToken_obj::regex;
 
 bool HexToken_obj::match(::String s){
-            	HX_STACKFRAME(&_hx_pos_9addce771fe971fc_14_match)
-HXDLIN(  14)		return ::src::ast::maths::HexToken_obj::regex->match(s);
+            	HX_STACKFRAME(&_hx_pos_9addce771fe971fc_24_match)
+HXDLIN(  24)		return ::src::ast::maths::HexToken_obj::regex->match(s);
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC1(HexToken_obj,match,return )
 
 bool HexToken_obj::partialMatch(::String s){
-            	HX_STACKFRAME(&_hx_pos_9addce771fe971fc_19_partialMatch)
-HXDLIN(  19)		bool _hx_tmp;
-HXDLIN(  19)		if ((s != HX_("0",30,00,00,00))) {
-HXDLIN(  19)			_hx_tmp = (s == HX_("0x",48,2a,00,00));
+            	HX_STACKFRAME(&_hx_pos_9addce771fe971fc_29_partialMatch)
+HXDLIN(  29)		bool _hx_tmp;
+HXDLIN(  29)		if ((s != HX_("0",30,00,00,00))) {
+HXDLIN(  29)			_hx_tmp = (s == HX_("0x",48,2a,00,00));
             		}
             		else {
-HXDLIN(  19)			_hx_tmp = true;
+HXDLIN(  29)			_hx_tmp = true;
             		}
-HXDLIN(  19)		if (!(_hx_tmp)) {
-HXDLIN(  19)			return ::src::ast::maths::HexToken_obj::match(s);
+HXDLIN(  29)		if (!(_hx_tmp)) {
+HXDLIN(  29)			return ::src::ast::maths::HexToken_obj::match(s);
             		}
             		else {
-HXDLIN(  19)			return true;
+HXDLIN(  29)			return true;
             		}
-HXDLIN(  19)		return false;
+HXDLIN(  29)		return false;
             	}
 
 
@@ -103,6 +108,7 @@ hx::Val HexToken_obj::__Field(const ::String &inName,hx::PropertyAccess inCallPr
 {
 	switch(inName.length) {
 	case 7:
+		if (HX_FIELD_EQ(inName,"isBytes") ) { return hx::Val( isBytes ); }
 		if (HX_FIELD_EQ(inName,"getName") ) { return hx::Val( getName_dyn() ); }
 	}
 	return super::__Field(inName,inCallProp);
@@ -121,6 +127,15 @@ bool HexToken_obj::__GetStatic(const ::String &inName, Dynamic &outValue, hx::Pr
 	return false;
 }
 
+hx::Val HexToken_obj::__SetField(const ::String &inName,const hx::Val &inValue,hx::PropertyAccess inCallProp)
+{
+	switch(inName.length) {
+	case 7:
+		if (HX_FIELD_EQ(inName,"isBytes") ) { isBytes=inValue.Cast< bool >(); return inValue; }
+	}
+	return super::__SetField(inName,inValue,inCallProp);
+}
+
 bool HexToken_obj::__SetStatic(const ::String &inName,Dynamic &ioValue,hx::PropertyAccess inCallProp)
 {
 	switch(inName.length) {
@@ -130,8 +145,17 @@ bool HexToken_obj::__SetStatic(const ::String &inName,Dynamic &ioValue,hx::Prope
 	return false;
 }
 
+void HexToken_obj::__GetFields(Array< ::String> &outFields)
+{
+	outFields->push(HX_HCSTRING("isBytes","\x21","\xac","\x1d","\x5a"));
+	super::__GetFields(outFields);
+};
+
 #if HXCPP_SCRIPTABLE
-static hx::StorageInfo *HexToken_obj_sMemberStorageInfo = 0;
+static hx::StorageInfo HexToken_obj_sMemberStorageInfo[] = {
+	{hx::fsBool,(int)offsetof(HexToken_obj,isBytes),HX_HCSTRING("isBytes","\x21","\xac","\x1d","\x5a")},
+	{ hx::fsUnknown, 0, null()}
+};
 static hx::StaticInfo HexToken_obj_sStaticStorageInfo[] = {
 	{hx::fsObject /*::EReg*/ ,(void *) &HexToken_obj::regex,HX_HCSTRING("regex","\xc7","\x2e","\xbf","\xe6")},
 	{ hx::fsUnknown, 0, null()}
@@ -139,6 +163,7 @@ static hx::StaticInfo HexToken_obj_sStaticStorageInfo[] = {
 #endif
 
 static ::String HexToken_obj_sMemberFields[] = {
+	HX_HCSTRING("isBytes","\x21","\xac","\x1d","\x5a"),
 	HX_HCSTRING("getName","\x01","\x22","\x82","\x1b"),
 	::String(null()) };
 
@@ -195,7 +220,7 @@ void HexToken_obj::__boot()
 {
 {
             	HX_GC_STACKFRAME(&_hx_pos_9addce771fe971fc_10_boot)
-HXDLIN(  10)		regex =  ::EReg_obj::__alloc( HX_CTX ,HX_("^0x([0-9]+)$",6c,b4,13,95),HX_("",00,00,00,00));
+HXDLIN(  10)		regex =  ::EReg_obj::__alloc( HX_CTX ,HX_("^(0|b)x([0-9]+)$",f7,f7,b8,ca),HX_("",00,00,00,00));
             	}
 }
 

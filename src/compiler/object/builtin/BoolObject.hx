@@ -87,9 +87,9 @@ class BoolObject extends ValuedObject
         return _bool(rawBool() != other.rawBool());
     }
     
-    override public function getHash():String 
+    override public function getHash():Int 
     {
-        return Std.string(int());
+        return if (value) 1 else 0;
     }
     
 }

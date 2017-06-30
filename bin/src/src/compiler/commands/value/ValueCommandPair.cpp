@@ -23,22 +23,24 @@
 #include <src/compiler/commands/value/ValueCommandPair.h>
 #endif
 
-HX_DEFINE_STACK_FRAME(_hx_pos_f3ff43457f236d2d_99_new,"src.compiler.commands.value.ValueCommandPair","new",0x32d323a4,"src.compiler.commands.value.ValueCommandPair.new","src/compiler/commands/value/MapValueCommand.hx",99,0x37dd6368)
-HX_LOCAL_STACK_FRAME(_hx_pos_f3ff43457f236d2d_107_walk,"src.compiler.commands.value.ValueCommandPair","walk",0x4bdbe545,"src.compiler.commands.value.ValueCommandPair.walk","src/compiler/commands/value/MapValueCommand.hx",107,0x37dd6368)
-HX_LOCAL_STACK_FRAME(_hx_pos_f3ff43457f236d2d_112_getName,"src.compiler.commands.value.ValueCommandPair","getName",0x62e66745,"src.compiler.commands.value.ValueCommandPair.getName","src/compiler/commands/value/MapValueCommand.hx",112,0x37dd6368)
-HX_LOCAL_STACK_FRAME(_hx_pos_f3ff43457f236d2d_117_getBytecode,"src.compiler.commands.value.ValueCommandPair","getBytecode",0x1435ee2f,"src.compiler.commands.value.ValueCommandPair.getBytecode","src/compiler/commands/value/MapValueCommand.hx",117,0x37dd6368)
-HX_LOCAL_STACK_FRAME(_hx_pos_f3ff43457f236d2d_123_reconstruct,"src.compiler.commands.value.ValueCommandPair","reconstruct",0x26c49d48,"src.compiler.commands.value.ValueCommandPair.reconstruct","src/compiler/commands/value/MapValueCommand.hx",123,0x37dd6368)
-HX_LOCAL_STACK_FRAME(_hx_pos_f3ff43457f236d2d_93_fromBytecode,"src.compiler.commands.value.ValueCommandPair","fromBytecode",0x35f4f3fb,"src.compiler.commands.value.ValueCommandPair.fromBytecode","src/compiler/commands/value/MapValueCommand.hx",93,0x37dd6368)
+HX_DEFINE_STACK_FRAME(_hx_pos_f3ff43457f236d2d_117_new,"src.compiler.commands.value.ValueCommandPair","new",0x32d323a4,"src.compiler.commands.value.ValueCommandPair.new","src/compiler/commands/value/MapValueCommand.hx",117,0x37dd6368)
+HX_LOCAL_STACK_FRAME(_hx_pos_f3ff43457f236d2d_125_copy,"src.compiler.commands.value.ValueCommandPair","copy",0x3eae43f1,"src.compiler.commands.value.ValueCommandPair.copy","src/compiler/commands/value/MapValueCommand.hx",125,0x37dd6368)
+HX_LOCAL_STACK_FRAME(_hx_pos_f3ff43457f236d2d_129_setScope,"src.compiler.commands.value.ValueCommandPair","setScope",0xb76630ce,"src.compiler.commands.value.ValueCommandPair.setScope","src/compiler/commands/value/MapValueCommand.hx",129,0x37dd6368)
+HX_LOCAL_STACK_FRAME(_hx_pos_f3ff43457f236d2d_136_walk,"src.compiler.commands.value.ValueCommandPair","walk",0x4bdbe545,"src.compiler.commands.value.ValueCommandPair.walk","src/compiler/commands/value/MapValueCommand.hx",136,0x37dd6368)
+HX_LOCAL_STACK_FRAME(_hx_pos_f3ff43457f236d2d_141_getName,"src.compiler.commands.value.ValueCommandPair","getName",0x62e66745,"src.compiler.commands.value.ValueCommandPair.getName","src/compiler/commands/value/MapValueCommand.hx",141,0x37dd6368)
+HX_LOCAL_STACK_FRAME(_hx_pos_f3ff43457f236d2d_146_getBytecode,"src.compiler.commands.value.ValueCommandPair","getBytecode",0x1435ee2f,"src.compiler.commands.value.ValueCommandPair.getBytecode","src/compiler/commands/value/MapValueCommand.hx",146,0x37dd6368)
+HX_LOCAL_STACK_FRAME(_hx_pos_f3ff43457f236d2d_152_reconstruct,"src.compiler.commands.value.ValueCommandPair","reconstruct",0x26c49d48,"src.compiler.commands.value.ValueCommandPair.reconstruct","src/compiler/commands/value/MapValueCommand.hx",152,0x37dd6368)
+HX_LOCAL_STACK_FRAME(_hx_pos_f3ff43457f236d2d_111_fromBytecode,"src.compiler.commands.value.ValueCommandPair","fromBytecode",0x35f4f3fb,"src.compiler.commands.value.ValueCommandPair.fromBytecode","src/compiler/commands/value/MapValueCommand.hx",111,0x37dd6368)
 namespace src{
 namespace compiler{
 namespace commands{
 namespace value{
 
 void ValueCommandPair_obj::__construct( ::src::compiler::commands::value::ValueCommand left, ::src::compiler::commands::value::ValueCommand right){
-            	HX_STACKFRAME(&_hx_pos_f3ff43457f236d2d_99_new)
-HXLINE( 100)		super::__construct(null());
-HXLINE( 101)		this->left = left;
-HXLINE( 102)		this->right = right;
+            	HX_STACKFRAME(&_hx_pos_f3ff43457f236d2d_117_new)
+HXLINE( 118)		super::__construct(null());
+HXLINE( 119)		this->left = left;
+HXLINE( 120)		this->right = right;
             	}
 
 Dynamic ValueCommandPair_obj::__CreateEmpty() { return new ValueCommandPair_obj; }
@@ -60,37 +62,51 @@ bool ValueCommandPair_obj::_hx_isInstanceOf(int inClassId) {
 	}
 }
 
+ ::src::compiler::commands::Command ValueCommandPair_obj::copy( ::src::compiler::Scope scope){
+            	HX_GC_STACKFRAME(&_hx_pos_f3ff43457f236d2d_125_copy)
+HXDLIN( 125)		 ::src::compiler::commands::value::ValueCommand _hx_tmp = hx::TCast<  ::src::compiler::commands::value::ValueCommand >::cast(this->left->copy(scope));
+HXDLIN( 125)		return  ::src::compiler::commands::value::ValueCommandPair_obj::__alloc( HX_CTX ,_hx_tmp,this->right->copy(scope));
+            	}
+
+
+void ValueCommandPair_obj::setScope( ::src::compiler::Scope scope){
+            	HX_STACKFRAME(&_hx_pos_f3ff43457f236d2d_129_setScope)
+HXLINE( 130)		this->left->setScope(scope);
+HXLINE( 131)		this->right->setScope(scope);
+            	}
+
+
 ::Array< ::Dynamic> ValueCommandPair_obj::walk(){
-            	HX_STACKFRAME(&_hx_pos_f3ff43457f236d2d_107_walk)
-HXDLIN( 107)		return ::Array_obj< ::Dynamic>::__new(2)->init(0,this->left)->init(1,this->right);
+            	HX_STACKFRAME(&_hx_pos_f3ff43457f236d2d_136_walk)
+HXDLIN( 136)		return ::Array_obj< ::Dynamic>::__new(2)->init(0,this->left)->init(1,this->right);
             	}
 
 
 ::String ValueCommandPair_obj::getName(){
-            	HX_STACKFRAME(&_hx_pos_f3ff43457f236d2d_112_getName)
-HXDLIN( 112)		return HX_("ValueCommandPair",34,33,09,1c);
+            	HX_STACKFRAME(&_hx_pos_f3ff43457f236d2d_141_getName)
+HXDLIN( 141)		return HX_("ValueCommandPair",34,33,09,1c);
             	}
 
 
  ::src::compiler::bytecode::Bytecode ValueCommandPair_obj::getBytecode(){
-            	HX_STACKFRAME(&_hx_pos_f3ff43457f236d2d_117_getBytecode)
-HXDLIN( 117)		::cpp::VirtualArray _hx_tmp = ::cpp::VirtualArray_obj::__new(2)->init(0,this->left)->init(1,this->right);
-HXDLIN( 117)		return ::src::compiler::bytecode::Bytecode_obj::fromArray(_hx_tmp,this->getCodeID());
+            	HX_STACKFRAME(&_hx_pos_f3ff43457f236d2d_146_getBytecode)
+HXDLIN( 146)		::cpp::VirtualArray _hx_tmp = ::cpp::VirtualArray_obj::__new(2)->init(0,this->left)->init(1,this->right);
+HXDLIN( 146)		return ::src::compiler::bytecode::Bytecode_obj::fromArray(_hx_tmp,this->getCodeID());
             	}
 
 
 ::Array< ::Dynamic> ValueCommandPair_obj::reconstruct(){
-            	HX_GC_STACKFRAME(&_hx_pos_f3ff43457f236d2d_123_reconstruct)
-HXDLIN( 123)		::Array< ::Dynamic> _hx_tmp = this->left->reconstruct();
-HXDLIN( 123)		 ::src::ast::script::AssignmentToken _hx_tmp1 =  ::src::ast::script::AssignmentToken_obj::__alloc( HX_CTX ,HX_("=",3d,00,00,00));
-HXDLIN( 123)		return ::src::ast::Token_obj::merge(::cpp::VirtualArray_obj::__new(3)->init(0,_hx_tmp)->init(1,_hx_tmp1)->init(2,this->right->reconstruct()));
+            	HX_GC_STACKFRAME(&_hx_pos_f3ff43457f236d2d_152_reconstruct)
+HXDLIN( 152)		::Array< ::Dynamic> _hx_tmp = this->left->reconstruct();
+HXDLIN( 152)		 ::src::ast::script::AssignmentToken _hx_tmp1 =  ::src::ast::script::AssignmentToken_obj::__alloc( HX_CTX ,HX_("=",3d,00,00,00));
+HXDLIN( 152)		return ::src::ast::Token_obj::merge(::cpp::VirtualArray_obj::__new(3)->init(0,_hx_tmp)->init(1,_hx_tmp1)->init(2,this->right->reconstruct()));
             	}
 
 
  ::src::compiler::commands::value::ValueCommandPair ValueCommandPair_obj::fromBytecode( ::src::compiler::Scope scope,::Array< ::Dynamic> arr){
-            	HX_GC_STACKFRAME(&_hx_pos_f3ff43457f236d2d_93_fromBytecode)
-HXDLIN(  93)		 ::Dynamic _hx_tmp = arr->shift().StaticCast<  ::src::compiler::bytecode::Bytecode >()->convert(scope);
-HXDLIN(  93)		return  ::src::compiler::commands::value::ValueCommandPair_obj::__alloc( HX_CTX ,_hx_tmp,arr->shift().StaticCast<  ::src::compiler::bytecode::Bytecode >()->convert(scope));
+            	HX_GC_STACKFRAME(&_hx_pos_f3ff43457f236d2d_111_fromBytecode)
+HXDLIN( 111)		 ::Dynamic _hx_tmp = arr->shift().StaticCast<  ::src::compiler::bytecode::Bytecode >()->convert(scope);
+HXDLIN( 111)		return  ::src::compiler::commands::value::ValueCommandPair_obj::__alloc( HX_CTX ,_hx_tmp,arr->shift().StaticCast<  ::src::compiler::bytecode::Bytecode >()->convert(scope));
             	}
 
 
@@ -135,6 +151,7 @@ hx::Val ValueCommandPair_obj::__Field(const ::String &inName,hx::PropertyAccess 
 	switch(inName.length) {
 	case 4:
 		if (HX_FIELD_EQ(inName,"left") ) { return hx::Val( left ); }
+		if (HX_FIELD_EQ(inName,"copy") ) { return hx::Val( copy_dyn() ); }
 		if (HX_FIELD_EQ(inName,"walk") ) { return hx::Val( walk_dyn() ); }
 		break;
 	case 5:
@@ -142,6 +159,9 @@ hx::Val ValueCommandPair_obj::__Field(const ::String &inName,hx::PropertyAccess 
 		break;
 	case 7:
 		if (HX_FIELD_EQ(inName,"getName") ) { return hx::Val( getName_dyn() ); }
+		break;
+	case 8:
+		if (HX_FIELD_EQ(inName,"setScope") ) { return hx::Val( setScope_dyn() ); }
 		break;
 	case 11:
 		if (HX_FIELD_EQ(inName,"getBytecode") ) { return hx::Val( getBytecode_dyn() ); }
@@ -190,6 +210,8 @@ static hx::StaticInfo *ValueCommandPair_obj_sStaticStorageInfo = 0;
 static ::String ValueCommandPair_obj_sMemberFields[] = {
 	HX_HCSTRING("left","\x07","\x08","\xb0","\x47"),
 	HX_HCSTRING("right","\xdc","\x0b","\x64","\xe9"),
+	HX_HCSTRING("copy","\xb5","\xbb","\xc4","\x41"),
+	HX_HCSTRING("setScope","\x92","\xda","\x0d","\x87"),
 	HX_HCSTRING("walk","\x09","\x5d","\xf2","\x4e"),
 	HX_HCSTRING("getName","\x01","\x22","\x82","\x1b"),
 	HX_HCSTRING("getBytecode","\xeb","\xb6","\x8b","\x7d"),

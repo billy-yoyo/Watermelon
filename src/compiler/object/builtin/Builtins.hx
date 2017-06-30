@@ -4,8 +4,13 @@ import src.compiler.object.Object;
 import src.compiler.object.builtin.BoolObject;
 import src.compiler.object.builtin.ListObject;
 import src.compiler.object.ObjectType;
+import src.compiler.object.builtin.coroutine.CoroutineFunctionObject;
+import src.compiler.object.builtin.coroutine.CoroutineLoop;
+import src.compiler.object.builtin.coroutine.CoroutineObject;
+import src.compiler.object.builtin.coroutine.YieldObject;
 import src.compiler.signals.ExitCodeSignal;
 import src.compiler.signals.InvalidArgumentSignal;
+import src.compiler.signals.ValueErrorSignal;
 
 /**
  * ...
@@ -27,6 +32,14 @@ class Builtins
     public var objTypeType:ObjectType;
     public var pairType:ObjectType;
     public var iteratorType:ObjectType;
+    public var bytesType:ObjectType;
+    public var spliceType:ObjectType;
+    public var moduleType:ObjectType;
+    public var signalType:ObjectType;
+    public var coroType:ObjectType;
+    public var coroFuncType:ObjectType;
+    public var coroLoopType:ObjectType;
+    public var yieldType:ObjectType;
     
     public var types:Array<ObjectType>;
     public var objects:Map<String, Object>;
@@ -50,7 +63,7 @@ class Builtins
                     obj.arr.push(args[0]);
                 }
                 return null;
-            }),
+            }, root),
             "remove" => builtinFuncType.createValue(function(args:Array<Object>):Object {
                 var obj:ListObject = cast(args.shift(), ListObject);
                 if (args.length == 0) throw "Not enough arguments";
@@ -59,7 +72,7 @@ class Builtins
                     obj.arr.remove(args[0]);
                 }
                 return null;
-            })
+            }, root)
         ], ListObject);
         tupleType = new ObjectType(root, "TupleType", null, TupleObject);
         mapType = new ObjectType(root, "MapType", null, MapObject);
@@ -74,26 +87,46 @@ class Builtins
                 var pair:PairObject = cast(args.shift(), PairObject);
                 if (args.length > 0) throw new InvalidArgumentSignal('Expected 0 arguments, found ${args.length}');
                 return pair._str(pair.getName());
-            }),
+            }, root),
             "value" => builtinFuncType.createValue(function(args:Array<Object>):Object {
                 var pair:PairObject = cast(args.shift(), PairObject);
                 if (args.length > 0) throw new InvalidArgumentSignal('Expected 0 arguments, found ${args.length}');
                 return pair.getValue();
-            })
+            }, root)
         ], PairObject);
         iteratorType = new ObjectType(root, "IteratorType", null, IteratorObject);
+        bytesType = new ObjectType(root, "BytesType", null, BytesObject);
+        spliceType = new ObjectType(root, "SpliceType", null, SpliceObject);
+        moduleType = new ObjectType(root, "ModuleType", null, ModuleObject);
+        signalType = new ObjectType(root, "SignalType", null, SignalObject);
+        coroType = new ObjectType(root, "CoroutineType", null, CoroutineObject);
+        coroFuncType = new ObjectType(root, "CoroutineFunctionType", null, CoroutineFunctionObject);
+        coroLoopType = new ObjectType(root, "CoroutineLoopType", [
+            "start" => builtinFuncType.createValue(function(args:Array<Object>):Object {
+                var loop:CoroutineLoop = cast(args.shift(), CoroutineLoop);
+                for (arg in args) {
+                    if (!arg.isInstance("CoroutineType")) throw new ValueErrorSignal("Can only start a loop with coroutines");
+                    loop.startTask(cast(arg, CoroutineObject));
+                }
+                loop.start();
+                return null;
+            }, root)
+        ], CoroutineLoop);
+        yieldType = new ObjectType(root, "CoroutineYieldType", null, YieldObject);
         
-        types = [builtinFuncType, functionType, listType, tupleType, mapType, stringType, intType, floatType, boolType, noneType, objTypeType, pairType, iteratorType];
+        types = [builtinFuncType, functionType, listType, tupleType, mapType, stringType, 
+                 intType, floatType, boolType, noneType, objTypeType, pairType, iteratorType,
+                 bytesType, spliceType, moduleType, signalType, coroType, coroFuncType, coroLoopType, yieldType];
     
         objects = [
             "print" => builtinFuncType.createValue(function(args:Array<Object>):Object {
                 var words:Array<String> = new Array<String>();
                 for (obj in args) words.push(if(obj == null) "null" else obj.rawString());
-                Main.print(words.join(" "));
+                Watermelon.print(words.join(" "));
                 return null;
-            }),
+            }, root),
             "range" => builtinFuncType.createValue(function(args:Array<Object>):Object {
-                var start:Object = intType.createValue(0); var end:Object = intType.createValue(0); var step:Object = intType.createValue(1);
+                var start:Object = intType.createValue(0, root); var end:Object = intType.createValue(0, root); var step:Object = intType.createValue(1, root);
                 if (args.length == 1) {
                     end = args[0];
                 } else if (args.length == 2) {
@@ -109,10 +142,10 @@ class Builtins
                 } else {
                     return new RangeObject(start.getScope(), iteratorType, start.rawFloat(), end.rawFloat(), step.rawFloat());
                 }
-            }),
+            }, root),
             "exit" => builtinFuncType.createValue(function(args:Array<Object>):Object {
                 throw new ExitCodeSignal();
-            })
+            }, root)
         ];
     }
 
@@ -147,29 +180,3 @@ class IntRangeObject extends Object
     }
 }
 
-class RangeObject extends Object
-{
-    private var start:Float;
-    private var end:Float;
-    private var step:Float;
-    private var progress:Float;
-    override public function new(scope:Scope, type:ObjectType, start:Float, end:Float, step:Float)
-    {
-        super(scope, type, null, null);
-        this.start = start;
-        this.end = end;
-        this.step = step;
-    }
-    
-    override public function next():Object 
-    {
-        var last:Float = progress;
-        progress = progress + step;
-        return _float(last);
-    }
-    
-    override public function hasNext():BoolObject 
-    {
-        return _bool(progress < end);
-    }
-}

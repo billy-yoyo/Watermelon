@@ -58,9 +58,6 @@ class HXCPP_CLASS_ATTRIBUTES FunctionDefinitionCommand_obj : public  ::src::comp
 		bool _hx_isInstanceOf(int inClassId);
 		::String __ToString() const { return HX_HCSTRING("FunctionDefinitionCommand","\xa0","\xa5","\x36","\x69"); }
 
-		static  ::Dynamic getFunctionArgumentCommandFromBytes();
-		static ::Dynamic getFunctionArgumentCommandFromBytes_dyn();
-
 		static  ::src::compiler::commands::FunctionDefinitionCommand fromTokens( ::src::compiler::Scope scope,::Array< ::Dynamic> tokens);
 		static ::Dynamic fromTokens_dyn();
 
@@ -71,11 +68,17 @@ class HXCPP_CLASS_ATTRIBUTES FunctionDefinitionCommand_obj : public  ::src::comp
 		::Array< ::Dynamic> args;
 		 ::src::compiler::commands::FunctionCodeCommand code;
 		::Array< ::Dynamic> decorators;
+		 ::src::compiler::commands::Command copy( ::src::compiler::Scope scope);
+
+		void setScope( ::src::compiler::Scope scope);
+
 		::Array< ::Dynamic> walk();
 
 		 ::src::compiler::object::Object run();
 
 		::String getName();
+
+		::String getFriendlyName();
 
 		 ::src::compiler::bytecode::Bytecode getBytecode();
 

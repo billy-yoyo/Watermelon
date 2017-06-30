@@ -18,7 +18,7 @@ class ObjectArrayAccessValueCommand extends ValueCommand
     
     public static function fromBytecode(scope:Scope, arr:Array<Bytecode>):ObjectArrayAccessValueCommand
     {
-        return new ObjectArrayAccessValueCommand(scope, arr.shift().convert(scope));
+        return new ObjectArrayAccessValueCommand(scope, new ObjectIndexPair(scope, arr.shift().convert(scope), arr.shift().convert(scope)));
     }
 
     private var objectIndexPair:ObjectIndexPair;
@@ -26,6 +26,17 @@ class ObjectArrayAccessValueCommand extends ValueCommand
     {
         super(scope);
         this.objectIndexPair = objectIndexPair;
+    }
+    
+    override public function copy(scope:Scope):Command 
+    {
+        return new ObjectArrayAccessValueCommand(scope, cast(objectIndexPair.copy(scope), ObjectIndexPair));
+    }
+    
+    override public function setScope(scope:Scope) 
+    {
+        super.setScope(scope);
+        objectIndexPair.setScope(scope);
     }
     
     override public function walk():Array<Command> 
@@ -43,9 +54,14 @@ class ObjectArrayAccessValueCommand extends ValueCommand
         return "ObjectArrayAccessValueCommand";
     }
     
+    override public function getFriendlyName():String 
+    {
+        return "array index access";
+    }
+    
     override public function getBytecode():Bytecode 
     {
-        return Bytecode.fromArray([objectIndexPair.index, objectIndexPair.variable], getCodeID());
+        return Bytecode.fromArray([objectIndexPair.variable, objectIndexPair.index], getCodeID());
     }
     
     override public function reconstruct():Array<Token> 

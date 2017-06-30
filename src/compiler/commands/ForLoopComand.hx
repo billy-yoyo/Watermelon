@@ -45,11 +45,24 @@ class ForLoopComand extends Command
     
     private var iterator:Command;
     private var code:Command;
+    private var completedLoop:Bool;
     override public function new(scope:Scope, iterator:Command, code:Command) 
     {
         super(scope);
         this.iterator = iterator;
         this.code = code;
+    }
+    
+    override public function copy(scope:Scope):Command 
+    {
+        return new ForLoopComand(scope, iterator.copy(scope), code.copy(scope));
+    }
+    
+    override public function setScope(scope:Scope) 
+    {
+        super.setScope(scope);
+        iterator.setScope(scope);
+        code.setScope(scope);
     }
     
     override public function walk():Array<Command> 
@@ -61,14 +74,16 @@ class ForLoopComand extends Command
     {
         while (true) {
             try {
-                iterator.run();
+                if (completedLoop) iterator.run();
+                completedLoop = false;
                 code.run();
+                completedLoop = true;
             } catch ( itexit:IteratorExitSignal ) {
                 break;
             } catch ( lpbreak:LoopBreakSignal ) {
                 break;
             } catch ( lpcont:LoopContinueSignal ) {
-                
+                completedLoop = true;
             }
         }
         return null;
@@ -77,6 +92,11 @@ class ForLoopComand extends Command
     override public function getName():String 
     {
         return "ForLoopCommand";
+    }
+    
+    override public function getFriendlyName():String 
+    {
+        return "for loop";
     }
     
     override public function getBytecode():Bytecode 

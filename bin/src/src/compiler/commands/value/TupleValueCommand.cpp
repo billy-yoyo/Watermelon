@@ -36,11 +36,14 @@
 #endif
 
 HX_DEFINE_STACK_FRAME(_hx_pos_3d5f445230c13518_32_new,"src.compiler.commands.value.TupleValueCommand","new",0x9f185096,"src.compiler.commands.value.TupleValueCommand.new","src/compiler/commands/value/TupleValueCommand.hx",32,0x79fbab7c)
-HX_LOCAL_STACK_FRAME(_hx_pos_3d5f445230c13518_38_walk,"src.compiler.commands.value.TupleValueCommand","walk",0x9c1e0c13,"src.compiler.commands.value.TupleValueCommand.walk","src/compiler/commands/value/TupleValueCommand.hx",38,0x79fbab7c)
-HX_LOCAL_STACK_FRAME(_hx_pos_3d5f445230c13518_45_run,"src.compiler.commands.value.TupleValueCommand","run",0x9f1b6781,"src.compiler.commands.value.TupleValueCommand.run","src/compiler/commands/value/TupleValueCommand.hx",45,0x79fbab7c)
-HX_LOCAL_STACK_FRAME(_hx_pos_3d5f445230c13518_56_getName,"src.compiler.commands.value.TupleValueCommand","getName",0xce29f537,"src.compiler.commands.value.TupleValueCommand.getName","src/compiler/commands/value/TupleValueCommand.hx",56,0x79fbab7c)
-HX_LOCAL_STACK_FRAME(_hx_pos_3d5f445230c13518_61_getBytecode,"src.compiler.commands.value.TupleValueCommand","getBytecode",0xb3bc5d21,"src.compiler.commands.value.TupleValueCommand.getBytecode","src/compiler/commands/value/TupleValueCommand.hx",61,0x79fbab7c)
-HX_LOCAL_STACK_FRAME(_hx_pos_3d5f445230c13518_66_reconstruct,"src.compiler.commands.value.TupleValueCommand","reconstruct",0xc64b0c3a,"src.compiler.commands.value.TupleValueCommand.reconstruct","src/compiler/commands/value/TupleValueCommand.hx",66,0x79fbab7c)
+HX_LOCAL_STACK_FRAME(_hx_pos_3d5f445230c13518_39_copy,"src.compiler.commands.value.TupleValueCommand","copy",0x8ef06abf,"src.compiler.commands.value.TupleValueCommand.copy","src/compiler/commands/value/TupleValueCommand.hx",39,0x79fbab7c)
+HX_LOCAL_STACK_FRAME(_hx_pos_3d5f445230c13518_43_setScope,"src.compiler.commands.value.TupleValueCommand","setScope",0x273ed69c,"src.compiler.commands.value.TupleValueCommand.setScope","src/compiler/commands/value/TupleValueCommand.hx",43,0x79fbab7c)
+HX_LOCAL_STACK_FRAME(_hx_pos_3d5f445230c13518_49_walk,"src.compiler.commands.value.TupleValueCommand","walk",0x9c1e0c13,"src.compiler.commands.value.TupleValueCommand.walk","src/compiler/commands/value/TupleValueCommand.hx",49,0x79fbab7c)
+HX_LOCAL_STACK_FRAME(_hx_pos_3d5f445230c13518_56_run,"src.compiler.commands.value.TupleValueCommand","run",0x9f1b6781,"src.compiler.commands.value.TupleValueCommand.run","src/compiler/commands/value/TupleValueCommand.hx",56,0x79fbab7c)
+HX_LOCAL_STACK_FRAME(_hx_pos_3d5f445230c13518_67_getName,"src.compiler.commands.value.TupleValueCommand","getName",0xce29f537,"src.compiler.commands.value.TupleValueCommand.getName","src/compiler/commands/value/TupleValueCommand.hx",67,0x79fbab7c)
+HX_LOCAL_STACK_FRAME(_hx_pos_3d5f445230c13518_72_getFriendlyName,"src.compiler.commands.value.TupleValueCommand","getFriendlyName",0x5a138b42,"src.compiler.commands.value.TupleValueCommand.getFriendlyName","src/compiler/commands/value/TupleValueCommand.hx",72,0x79fbab7c)
+HX_LOCAL_STACK_FRAME(_hx_pos_3d5f445230c13518_77_getBytecode,"src.compiler.commands.value.TupleValueCommand","getBytecode",0xb3bc5d21,"src.compiler.commands.value.TupleValueCommand.getBytecode","src/compiler/commands/value/TupleValueCommand.hx",77,0x79fbab7c)
+HX_LOCAL_STACK_FRAME(_hx_pos_3d5f445230c13518_82_reconstruct,"src.compiler.commands.value.TupleValueCommand","reconstruct",0xc64b0c3a,"src.compiler.commands.value.TupleValueCommand.reconstruct","src/compiler/commands/value/TupleValueCommand.hx",82,0x79fbab7c)
 HX_LOCAL_STACK_FRAME(_hx_pos_3d5f445230c13518_20_fromTokens,"src.compiler.commands.value.TupleValueCommand","fromTokens",0xa09aaeee,"src.compiler.commands.value.TupleValueCommand.fromTokens","src/compiler/commands/value/TupleValueCommand.hx",20,0x79fbab7c)
 HX_LOCAL_STACK_FRAME(_hx_pos_3d5f445230c13518_24_fromBytecode,"src.compiler.commands.value.TupleValueCommand","fromBytecode",0x2c0f98c9,"src.compiler.commands.value.TupleValueCommand.fromBytecode","src/compiler/commands/value/TupleValueCommand.hx",24,0x79fbab7c)
 namespace src{
@@ -77,56 +80,83 @@ bool TupleValueCommand_obj::_hx_isInstanceOf(int inClassId) {
 	}
 }
 
-::Array< ::Dynamic> TupleValueCommand_obj::walk(){
-            	HX_STACKFRAME(&_hx_pos_3d5f445230c13518_38_walk)
-HXLINE(  39)		::Array< ::Dynamic> cmds = ::Array_obj< ::Dynamic>::__new();
-HXLINE(  40)		{
-HXLINE(  40)			int _g = (int)0;
-HXDLIN(  40)			::Array< ::Dynamic> _g1 = this->values;
-HXDLIN(  40)			while((_g < _g1->length)){
-HXLINE(  40)				 ::src::compiler::commands::value::ValueCommand x = _g1->__get(_g).StaticCast<  ::src::compiler::commands::value::ValueCommand >();
-HXDLIN(  40)				_g = (_g + (int)1);
-HXDLIN(  40)				cmds->push(x);
+ ::src::compiler::commands::Command TupleValueCommand_obj::copy( ::src::compiler::Scope scope){
+            	HX_GC_STACKFRAME(&_hx_pos_3d5f445230c13518_39_copy)
+HXDLIN(  39)		return  ::src::compiler::commands::value::TupleValueCommand_obj::__alloc( HX_CTX ,scope,::src::compiler::commands::value::ValueCommand_obj::copyArray(scope,this->values));
+            	}
+
+
+void TupleValueCommand_obj::setScope( ::src::compiler::Scope scope){
+            	HX_STACKFRAME(&_hx_pos_3d5f445230c13518_43_setScope)
+HXLINE(  44)		this->super::setScope(scope);
+HXLINE(  45)		{
+HXLINE(  45)			int _g = (int)0;
+HXDLIN(  45)			::Array< ::Dynamic> _g1 = this->values;
+HXDLIN(  45)			while((_g < _g1->length)){
+HXLINE(  45)				 ::src::compiler::commands::value::ValueCommand value = _g1->__get(_g).StaticCast<  ::src::compiler::commands::value::ValueCommand >();
+HXDLIN(  45)				_g = (_g + (int)1);
+HXDLIN(  45)				value->setScope(scope);
             			}
             		}
-HXLINE(  41)		return cmds;
+            	}
+
+
+::Array< ::Dynamic> TupleValueCommand_obj::walk(){
+            	HX_STACKFRAME(&_hx_pos_3d5f445230c13518_49_walk)
+HXLINE(  50)		::Array< ::Dynamic> cmds = ::Array_obj< ::Dynamic>::__new();
+HXLINE(  51)		{
+HXLINE(  51)			int _g = (int)0;
+HXDLIN(  51)			::Array< ::Dynamic> _g1 = this->values;
+HXDLIN(  51)			while((_g < _g1->length)){
+HXLINE(  51)				 ::src::compiler::commands::value::ValueCommand x = _g1->__get(_g).StaticCast<  ::src::compiler::commands::value::ValueCommand >();
+HXDLIN(  51)				_g = (_g + (int)1);
+HXDLIN(  51)				cmds->push(x);
+            			}
+            		}
+HXLINE(  52)		return cmds;
             	}
 
 
  ::src::compiler::object::Object TupleValueCommand_obj::run(){
-            	HX_STACKFRAME(&_hx_pos_3d5f445230c13518_45_run)
-HXLINE(  46)		 ::src::compiler::object::builtin::TupleObject obj = hx::TCast<  ::src::compiler::object::builtin::TupleObject >::cast(this->scope->getType(HX_("TupleType",c2,3e,8e,1a),null())->createObject(null()));
-HXLINE(  47)		::Array< ::Dynamic> arr = obj->getArray();
-HXLINE(  48)		{
-HXLINE(  48)			int _g = (int)0;
-HXDLIN(  48)			::Array< ::Dynamic> _g1 = this->values;
-HXDLIN(  48)			while((_g < _g1->length)){
-HXLINE(  48)				 ::src::compiler::commands::value::ValueCommand cmd = _g1->__get(_g).StaticCast<  ::src::compiler::commands::value::ValueCommand >();
-HXDLIN(  48)				_g = (_g + (int)1);
-HXLINE(  49)				arr->push(cmd->run());
+            	HX_STACKFRAME(&_hx_pos_3d5f445230c13518_56_run)
+HXLINE(  57)		 ::src::compiler::object::builtin::TupleObject obj = hx::TCast<  ::src::compiler::object::builtin::TupleObject >::cast(this->scope->getType(HX_("TupleType",c2,3e,8e,1a),null())->createObject(this->scope,null()));
+HXLINE(  58)		::Array< ::Dynamic> arr = obj->getArray();
+HXLINE(  59)		{
+HXLINE(  59)			int _g = (int)0;
+HXDLIN(  59)			::Array< ::Dynamic> _g1 = this->values;
+HXDLIN(  59)			while((_g < _g1->length)){
+HXLINE(  59)				 ::src::compiler::commands::value::ValueCommand cmd = _g1->__get(_g).StaticCast<  ::src::compiler::commands::value::ValueCommand >();
+HXDLIN(  59)				_g = (_g + (int)1);
+HXLINE(  60)				arr->push(cmd->run());
             			}
             		}
-HXLINE(  51)		return obj;
+HXLINE(  62)		return obj;
             	}
 
 
 ::String TupleValueCommand_obj::getName(){
-            	HX_STACKFRAME(&_hx_pos_3d5f445230c13518_56_getName)
-HXDLIN(  56)		return HX_("TupleValueCommand",e2,ed,24,27);
+            	HX_STACKFRAME(&_hx_pos_3d5f445230c13518_67_getName)
+HXDLIN(  67)		return HX_("TupleValueCommand",e2,ed,24,27);
+            	}
+
+
+::String TupleValueCommand_obj::getFriendlyName(){
+            	HX_STACKFRAME(&_hx_pos_3d5f445230c13518_72_getFriendlyName)
+HXDLIN(  72)		return HX_("tuple",08,9c,26,18);
             	}
 
 
  ::src::compiler::bytecode::Bytecode TupleValueCommand_obj::getBytecode(){
-            	HX_STACKFRAME(&_hx_pos_3d5f445230c13518_61_getBytecode)
-HXDLIN(  61)		::Array< ::Dynamic> _hx_tmp = this->values;
-HXDLIN(  61)		return ::src::compiler::bytecode::Bytecode_obj::fromArray(_hx_tmp,this->getCodeID());
+            	HX_STACKFRAME(&_hx_pos_3d5f445230c13518_77_getBytecode)
+HXDLIN(  77)		::Array< ::Dynamic> _hx_tmp = this->values;
+HXDLIN(  77)		return ::src::compiler::bytecode::Bytecode_obj::fromArray(_hx_tmp,this->getCodeID());
             	}
 
 
 ::Array< ::Dynamic> TupleValueCommand_obj::reconstruct(){
-            	HX_GC_STACKFRAME(&_hx_pos_3d5f445230c13518_66_reconstruct)
-HXDLIN(  66)		 ::src::ast::base::CommaToken _hx_tmp =  ::src::ast::base::CommaToken_obj::__alloc( HX_CTX ,HX_(",",2c,00,00,00));
-HXDLIN(  66)		return _hx_tmp->join(::src::compiler::commands::Command_obj::reconstructCommands(this->values),null());
+            	HX_GC_STACKFRAME(&_hx_pos_3d5f445230c13518_82_reconstruct)
+HXDLIN(  82)		 ::src::ast::base::CommaToken _hx_tmp =  ::src::ast::base::CommaToken_obj::__alloc( HX_CTX ,HX_(",",2c,00,00,00));
+HXDLIN(  82)		return _hx_tmp->join(::src::compiler::commands::Command_obj::reconstructCommands(this->values),null());
             	}
 
 
@@ -189,6 +219,7 @@ hx::Val TupleValueCommand_obj::__Field(const ::String &inName,hx::PropertyAccess
 		if (HX_FIELD_EQ(inName,"run") ) { return hx::Val( run_dyn() ); }
 		break;
 	case 4:
+		if (HX_FIELD_EQ(inName,"copy") ) { return hx::Val( copy_dyn() ); }
 		if (HX_FIELD_EQ(inName,"walk") ) { return hx::Val( walk_dyn() ); }
 		break;
 	case 6:
@@ -197,9 +228,15 @@ hx::Val TupleValueCommand_obj::__Field(const ::String &inName,hx::PropertyAccess
 	case 7:
 		if (HX_FIELD_EQ(inName,"getName") ) { return hx::Val( getName_dyn() ); }
 		break;
+	case 8:
+		if (HX_FIELD_EQ(inName,"setScope") ) { return hx::Val( setScope_dyn() ); }
+		break;
 	case 11:
 		if (HX_FIELD_EQ(inName,"getBytecode") ) { return hx::Val( getBytecode_dyn() ); }
 		if (HX_FIELD_EQ(inName,"reconstruct") ) { return hx::Val( reconstruct_dyn() ); }
+		break;
+	case 15:
+		if (HX_FIELD_EQ(inName,"getFriendlyName") ) { return hx::Val( getFriendlyName_dyn() ); }
 	}
 	return super::__Field(inName,inCallProp);
 }
@@ -241,9 +278,12 @@ static hx::StaticInfo *TupleValueCommand_obj_sStaticStorageInfo = 0;
 
 static ::String TupleValueCommand_obj_sMemberFields[] = {
 	HX_HCSTRING("values","\xe2","\x03","\xb7","\x4f"),
+	HX_HCSTRING("copy","\xb5","\xbb","\xc4","\x41"),
+	HX_HCSTRING("setScope","\x92","\xda","\x0d","\x87"),
 	HX_HCSTRING("walk","\x09","\x5d","\xf2","\x4e"),
 	HX_HCSTRING("run","\x4b","\xe7","\x56","\x00"),
 	HX_HCSTRING("getName","\x01","\x22","\x82","\x1b"),
+	HX_HCSTRING("getFriendlyName","\x0c","\x92","\xf4","\xaf"),
 	HX_HCSTRING("getBytecode","\xeb","\xb6","\x8b","\x7d"),
 	HX_HCSTRING("reconstruct","\x04","\x66","\x1a","\x90"),
 	::String(null()) };

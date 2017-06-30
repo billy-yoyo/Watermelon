@@ -1,5 +1,7 @@
 package src.compiler.object.builtin;
+import haxe.io.BytesBuffer;
 import src.compiler.object.builtin.BoolObject;
+import src.compiler.object.builtin.BytesObject;
 
 /**
  * ...
@@ -175,9 +177,25 @@ class FloatObject extends ValuedObject
         return _bool(value != 0);
     }
     
-    override public function getHash():String 
+    override public function bytes():BytesObject 
     {
-        return Std.string(value);
+        if (hasMember("__bytes__")) return cast(callMember("__bytes__", []), BytesObject);
+        var buffer:BytesBuffer = new BytesBuffer();
+        buffer.addDouble(value);
+        return _bytes(buffer.getBytes());
+    }
+    
+    override public function negate():Object 
+    {
+        if (hasMember("__negate__")) return callMember("__negate__", []);
+        return _float( -value);
+    }
+    
+    override public function getHash():Int 
+    {
+        var buffer:BytesBuffer = new BytesBuffer();
+        buffer.addFloat(value);
+        return buffer.getBytes().getInt32(0);
     }
     
 }

@@ -59,11 +59,17 @@ class HXCPP_CLASS_ATTRIBUTES Argument_obj : public  ::src::compiler::commands::C
 
 		 ::src::compiler::commands::value::ValueCommand value;
 		bool collapsed;
+		 ::src::compiler::commands::Command copy( ::src::compiler::Scope scope);
+
+		void setScope( ::src::compiler::Scope scope);
+
 		::Array< ::Dynamic> walk();
 
 		 ::src::compiler::bytecode::Bytecode getBytecode();
 
 		::String getName();
+
+		::String getFriendlyName();
 
 };
 

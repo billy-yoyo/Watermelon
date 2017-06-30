@@ -14,7 +14,9 @@
 HX_LOCAL_STACK_FRAME(_hx_pos_b5269e0ce41f90ec_36_getClass,"Type","getClass",0xc4e49bd6,"Type.getClass","C:\\HaxeToolkit\\haxe\\std/cpp/_std/Type.hx",36,0x00143afe)
 HX_LOCAL_STACK_FRAME(_hx_pos_b5269e0ce41f90ec_54_getSuperClass,"Type","getSuperClass",0xd9ffa85f,"Type.getSuperClass","C:\\HaxeToolkit\\haxe\\std/cpp/_std/Type.hx",54,0x00143afe)
 HX_LOCAL_STACK_FRAME(_hx_pos_b5269e0ce41f90ec_57_getClassName,"Type","getClassName",0x8e66dd41,"Type.getClassName","C:\\HaxeToolkit\\haxe\\std/cpp/_std/Type.hx",57,0x00143afe)
+HX_LOCAL_STACK_FRAME(_hx_pos_b5269e0ce41f90ec_67_resolveClass,"Type","resolveClass",0x23b06bc0,"Type.resolveClass","C:\\HaxeToolkit\\haxe\\std/cpp/_std/Type.hx",67,0x00143afe)
 HX_LOCAL_STACK_FRAME(_hx_pos_b5269e0ce41f90ec_81_createInstance,"Type","createInstance",0xab84f9c5,"Type.createInstance","C:\\HaxeToolkit\\haxe\\std/cpp/_std/Type.hx",81,0x00143afe)
+HX_LOCAL_STACK_FRAME(_hx_pos_b5269e0ce41f90ec_88_createEmptyInstance,"Type","createEmptyInstance",0xcb752312,"Type.createEmptyInstance","C:\\HaxeToolkit\\haxe\\std/cpp/_std/Type.hx",88,0x00143afe)
 HX_LOCAL_STACK_FRAME(_hx_pos_b5269e0ce41f90ec_113_typeof,"Type","typeof",0xd6c51d65,"Type.typeof","C:\\HaxeToolkit\\haxe\\std/cpp/_std/Type.hx",113,0x00143afe)
 HX_LOCAL_STACK_FRAME(_hx_pos_b5269e0ce41f90ec_130_enumEq,"Type","enumEq",0x855650e1,"Type.enumEq","C:\\HaxeToolkit\\haxe\\std/cpp/_std/Type.hx",130,0x00143afe)
 HX_LOCAL_STACK_FRAME(_hx_pos_b5269e0ce41f90ec_138_enumParameters,"Type","enumParameters",0xf9e1b41f,"Type.enumParameters","C:\\HaxeToolkit\\haxe\\std/cpp/_std/Type.hx",138,0x00143afe)
@@ -87,6 +89,25 @@ HXLINE(  60)		return c->mName;
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC1(Type_obj,getClassName,return )
 
+hx::Class Type_obj::resolveClass(::String name){
+            	HX_STACKFRAME(&_hx_pos_b5269e0ce41f90ec_67_resolveClass)
+HXLINE(  68)		hx::Class result = ::hx::Class_obj::Resolve(name);
+HXLINE(  69)		bool _hx_tmp;
+HXDLIN(  69)		if (hx::IsNotNull( result )) {
+HXLINE(  69)			_hx_tmp = ( (bool)(result->__IsEnum()) );
+            		}
+            		else {
+HXLINE(  69)			_hx_tmp = false;
+            		}
+HXDLIN(  69)		if (_hx_tmp) {
+HXLINE(  70)			return null();
+            		}
+HXLINE(  71)		return result;
+            	}
+
+
+STATIC_HX_DEFINE_DYNAMIC_FUNC1(Type_obj,resolveClass,return )
+
  ::Dynamic Type_obj::createInstance(hx::Class cl,::cpp::VirtualArray args){
             	HX_STACKFRAME(&_hx_pos_b5269e0ce41f90ec_81_createInstance)
 HXLINE(  82)		if (hx::IsNotNull( cl )) {
@@ -97,6 +118,14 @@ HXLINE(  84)		return null();
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(Type_obj,createInstance,return )
+
+ ::Dynamic Type_obj::createEmptyInstance(hx::Class cl){
+            	HX_STACKFRAME(&_hx_pos_b5269e0ce41f90ec_88_createEmptyInstance)
+HXDLIN(  88)		return cl->ConstructEmpty();
+            	}
+
+
+STATIC_HX_DEFINE_DYNAMIC_FUNC1(Type_obj,createEmptyInstance,return )
 
  ::ValueType Type_obj::_hx_typeof( ::Dynamic v){
             	HX_STACKFRAME(&_hx_pos_b5269e0ce41f90ec_113_typeof)
@@ -173,6 +202,7 @@ bool Type_obj::__GetStatic(const ::String &inName, Dynamic &outValue, hx::Proper
 		break;
 	case 12:
 		if (HX_FIELD_EQ(inName,"getClassName") ) { outValue = getClassName_dyn(); return true; }
+		if (HX_FIELD_EQ(inName,"resolveClass") ) { outValue = resolveClass_dyn(); return true; }
 		break;
 	case 13:
 		if (HX_FIELD_EQ(inName,"getSuperClass") ) { outValue = getSuperClass_dyn(); return true; }
@@ -180,6 +210,9 @@ bool Type_obj::__GetStatic(const ::String &inName, Dynamic &outValue, hx::Proper
 	case 14:
 		if (HX_FIELD_EQ(inName,"createInstance") ) { outValue = createInstance_dyn(); return true; }
 		if (HX_FIELD_EQ(inName,"enumParameters") ) { outValue = enumParameters_dyn(); return true; }
+		break;
+	case 19:
+		if (HX_FIELD_EQ(inName,"createEmptyInstance") ) { outValue = createEmptyInstance_dyn(); return true; }
 	}
 	return false;
 }
@@ -206,7 +239,9 @@ static ::String Type_obj_sStaticFields[] = {
 	HX_HCSTRING("getClass","\xc2","\x87","\x2f","\xa8"),
 	HX_HCSTRING("getSuperClass","\xf3","\x04","\x7a","\x04"),
 	HX_HCSTRING("getClassName","\x2d","\x2f","\x94","\xeb"),
+	HX_HCSTRING("resolveClass","\xac","\xbd","\xdd","\x80"),
 	HX_HCSTRING("createInstance","\xb1","\x9e","\x1b","\xac"),
+	HX_HCSTRING("createEmptyInstance","\xa6","\x26","\x85","\xce"),
 	HX_HCSTRING("typeof","\x51","\xf6","\x36","\x57"),
 	HX_HCSTRING("enumEq","\xcd","\x29","\xc8","\x05"),
 	HX_HCSTRING("enumParameters","\x0b","\x59","\x78","\xfa"),

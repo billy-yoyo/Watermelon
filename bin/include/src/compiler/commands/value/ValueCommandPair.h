@@ -60,6 +60,10 @@ class HXCPP_CLASS_ATTRIBUTES ValueCommandPair_obj : public  ::src::compiler::com
 
 		 ::src::compiler::commands::value::ValueCommand left;
 		 ::src::compiler::commands::value::ValueCommand right;
+		 ::src::compiler::commands::Command copy( ::src::compiler::Scope scope);
+
+		void setScope( ::src::compiler::Scope scope);
+
 		::Array< ::Dynamic> walk();
 
 		::String getName();

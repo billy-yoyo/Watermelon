@@ -56,9 +56,13 @@ class HXCPP_CLASS_ATTRIBUTES ContinueCommand_obj : public  ::src::compiler::comm
 		static  ::src::compiler::commands::ContinueCommand fromTokens( ::src::compiler::Scope scope,::Array< ::Dynamic> tokens);
 		static ::Dynamic fromTokens_dyn();
 
+		 ::src::compiler::commands::Command copy( ::src::compiler::Scope scope);
+
 		 ::src::compiler::object::Object run();
 
 		::String getName();
+
+		::String getFriendlyName();
 
 		 ::src::compiler::bytecode::Bytecode getBytecode();
 

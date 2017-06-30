@@ -8,20 +8,20 @@
 #include <src/compiler/_Core/OperativeCapture.h>
 #endif
 
-HX_DEFINE_STACK_FRAME(_hx_pos_7d43b3e2b768e154_140_new,"src.compiler._Core.OperativeCapture","new",0x89678496,"src.compiler._Core.OperativeCapture.new","src/compiler/Core.hx",140,0x3bfcc3ba)
-HX_LOCAL_STACK_FRAME(_hx_pos_7d43b3e2b768e154_157_isStart,"src.compiler._Core.OperativeCapture","isStart",0x67321f4e,"src.compiler._Core.OperativeCapture.isStart","src/compiler/Core.hx",157,0x3bfcc3ba)
-HX_LOCAL_STACK_FRAME(_hx_pos_7d43b3e2b768e154_162_isEnd,"src.compiler._Core.OperativeCapture","isEnd",0x7ddcdbc7,"src.compiler._Core.OperativeCapture.isEnd","src/compiler/Core.hx",162,0x3bfcc3ba)
+HX_DEFINE_STACK_FRAME(_hx_pos_7d43b3e2b768e154_173_new,"src.compiler._Core.OperativeCapture","new",0x89678496,"src.compiler._Core.OperativeCapture.new","src/compiler/Core.hx",173,0x3bfcc3ba)
+HX_LOCAL_STACK_FRAME(_hx_pos_7d43b3e2b768e154_190_isStart,"src.compiler._Core.OperativeCapture","isStart",0x67321f4e,"src.compiler._Core.OperativeCapture.isStart","src/compiler/Core.hx",190,0x3bfcc3ba)
+HX_LOCAL_STACK_FRAME(_hx_pos_7d43b3e2b768e154_195_isEnd,"src.compiler._Core.OperativeCapture","isEnd",0x7ddcdbc7,"src.compiler._Core.OperativeCapture.isEnd","src/compiler/Core.hx",195,0x3bfcc3ba)
 namespace src{
 namespace compiler{
 namespace _Core{
 
 void OperativeCapture_obj::__construct(::Array< ::String > end,::Array< ::String > startContent,::Array< ::String > endContent, ::Dynamic checkOverride){
-            	HX_STACKFRAME(&_hx_pos_7d43b3e2b768e154_140_new)
-HXLINE( 146)		this->lastData = null();
-HXLINE( 149)		this->end = end;
-HXLINE( 150)		this->startContent = startContent;
-HXLINE( 151)		this->endContent = endContent;
-HXLINE( 152)		this->checkOverride = checkOverride;
+            	HX_STACKFRAME(&_hx_pos_7d43b3e2b768e154_173_new)
+HXLINE( 179)		this->lastData = null();
+HXLINE( 182)		this->end = end;
+HXLINE( 183)		this->startContent = startContent;
+HXLINE( 184)		this->endContent = endContent;
+HXLINE( 185)		this->checkOverride = checkOverride;
             	}
 
 Dynamic OperativeCapture_obj::__CreateEmpty() { return new OperativeCapture_obj; }
@@ -40,41 +40,41 @@ bool OperativeCapture_obj::_hx_isInstanceOf(int inClassId) {
 }
 
 bool OperativeCapture_obj::isStart( ::src::ast::Token token){
-            	HX_STACKFRAME(&_hx_pos_7d43b3e2b768e154_157_isStart)
-HXDLIN( 157)		if (hx::IsNotNull( this->startContent )) {
-HXDLIN( 157)			::Array< ::String > _hx_tmp = this->startContent;
-HXDLIN( 157)			return (_hx_tmp->indexOf(token->getContent(),null()) >= (int)0);
+            	HX_STACKFRAME(&_hx_pos_7d43b3e2b768e154_190_isStart)
+HXDLIN( 190)		if (hx::IsNotNull( this->startContent )) {
+HXDLIN( 190)			::Array< ::String > _hx_tmp = this->startContent;
+HXDLIN( 190)			return (_hx_tmp->indexOf(token->getContent(),null()) >= (int)0);
             		}
             		else {
-HXDLIN( 157)			return true;
+HXDLIN( 190)			return true;
             		}
-HXDLIN( 157)		return false;
+HXDLIN( 190)		return false;
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(OperativeCapture_obj,isStart,return )
 
 bool OperativeCapture_obj::isEnd( ::src::ast::Token token, ::src::ast::Token nextToken){
-            	HX_STACKFRAME(&_hx_pos_7d43b3e2b768e154_162_isEnd)
-HXDLIN( 162)		if (hx::IsNotNull( this->checkOverride )) {
-HXLINE( 163)			return ( (bool)(this->checkOverride(this->lastData,token,nextToken)) );
+            	HX_STACKFRAME(&_hx_pos_7d43b3e2b768e154_195_isEnd)
+HXDLIN( 195)		if (hx::IsNotNull( this->checkOverride )) {
+HXLINE( 196)			return ( (bool)(this->checkOverride(this->lastData,token,nextToken)) );
             		}
             		else {
-HXLINE( 165)			::Array< ::String > _hx_tmp = this->end;
-HXDLIN( 165)			if ((_hx_tmp->indexOf(token->getName(),null()) >= (int)0)) {
-HXLINE( 165)				if (hx::IsNotNull( this->endContent )) {
-HXLINE( 165)					::Array< ::String > _hx_tmp1 = this->endContent;
-HXDLIN( 165)					return (_hx_tmp1->indexOf(token->getContent(),null()) >= (int)0);
+HXLINE( 198)			::Array< ::String > _hx_tmp = this->end;
+HXDLIN( 198)			if ((_hx_tmp->indexOf(token->getName(),null()) >= (int)0)) {
+HXLINE( 198)				if (hx::IsNotNull( this->endContent )) {
+HXLINE( 198)					::Array< ::String > _hx_tmp1 = this->endContent;
+HXDLIN( 198)					return (_hx_tmp1->indexOf(token->getContent(),null()) >= (int)0);
             				}
             				else {
-HXLINE( 165)					return true;
+HXLINE( 198)					return true;
             				}
             			}
             			else {
-HXLINE( 165)				return false;
+HXLINE( 198)				return false;
             			}
             		}
-HXLINE( 162)		return false;
+HXLINE( 195)		return false;
             	}
 
 

@@ -29,20 +29,20 @@
 #include <src/compiler/object/builtin/ValuedObject.h>
 #endif
 
-HX_DEFINE_STACK_FRAME(_hx_pos_a2edf02aae5cdc7f_157_new,"src.compiler.object.builtin.RangeObject","new",0x1112c319,"src.compiler.object.builtin.RangeObject.new","src/compiler/object/builtin/Builtins.hx",157,0xe9817cb7)
-HX_LOCAL_STACK_FRAME(_hx_pos_a2edf02aae5cdc7f_165_next,"src.compiler.object.builtin.RangeObject","next",0xdf57f41a,"src.compiler.object.builtin.RangeObject.next","src/compiler/object/builtin/Builtins.hx",165,0xe9817cb7)
-HX_LOCAL_STACK_FRAME(_hx_pos_a2edf02aae5cdc7f_173_hasNext,"src.compiler.object.builtin.RangeObject","hasNext",0xdd87e8a6,"src.compiler.object.builtin.RangeObject.hasNext","src/compiler/object/builtin/Builtins.hx",173,0xe9817cb7)
+HX_DEFINE_STACK_FRAME(_hx_pos_fe4607b762e17f62_14_new,"src.compiler.object.builtin.RangeObject","new",0x1112c319,"src.compiler.object.builtin.RangeObject.new","src/compiler/object/builtin/RangeObject.hx",14,0x6d58a719)
+HX_LOCAL_STACK_FRAME(_hx_pos_fe4607b762e17f62_22_next,"src.compiler.object.builtin.RangeObject","next",0xdf57f41a,"src.compiler.object.builtin.RangeObject.next","src/compiler/object/builtin/RangeObject.hx",22,0x6d58a719)
+HX_LOCAL_STACK_FRAME(_hx_pos_fe4607b762e17f62_30_hasNext,"src.compiler.object.builtin.RangeObject","hasNext",0xdd87e8a6,"src.compiler.object.builtin.RangeObject.hasNext","src/compiler/object/builtin/RangeObject.hx",30,0x6d58a719)
 namespace src{
 namespace compiler{
 namespace object{
 namespace builtin{
 
 void RangeObject_obj::__construct( ::src::compiler::Scope scope, ::src::compiler::object::ObjectType type,Float start,Float end,Float step){
-            	HX_STACKFRAME(&_hx_pos_a2edf02aae5cdc7f_157_new)
-HXLINE( 158)		super::__construct(scope,type,null(),null());
-HXLINE( 159)		this->start = start;
-HXLINE( 160)		this->end = end;
-HXLINE( 161)		this->step = step;
+            	HX_STACKFRAME(&_hx_pos_fe4607b762e17f62_14_new)
+HXLINE(  15)		super::__construct(scope,type,null(),null());
+HXLINE(  16)		this->start = start;
+HXLINE(  17)		this->end = end;
+HXLINE(  18)		this->step = step;
             	}
 
 Dynamic RangeObject_obj::__CreateEmpty() { return new RangeObject_obj; }
@@ -65,16 +65,16 @@ bool RangeObject_obj::_hx_isInstanceOf(int inClassId) {
 }
 
  ::src::compiler::object::Object RangeObject_obj::next(){
-            	HX_STACKFRAME(&_hx_pos_a2edf02aae5cdc7f_165_next)
-HXLINE( 166)		Float last = this->progress;
-HXLINE( 167)		this->progress = (this->progress + this->step);
-HXLINE( 168)		return this->_float(last,null());
+            	HX_STACKFRAME(&_hx_pos_fe4607b762e17f62_22_next)
+HXLINE(  23)		Float last = this->progress;
+HXLINE(  24)		this->progress = (this->progress + this->step);
+HXLINE(  25)		return this->_float(last,null());
             	}
 
 
  ::src::compiler::object::builtin::BoolObject RangeObject_obj::hasNext(){
-            	HX_STACKFRAME(&_hx_pos_a2edf02aae5cdc7f_173_hasNext)
-HXDLIN( 173)		return this->_bool((this->progress < this->end),null());
+            	HX_STACKFRAME(&_hx_pos_fe4607b762e17f62_30_hasNext)
+HXDLIN(  30)		return this->_bool((this->progress < this->end),null());
             	}
 
 

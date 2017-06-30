@@ -2,6 +2,8 @@ package src.compiler.commands.value;
 import haxe.Int64;
 import src.ast.Token;
 import src.ast.base.AccessToken;
+import src.ast.base.CommaToken;
+import src.ast.base.RootToken;
 import src.compiler.Scope;
 import src.compiler.bytecode.Bytecode;
 import src.compiler.commands.Command;
@@ -50,6 +52,13 @@ class VariableAccess extends Command
         return new VariableAccess(scope, [new LiteralValueCommand(scope, name)], false, true);
     }
     
+    public static function copyArray(scope:Scope, vars:Array<VariableAccess>):Array<VariableAccess>
+    {
+        var newVars:Array<VariableAccess> = new Array<VariableAccess>();
+        for (x in vars) newVars.push(cast(x.copy(scope), VariableAccess));
+        return newVars;
+    }
+    
     private var vars:Array<ValueCommand>;
     public function new(scope:Scope,vars:Array<ValueCommand>, ?definition:Bool, ?obfuscated:Bool) 
     {
@@ -88,11 +97,33 @@ class VariableAccess extends Command
         return vars;
     }
     
+    override public function copy(scope:Scope):Command 
+    {
+        return new VariableAccess(scope, ValueCommand.copyArray(scope, vars));
+    }
+    
+    override public function setScope(scope:Scope) 
+    {
+        super.setScope(scope);
+        for (v in vars) v.setScope(scope);
+    }
+    
     override public function walk():Array<Command> 
     {
         var cmds:Array<Command> = new Array<Command>();
         for (x in vars) cmds.push(x);
         return cmds;
+    }
+    
+    public function throwInvalidVar(length:Int) {
+        var s:String = "";
+        for (v in vars.slice(0, length)) {
+            var tokens:Array<Token> = v.reconstruct();
+            s += RootToken.fromRaw(tokens).reconstruct() + ".";
+        }
+        s = s.substr(0, s.length - 1);
+        if (length == 1) throw new InvalidFieldAccessSignal('Variable $s does not exist in scope $scope')
+        else throw new InvalidFieldAccessSignal('Field $s does not exist in scope $scope');
     }
     
     public function getVariable():Object
@@ -103,10 +134,13 @@ class VariableAccess extends Command
         
         var v:Object;
         for (i in 1...vars.length) {
+            if (obj == null) throwInvalidVar(i);
             v = vars[i].run();
             if (!obj.hasfield(v).rawBool()) throw new InvalidFieldAccessSignal('Invalid field, $obj has no field ${v.rawString()}');
             obj = obj.getfield(v);
         }
+        
+        if (obj == null) throwInvalidVar(vars.length);
         return obj;
         //var sfield:Object = obj._str(field);
         //if (!obj.hasfield(sfield).rawBool()) throw new InvalidFieldAccessSignal('Invalid field, $obj has no field $field');
@@ -124,12 +158,13 @@ class VariableAccess extends Command
         else obj = vars[0].run(); 
         
         var v:Object;
-        for (i in 1...(vars.length-1)) {
+        for (i in 1...(vars.length - 1)) {
+            if (obj == null) throwInvalidVar(i);
             v = vars[i].run();
             if (!obj.hasfield(v).rawBool()) throw new InvalidFieldAccessSignal('Invalid field access, $obj has no field ${v.rawString()}');
             obj = obj.getfield(v);
         }
-        if (obj == null) throw new InvalidFieldAccessSignal('Null object found');
+        if (obj == null) throwInvalidVar(vars.length - 1);
         obj.setfield(vars[vars.length - 1].run(), value);
     }
     
@@ -144,18 +179,40 @@ class VariableAccess extends Command
         else obj = vars[0].run();
         
         var v:Object;
-        for (i in 1...(vars.length-1)) {
+        for (i in 1...(vars.length - 1)) {
+            if (obj == null) throwInvalidVar(i);
             v = vars[i].run();
             if (!obj.hasfield(v).rawBool()) throw new InvalidFieldAccessSignal('Invalid field access, $obj has no field ${v.rawString()}');
             obj = obj.getfield(v);
         }
-        if (obj == null) throw new InvalidFieldAccessSignal('Null object found');
+        if (obj == null) throwInvalidVar(vars.length - 1);
         obj.delfield(vars[vars.length - 1].run());
     }
     
     override public function getName():String 
     {
         return "VariableAccess";
+    }
+    
+    override public function getFriendlyName():String 
+    {
+        var s:String = "";
+        for (v in vars) {
+            var tokens:Array<Token> = v.reconstruct();
+            s += RootToken.fromRaw(tokens).reconstruct() + ".";
+        }
+        s = s.substr(0, s.length - 1);
+        return 'variable $s';
+    }
+    
+    public function getReconstructedString():String
+    {
+        var recon:Array<Token> = reconstruct();
+        var reconStr:String = "";
+        for (token in recon) {
+            reconStr += if (token != null) token.reconstruct() else "";
+        }
+        return reconStr;
     }
     
     override public function getBytecode():Bytecode
@@ -172,6 +229,12 @@ class VariableAccess extends Command
     
     override public function reconstruct():Array<Token> 
     {
-        return new AccessToken(".").join(Command.reconstructCommands(vars));
+        var tokens:Array<Token> = new Array<Token>();
+        for (v in vars) {
+            tokens = tokens.concat(v.reconstruct());
+            tokens.push(new AccessToken("."));
+        }
+        if (tokens.length > 0) tokens.pop();
+        return tokens;
     }
 }

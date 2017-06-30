@@ -149,9 +149,10 @@ HXLINE(  61)		return this->_str(this->type->getName(),null());
             	HX_STACKFRAME(&_hx_pos_87f014bc01d652d1_65_call)
 HXLINE(  66)		if (::src::compiler::object::builtin::ObjectTypeObject_obj::isSubType(this->value->getObjectClass(),hx::ClassOf< ::src::compiler::object::builtin::ValuedObject >())) {
 HXLINE(  66)			 ::src::compiler::object::ObjectType _hx_tmp = this->value;
-HXDLIN(  66)			return _hx_tmp->createValue(hx::TCast<  ::src::compiler::object::builtin::ValuedObject >::cast(values->shift().StaticCast<  ::src::compiler::object::Object >())->getInitVar(),values);
+HXDLIN(  66)			 ::Dynamic _hx_tmp1 = hx::TCast<  ::src::compiler::object::builtin::ValuedObject >::cast(values->shift().StaticCast<  ::src::compiler::object::Object >())->getInitVar();
+HXDLIN(  66)			return _hx_tmp->createValue(_hx_tmp1,this->scope,values);
             		}
-HXLINE(  67)		return this->value->createObject(values);
+HXLINE(  67)		return this->value->createObject(this->scope,values);
             	}
 
 

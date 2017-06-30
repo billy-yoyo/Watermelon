@@ -62,11 +62,17 @@ class HXCPP_CLASS_ATTRIBUTES ReturnCommand_obj : public  ::src::compiler::comman
 		static ::Dynamic fromBytecode_dyn();
 
 		 ::src::compiler::commands::value::ValueCommand value;
+		 ::src::compiler::commands::Command copy( ::src::compiler::Scope scope);
+
+		void setScope( ::src::compiler::Scope scope);
+
 		::Array< ::Dynamic> walk();
 
 		 ::src::compiler::object::Object run();
 
 		::String getName();
+
+		::String getFriendlyName();
 
 		 ::src::compiler::bytecode::Bytecode getBytecode();
 

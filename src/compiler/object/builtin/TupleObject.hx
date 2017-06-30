@@ -5,6 +5,7 @@ import src.compiler.object.builtin.IntObject;
 import src.compiler.object.builtin.ListObject;
 import src.compiler.object.builtin.StringObject;
 import src.compiler.object.builtin.TupleObject;
+import src.compiler.signals.IndexOutOfBoundsSignal;
 import src.compiler.signals.InvalidFieldAccessSignal;
 
 /**
@@ -15,6 +16,11 @@ class TupleObject extends ValuedObject
 {
 
     public var arr:Array<Object> = new Array<Object>();
+    public function _index(i:Int):Int
+    {
+        if (i < 0) return i + arr.length;
+        return i;
+    }
     
     public function getArray():Array<Object>
     {
@@ -24,7 +30,23 @@ class TupleObject extends ValuedObject
     override public function get(index:Object):Object 
     {
         if (hasMember("__get__")) return callMember("__get__", [index]);
-        return arr[index.rawInt()];
+        if (index.isInstance("SpliceType")) {
+             var splice:SpliceValue = cast(index, SpliceObject).getValue(arr.length);
+            var newArr:Array<Object> = new Array<Object>();
+            var i:Int = splice.start;
+            
+            while (i < splice.end) {
+                newArr.push(arr[i]);
+                i += splice.step;
+            }
+            return _tuple(newArr);
+        }
+        var i:Int = _index(index.rawInt());
+        if (i >= 0 && i < arr.length) {
+            return arr[i];
+        } else {
+            throw new IndexOutOfBoundsSignal('Index $i is out of bounds, should be between 0 and ${arr.length}');
+        }
     }
     
     override public function set(index:Object, obj:Object):Void
@@ -36,7 +58,7 @@ class TupleObject extends ValuedObject
     
     override public function delete(index:Object):Void 
     {
-        if (hasMember("__delete__")) { callMember("__eq__", [index]); return; }
+        if (hasMember("__delete__")) { callMember("__delete__", [index]); return; }
         throw new InvalidFieldAccessSignal("Tuples are immutable (cannot delete index of tuple)");
         return null;
     }
@@ -72,7 +94,7 @@ class TupleObject extends ValuedObject
         if (hasMember("__div__")) return callMember("__div__", [other]);
         if (other.hasMember("__rdiv__")) return other.rdiv(this);
         var div:Int = other.rawInt();
-        var result:TupleObject = cast(scope.getType("ListType").createObject(), TupleObject);
+        var result:TupleObject = cast(scope.getType("TupleType").createObject(scope), TupleObject);
         var arr:Array<Object> = result.getArray();
         for (i in 0...Math.ceil(this.arr.length / div)) {
             arr.push(_list(this.arr.slice(i * div, div)));
@@ -113,9 +135,10 @@ class TupleObject extends ValuedObject
     override public function list():ListObject 
     {
         if (hasMember("__list__")) return cast(callMember("__list__", []), ListObject);
-        var list:ListObject = cast(scope.getType("ListType").createObject(), ListObject);
+        var list:ListObject = cast(scope.getType("ListType").createObject(scope), ListObject);
         list.arr.concat(arr);
         return list;
     }
+    
     
 }

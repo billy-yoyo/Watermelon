@@ -57,6 +57,17 @@ class IteratorCommand extends Command
         this.value = value;
     }
     
+    override public function copy(scope:Scope):Command 
+    {
+        return new IteratorCommand(scope, vars.copy(), cast(value.copy(scope), ValueCommand));
+    }
+    
+    override public function setScope(scope:Scope) 
+    {
+        super.setScope(scope);
+        value.setScope(scope);
+    }
+    
     override public function walk():Array<Command> 
     {
         return value.walk();
@@ -84,6 +95,11 @@ class IteratorCommand extends Command
     override public function getName():String 
     {
         return "IteratorCommand";
+    }
+    
+    override public function getFriendlyName():String 
+    {
+        return "iterator";
     }
     
     override public function getBytecode():Bytecode 

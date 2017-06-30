@@ -26,7 +26,7 @@ class MapValueCommand extends ValueCommand
         var spl:Array<Array<Token>> = Command.splitTokens(tokens, "CommaToken");
         var cmds:Array<ValueCommandPair> = new Array<ValueCommandPair>();
         for (subtokens in spl) {
-            var pair:Array<Array<Token>> = Command.splitTokens(tokens, "AssignmentToken");
+            var pair:Array<Array<Token>> = Command.splitTokens(subtokens, "AssignmentToken");
             if (pair.length < 2) throw "No assignment in map";
             else if (pair.length > 2) throw "Double assignment in map";
             else {
@@ -50,6 +50,19 @@ class MapValueCommand extends ValueCommand
         this.cmds = cmds;
     }
     
+    override public function copy(scope:Scope):Command 
+    {
+        var newCmds:Array<ValueCommandPair> = new Array<ValueCommandPair>();
+        for (cmd in cmds) newCmds.push(cast(cmd.copy(scope), ValueCommandPair));
+        return new MapValueCommand(scope, newCmds);
+    }
+    
+    override public function setScope(scope:Scope) 
+    {
+        super.setScope(scope);
+        for (cmd in cmds) cmd.setScope(scope);
+    }
+    
     override public function walk():Array<Command> 
     {
         var cmds:Array<Command> = new Array<Command>();
@@ -59,7 +72,7 @@ class MapValueCommand extends ValueCommand
     
     override public function run():Object
     {
-        var map:MapObject = cast(scope.getType("MapType").createObject(), MapObject);
+        var map:MapObject = cast(scope.getType("MapType").createObject(scope), MapObject);
         for (pair in cmds) {
             map.set(pair.left.run(), pair.right.run());
         }
@@ -69,6 +82,11 @@ class MapValueCommand extends ValueCommand
     override public function getName():String 
     {
         return "MapValueCommand";
+    }
+    
+    override public function getFriendlyName():String 
+    {
+        return "map";
     }
     
     override public function getBytecode():Bytecode 
@@ -90,7 +108,7 @@ class MapValueCommand extends ValueCommand
 class ValueCommandPair extends Command {
     public static function fromBytecode(scope:Scope, arr:Array<Bytecode>):ValueCommandPair
     {
-        return new ValueCommandPair(arr.shift().convert(scope) , arr.shift().convert(scope));
+        return new ValueCommandPair(arr.shift().convert(scope), arr.shift().convert(scope));
     }
     
     public var left:ValueCommand;
@@ -100,6 +118,17 @@ class ValueCommandPair extends Command {
         super(null);
         this.left = left;
         this.right = right;
+    }
+    
+    override public function copy(scope:Scope) 
+    {
+        return new ValueCommandPair(cast(left.copy(scope), ValueCommand), cast(right.copy(scope), ValueCommand));
+    }
+    
+    override public function setScope(scope:Scope) 
+    {
+        left.setScope(scope);
+        right.setScope(scope);
     }
     
     override public function walk():Array<Command> 

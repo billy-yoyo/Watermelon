@@ -17,21 +17,24 @@
 #include <src/compiler/commands/value/ValueCommand.h>
 #endif
 
-HX_DEFINE_STACK_FRAME(_hx_pos_bfa0739dae4c82ff_198_new,"src.compiler.commands.value.Argument","new",0xb8ded58d,"src.compiler.commands.value.Argument.new","src/compiler/commands/value/FunctionCallValueCommand.hx",198,0x6f3c406e)
-HX_LOCAL_STACK_FRAME(_hx_pos_bfa0739dae4c82ff_206_walk,"src.compiler.commands.value.Argument","walk",0x100bdf3c,"src.compiler.commands.value.Argument.walk","src/compiler/commands/value/FunctionCallValueCommand.hx",206,0x6f3c406e)
-HX_LOCAL_STACK_FRAME(_hx_pos_bfa0739dae4c82ff_211_getBytecode,"src.compiler.commands.value.Argument","getBytecode",0x04933118,"src.compiler.commands.value.Argument.getBytecode","src/compiler/commands/value/FunctionCallValueCommand.hx",211,0x6f3c406e)
-HX_LOCAL_STACK_FRAME(_hx_pos_bfa0739dae4c82ff_216_getName,"src.compiler.commands.value.Argument","getName",0x5f7bc1ae,"src.compiler.commands.value.Argument.getName","src/compiler/commands/value/FunctionCallValueCommand.hx",216,0x6f3c406e)
-HX_LOCAL_STACK_FRAME(_hx_pos_bfa0739dae4c82ff_192_fromBytecode,"src.compiler.commands.value.Argument","fromBytecode",0x97323cf2,"src.compiler.commands.value.Argument.fromBytecode","src/compiler/commands/value/FunctionCallValueCommand.hx",192,0x6f3c406e)
+HX_DEFINE_STACK_FRAME(_hx_pos_bfa0739dae4c82ff_223_new,"src.compiler.commands.value.Argument","new",0xb8ded58d,"src.compiler.commands.value.Argument.new","src/compiler/commands/value/FunctionCallValueCommand.hx",223,0x6f3c406e)
+HX_LOCAL_STACK_FRAME(_hx_pos_bfa0739dae4c82ff_231_copy,"src.compiler.commands.value.Argument","copy",0x02de3de8,"src.compiler.commands.value.Argument.copy","src/compiler/commands/value/FunctionCallValueCommand.hx",231,0x6f3c406e)
+HX_LOCAL_STACK_FRAME(_hx_pos_bfa0739dae4c82ff_235_setScope,"src.compiler.commands.value.Argument","setScope",0xbd7ff245,"src.compiler.commands.value.Argument.setScope","src/compiler/commands/value/FunctionCallValueCommand.hx",235,0x6f3c406e)
+HX_LOCAL_STACK_FRAME(_hx_pos_bfa0739dae4c82ff_242_walk,"src.compiler.commands.value.Argument","walk",0x100bdf3c,"src.compiler.commands.value.Argument.walk","src/compiler/commands/value/FunctionCallValueCommand.hx",242,0x6f3c406e)
+HX_LOCAL_STACK_FRAME(_hx_pos_bfa0739dae4c82ff_247_getBytecode,"src.compiler.commands.value.Argument","getBytecode",0x04933118,"src.compiler.commands.value.Argument.getBytecode","src/compiler/commands/value/FunctionCallValueCommand.hx",247,0x6f3c406e)
+HX_LOCAL_STACK_FRAME(_hx_pos_bfa0739dae4c82ff_252_getName,"src.compiler.commands.value.Argument","getName",0x5f7bc1ae,"src.compiler.commands.value.Argument.getName","src/compiler/commands/value/FunctionCallValueCommand.hx",252,0x6f3c406e)
+HX_LOCAL_STACK_FRAME(_hx_pos_bfa0739dae4c82ff_257_getFriendlyName,"src.compiler.commands.value.Argument","getFriendlyName",0x924926b9,"src.compiler.commands.value.Argument.getFriendlyName","src/compiler/commands/value/FunctionCallValueCommand.hx",257,0x6f3c406e)
+HX_LOCAL_STACK_FRAME(_hx_pos_bfa0739dae4c82ff_217_fromBytecode,"src.compiler.commands.value.Argument","fromBytecode",0x97323cf2,"src.compiler.commands.value.Argument.fromBytecode","src/compiler/commands/value/FunctionCallValueCommand.hx",217,0x6f3c406e)
 namespace src{
 namespace compiler{
 namespace commands{
 namespace value{
 
 void Argument_obj::__construct( ::src::compiler::commands::value::ValueCommand value,bool collapsed){
-            	HX_STACKFRAME(&_hx_pos_bfa0739dae4c82ff_198_new)
-HXLINE( 199)		super::__construct(null());
-HXLINE( 200)		this->value = value;
-HXLINE( 201)		this->collapsed = collapsed;
+            	HX_STACKFRAME(&_hx_pos_bfa0739dae4c82ff_223_new)
+HXLINE( 224)		super::__construct(null());
+HXLINE( 225)		this->value = value;
+HXLINE( 226)		this->collapsed = collapsed;
             	}
 
 Dynamic Argument_obj::__CreateEmpty() { return new Argument_obj; }
@@ -53,29 +56,46 @@ bool Argument_obj::_hx_isInstanceOf(int inClassId) {
 	}
 }
 
+ ::src::compiler::commands::Command Argument_obj::copy( ::src::compiler::Scope scope){
+            	HX_GC_STACKFRAME(&_hx_pos_bfa0739dae4c82ff_231_copy)
+HXDLIN( 231)		return  ::src::compiler::commands::value::Argument_obj::__alloc( HX_CTX ,this->value->copy(scope),this->collapsed);
+            	}
+
+
+void Argument_obj::setScope( ::src::compiler::Scope scope){
+            	HX_STACKFRAME(&_hx_pos_bfa0739dae4c82ff_235_setScope)
+            	}
+
+
 ::Array< ::Dynamic> Argument_obj::walk(){
-            	HX_STACKFRAME(&_hx_pos_bfa0739dae4c82ff_206_walk)
-HXDLIN( 206)		return ::Array_obj< ::Dynamic>::__new(1)->init(0,this->value);
+            	HX_STACKFRAME(&_hx_pos_bfa0739dae4c82ff_242_walk)
+HXDLIN( 242)		return ::Array_obj< ::Dynamic>::__new(1)->init(0,this->value);
             	}
 
 
  ::src::compiler::bytecode::Bytecode Argument_obj::getBytecode(){
-            	HX_STACKFRAME(&_hx_pos_bfa0739dae4c82ff_211_getBytecode)
-HXDLIN( 211)		::cpp::VirtualArray _hx_tmp = ::cpp::VirtualArray_obj::__new(2)->init(0,this->value)->init(1,this->collapsed);
-HXDLIN( 211)		return ::src::compiler::bytecode::Bytecode_obj::fromArray(_hx_tmp,this->getCodeID());
+            	HX_STACKFRAME(&_hx_pos_bfa0739dae4c82ff_247_getBytecode)
+HXDLIN( 247)		::cpp::VirtualArray _hx_tmp = ::cpp::VirtualArray_obj::__new(2)->init(0,this->value)->init(1,this->collapsed);
+HXDLIN( 247)		return ::src::compiler::bytecode::Bytecode_obj::fromArray(_hx_tmp,this->getCodeID());
             	}
 
 
 ::String Argument_obj::getName(){
-            	HX_STACKFRAME(&_hx_pos_bfa0739dae4c82ff_216_getName)
-HXDLIN( 216)		return HX_("Argument",9d,2a,5b,df);
+            	HX_STACKFRAME(&_hx_pos_bfa0739dae4c82ff_252_getName)
+HXDLIN( 252)		return HX_("Argument",9d,2a,5b,df);
+            	}
+
+
+::String Argument_obj::getFriendlyName(){
+            	HX_STACKFRAME(&_hx_pos_bfa0739dae4c82ff_257_getFriendlyName)
+HXDLIN( 257)		return HX_("function call argument",37,c3,d8,64);
             	}
 
 
  ::src::compiler::commands::value::Argument Argument_obj::fromBytecode( ::src::compiler::Scope scope,::Array< ::Dynamic> arr){
-            	HX_GC_STACKFRAME(&_hx_pos_bfa0739dae4c82ff_192_fromBytecode)
-HXDLIN( 192)		 ::Dynamic _hx_tmp = arr->shift().StaticCast<  ::src::compiler::bytecode::Bytecode >()->convert(scope);
-HXDLIN( 192)		return  ::src::compiler::commands::value::Argument_obj::__alloc( HX_CTX ,_hx_tmp,arr->shift().StaticCast<  ::src::compiler::bytecode::Bytecode >()->convert(scope));
+            	HX_GC_STACKFRAME(&_hx_pos_bfa0739dae4c82ff_217_fromBytecode)
+HXDLIN( 217)		 ::Dynamic _hx_tmp = arr->shift().StaticCast<  ::src::compiler::bytecode::Bytecode >()->convert(scope);
+HXDLIN( 217)		return  ::src::compiler::commands::value::Argument_obj::__alloc( HX_CTX ,_hx_tmp,arr->shift().StaticCast<  ::src::compiler::bytecode::Bytecode >()->convert(scope));
             	}
 
 
@@ -119,6 +139,7 @@ hx::Val Argument_obj::__Field(const ::String &inName,hx::PropertyAccess inCallPr
 {
 	switch(inName.length) {
 	case 4:
+		if (HX_FIELD_EQ(inName,"copy") ) { return hx::Val( copy_dyn() ); }
 		if (HX_FIELD_EQ(inName,"walk") ) { return hx::Val( walk_dyn() ); }
 		break;
 	case 5:
@@ -127,11 +148,17 @@ hx::Val Argument_obj::__Field(const ::String &inName,hx::PropertyAccess inCallPr
 	case 7:
 		if (HX_FIELD_EQ(inName,"getName") ) { return hx::Val( getName_dyn() ); }
 		break;
+	case 8:
+		if (HX_FIELD_EQ(inName,"setScope") ) { return hx::Val( setScope_dyn() ); }
+		break;
 	case 9:
 		if (HX_FIELD_EQ(inName,"collapsed") ) { return hx::Val( collapsed ); }
 		break;
 	case 11:
 		if (HX_FIELD_EQ(inName,"getBytecode") ) { return hx::Val( getBytecode_dyn() ); }
+		break;
+	case 15:
+		if (HX_FIELD_EQ(inName,"getFriendlyName") ) { return hx::Val( getFriendlyName_dyn() ); }
 	}
 	return super::__Field(inName,inCallProp);
 }
@@ -176,9 +203,12 @@ static hx::StaticInfo *Argument_obj_sStaticStorageInfo = 0;
 static ::String Argument_obj_sMemberFields[] = {
 	HX_HCSTRING("value","\x71","\x7f","\xb8","\x31"),
 	HX_HCSTRING("collapsed","\x57","\xee","\x11","\x3e"),
+	HX_HCSTRING("copy","\xb5","\xbb","\xc4","\x41"),
+	HX_HCSTRING("setScope","\x92","\xda","\x0d","\x87"),
 	HX_HCSTRING("walk","\x09","\x5d","\xf2","\x4e"),
 	HX_HCSTRING("getBytecode","\xeb","\xb6","\x8b","\x7d"),
 	HX_HCSTRING("getName","\x01","\x22","\x82","\x1b"),
+	HX_HCSTRING("getFriendlyName","\x0c","\x92","\xf4","\xaf"),
 	::String(null()) };
 
 static void Argument_obj_sMarkStatics(HX_MARK_PARAMS) {

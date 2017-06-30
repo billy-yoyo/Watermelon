@@ -32,12 +32,15 @@
 #include <src/compiler/signals/FunctionReturnSignal.h>
 #endif
 
-HX_DEFINE_STACK_FRAME(_hx_pos_822373d1ecaf46cd_30_new,"src.compiler.commands.FunctionCodeCommand","new",0xfcb66337,"src.compiler.commands.FunctionCodeCommand.new","src/compiler/commands/FunctionCodeCommand.hx",30,0xf7649cfa)
-HX_LOCAL_STACK_FRAME(_hx_pos_822373d1ecaf46cd_37_walk,"src.compiler.commands.FunctionCodeCommand","walk",0x28d04652,"src.compiler.commands.FunctionCodeCommand.walk","src/compiler/commands/FunctionCodeCommand.hx",37,0xf7649cfa)
-HX_LOCAL_STACK_FRAME(_hx_pos_822373d1ecaf46cd_41_run,"src.compiler.commands.FunctionCodeCommand","run",0xfcb97a22,"src.compiler.commands.FunctionCodeCommand.run","src/compiler/commands/FunctionCodeCommand.hx",41,0xf7649cfa)
-HX_LOCAL_STACK_FRAME(_hx_pos_822373d1ecaf46cd_54_getName,"src.compiler.commands.FunctionCodeCommand","getName",0x3cbc6c58,"src.compiler.commands.FunctionCodeCommand.getName","src/compiler/commands/FunctionCodeCommand.hx",54,0xf7649cfa)
-HX_LOCAL_STACK_FRAME(_hx_pos_822373d1ecaf46cd_59_getBytecode,"src.compiler.commands.FunctionCodeCommand","getBytecode",0x828f78c2,"src.compiler.commands.FunctionCodeCommand.getBytecode","src/compiler/commands/FunctionCodeCommand.hx",59,0xf7649cfa)
-HX_LOCAL_STACK_FRAME(_hx_pos_822373d1ecaf46cd_64_reconstruct,"src.compiler.commands.FunctionCodeCommand","reconstruct",0x951e27db,"src.compiler.commands.FunctionCodeCommand.reconstruct","src/compiler/commands/FunctionCodeCommand.hx",64,0xf7649cfa)
+HX_DEFINE_STACK_FRAME(_hx_pos_822373d1ecaf46cd_14_new,"src.compiler.commands.FunctionCodeCommand","new",0xfcb66337,"src.compiler.commands.FunctionCodeCommand.new","src/compiler/commands/FunctionCodeCommand.hx",14,0xf7649cfa)
+HX_LOCAL_STACK_FRAME(_hx_pos_822373d1ecaf46cd_38_copy,"src.compiler.commands.FunctionCodeCommand","copy",0x1ba2a4fe,"src.compiler.commands.FunctionCodeCommand.copy","src/compiler/commands/FunctionCodeCommand.hx",38,0xf7649cfa)
+HX_LOCAL_STACK_FRAME(_hx_pos_822373d1ecaf46cd_42_setScope,"src.compiler.commands.FunctionCodeCommand","setScope",0x78d49c5b,"src.compiler.commands.FunctionCodeCommand.setScope","src/compiler/commands/FunctionCodeCommand.hx",42,0xf7649cfa)
+HX_LOCAL_STACK_FRAME(_hx_pos_822373d1ecaf46cd_49_walk,"src.compiler.commands.FunctionCodeCommand","walk",0x28d04652,"src.compiler.commands.FunctionCodeCommand.walk","src/compiler/commands/FunctionCodeCommand.hx",49,0xf7649cfa)
+HX_LOCAL_STACK_FRAME(_hx_pos_822373d1ecaf46cd_53_run,"src.compiler.commands.FunctionCodeCommand","run",0xfcb97a22,"src.compiler.commands.FunctionCodeCommand.run","src/compiler/commands/FunctionCodeCommand.hx",53,0xf7649cfa)
+HX_LOCAL_STACK_FRAME(_hx_pos_822373d1ecaf46cd_74_getName,"src.compiler.commands.FunctionCodeCommand","getName",0x3cbc6c58,"src.compiler.commands.FunctionCodeCommand.getName","src/compiler/commands/FunctionCodeCommand.hx",74,0xf7649cfa)
+HX_LOCAL_STACK_FRAME(_hx_pos_822373d1ecaf46cd_79_getFriendlyName,"src.compiler.commands.FunctionCodeCommand","getFriendlyName",0x13938b63,"src.compiler.commands.FunctionCodeCommand.getFriendlyName","src/compiler/commands/FunctionCodeCommand.hx",79,0xf7649cfa)
+HX_LOCAL_STACK_FRAME(_hx_pos_822373d1ecaf46cd_84_getBytecode,"src.compiler.commands.FunctionCodeCommand","getBytecode",0x828f78c2,"src.compiler.commands.FunctionCodeCommand.getBytecode","src/compiler/commands/FunctionCodeCommand.hx",84,0xf7649cfa)
+HX_LOCAL_STACK_FRAME(_hx_pos_822373d1ecaf46cd_89_reconstruct,"src.compiler.commands.FunctionCodeCommand","reconstruct",0x951e27db,"src.compiler.commands.FunctionCodeCommand.reconstruct","src/compiler/commands/FunctionCodeCommand.hx",89,0xf7649cfa)
 HX_LOCAL_STACK_FRAME(_hx_pos_822373d1ecaf46cd_18_fromTokens,"src.compiler.commands.FunctionCodeCommand","fromTokens",0xd77ca26d,"src.compiler.commands.FunctionCodeCommand.fromTokens","src/compiler/commands/FunctionCodeCommand.hx",18,0xf7649cfa)
 HX_LOCAL_STACK_FRAME(_hx_pos_822373d1ecaf46cd_22_fromBytecode,"src.compiler.commands.FunctionCodeCommand","fromBytecode",0x55f4aa08,"src.compiler.commands.FunctionCodeCommand.fromBytecode","src/compiler/commands/FunctionCodeCommand.hx",22,0xf7649cfa)
 namespace src{
@@ -45,9 +48,10 @@ namespace compiler{
 namespace commands{
 
 void FunctionCodeCommand_obj::__construct( ::src::compiler::Scope scope,::Array< ::Dynamic> commands){
-            	HX_STACKFRAME(&_hx_pos_822373d1ecaf46cd_30_new)
-HXLINE(  31)		super::__construct(scope);
-HXLINE(  32)		this->commands = commands;
+            	HX_STACKFRAME(&_hx_pos_822373d1ecaf46cd_14_new)
+HXLINE(  29)		this->progress = (int)0;
+HXLINE(  32)		super::__construct(scope);
+HXLINE(  33)		this->commands = commands;
             	}
 
 Dynamic FunctionCodeCommand_obj::__CreateEmpty() { return new FunctionCodeCommand_obj; }
@@ -69,57 +73,94 @@ bool FunctionCodeCommand_obj::_hx_isInstanceOf(int inClassId) {
 	}
 }
 
+ ::src::compiler::commands::Command FunctionCodeCommand_obj::copy( ::src::compiler::Scope scope){
+            	HX_GC_STACKFRAME(&_hx_pos_822373d1ecaf46cd_38_copy)
+HXDLIN(  38)		return  ::src::compiler::commands::FunctionCodeCommand_obj::__alloc( HX_CTX ,scope,::src::compiler::commands::Command_obj::copyArray(scope,this->commands));
+            	}
+
+
+void FunctionCodeCommand_obj::setScope( ::src::compiler::Scope scope){
+            	HX_STACKFRAME(&_hx_pos_822373d1ecaf46cd_42_setScope)
+HXLINE(  43)		this->super::setScope(scope);
+HXLINE(  44)		{
+HXLINE(  44)			int _g = (int)0;
+HXDLIN(  44)			::Array< ::Dynamic> _g1 = this->commands;
+HXDLIN(  44)			while((_g < _g1->length)){
+HXLINE(  44)				 ::src::compiler::commands::Command cmd = _g1->__get(_g).StaticCast<  ::src::compiler::commands::Command >();
+HXDLIN(  44)				_g = (_g + (int)1);
+HXDLIN(  44)				cmd->setScope(scope);
+            			}
+            		}
+            	}
+
+
 ::Array< ::Dynamic> FunctionCodeCommand_obj::walk(){
-            	HX_STACKFRAME(&_hx_pos_822373d1ecaf46cd_37_walk)
-HXDLIN(  37)		return this->commands;
+            	HX_STACKFRAME(&_hx_pos_822373d1ecaf46cd_49_walk)
+HXDLIN(  49)		return this->commands;
             	}
 
 
  ::src::compiler::object::Object FunctionCodeCommand_obj::run(){
-            	HX_STACKFRAME(&_hx_pos_822373d1ecaf46cd_41_run)
-HXLINE(  42)		{
-HXLINE(  42)			int _g = (int)0;
-HXDLIN(  42)			::Array< ::Dynamic> _g1 = this->commands;
-HXDLIN(  42)			while((_g < _g1->length)){
-HXLINE(  42)				 ::src::compiler::commands::Command command = _g1->__get(_g).StaticCast<  ::src::compiler::commands::Command >();
-HXDLIN(  42)				_g = (_g + (int)1);
-HXLINE(  43)				try {
-            					HX_STACK_CATCHABLE( ::src::compiler::signals::FunctionReturnSignal, 0);
-HXLINE(  44)					command->run();
+            	HX_STACKFRAME(&_hx_pos_822373d1ecaf46cd_53_run)
+HXLINE(  54)		 ::src::compiler::commands::Command cmd;
+HXLINE(  55)		while((this->progress < this->commands->length)){
+HXLINE(  56)			try {
+            				HX_STACK_CATCHABLE( ::src::compiler::signals::FunctionReturnSignal, 0);
+HXLINE(  57)				cmd = this->commands->__get(this->progress).StaticCast<  ::src::compiler::commands::Command >();
+HXLINE(  58)				bool _hx_tmp;
+HXDLIN(  58)				if ((cmd->getName() != HX_("PipeReadCommand",e7,e2,01,95))) {
+HXLINE(  58)					_hx_tmp = (cmd->getName() == HX_("PipeWriteCommand",9a,bf,b5,19));
             				}
-            				catch( ::Dynamic _hx_e){
-            					if (_hx_e.IsClass<  ::src::compiler::signals::FunctionReturnSignal >() ){
-            						HX_STACK_BEGIN_CATCH
-            						 ::src::compiler::signals::FunctionReturnSignal ret = _hx_e;
-HXLINE(  46)						return ret->getReturn();
-            					}
-            					else {
-            						HX_STACK_DO_THROW(_hx_e);
-            					}
+            				else {
+HXLINE(  58)					_hx_tmp = true;
+            				}
+HXDLIN(  58)				if (_hx_tmp) {
+HXLINE(  59)					this->progress++;
+HXLINE(  60)					cmd->run();
+            				}
+            				else {
+HXLINE(  62)					cmd->run();
+HXLINE(  63)					this->progress++;
+            				}
+            			}
+            			catch( ::Dynamic _hx_e){
+            				if (_hx_e.IsClass<  ::src::compiler::signals::FunctionReturnSignal >() ){
+            					HX_STACK_BEGIN_CATCH
+            					 ::src::compiler::signals::FunctionReturnSignal ret = _hx_e;
+HXLINE(  66)					return ret->getReturn();
+            				}
+            				else {
+            					HX_STACK_DO_THROW(_hx_e);
             				}
             			}
             		}
-HXLINE(  49)		return null();
+HXLINE(  69)		return null();
             	}
 
 
 ::String FunctionCodeCommand_obj::getName(){
-            	HX_STACKFRAME(&_hx_pos_822373d1ecaf46cd_54_getName)
-HXDLIN(  54)		return HX_("FunctionCodeCommand",46,a3,e9,4f);
+            	HX_STACKFRAME(&_hx_pos_822373d1ecaf46cd_74_getName)
+HXDLIN(  74)		return HX_("FunctionCodeCommand",46,a3,e9,4f);
+            	}
+
+
+::String FunctionCodeCommand_obj::getFriendlyName(){
+            	HX_STACKFRAME(&_hx_pos_822373d1ecaf46cd_79_getFriendlyName)
+HXDLIN(  79)		return HX_("function code",35,5f,49,50);
             	}
 
 
  ::src::compiler::bytecode::Bytecode FunctionCodeCommand_obj::getBytecode(){
-            	HX_STACKFRAME(&_hx_pos_822373d1ecaf46cd_59_getBytecode)
-HXDLIN(  59)		::Array< ::Dynamic> _hx_tmp = this->commands;
-HXDLIN(  59)		return ::src::compiler::bytecode::Bytecode_obj::fromArray(_hx_tmp,this->getCodeID());
+            	HX_STACKFRAME(&_hx_pos_822373d1ecaf46cd_84_getBytecode)
+HXDLIN(  84)		::Array< ::Dynamic> _hx_tmp = this->commands;
+HXDLIN(  84)		return ::src::compiler::bytecode::Bytecode_obj::fromArray(_hx_tmp,this->getCodeID());
             	}
 
 
 ::Array< ::Dynamic> FunctionCodeCommand_obj::reconstruct(){
-            	HX_GC_STACKFRAME(&_hx_pos_822373d1ecaf46cd_64_reconstruct)
-HXDLIN(  64)		 ::src::ast::base::EndLineToken _hx_tmp =  ::src::ast::base::EndLineToken_obj::__alloc( HX_CTX ,HX_(";",3b,00,00,00));
-HXDLIN(  64)		return _hx_tmp->join(::src::compiler::commands::Command_obj::reconstructCommands(this->commands),true);
+            	HX_GC_STACKFRAME(&_hx_pos_822373d1ecaf46cd_89_reconstruct)
+HXDLIN(  89)		 ::src::ast::base::EndLineToken _hx_tmp =  ::src::ast::base::EndLineToken_obj::__alloc( HX_CTX ,HX_(";",3b,00,00,00));
+HXDLIN(  89)		return _hx_tmp->join(::src::compiler::commands::Command_obj::reconstructCommands(this->commands),true);
             	}
 
 
@@ -165,6 +206,7 @@ void FunctionCodeCommand_obj::__Mark(HX_MARK_PARAMS)
 {
 	HX_MARK_BEGIN_CLASS(FunctionCodeCommand);
 	HX_MARK_MEMBER_NAME(commands,"commands");
+	HX_MARK_MEMBER_NAME(progress,"progress");
 	 ::src::compiler::commands::Command_obj::__Mark(HX_MARK_ARG);
 	HX_MARK_END_CLASS();
 }
@@ -172,6 +214,7 @@ void FunctionCodeCommand_obj::__Mark(HX_MARK_PARAMS)
 void FunctionCodeCommand_obj::__Visit(HX_VISIT_PARAMS)
 {
 	HX_VISIT_MEMBER_NAME(commands,"commands");
+	HX_VISIT_MEMBER_NAME(progress,"progress");
 	 ::src::compiler::commands::Command_obj::__Visit(HX_VISIT_ARG);
 }
 
@@ -182,6 +225,7 @@ hx::Val FunctionCodeCommand_obj::__Field(const ::String &inName,hx::PropertyAcce
 		if (HX_FIELD_EQ(inName,"run") ) { return hx::Val( run_dyn() ); }
 		break;
 	case 4:
+		if (HX_FIELD_EQ(inName,"copy") ) { return hx::Val( copy_dyn() ); }
 		if (HX_FIELD_EQ(inName,"walk") ) { return hx::Val( walk_dyn() ); }
 		break;
 	case 7:
@@ -189,10 +233,15 @@ hx::Val FunctionCodeCommand_obj::__Field(const ::String &inName,hx::PropertyAcce
 		break;
 	case 8:
 		if (HX_FIELD_EQ(inName,"commands") ) { return hx::Val( commands ); }
+		if (HX_FIELD_EQ(inName,"progress") ) { return hx::Val( progress ); }
+		if (HX_FIELD_EQ(inName,"setScope") ) { return hx::Val( setScope_dyn() ); }
 		break;
 	case 11:
 		if (HX_FIELD_EQ(inName,"getBytecode") ) { return hx::Val( getBytecode_dyn() ); }
 		if (HX_FIELD_EQ(inName,"reconstruct") ) { return hx::Val( reconstruct_dyn() ); }
+		break;
+	case 15:
+		if (HX_FIELD_EQ(inName,"getFriendlyName") ) { return hx::Val( getFriendlyName_dyn() ); }
 	}
 	return super::__Field(inName,inCallProp);
 }
@@ -214,6 +263,7 @@ hx::Val FunctionCodeCommand_obj::__SetField(const ::String &inName,const hx::Val
 	switch(inName.length) {
 	case 8:
 		if (HX_FIELD_EQ(inName,"commands") ) { commands=inValue.Cast< ::Array< ::Dynamic> >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"progress") ) { progress=inValue.Cast< int >(); return inValue; }
 	}
 	return super::__SetField(inName,inValue,inCallProp);
 }
@@ -221,12 +271,14 @@ hx::Val FunctionCodeCommand_obj::__SetField(const ::String &inName,const hx::Val
 void FunctionCodeCommand_obj::__GetFields(Array< ::String> &outFields)
 {
 	outFields->push(HX_HCSTRING("commands","\xc8","\xb0","\x55","\xbe"));
+	outFields->push(HX_HCSTRING("progress","\xad","\xf7","\x2a","\x86"));
 	super::__GetFields(outFields);
 };
 
 #if HXCPP_SCRIPTABLE
 static hx::StorageInfo FunctionCodeCommand_obj_sMemberStorageInfo[] = {
 	{hx::fsObject /*Array< ::Dynamic >*/ ,(int)offsetof(FunctionCodeCommand_obj,commands),HX_HCSTRING("commands","\xc8","\xb0","\x55","\xbe")},
+	{hx::fsInt,(int)offsetof(FunctionCodeCommand_obj,progress),HX_HCSTRING("progress","\xad","\xf7","\x2a","\x86")},
 	{ hx::fsUnknown, 0, null()}
 };
 static hx::StaticInfo *FunctionCodeCommand_obj_sStaticStorageInfo = 0;
@@ -234,9 +286,13 @@ static hx::StaticInfo *FunctionCodeCommand_obj_sStaticStorageInfo = 0;
 
 static ::String FunctionCodeCommand_obj_sMemberFields[] = {
 	HX_HCSTRING("commands","\xc8","\xb0","\x55","\xbe"),
+	HX_HCSTRING("progress","\xad","\xf7","\x2a","\x86"),
+	HX_HCSTRING("copy","\xb5","\xbb","\xc4","\x41"),
+	HX_HCSTRING("setScope","\x92","\xda","\x0d","\x87"),
 	HX_HCSTRING("walk","\x09","\x5d","\xf2","\x4e"),
 	HX_HCSTRING("run","\x4b","\xe7","\x56","\x00"),
 	HX_HCSTRING("getName","\x01","\x22","\x82","\x1b"),
+	HX_HCSTRING("getFriendlyName","\x0c","\x92","\xf4","\xaf"),
 	HX_HCSTRING("getBytecode","\xeb","\xb6","\x8b","\x7d"),
 	HX_HCSTRING("reconstruct","\x04","\x66","\x1a","\x90"),
 	::String(null()) };

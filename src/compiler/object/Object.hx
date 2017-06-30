@@ -1,6 +1,9 @@
 package src.compiler.object;
+import haxe.io.Bytes;
+import haxe.io.BytesOutput;
 import src.compiler.Scope;
 import src.compiler.object.builtin.BoolObject;
+import src.compiler.object.builtin.BytesObject;
 import src.compiler.object.builtin.FloatObject;
 import src.compiler.object.builtin.IntObject;
 import src.compiler.object.builtin.IteratorObject;
@@ -20,9 +23,11 @@ class Object
     private var members:Map<String, Object>;
     private var scope:Scope;
     private var type:ObjectType;
+    private var objID:Int;
     public function new(scope:Scope, type:ObjectType, members:Map<String, Object>, ?args:Array<Object>) 
     {
         this.scope = scope;
+        this.objID = scope.nextObjectID();
         this.type = type;
         this.members = members;
         if (members == null) this.members = new Map<String, Object>();
@@ -32,6 +37,11 @@ class Object
         
         if (args == null) args = new Array<Object>();
         init(args);
+    }
+    
+    public function setScope(scope:Scope)
+    {
+        this.scope = scope;
     }
     
     public function copy():Object
@@ -45,7 +55,7 @@ class Object
     
     public function _value(type:String, value:Dynamic, ?args:Array<Object>)
     {
-        return scope.getType(type).createValue(value, args);
+        return scope.getType(type).createValue(value, scope, args);
     }
     
     public function _float(value:Float, ?args:Array<Object>):FloatObject
@@ -75,16 +85,21 @@ class Object
     
     public function _list(values:Array<Object>, ?args:Array<Object>):ListObject
     {
-        var list:ListObject = cast(scope.getType("ListType").createObject(), ListObject);
-        list.arr.concat(values);
+        var list:ListObject = cast(scope.getType("ListType").createObject(scope, args), ListObject);
+        list.arr = values;
         return list;
     }
     
     public function _tuple(values:Array<Object>, ?args:Array<Object>):TupleObject
     {
-        var tuple:TupleObject = cast(scope.getType("TupleType").createObject(), TupleObject);
-        tuple.arr.concat(values);
+        var tuple:TupleObject = cast(scope.getType("TupleType").createObject(scope, args), TupleObject);
+        tuple.arr = values;
         return tuple;
+    }
+    
+    public function _bytes(value:Bytes, ?args:Array<Object>):BytesObject
+    {
+        return cast(_value("BytesType", value, args), BytesObject);
     }
     
     public function isInstance(type:String):Bool
@@ -165,13 +180,13 @@ class Object
     public function getfield(index:Object):Object
     {
         if (hasMember("__getfield__")) return getMember("__getfield__").call([index]);
-        return members.get(index.rawString());
+        return getMember(index.rawString());
     }
     
     public function hasfield(index:Object):BoolObject
     {
         if (hasMember("__hasfield__")) return cast(getMember("__hasfield__").call([index]), BoolObject);
-        return _bool(members.exists(index.rawString()));
+        return _bool(hasMember(index.rawString()));
     }
     
     public function setfield(index:Object, member:Object)
@@ -223,7 +238,7 @@ class Object
     
     public function int():IntObject
     {
-        return cast(getMember("__int__").call([]), IntObject);
+        return cast(callMember("__int__", []), IntObject);
     }
     
     public function float():FloatObject
@@ -239,6 +254,11 @@ class Object
     public function tuple():TupleObject
     {
         return cast(callMember("__tuple__", []), TupleObject);
+    }
+    
+    public function bytes():BytesObject
+    {
+        return cast(callMember("__bytes__", []), BytesObject);
     }
     
     public function map():MapObject
@@ -324,6 +344,11 @@ class Object
     public function rmod(other:Object):Object
     {
         return callMember("__rmod__", [other]);
+    }
+    
+    public function negate():Object
+    {
+        return callMember("__neg__", []);
     }
     
     public function len():IntObject
@@ -437,14 +462,41 @@ class Object
         return bool().getValue();
     }
     
+    public function rawBytes():Bytes
+    {
+        return bytes().value;
+    }
+    
+    public function rawList():Array<Object>
+    {
+        return list().arr;
+    }
+    
+    public function rawTuple():Array<Object>
+    {
+        return tuple().arr;
+    }
+    
+    public function rawMap():Map<Int, Object>
+    {
+        return map().objMap;
+    }
+    
     public function rawString():String 
     {
         return str().getValue();
     }
     
-    public function getHash():String
+    public function getHash():Int
     {
-        return "";
+        if (hasMember("__hash__")) return callMember("__hash__", []).rawInt();
+        // use scope directory, object ID and object type to create a hash.
+        var scopeName:String = scope.toString();
+        var typeName:String = type.getName();
+        var x:UInt = 1; var y:UInt = 1; var z:Int = objID;
+        for (i in 0...scopeName.length) x = ((x * 31) + scopeName.charCodeAt(i)) % 0xFFFFFFFF;
+        for (i in 0...typeName.length) y = ((y * 31) + typeName.charCodeAt(i)) % 0xFFFFFFFF;
+        return x * x * y * y * y * z * z * z * z * z; // x ** 2 * y ** 3 * z ** 5
     }
     
 }

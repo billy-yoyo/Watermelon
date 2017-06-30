@@ -49,6 +49,18 @@ class DeleteCommand extends Command
         this.variable = variable;
     }
     
+    override public function copy(scope:Scope):Command 
+    {
+        return new DeleteCommand(scope, cast(variable.copy(scope), VariableAccess), if (element == null) null else cast(element.copy(scope), ValueCommand));
+    }
+    
+    override public function setScope(scope:Scope) 
+    {
+        super.setScope(scope);
+        element.setScope(scope);
+        variable.setScope(scope);
+    }
+    
     override public function walk():Array<Command> 
     {
         return [element, variable];
@@ -68,6 +80,11 @@ class DeleteCommand extends Command
     override public function getName():String 
     {
         return "DeleteCommand";
+    }
+    
+    override public function getFriendlyName():String 
+    {
+        return "deletion";
     }
     
     override public function getBytecode():Bytecode 

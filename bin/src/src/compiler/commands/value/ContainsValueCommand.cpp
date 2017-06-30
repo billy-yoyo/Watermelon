@@ -27,11 +27,14 @@
 #endif
 
 HX_DEFINE_STACK_FRAME(_hx_pos_5c9b8e64534e8e6b_34_new,"src.compiler.commands.value.ContainsValueCommand","new",0x6629cca9,"src.compiler.commands.value.ContainsValueCommand.new","src/compiler/commands/value/ContainsValueCommand.hx",34,0xc29a7c45)
-HX_LOCAL_STACK_FRAME(_hx_pos_5c9b8e64534e8e6b_42_walk,"src.compiler.commands.value.ContainsValueCommand","walk",0x045920a0,"src.compiler.commands.value.ContainsValueCommand.walk","src/compiler/commands/value/ContainsValueCommand.hx",42,0xc29a7c45)
-HX_LOCAL_STACK_FRAME(_hx_pos_5c9b8e64534e8e6b_47_run,"src.compiler.commands.value.ContainsValueCommand","run",0x662ce394,"src.compiler.commands.value.ContainsValueCommand.run","src/compiler/commands/value/ContainsValueCommand.hx",47,0xc29a7c45)
-HX_LOCAL_STACK_FRAME(_hx_pos_5c9b8e64534e8e6b_52_getName,"src.compiler.commands.value.ContainsValueCommand","getName",0x924676ca,"src.compiler.commands.value.ContainsValueCommand.getName","src/compiler/commands/value/ContainsValueCommand.hx",52,0xc29a7c45)
-HX_LOCAL_STACK_FRAME(_hx_pos_5c9b8e64534e8e6b_57_getBytecode,"src.compiler.commands.value.ContainsValueCommand","getBytecode",0x0a94a434,"src.compiler.commands.value.ContainsValueCommand.getBytecode","src/compiler/commands/value/ContainsValueCommand.hx",57,0xc29a7c45)
-HX_LOCAL_STACK_FRAME(_hx_pos_5c9b8e64534e8e6b_62_reconstruct,"src.compiler.commands.value.ContainsValueCommand","reconstruct",0x1d23534d,"src.compiler.commands.value.ContainsValueCommand.reconstruct","src/compiler/commands/value/ContainsValueCommand.hx",62,0xc29a7c45)
+HX_LOCAL_STACK_FRAME(_hx_pos_5c9b8e64534e8e6b_42_copy,"src.compiler.commands.value.ContainsValueCommand","copy",0xf72b7f4c,"src.compiler.commands.value.ContainsValueCommand.copy","src/compiler/commands/value/ContainsValueCommand.hx",42,0xc29a7c45)
+HX_LOCAL_STACK_FRAME(_hx_pos_5c9b8e64534e8e6b_46_setScope,"src.compiler.commands.value.ContainsValueCommand","setScope",0xfc13b5a9,"src.compiler.commands.value.ContainsValueCommand.setScope","src/compiler/commands/value/ContainsValueCommand.hx",46,0xc29a7c45)
+HX_LOCAL_STACK_FRAME(_hx_pos_5c9b8e64534e8e6b_54_walk,"src.compiler.commands.value.ContainsValueCommand","walk",0x045920a0,"src.compiler.commands.value.ContainsValueCommand.walk","src/compiler/commands/value/ContainsValueCommand.hx",54,0xc29a7c45)
+HX_LOCAL_STACK_FRAME(_hx_pos_5c9b8e64534e8e6b_59_run,"src.compiler.commands.value.ContainsValueCommand","run",0x662ce394,"src.compiler.commands.value.ContainsValueCommand.run","src/compiler/commands/value/ContainsValueCommand.hx",59,0xc29a7c45)
+HX_LOCAL_STACK_FRAME(_hx_pos_5c9b8e64534e8e6b_64_getName,"src.compiler.commands.value.ContainsValueCommand","getName",0x924676ca,"src.compiler.commands.value.ContainsValueCommand.getName","src/compiler/commands/value/ContainsValueCommand.hx",64,0xc29a7c45)
+HX_LOCAL_STACK_FRAME(_hx_pos_5c9b8e64534e8e6b_69_getFriendlyName,"src.compiler.commands.value.ContainsValueCommand","getFriendlyName",0x60b857d5,"src.compiler.commands.value.ContainsValueCommand.getFriendlyName","src/compiler/commands/value/ContainsValueCommand.hx",69,0xc29a7c45)
+HX_LOCAL_STACK_FRAME(_hx_pos_5c9b8e64534e8e6b_74_getBytecode,"src.compiler.commands.value.ContainsValueCommand","getBytecode",0x0a94a434,"src.compiler.commands.value.ContainsValueCommand.getBytecode","src/compiler/commands/value/ContainsValueCommand.hx",74,0xc29a7c45)
+HX_LOCAL_STACK_FRAME(_hx_pos_5c9b8e64534e8e6b_79_reconstruct,"src.compiler.commands.value.ContainsValueCommand","reconstruct",0x1d23534d,"src.compiler.commands.value.ContainsValueCommand.reconstruct","src/compiler/commands/value/ContainsValueCommand.hx",79,0xc29a7c45)
 HX_LOCAL_STACK_FRAME(_hx_pos_5c9b8e64534e8e6b_17_fromTokens,"src.compiler.commands.value.ContainsValueCommand","fromTokens",0xfbaf2b3b,"src.compiler.commands.value.ContainsValueCommand.fromTokens","src/compiler/commands/value/ContainsValueCommand.hx",17,0xc29a7c45)
 HX_LOCAL_STACK_FRAME(_hx_pos_5c9b8e64534e8e6b_28_fromBytecode,"src.compiler.commands.value.ContainsValueCommand","fromBytecode",0xd2758256,"src.compiler.commands.value.ContainsValueCommand.fromBytecode","src/compiler/commands/value/ContainsValueCommand.hx",28,0xc29a7c45)
 namespace src{
@@ -69,37 +72,58 @@ bool ContainsValueCommand_obj::_hx_isInstanceOf(int inClassId) {
 	}
 }
 
+ ::src::compiler::commands::Command ContainsValueCommand_obj::copy( ::src::compiler::Scope scope){
+            	HX_GC_STACKFRAME(&_hx_pos_5c9b8e64534e8e6b_42_copy)
+HXDLIN(  42)		 ::src::compiler::commands::value::ValueCommand _hx_tmp = hx::TCast<  ::src::compiler::commands::value::ValueCommand >::cast(this->left->copy(scope));
+HXDLIN(  42)		return  ::src::compiler::commands::value::ContainsValueCommand_obj::__alloc( HX_CTX ,scope,_hx_tmp,this->right->copy(scope));
+            	}
+
+
+void ContainsValueCommand_obj::setScope( ::src::compiler::Scope scope){
+            	HX_STACKFRAME(&_hx_pos_5c9b8e64534e8e6b_46_setScope)
+HXLINE(  47)		this->super::setScope(scope);
+HXLINE(  48)		this->left->setScope(scope);
+HXLINE(  49)		this->right->setScope(scope);
+            	}
+
+
 ::Array< ::Dynamic> ContainsValueCommand_obj::walk(){
-            	HX_STACKFRAME(&_hx_pos_5c9b8e64534e8e6b_42_walk)
-HXDLIN(  42)		return ::Array_obj< ::Dynamic>::__new(2)->init(0,this->left)->init(1,this->right);
+            	HX_STACKFRAME(&_hx_pos_5c9b8e64534e8e6b_54_walk)
+HXDLIN(  54)		return ::Array_obj< ::Dynamic>::__new(2)->init(0,this->left)->init(1,this->right);
             	}
 
 
  ::src::compiler::object::Object ContainsValueCommand_obj::run(){
-            	HX_STACKFRAME(&_hx_pos_5c9b8e64534e8e6b_47_run)
-HXDLIN(  47)		 ::src::compiler::object::Object _hx_tmp = this->left->run();
-HXDLIN(  47)		return _hx_tmp->isin(this->right->run());
+            	HX_STACKFRAME(&_hx_pos_5c9b8e64534e8e6b_59_run)
+HXDLIN(  59)		 ::src::compiler::object::Object _hx_tmp = this->left->run();
+HXDLIN(  59)		return _hx_tmp->isin(this->right->run());
             	}
 
 
 ::String ContainsValueCommand_obj::getName(){
-            	HX_STACKFRAME(&_hx_pos_5c9b8e64534e8e6b_52_getName)
-HXDLIN(  52)		return HX_("ContainsValueCommand",b9,9e,cf,1c);
+            	HX_STACKFRAME(&_hx_pos_5c9b8e64534e8e6b_64_getName)
+HXDLIN(  64)		return HX_("ContainsValueCommand",b9,9e,cf,1c);
+            	}
+
+
+::String ContainsValueCommand_obj::getFriendlyName(){
+            	HX_STACKFRAME(&_hx_pos_5c9b8e64534e8e6b_69_getFriendlyName)
+HXDLIN(  69)		return HX_("contains expression",f9,a5,89,8c);
             	}
 
 
  ::src::compiler::bytecode::Bytecode ContainsValueCommand_obj::getBytecode(){
-            	HX_STACKFRAME(&_hx_pos_5c9b8e64534e8e6b_57_getBytecode)
-HXDLIN(  57)		::cpp::VirtualArray _hx_tmp = ::cpp::VirtualArray_obj::__new(2)->init(0,this->left)->init(1,this->right);
-HXDLIN(  57)		return ::src::compiler::bytecode::Bytecode_obj::fromArray(_hx_tmp,this->getCodeID());
+            	HX_STACKFRAME(&_hx_pos_5c9b8e64534e8e6b_74_getBytecode)
+HXDLIN(  74)		::cpp::VirtualArray _hx_tmp = ::cpp::VirtualArray_obj::__new(2)->init(0,this->left)->init(1,this->right);
+HXDLIN(  74)		return ::src::compiler::bytecode::Bytecode_obj::fromArray(_hx_tmp,this->getCodeID());
             	}
 
 
 ::Array< ::Dynamic> ContainsValueCommand_obj::reconstruct(){
-            	HX_GC_STACKFRAME(&_hx_pos_5c9b8e64534e8e6b_62_reconstruct)
-HXDLIN(  62)		::Array< ::Dynamic> _hx_tmp = this->left->reconstruct();
-HXDLIN(  62)		 ::src::ast::base::KwdToken _hx_tmp1 =  ::src::ast::base::KwdToken_obj::__alloc( HX_CTX ,HX_("in",e5,5b,00,00));
-HXDLIN(  62)		return ::src::ast::Token_obj::merge(::cpp::VirtualArray_obj::__new(3)->init(0,_hx_tmp)->init(1,_hx_tmp1)->init(2,this->right->reconstruct()));
+            	HX_GC_STACKFRAME(&_hx_pos_5c9b8e64534e8e6b_79_reconstruct)
+HXDLIN(  79)		::Array< ::Dynamic> _hx_tmp = this->left->reconstruct();
+HXDLIN(  79)		 ::src::ast::base::KwdToken _hx_tmp1 =  ::src::ast::base::KwdToken_obj::__alloc( HX_CTX ,HX_("in",e5,5b,00,00));
+HXDLIN(  79)		return ::src::ast::Token_obj::merge(::cpp::VirtualArray_obj::__new(3)->init(0,_hx_tmp)->init(1,_hx_tmp1)->init(2,this->right->reconstruct()));
             	}
 
 
@@ -174,6 +198,7 @@ hx::Val ContainsValueCommand_obj::__Field(const ::String &inName,hx::PropertyAcc
 		break;
 	case 4:
 		if (HX_FIELD_EQ(inName,"left") ) { return hx::Val( left ); }
+		if (HX_FIELD_EQ(inName,"copy") ) { return hx::Val( copy_dyn() ); }
 		if (HX_FIELD_EQ(inName,"walk") ) { return hx::Val( walk_dyn() ); }
 		break;
 	case 5:
@@ -182,9 +207,15 @@ hx::Val ContainsValueCommand_obj::__Field(const ::String &inName,hx::PropertyAcc
 	case 7:
 		if (HX_FIELD_EQ(inName,"getName") ) { return hx::Val( getName_dyn() ); }
 		break;
+	case 8:
+		if (HX_FIELD_EQ(inName,"setScope") ) { return hx::Val( setScope_dyn() ); }
+		break;
 	case 11:
 		if (HX_FIELD_EQ(inName,"getBytecode") ) { return hx::Val( getBytecode_dyn() ); }
 		if (HX_FIELD_EQ(inName,"reconstruct") ) { return hx::Val( reconstruct_dyn() ); }
+		break;
+	case 15:
+		if (HX_FIELD_EQ(inName,"getFriendlyName") ) { return hx::Val( getFriendlyName_dyn() ); }
 	}
 	return super::__Field(inName,inCallProp);
 }
@@ -232,9 +263,12 @@ static hx::StaticInfo *ContainsValueCommand_obj_sStaticStorageInfo = 0;
 static ::String ContainsValueCommand_obj_sMemberFields[] = {
 	HX_HCSTRING("left","\x07","\x08","\xb0","\x47"),
 	HX_HCSTRING("right","\xdc","\x0b","\x64","\xe9"),
+	HX_HCSTRING("copy","\xb5","\xbb","\xc4","\x41"),
+	HX_HCSTRING("setScope","\x92","\xda","\x0d","\x87"),
 	HX_HCSTRING("walk","\x09","\x5d","\xf2","\x4e"),
 	HX_HCSTRING("run","\x4b","\xe7","\x56","\x00"),
 	HX_HCSTRING("getName","\x01","\x22","\x82","\x1b"),
+	HX_HCSTRING("getFriendlyName","\x0c","\x92","\xf4","\xaf"),
 	HX_HCSTRING("getBytecode","\xeb","\xb6","\x8b","\x7d"),
 	HX_HCSTRING("reconstruct","\x04","\x66","\x1a","\x90"),
 	::String(null()) };

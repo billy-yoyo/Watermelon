@@ -7,7 +7,17 @@ package src.ast.maths;
 class HexToken extends Token
 {
 
-    private static var regex:EReg = ~/^0x([0-9]+)$/;
+    private static var regex:EReg = ~/^(0|b)x([0-9]+)$/;
+    
+    public var isBytes:Bool = false;
+    override public function new(content:String)
+    {
+        if (content.charAt(0) == "b") {
+            content = "0" + content.substr(1, content.length - 1);
+            isBytes = true;
+        }
+        super(content);
+    }
     
     public static function match(s:String):Bool 
     {

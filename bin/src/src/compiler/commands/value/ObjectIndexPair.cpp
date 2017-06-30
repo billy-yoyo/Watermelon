@@ -4,8 +4,8 @@
 #ifndef INCLUDED_src_ast_Token
 #include <src/ast/Token.h>
 #endif
-#ifndef INCLUDED_src_ast_base_BracketToken
-#include <src/ast/base/BracketToken.h>
+#ifndef INCLUDED_src_ast_base_ListToken
+#include <src/ast/base/ListToken.h>
 #endif
 #ifndef INCLUDED_src_compiler_Scope
 #include <src/compiler/Scope.h>
@@ -29,23 +29,26 @@
 #include <src/compiler/signals/SyntaxErrorSignal.h>
 #endif
 
-HX_DEFINE_STACK_FRAME(_hx_pos_c3d5aad1c1d714c0_35_new,"src.compiler.commands.value.ObjectIndexPair","new",0xc3011d21,"src.compiler.commands.value.ObjectIndexPair.new","src/compiler/commands/value/ObjectIndexPair.hx",35,0x5127dcd1)
-HX_LOCAL_STACK_FRAME(_hx_pos_c3d5aad1c1d714c0_43_walk,"src.compiler.commands.value.ObjectIndexPair","walk",0xe3e83928,"src.compiler.commands.value.ObjectIndexPair.walk","src/compiler/commands/value/ObjectIndexPair.hx",43,0x5127dcd1)
-HX_LOCAL_STACK_FRAME(_hx_pos_c3d5aad1c1d714c0_48_getName,"src.compiler.commands.value.ObjectIndexPair","getName",0xcd1b6342,"src.compiler.commands.value.ObjectIndexPair.getName","src/compiler/commands/value/ObjectIndexPair.hx",48,0x5127dcd1)
-HX_LOCAL_STACK_FRAME(_hx_pos_c3d5aad1c1d714c0_53_getBytecode,"src.compiler.commands.value.ObjectIndexPair","getBytecode",0xe8652cac,"src.compiler.commands.value.ObjectIndexPair.getBytecode","src/compiler/commands/value/ObjectIndexPair.hx",53,0x5127dcd1)
-HX_LOCAL_STACK_FRAME(_hx_pos_c3d5aad1c1d714c0_58_reconstruct,"src.compiler.commands.value.ObjectIndexPair","reconstruct",0xfaf3dbc5,"src.compiler.commands.value.ObjectIndexPair.reconstruct","src/compiler/commands/value/ObjectIndexPair.hx",58,0x5127dcd1)
-HX_LOCAL_STACK_FRAME(_hx_pos_c3d5aad1c1d714c0_18_fromTokens,"src.compiler.commands.value.ObjectIndexPair","fromTokens",0x8b0759c3,"src.compiler.commands.value.ObjectIndexPair.fromTokens","src/compiler/commands/value/ObjectIndexPair.hx",18,0x5127dcd1)
-HX_LOCAL_STACK_FRAME(_hx_pos_c3d5aad1c1d714c0_29_fromBytecode,"src.compiler.commands.value.ObjectIndexPair","fromBytecode",0x0b1c62de,"src.compiler.commands.value.ObjectIndexPair.fromBytecode","src/compiler/commands/value/ObjectIndexPair.hx",29,0x5127dcd1)
+HX_DEFINE_STACK_FRAME(_hx_pos_c3d5aad1c1d714c0_36_new,"src.compiler.commands.value.ObjectIndexPair","new",0xc3011d21,"src.compiler.commands.value.ObjectIndexPair.new","src/compiler/commands/value/ObjectIndexPair.hx",36,0x5127dcd1)
+HX_LOCAL_STACK_FRAME(_hx_pos_c3d5aad1c1d714c0_44_copy,"src.compiler.commands.value.ObjectIndexPair","copy",0xd6ba97d4,"src.compiler.commands.value.ObjectIndexPair.copy","src/compiler/commands/value/ObjectIndexPair.hx",44,0x5127dcd1)
+HX_LOCAL_STACK_FRAME(_hx_pos_c3d5aad1c1d714c0_48_setScope,"src.compiler.commands.value.ObjectIndexPair","setScope",0x3b8db231,"src.compiler.commands.value.ObjectIndexPair.setScope","src/compiler/commands/value/ObjectIndexPair.hx",48,0x5127dcd1)
+HX_LOCAL_STACK_FRAME(_hx_pos_c3d5aad1c1d714c0_56_walk,"src.compiler.commands.value.ObjectIndexPair","walk",0xe3e83928,"src.compiler.commands.value.ObjectIndexPair.walk","src/compiler/commands/value/ObjectIndexPair.hx",56,0x5127dcd1)
+HX_LOCAL_STACK_FRAME(_hx_pos_c3d5aad1c1d714c0_61_getName,"src.compiler.commands.value.ObjectIndexPair","getName",0xcd1b6342,"src.compiler.commands.value.ObjectIndexPair.getName","src/compiler/commands/value/ObjectIndexPair.hx",61,0x5127dcd1)
+HX_LOCAL_STACK_FRAME(_hx_pos_c3d5aad1c1d714c0_66_getFriendlyName,"src.compiler.commands.value.ObjectIndexPair","getFriendlyName",0xfd827c4d,"src.compiler.commands.value.ObjectIndexPair.getFriendlyName","src/compiler/commands/value/ObjectIndexPair.hx",66,0x5127dcd1)
+HX_LOCAL_STACK_FRAME(_hx_pos_c3d5aad1c1d714c0_71_getBytecode,"src.compiler.commands.value.ObjectIndexPair","getBytecode",0xe8652cac,"src.compiler.commands.value.ObjectIndexPair.getBytecode","src/compiler/commands/value/ObjectIndexPair.hx",71,0x5127dcd1)
+HX_LOCAL_STACK_FRAME(_hx_pos_c3d5aad1c1d714c0_76_reconstruct,"src.compiler.commands.value.ObjectIndexPair","reconstruct",0xfaf3dbc5,"src.compiler.commands.value.ObjectIndexPair.reconstruct","src/compiler/commands/value/ObjectIndexPair.hx",76,0x5127dcd1)
+HX_LOCAL_STACK_FRAME(_hx_pos_c3d5aad1c1d714c0_19_fromTokens,"src.compiler.commands.value.ObjectIndexPair","fromTokens",0x8b0759c3,"src.compiler.commands.value.ObjectIndexPair.fromTokens","src/compiler/commands/value/ObjectIndexPair.hx",19,0x5127dcd1)
+HX_LOCAL_STACK_FRAME(_hx_pos_c3d5aad1c1d714c0_30_fromBytecode,"src.compiler.commands.value.ObjectIndexPair","fromBytecode",0x0b1c62de,"src.compiler.commands.value.ObjectIndexPair.fromBytecode","src/compiler/commands/value/ObjectIndexPair.hx",30,0x5127dcd1)
 namespace src{
 namespace compiler{
 namespace commands{
 namespace value{
 
 void ObjectIndexPair_obj::__construct( ::src::compiler::Scope scope, ::src::compiler::commands::value::ValueCommand variable, ::src::compiler::commands::value::ValueCommand index){
-            	HX_STACKFRAME(&_hx_pos_c3d5aad1c1d714c0_35_new)
-HXLINE(  36)		super::__construct(scope);
-HXLINE(  37)		this->variable = variable;
-HXLINE(  38)		this->index = index;
+            	HX_STACKFRAME(&_hx_pos_c3d5aad1c1d714c0_36_new)
+HXLINE(  37)		super::__construct(scope);
+HXLINE(  38)		this->variable = variable;
+HXLINE(  39)		this->index = index;
             	}
 
 Dynamic ObjectIndexPair_obj::__CreateEmpty() { return new ObjectIndexPair_obj; }
@@ -67,55 +70,76 @@ bool ObjectIndexPair_obj::_hx_isInstanceOf(int inClassId) {
 	}
 }
 
+ ::src::compiler::commands::Command ObjectIndexPair_obj::copy( ::src::compiler::Scope scope){
+            	HX_GC_STACKFRAME(&_hx_pos_c3d5aad1c1d714c0_44_copy)
+HXDLIN(  44)		 ::src::compiler::commands::value::ValueCommand _hx_tmp = hx::TCast<  ::src::compiler::commands::value::ValueCommand >::cast(this->variable->copy(scope));
+HXDLIN(  44)		return  ::src::compiler::commands::value::ObjectIndexPair_obj::__alloc( HX_CTX ,scope,_hx_tmp,this->index->copy(scope));
+            	}
+
+
+void ObjectIndexPair_obj::setScope( ::src::compiler::Scope scope){
+            	HX_STACKFRAME(&_hx_pos_c3d5aad1c1d714c0_48_setScope)
+HXLINE(  49)		this->super::setScope(scope);
+HXLINE(  50)		this->variable->setScope(scope);
+HXLINE(  51)		this->index->setScope(scope);
+            	}
+
+
 ::Array< ::Dynamic> ObjectIndexPair_obj::walk(){
-            	HX_STACKFRAME(&_hx_pos_c3d5aad1c1d714c0_43_walk)
-HXDLIN(  43)		return ::Array_obj< ::Dynamic>::__new(2)->init(0,this->variable)->init(1,this->index);
+            	HX_STACKFRAME(&_hx_pos_c3d5aad1c1d714c0_56_walk)
+HXDLIN(  56)		return ::Array_obj< ::Dynamic>::__new(2)->init(0,this->variable)->init(1,this->index);
             	}
 
 
 ::String ObjectIndexPair_obj::getName(){
-            	HX_STACKFRAME(&_hx_pos_c3d5aad1c1d714c0_48_getName)
-HXDLIN(  48)		return HX_("ObjectIndexPair",6d,ad,2e,f2);
+            	HX_STACKFRAME(&_hx_pos_c3d5aad1c1d714c0_61_getName)
+HXDLIN(  61)		return HX_("ObjectIndexPair",6d,ad,2e,f2);
+            	}
+
+
+::String ObjectIndexPair_obj::getFriendlyName(){
+            	HX_STACKFRAME(&_hx_pos_c3d5aad1c1d714c0_66_getFriendlyName)
+HXDLIN(  66)		return HX_("variable and index pair",f5,f7,15,fa);
             	}
 
 
  ::src::compiler::bytecode::Bytecode ObjectIndexPair_obj::getBytecode(){
-            	HX_STACKFRAME(&_hx_pos_c3d5aad1c1d714c0_53_getBytecode)
-HXDLIN(  53)		::cpp::VirtualArray _hx_tmp = ::cpp::VirtualArray_obj::__new(2)->init(0,this->variable)->init(1,this->index);
-HXDLIN(  53)		return ::src::compiler::bytecode::Bytecode_obj::fromArray(_hx_tmp,this->getCodeID());
+            	HX_STACKFRAME(&_hx_pos_c3d5aad1c1d714c0_71_getBytecode)
+HXDLIN(  71)		::cpp::VirtualArray _hx_tmp = ::cpp::VirtualArray_obj::__new(2)->init(0,this->variable)->init(1,this->index);
+HXDLIN(  71)		return ::src::compiler::bytecode::Bytecode_obj::fromArray(_hx_tmp,this->getCodeID());
             	}
 
 
 ::Array< ::Dynamic> ObjectIndexPair_obj::reconstruct(){
-            	HX_STACKFRAME(&_hx_pos_c3d5aad1c1d714c0_58_reconstruct)
-HXDLIN(  58)		::Array< ::Dynamic> _hx_tmp = this->variable->reconstruct();
-HXDLIN(  58)		return ::src::ast::Token_obj::merge(::cpp::VirtualArray_obj::__new(2)->init(0,_hx_tmp)->init(1,::src::ast::base::BracketToken_obj::fromRaw(this->index->reconstruct())));
+            	HX_STACKFRAME(&_hx_pos_c3d5aad1c1d714c0_76_reconstruct)
+HXDLIN(  76)		::Array< ::Dynamic> _hx_tmp = this->variable->reconstruct();
+HXDLIN(  76)		return ::src::ast::Token_obj::merge(::cpp::VirtualArray_obj::__new(2)->init(0,_hx_tmp)->init(1,::src::ast::base::ListToken_obj::fromRaw(this->index->reconstruct())));
             	}
 
 
  ::src::compiler::commands::value::ObjectIndexPair ObjectIndexPair_obj::fromTokens( ::src::compiler::Scope scope,::Array< ::Dynamic> tokens){
-            	HX_GC_STACKFRAME(&_hx_pos_c3d5aad1c1d714c0_18_fromTokens)
-HXDLIN(  18)		if ((tokens->length != (int)2)) {
-HXDLIN(  18)			HX_STACK_DO_THROW( ::src::compiler::signals::SyntaxErrorSignal_obj::__alloc( HX_CTX ,HX_("Invalid object indexing syntax",3b,54,c8,71)));
+            	HX_GC_STACKFRAME(&_hx_pos_c3d5aad1c1d714c0_19_fromTokens)
+HXDLIN(  19)		if ((tokens->length != (int)2)) {
+HXDLIN(  19)			HX_STACK_DO_THROW( ::src::compiler::signals::SyntaxErrorSignal_obj::__alloc( HX_CTX ,HX_("Invalid object indexing syntax",3b,54,c8,71)));
             		}
             		else {
-HXLINE(  20)			if ((tokens->__get((int)1).StaticCast<  ::src::ast::Token >()->getName() != HX_("ListToken",9b,21,3f,cc))) {
-HXLINE(  20)				HX_STACK_DO_THROW( ::src::compiler::signals::SyntaxErrorSignal_obj::__alloc( HX_CTX ,HX_("Invalid object indexing syntax, array access must be in square brackets",ff,a6,79,57)));
+HXLINE(  21)			if ((tokens->__get((int)1).StaticCast<  ::src::ast::Token >()->getName() != HX_("ListToken",9b,21,3f,cc))) {
+HXLINE(  21)				HX_STACK_DO_THROW( ::src::compiler::signals::SyntaxErrorSignal_obj::__alloc( HX_CTX ,HX_("Invalid object indexing syntax, array access must be in square brackets",ff,a6,79,57)));
             			}
-HXLINE(  21)			 ::src::compiler::commands::value::ValueCommand variable = ::src::compiler::commands::value::ValueCommand_obj::fromToken(scope,tokens->__get((int)0).StaticCast<  ::src::ast::Token >());
-HXLINE(  22)			 ::src::compiler::commands::value::ValueCommand index = ::src::compiler::commands::value::ValueCommand_obj::fromTokens(scope,( (::Array< ::Dynamic>)(tokens->__get((int)1).StaticCast<  ::src::ast::Token >()->getContent()) ));
-HXLINE(  23)			return  ::src::compiler::commands::value::ObjectIndexPair_obj::__alloc( HX_CTX ,scope,variable,index);
+HXLINE(  22)			 ::src::compiler::commands::value::ValueCommand variable = ::src::compiler::commands::value::ValueCommand_obj::fromToken(scope,tokens->__get((int)0).StaticCast<  ::src::ast::Token >());
+HXLINE(  23)			 ::src::compiler::commands::value::ValueCommand index = ::src::compiler::commands::value::ValueCommand_obj::fromTokens(scope,( (::Array< ::Dynamic>)(tokens->__get((int)1).StaticCast<  ::src::ast::Token >()->getContent()) ));
+HXLINE(  24)			return  ::src::compiler::commands::value::ObjectIndexPair_obj::__alloc( HX_CTX ,scope,variable,index);
             		}
-HXLINE(  18)		return null();
+HXLINE(  19)		return null();
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(ObjectIndexPair_obj,fromTokens,return )
 
  ::src::compiler::commands::value::ObjectIndexPair ObjectIndexPair_obj::fromBytecode( ::src::compiler::Scope scope,::Array< ::Dynamic> arr){
-            	HX_GC_STACKFRAME(&_hx_pos_c3d5aad1c1d714c0_29_fromBytecode)
-HXDLIN(  29)		 ::Dynamic _hx_tmp = arr->shift().StaticCast<  ::src::compiler::bytecode::Bytecode >()->convert(scope);
-HXDLIN(  29)		return  ::src::compiler::commands::value::ObjectIndexPair_obj::__alloc( HX_CTX ,scope,_hx_tmp,arr->shift().StaticCast<  ::src::compiler::bytecode::Bytecode >()->convert(scope));
+            	HX_GC_STACKFRAME(&_hx_pos_c3d5aad1c1d714c0_30_fromBytecode)
+HXDLIN(  30)		 ::Dynamic _hx_tmp = arr->shift().StaticCast<  ::src::compiler::bytecode::Bytecode >()->convert(scope);
+HXDLIN(  30)		return  ::src::compiler::commands::value::ObjectIndexPair_obj::__alloc( HX_CTX ,scope,_hx_tmp,arr->shift().StaticCast<  ::src::compiler::bytecode::Bytecode >()->convert(scope));
             	}
 
 
@@ -159,6 +183,7 @@ hx::Val ObjectIndexPair_obj::__Field(const ::String &inName,hx::PropertyAccess i
 {
 	switch(inName.length) {
 	case 4:
+		if (HX_FIELD_EQ(inName,"copy") ) { return hx::Val( copy_dyn() ); }
 		if (HX_FIELD_EQ(inName,"walk") ) { return hx::Val( walk_dyn() ); }
 		break;
 	case 5:
@@ -169,10 +194,14 @@ hx::Val ObjectIndexPair_obj::__Field(const ::String &inName,hx::PropertyAccess i
 		break;
 	case 8:
 		if (HX_FIELD_EQ(inName,"variable") ) { return hx::Val( variable ); }
+		if (HX_FIELD_EQ(inName,"setScope") ) { return hx::Val( setScope_dyn() ); }
 		break;
 	case 11:
 		if (HX_FIELD_EQ(inName,"getBytecode") ) { return hx::Val( getBytecode_dyn() ); }
 		if (HX_FIELD_EQ(inName,"reconstruct") ) { return hx::Val( reconstruct_dyn() ); }
+		break;
+	case 15:
+		if (HX_FIELD_EQ(inName,"getFriendlyName") ) { return hx::Val( getFriendlyName_dyn() ); }
 	}
 	return super::__Field(inName,inCallProp);
 }
@@ -220,8 +249,11 @@ static hx::StaticInfo *ObjectIndexPair_obj_sStaticStorageInfo = 0;
 static ::String ObjectIndexPair_obj_sMemberFields[] = {
 	HX_HCSTRING("variable","\x3c","\x12","\x0d","\x69"),
 	HX_HCSTRING("index","\x12","\x9b","\x14","\xbe"),
+	HX_HCSTRING("copy","\xb5","\xbb","\xc4","\x41"),
+	HX_HCSTRING("setScope","\x92","\xda","\x0d","\x87"),
 	HX_HCSTRING("walk","\x09","\x5d","\xf2","\x4e"),
 	HX_HCSTRING("getName","\x01","\x22","\x82","\x1b"),
+	HX_HCSTRING("getFriendlyName","\x0c","\x92","\xf4","\xaf"),
 	HX_HCSTRING("getBytecode","\xeb","\xb6","\x8b","\x7d"),
 	HX_HCSTRING("reconstruct","\x04","\x66","\x1a","\x90"),
 	::String(null()) };

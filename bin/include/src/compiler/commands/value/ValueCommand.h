@@ -49,6 +49,9 @@ class HXCPP_CLASS_ATTRIBUTES ValueCommand_obj : public  ::src::compiler::command
 		bool _hx_isInstanceOf(int inClassId);
 		::String __ToString() const { return HX_HCSTRING("ValueCommand","\xfa","\xa5","\xfa","\x51"); }
 
+		static ::String processStringEscapes(::String content);
+		static ::Dynamic processStringEscapes_dyn();
+
 		static ::Array< ::Dynamic> splitTokens( ::src::compiler::Scope scope,::Array< ::Dynamic> tokens,::String splitToken, ::Dynamic singular,::String content);
 		static ::Dynamic splitTokens_dyn();
 
@@ -58,7 +61,12 @@ class HXCPP_CLASS_ATTRIBUTES ValueCommand_obj : public  ::src::compiler::command
 		static  ::src::compiler::commands::value::ValueCommand fromToken( ::src::compiler::Scope scope, ::src::ast::Token token);
 		static ::Dynamic fromToken_dyn();
 
+		static ::Array< ::Dynamic> copyArray( ::src::compiler::Scope scope,::Array< ::Dynamic> arr);
+		static ::Dynamic copyArray_dyn();
+
 		virtual ::String getName();
+
+		virtual ::String getFriendlyName();
 
 };
 

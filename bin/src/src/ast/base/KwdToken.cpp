@@ -12,13 +12,13 @@
 #endif
 
 HX_DEFINE_STACK_FRAME(_hx_pos_540961c862483b24_9_new,"src.ast.base.KwdToken","new",0x66aaa17a,"src.ast.base.KwdToken.new","src/ast/base/KwdToken.hx",9,0xbd6e5157)
-HX_LOCAL_STACK_FRAME(_hx_pos_540961c862483b24_46_getName,"src.ast.base.KwdToken","getName",0x1c80881b,"src.ast.base.KwdToken.getName","src/ast/base/KwdToken.hx",46,0xbd6e5157)
-HX_LOCAL_STACK_FRAME(_hx_pos_540961c862483b24_51_getPriority,"src.ast.base.KwdToken","getPriority",0x10c6b934,"src.ast.base.KwdToken.getPriority","src/ast/base/KwdToken.hx",51,0xbd6e5157)
-HX_LOCAL_STACK_FRAME(_hx_pos_540961c862483b24_32_match,"src.ast.base.KwdToken","match",0xc9a414df,"src.ast.base.KwdToken.match","src/ast/base/KwdToken.hx",32,0xbd6e5157)
-HX_LOCAL_STACK_FRAME(_hx_pos_540961c862483b24_36_partialMatch,"src.ast.base.KwdToken","partialMatch",0x3d1949aa,"src.ast.base.KwdToken.partialMatch","src/ast/base/KwdToken.hx",36,0xbd6e5157)
+HX_LOCAL_STACK_FRAME(_hx_pos_540961c862483b24_52_getName,"src.ast.base.KwdToken","getName",0x1c80881b,"src.ast.base.KwdToken.getName","src/ast/base/KwdToken.hx",52,0xbd6e5157)
+HX_LOCAL_STACK_FRAME(_hx_pos_540961c862483b24_57_getPriority,"src.ast.base.KwdToken","getPriority",0x10c6b934,"src.ast.base.KwdToken.getPriority","src/ast/base/KwdToken.hx",57,0xbd6e5157)
+HX_LOCAL_STACK_FRAME(_hx_pos_540961c862483b24_38_match,"src.ast.base.KwdToken","match",0xc9a414df,"src.ast.base.KwdToken.match","src/ast/base/KwdToken.hx",38,0xbd6e5157)
+HX_LOCAL_STACK_FRAME(_hx_pos_540961c862483b24_42_partialMatch,"src.ast.base.KwdToken","partialMatch",0x3d1949aa,"src.ast.base.KwdToken.partialMatch","src/ast/base/KwdToken.hx",42,0xbd6e5157)
 HX_LOCAL_STACK_FRAME(_hx_pos_540961c862483b24_12_boot,"src.ast.base.KwdToken","boot",0x66bba9d8,"src.ast.base.KwdToken.boot","src/ast/base/KwdToken.hx",12,0xbd6e5157)
 static const ::String _hx_array_data_c0321c88_7[] = {
-	HX_("if",dd,5b,00,00),HX_("elif",04,dc,14,43),HX_("else",b9,e4,14,43),HX_("for",09,c7,4d,00),HX_("while",b1,43,bd,c9),HX_("func",44,eb,c4,43),HX_("true",4e,a7,03,4d),HX_("false",a3,35,4f,fb),HX_("none",b8,12,0a,49),HX_("return",b0,a4,2d,09),HX_("break",bf,24,ec,b8),HX_("continue",67,e0,c8,31),HX_("in",e5,5b,00,00),HX_("del",cb,39,4c,00),HX_("type",ba,f2,08,4d),
+	HX_("if",dd,5b,00,00),HX_("elif",04,dc,14,43),HX_("else",b9,e4,14,43),HX_("for",09,c7,4d,00),HX_("while",b1,43,bd,c9),HX_("func",44,eb,c4,43),HX_("true",4e,a7,03,4d),HX_("false",a3,35,4f,fb),HX_("none",b8,12,0a,49),HX_("return",b0,a4,2d,09),HX_("break",bf,24,ec,b8),HX_("continue",67,e0,c8,31),HX_("in",e5,5b,00,00),HX_("del",cb,39,4c,00),HX_("type",ba,f2,08,4d),HX_("raise",ec,e4,1b,e4),HX_("try",3b,69,58,00),HX_("catch",3b,7c,21,41),HX_("import",65,a1,82,08),HX_("as",f2,54,00,00),HX_("coro",69,bd,c4,41),
 };
 namespace src{
 namespace ast{
@@ -49,44 +49,44 @@ bool KwdToken_obj::_hx_isInstanceOf(int inClassId) {
 }
 
 ::String KwdToken_obj::getName(){
-            	HX_STACKFRAME(&_hx_pos_540961c862483b24_46_getName)
-HXDLIN(  46)		return HX_("KwdToken",c1,aa,4a,b9);
+            	HX_STACKFRAME(&_hx_pos_540961c862483b24_52_getName)
+HXDLIN(  52)		return HX_("KwdToken",c1,aa,4a,b9);
             	}
 
 
  ::src::ast::TokenPriority KwdToken_obj::getPriority(){
-            	HX_STACKFRAME(&_hx_pos_540961c862483b24_51_getPriority)
-HXDLIN(  51)		return ::src::ast::TokenPriority_obj::MAXIMUM_dyn();
+            	HX_STACKFRAME(&_hx_pos_540961c862483b24_57_getPriority)
+HXDLIN(  57)		return ::src::ast::TokenPriority_obj::MAXIMUM_dyn();
             	}
 
 
 ::Array< ::String > KwdToken_obj::kwds;
 
 bool KwdToken_obj::match(::String s){
-            	HX_STACKFRAME(&_hx_pos_540961c862483b24_32_match)
-HXDLIN(  32)		return (::src::ast::base::KwdToken_obj::kwds->indexOf(s,null()) != (int)-1);
+            	HX_STACKFRAME(&_hx_pos_540961c862483b24_38_match)
+HXDLIN(  38)		return (::src::ast::base::KwdToken_obj::kwds->indexOf(s,null()) != (int)-1);
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC1(KwdToken_obj,match,return )
 
 bool KwdToken_obj::partialMatch(::String s){
-            	HX_STACKFRAME(&_hx_pos_540961c862483b24_36_partialMatch)
-HXLINE(  37)		if ((s.length == (int)0)) {
-HXLINE(  37)			return false;
+            	HX_STACKFRAME(&_hx_pos_540961c862483b24_42_partialMatch)
+HXLINE(  43)		if ((s.length == (int)0)) {
+HXLINE(  43)			return false;
             		}
-HXLINE(  38)		{
-HXLINE(  38)			int _g = (int)0;
-HXDLIN(  38)			::Array< ::String > _g1 = ::src::ast::base::KwdToken_obj::kwds;
-HXDLIN(  38)			while((_g < _g1->length)){
-HXLINE(  38)				::String kwd = _g1->__get(_g);
-HXDLIN(  38)				_g = (_g + (int)1);
-HXLINE(  39)				if ((kwd.substr((int)0,s.length) == s)) {
-HXLINE(  39)					return true;
+HXLINE(  44)		{
+HXLINE(  44)			int _g = (int)0;
+HXDLIN(  44)			::Array< ::String > _g1 = ::src::ast::base::KwdToken_obj::kwds;
+HXDLIN(  44)			while((_g < _g1->length)){
+HXLINE(  44)				::String kwd = _g1->__get(_g);
+HXDLIN(  44)				_g = (_g + (int)1);
+HXLINE(  45)				if ((kwd.substr((int)0,s.length) == s)) {
+HXLINE(  45)					return true;
             				}
             			}
             		}
-HXLINE(  41)		return false;
+HXLINE(  47)		return false;
             	}
 
 
@@ -212,7 +212,7 @@ void KwdToken_obj::__boot()
 {
 {
             	HX_STACKFRAME(&_hx_pos_540961c862483b24_12_boot)
-HXDLIN(  12)		kwds = ::Array_obj< ::String >::fromData( _hx_array_data_c0321c88_7,15);
+HXDLIN(  12)		kwds = ::Array_obj< ::String >::fromData( _hx_array_data_c0321c88_7,21);
             	}
 }
 

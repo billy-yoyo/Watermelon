@@ -30,6 +30,30 @@ class AssignmentCommand extends Command
         while (tokens[index].getName() != "AssignmentToken") index += 1;
         var lhs:Array<Token> = tokens.splice(0, index);
         var rhs:Array<Token> = tokens.splice(1, tokens.length);
+        
+        if (lhs.length == 0) throw new SyntaxErrorSignal("Empty left hand side of assignment");
+        if (rhs.length == 0) throw new SyntaxErrorSignal("Empty right hand side of assignment");
+        
+        var operator:Int = 0;
+        var opToken:Token = lhs[lhs.length - 1];
+        if (opToken.getName() == "MathsOperatorToken") {
+            // in order: (default) =, +=, -=, *=, /=, //=, **=, >>=, <<=, %=
+            var op:String = lhs.pop().getContent();
+            if (op == "+") operator = 1;
+            else if (op == "-") operator = 2;
+            else if (op == "*") operator = 3;
+            else if (op == "/") operator = 4;
+            else if (op == "//") operator = 5;
+            else if (op == "**") operator = 6;
+            else if (op == "%") operator = 9;
+        } else if (opToken.getName() == "BinaryOperatorToken") {
+            var op:String = opToken.getContent();
+            if (op == ">>" || op == "<<") {
+                lhs.pop();
+                if (op == ">>") operator = 7;
+                else operator = 8;
+            }
+        }
         //trace('LHS: $lhs, RHS: $rhs (index: $index, tokens: $tokens)');
         
         var vars:Array<VariableAccess> = new Array<VariableAccess>();
@@ -38,21 +62,35 @@ class AssignmentCommand extends Command
             vars.push(VariableAccess.fromTokens(scope, subtokens, true));
         }
         
-        return new AssignmentCommand(scope, vars, ValueCommand.fromTokens(scope, rhs));
+        return new AssignmentCommand(scope, vars, ValueCommand.fromTokens(scope, rhs), operator);
     }
     
     public static function fromBytecode(scope:Scope, arr:Array<Bytecode>):AssignmentCommand
     {
-        return new AssignmentCommand(scope, arr.shift().convert(scope), arr.shift().convert(scope));
+        return new AssignmentCommand(scope, arr.shift().convert(scope), arr.shift().convert(scope), arr.shift().convert(scope));
     }
     
     private var variables:Array<VariableAccess>;
     private var value:ValueCommand;
-    public function new(scope:Scope, variables:Array<VariableAccess>, value:ValueCommand)
+    private var operator:Int;
+    public function new(scope:Scope, variables:Array<VariableAccess>, value:ValueCommand, operator:Int)
     {
         super(scope);
         this.variables = variables;
         this.value = value;
+        this.operator = operator; // in order: (default) =, +=, -=, *=, /=, //=, **=, >>=, <<=, %=
+    }
+    
+    override public function copy(scope:Scope):Command 
+    {
+        return new AssignmentCommand(scope, VariableAccess.copyArray(scope, variables), cast(value.copy(scope), ValueCommand), operator);
+    }
+    
+    override public function setScope(scope:Scope) 
+    {
+        super.setScope(scope);
+        for (v in variables) v.setScope(scope);
+        value.setScope(scope);
     }
     
     override public function walk():Array<Command> 
@@ -62,7 +100,7 @@ class AssignmentCommand extends Command
         cmds.push(value);
         return cmds;
     }
-    
+    /*
     public static function assignVariable(scope:Scope, variable:Array<String>, obj:Object)
     {
         if (variable.length == 1) {
@@ -76,17 +114,46 @@ class AssignmentCommand extends Command
             }
             o.setfield(o._str(variable[variable.length - 1]), obj);
         }
+    }*/
+    
+    public static function setVariable(variable:VariableAccess, obj:Object, operator:Int)
+    {
+        // (default) =, +=, -=, *=, /=, //=, **=, >>=, <<=, %=
+        if (operator == 0) {
+            variable.setVariable(obj);
+            return;
+        }
+        var original:Object = variable.getVariable();
+        if (operator == 1) { // addition assign
+            variable.setVariable(original.add(obj));
+        } else if (operator == 2) { // subtraction assign
+            variable.setVariable(original.sub(obj));
+        } else if (operator == 3) { // mult assign
+            variable.setVariable(original.mult(obj));
+        } else if (operator == 4) { // div assign
+            variable.setVariable(original.div(obj));
+        } else if (operator == 5) { // intdiv assign
+            variable.setVariable(original.intdiv(obj));
+        } else if (operator == 6) { // pow assign
+            variable.setVariable(original.pow(obj));
+        } else if (operator == 7) { // rshift assign
+            variable.setVariable(original.shiftright(obj));
+        } else if (operator == 8) { // lshift assign
+            variable.setVariable(original.shiftleft(obj));
+        } else if (operator == 9) { // modulo assign
+            variable.setVariable(original.mod(obj));
+        } else throw new SyntaxErrorSignal("Invalid assignment operator");
     }
     
-    public static function assign(scope:Scope, variables:Array<VariableAccess>, obj:Object)
+    public static function assign(variables:Array<VariableAccess>, obj:Object, operator:Int)
     {
         if (variables.length == 1) {
-            variables[0].setVariable(obj);
+            setVariable(variables[0], obj, operator);
         } else {
             var len:Int = obj.len().rawInt();
             if (obj.len().rawInt() == variables.length) {
                 for (i in 0...len) {
-                    variables[i].setVariable(obj.get(obj._int(i)));
+                    setVariable(variables[i], obj.get(obj._int(i)), operator);
                 }
             } else throw new InvalidArgumentSignal('Mismatched lengths for amount of variables, expected ${variables.length}, found $len');
         }
@@ -95,7 +162,7 @@ class AssignmentCommand extends Command
     override public function run():Object 
     {
         var obj:Object = value.run();
-        assign(scope, variables, obj);
+        assign(variables, obj, operator);
         return null;
     }
     
@@ -104,9 +171,14 @@ class AssignmentCommand extends Command
         return "AssignmentCommand";
     }
     
+    override public function getFriendlyName():String 
+    {
+        return "assignment";
+    }
+    
     override public function getBytecode():Bytecode 
     {
-        return Bytecode.fromArray([variables, value], getCodeID());
+        return Bytecode.fromArray([variables, value, operator], getCodeID());
     }
     
     override public function reconstruct():Array<Token> 

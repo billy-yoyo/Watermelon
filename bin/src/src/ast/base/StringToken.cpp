@@ -14,12 +14,12 @@
 #include <src/ast/base/StringToken.h>
 #endif
 
-HX_DEFINE_STACK_FRAME(_hx_pos_508166863f4ce950_15_new,"src.ast.base.StringToken","new",0xf3db9653,"src.ast.base.StringToken.new","src/ast/base/StringToken.hx",15,0x023ff8fc)
-HX_LOCAL_STACK_FRAME(_hx_pos_508166863f4ce950_30_getName,"src.ast.base.StringToken","getName",0xb92f5d74,"src.ast.base.StringToken.getName","src/ast/base/StringToken.hx",30,0x023ff8fc)
-HX_LOCAL_STACK_FRAME(_hx_pos_508166863f4ce950_35_getLength,"src.ast.base.StringToken","getLength",0x6b675c4f,"src.ast.base.StringToken.getLength","src/ast/base/StringToken.hx",35,0x023ff8fc)
-HX_LOCAL_STACK_FRAME(_hx_pos_508166863f4ce950_40_reconstruct,"src.ast.base.StringToken","reconstruct",0xe395d6f7,"src.ast.base.StringToken.reconstruct","src/ast/base/StringToken.hx",40,0x023ff8fc)
-HX_LOCAL_STACK_FRAME(_hx_pos_508166863f4ce950_20_match,"src.ast.base.StringToken","match",0xbc9eb1f8,"src.ast.base.StringToken.match","src/ast/base/StringToken.hx",20,0x023ff8fc)
-HX_LOCAL_STACK_FRAME(_hx_pos_508166863f4ce950_25_partialMatch,"src.ast.base.StringToken","partialMatch",0x834971b1,"src.ast.base.StringToken.partialMatch","src/ast/base/StringToken.hx",25,0x023ff8fc)
+HX_DEFINE_STACK_FRAME(_hx_pos_508166863f4ce950_8_new,"src.ast.base.StringToken","new",0xf3db9653,"src.ast.base.StringToken.new","src/ast/base/StringToken.hx",8,0x023ff8fc)
+HX_LOCAL_STACK_FRAME(_hx_pos_508166863f4ce950_36_getName,"src.ast.base.StringToken","getName",0xb92f5d74,"src.ast.base.StringToken.getName","src/ast/base/StringToken.hx",36,0x023ff8fc)
+HX_LOCAL_STACK_FRAME(_hx_pos_508166863f4ce950_41_getLength,"src.ast.base.StringToken","getLength",0x6b675c4f,"src.ast.base.StringToken.getLength","src/ast/base/StringToken.hx",41,0x023ff8fc)
+HX_LOCAL_STACK_FRAME(_hx_pos_508166863f4ce950_46_reconstruct,"src.ast.base.StringToken","reconstruct",0xe395d6f7,"src.ast.base.StringToken.reconstruct","src/ast/base/StringToken.hx",46,0x023ff8fc)
+HX_LOCAL_STACK_FRAME(_hx_pos_508166863f4ce950_26_match,"src.ast.base.StringToken","match",0xbc9eb1f8,"src.ast.base.StringToken.match","src/ast/base/StringToken.hx",26,0x023ff8fc)
+HX_LOCAL_STACK_FRAME(_hx_pos_508166863f4ce950_31_partialMatch,"src.ast.base.StringToken","partialMatch",0x834971b1,"src.ast.base.StringToken.partialMatch","src/ast/base/StringToken.hx",31,0x023ff8fc)
 HX_LOCAL_STACK_FRAME(_hx_pos_508166863f4ce950_11_boot,"src.ast.base.StringToken","boot",0x6460f2df,"src.ast.base.StringToken.boot","src/ast/base/StringToken.hx",11,0x023ff8fc)
 HX_LOCAL_STACK_FRAME(_hx_pos_508166863f4ce950_12_boot,"src.ast.base.StringToken","boot",0x6460f2df,"src.ast.base.StringToken.boot","src/ast/base/StringToken.hx",12,0x023ff8fc)
 namespace src{
@@ -27,8 +27,13 @@ namespace ast{
 namespace base{
 
 void StringToken_obj::__construct(::String content){
-            	HX_STACKFRAME(&_hx_pos_508166863f4ce950_15_new)
-HXDLIN(  15)		super::__construct(content.substring((int)1,(content.length - (int)1)));
+            	HX_STACKFRAME(&_hx_pos_508166863f4ce950_8_new)
+HXLINE(  14)		this->flag = HX_("",00,00,00,00);
+HXLINE(  17)		if ((content.charAt((int)0) != HX_("\"",22,00,00,00))) {
+HXLINE(  18)			this->flag = content.charAt((int)0);
+HXLINE(  19)			content = content.substr((int)1,(content.length - (int)1));
+            		}
+HXLINE(  21)		super::__construct(content.substring((int)1,(content.length - (int)1)));
             	}
 
 Dynamic StringToken_obj::__CreateEmpty() { return new StringToken_obj; }
@@ -51,20 +56,20 @@ bool StringToken_obj::_hx_isInstanceOf(int inClassId) {
 }
 
 ::String StringToken_obj::getName(){
-            	HX_STACKFRAME(&_hx_pos_508166863f4ce950_30_getName)
-HXDLIN(  30)		return HX_("StringToken",48,cc,60,03);
+            	HX_STACKFRAME(&_hx_pos_508166863f4ce950_36_getName)
+HXDLIN(  36)		return HX_("StringToken",48,cc,60,03);
             	}
 
 
 int StringToken_obj::getLength(){
-            	HX_STACKFRAME(&_hx_pos_508166863f4ce950_35_getLength)
-HXDLIN(  35)		return ( (int)(( ::Dynamic(this->content->__Field(HX_("length",e6,94,07,9f),hx::paccDynamic)) + (int)2)) );
+            	HX_STACKFRAME(&_hx_pos_508166863f4ce950_41_getLength)
+HXDLIN(  41)		return ( (int)(( ::Dynamic(this->content->__Field(HX_("length",e6,94,07,9f),hx::paccDynamic)) + (int)2)) );
             	}
 
 
 ::String StringToken_obj::reconstruct(::String embed){
-            	HX_STACKFRAME(&_hx_pos_508166863f4ce950_40_reconstruct)
-HXDLIN(  40)		return ((HX_("\"",22,00,00,00) + ::Std_obj::string(this->content)) + HX_("\"",22,00,00,00));
+            	HX_STACKFRAME(&_hx_pos_508166863f4ce950_46_reconstruct)
+HXDLIN(  46)		return ((HX_("\"",22,00,00,00) + ::Std_obj::string(this->content)) + HX_("\"",22,00,00,00));
             	}
 
 
@@ -73,16 +78,16 @@ HXDLIN(  40)		return ((HX_("\"",22,00,00,00) + ::Std_obj::string(this->content))
  ::EReg StringToken_obj::partialRegex;
 
 bool StringToken_obj::match(::String s){
-            	HX_STACKFRAME(&_hx_pos_508166863f4ce950_20_match)
-HXDLIN(  20)		return ::src::ast::base::StringToken_obj::regex->match(s);
+            	HX_STACKFRAME(&_hx_pos_508166863f4ce950_26_match)
+HXDLIN(  26)		return ::src::ast::base::StringToken_obj::regex->match(s);
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC1(StringToken_obj,match,return )
 
 bool StringToken_obj::partialMatch(::String s){
-            	HX_STACKFRAME(&_hx_pos_508166863f4ce950_25_partialMatch)
-HXDLIN(  25)		return ::src::ast::base::StringToken_obj::partialRegex->match(s);
+            	HX_STACKFRAME(&_hx_pos_508166863f4ce950_31_partialMatch)
+HXDLIN(  31)		return ::src::ast::base::StringToken_obj::partialRegex->match(s);
             	}
 
 
@@ -106,9 +111,26 @@ StringToken_obj::StringToken_obj()
 {
 }
 
+void StringToken_obj::__Mark(HX_MARK_PARAMS)
+{
+	HX_MARK_BEGIN_CLASS(StringToken);
+	HX_MARK_MEMBER_NAME(flag,"flag");
+	 ::src::ast::Token_obj::__Mark(HX_MARK_ARG);
+	HX_MARK_END_CLASS();
+}
+
+void StringToken_obj::__Visit(HX_VISIT_PARAMS)
+{
+	HX_VISIT_MEMBER_NAME(flag,"flag");
+	 ::src::ast::Token_obj::__Visit(HX_VISIT_ARG);
+}
+
 hx::Val StringToken_obj::__Field(const ::String &inName,hx::PropertyAccess inCallProp)
 {
 	switch(inName.length) {
+	case 4:
+		if (HX_FIELD_EQ(inName,"flag") ) { return hx::Val( flag ); }
+		break;
 	case 7:
 		if (HX_FIELD_EQ(inName,"getName") ) { return hx::Val( getName_dyn() ); }
 		break;
@@ -135,6 +157,15 @@ bool StringToken_obj::__GetStatic(const ::String &inName, Dynamic &outValue, hx:
 	return false;
 }
 
+hx::Val StringToken_obj::__SetField(const ::String &inName,const hx::Val &inValue,hx::PropertyAccess inCallProp)
+{
+	switch(inName.length) {
+	case 4:
+		if (HX_FIELD_EQ(inName,"flag") ) { flag=inValue.Cast< ::String >(); return inValue; }
+	}
+	return super::__SetField(inName,inValue,inCallProp);
+}
+
 bool StringToken_obj::__SetStatic(const ::String &inName,Dynamic &ioValue,hx::PropertyAccess inCallProp)
 {
 	switch(inName.length) {
@@ -147,8 +178,17 @@ bool StringToken_obj::__SetStatic(const ::String &inName,Dynamic &ioValue,hx::Pr
 	return false;
 }
 
+void StringToken_obj::__GetFields(Array< ::String> &outFields)
+{
+	outFields->push(HX_HCSTRING("flag","\xac","\x0b","\xbe","\x43"));
+	super::__GetFields(outFields);
+};
+
 #if HXCPP_SCRIPTABLE
-static hx::StorageInfo *StringToken_obj_sMemberStorageInfo = 0;
+static hx::StorageInfo StringToken_obj_sMemberStorageInfo[] = {
+	{hx::fsString,(int)offsetof(StringToken_obj,flag),HX_HCSTRING("flag","\xac","\x0b","\xbe","\x43")},
+	{ hx::fsUnknown, 0, null()}
+};
 static hx::StaticInfo StringToken_obj_sStaticStorageInfo[] = {
 	{hx::fsObject /*::EReg*/ ,(void *) &StringToken_obj::regex,HX_HCSTRING("regex","\xc7","\x2e","\xbf","\xe6")},
 	{hx::fsObject /*::EReg*/ ,(void *) &StringToken_obj::partialRegex,HX_HCSTRING("partialRegex","\x86","\xf3","\x5d","\xae")},
@@ -157,6 +197,7 @@ static hx::StaticInfo StringToken_obj_sStaticStorageInfo[] = {
 #endif
 
 static ::String StringToken_obj_sMemberFields[] = {
+	HX_HCSTRING("flag","\xac","\x0b","\xbe","\x43"),
 	HX_HCSTRING("getName","\x01","\x22","\x82","\x1b"),
 	HX_HCSTRING("getLength","\x1c","\x1e","\x5e","\x1b"),
 	HX_HCSTRING("reconstruct","\x04","\x66","\x1a","\x90"),
@@ -218,11 +259,11 @@ void StringToken_obj::__boot()
 {
 {
             	HX_GC_STACKFRAME(&_hx_pos_508166863f4ce950_11_boot)
-HXDLIN(  11)		regex =  ::EReg_obj::__alloc( HX_CTX ,HX_("^\"[^\"]*\"$",4a,65,3d,3c),HX_("",00,00,00,00));
+HXDLIN(  11)		regex =  ::EReg_obj::__alloc( HX_CTX ,HX_("^(b|f|r)?\"[^\"]*\"$",5a,d1,ba,0c),HX_("",00,00,00,00));
             	}
 {
             	HX_GC_STACKFRAME(&_hx_pos_508166863f4ce950_12_boot)
-HXDLIN(  12)		partialRegex =  ::EReg_obj::__alloc( HX_CTX ,HX_("^\"[^\"]*\"?$",1f,53,7b,79),HX_("",00,00,00,00));
+HXDLIN(  12)		partialRegex =  ::EReg_obj::__alloc( HX_CTX ,HX_("^(b|f|r)?\"[^\"]*\"?$",0f,75,bc,16),HX_("",00,00,00,00));
             	}
 }
 

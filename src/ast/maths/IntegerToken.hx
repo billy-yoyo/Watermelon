@@ -8,7 +8,16 @@ import src.ast.Token;
  */
 class IntegerToken extends Token
 {
-    private static var regex:EReg = ~/^([0-9]+)$/;
+    private static var regex:EReg = ~/^([0-9]+)b?$/;
+    public var isBytes:Bool = false;
+    override public function new(content:String)
+    {
+        if (content.charAt(content.length - 1) == "b") {
+            content = content.substr(0, content.length - 1);
+            isBytes = true;
+        }
+        super(content);
+    }
     
     public static function match(s:String):Bool 
     {

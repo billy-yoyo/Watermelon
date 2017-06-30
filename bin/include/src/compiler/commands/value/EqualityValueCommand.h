@@ -65,11 +65,17 @@ class HXCPP_CLASS_ATTRIBUTES EqualityValueCommand_obj : public  ::src::compiler:
 		::Array< ::Dynamic> values;
 		::Array< ::Dynamic> checkers;
 		::Array< int > _operators;
+		 ::src::compiler::commands::Command copy( ::src::compiler::Scope scope);
+
+		void setScope( ::src::compiler::Scope scope);
+
 		::Array< ::Dynamic> walk();
 
 		 ::src::compiler::object::Object run();
 
 		::String getName();
+
+		::String getFriendlyName();
 
 		 ::src::compiler::bytecode::Bytecode getBytecode();
 

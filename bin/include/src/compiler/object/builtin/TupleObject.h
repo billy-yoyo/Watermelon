@@ -59,6 +59,9 @@ class HXCPP_CLASS_ATTRIBUTES TupleObject_obj : public  ::src::compiler::object::
 		::String __ToString() const { return HX_HCSTRING("TupleObject","\xc7","\xdc","\xb5","\x47"); }
 
 		::Array< ::Dynamic> arr;
+		int _index(int i);
+		::Dynamic _index_dyn();
+
 		::Array< ::Dynamic> getArray();
 		::Dynamic getArray_dyn();
 

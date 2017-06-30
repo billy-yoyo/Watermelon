@@ -57,13 +57,23 @@ class HXCPP_CLASS_ATTRIBUTES RootCommand_obj : public  ::src::compiler::commands
 		static  ::src::compiler::commands::RootCommand fromBytecode( ::src::compiler::Scope scope,::Array< ::Dynamic> arr);
 		static ::Dynamic fromBytecode_dyn();
 
+		static void throwUncaughtError( ::src::compiler::commands::Command command,::String msg);
+		static ::Dynamic throwUncaughtError_dyn();
+
 		::Array< ::Dynamic> commands;
 		bool useStringPool;
+		bool handleErrors;
+		 ::src::compiler::commands::Command copy( ::src::compiler::Scope scope);
+
+		void setScope( ::src::compiler::Scope scope);
+
 		::Array< ::Dynamic> walk();
 
 		 ::src::compiler::object::Object run();
 
 		::String getName();
+
+		::String getFriendlyName();
 
 		 ::src::compiler::bytecode::Bytecode getBytecode();
 

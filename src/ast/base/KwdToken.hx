@@ -24,7 +24,13 @@ class KwdToken extends Token
         "continue",
         "in",
         "del",
-        "type"
+        "type",
+        "raise",
+        "try",
+        "catch",
+        "import",
+        "as",
+        "coro"
     ];
     
     public static function match(s:String):Bool

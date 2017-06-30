@@ -62,10 +62,16 @@ class HXCPP_CLASS_ATTRIBUTES FunctionArgumentCommand_obj : public  ::src::compil
 		bool kwd;
 		bool collector;
 		 ::src::compiler::commands::value::ValueCommand _default;
+		 ::src::compiler::commands::Command copy( ::src::compiler::Scope scope);
+
+		void setScope( ::src::compiler::Scope scope);
+
 		 ::src::compiler::object::builtin::FunctionArgument getFuncArg();
 		::Dynamic getFuncArg_dyn();
 
 		::String getName();
+
+		::String getFriendlyName();
 
 		 ::src::compiler::bytecode::Bytecode getBytecode();
 

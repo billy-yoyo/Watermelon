@@ -84,6 +84,23 @@ class FunctionCallValueCommand extends ValueCommand
         if (this.kwdArgs == null) this.kwdArgs = new Map<String, Argument>();
     }
     
+    override public function copy(scope:Scope):Command 
+    {
+        var newArgs:Array<Argument> = new Array<Argument>();
+        var newKwdArgs:Map<String, Argument> = new Map<String, Argument>();
+        for (arg in args) newArgs.push(cast(arg.copy(scope), Argument));
+        for (kwd in kwdArgs.keys()) newKwdArgs.set(kwd, cast(kwdArgs.get(kwd).copy(scope), Argument));
+        return new FunctionCallValueCommand(scope, cast(func.copy(scope), VariableAccess), newArgs, newKwdArgs);
+    }
+    
+    override public function setScope(scope:Scope) 
+    {
+        super.setScope(scope);
+        func.setScope(scope);
+        for (arg in args) arg.setScope(scope);
+        for (arg in kwdArgs) arg.setScope(scope);
+    }
+    
     override public function walk():Array<Command> 
     {
         var cmds:Array<Command> = new Array<Command>();
@@ -133,19 +150,27 @@ class FunctionCallValueCommand extends ValueCommand
                 var key:Object;
                 while (iter.hasNext().rawBool()) {
                     key = iter.next();
-                    args.push(scope.getType("PairType").createValue(PairObject.createPair(key.rawString(), map.get(key))));
+                    args.push(scope.getType("PairType").createValue(PairObject.createPair(key.rawString(), map.get(key)), scope));
                 }
             } else {
-                args.push(scope.getType("PairType").createValue(PairObject.createPair(key, arg.value.run())));
+                args.push(scope.getType("PairType").createValue(PairObject.createPair(key, arg.value.run()), scope));
             }
         }
         var fobj:Object = func.getVariable();
-        return fobj.call(args);
+        var result:Object = fobj.call(args);
+        if (result != null) result.setScope(scope);
+        return result;
     }
     
     override public function getName():String 
     {
         return "FunctionCallValueCommand";
+    }
+    
+    override public function getFriendlyName():String 
+    {
+        if (func == null) return 'function call null';
+        return 'function call ${func.getReconstructedString()}';
     }
     
     override public function getBytecode():Bytecode 
@@ -201,6 +226,17 @@ class Argument extends Command {
         this.collapsed = collapsed;
     }
     
+    override public function copy(scope:Scope):Command 
+    {
+        return new Argument(cast(value.copy(scope), ValueCommand), collapsed);
+    }
+    
+    override public function setScope(scope:Scope) 
+    {
+        //super.setScope(scope);
+        //value.setScope(scope);
+    }
+    
     override public function walk():Array<Command> 
     {
         return [value];
@@ -214,5 +250,10 @@ class Argument extends Command {
     override public function getName():String 
     {
         return "Argument";
+    }
+    
+    override public function getFriendlyName():String 
+    {
+        return "function call argument";
     }
 }

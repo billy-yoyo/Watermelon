@@ -36,8 +36,8 @@ class NoneObject extends Object
         return _float(0);
     }
     
-    override public function getHash():String 
+    override public function getHash():Int 
     {
-        return "";
+        return 0;
     }
 }

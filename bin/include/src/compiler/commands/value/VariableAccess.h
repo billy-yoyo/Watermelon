@@ -65,11 +65,21 @@ class HXCPP_CLASS_ATTRIBUTES VariableAccess_obj : public  ::src::compiler::comma
 		static  ::src::compiler::commands::value::VariableAccess fromInt( ::src::compiler::Scope scope,int i);
 		static ::Dynamic fromInt_dyn();
 
+		static ::Array< ::Dynamic> copyArray( ::src::compiler::Scope scope,::Array< ::Dynamic> vars);
+		static ::Dynamic copyArray_dyn();
+
 		::Array< ::Dynamic> vars;
 		::Array< ::Dynamic> getVars();
 		::Dynamic getVars_dyn();
 
+		 ::src::compiler::commands::Command copy( ::src::compiler::Scope scope);
+
+		void setScope( ::src::compiler::Scope scope);
+
 		::Array< ::Dynamic> walk();
+
+		void throwInvalidVar(int length);
+		::Dynamic throwInvalidVar_dyn();
 
 		 ::src::compiler::object::Object getVariable();
 		::Dynamic getVariable_dyn();
@@ -81,6 +91,11 @@ class HXCPP_CLASS_ATTRIBUTES VariableAccess_obj : public  ::src::compiler::comma
 		::Dynamic deleteVariable_dyn();
 
 		::String getName();
+
+		::String getFriendlyName();
+
+		::String getReconstructedString();
+		::Dynamic getReconstructedString_dyn();
 
 		 ::src::compiler::bytecode::Bytecode getBytecode();
 

@@ -36,6 +36,18 @@ class ObjectArrayAssignmentCommand extends ValueCommand
         this.value = value;
     }
     
+    override public function copy(scope:Scope):Command 
+    {
+        return new ObjectArrayAssignmentCommand(scope, cast(objectIndexPair.copy(scope), ObjectIndexPair), cast(value.copy(scope), ValueCommand));
+    }
+    
+    override public function setScope(scope:Scope) 
+    {
+         super.setScope(scope);
+         objectIndexPair.setScope(scope);
+         value.setScope(scope);
+    }
+    
     override public function walk():Array<Command> 
     {
         return [objectIndexPair, value];
@@ -47,9 +59,14 @@ class ObjectArrayAssignmentCommand extends ValueCommand
         return null;
     }
     
-    override public function toString():String 
+    override public function getName():String 
     {
         return "ObjectArrayAssignmentCommand";
+    }
+    
+    override public function getFriendlyName():String 
+    {
+        return "array index assignment";
     }
     
     override public function getBytecode():Bytecode 

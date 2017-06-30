@@ -72,11 +72,17 @@ class HXCPP_CLASS_ATTRIBUTES FunctionCallValueCommand_obj : public  ::src::compi
 		 ::src::compiler::commands::value::VariableAccess func;
 		::Array< ::Dynamic> args;
 		 ::haxe::ds::StringMap kwdArgs;
+		 ::src::compiler::commands::Command copy( ::src::compiler::Scope scope);
+
+		void setScope( ::src::compiler::Scope scope);
+
 		::Array< ::Dynamic> walk();
 
 		 ::src::compiler::object::Object run();
 
 		::String getName();
+
+		::String getFriendlyName();
 
 		 ::src::compiler::bytecode::Bytecode getBytecode();
 

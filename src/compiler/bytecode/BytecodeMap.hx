@@ -2,6 +2,7 @@ package src.compiler.bytecode;
 import src.compiler.Scope;
 import src.compiler.commands.*;
 import src.compiler.commands.value.*;
+import src.compiler.commands.coroutine.*;
 
 /**
  * ...
@@ -71,7 +72,18 @@ class BytecodeMap
         "CondAndExpr",
         "FunctionArgumentCommand",
         "VariableAccess",
-        "BinaryExpressionValueCommand"
+        "BinaryExpressionValueCommand",
+        "SpliceValueCommand",
+        "NegationValueCommand",
+        "StringFormatValueCommand",
+        "RaiseCommand",
+        "TryCatchCommand",
+        "ImportCommand",
+        "CoroutineCodeCommand",
+        "CoroutineDefinitionCommand",
+        "PipeReadCommand",
+        "PipeWriteCommand",
+        "CoroutineForLoopCommand"
     ];
     
     private static var fromBytecodeMap:Map <String, Scope->Array<Bytecode>->Command> = [
@@ -105,9 +117,20 @@ class BytecodeMap
         "Argument" => FunctionCallValueCommand.getArgumentFromBytes(), // special
         "ValueCommandPair" => MapValueCommand.getValueCommandPairFromBytes(),
         "CondAndExpr" => IfCommand.getCondAndExprFromBytes(), // special
-        "FunctionArgumentCommand" => FunctionDefinitionCommand.getFunctionArgumentCommandFromBytes(),
+        "FunctionArgumentCommand" => FunctionArgumentCommand.fromBytecode,
         "VariableAccess" => VariableAccess.fromBytecode,
-        "BinaryExpressionValueCommand" => BinaryExpressionValueCommand.fromBytecode
+        "BinaryExpressionValueCommand" => BinaryExpressionValueCommand.fromBytecode,
+        "StringFormatValueCommand" => StringFormatValueCommand.fromBytecode,
+        "SpliceValueCommand" => SpliceValueCommand.fromBytecode,
+        "NegationValueCommand" => NegationValueCommand.fromBytecode,
+        "RaiseCommand" => RaiseCommand.fromBytecode,
+        "TryCatchCommand" => TryCatchCommand.fromBytecode,
+        "ImportCommand" => ImportCommand.fromBytecode,
+        "CoroutineCodeCommand" => CoroutineCodeCommand.fromBytecode,
+        "CoroutineDefinitionCommand" => CoroutineDefinitionCommand.fromBytecode,
+        "PipeReadCommand" => PipeReadCommand.fromBytecode,
+        "PipeWriteCommand" => PipeWriteCommand.fromBytecode,
+        "CoroutineForLoopCommand" => CoroutineForLoopCommand.fromBytecode
     ];  
     
     public static function fromCommand(command:Command):Int

@@ -47,25 +47,30 @@
 #include <src/compiler/signals/SyntaxErrorSignal.h>
 #endif
 
-HX_DEFINE_STACK_FRAME(_hx_pos_82543df3a6f52559_91_new,"src.compiler.commands.IfCommand","new",0x0a2d01ff,"src.compiler.commands.IfCommand.new","src/compiler/commands/IfCommand.hx",91,0x08733bf2)
-HX_LOCAL_STACK_FRAME(_hx_pos_82543df3a6f52559_98_walk,"src.compiler.commands.IfCommand","walk",0xe324968a,"src.compiler.commands.IfCommand.walk","src/compiler/commands/IfCommand.hx",98,0x08733bf2)
-HX_LOCAL_STACK_FRAME(_hx_pos_82543df3a6f52559_106_run,"src.compiler.commands.IfCommand","run",0x0a3018ea,"src.compiler.commands.IfCommand.run","src/compiler/commands/IfCommand.hx",106,0x08733bf2)
-HX_LOCAL_STACK_FRAME(_hx_pos_82543df3a6f52559_125_getName,"src.compiler.commands.IfCommand","getName",0xb4fe0f20,"src.compiler.commands.IfCommand.getName","src/compiler/commands/IfCommand.hx",125,0x08733bf2)
-HX_LOCAL_STACK_FRAME(_hx_pos_82543df3a6f52559_129_getBytecode,"src.compiler.commands.IfCommand","getBytecode",0xc16e1f8a,"src.compiler.commands.IfCommand.getBytecode","src/compiler/commands/IfCommand.hx",129,0x08733bf2)
-HX_LOCAL_STACK_FRAME(_hx_pos_82543df3a6f52559_136_reconstruct,"src.compiler.commands.IfCommand","reconstruct",0xd3fccea3,"src.compiler.commands.IfCommand.reconstruct","src/compiler/commands/IfCommand.hx",136,0x08733bf2)
+HX_DEFINE_STACK_FRAME(_hx_pos_82543df3a6f52559_19_new,"src.compiler.commands.IfCommand","new",0x0a2d01ff,"src.compiler.commands.IfCommand.new","src/compiler/commands/IfCommand.hx",19,0x08733bf2)
+HX_LOCAL_STACK_FRAME(_hx_pos_82543df3a6f52559_99_copy,"src.compiler.commands.IfCommand","copy",0xd5f6f536,"src.compiler.commands.IfCommand.copy","src/compiler/commands/IfCommand.hx",99,0x08733bf2)
+HX_LOCAL_STACK_FRAME(_hx_pos_82543df3a6f52559_106_setScope,"src.compiler.commands.IfCommand","setScope",0x3a016893,"src.compiler.commands.IfCommand.setScope","src/compiler/commands/IfCommand.hx",106,0x08733bf2)
+HX_LOCAL_STACK_FRAME(_hx_pos_82543df3a6f52559_115_walk,"src.compiler.commands.IfCommand","walk",0xe324968a,"src.compiler.commands.IfCommand.walk","src/compiler/commands/IfCommand.hx",115,0x08733bf2)
+HX_LOCAL_STACK_FRAME(_hx_pos_82543df3a6f52559_123_run,"src.compiler.commands.IfCommand","run",0x0a3018ea,"src.compiler.commands.IfCommand.run","src/compiler/commands/IfCommand.hx",123,0x08733bf2)
+HX_LOCAL_STACK_FRAME(_hx_pos_82543df3a6f52559_152_getName,"src.compiler.commands.IfCommand","getName",0xb4fe0f20,"src.compiler.commands.IfCommand.getName","src/compiler/commands/IfCommand.hx",152,0x08733bf2)
+HX_LOCAL_STACK_FRAME(_hx_pos_82543df3a6f52559_157_getFriendlyName,"src.compiler.commands.IfCommand","getFriendlyName",0xc5e1362b,"src.compiler.commands.IfCommand.getFriendlyName","src/compiler/commands/IfCommand.hx",157,0x08733bf2)
+HX_LOCAL_STACK_FRAME(_hx_pos_82543df3a6f52559_161_getBytecode,"src.compiler.commands.IfCommand","getBytecode",0xc16e1f8a,"src.compiler.commands.IfCommand.getBytecode","src/compiler/commands/IfCommand.hx",161,0x08733bf2)
+HX_LOCAL_STACK_FRAME(_hx_pos_82543df3a6f52559_168_reconstruct,"src.compiler.commands.IfCommand","reconstruct",0xd3fccea3,"src.compiler.commands.IfCommand.reconstruct","src/compiler/commands/IfCommand.hx",168,0x08733bf2)
 HX_LOCAL_STACK_FRAME(_hx_pos_82543df3a6f52559_23_getCondAndExprFromBytes,"src.compiler.commands.IfCommand","getCondAndExprFromBytes",0x80b1722c,"src.compiler.commands.IfCommand.getCondAndExprFromBytes","src/compiler/commands/IfCommand.hx",23,0x08733bf2)
 HX_LOCAL_STACK_FRAME(_hx_pos_82543df3a6f52559_39_fromTokens,"src.compiler.commands.IfCommand","fromTokens",0xd69eeca5,"src.compiler.commands.IfCommand.fromTokens","src/compiler/commands/IfCommand.hx",39,0x08733bf2)
 HX_LOCAL_STACK_FRAME(_hx_pos_82543df3a6f52559_27_fromTokens,"src.compiler.commands.IfCommand","fromTokens",0xd69eeca5,"src.compiler.commands.IfCommand.fromTokens","src/compiler/commands/IfCommand.hx",27,0x08733bf2)
-HX_LOCAL_STACK_FRAME(_hx_pos_82543df3a6f52559_81_fromBytecode,"src.compiler.commands.IfCommand","fromBytecode",0x19e7f240,"src.compiler.commands.IfCommand.fromBytecode","src/compiler/commands/IfCommand.hx",81,0x08733bf2)
+HX_LOCAL_STACK_FRAME(_hx_pos_82543df3a6f52559_80_fromBytecode,"src.compiler.commands.IfCommand","fromBytecode",0x19e7f240,"src.compiler.commands.IfCommand.fromBytecode","src/compiler/commands/IfCommand.hx",80,0x08733bf2)
 namespace src{
 namespace compiler{
 namespace commands{
 
 void IfCommand_obj::__construct( ::src::compiler::Scope scope,::Array< ::Dynamic> ifCodes,::Array< ::Dynamic> elseCode){
-            	HX_STACKFRAME(&_hx_pos_82543df3a6f52559_91_new)
-HXLINE(  92)		super::__construct(scope);
-HXLINE(  93)		this->ifCodes = ifCodes;
-HXLINE(  94)		this->elseCode = elseCode;
+            	HX_STACKFRAME(&_hx_pos_82543df3a6f52559_19_new)
+HXLINE(  90)		this->progress = (int)0;
+HXLINE(  89)		this->runningCommands = null();
+HXLINE(  93)		super::__construct(scope);
+HXLINE(  94)		this->ifCodes = ifCodes;
+HXLINE(  95)		this->elseCode = elseCode;
             	}
 
 Dynamic IfCommand_obj::__CreateEmpty() { return new IfCommand_obj; }
@@ -91,105 +96,166 @@ bool IfCommand_obj::_hx_isInstanceOf(int inClassId) {
 	}
 }
 
-::Array< ::Dynamic> IfCommand_obj::walk(){
-            	HX_STACKFRAME(&_hx_pos_82543df3a6f52559_98_walk)
-HXLINE(  99)		::Array< ::Dynamic> cmds = ::Array_obj< ::Dynamic>::__new();
-HXLINE( 100)		{
-HXLINE( 100)			int _g = (int)0;
-HXDLIN( 100)			::Array< ::Dynamic> _g1 = this->ifCodes;
-HXDLIN( 100)			while((_g < _g1->length)){
-HXLINE( 100)				 ::src::compiler::commands::CondAndExpr x = _g1->__get(_g).StaticCast<  ::src::compiler::commands::CondAndExpr >();
-HXDLIN( 100)				_g = (_g + (int)1);
-HXDLIN( 100)				cmds->push(x);
-            			}
-            		}
+ ::src::compiler::commands::Command IfCommand_obj::copy( ::src::compiler::Scope scope){
+            	HX_GC_STACKFRAME(&_hx_pos_82543df3a6f52559_99_copy)
+HXLINE( 100)		::Array< ::Dynamic> newIfCodes = ::Array_obj< ::Dynamic>::__new();
 HXLINE( 101)		{
-HXLINE( 101)			int _g2 = (int)0;
-HXDLIN( 101)			::Array< ::Dynamic> _g11 = this->elseCode;
-HXDLIN( 101)			while((_g2 < _g11->length)){
-HXLINE( 101)				 ::src::compiler::commands::Command x1 = _g11->__get(_g2).StaticCast<  ::src::compiler::commands::Command >();
-HXDLIN( 101)				_g2 = (_g2 + (int)1);
-HXDLIN( 101)				cmds->push(x1);
+HXLINE( 101)			int _g = (int)0;
+HXDLIN( 101)			::Array< ::Dynamic> _g1 = this->ifCodes;
+HXDLIN( 101)			while((_g < _g1->length)){
+HXLINE( 101)				 ::src::compiler::commands::CondAndExpr x = _g1->__get(_g).StaticCast<  ::src::compiler::commands::CondAndExpr >();
+HXDLIN( 101)				_g = (_g + (int)1);
+HXDLIN( 101)				newIfCodes->push(x->copy(scope));
             			}
             		}
-HXLINE( 102)		return cmds;
+HXLINE( 102)		::Array< ::Dynamic> _hx_tmp;
+HXDLIN( 102)		if (hx::IsNull( this->elseCode )) {
+HXLINE( 102)			_hx_tmp = null();
+            		}
+            		else {
+HXLINE( 102)			_hx_tmp = ::src::compiler::commands::Command_obj::copyArray(scope,this->elseCode);
+            		}
+HXDLIN( 102)		return  ::src::compiler::commands::IfCommand_obj::__alloc( HX_CTX ,scope,newIfCodes,_hx_tmp);
+            	}
+
+
+void IfCommand_obj::setScope( ::src::compiler::Scope scope){
+            	HX_STACKFRAME(&_hx_pos_82543df3a6f52559_106_setScope)
+HXLINE( 107)		this->super::setScope(scope);
+HXLINE( 108)		{
+HXLINE( 108)			int _g = (int)0;
+HXDLIN( 108)			::Array< ::Dynamic> _g1 = this->ifCodes;
+HXDLIN( 108)			while((_g < _g1->length)){
+HXLINE( 108)				 ::src::compiler::commands::CondAndExpr x = _g1->__get(_g).StaticCast<  ::src::compiler::commands::CondAndExpr >();
+HXDLIN( 108)				_g = (_g + (int)1);
+HXDLIN( 108)				x->setScope(scope);
+            			}
+            		}
+HXLINE( 109)		if (hx::IsNotNull( this->elseCode )) {
+HXLINE( 110)			int _g2 = (int)0;
+HXDLIN( 110)			::Array< ::Dynamic> _g11 = this->elseCode;
+HXDLIN( 110)			while((_g2 < _g11->length)){
+HXLINE( 110)				 ::src::compiler::commands::Command cmd = _g11->__get(_g2).StaticCast<  ::src::compiler::commands::Command >();
+HXDLIN( 110)				_g2 = (_g2 + (int)1);
+HXDLIN( 110)				cmd->setScope(scope);
+            			}
+            		}
+            	}
+
+
+::Array< ::Dynamic> IfCommand_obj::walk(){
+            	HX_STACKFRAME(&_hx_pos_82543df3a6f52559_115_walk)
+HXLINE( 116)		::Array< ::Dynamic> cmds = ::Array_obj< ::Dynamic>::__new();
+HXLINE( 117)		{
+HXLINE( 117)			int _g = (int)0;
+HXDLIN( 117)			::Array< ::Dynamic> _g1 = this->ifCodes;
+HXDLIN( 117)			while((_g < _g1->length)){
+HXLINE( 117)				 ::src::compiler::commands::CondAndExpr x = _g1->__get(_g).StaticCast<  ::src::compiler::commands::CondAndExpr >();
+HXDLIN( 117)				_g = (_g + (int)1);
+HXDLIN( 117)				cmds->push(x);
+            			}
+            		}
+HXLINE( 118)		{
+HXLINE( 118)			int _g2 = (int)0;
+HXDLIN( 118)			::Array< ::Dynamic> _g11 = this->elseCode;
+HXDLIN( 118)			while((_g2 < _g11->length)){
+HXLINE( 118)				 ::src::compiler::commands::Command x1 = _g11->__get(_g2).StaticCast<  ::src::compiler::commands::Command >();
+HXDLIN( 118)				_g2 = (_g2 + (int)1);
+HXDLIN( 118)				cmds->push(x1);
+            			}
+            		}
+HXLINE( 119)		return cmds;
             	}
 
 
  ::src::compiler::object::Object IfCommand_obj::run(){
-            	HX_STACKFRAME(&_hx_pos_82543df3a6f52559_106_run)
-HXLINE( 107)		{
-HXLINE( 107)			int _g = (int)0;
-HXDLIN( 107)			::Array< ::Dynamic> _g1 = this->ifCodes;
-HXDLIN( 107)			while((_g < _g1->length)){
-HXLINE( 107)				 ::src::compiler::commands::CondAndExpr condAndExpr = _g1->__get(_g).StaticCast<  ::src::compiler::commands::CondAndExpr >();
-HXDLIN( 107)				_g = (_g + (int)1);
-HXLINE( 108)				if (condAndExpr->cond->run()->rawBool()) {
-HXLINE( 109)					{
-HXLINE( 109)						int _g2 = (int)0;
-HXDLIN( 109)						::Array< ::Dynamic> _g3 = condAndExpr->code;
-HXDLIN( 109)						while((_g2 < _g3->length)){
-HXLINE( 109)							 ::src::compiler::commands::Command cmd = _g3->__get(_g2).StaticCast<  ::src::compiler::commands::Command >();
-HXDLIN( 109)							_g2 = (_g2 + (int)1);
-HXLINE( 110)							cmd->run();
-            						}
+            	HX_STACKFRAME(&_hx_pos_82543df3a6f52559_123_run)
+HXLINE( 124)		if (hx::IsNull( this->runningCommands )) {
+HXLINE( 125)			{
+HXLINE( 125)				int _g = (int)0;
+HXDLIN( 125)				::Array< ::Dynamic> _g1 = this->ifCodes;
+HXDLIN( 125)				while((_g < _g1->length)){
+HXLINE( 125)					 ::src::compiler::commands::CondAndExpr condAndExpr = _g1->__get(_g).StaticCast<  ::src::compiler::commands::CondAndExpr >();
+HXDLIN( 125)					_g = (_g + (int)1);
+HXLINE( 126)					if (condAndExpr->cond->run()->rawBool()) {
+HXLINE( 127)						this->runningCommands = condAndExpr->code;
             					}
-HXLINE( 112)					return null();
+            				}
+            			}
+HXLINE( 130)			if (hx::IsNotNull( this->elseCode )) {
+HXLINE( 131)				this->runningCommands = this->elseCode;
+            			}
+            		}
+HXLINE( 134)		if (hx::IsNotNull( this->runningCommands )) {
+HXLINE( 135)			 ::src::compiler::commands::Command cmd;
+HXLINE( 136)			while((this->progress < this->runningCommands->length)){
+HXLINE( 137)				cmd = this->runningCommands->__get(this->progress).StaticCast<  ::src::compiler::commands::Command >();
+HXLINE( 138)				bool _hx_tmp;
+HXDLIN( 138)				if ((cmd->getName() != HX_("PipeReadCommand",e7,e2,01,95))) {
+HXLINE( 138)					_hx_tmp = (cmd->getName() == HX_("PipeWriteCommand",9a,bf,b5,19));
+            				}
+            				else {
+HXLINE( 138)					_hx_tmp = true;
+            				}
+HXDLIN( 138)				if (_hx_tmp) {
+HXLINE( 139)					this->progress++;
+HXLINE( 140)					cmd->run();
+            				}
+            				else {
+HXLINE( 142)					cmd->run();
+HXLINE( 143)					this->progress++;
             				}
             			}
             		}
-HXLINE( 115)		if (hx::IsNotNull( this->elseCode )) {
-HXLINE( 116)			int _g4 = (int)0;
-HXDLIN( 116)			::Array< ::Dynamic> _g11 = this->elseCode;
-HXDLIN( 116)			while((_g4 < _g11->length)){
-HXLINE( 116)				 ::src::compiler::commands::Command cmd1 = _g11->__get(_g4).StaticCast<  ::src::compiler::commands::Command >();
-HXDLIN( 116)				_g4 = (_g4 + (int)1);
-HXLINE( 117)				cmd1->run();
-            			}
-            		}
-HXLINE( 120)		return null();
+HXLINE( 147)		return null();
             	}
 
 
 ::String IfCommand_obj::getName(){
-            	HX_STACKFRAME(&_hx_pos_82543df3a6f52559_125_getName)
-HXDLIN( 125)		return HX_("IfCommand",ce,02,af,3f);
+            	HX_STACKFRAME(&_hx_pos_82543df3a6f52559_152_getName)
+HXDLIN( 152)		return HX_("IfCommand",ce,02,af,3f);
+            	}
+
+
+::String IfCommand_obj::getFriendlyName(){
+            	HX_STACKFRAME(&_hx_pos_82543df3a6f52559_157_getFriendlyName)
+HXDLIN( 157)		return HX_("if statement",2c,46,99,99);
             	}
 
 
  ::src::compiler::bytecode::Bytecode IfCommand_obj::getBytecode(){
-            	HX_STACKFRAME(&_hx_pos_82543df3a6f52559_129_getBytecode)
-HXLINE( 130)		::cpp::VirtualArray arr = this->ifCodes->copy();
-HXLINE( 131)		arr->insert((int)0,this->elseCode);
-HXLINE( 132)		return ::src::compiler::bytecode::Bytecode_obj::fromArray(arr,this->getCodeID());
+            	HX_STACKFRAME(&_hx_pos_82543df3a6f52559_161_getBytecode)
+HXLINE( 162)		::cpp::VirtualArray arr = this->ifCodes->copy();
+HXLINE( 163)		arr->insert((int)0,this->elseCode);
+HXLINE( 164)		return ::src::compiler::bytecode::Bytecode_obj::fromArray(arr,this->getCodeID());
             	}
 
 
 ::Array< ::Dynamic> IfCommand_obj::reconstruct(){
-            	HX_GC_STACKFRAME(&_hx_pos_82543df3a6f52559_136_reconstruct)
-HXLINE( 137)		::Array< ::Dynamic> tokens = ::Array_obj< ::Dynamic>::__new();
-HXLINE( 138)		::String text = HX_("if",dd,5b,00,00);
-HXLINE( 139)		{
-HXLINE( 139)			int _g = (int)0;
-HXDLIN( 139)			::Array< ::Dynamic> _g1 = this->ifCodes;
-HXDLIN( 139)			while((_g < _g1->length)){
-HXLINE( 139)				 ::src::compiler::commands::CondAndExpr cexpr = _g1->__get(_g).StaticCast<  ::src::compiler::commands::CondAndExpr >();
-HXDLIN( 139)				_g = (_g + (int)1);
-HXLINE( 140)				 ::src::ast::base::KwdToken _hx_tmp =  ::src::ast::base::KwdToken_obj::__alloc( HX_CTX ,text);
-HXDLIN( 140)				 ::src::ast::base::BracketToken _hx_tmp1 = ::src::ast::base::BracketToken_obj::fromRaw(cexpr->cond->reconstruct());
-HXDLIN( 140)				 ::src::ast::base::EndLineToken _hx_tmp2 =  ::src::ast::base::EndLineToken_obj::__alloc( HX_CTX ,HX_(";",3b,00,00,00));
-HXDLIN( 140)				tokens->push(::Array_obj< ::Dynamic>::__new(3)->init(0,_hx_tmp)->init(1,_hx_tmp1)->init(2,::src::ast::base::BlockToken_obj::fromRaw(_hx_tmp2->join(::src::compiler::commands::Command_obj::reconstructCommands(cexpr->code),null()))));
-HXLINE( 141)				if ((text == HX_("if",dd,5b,00,00))) {
-HXLINE( 141)					text = HX_("elif",04,dc,14,43);
+            	HX_GC_STACKFRAME(&_hx_pos_82543df3a6f52559_168_reconstruct)
+HXLINE( 169)		::Array< ::Dynamic> tokens = ::Array_obj< ::Dynamic>::__new();
+HXLINE( 170)		::String text = HX_("if",dd,5b,00,00);
+HXLINE( 171)		{
+HXLINE( 171)			int _g = (int)0;
+HXDLIN( 171)			::Array< ::Dynamic> _g1 = this->ifCodes;
+HXDLIN( 171)			while((_g < _g1->length)){
+HXLINE( 171)				 ::src::compiler::commands::CondAndExpr cexpr = _g1->__get(_g).StaticCast<  ::src::compiler::commands::CondAndExpr >();
+HXDLIN( 171)				_g = (_g + (int)1);
+HXLINE( 172)				 ::src::ast::base::KwdToken _hx_tmp =  ::src::ast::base::KwdToken_obj::__alloc( HX_CTX ,text);
+HXDLIN( 172)				 ::src::ast::base::BracketToken _hx_tmp1 = ::src::ast::base::BracketToken_obj::fromRaw(cexpr->cond->reconstruct());
+HXDLIN( 172)				 ::src::ast::base::EndLineToken _hx_tmp2 =  ::src::ast::base::EndLineToken_obj::__alloc( HX_CTX ,HX_(";",3b,00,00,00));
+HXDLIN( 172)				tokens->push(::Array_obj< ::Dynamic>::__new(3)->init(0,_hx_tmp)->init(1,_hx_tmp1)->init(2,::src::ast::base::BlockToken_obj::fromRaw(_hx_tmp2->join(::src::compiler::commands::Command_obj::reconstructCommands(cexpr->code),null()))));
+HXLINE( 173)				if ((text == HX_("if",dd,5b,00,00))) {
+HXLINE( 173)					text = HX_("elif",04,dc,14,43);
             				}
             			}
             		}
-HXLINE( 143)		if (hx::IsNotNull( this->elseCode )) {
-HXLINE( 144)			 ::src::ast::base::KwdToken _hx_tmp3 =  ::src::ast::base::KwdToken_obj::__alloc( HX_CTX ,HX_("else",b9,e4,14,43));
-HXDLIN( 144)			 ::src::ast::base::EndLineToken _hx_tmp4 =  ::src::ast::base::EndLineToken_obj::__alloc( HX_CTX ,HX_(";",3b,00,00,00));
-HXDLIN( 144)			tokens->push(::Array_obj< ::Dynamic>::__new(2)->init(0,_hx_tmp3)->init(1,::src::ast::base::BlockToken_obj::fromRaw(_hx_tmp4->join(::src::compiler::commands::Command_obj::reconstructCommands(this->elseCode),null()))));
+HXLINE( 175)		if (hx::IsNotNull( this->elseCode )) {
+HXLINE( 176)			 ::src::ast::base::KwdToken _hx_tmp3 =  ::src::ast::base::KwdToken_obj::__alloc( HX_CTX ,HX_("else",b9,e4,14,43));
+HXDLIN( 176)			 ::src::ast::base::EndLineToken _hx_tmp4 =  ::src::ast::base::EndLineToken_obj::__alloc( HX_CTX ,HX_(";",3b,00,00,00));
+HXDLIN( 176)			tokens->push(::Array_obj< ::Dynamic>::__new(2)->init(0,_hx_tmp3)->init(1,::src::ast::base::BlockToken_obj::fromRaw(_hx_tmp4->join(::src::compiler::commands::Command_obj::reconstructCommands(this->elseCode),null()))));
             		}
-HXLINE( 146)		return ::src::ast::Token_obj::merge(tokens);
+HXLINE( 178)		return ::src::ast::Token_obj::merge(tokens);
             	}
 
 
@@ -309,49 +375,49 @@ HXLINE(  55)				int _g2 = (int)0;
 HXDLIN(  55)				while((_g2 < spl->length)){
 HXLINE(  55)					::Array< ::Dynamic> tokens1 = spl->__get(_g2).StaticCast< ::Array< ::Dynamic> >();
 HXDLIN(  55)					_g2 = (_g2 + (int)1);
-HXLINE(  57)					if ((tokens1->__get((int)0).StaticCast<  ::src::ast::Token >()->getName() != HX_("BracketToken",d1,67,c5,1e))) {
-HXLINE(  57)						HX_STACK_DO_THROW( ::src::compiler::signals::SyntaxErrorSignal_obj::__alloc( HX_CTX ,HX_("If condition must be surrounded in brackets",31,10,c8,8d)));
+HXLINE(  56)					if ((tokens1->__get((int)0).StaticCast<  ::src::ast::Token >()->getName() != HX_("BracketToken",d1,67,c5,1e))) {
+HXLINE(  56)						HX_STACK_DO_THROW( ::src::compiler::signals::SyntaxErrorSignal_obj::__alloc( HX_CTX ,HX_("If condition must be surrounded in brackets",31,10,c8,8d)));
             					}
-HXLINE(  58)					 ::src::compiler::commands::value::ValueCommand cond = ::src::compiler::commands::value::ValueCommand_obj::fromTokens(scope,( (::Array< ::Dynamic>)(tokens1->shift().StaticCast<  ::src::ast::Token >()->getContent()) ));
-HXLINE(  59)					bool _hx_tmp5;
-HXDLIN(  59)					if ((tokens1->length == (int)1)) {
-HXLINE(  59)						_hx_tmp5 = (tokens1->__get((int)0).StaticCast<  ::src::ast::Token >()->getName() == HX_("BlockToken",8c,2a,40,e2));
-            					}
-            					else {
-HXLINE(  59)						_hx_tmp5 = false;
-            					}
-HXDLIN(  59)					if (_hx_tmp5) {
-HXLINE(  60)						ifCodes->push( ::src::compiler::commands::CondAndExpr_obj::__alloc( HX_CTX ,cond,::src::compiler::Core_obj::convert(scope,( (::Array< ::Dynamic>)(tokens1->__get((int)0).StaticCast<  ::src::ast::Token >()->getContent()) ))));
+HXLINE(  57)					 ::src::compiler::commands::value::ValueCommand cond = ::src::compiler::commands::value::ValueCommand_obj::fromTokens(scope,( (::Array< ::Dynamic>)(tokens1->shift().StaticCast<  ::src::ast::Token >()->getContent()) ));
+HXLINE(  58)					bool _hx_tmp5;
+HXDLIN(  58)					if ((tokens1->length == (int)1)) {
+HXLINE(  58)						_hx_tmp5 = (tokens1->__get((int)0).StaticCast<  ::src::ast::Token >()->getName() == HX_("BlockToken",8c,2a,40,e2));
             					}
             					else {
-HXLINE(  62)						if ((tokens1->__get((tokens1->length - (int)1)).StaticCast<  ::src::ast::Token >()->getName() != HX_("EndLineToken",2a,db,3a,32))) {
-HXLINE(  62)							tokens1->push( ::src::ast::base::EndLineToken_obj::__alloc( HX_CTX ,HX_(";",3b,00,00,00)));
+HXLINE(  58)						_hx_tmp5 = false;
+            					}
+HXDLIN(  58)					if (_hx_tmp5) {
+HXLINE(  59)						ifCodes->push( ::src::compiler::commands::CondAndExpr_obj::__alloc( HX_CTX ,cond,::src::compiler::Core_obj::convert(scope,( (::Array< ::Dynamic>)(tokens1->__get((int)0).StaticCast<  ::src::ast::Token >()->getContent()) ))));
+            					}
+            					else {
+HXLINE(  61)						if ((tokens1->__get((tokens1->length - (int)1)).StaticCast<  ::src::ast::Token >()->getName() != HX_("EndLineToken",2a,db,3a,32))) {
+HXLINE(  61)							tokens1->push( ::src::ast::base::EndLineToken_obj::__alloc( HX_CTX ,HX_(";",3b,00,00,00)));
             						}
-HXLINE(  63)						ifCodes->push( ::src::compiler::commands::CondAndExpr_obj::__alloc( HX_CTX ,cond,::src::compiler::Core_obj::convert(scope,tokens1)));
+HXLINE(  62)						ifCodes->push( ::src::compiler::commands::CondAndExpr_obj::__alloc( HX_CTX ,cond,::src::compiler::Core_obj::convert(scope,tokens1)));
             					}
             				}
             			}
-HXLINE(  66)			return  ::src::compiler::commands::IfCommand_obj::__alloc( HX_CTX ,scope,ifCodes,elseCode);
+HXLINE(  65)			return  ::src::compiler::commands::IfCommand_obj::__alloc( HX_CTX ,scope,ifCodes,elseCode);
             		}
             		else {
-HXLINE(  68)			spl->__get((int)0).StaticCast< ::Array< ::Dynamic> >()->push( ::src::ast::base::EndLineToken_obj::__alloc( HX_CTX ,HX_(";",3b,00,00,00)));
-HXLINE(  69)			if ((spl->__get((int)1).StaticCast< ::Array< ::Dynamic> >()->__get((spl->__get((int)1).StaticCast< ::Array< ::Dynamic> >()->length - (int)1)).StaticCast<  ::src::ast::Token >()->getName() == HX_("EndLineToken",2a,db,3a,32))) {
-HXLINE(  69)				spl->__get((int)1).StaticCast< ::Array< ::Dynamic> >()->pop().StaticCast<  ::src::ast::Token >();
+HXLINE(  67)			spl->__get((int)0).StaticCast< ::Array< ::Dynamic> >()->push( ::src::ast::base::EndLineToken_obj::__alloc( HX_CTX ,HX_(";",3b,00,00,00)));
+HXLINE(  68)			if ((spl->__get((int)1).StaticCast< ::Array< ::Dynamic> >()->__get((spl->__get((int)1).StaticCast< ::Array< ::Dynamic> >()->length - (int)1)).StaticCast<  ::src::ast::Token >()->getName() == HX_("EndLineToken",2a,db,3a,32))) {
+HXLINE(  68)				spl->__get((int)1).StaticCast< ::Array< ::Dynamic> >()->pop().StaticCast<  ::src::ast::Token >();
             			}
-HXLINE(  70)			 ::src::compiler::commands::value::ValueCommand ifCode = ::src::compiler::commands::value::ValueCommand_obj::fromTokens(scope,spl->__get((int)1).StaticCast< ::Array< ::Dynamic> >());
-HXDLIN(  70)			 ::src::compiler::commands::CondAndExpr ifCode1 =  ::src::compiler::commands::CondAndExpr_obj::__alloc( HX_CTX ,ifCode,::src::compiler::Core_obj::convert(scope,spl->__get((int)0).StaticCast< ::Array< ::Dynamic> >()));
-HXLINE(  71)			if ((spl->length == (int)2)) {
-HXLINE(  72)				return  ::src::compiler::commands::IfCommand_obj::__alloc( HX_CTX ,scope,::Array_obj< ::Dynamic>::__new(1)->init(0,ifCode1),null());
+HXLINE(  69)			 ::src::compiler::commands::value::ValueCommand ifCode = ::src::compiler::commands::value::ValueCommand_obj::fromTokens(scope,spl->__get((int)1).StaticCast< ::Array< ::Dynamic> >());
+HXDLIN(  69)			 ::src::compiler::commands::CondAndExpr ifCode1 =  ::src::compiler::commands::CondAndExpr_obj::__alloc( HX_CTX ,ifCode,::src::compiler::Core_obj::convert(scope,spl->__get((int)0).StaticCast< ::Array< ::Dynamic> >()));
+HXLINE(  70)			if ((spl->length == (int)2)) {
+HXLINE(  71)				return  ::src::compiler::commands::IfCommand_obj::__alloc( HX_CTX ,scope,::Array_obj< ::Dynamic>::__new(1)->init(0,ifCode1),null());
             			}
             			else {
-HXLINE(  73)				if ((spl->length == (int)3)) {
-HXLINE(  74)					if ((spl->__get((int)2).StaticCast< ::Array< ::Dynamic> >()->__get((spl->__get((int)2).StaticCast< ::Array< ::Dynamic> >()->length - (int)1)).StaticCast<  ::src::ast::Token >()->getName() != HX_("EndLineToken",2a,db,3a,32))) {
-HXLINE(  74)						spl->__get((int)2).StaticCast< ::Array< ::Dynamic> >()->push( ::src::ast::base::EndLineToken_obj::__alloc( HX_CTX ,HX_(";",3b,00,00,00)));
+HXLINE(  72)				if ((spl->length == (int)3)) {
+HXLINE(  73)					if ((spl->__get((int)2).StaticCast< ::Array< ::Dynamic> >()->__get((spl->__get((int)2).StaticCast< ::Array< ::Dynamic> >()->length - (int)1)).StaticCast<  ::src::ast::Token >()->getName() != HX_("EndLineToken",2a,db,3a,32))) {
+HXLINE(  73)						spl->__get((int)2).StaticCast< ::Array< ::Dynamic> >()->push( ::src::ast::base::EndLineToken_obj::__alloc( HX_CTX ,HX_(";",3b,00,00,00)));
             					}
-HXLINE(  75)					return  ::src::compiler::commands::IfCommand_obj::__alloc( HX_CTX ,scope,::Array_obj< ::Dynamic>::__new(1)->init(0,ifCode1),::src::compiler::Core_obj::convert(scope,spl->__get((int)2).StaticCast< ::Array< ::Dynamic> >()));
+HXLINE(  74)					return  ::src::compiler::commands::IfCommand_obj::__alloc( HX_CTX ,scope,::Array_obj< ::Dynamic>::__new(1)->init(0,ifCode1),::src::compiler::Core_obj::convert(scope,spl->__get((int)2).StaticCast< ::Array< ::Dynamic> >()));
             				}
             				else {
-HXLINE(  76)					HX_STACK_DO_THROW( ::src::compiler::signals::SyntaxErrorSignal_obj::__alloc( HX_CTX ,HX_("Shorthand if statement must be of the form .. if .. else .. OR .. if ..",13,6d,a2,b2)));
+HXLINE(  75)					HX_STACK_DO_THROW( ::src::compiler::signals::SyntaxErrorSignal_obj::__alloc( HX_CTX ,HX_("Shorthand if statement must be of the form .. if .. else .. OR .. if ..",13,6d,a2,b2)));
             				}
             			}
             		}
@@ -362,13 +428,13 @@ HXLINE(  42)		return null();
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(IfCommand_obj,fromTokens,return )
 
  ::src::compiler::commands::IfCommand IfCommand_obj::fromBytecode( ::src::compiler::Scope scope,::Array< ::Dynamic> arr){
-            	HX_GC_STACKFRAME(&_hx_pos_82543df3a6f52559_81_fromBytecode)
-HXLINE(  82)		::Array< ::Dynamic> elseCode = ( (::Array< ::Dynamic>)(arr->shift().StaticCast<  ::src::compiler::bytecode::Bytecode >()->convert(scope)) );
-HXLINE(  83)		::Array< ::Dynamic> ifCodes = ::Array_obj< ::Dynamic>::__new();
-HXLINE(  84)		while((arr->length > (int)0)){
-HXLINE(  84)			ifCodes->push(arr->shift().StaticCast<  ::src::compiler::bytecode::Bytecode >()->convert(scope));
+            	HX_GC_STACKFRAME(&_hx_pos_82543df3a6f52559_80_fromBytecode)
+HXLINE(  81)		::Array< ::Dynamic> elseCode = ( (::Array< ::Dynamic>)(arr->shift().StaticCast<  ::src::compiler::bytecode::Bytecode >()->convert(scope)) );
+HXLINE(  82)		::Array< ::Dynamic> ifCodes = ::Array_obj< ::Dynamic>::__new();
+HXLINE(  83)		while((arr->length > (int)0)){
+HXLINE(  83)			ifCodes->push(arr->shift().StaticCast<  ::src::compiler::bytecode::Bytecode >()->convert(scope));
             		}
-HXLINE(  85)		return  ::src::compiler::commands::IfCommand_obj::__alloc( HX_CTX ,scope,ifCodes,elseCode);
+HXLINE(  84)		return  ::src::compiler::commands::IfCommand_obj::__alloc( HX_CTX ,scope,ifCodes,elseCode);
             	}
 
 
@@ -397,6 +463,8 @@ void IfCommand_obj::__Mark(HX_MARK_PARAMS)
 	HX_MARK_BEGIN_CLASS(IfCommand);
 	HX_MARK_MEMBER_NAME(ifCodes,"ifCodes");
 	HX_MARK_MEMBER_NAME(elseCode,"elseCode");
+	HX_MARK_MEMBER_NAME(runningCommands,"runningCommands");
+	HX_MARK_MEMBER_NAME(progress,"progress");
 	 ::src::compiler::commands::Command_obj::__Mark(HX_MARK_ARG);
 	HX_MARK_END_CLASS();
 }
@@ -405,6 +473,8 @@ void IfCommand_obj::__Visit(HX_VISIT_PARAMS)
 {
 	HX_VISIT_MEMBER_NAME(ifCodes,"ifCodes");
 	HX_VISIT_MEMBER_NAME(elseCode,"elseCode");
+	HX_VISIT_MEMBER_NAME(runningCommands,"runningCommands");
+	HX_VISIT_MEMBER_NAME(progress,"progress");
 	 ::src::compiler::commands::Command_obj::__Visit(HX_VISIT_ARG);
 }
 
@@ -415,6 +485,7 @@ hx::Val IfCommand_obj::__Field(const ::String &inName,hx::PropertyAccess inCallP
 		if (HX_FIELD_EQ(inName,"run") ) { return hx::Val( run_dyn() ); }
 		break;
 	case 4:
+		if (HX_FIELD_EQ(inName,"copy") ) { return hx::Val( copy_dyn() ); }
 		if (HX_FIELD_EQ(inName,"walk") ) { return hx::Val( walk_dyn() ); }
 		break;
 	case 7:
@@ -423,10 +494,16 @@ hx::Val IfCommand_obj::__Field(const ::String &inName,hx::PropertyAccess inCallP
 		break;
 	case 8:
 		if (HX_FIELD_EQ(inName,"elseCode") ) { return hx::Val( elseCode ); }
+		if (HX_FIELD_EQ(inName,"progress") ) { return hx::Val( progress ); }
+		if (HX_FIELD_EQ(inName,"setScope") ) { return hx::Val( setScope_dyn() ); }
 		break;
 	case 11:
 		if (HX_FIELD_EQ(inName,"getBytecode") ) { return hx::Val( getBytecode_dyn() ); }
 		if (HX_FIELD_EQ(inName,"reconstruct") ) { return hx::Val( reconstruct_dyn() ); }
+		break;
+	case 15:
+		if (HX_FIELD_EQ(inName,"runningCommands") ) { return hx::Val( runningCommands ); }
+		if (HX_FIELD_EQ(inName,"getFriendlyName") ) { return hx::Val( getFriendlyName_dyn() ); }
 	}
 	return super::__Field(inName,inCallProp);
 }
@@ -454,6 +531,10 @@ hx::Val IfCommand_obj::__SetField(const ::String &inName,const hx::Val &inValue,
 		break;
 	case 8:
 		if (HX_FIELD_EQ(inName,"elseCode") ) { elseCode=inValue.Cast< ::Array< ::Dynamic> >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"progress") ) { progress=inValue.Cast< int >(); return inValue; }
+		break;
+	case 15:
+		if (HX_FIELD_EQ(inName,"runningCommands") ) { runningCommands=inValue.Cast< ::Array< ::Dynamic> >(); return inValue; }
 	}
 	return super::__SetField(inName,inValue,inCallProp);
 }
@@ -462,6 +543,8 @@ void IfCommand_obj::__GetFields(Array< ::String> &outFields)
 {
 	outFields->push(HX_HCSTRING("ifCodes","\x89","\x49","\x38","\xb4"));
 	outFields->push(HX_HCSTRING("elseCode","\x86","\x12","\x16","\x6b"));
+	outFields->push(HX_HCSTRING("runningCommands","\xe7","\x71","\x9d","\x7c"));
+	outFields->push(HX_HCSTRING("progress","\xad","\xf7","\x2a","\x86"));
 	super::__GetFields(outFields);
 };
 
@@ -469,6 +552,8 @@ void IfCommand_obj::__GetFields(Array< ::String> &outFields)
 static hx::StorageInfo IfCommand_obj_sMemberStorageInfo[] = {
 	{hx::fsObject /*Array< ::Dynamic >*/ ,(int)offsetof(IfCommand_obj,ifCodes),HX_HCSTRING("ifCodes","\x89","\x49","\x38","\xb4")},
 	{hx::fsObject /*Array< ::Dynamic >*/ ,(int)offsetof(IfCommand_obj,elseCode),HX_HCSTRING("elseCode","\x86","\x12","\x16","\x6b")},
+	{hx::fsObject /*Array< ::Dynamic >*/ ,(int)offsetof(IfCommand_obj,runningCommands),HX_HCSTRING("runningCommands","\xe7","\x71","\x9d","\x7c")},
+	{hx::fsInt,(int)offsetof(IfCommand_obj,progress),HX_HCSTRING("progress","\xad","\xf7","\x2a","\x86")},
 	{ hx::fsUnknown, 0, null()}
 };
 static hx::StaticInfo *IfCommand_obj_sStaticStorageInfo = 0;
@@ -477,9 +562,14 @@ static hx::StaticInfo *IfCommand_obj_sStaticStorageInfo = 0;
 static ::String IfCommand_obj_sMemberFields[] = {
 	HX_HCSTRING("ifCodes","\x89","\x49","\x38","\xb4"),
 	HX_HCSTRING("elseCode","\x86","\x12","\x16","\x6b"),
+	HX_HCSTRING("runningCommands","\xe7","\x71","\x9d","\x7c"),
+	HX_HCSTRING("progress","\xad","\xf7","\x2a","\x86"),
+	HX_HCSTRING("copy","\xb5","\xbb","\xc4","\x41"),
+	HX_HCSTRING("setScope","\x92","\xda","\x0d","\x87"),
 	HX_HCSTRING("walk","\x09","\x5d","\xf2","\x4e"),
 	HX_HCSTRING("run","\x4b","\xe7","\x56","\x00"),
 	HX_HCSTRING("getName","\x01","\x22","\x82","\x1b"),
+	HX_HCSTRING("getFriendlyName","\x0c","\x92","\xf4","\xaf"),
 	HX_HCSTRING("getBytecode","\xeb","\xb6","\x8b","\x7d"),
 	HX_HCSTRING("reconstruct","\x04","\x66","\x1a","\x90"),
 	::String(null()) };

@@ -12,9 +12,9 @@
 #endif
 
 HX_DEFINE_STACK_FRAME(_hx_pos_5c6d44e47afc81c1_9_new,"src.ast.maths.IntegerToken","new",0x545bba06,"src.ast.maths.IntegerToken.new","src/ast/maths/IntegerToken.hx",9,0x05dec187)
-HX_LOCAL_STACK_FRAME(_hx_pos_5c6d44e47afc81c1_25_getName,"src.ast.maths.IntegerToken","getName",0x70b6d6a7,"src.ast.maths.IntegerToken.getName","src/ast/maths/IntegerToken.hx",25,0x05dec187)
-HX_LOCAL_STACK_FRAME(_hx_pos_5c6d44e47afc81c1_15_match,"src.ast.maths.IntegerToken","match",0x5835686b,"src.ast.maths.IntegerToken.match","src/ast/maths/IntegerToken.hx",15,0x05dec187)
-HX_LOCAL_STACK_FRAME(_hx_pos_5c6d44e47afc81c1_20_partialMatch,"src.ast.maths.IntegerToken","partialMatch",0xb53ebf9e,"src.ast.maths.IntegerToken.partialMatch","src/ast/maths/IntegerToken.hx",20,0x05dec187)
+HX_LOCAL_STACK_FRAME(_hx_pos_5c6d44e47afc81c1_34_getName,"src.ast.maths.IntegerToken","getName",0x70b6d6a7,"src.ast.maths.IntegerToken.getName","src/ast/maths/IntegerToken.hx",34,0x05dec187)
+HX_LOCAL_STACK_FRAME(_hx_pos_5c6d44e47afc81c1_24_match,"src.ast.maths.IntegerToken","match",0x5835686b,"src.ast.maths.IntegerToken.match","src/ast/maths/IntegerToken.hx",24,0x05dec187)
+HX_LOCAL_STACK_FRAME(_hx_pos_5c6d44e47afc81c1_29_partialMatch,"src.ast.maths.IntegerToken","partialMatch",0xb53ebf9e,"src.ast.maths.IntegerToken.partialMatch","src/ast/maths/IntegerToken.hx",29,0x05dec187)
 HX_LOCAL_STACK_FRAME(_hx_pos_5c6d44e47afc81c1_11_boot,"src.ast.maths.IntegerToken","boot",0x74000bcc,"src.ast.maths.IntegerToken.boot","src/ast/maths/IntegerToken.hx",11,0x05dec187)
 namespace src{
 namespace ast{
@@ -22,7 +22,12 @@ namespace maths{
 
 void IntegerToken_obj::__construct(::String content){
             	HX_STACKFRAME(&_hx_pos_5c6d44e47afc81c1_9_new)
-HXDLIN(   9)		super::__construct(content);
+HXLINE(  12)		this->isBytes = false;
+HXLINE(  15)		if ((content.charAt((content.length - (int)1)) == HX_("b",62,00,00,00))) {
+HXLINE(  16)			content = content.substr((int)0,(content.length - (int)1));
+HXLINE(  17)			this->isBytes = true;
+            		}
+HXLINE(  19)		super::__construct(content);
             	}
 
 Dynamic IntegerToken_obj::__CreateEmpty() { return new IntegerToken_obj; }
@@ -45,24 +50,24 @@ bool IntegerToken_obj::_hx_isInstanceOf(int inClassId) {
 }
 
 ::String IntegerToken_obj::getName(){
-            	HX_STACKFRAME(&_hx_pos_5c6d44e47afc81c1_25_getName)
-HXDLIN(  25)		return HX_("IntegerToken",7b,f0,70,21);
+            	HX_STACKFRAME(&_hx_pos_5c6d44e47afc81c1_34_getName)
+HXDLIN(  34)		return HX_("IntegerToken",7b,f0,70,21);
             	}
 
 
  ::EReg IntegerToken_obj::regex;
 
 bool IntegerToken_obj::match(::String s){
-            	HX_STACKFRAME(&_hx_pos_5c6d44e47afc81c1_15_match)
-HXDLIN(  15)		return ::src::ast::maths::IntegerToken_obj::regex->match(s);
+            	HX_STACKFRAME(&_hx_pos_5c6d44e47afc81c1_24_match)
+HXDLIN(  24)		return ::src::ast::maths::IntegerToken_obj::regex->match(s);
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC1(IntegerToken_obj,match,return )
 
 bool IntegerToken_obj::partialMatch(::String s){
-            	HX_STACKFRAME(&_hx_pos_5c6d44e47afc81c1_20_partialMatch)
-HXDLIN(  20)		return ::src::ast::maths::IntegerToken_obj::match(s);
+            	HX_STACKFRAME(&_hx_pos_5c6d44e47afc81c1_29_partialMatch)
+HXDLIN(  29)		return ::src::ast::maths::IntegerToken_obj::match(s);
             	}
 
 
@@ -90,6 +95,7 @@ hx::Val IntegerToken_obj::__Field(const ::String &inName,hx::PropertyAccess inCa
 {
 	switch(inName.length) {
 	case 7:
+		if (HX_FIELD_EQ(inName,"isBytes") ) { return hx::Val( isBytes ); }
 		if (HX_FIELD_EQ(inName,"getName") ) { return hx::Val( getName_dyn() ); }
 	}
 	return super::__Field(inName,inCallProp);
@@ -108,6 +114,15 @@ bool IntegerToken_obj::__GetStatic(const ::String &inName, Dynamic &outValue, hx
 	return false;
 }
 
+hx::Val IntegerToken_obj::__SetField(const ::String &inName,const hx::Val &inValue,hx::PropertyAccess inCallProp)
+{
+	switch(inName.length) {
+	case 7:
+		if (HX_FIELD_EQ(inName,"isBytes") ) { isBytes=inValue.Cast< bool >(); return inValue; }
+	}
+	return super::__SetField(inName,inValue,inCallProp);
+}
+
 bool IntegerToken_obj::__SetStatic(const ::String &inName,Dynamic &ioValue,hx::PropertyAccess inCallProp)
 {
 	switch(inName.length) {
@@ -117,8 +132,17 @@ bool IntegerToken_obj::__SetStatic(const ::String &inName,Dynamic &ioValue,hx::P
 	return false;
 }
 
+void IntegerToken_obj::__GetFields(Array< ::String> &outFields)
+{
+	outFields->push(HX_HCSTRING("isBytes","\x21","\xac","\x1d","\x5a"));
+	super::__GetFields(outFields);
+};
+
 #if HXCPP_SCRIPTABLE
-static hx::StorageInfo *IntegerToken_obj_sMemberStorageInfo = 0;
+static hx::StorageInfo IntegerToken_obj_sMemberStorageInfo[] = {
+	{hx::fsBool,(int)offsetof(IntegerToken_obj,isBytes),HX_HCSTRING("isBytes","\x21","\xac","\x1d","\x5a")},
+	{ hx::fsUnknown, 0, null()}
+};
 static hx::StaticInfo IntegerToken_obj_sStaticStorageInfo[] = {
 	{hx::fsObject /*::EReg*/ ,(void *) &IntegerToken_obj::regex,HX_HCSTRING("regex","\xc7","\x2e","\xbf","\xe6")},
 	{ hx::fsUnknown, 0, null()}
@@ -126,6 +150,7 @@ static hx::StaticInfo IntegerToken_obj_sStaticStorageInfo[] = {
 #endif
 
 static ::String IntegerToken_obj_sMemberFields[] = {
+	HX_HCSTRING("isBytes","\x21","\xac","\x1d","\x5a"),
 	HX_HCSTRING("getName","\x01","\x22","\x82","\x1b"),
 	::String(null()) };
 
@@ -182,7 +207,7 @@ void IntegerToken_obj::__boot()
 {
 {
             	HX_GC_STACKFRAME(&_hx_pos_5c6d44e47afc81c1_11_boot)
-HXDLIN(  11)		regex =  ::EReg_obj::__alloc( HX_CTX ,HX_("^([0-9]+)$",34,2b,85,bf),HX_("",00,00,00,00));
+HXDLIN(  11)		regex =  ::EReg_obj::__alloc( HX_CTX ,HX_("^([0-9]+)b?$",f7,a2,bc,8b),HX_("",00,00,00,00));
             	}
 }
 

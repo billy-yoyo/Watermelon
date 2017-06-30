@@ -12,6 +12,7 @@ HX_DECLARE_CLASS2(src,compiler,Scope)
 HX_DECLARE_CLASS3(src,compiler,object,Object)
 HX_DECLARE_CLASS3(src,compiler,object,ObjectType)
 HX_DECLARE_CLASS4(src,compiler,object,builtin,Builtins)
+HX_DECLARE_CLASS5(src,compiler,object,builtin,coroutine,CoroutineObject)
 
 namespace src{
 namespace compiler{
@@ -41,7 +42,9 @@ class HXCPP_CLASS_ATTRIBUTES Scope_obj : public hx::Object
 
 		HX_DO_RTTI_ALL;
 		hx::Val __Field(const ::String &inString, hx::PropertyAccess inCallProp);
+		static bool __GetStatic(const ::String &inString, Dynamic &outValue, hx::PropertyAccess inCallProp);
 		hx::Val __SetField(const ::String &inString,const hx::Val &inValue, hx::PropertyAccess inCallProp);
+		static bool __SetStatic(const ::String &inString, Dynamic &ioValue, hx::PropertyAccess inCallProp);
 		void __GetFields(Array< ::String> &outFields);
 		static void __register();
 		void __Mark(HX_MARK_PARAMS);
@@ -49,6 +52,8 @@ class HXCPP_CLASS_ATTRIBUTES Scope_obj : public hx::Object
 		bool _hx_isInstanceOf(int inClassId);
 		::String __ToString() const { return HX_HCSTRING("Scope","\x74","\xe1","\x06","\x0c"); }
 
+		static void __boot();
+		static int objectIDLimit;
 		 ::src::compiler::Scope root;
 		 ::src::compiler::Scope parent;
 		::String name;
@@ -57,13 +62,25 @@ class HXCPP_CLASS_ATTRIBUTES Scope_obj : public hx::Object
 		 ::src::compiler::object::builtin::Builtins builtins;
 		int indepFuncScopes;
 		int indepTypeScopes;
+		int indepCoroScopes;
 		::Array< ::String > stringPool;
 		::Array< ::Dynamic> children;
+		int objectID;
+		 ::src::compiler::object::builtin::coroutine::CoroutineObject coroutineObject;
+		 ::src::compiler::object::builtin::coroutine::CoroutineObject getClosestCoroutine();
+		::Dynamic getClosestCoroutine_dyn();
+
+		int nextObjectID();
+		::Dynamic nextObjectID_dyn();
+
 		::String nextFuncScopeName();
 		::Dynamic nextFuncScopeName_dyn();
 
 		::String nextTypeScopeName();
 		::Dynamic nextTypeScopeName_dyn();
+
+		::String nextCoroScopeName();
+		::Dynamic nextCoroScopeName_dyn();
 
 		 ::src::compiler::object::Object createObject(::String type,::String objName,::Array< ::Dynamic> args);
 		::Dynamic createObject_dyn();
@@ -73,6 +90,9 @@ class HXCPP_CLASS_ATTRIBUTES Scope_obj : public hx::Object
 
 		 ::src::compiler::Scope getParent();
 		::Dynamic getParent_dyn();
+
+		void setParent( ::src::compiler::Scope parent);
+		::Dynamic setParent_dyn();
 
 		 ::src::compiler::Scope getRoot();
 		::Dynamic getRoot_dyn();

@@ -15,6 +15,7 @@ HX_DECLARE_CLASS2(src,compiler,Scope)
 HX_DECLARE_CLASS3(src,compiler,object,Object)
 HX_DECLARE_CLASS3(src,compiler,object,ObjectType)
 HX_DECLARE_CLASS4(src,compiler,object,builtin,BoolObject)
+HX_DECLARE_CLASS4(src,compiler,object,builtin,BytesObject)
 HX_DECLARE_CLASS4(src,compiler,object,builtin,FloatObject)
 HX_DECLARE_CLASS4(src,compiler,object,builtin,IntObject)
 HX_DECLARE_CLASS4(src,compiler,object,builtin,ListObject)
@@ -95,7 +96,9 @@ class HXCPP_CLASS_ATTRIBUTES StringObject_obj : public  ::src::compiler::object:
 
 		 ::src::compiler::object::builtin::StringObject str();
 
-		::String getHash();
+		 ::src::compiler::object::builtin::BytesObject bytes();
+
+		int getHash();
 
 };
 

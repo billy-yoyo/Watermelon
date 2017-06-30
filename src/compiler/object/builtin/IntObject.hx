@@ -1,8 +1,10 @@
 package src.compiler.object.builtin;
+import haxe.io.BytesBuffer;
 import src.compiler.Scope;
 import src.compiler.object.Object;
 import src.compiler.object.ObjectType;
 import src.compiler.object.builtin.BoolObject;
+import src.compiler.object.builtin.BytesObject;
 
 /**
  * ...
@@ -259,9 +261,25 @@ class IntObject extends ValuedObject
         return _bool(value != 0);
     }
     
-    override public function getHash():String 
+    override public function negate():Object 
     {
-        return Std.string(value);
+        if (hasMember("__negate__")) return callMember("__negate__", []);
+        return _int( -value);
+    }
+    
+    override public function bytes():BytesObject 
+    {
+        if (hasMember("__bytes__")) return cast(callMember("__bytes__", []), BytesObject);
+        var buffer:BytesBuffer = new BytesBuffer();
+        if (value < 0xFF) buffer.addByte(value);
+        else if (value < 1 >> 32) buffer.addInt32(value);
+        else buffer.addInt64(value);
+        return _bytes(buffer.getBytes());
+    }
+    
+    override public function getHash():Int 
+    {
+        return value;
     }
     
 }

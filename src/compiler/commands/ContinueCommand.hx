@@ -1,7 +1,9 @@
 package src.compiler.commands;
 import src.ast.Token;
 import src.ast.base.KwdToken;
+import src.compiler.Scope;
 import src.compiler.bytecode.Bytecode;
+import src.compiler.commands.Command;
 import src.compiler.object.Object;
 import src.compiler.signals.LoopContinueSignal;
 import src.compiler.signals.SyntaxErrorSignal;
@@ -24,6 +26,11 @@ class ContinueCommand extends Command
         if (tokens[0].getName() != "KwdToken" || tokens[0].getContent() != "continue") throw new SyntaxErrorSignal("Invalid continue expression");
         return new ContinueCommand(scope);
     }
+    
+    override public function copy(scope:Scope):Command 
+    {
+        return new ContinueCommand(scope);
+    }
 
     override public function run():Object 
     {
@@ -33,6 +40,11 @@ class ContinueCommand extends Command
     override public function getName():String 
     {
         return "ContinueCommand";
+    }
+    
+    override public function getFriendlyName():String 
+    {
+        return "continue";
     }
     
     override public function getBytecode():Bytecode 

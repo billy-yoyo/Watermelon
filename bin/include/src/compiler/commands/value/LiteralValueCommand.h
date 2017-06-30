@@ -56,6 +56,8 @@ class HXCPP_CLASS_ATTRIBUTES LiteralValueCommand_obj : public  ::src::compiler::
 		::String __ToString() const { return HX_HCSTRING("LiteralValueCommand","\xc9","\xb1","\x43","\xd2"); }
 
 		::String content;
+		 ::src::compiler::commands::Command copy( ::src::compiler::Scope scope);
+
 		::String getContent();
 		::Dynamic getContent_dyn();
 
@@ -65,6 +67,8 @@ class HXCPP_CLASS_ATTRIBUTES LiteralValueCommand_obj : public  ::src::compiler::
 		 ::src::compiler::object::Object run();
 
 		::String getName();
+
+		::String getFriendlyName();
 
 		 ::src::compiler::bytecode::Bytecode getBytecode();
 

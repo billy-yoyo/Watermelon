@@ -39,14 +39,14 @@
     <hidden path="obj" />
   </hiddenPaths>
   <!-- Executed before build -->
-  <preBuildCommand>haxe -hl bin/output.hl -main src.Main</preBuildCommand>
+  <preBuildCommand>haxe -hl bin/output.hl -main src.Watermelon</preBuildCommand>
   <!-- Executed after build -->
   <postBuildCommand alwaysRun="False" />
   <!-- Other project options -->
   <options>
     <option showHiddenPaths="False" />
     <option testMovie="Custom" />
-    <option testMovieCommand="haxe -main src.Main --interp" />
+    <option testMovieCommand="haxe -main src.Watermelon --interp" />
   </options>
   <!-- Plugin storage -->
   <storage />

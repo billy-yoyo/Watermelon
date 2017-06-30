@@ -1,6 +1,7 @@
 package src.compiler.commands.value;
 import src.ast.Token;
 import src.ast.maths.BinaryOperatorToken;
+import src.compiler.Scope;
 import src.compiler.bytecode.Bytecode;
 import src.compiler.commands.Command;
 import src.compiler.object.Object;
@@ -58,6 +59,17 @@ class BinaryExpressionValueCommand extends ValueCommand
         this.values = values;
     }
     
+    override public function copy(scope:Scope):Command 
+    {
+        return new BinaryExpressionValueCommand(scope, operator, ValueCommand.copyArray(scope, values));
+    }
+    
+    override public function setScope(scope:Scope) 
+    {
+        super.setScope(scope);
+        for (value in values) value.setScope(scope);
+    }
+    
     override public function walk():Array<Command> 
     {
         var cmds:Array<Command> = new Array<Command>();
@@ -107,6 +119,11 @@ class BinaryExpressionValueCommand extends ValueCommand
     override public function getName():String 
     {
         return "BinaryExpressionValueCommand";
+    }
+    
+    override public function getFriendlyName():String 
+    {
+        return "binary expression";
     }
     
     override public function getBytecode():Bytecode 

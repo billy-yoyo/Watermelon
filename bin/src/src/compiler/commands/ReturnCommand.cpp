@@ -33,11 +33,14 @@
 #endif
 
 HX_DEFINE_STACK_FRAME(_hx_pos_98b0f324603f87e3_38_new,"src.compiler.commands.ReturnCommand","new",0xb36b8f8c,"src.compiler.commands.ReturnCommand.new","src/compiler/commands/ReturnCommand.hx",38,0x10a74385)
-HX_LOCAL_STACK_FRAME(_hx_pos_98b0f324603f87e3_45_walk,"src.compiler.commands.ReturnCommand","walk",0x50a1e45d,"src.compiler.commands.ReturnCommand.walk","src/compiler/commands/ReturnCommand.hx",45,0x10a74385)
-HX_LOCAL_STACK_FRAME(_hx_pos_98b0f324603f87e3_50_run,"src.compiler.commands.ReturnCommand","run",0xb36ea677,"src.compiler.commands.ReturnCommand.run","src/compiler/commands/ReturnCommand.hx",50,0x10a74385)
-HX_LOCAL_STACK_FRAME(_hx_pos_98b0f324603f87e3_56_getName,"src.compiler.commands.ReturnCommand","getName",0x8486e72d,"src.compiler.commands.ReturnCommand.getName","src/compiler/commands/ReturnCommand.hx",56,0x10a74385)
-HX_LOCAL_STACK_FRAME(_hx_pos_98b0f324603f87e3_61_getBytecode,"src.compiler.commands.ReturnCommand","getBytecode",0xfe788217,"src.compiler.commands.ReturnCommand.getBytecode","src/compiler/commands/ReturnCommand.hx",61,0x10a74385)
-HX_LOCAL_STACK_FRAME(_hx_pos_98b0f324603f87e3_66_reconstruct,"src.compiler.commands.ReturnCommand","reconstruct",0x11073130,"src.compiler.commands.ReturnCommand.reconstruct","src/compiler/commands/ReturnCommand.hx",66,0x10a74385)
+HX_LOCAL_STACK_FRAME(_hx_pos_98b0f324603f87e3_45_copy,"src.compiler.commands.ReturnCommand","copy",0x43744309,"src.compiler.commands.ReturnCommand.copy","src/compiler/commands/ReturnCommand.hx",45,0x10a74385)
+HX_LOCAL_STACK_FRAME(_hx_pos_98b0f324603f87e3_49_setScope,"src.compiler.commands.ReturnCommand","setScope",0x02359be6,"src.compiler.commands.ReturnCommand.setScope","src/compiler/commands/ReturnCommand.hx",49,0x10a74385)
+HX_LOCAL_STACK_FRAME(_hx_pos_98b0f324603f87e3_56_walk,"src.compiler.commands.ReturnCommand","walk",0x50a1e45d,"src.compiler.commands.ReturnCommand.walk","src/compiler/commands/ReturnCommand.hx",56,0x10a74385)
+HX_LOCAL_STACK_FRAME(_hx_pos_98b0f324603f87e3_61_run,"src.compiler.commands.ReturnCommand","run",0xb36ea677,"src.compiler.commands.ReturnCommand.run","src/compiler/commands/ReturnCommand.hx",61,0x10a74385)
+HX_LOCAL_STACK_FRAME(_hx_pos_98b0f324603f87e3_67_getName,"src.compiler.commands.ReturnCommand","getName",0x8486e72d,"src.compiler.commands.ReturnCommand.getName","src/compiler/commands/ReturnCommand.hx",67,0x10a74385)
+HX_LOCAL_STACK_FRAME(_hx_pos_98b0f324603f87e3_72_getFriendlyName,"src.compiler.commands.ReturnCommand","getFriendlyName",0xc4446338,"src.compiler.commands.ReturnCommand.getFriendlyName","src/compiler/commands/ReturnCommand.hx",72,0x10a74385)
+HX_LOCAL_STACK_FRAME(_hx_pos_98b0f324603f87e3_77_getBytecode,"src.compiler.commands.ReturnCommand","getBytecode",0xfe788217,"src.compiler.commands.ReturnCommand.getBytecode","src/compiler/commands/ReturnCommand.hx",77,0x10a74385)
+HX_LOCAL_STACK_FRAME(_hx_pos_98b0f324603f87e3_82_reconstruct,"src.compiler.commands.ReturnCommand","reconstruct",0x11073130,"src.compiler.commands.ReturnCommand.reconstruct","src/compiler/commands/ReturnCommand.hx",82,0x10a74385)
 HX_LOCAL_STACK_FRAME(_hx_pos_98b0f324603f87e3_20_fromTokens,"src.compiler.commands.ReturnCommand","fromTokens",0x3ac4dab8,"src.compiler.commands.ReturnCommand.fromTokens","src/compiler/commands/ReturnCommand.hx",20,0x10a74385)
 HX_LOCAL_STACK_FRAME(_hx_pos_98b0f324603f87e3_33_fromBytecode,"src.compiler.commands.ReturnCommand","fromBytecode",0x45f3cb13,"src.compiler.commands.ReturnCommand.fromBytecode","src/compiler/commands/ReturnCommand.hx",33,0x10a74385)
 namespace src{
@@ -69,41 +72,60 @@ bool ReturnCommand_obj::_hx_isInstanceOf(int inClassId) {
 	}
 }
 
+ ::src::compiler::commands::Command ReturnCommand_obj::copy( ::src::compiler::Scope scope){
+            	HX_GC_STACKFRAME(&_hx_pos_98b0f324603f87e3_45_copy)
+HXDLIN(  45)		return  ::src::compiler::commands::ReturnCommand_obj::__alloc( HX_CTX ,scope,this->value->copy(scope));
+            	}
+
+
+void ReturnCommand_obj::setScope( ::src::compiler::Scope scope){
+            	HX_STACKFRAME(&_hx_pos_98b0f324603f87e3_49_setScope)
+HXLINE(  50)		this->super::setScope(scope);
+HXLINE(  51)		this->value->setScope(scope);
+            	}
+
+
 ::Array< ::Dynamic> ReturnCommand_obj::walk(){
-            	HX_STACKFRAME(&_hx_pos_98b0f324603f87e3_45_walk)
-HXDLIN(  45)		return this->value->walk();
+            	HX_STACKFRAME(&_hx_pos_98b0f324603f87e3_56_walk)
+HXDLIN(  56)		return this->value->walk();
             	}
 
 
  ::src::compiler::object::Object ReturnCommand_obj::run(){
-            	HX_GC_STACKFRAME(&_hx_pos_98b0f324603f87e3_50_run)
-HXDLIN(  50)		if (hx::IsNotNull( this->value )) {
-HXDLIN(  50)			HX_STACK_DO_THROW( ::src::compiler::signals::FunctionReturnSignal_obj::__alloc( HX_CTX ,this->value->run()));
+            	HX_GC_STACKFRAME(&_hx_pos_98b0f324603f87e3_61_run)
+HXDLIN(  61)		if (hx::IsNotNull( this->value )) {
+HXDLIN(  61)			HX_STACK_DO_THROW( ::src::compiler::signals::FunctionReturnSignal_obj::__alloc( HX_CTX ,this->value->run()));
             		}
             		else {
-HXLINE(  51)			HX_STACK_DO_THROW( ::src::compiler::signals::FunctionReturnSignal_obj::__alloc( HX_CTX ,null()));
+HXLINE(  62)			HX_STACK_DO_THROW( ::src::compiler::signals::FunctionReturnSignal_obj::__alloc( HX_CTX ,null()));
             		}
-HXLINE(  50)		return null();
+HXLINE(  61)		return null();
             	}
 
 
 ::String ReturnCommand_obj::getName(){
-            	HX_STACKFRAME(&_hx_pos_98b0f324603f87e3_56_getName)
-HXDLIN(  56)		return HX_("ReturnCommand",5b,3a,ec,60);
+            	HX_STACKFRAME(&_hx_pos_98b0f324603f87e3_67_getName)
+HXDLIN(  67)		return HX_("ReturnCommand",5b,3a,ec,60);
+            	}
+
+
+::String ReturnCommand_obj::getFriendlyName(){
+            	HX_STACKFRAME(&_hx_pos_98b0f324603f87e3_72_getFriendlyName)
+HXDLIN(  72)		return HX_("return",b0,a4,2d,09);
             	}
 
 
  ::src::compiler::bytecode::Bytecode ReturnCommand_obj::getBytecode(){
-            	HX_STACKFRAME(&_hx_pos_98b0f324603f87e3_61_getBytecode)
-HXDLIN(  61)		::cpp::VirtualArray _hx_tmp = ::cpp::VirtualArray_obj::__new(1)->init(0,this->value);
-HXDLIN(  61)		return ::src::compiler::bytecode::Bytecode_obj::fromArray(_hx_tmp,this->getCodeID());
+            	HX_STACKFRAME(&_hx_pos_98b0f324603f87e3_77_getBytecode)
+HXDLIN(  77)		::cpp::VirtualArray _hx_tmp = ::cpp::VirtualArray_obj::__new(1)->init(0,this->value);
+HXDLIN(  77)		return ::src::compiler::bytecode::Bytecode_obj::fromArray(_hx_tmp,this->getCodeID());
             	}
 
 
 ::Array< ::Dynamic> ReturnCommand_obj::reconstruct(){
-            	HX_GC_STACKFRAME(&_hx_pos_98b0f324603f87e3_66_reconstruct)
-HXDLIN(  66)		 ::src::ast::base::KwdToken _hx_tmp =  ::src::ast::base::KwdToken_obj::__alloc( HX_CTX ,HX_("return",b0,a4,2d,09));
-HXDLIN(  66)		return ::src::ast::Token_obj::merge(::cpp::VirtualArray_obj::__new(2)->init(0,_hx_tmp)->init(1,this->value->reconstruct()));
+            	HX_GC_STACKFRAME(&_hx_pos_98b0f324603f87e3_82_reconstruct)
+HXDLIN(  82)		 ::src::ast::base::KwdToken _hx_tmp =  ::src::ast::base::KwdToken_obj::__alloc( HX_CTX ,HX_("return",b0,a4,2d,09));
+HXDLIN(  82)		return ::src::ast::Token_obj::merge(::cpp::VirtualArray_obj::__new(2)->init(0,_hx_tmp)->init(1,this->value->reconstruct()));
             	}
 
 
@@ -183,6 +205,7 @@ hx::Val ReturnCommand_obj::__Field(const ::String &inName,hx::PropertyAccess inC
 		if (HX_FIELD_EQ(inName,"run") ) { return hx::Val( run_dyn() ); }
 		break;
 	case 4:
+		if (HX_FIELD_EQ(inName,"copy") ) { return hx::Val( copy_dyn() ); }
 		if (HX_FIELD_EQ(inName,"walk") ) { return hx::Val( walk_dyn() ); }
 		break;
 	case 5:
@@ -191,9 +214,15 @@ hx::Val ReturnCommand_obj::__Field(const ::String &inName,hx::PropertyAccess inC
 	case 7:
 		if (HX_FIELD_EQ(inName,"getName") ) { return hx::Val( getName_dyn() ); }
 		break;
+	case 8:
+		if (HX_FIELD_EQ(inName,"setScope") ) { return hx::Val( setScope_dyn() ); }
+		break;
 	case 11:
 		if (HX_FIELD_EQ(inName,"getBytecode") ) { return hx::Val( getBytecode_dyn() ); }
 		if (HX_FIELD_EQ(inName,"reconstruct") ) { return hx::Val( reconstruct_dyn() ); }
+		break;
+	case 15:
+		if (HX_FIELD_EQ(inName,"getFriendlyName") ) { return hx::Val( getFriendlyName_dyn() ); }
 	}
 	return super::__Field(inName,inCallProp);
 }
@@ -235,9 +264,12 @@ static hx::StaticInfo *ReturnCommand_obj_sStaticStorageInfo = 0;
 
 static ::String ReturnCommand_obj_sMemberFields[] = {
 	HX_HCSTRING("value","\x71","\x7f","\xb8","\x31"),
+	HX_HCSTRING("copy","\xb5","\xbb","\xc4","\x41"),
+	HX_HCSTRING("setScope","\x92","\xda","\x0d","\x87"),
 	HX_HCSTRING("walk","\x09","\x5d","\xf2","\x4e"),
 	HX_HCSTRING("run","\x4b","\xe7","\x56","\x00"),
 	HX_HCSTRING("getName","\x01","\x22","\x82","\x1b"),
+	HX_HCSTRING("getFriendlyName","\x0c","\x92","\xf4","\xaf"),
 	HX_HCSTRING("getBytecode","\xeb","\xb6","\x8b","\x7d"),
 	HX_HCSTRING("reconstruct","\x04","\x66","\x1a","\x90"),
 	::String(null()) };

@@ -59,8 +59,14 @@ class HXCPP_CLASS_ATTRIBUTES Type_obj : public hx::Object
 		static ::String getClassName(hx::Class c);
 		static ::Dynamic getClassName_dyn();
 
+		static hx::Class resolveClass(::String name);
+		static ::Dynamic resolveClass_dyn();
+
 		static  ::Dynamic createInstance(hx::Class cl,::cpp::VirtualArray args);
 		static ::Dynamic createInstance_dyn();
+
+		static  ::Dynamic createEmptyInstance(hx::Class cl);
+		static ::Dynamic createEmptyInstance_dyn();
 
 		static  ::ValueType _hx_typeof( ::Dynamic v);
 		static ::Dynamic _hx_typeof_dyn();

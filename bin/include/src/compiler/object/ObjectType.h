@@ -78,10 +78,10 @@ class HXCPP_CLASS_ATTRIBUTES ObjectType_obj : public hx::Object
 		bool hasMember(::String name);
 		::Dynamic hasMember_dyn();
 
-		 ::src::compiler::object::Object createObject(::Array< ::Dynamic> args);
+		 ::src::compiler::object::Object createObject( ::src::compiler::Scope scope,::Array< ::Dynamic> args);
 		::Dynamic createObject_dyn();
 
-		 ::src::compiler::object::Object createValue( ::Dynamic value,::Array< ::Dynamic> args);
+		 ::src::compiler::object::Object createValue( ::Dynamic value, ::src::compiler::Scope scope,::Array< ::Dynamic> args);
 		::Dynamic createValue_dyn();
 
 		 ::src::compiler::Scope getScope();

@@ -34,6 +34,9 @@
 #ifndef INCLUDED_src_ast_base_RootToken
 #include <src/ast/base/RootToken.h>
 #endif
+#ifndef INCLUDED_src_ast_base_SpliceToken
+#include <src/ast/base/SpliceToken.h>
+#endif
 #ifndef INCLUDED_src_ast_base_StringToken
 #include <src/ast/base/StringToken.h>
 #endif
@@ -42,6 +45,9 @@
 #endif
 #ifndef INCLUDED_src_ast_base_WhitespaceToken
 #include <src/ast/base/WhitespaceToken.h>
+#endif
+#ifndef INCLUDED_src_ast_base_WildcardToken
+#include <src/ast/base/WildcardToken.h>
 #endif
 #ifndef INCLUDED_src_ast_maths_BinaryOperatorToken
 #include <src/ast/maths/BinaryOperatorToken.h>
@@ -67,8 +73,14 @@
 #ifndef INCLUDED_src_ast_script_EqualityOperatorToken
 #include <src/ast/script/EqualityOperatorToken.h>
 #endif
+#ifndef INCLUDED_src_ast_script_PipeReadToken
+#include <src/ast/script/PipeReadToken.h>
+#endif
+#ifndef INCLUDED_src_ast_script_PipeWriteToken
+#include <src/ast/script/PipeWriteToken.h>
+#endif
 
-HX_LOCAL_STACK_FRAME(_hx_pos_955ae47b50d94871_55_process,"src.ast.GlobalProcessor","process",0xd793a09a,"src.ast.GlobalProcessor.process","src/ast/GlobalProcessor.hx",55,0x594de9c7)
+HX_LOCAL_STACK_FRAME(_hx_pos_955ae47b50d94871_63_process,"src.ast.GlobalProcessor","process",0xd793a09a,"src.ast.GlobalProcessor.process","src/ast/GlobalProcessor.hx",63,0x594de9c7)
 HX_LOCAL_STACK_FRAME(_hx_pos_955ae47b50d94871_15_boot,"src.ast.GlobalProcessor","boot",0x7940cd27,"src.ast.GlobalProcessor.boot","src/ast/GlobalProcessor.hx",15,0x594de9c7)
 namespace src{
 namespace ast{
@@ -93,8 +105,8 @@ bool GlobalProcessor_obj::_hx_isInstanceOf(int inClassId) {
  ::src::ast::TokenProcessor GlobalProcessor_obj::baseProcessor;
 
  ::src::ast::base::RootToken GlobalProcessor_obj::process(::String s){
-            	HX_GC_STACKFRAME(&_hx_pos_955ae47b50d94871_55_process)
-HXDLIN(  55)		return  ::src::ast::base::RootToken_obj::__alloc( HX_CTX ,s);
+            	HX_GC_STACKFRAME(&_hx_pos_955ae47b50d94871_63_process)
+HXDLIN(  63)		return  ::src::ast::base::RootToken_obj::__alloc( HX_CTX ,s);
             	}
 
 
@@ -186,7 +198,7 @@ void GlobalProcessor_obj::__boot()
 {
 {
             	HX_GC_STACKFRAME(&_hx_pos_955ae47b50d94871_15_boot)
-HXDLIN(  15)		baseProcessor =  ::src::ast::TokenProcessor_obj::__alloc( HX_CTX )->addClass(hx::ClassOf< ::src::ast::base::BlockToken >(),::src::ast::base::BlockToken_obj::match_dyn(),::src::ast::base::BlockToken_obj::partialMatch_dyn())->addClass(hx::ClassOf< ::src::ast::base::BracketToken >(),::src::ast::base::BracketToken_obj::match_dyn(),::src::ast::base::BracketToken_obj::partialMatch_dyn())->addClass(hx::ClassOf< ::src::ast::base::StringToken >(),::src::ast::base::StringToken_obj::match_dyn(),::src::ast::base::StringToken_obj::partialMatch_dyn())->addClass(hx::ClassOf< ::src::ast::base::VariableToken >(),::src::ast::base::VariableToken_obj::match_dyn(),::src::ast::base::VariableToken_obj::partialMatch_dyn())->addClass(hx::ClassOf< ::src::ast::base::WhitespaceToken >(),::src::ast::base::WhitespaceToken_obj::match_dyn(),::src::ast::base::WhitespaceToken_obj::partialMatch_dyn())->addClass(hx::ClassOf< ::src::ast::base::EndLineToken >(),::src::ast::base::EndLineToken_obj::match_dyn(),::src::ast::base::EndLineToken_obj::partialMatch_dyn())->addClass(hx::ClassOf< ::src::ast::script::AssignmentToken >(),::src::ast::script::AssignmentToken_obj::match_dyn(),::src::ast::script::AssignmentToken_obj::partialMatch_dyn())->addClass(hx::ClassOf< ::src::ast::script::BooleanOperatorToken >(),::src::ast::script::BooleanOperatorToken_obj::match_dyn(),::src::ast::script::BooleanOperatorToken_obj::partialMatch_dyn())->addClass(hx::ClassOf< ::src::ast::script::EqualityOperatorToken >(),::src::ast::script::EqualityOperatorToken_obj::match_dyn(),::src::ast::script::EqualityOperatorToken_obj::partialMatch_dyn())->addClass(hx::ClassOf< ::src::ast::maths::IntegerToken >(),::src::ast::maths::IntegerToken_obj::match_dyn(),::src::ast::maths::IntegerToken_obj::partialMatch_dyn())->addClass(hx::ClassOf< ::src::ast::maths::FloatToken >(),::src::ast::maths::FloatToken_obj::match_dyn(),::src::ast::maths::FloatToken_obj::partialMatch_dyn())->addClass(hx::ClassOf< ::src::ast::maths::MathsOperatorToken >(),::src::ast::maths::MathsOperatorToken_obj::match_dyn(),::src::ast::maths::MathsOperatorToken_obj::partialMatch_dyn())->addClass(hx::ClassOf< ::src::ast::base::KwdToken >(),::src::ast::base::KwdToken_obj::match_dyn(),::src::ast::base::KwdToken_obj::partialMatch_dyn())->addClass(hx::ClassOf< ::src::ast::base::CommaToken >(),::src::ast::base::CommaToken_obj::match_dyn(),::src::ast::base::CommaToken_obj::partialMatch_dyn())->addClass(hx::ClassOf< ::src::ast::base::ListToken >(),::src::ast::base::ListToken_obj::match_dyn(),::src::ast::base::ListToken_obj::partialMatch_dyn())->addClass(hx::ClassOf< ::src::ast::base::AccessToken >(),::src::ast::base::AccessToken_obj::match_dyn(),::src::ast::base::AccessToken_obj::partialMatch_dyn())->addClass(hx::ClassOf< ::src::ast::maths::HexToken >(),::src::ast::maths::HexToken_obj::match_dyn(),::src::ast::maths::HexToken_obj::partialMatch_dyn())->addClass(hx::ClassOf< ::src::ast::maths::BinaryOperatorToken >(),::src::ast::maths::BinaryOperatorToken_obj::match_dyn(),::src::ast::maths::BinaryOperatorToken_obj::partialMatch_dyn());
+HXDLIN(  15)		baseProcessor =  ::src::ast::TokenProcessor_obj::__alloc( HX_CTX )->addClass(hx::ClassOf< ::src::ast::base::BlockToken >(),::src::ast::base::BlockToken_obj::match_dyn(),::src::ast::base::BlockToken_obj::partialMatch_dyn())->addClass(hx::ClassOf< ::src::ast::base::BracketToken >(),::src::ast::base::BracketToken_obj::match_dyn(),::src::ast::base::BracketToken_obj::partialMatch_dyn())->addClass(hx::ClassOf< ::src::ast::base::StringToken >(),::src::ast::base::StringToken_obj::match_dyn(),::src::ast::base::StringToken_obj::partialMatch_dyn())->addClass(hx::ClassOf< ::src::ast::base::VariableToken >(),::src::ast::base::VariableToken_obj::match_dyn(),::src::ast::base::VariableToken_obj::partialMatch_dyn())->addClass(hx::ClassOf< ::src::ast::base::WhitespaceToken >(),::src::ast::base::WhitespaceToken_obj::match_dyn(),::src::ast::base::WhitespaceToken_obj::partialMatch_dyn())->addClass(hx::ClassOf< ::src::ast::base::EndLineToken >(),::src::ast::base::EndLineToken_obj::match_dyn(),::src::ast::base::EndLineToken_obj::partialMatch_dyn())->addClass(hx::ClassOf< ::src::ast::script::AssignmentToken >(),::src::ast::script::AssignmentToken_obj::match_dyn(),::src::ast::script::AssignmentToken_obj::partialMatch_dyn())->addClass(hx::ClassOf< ::src::ast::script::BooleanOperatorToken >(),::src::ast::script::BooleanOperatorToken_obj::match_dyn(),::src::ast::script::BooleanOperatorToken_obj::partialMatch_dyn())->addClass(hx::ClassOf< ::src::ast::script::EqualityOperatorToken >(),::src::ast::script::EqualityOperatorToken_obj::match_dyn(),::src::ast::script::EqualityOperatorToken_obj::partialMatch_dyn())->addClass(hx::ClassOf< ::src::ast::maths::IntegerToken >(),::src::ast::maths::IntegerToken_obj::match_dyn(),::src::ast::maths::IntegerToken_obj::partialMatch_dyn())->addClass(hx::ClassOf< ::src::ast::maths::FloatToken >(),::src::ast::maths::FloatToken_obj::match_dyn(),::src::ast::maths::FloatToken_obj::partialMatch_dyn())->addClass(hx::ClassOf< ::src::ast::maths::MathsOperatorToken >(),::src::ast::maths::MathsOperatorToken_obj::match_dyn(),::src::ast::maths::MathsOperatorToken_obj::partialMatch_dyn())->addClass(hx::ClassOf< ::src::ast::base::KwdToken >(),::src::ast::base::KwdToken_obj::match_dyn(),::src::ast::base::KwdToken_obj::partialMatch_dyn())->addClass(hx::ClassOf< ::src::ast::base::CommaToken >(),::src::ast::base::CommaToken_obj::match_dyn(),::src::ast::base::CommaToken_obj::partialMatch_dyn())->addClass(hx::ClassOf< ::src::ast::base::ListToken >(),::src::ast::base::ListToken_obj::match_dyn(),::src::ast::base::ListToken_obj::partialMatch_dyn())->addClass(hx::ClassOf< ::src::ast::base::AccessToken >(),::src::ast::base::AccessToken_obj::match_dyn(),::src::ast::base::AccessToken_obj::partialMatch_dyn())->addClass(hx::ClassOf< ::src::ast::maths::HexToken >(),::src::ast::maths::HexToken_obj::match_dyn(),::src::ast::maths::HexToken_obj::partialMatch_dyn())->addClass(hx::ClassOf< ::src::ast::maths::BinaryOperatorToken >(),::src::ast::maths::BinaryOperatorToken_obj::match_dyn(),::src::ast::maths::BinaryOperatorToken_obj::partialMatch_dyn())->addClass(hx::ClassOf< ::src::ast::base::SpliceToken >(),::src::ast::base::SpliceToken_obj::match_dyn(),::src::ast::base::SpliceToken_obj::partialMatch_dyn())->addClass(hx::ClassOf< ::src::ast::script::PipeWriteToken >(),::src::ast::script::PipeWriteToken_obj::match_dyn(),::src::ast::script::PipeWriteToken_obj::partialMatch_dyn())->addClass(hx::ClassOf< ::src::ast::script::PipeReadToken >(),::src::ast::script::PipeReadToken_obj::match_dyn(),::src::ast::script::PipeReadToken_obj::partialMatch_dyn())->addClass(hx::ClassOf< ::src::ast::base::WildcardToken >(),::src::ast::base::WildcardToken_obj::match_dyn(),::src::ast::base::WildcardToken_obj::partialMatch_dyn());
             	}
 }
 

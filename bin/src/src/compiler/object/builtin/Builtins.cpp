@@ -7,8 +7,8 @@
 #ifndef INCLUDED_haxe_ds_StringMap
 #include <haxe/ds/StringMap.h>
 #endif
-#ifndef INCLUDED_src_Main
-#include <src/Main.h>
+#ifndef INCLUDED_src_Watermelon
+#include <src/Watermelon.h>
 #endif
 #ifndef INCLUDED_src_compiler_Scope
 #include <src/compiler/Scope.h>
@@ -27,6 +27,9 @@
 #endif
 #ifndef INCLUDED_src_compiler_object_builtin_Builtins
 #include <src/compiler/object/builtin/Builtins.h>
+#endif
+#ifndef INCLUDED_src_compiler_object_builtin_BytesObject
+#include <src/compiler/object/builtin/BytesObject.h>
 #endif
 #ifndef INCLUDED_src_compiler_object_builtin_FloatObject
 #include <src/compiler/object/builtin/FloatObject.h>
@@ -49,6 +52,9 @@
 #ifndef INCLUDED_src_compiler_object_builtin_MapObject
 #include <src/compiler/object/builtin/MapObject.h>
 #endif
+#ifndef INCLUDED_src_compiler_object_builtin_ModuleObject
+#include <src/compiler/object/builtin/ModuleObject.h>
+#endif
 #ifndef INCLUDED_src_compiler_object_builtin_NoneObject
 #include <src/compiler/object/builtin/NoneObject.h>
 #endif
@@ -61,6 +67,12 @@
 #ifndef INCLUDED_src_compiler_object_builtin_RangeObject
 #include <src/compiler/object/builtin/RangeObject.h>
 #endif
+#ifndef INCLUDED_src_compiler_object_builtin_SignalObject
+#include <src/compiler/object/builtin/SignalObject.h>
+#endif
+#ifndef INCLUDED_src_compiler_object_builtin_SpliceObject
+#include <src/compiler/object/builtin/SpliceObject.h>
+#endif
 #ifndef INCLUDED_src_compiler_object_builtin_StringObject
 #include <src/compiler/object/builtin/StringObject.h>
 #endif
@@ -69,6 +81,18 @@
 #endif
 #ifndef INCLUDED_src_compiler_object_builtin_ValuedObject
 #include <src/compiler/object/builtin/ValuedObject.h>
+#endif
+#ifndef INCLUDED_src_compiler_object_builtin_coroutine_CoroutineFunctionObject
+#include <src/compiler/object/builtin/coroutine/CoroutineFunctionObject.h>
+#endif
+#ifndef INCLUDED_src_compiler_object_builtin_coroutine_CoroutineLoop
+#include <src/compiler/object/builtin/coroutine/CoroutineLoop.h>
+#endif
+#ifndef INCLUDED_src_compiler_object_builtin_coroutine_CoroutineObject
+#include <src/compiler/object/builtin/coroutine/CoroutineObject.h>
+#endif
+#ifndef INCLUDED_src_compiler_object_builtin_coroutine_YieldObject
+#include <src/compiler/object/builtin/coroutine/YieldObject.h>
 #endif
 #ifndef INCLUDED_src_compiler_signals_ExitCodeSignal
 #include <src/compiler/signals/ExitCodeSignal.h>
@@ -79,25 +103,29 @@
 #ifndef INCLUDED_src_compiler_signals_InvalidArgumentSignal
 #include <src/compiler/signals/InvalidArgumentSignal.h>
 #endif
+#ifndef INCLUDED_src_compiler_signals_ValueErrorSignal
+#include <src/compiler/signals/ValueErrorSignal.h>
+#endif
 
-HX_DEFINE_STACK_FRAME(_hx_pos_cc5ddeb910938c46_35_new,"src.compiler.object.builtin.Builtins","new",0x409728b7,"src.compiler.object.builtin.Builtins.new","src/compiler/object/builtin/Builtins.hx",35,0xe9817cb7)
-HX_LOCAL_STACK_FRAME(_hx_pos_cc5ddeb910938c46_45_init,"src.compiler.object.builtin.Builtins","init",0x40652ed9,"src.compiler.object.builtin.Builtins.init","src/compiler/object/builtin/Builtins.hx",45,0xe9817cb7)
+HX_DEFINE_STACK_FRAME(_hx_pos_cc5ddeb910938c46_48_new,"src.compiler.object.builtin.Builtins","new",0x409728b7,"src.compiler.object.builtin.Builtins.new","src/compiler/object/builtin/Builtins.hx",48,0xe9817cb7)
+HX_LOCAL_STACK_FRAME(_hx_pos_cc5ddeb910938c46_58_init,"src.compiler.object.builtin.Builtins","init",0x40652ed9,"src.compiler.object.builtin.Builtins.init","src/compiler/object/builtin/Builtins.hx",58,0xe9817cb7)
+HX_LOCAL_STACK_FRAME(_hx_pos_cc5ddeb910938c46_67_init,"src.compiler.object.builtin.Builtins","init",0x40652ed9,"src.compiler.object.builtin.Builtins.init","src/compiler/object/builtin/Builtins.hx",67,0xe9817cb7)
+HX_LOCAL_STACK_FRAME(_hx_pos_cc5ddeb910938c46_86_init,"src.compiler.object.builtin.Builtins","init",0x40652ed9,"src.compiler.object.builtin.Builtins.init","src/compiler/object/builtin/Builtins.hx",86,0xe9817cb7)
+HX_LOCAL_STACK_FRAME(_hx_pos_cc5ddeb910938c46_91_init,"src.compiler.object.builtin.Builtins","init",0x40652ed9,"src.compiler.object.builtin.Builtins.init","src/compiler/object/builtin/Builtins.hx",91,0xe9817cb7)
+HX_LOCAL_STACK_FRAME(_hx_pos_cc5ddeb910938c46_105_init,"src.compiler.object.builtin.Builtins","init",0x40652ed9,"src.compiler.object.builtin.Builtins.init","src/compiler/object/builtin/Builtins.hx",105,0xe9817cb7)
+HX_LOCAL_STACK_FRAME(_hx_pos_cc5ddeb910938c46_122_init,"src.compiler.object.builtin.Builtins","init",0x40652ed9,"src.compiler.object.builtin.Builtins.init","src/compiler/object/builtin/Builtins.hx",122,0xe9817cb7)
+HX_LOCAL_STACK_FRAME(_hx_pos_cc5ddeb910938c46_128_init,"src.compiler.object.builtin.Builtins","init",0x40652ed9,"src.compiler.object.builtin.Builtins.init","src/compiler/object/builtin/Builtins.hx",128,0xe9817cb7)
+HX_LOCAL_STACK_FRAME(_hx_pos_cc5ddeb910938c46_147_init,"src.compiler.object.builtin.Builtins","init",0x40652ed9,"src.compiler.object.builtin.Builtins.init","src/compiler/object/builtin/Builtins.hx",147,0xe9817cb7)
 HX_LOCAL_STACK_FRAME(_hx_pos_cc5ddeb910938c46_54_init,"src.compiler.object.builtin.Builtins","init",0x40652ed9,"src.compiler.object.builtin.Builtins.init","src/compiler/object/builtin/Builtins.hx",54,0xe9817cb7)
-HX_LOCAL_STACK_FRAME(_hx_pos_cc5ddeb910938c46_73_init,"src.compiler.object.builtin.Builtins","init",0x40652ed9,"src.compiler.object.builtin.Builtins.init","src/compiler/object/builtin/Builtins.hx",73,0xe9817cb7)
-HX_LOCAL_STACK_FRAME(_hx_pos_cc5ddeb910938c46_78_init,"src.compiler.object.builtin.Builtins","init",0x40652ed9,"src.compiler.object.builtin.Builtins.init","src/compiler/object/builtin/Builtins.hx",78,0xe9817cb7)
-HX_LOCAL_STACK_FRAME(_hx_pos_cc5ddeb910938c46_89_init,"src.compiler.object.builtin.Builtins","init",0x40652ed9,"src.compiler.object.builtin.Builtins.init","src/compiler/object/builtin/Builtins.hx",89,0xe9817cb7)
-HX_LOCAL_STACK_FRAME(_hx_pos_cc5ddeb910938c46_95_init,"src.compiler.object.builtin.Builtins","init",0x40652ed9,"src.compiler.object.builtin.Builtins.init","src/compiler/object/builtin/Builtins.hx",95,0xe9817cb7)
-HX_LOCAL_STACK_FRAME(_hx_pos_cc5ddeb910938c46_114_init,"src.compiler.object.builtin.Builtins","init",0x40652ed9,"src.compiler.object.builtin.Builtins.init","src/compiler/object/builtin/Builtins.hx",114,0xe9817cb7)
-HX_LOCAL_STACK_FRAME(_hx_pos_cc5ddeb910938c46_41_init,"src.compiler.object.builtin.Builtins","init",0x40652ed9,"src.compiler.object.builtin.Builtins.init","src/compiler/object/builtin/Builtins.hx",41,0xe9817cb7)
 namespace src{
 namespace compiler{
 namespace object{
 namespace builtin{
 
 void Builtins_obj::__construct( ::src::compiler::Scope scope){
-            	HX_STACKFRAME(&_hx_pos_cc5ddeb910938c46_35_new)
-HXLINE(  36)		this->root = scope->getRoot();
-HXLINE(  38)		this->init();
+            	HX_STACKFRAME(&_hx_pos_cc5ddeb910938c46_48_new)
+HXLINE(  49)		this->root = scope->getRoot();
+HXLINE(  51)		this->init();
             	}
 
 Dynamic Builtins_obj::__CreateEmpty() { return new Builtins_obj; }
@@ -118,186 +146,217 @@ bool Builtins_obj::_hx_isInstanceOf(int inClassId) {
 void Builtins_obj::init(){
             		HX_BEGIN_LOCAL_FUNC_S0(hx::LocalFunc,_hx_Closure_0) HXARGC(1)
             		 ::src::compiler::object::Object _hx_run(::Array< ::Dynamic> args){
-            			HX_GC_STACKFRAME(&_hx_pos_cc5ddeb910938c46_45_init)
-HXLINE(  46)			 ::src::compiler::object::builtin::ListObject obj = hx::TCast<  ::src::compiler::object::builtin::ListObject >::cast(args->shift().StaticCast<  ::src::compiler::object::Object >());
-HXLINE(  47)			if ((args->length == (int)0)) {
-HXLINE(  47)				HX_STACK_DO_THROW(HX_("Not enough arguments",b3,b6,9e,c1));
+            			HX_GC_STACKFRAME(&_hx_pos_cc5ddeb910938c46_58_init)
+HXLINE(  59)			 ::src::compiler::object::builtin::ListObject obj = hx::TCast<  ::src::compiler::object::builtin::ListObject >::cast(args->shift().StaticCast<  ::src::compiler::object::Object >());
+HXLINE(  60)			if ((args->length == (int)0)) {
+HXLINE(  60)				HX_STACK_DO_THROW(HX_("Not enough arguments",b3,b6,9e,c1));
             			}
             			else {
-HXLINE(  48)				if ((args->length > (int)1)) {
-HXLINE(  48)					HX_STACK_DO_THROW(HX_("Too many arguments",c1,50,dc,40));
+HXLINE(  61)				if ((args->length > (int)1)) {
+HXLINE(  61)					HX_STACK_DO_THROW(HX_("Too many arguments",c1,50,dc,40));
             				}
             				else {
-HXLINE(  50)					::Array< ::Dynamic> obj1 = obj->arr;
-HXDLIN(  50)					obj1->push(args->__get((int)0).StaticCast<  ::src::compiler::object::Object >());
+HXLINE(  63)					::Array< ::Dynamic> obj1 = obj->arr;
+HXDLIN(  63)					obj1->push(args->__get((int)0).StaticCast<  ::src::compiler::object::Object >());
             				}
             			}
-HXLINE(  52)			return null();
+HXLINE(  65)			return null();
             		}
             		HX_END_LOCAL_FUNC1(return)
 
             		HX_BEGIN_LOCAL_FUNC_S0(hx::LocalFunc,_hx_Closure_1) HXARGC(1)
             		 ::src::compiler::object::Object _hx_run(::Array< ::Dynamic> args1){
-            			HX_GC_STACKFRAME(&_hx_pos_cc5ddeb910938c46_54_init)
-HXLINE(  55)			 ::src::compiler::object::builtin::ListObject obj2 = hx::TCast<  ::src::compiler::object::builtin::ListObject >::cast(args1->shift().StaticCast<  ::src::compiler::object::Object >());
-HXLINE(  56)			if ((args1->length == (int)0)) {
-HXLINE(  56)				HX_STACK_DO_THROW(HX_("Not enough arguments",b3,b6,9e,c1));
+            			HX_GC_STACKFRAME(&_hx_pos_cc5ddeb910938c46_67_init)
+HXLINE(  68)			 ::src::compiler::object::builtin::ListObject obj2 = hx::TCast<  ::src::compiler::object::builtin::ListObject >::cast(args1->shift().StaticCast<  ::src::compiler::object::Object >());
+HXLINE(  69)			if ((args1->length == (int)0)) {
+HXLINE(  69)				HX_STACK_DO_THROW(HX_("Not enough arguments",b3,b6,9e,c1));
             			}
             			else {
-HXLINE(  57)				if ((args1->length > (int)1)) {
-HXLINE(  57)					HX_STACK_DO_THROW(HX_("Too many arguments",c1,50,dc,40));
+HXLINE(  70)				if ((args1->length > (int)1)) {
+HXLINE(  70)					HX_STACK_DO_THROW(HX_("Too many arguments",c1,50,dc,40));
             				}
             				else {
-HXLINE(  59)					::Array< ::Dynamic> obj3 = obj2->arr;
-HXDLIN(  59)					obj3->remove(args1->__get((int)0).StaticCast<  ::src::compiler::object::Object >());
+HXLINE(  72)					::Array< ::Dynamic> obj3 = obj2->arr;
+HXDLIN(  72)					obj3->remove(args1->__get((int)0).StaticCast<  ::src::compiler::object::Object >());
             				}
             			}
-HXLINE(  61)			return null();
+HXLINE(  74)			return null();
             		}
             		HX_END_LOCAL_FUNC1(return)
 
             		HX_BEGIN_LOCAL_FUNC_S0(hx::LocalFunc,_hx_Closure_2) HXARGC(1)
             		 ::src::compiler::object::Object _hx_run(::Array< ::Dynamic> args2){
-            			HX_GC_STACKFRAME(&_hx_pos_cc5ddeb910938c46_73_init)
-HXLINE(  74)			 ::src::compiler::object::builtin::PairObject pair = hx::TCast<  ::src::compiler::object::builtin::PairObject >::cast(args2->shift().StaticCast<  ::src::compiler::object::Object >());
-HXLINE(  75)			if ((args2->length > (int)0)) {
-HXLINE(  75)				HX_STACK_DO_THROW( ::src::compiler::signals::InvalidArgumentSignal_obj::__alloc( HX_CTX ,(HX_("Expected 0 arguments, found ",f0,f4,ca,0f) + args2->length)));
+            			HX_GC_STACKFRAME(&_hx_pos_cc5ddeb910938c46_86_init)
+HXLINE(  87)			 ::src::compiler::object::builtin::PairObject pair = hx::TCast<  ::src::compiler::object::builtin::PairObject >::cast(args2->shift().StaticCast<  ::src::compiler::object::Object >());
+HXLINE(  88)			if ((args2->length > (int)0)) {
+HXLINE(  88)				HX_STACK_DO_THROW( ::src::compiler::signals::InvalidArgumentSignal_obj::__alloc( HX_CTX ,(HX_("Expected 0 arguments, found ",f0,f4,ca,0f) + args2->length)));
             			}
-HXLINE(  76)			return pair->_str(pair->getName(),null());
+HXLINE(  89)			return pair->_str(pair->getName(),null());
             		}
             		HX_END_LOCAL_FUNC1(return)
 
             		HX_BEGIN_LOCAL_FUNC_S0(hx::LocalFunc,_hx_Closure_3) HXARGC(1)
             		 ::src::compiler::object::Object _hx_run(::Array< ::Dynamic> args3){
-            			HX_GC_STACKFRAME(&_hx_pos_cc5ddeb910938c46_78_init)
-HXLINE(  79)			 ::src::compiler::object::builtin::PairObject pair1 = hx::TCast<  ::src::compiler::object::builtin::PairObject >::cast(args3->shift().StaticCast<  ::src::compiler::object::Object >());
-HXLINE(  80)			if ((args3->length > (int)0)) {
-HXLINE(  80)				HX_STACK_DO_THROW( ::src::compiler::signals::InvalidArgumentSignal_obj::__alloc( HX_CTX ,(HX_("Expected 0 arguments, found ",f0,f4,ca,0f) + args3->length)));
+            			HX_GC_STACKFRAME(&_hx_pos_cc5ddeb910938c46_91_init)
+HXLINE(  92)			 ::src::compiler::object::builtin::PairObject pair1 = hx::TCast<  ::src::compiler::object::builtin::PairObject >::cast(args3->shift().StaticCast<  ::src::compiler::object::Object >());
+HXLINE(  93)			if ((args3->length > (int)0)) {
+HXLINE(  93)				HX_STACK_DO_THROW( ::src::compiler::signals::InvalidArgumentSignal_obj::__alloc( HX_CTX ,(HX_("Expected 0 arguments, found ",f0,f4,ca,0f) + args3->length)));
             			}
-HXLINE(  81)			return pair1->getValue();
+HXLINE(  94)			return pair1->getValue();
             		}
             		HX_END_LOCAL_FUNC1(return)
 
             		HX_BEGIN_LOCAL_FUNC_S0(hx::LocalFunc,_hx_Closure_4) HXARGC(1)
             		 ::src::compiler::object::Object _hx_run(::Array< ::Dynamic> args4){
-            			HX_GC_STACKFRAME(&_hx_pos_cc5ddeb910938c46_89_init)
-HXLINE(  90)			::Array< ::String > words = ::Array_obj< ::String >::__new();
-HXLINE(  91)			{
-HXLINE(  91)				int _g21 = (int)0;
-HXDLIN(  91)				while((_g21 < args4->length)){
-HXLINE(  91)					 ::src::compiler::object::Object obj4 = args4->__get(_g21).StaticCast<  ::src::compiler::object::Object >();
-HXDLIN(  91)					_g21 = (_g21 + (int)1);
-HXDLIN(  91)					::String value;
-HXDLIN(  91)					if (hx::IsNull( obj4 )) {
-HXLINE(  91)						value = HX_("null",87,9e,0e,49);
+            			HX_GC_STACKFRAME(&_hx_pos_cc5ddeb910938c46_105_init)
+HXLINE( 106)			 ::src::compiler::object::builtin::coroutine::CoroutineLoop loop = hx::TCast<  ::src::compiler::object::builtin::coroutine::CoroutineLoop >::cast(args4->shift().StaticCast<  ::src::compiler::object::Object >());
+HXLINE( 107)			{
+HXLINE( 107)				int _g21 = (int)0;
+HXDLIN( 107)				while((_g21 < args4->length)){
+HXLINE( 107)					 ::src::compiler::object::Object arg = args4->__get(_g21).StaticCast<  ::src::compiler::object::Object >();
+HXDLIN( 107)					_g21 = (_g21 + (int)1);
+HXLINE( 108)					if (!(arg->isInstance(HX_("CoroutineType",92,ec,d1,42)))) {
+HXLINE( 108)						HX_STACK_DO_THROW( ::src::compiler::signals::ValueErrorSignal_obj::__alloc( HX_CTX ,HX_("Can only start a loop with coroutines",da,32,b4,d0)));
             					}
-            					else {
-HXLINE(  91)						value = obj4->rawString();
-            					}
-HXDLIN(  91)					words->push(value);
+HXLINE( 109)					loop->startTask(hx::TCast<  ::src::compiler::object::builtin::coroutine::CoroutineObject >::cast(arg));
             				}
             			}
-HXLINE(  92)			 ::Dynamic value1 = hx::ClassOf< ::src::Main >();
-HXDLIN(  92)			::String value2 = words->join(HX_(" ",20,00,00,00));
-HXDLIN(  92)			::src::Main_obj::print(value2);
-HXLINE(  93)			return null();
+HXLINE( 111)			loop->start();
+HXLINE( 112)			return null();
             		}
             		HX_END_LOCAL_FUNC1(return)
 
-            		HX_BEGIN_LOCAL_FUNC_S1(hx::LocalFunc,_hx_Closure_5, ::src::compiler::object::builtin::Builtins,_gthis) HXARGC(1)
+            		HX_BEGIN_LOCAL_FUNC_S0(hx::LocalFunc,_hx_Closure_5) HXARGC(1)
             		 ::src::compiler::object::Object _hx_run(::Array< ::Dynamic> args5){
-            			HX_GC_STACKFRAME(&_hx_pos_cc5ddeb910938c46_95_init)
-HXLINE(  96)			 ::src::compiler::object::Object start = _gthis->intType->createValue((int)0,null());
-HXDLIN(  96)			 ::src::compiler::object::Object end = _gthis->intType->createValue((int)0,null());
-HXDLIN(  96)			 ::src::compiler::object::Object step = _gthis->intType->createValue((int)1,null());
-HXLINE(  97)			if ((args5->length == (int)1)) {
-HXLINE(  98)				end = args5->__get((int)0).StaticCast<  ::src::compiler::object::Object >();
+            			HX_GC_STACKFRAME(&_hx_pos_cc5ddeb910938c46_122_init)
+HXLINE( 123)			::Array< ::String > words = ::Array_obj< ::String >::__new();
+HXLINE( 124)			{
+HXLINE( 124)				int _g31 = (int)0;
+HXDLIN( 124)				while((_g31 < args5->length)){
+HXLINE( 124)					 ::src::compiler::object::Object obj4 = args5->__get(_g31).StaticCast<  ::src::compiler::object::Object >();
+HXDLIN( 124)					_g31 = (_g31 + (int)1);
+HXDLIN( 124)					::String value;
+HXDLIN( 124)					if (hx::IsNull( obj4 )) {
+HXLINE( 124)						value = HX_("null",87,9e,0e,49);
+            					}
+            					else {
+HXLINE( 124)						value = obj4->rawString();
+            					}
+HXDLIN( 124)					words->push(value);
+            				}
+            			}
+HXLINE( 125)			 ::Dynamic value1 = hx::ClassOf< ::src::Watermelon >();
+HXDLIN( 125)			::String value2 = words->join(HX_(" ",20,00,00,00));
+HXDLIN( 125)			::src::Watermelon_obj::print(value2);
+HXLINE( 126)			return null();
+            		}
+            		HX_END_LOCAL_FUNC1(return)
+
+            		HX_BEGIN_LOCAL_FUNC_S1(hx::LocalFunc,_hx_Closure_6, ::src::compiler::object::builtin::Builtins,_gthis) HXARGC(1)
+            		 ::src::compiler::object::Object _hx_run(::Array< ::Dynamic> args6){
+            			HX_GC_STACKFRAME(&_hx_pos_cc5ddeb910938c46_128_init)
+HXLINE( 129)			 ::src::compiler::object::Object start = _gthis->intType->createValue((int)0,_gthis->root,null());
+HXDLIN( 129)			 ::src::compiler::object::Object end = _gthis->intType->createValue((int)0,_gthis->root,null());
+HXDLIN( 129)			 ::src::compiler::object::Object step = _gthis->intType->createValue((int)1,_gthis->root,null());
+HXLINE( 130)			if ((args6->length == (int)1)) {
+HXLINE( 131)				end = args6->__get((int)0).StaticCast<  ::src::compiler::object::Object >();
             			}
             			else {
-HXLINE(  99)				if ((args5->length == (int)2)) {
-HXLINE( 100)					start = args5->__get((int)0).StaticCast<  ::src::compiler::object::Object >();
-HXLINE( 101)					end = args5->__get((int)1).StaticCast<  ::src::compiler::object::Object >();
+HXLINE( 132)				if ((args6->length == (int)2)) {
+HXLINE( 133)					start = args6->__get((int)0).StaticCast<  ::src::compiler::object::Object >();
+HXLINE( 134)					end = args6->__get((int)1).StaticCast<  ::src::compiler::object::Object >();
             				}
             				else {
-HXLINE( 102)					if ((args5->length == (int)3)) {
-HXLINE( 103)						start = args5->__get((int)0).StaticCast<  ::src::compiler::object::Object >();
-HXLINE( 104)						end = args5->__get((int)1).StaticCast<  ::src::compiler::object::Object >();
-HXLINE( 105)						step = args5->__get((int)2).StaticCast<  ::src::compiler::object::Object >();
+HXLINE( 135)					if ((args6->length == (int)3)) {
+HXLINE( 136)						start = args6->__get((int)0).StaticCast<  ::src::compiler::object::Object >();
+HXLINE( 137)						end = args6->__get((int)1).StaticCast<  ::src::compiler::object::Object >();
+HXLINE( 138)						step = args6->__get((int)2).StaticCast<  ::src::compiler::object::Object >();
             					}
             					else {
-HXLINE( 106)						HX_STACK_DO_THROW( ::src::compiler::signals::InvalidArgumentSignal_obj::__alloc( HX_CTX ,(HX_("Expected between 1 and 3 arguments, found ",a3,ee,9c,a3) + args5->length)));
+HXLINE( 139)						HX_STACK_DO_THROW( ::src::compiler::signals::InvalidArgumentSignal_obj::__alloc( HX_CTX ,(HX_("Expected between 1 and 3 arguments, found ",a3,ee,9c,a3) + args6->length)));
             					}
             				}
             			}
-HXLINE( 107)			bool value3;
-HXDLIN( 107)			bool value4;
-HXDLIN( 107)			if (start->isInstance(HX_("IntType",29,f7,3d,d9))) {
-HXLINE( 107)				value4 = end->isInstance(HX_("IntType",29,f7,3d,d9));
+HXLINE( 140)			bool value3;
+HXDLIN( 140)			bool value4;
+HXDLIN( 140)			if (start->isInstance(HX_("IntType",29,f7,3d,d9))) {
+HXLINE( 140)				value4 = end->isInstance(HX_("IntType",29,f7,3d,d9));
             			}
             			else {
-HXLINE( 107)				value4 = false;
+HXLINE( 140)				value4 = false;
             			}
-HXDLIN( 107)			if (value4) {
-HXLINE( 107)				value3 = step->isInstance(HX_("IntType",29,f7,3d,d9));
-            			}
-            			else {
-HXLINE( 107)				value3 = false;
-            			}
-HXDLIN( 107)			if (value3) {
-HXLINE( 108)				 ::src::compiler::Scope value5 = start->getScope();
-HXDLIN( 108)				 ::src::compiler::object::ObjectType _gthis1 = _gthis->iteratorType;
-HXDLIN( 108)				int value6 = start->rawInt();
-HXDLIN( 108)				int value7 = end->rawInt();
-HXDLIN( 108)				return  ::src::compiler::object::builtin::IntRangeObject_obj::__alloc( HX_CTX ,value5,_gthis1,value6,value7,step->rawInt());
+HXDLIN( 140)			if (value4) {
+HXLINE( 140)				value3 = step->isInstance(HX_("IntType",29,f7,3d,d9));
             			}
             			else {
-HXLINE( 110)				 ::src::compiler::Scope value8 = start->getScope();
-HXDLIN( 110)				 ::src::compiler::object::ObjectType _gthis2 = _gthis->iteratorType;
-HXDLIN( 110)				Float value9 = start->rawFloat();
-HXDLIN( 110)				Float value10 = end->rawFloat();
-HXDLIN( 110)				return  ::src::compiler::object::builtin::RangeObject_obj::__alloc( HX_CTX ,value8,_gthis2,value9,value10,step->rawFloat());
+HXLINE( 140)				value3 = false;
             			}
-HXLINE( 107)			return null();
+HXDLIN( 140)			if (value3) {
+HXLINE( 141)				 ::src::compiler::Scope value5 = start->getScope();
+HXDLIN( 141)				 ::src::compiler::object::ObjectType _gthis1 = _gthis->iteratorType;
+HXDLIN( 141)				int value6 = start->rawInt();
+HXDLIN( 141)				int value7 = end->rawInt();
+HXDLIN( 141)				return  ::src::compiler::object::builtin::IntRangeObject_obj::__alloc( HX_CTX ,value5,_gthis1,value6,value7,step->rawInt());
+            			}
+            			else {
+HXLINE( 143)				 ::src::compiler::Scope value8 = start->getScope();
+HXDLIN( 143)				 ::src::compiler::object::ObjectType _gthis2 = _gthis->iteratorType;
+HXDLIN( 143)				Float value9 = start->rawFloat();
+HXDLIN( 143)				Float value10 = end->rawFloat();
+HXDLIN( 143)				return  ::src::compiler::object::builtin::RangeObject_obj::__alloc( HX_CTX ,value8,_gthis2,value9,value10,step->rawFloat());
+            			}
+HXLINE( 140)			return null();
             		}
             		HX_END_LOCAL_FUNC1(return)
 
-            		HX_BEGIN_LOCAL_FUNC_S0(hx::LocalFunc,_hx_Closure_6) HXARGC(1)
-            		 ::src::compiler::object::Object _hx_run(::Array< ::Dynamic> args6){
-            			HX_GC_STACKFRAME(&_hx_pos_cc5ddeb910938c46_114_init)
-HXLINE( 114)			HX_STACK_DO_THROW( ::src::compiler::signals::ExitCodeSignal_obj::__alloc( HX_CTX ));
-HXDLIN( 114)			return null();
+            		HX_BEGIN_LOCAL_FUNC_S0(hx::LocalFunc,_hx_Closure_7) HXARGC(1)
+            		 ::src::compiler::object::Object _hx_run(::Array< ::Dynamic> args7){
+            			HX_GC_STACKFRAME(&_hx_pos_cc5ddeb910938c46_147_init)
+HXLINE( 147)			HX_STACK_DO_THROW( ::src::compiler::signals::ExitCodeSignal_obj::__alloc( HX_CTX ));
+HXDLIN( 147)			return null();
             		}
             		HX_END_LOCAL_FUNC1(return)
 
-            	HX_GC_STACKFRAME(&_hx_pos_cc5ddeb910938c46_41_init)
-HXDLIN(  41)		 ::src::compiler::object::builtin::Builtins _gthis = hx::ObjectPtr<OBJ_>(this);
-HXLINE(  42)		this->builtinFuncType =  ::src::compiler::object::ObjectType_obj::__alloc( HX_CTX ,this->root,HX_("BuiltinFunctionType",15,e5,45,c3),null(),hx::ClassOf< ::src::compiler::object::builtin::BuiltinFunction >(),null());
-HXLINE(  43)		this->functionType =  ::src::compiler::object::ObjectType_obj::__alloc( HX_CTX ,this->root,HX_("FunctionType",12,82,16,fc),null(),hx::ClassOf< ::src::compiler::object::builtin::FunctionObject >(),null());
-HXLINE(  44)		 ::src::compiler::Scope _hx_tmp = this->root;
-HXDLIN(  44)		 ::haxe::ds::StringMap _g =  ::haxe::ds::StringMap_obj::__alloc( HX_CTX );
-HXDLIN(  44)		_g->set(HX_("append",da,e1,d3,8f),this->builtinFuncType->createValue( ::Dynamic(new _hx_Closure_0()),null()));
-HXDLIN(  44)		_g->set(HX_("remove",44,9c,88,04),this->builtinFuncType->createValue( ::Dynamic(new _hx_Closure_1()),null()));
-HXDLIN(  44)		this->listType =  ::src::compiler::object::ObjectType_obj::__alloc( HX_CTX ,_hx_tmp,HX_("ListType",58,7e,af,06),_g,hx::ClassOf< ::src::compiler::object::builtin::ListObject >(),null());
-HXLINE(  64)		this->tupleType =  ::src::compiler::object::ObjectType_obj::__alloc( HX_CTX ,this->root,HX_("TupleType",c2,3e,8e,1a),null(),hx::ClassOf< ::src::compiler::object::builtin::TupleObject >(),null());
-HXLINE(  65)		this->mapType =  ::src::compiler::object::ObjectType_obj::__alloc( HX_CTX ,this->root,HX_("MapType",56,cf,55,ff),null(),hx::ClassOf< ::src::compiler::object::builtin::MapObject >(),null());
-HXLINE(  66)		this->stringType =  ::src::compiler::object::ObjectType_obj::__alloc( HX_CTX ,this->root,HX_("StringType",4b,88,b6,f5),null(),hx::ClassOf< ::src::compiler::object::builtin::StringObject >(),null());
-HXLINE(  67)		this->intType =  ::src::compiler::object::ObjectType_obj::__alloc( HX_CTX ,this->root,HX_("IntType",29,f7,3d,d9),null(),hx::ClassOf< ::src::compiler::object::builtin::IntObject >(),null());
-HXLINE(  68)		this->floatType =  ::src::compiler::object::ObjectType_obj::__alloc( HX_CTX ,this->root,HX_("FloatType",56,c2,14,a2),null(),hx::ClassOf< ::src::compiler::object::builtin::FloatObject >(),null());
-HXLINE(  69)		this->boolType =  ::src::compiler::object::ObjectType_obj::__alloc( HX_CTX ,this->root,HX_("BoolType",24,bc,95,8f),null(),hx::ClassOf< ::src::compiler::object::builtin::BoolObject >(),null());
-HXLINE(  70)		this->noneType =  ::src::compiler::object::ObjectType_obj::__alloc( HX_CTX ,this->root,HX_("NoneType",b2,a9,c9,cf),null(),hx::ClassOf< ::src::compiler::object::builtin::NoneObject >(),null());
-HXLINE(  71)		this->objTypeType =  ::src::compiler::object::ObjectType_obj::__alloc( HX_CTX ,this->root,HX_("ObjectTypeType",93,1c,e6,5d),null(),hx::ClassOf< ::src::compiler::object::builtin::ObjectTypeObject >(),null());
-HXLINE(  72)		 ::src::compiler::Scope _hx_tmp1 = this->root;
-HXDLIN(  72)		 ::haxe::ds::StringMap _g1 =  ::haxe::ds::StringMap_obj::__alloc( HX_CTX );
-HXDLIN(  72)		_g1->set(HX_("name",4b,72,ff,48),this->builtinFuncType->createValue( ::Dynamic(new _hx_Closure_2()),null()));
-HXDLIN(  72)		_g1->set(HX_("value",71,7f,b8,31),this->builtinFuncType->createValue( ::Dynamic(new _hx_Closure_3()),null()));
-HXDLIN(  72)		this->pairType =  ::src::compiler::object::ObjectType_obj::__alloc( HX_CTX ,_hx_tmp1,HX_("PairType",14,cc,6e,78),_g1,hx::ClassOf< ::src::compiler::object::builtin::PairObject >(),null());
-HXLINE(  84)		this->iteratorType =  ::src::compiler::object::ObjectType_obj::__alloc( HX_CTX ,this->root,HX_("IteratorType",e8,43,45,b2),null(),hx::ClassOf< ::src::compiler::object::builtin::IteratorObject >(),null());
-HXLINE(  86)		this->types = ::Array_obj< ::Dynamic>::__new(13)->init(0,this->builtinFuncType)->init(1,this->functionType)->init(2,this->listType)->init(3,this->tupleType)->init(4,this->mapType)->init(5,this->stringType)->init(6,this->intType)->init(7,this->floatType)->init(8,this->boolType)->init(9,this->noneType)->init(10,this->objTypeType)->init(11,this->pairType)->init(12,this->iteratorType);
-HXLINE(  88)		 ::haxe::ds::StringMap _g2 =  ::haxe::ds::StringMap_obj::__alloc( HX_CTX );
-HXDLIN(  88)		_g2->set(HX_("print",2d,58,8b,c8),this->builtinFuncType->createValue( ::Dynamic(new _hx_Closure_4()),null()));
-HXDLIN(  88)		_g2->set(HX_("range",bd,a5,1f,e4),this->builtinFuncType->createValue( ::Dynamic(new _hx_Closure_5(_gthis)),null()));
-HXDLIN(  88)		_g2->set(HX_("exit",1e,f7,1d,43),this->builtinFuncType->createValue( ::Dynamic(new _hx_Closure_6()),null()));
-HXDLIN(  88)		this->objects = _g2;
+            	HX_GC_STACKFRAME(&_hx_pos_cc5ddeb910938c46_54_init)
+HXDLIN(  54)		 ::src::compiler::object::builtin::Builtins _gthis = hx::ObjectPtr<OBJ_>(this);
+HXLINE(  55)		this->builtinFuncType =  ::src::compiler::object::ObjectType_obj::__alloc( HX_CTX ,this->root,HX_("BuiltinFunctionType",15,e5,45,c3),null(),hx::ClassOf< ::src::compiler::object::builtin::BuiltinFunction >(),null());
+HXLINE(  56)		this->functionType =  ::src::compiler::object::ObjectType_obj::__alloc( HX_CTX ,this->root,HX_("FunctionType",12,82,16,fc),null(),hx::ClassOf< ::src::compiler::object::builtin::FunctionObject >(),null());
+HXLINE(  57)		 ::src::compiler::Scope _hx_tmp = this->root;
+HXDLIN(  57)		 ::haxe::ds::StringMap _g =  ::haxe::ds::StringMap_obj::__alloc( HX_CTX );
+HXDLIN(  57)		_g->set(HX_("append",da,e1,d3,8f),this->builtinFuncType->createValue( ::Dynamic(new _hx_Closure_0()),this->root,null()));
+HXDLIN(  57)		_g->set(HX_("remove",44,9c,88,04),this->builtinFuncType->createValue( ::Dynamic(new _hx_Closure_1()),this->root,null()));
+HXDLIN(  57)		this->listType =  ::src::compiler::object::ObjectType_obj::__alloc( HX_CTX ,_hx_tmp,HX_("ListType",58,7e,af,06),_g,hx::ClassOf< ::src::compiler::object::builtin::ListObject >(),null());
+HXLINE(  77)		this->tupleType =  ::src::compiler::object::ObjectType_obj::__alloc( HX_CTX ,this->root,HX_("TupleType",c2,3e,8e,1a),null(),hx::ClassOf< ::src::compiler::object::builtin::TupleObject >(),null());
+HXLINE(  78)		this->mapType =  ::src::compiler::object::ObjectType_obj::__alloc( HX_CTX ,this->root,HX_("MapType",56,cf,55,ff),null(),hx::ClassOf< ::src::compiler::object::builtin::MapObject >(),null());
+HXLINE(  79)		this->stringType =  ::src::compiler::object::ObjectType_obj::__alloc( HX_CTX ,this->root,HX_("StringType",4b,88,b6,f5),null(),hx::ClassOf< ::src::compiler::object::builtin::StringObject >(),null());
+HXLINE(  80)		this->intType =  ::src::compiler::object::ObjectType_obj::__alloc( HX_CTX ,this->root,HX_("IntType",29,f7,3d,d9),null(),hx::ClassOf< ::src::compiler::object::builtin::IntObject >(),null());
+HXLINE(  81)		this->floatType =  ::src::compiler::object::ObjectType_obj::__alloc( HX_CTX ,this->root,HX_("FloatType",56,c2,14,a2),null(),hx::ClassOf< ::src::compiler::object::builtin::FloatObject >(),null());
+HXLINE(  82)		this->boolType =  ::src::compiler::object::ObjectType_obj::__alloc( HX_CTX ,this->root,HX_("BoolType",24,bc,95,8f),null(),hx::ClassOf< ::src::compiler::object::builtin::BoolObject >(),null());
+HXLINE(  83)		this->noneType =  ::src::compiler::object::ObjectType_obj::__alloc( HX_CTX ,this->root,HX_("NoneType",b2,a9,c9,cf),null(),hx::ClassOf< ::src::compiler::object::builtin::NoneObject >(),null());
+HXLINE(  84)		this->objTypeType =  ::src::compiler::object::ObjectType_obj::__alloc( HX_CTX ,this->root,HX_("ObjectTypeType",93,1c,e6,5d),null(),hx::ClassOf< ::src::compiler::object::builtin::ObjectTypeObject >(),null());
+HXLINE(  85)		 ::src::compiler::Scope _hx_tmp1 = this->root;
+HXDLIN(  85)		 ::haxe::ds::StringMap _g1 =  ::haxe::ds::StringMap_obj::__alloc( HX_CTX );
+HXDLIN(  85)		_g1->set(HX_("name",4b,72,ff,48),this->builtinFuncType->createValue( ::Dynamic(new _hx_Closure_2()),this->root,null()));
+HXDLIN(  85)		_g1->set(HX_("value",71,7f,b8,31),this->builtinFuncType->createValue( ::Dynamic(new _hx_Closure_3()),this->root,null()));
+HXDLIN(  85)		this->pairType =  ::src::compiler::object::ObjectType_obj::__alloc( HX_CTX ,_hx_tmp1,HX_("PairType",14,cc,6e,78),_g1,hx::ClassOf< ::src::compiler::object::builtin::PairObject >(),null());
+HXLINE(  97)		this->iteratorType =  ::src::compiler::object::ObjectType_obj::__alloc( HX_CTX ,this->root,HX_("IteratorType",e8,43,45,b2),null(),hx::ClassOf< ::src::compiler::object::builtin::IteratorObject >(),null());
+HXLINE(  98)		this->bytesType =  ::src::compiler::object::ObjectType_obj::__alloc( HX_CTX ,this->root,HX_("BytesType",a5,18,d1,13),null(),hx::ClassOf< ::src::compiler::object::builtin::BytesObject >(),null());
+HXLINE(  99)		this->spliceType =  ::src::compiler::object::ObjectType_obj::__alloc( HX_CTX ,this->root,HX_("SpliceType",76,16,08,c6),null(),hx::ClassOf< ::src::compiler::object::builtin::SpliceObject >(),null());
+HXLINE( 100)		this->moduleType =  ::src::compiler::object::ObjectType_obj::__alloc( HX_CTX ,this->root,HX_("ModuleType",a6,1d,fc,33),null(),hx::ClassOf< ::src::compiler::object::builtin::ModuleObject >(),null());
+HXLINE( 101)		this->signalType =  ::src::compiler::object::ObjectType_obj::__alloc( HX_CTX ,this->root,HX_("SignalType",62,a5,74,ee),null(),hx::ClassOf< ::src::compiler::object::builtin::SignalObject >(),null());
+HXLINE( 102)		this->coroType =  ::src::compiler::object::ObjectType_obj::__alloc( HX_CTX ,this->root,HX_("CoroutineType",92,ec,d1,42),null(),hx::ClassOf< ::src::compiler::object::builtin::coroutine::CoroutineObject >(),null());
+HXLINE( 103)		this->coroFuncType =  ::src::compiler::object::ObjectType_obj::__alloc( HX_CTX ,this->root,HX_("CoroutineFunctionType",ca,c7,9e,fc),null(),hx::ClassOf< ::src::compiler::object::builtin::coroutine::CoroutineFunctionObject >(),null());
+HXLINE( 104)		 ::src::compiler::Scope _hx_tmp2 = this->root;
+HXDLIN( 104)		 ::haxe::ds::StringMap _g2 =  ::haxe::ds::StringMap_obj::__alloc( HX_CTX );
+HXDLIN( 104)		_g2->set(HX_("start",62,74,0b,84),this->builtinFuncType->createValue( ::Dynamic(new _hx_Closure_4()),this->root,null()));
+HXDLIN( 104)		this->coroLoopType =  ::src::compiler::object::ObjectType_obj::__alloc( HX_CTX ,_hx_tmp2,HX_("CoroutineLoopType",16,8d,3d,de),_g2,hx::ClassOf< ::src::compiler::object::builtin::coroutine::CoroutineLoop >(),null());
+HXLINE( 115)		this->yieldType =  ::src::compiler::object::ObjectType_obj::__alloc( HX_CTX ,this->root,HX_("CoroutineYieldType",cf,ba,68,db),null(),hx::ClassOf< ::src::compiler::object::builtin::coroutine::YieldObject >(),null());
+HXLINE( 117)		this->types = ::Array_obj< ::Dynamic>::__new(21)->init(0,this->builtinFuncType)->init(1,this->functionType)->init(2,this->listType)->init(3,this->tupleType)->init(4,this->mapType)->init(5,this->stringType)->init(6,this->intType)->init(7,this->floatType)->init(8,this->boolType)->init(9,this->noneType)->init(10,this->objTypeType)->init(11,this->pairType)->init(12,this->iteratorType)->init(13,this->bytesType)->init(14,this->spliceType)->init(15,this->moduleType)->init(16,this->signalType)->init(17,this->coroType)->init(18,this->coroFuncType)->init(19,this->coroLoopType)->init(20,this->yieldType);
+HXLINE( 121)		 ::haxe::ds::StringMap _g3 =  ::haxe::ds::StringMap_obj::__alloc( HX_CTX );
+HXDLIN( 121)		_g3->set(HX_("print",2d,58,8b,c8),this->builtinFuncType->createValue( ::Dynamic(new _hx_Closure_5()),this->root,null()));
+HXDLIN( 121)		_g3->set(HX_("range",bd,a5,1f,e4),this->builtinFuncType->createValue( ::Dynamic(new _hx_Closure_6(_gthis)),this->root,null()));
+HXDLIN( 121)		_g3->set(HX_("exit",1e,f7,1d,43),this->builtinFuncType->createValue( ::Dynamic(new _hx_Closure_7()),this->root,null()));
+HXDLIN( 121)		this->objects = _g3;
             	}
 
 
@@ -337,6 +396,14 @@ void Builtins_obj::__Mark(HX_MARK_PARAMS)
 	HX_MARK_MEMBER_NAME(objTypeType,"objTypeType");
 	HX_MARK_MEMBER_NAME(pairType,"pairType");
 	HX_MARK_MEMBER_NAME(iteratorType,"iteratorType");
+	HX_MARK_MEMBER_NAME(bytesType,"bytesType");
+	HX_MARK_MEMBER_NAME(spliceType,"spliceType");
+	HX_MARK_MEMBER_NAME(moduleType,"moduleType");
+	HX_MARK_MEMBER_NAME(signalType,"signalType");
+	HX_MARK_MEMBER_NAME(coroType,"coroType");
+	HX_MARK_MEMBER_NAME(coroFuncType,"coroFuncType");
+	HX_MARK_MEMBER_NAME(coroLoopType,"coroLoopType");
+	HX_MARK_MEMBER_NAME(yieldType,"yieldType");
 	HX_MARK_MEMBER_NAME(types,"types");
 	HX_MARK_MEMBER_NAME(objects,"objects");
 	HX_MARK_MEMBER_NAME(root,"root");
@@ -358,6 +425,14 @@ void Builtins_obj::__Visit(HX_VISIT_PARAMS)
 	HX_VISIT_MEMBER_NAME(objTypeType,"objTypeType");
 	HX_VISIT_MEMBER_NAME(pairType,"pairType");
 	HX_VISIT_MEMBER_NAME(iteratorType,"iteratorType");
+	HX_VISIT_MEMBER_NAME(bytesType,"bytesType");
+	HX_VISIT_MEMBER_NAME(spliceType,"spliceType");
+	HX_VISIT_MEMBER_NAME(moduleType,"moduleType");
+	HX_VISIT_MEMBER_NAME(signalType,"signalType");
+	HX_VISIT_MEMBER_NAME(coroType,"coroType");
+	HX_VISIT_MEMBER_NAME(coroFuncType,"coroFuncType");
+	HX_VISIT_MEMBER_NAME(coroLoopType,"coroLoopType");
+	HX_VISIT_MEMBER_NAME(yieldType,"yieldType");
 	HX_VISIT_MEMBER_NAME(types,"types");
 	HX_VISIT_MEMBER_NAME(objects,"objects");
 	HX_VISIT_MEMBER_NAME(root,"root");
@@ -383,13 +458,19 @@ hx::Val Builtins_obj::__Field(const ::String &inName,hx::PropertyAccess inCallPr
 		if (HX_FIELD_EQ(inName,"boolType") ) { return hx::Val( boolType ); }
 		if (HX_FIELD_EQ(inName,"noneType") ) { return hx::Val( noneType ); }
 		if (HX_FIELD_EQ(inName,"pairType") ) { return hx::Val( pairType ); }
+		if (HX_FIELD_EQ(inName,"coroType") ) { return hx::Val( coroType ); }
 		break;
 	case 9:
 		if (HX_FIELD_EQ(inName,"tupleType") ) { return hx::Val( tupleType ); }
 		if (HX_FIELD_EQ(inName,"floatType") ) { return hx::Val( floatType ); }
+		if (HX_FIELD_EQ(inName,"bytesType") ) { return hx::Val( bytesType ); }
+		if (HX_FIELD_EQ(inName,"yieldType") ) { return hx::Val( yieldType ); }
 		break;
 	case 10:
 		if (HX_FIELD_EQ(inName,"stringType") ) { return hx::Val( stringType ); }
+		if (HX_FIELD_EQ(inName,"spliceType") ) { return hx::Val( spliceType ); }
+		if (HX_FIELD_EQ(inName,"moduleType") ) { return hx::Val( moduleType ); }
+		if (HX_FIELD_EQ(inName,"signalType") ) { return hx::Val( signalType ); }
 		break;
 	case 11:
 		if (HX_FIELD_EQ(inName,"objTypeType") ) { return hx::Val( objTypeType ); }
@@ -397,6 +478,8 @@ hx::Val Builtins_obj::__Field(const ::String &inName,hx::PropertyAccess inCallPr
 	case 12:
 		if (HX_FIELD_EQ(inName,"functionType") ) { return hx::Val( functionType ); }
 		if (HX_FIELD_EQ(inName,"iteratorType") ) { return hx::Val( iteratorType ); }
+		if (HX_FIELD_EQ(inName,"coroFuncType") ) { return hx::Val( coroFuncType ); }
+		if (HX_FIELD_EQ(inName,"coroLoopType") ) { return hx::Val( coroLoopType ); }
 		break;
 	case 15:
 		if (HX_FIELD_EQ(inName,"builtinFuncType") ) { return hx::Val( builtinFuncType ); }
@@ -423,13 +506,19 @@ hx::Val Builtins_obj::__SetField(const ::String &inName,const hx::Val &inValue,h
 		if (HX_FIELD_EQ(inName,"boolType") ) { boolType=inValue.Cast<  ::src::compiler::object::ObjectType >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"noneType") ) { noneType=inValue.Cast<  ::src::compiler::object::ObjectType >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"pairType") ) { pairType=inValue.Cast<  ::src::compiler::object::ObjectType >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"coroType") ) { coroType=inValue.Cast<  ::src::compiler::object::ObjectType >(); return inValue; }
 		break;
 	case 9:
 		if (HX_FIELD_EQ(inName,"tupleType") ) { tupleType=inValue.Cast<  ::src::compiler::object::ObjectType >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"floatType") ) { floatType=inValue.Cast<  ::src::compiler::object::ObjectType >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"bytesType") ) { bytesType=inValue.Cast<  ::src::compiler::object::ObjectType >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"yieldType") ) { yieldType=inValue.Cast<  ::src::compiler::object::ObjectType >(); return inValue; }
 		break;
 	case 10:
 		if (HX_FIELD_EQ(inName,"stringType") ) { stringType=inValue.Cast<  ::src::compiler::object::ObjectType >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"spliceType") ) { spliceType=inValue.Cast<  ::src::compiler::object::ObjectType >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"moduleType") ) { moduleType=inValue.Cast<  ::src::compiler::object::ObjectType >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"signalType") ) { signalType=inValue.Cast<  ::src::compiler::object::ObjectType >(); return inValue; }
 		break;
 	case 11:
 		if (HX_FIELD_EQ(inName,"objTypeType") ) { objTypeType=inValue.Cast<  ::src::compiler::object::ObjectType >(); return inValue; }
@@ -437,6 +526,8 @@ hx::Val Builtins_obj::__SetField(const ::String &inName,const hx::Val &inValue,h
 	case 12:
 		if (HX_FIELD_EQ(inName,"functionType") ) { functionType=inValue.Cast<  ::src::compiler::object::ObjectType >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"iteratorType") ) { iteratorType=inValue.Cast<  ::src::compiler::object::ObjectType >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"coroFuncType") ) { coroFuncType=inValue.Cast<  ::src::compiler::object::ObjectType >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"coroLoopType") ) { coroLoopType=inValue.Cast<  ::src::compiler::object::ObjectType >(); return inValue; }
 		break;
 	case 15:
 		if (HX_FIELD_EQ(inName,"builtinFuncType") ) { builtinFuncType=inValue.Cast<  ::src::compiler::object::ObjectType >(); return inValue; }
@@ -459,6 +550,14 @@ void Builtins_obj::__GetFields(Array< ::String> &outFields)
 	outFields->push(HX_HCSTRING("objTypeType","\xab","\x91","\x6d","\x68"));
 	outFields->push(HX_HCSTRING("pairType","\xf4","\x0f","\xbd","\x9e"));
 	outFields->push(HX_HCSTRING("iteratorType","\xc8","\xf7","\x32","\xea"));
+	outFields->push(HX_HCSTRING("bytesType","\xc5","\x38","\xfe","\x71"));
+	outFields->push(HX_HCSTRING("spliceType","\x56","\x12","\x57","\xcf"));
+	outFields->push(HX_HCSTRING("moduleType","\x86","\x19","\x4b","\x3d"));
+	outFields->push(HX_HCSTRING("signalType","\x42","\xa1","\xc3","\xf7"));
+	outFields->push(HX_HCSTRING("coroType","\xc3","\x44","\x5c","\xdc"));
+	outFields->push(HX_HCSTRING("coroFuncType","\xa7","\x86","\x37","\x3e"));
+	outFields->push(HX_HCSTRING("coroLoopType","\xc7","\x51","\x76","\x7e"));
+	outFields->push(HX_HCSTRING("yieldType","\xa7","\x63","\x42","\x8c"));
 	outFields->push(HX_HCSTRING("types","\x79","\x70","\xcb","\x1a"));
 	outFields->push(HX_HCSTRING("objects","\xd4","\x68","\x4f","\x82"));
 	outFields->push(HX_HCSTRING("root","\x22","\xee","\xae","\x4b"));
@@ -480,6 +579,14 @@ static hx::StorageInfo Builtins_obj_sMemberStorageInfo[] = {
 	{hx::fsObject /*::src::compiler::object::ObjectType*/ ,(int)offsetof(Builtins_obj,objTypeType),HX_HCSTRING("objTypeType","\xab","\x91","\x6d","\x68")},
 	{hx::fsObject /*::src::compiler::object::ObjectType*/ ,(int)offsetof(Builtins_obj,pairType),HX_HCSTRING("pairType","\xf4","\x0f","\xbd","\x9e")},
 	{hx::fsObject /*::src::compiler::object::ObjectType*/ ,(int)offsetof(Builtins_obj,iteratorType),HX_HCSTRING("iteratorType","\xc8","\xf7","\x32","\xea")},
+	{hx::fsObject /*::src::compiler::object::ObjectType*/ ,(int)offsetof(Builtins_obj,bytesType),HX_HCSTRING("bytesType","\xc5","\x38","\xfe","\x71")},
+	{hx::fsObject /*::src::compiler::object::ObjectType*/ ,(int)offsetof(Builtins_obj,spliceType),HX_HCSTRING("spliceType","\x56","\x12","\x57","\xcf")},
+	{hx::fsObject /*::src::compiler::object::ObjectType*/ ,(int)offsetof(Builtins_obj,moduleType),HX_HCSTRING("moduleType","\x86","\x19","\x4b","\x3d")},
+	{hx::fsObject /*::src::compiler::object::ObjectType*/ ,(int)offsetof(Builtins_obj,signalType),HX_HCSTRING("signalType","\x42","\xa1","\xc3","\xf7")},
+	{hx::fsObject /*::src::compiler::object::ObjectType*/ ,(int)offsetof(Builtins_obj,coroType),HX_HCSTRING("coroType","\xc3","\x44","\x5c","\xdc")},
+	{hx::fsObject /*::src::compiler::object::ObjectType*/ ,(int)offsetof(Builtins_obj,coroFuncType),HX_HCSTRING("coroFuncType","\xa7","\x86","\x37","\x3e")},
+	{hx::fsObject /*::src::compiler::object::ObjectType*/ ,(int)offsetof(Builtins_obj,coroLoopType),HX_HCSTRING("coroLoopType","\xc7","\x51","\x76","\x7e")},
+	{hx::fsObject /*::src::compiler::object::ObjectType*/ ,(int)offsetof(Builtins_obj,yieldType),HX_HCSTRING("yieldType","\xa7","\x63","\x42","\x8c")},
 	{hx::fsObject /*Array< ::Dynamic >*/ ,(int)offsetof(Builtins_obj,types),HX_HCSTRING("types","\x79","\x70","\xcb","\x1a")},
 	{hx::fsObject /*::haxe::ds::StringMap*/ ,(int)offsetof(Builtins_obj,objects),HX_HCSTRING("objects","\xd4","\x68","\x4f","\x82")},
 	{hx::fsObject /*::src::compiler::Scope*/ ,(int)offsetof(Builtins_obj,root),HX_HCSTRING("root","\x22","\xee","\xae","\x4b")},
@@ -502,6 +609,14 @@ static ::String Builtins_obj_sMemberFields[] = {
 	HX_HCSTRING("objTypeType","\xab","\x91","\x6d","\x68"),
 	HX_HCSTRING("pairType","\xf4","\x0f","\xbd","\x9e"),
 	HX_HCSTRING("iteratorType","\xc8","\xf7","\x32","\xea"),
+	HX_HCSTRING("bytesType","\xc5","\x38","\xfe","\x71"),
+	HX_HCSTRING("spliceType","\x56","\x12","\x57","\xcf"),
+	HX_HCSTRING("moduleType","\x86","\x19","\x4b","\x3d"),
+	HX_HCSTRING("signalType","\x42","\xa1","\xc3","\xf7"),
+	HX_HCSTRING("coroType","\xc3","\x44","\x5c","\xdc"),
+	HX_HCSTRING("coroFuncType","\xa7","\x86","\x37","\x3e"),
+	HX_HCSTRING("coroLoopType","\xc7","\x51","\x76","\x7e"),
+	HX_HCSTRING("yieldType","\xa7","\x63","\x42","\x8c"),
 	HX_HCSTRING("types","\x79","\x70","\xcb","\x1a"),
 	HX_HCSTRING("objects","\xd4","\x68","\x4f","\x82"),
 	HX_HCSTRING("root","\x22","\xee","\xae","\x4b"),

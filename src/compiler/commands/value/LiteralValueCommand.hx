@@ -4,6 +4,7 @@ import src.ast.base.VariableToken;
 import src.compiler.Scope;
 import src.compiler.bytecode.Bytecode;
 import src.compiler.bytecode.BytecodeMap;
+import src.compiler.commands.Command;
 import src.compiler.object.Object;
 
 /**
@@ -20,6 +21,11 @@ class LiteralValueCommand extends ValueCommand
         this.content = content;
     }
     
+    override public function copy(scope:Scope):Command 
+    {
+        return new LiteralValueCommand(scope, content);
+    }
+    
     public function getContent():String
     {
         return content;
@@ -32,12 +38,17 @@ class LiteralValueCommand extends ValueCommand
     
     override public function run():Object 
     {
-        return scope.getType("StringType").createValue(content);
+        return scope.getType("StringType").createValue(content, scope);
     }
     
     override public function getName():String 
     {
         return "LiteralValueCommand";
+    }
+    
+    override public function getFriendlyName():String 
+    {
+        return "literal";
     }
     
     override public function getBytecode():Bytecode 

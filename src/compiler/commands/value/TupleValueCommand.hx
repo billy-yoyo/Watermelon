@@ -34,6 +34,17 @@ class TupleValueCommand extends ValueCommand
         this.values = values;
     }
     
+    override public function copy(scope:Scope):Command 
+    {
+        return new TupleValueCommand(scope, ValueCommand.copyArray(scope, values));
+    }
+    
+    override public function setScope(scope:Scope) 
+    {
+        super.setScope(scope);
+        for (value in values) value.setScope(scope);
+    }
+    
     override public function walk():Array<Command> 
     {
         var cmds:Array<Command> = new Array<Command>();
@@ -43,7 +54,7 @@ class TupleValueCommand extends ValueCommand
     
     override public function run():Object
     {
-        var obj:TupleObject = cast(scope.getType("TupleType").createObject(), TupleObject);
+        var obj:TupleObject = cast(scope.getType("TupleType").createObject(scope), TupleObject);
         var arr:Array<Object> = obj.getArray();
         for (cmd in values) {
             arr.push(cmd.run());
@@ -54,6 +65,11 @@ class TupleValueCommand extends ValueCommand
     override public function getName():String 
     {
         return "TupleValueCommand";
+    }
+    
+    override public function getFriendlyName():String 
+    {
+        return "tuple";
     }
     
     override public function getBytecode():Bytecode 

@@ -67,7 +67,7 @@ class HXCPP_CLASS_ATTRIBUTES Core_obj : public hx::Object
 		static ::Dynamic _opcap_dyn();
 
 		static  ::haxe::ds::StringMap operativeMap;
-		static  ::src::compiler::commands::RootCommand convertRoot( ::src::ast::base::RootToken root, ::src::compiler::Scope scope);
+		static  ::src::compiler::commands::RootCommand convertRoot( ::src::ast::base::RootToken root, ::src::compiler::Scope scope,::String moduleName);
 		static ::Dynamic convertRoot_dyn();
 
 		static ::Array< ::Dynamic> convert( ::src::compiler::Scope scope,::Array< ::Dynamic> tokens);
@@ -76,7 +76,7 @@ class HXCPP_CLASS_ATTRIBUTES Core_obj : public hx::Object
 		static  ::src::compiler::commands::Command convertBlock( ::src::compiler::Scope scope, ::src::ast::Token operative,::Array< ::Dynamic> tokens);
 		static ::Dynamic convertBlock_dyn();
 
-		static  ::src::compiler::commands::RootCommand convertBytes( ::haxe::io::Bytes bytes, ::src::compiler::Scope scope);
+		static  ::src::compiler::commands::RootCommand convertBytes( ::haxe::io::Bytes bytes, ::src::compiler::Scope scope,::String moduleName);
 		static ::Dynamic convertBytes_dyn();
 
 		static  ::src::compiler::bytecode::Bytecode compile( ::src::compiler::commands::RootCommand root, ::Dynamic stringPool);

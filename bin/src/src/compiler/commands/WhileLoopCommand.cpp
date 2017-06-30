@@ -47,23 +47,27 @@
 #include <src/compiler/signals/SyntaxErrorSignal.h>
 #endif
 
-HX_DEFINE_STACK_FRAME(_hx_pos_c3da1ca762f50910_48_new,"src.compiler.commands.WhileLoopCommand","new",0xf6caadc9,"src.compiler.commands.WhileLoopCommand.new","src/compiler/commands/WhileLoopCommand.hx",48,0xfba50a46)
-HX_LOCAL_STACK_FRAME(_hx_pos_c3da1ca762f50910_56_walk,"src.compiler.commands.WhileLoopCommand","walk",0x007d3b80,"src.compiler.commands.WhileLoopCommand.walk","src/compiler/commands/WhileLoopCommand.hx",56,0xfba50a46)
-HX_LOCAL_STACK_FRAME(_hx_pos_c3da1ca762f50910_60_run,"src.compiler.commands.WhileLoopCommand","run",0xf6cdc4b4,"src.compiler.commands.WhileLoopCommand.run","src/compiler/commands/WhileLoopCommand.hx",60,0xfba50a46)
-HX_LOCAL_STACK_FRAME(_hx_pos_c3da1ca762f50910_75_getName,"src.compiler.commands.WhileLoopCommand","getName",0x883e67ea,"src.compiler.commands.WhileLoopCommand.getName","src/compiler/commands/WhileLoopCommand.hx",75,0xfba50a46)
-HX_LOCAL_STACK_FRAME(_hx_pos_c3da1ca762f50910_80_getBytecode,"src.compiler.commands.WhileLoopCommand","getBytecode",0xc6aba554,"src.compiler.commands.WhileLoopCommand.getBytecode","src/compiler/commands/WhileLoopCommand.hx",80,0xfba50a46)
-HX_LOCAL_STACK_FRAME(_hx_pos_c3da1ca762f50910_85_reconstruct,"src.compiler.commands.WhileLoopCommand","reconstruct",0xd93a546d,"src.compiler.commands.WhileLoopCommand.reconstruct","src/compiler/commands/WhileLoopCommand.hx",85,0xfba50a46)
-HX_LOCAL_STACK_FRAME(_hx_pos_c3da1ca762f50910_22_fromTokens,"src.compiler.commands.WhileLoopCommand","fromTokens",0x3baaae1b,"src.compiler.commands.WhileLoopCommand.fromTokens","src/compiler/commands/WhileLoopCommand.hx",22,0xfba50a46)
-HX_LOCAL_STACK_FRAME(_hx_pos_c3da1ca762f50910_42_fromBytecode,"src.compiler.commands.WhileLoopCommand","fromBytecode",0xaa7f7d36,"src.compiler.commands.WhileLoopCommand.fromBytecode","src/compiler/commands/WhileLoopCommand.hx",42,0xfba50a46)
+HX_DEFINE_STACK_FRAME(_hx_pos_c3da1ca762f50910_19_new,"src.compiler.commands.WhileLoopCommand","new",0xf6caadc9,"src.compiler.commands.WhileLoopCommand.new","src/compiler/commands/WhileLoopCommand.hx",19,0xfba50a46)
+HX_LOCAL_STACK_FRAME(_hx_pos_c3da1ca762f50910_58_copy,"src.compiler.commands.WhileLoopCommand","copy",0xf34f9a2c,"src.compiler.commands.WhileLoopCommand.copy","src/compiler/commands/WhileLoopCommand.hx",58,0xfba50a46)
+HX_LOCAL_STACK_FRAME(_hx_pos_c3da1ca762f50910_62_setScope,"src.compiler.commands.WhileLoopCommand","setScope",0x3f0ec089,"src.compiler.commands.WhileLoopCommand.setScope","src/compiler/commands/WhileLoopCommand.hx",62,0xfba50a46)
+HX_LOCAL_STACK_FRAME(_hx_pos_c3da1ca762f50910_70_walk,"src.compiler.commands.WhileLoopCommand","walk",0x007d3b80,"src.compiler.commands.WhileLoopCommand.walk","src/compiler/commands/WhileLoopCommand.hx",70,0xfba50a46)
+HX_LOCAL_STACK_FRAME(_hx_pos_c3da1ca762f50910_74_run,"src.compiler.commands.WhileLoopCommand","run",0xf6cdc4b4,"src.compiler.commands.WhileLoopCommand.run","src/compiler/commands/WhileLoopCommand.hx",74,0xfba50a46)
+HX_LOCAL_STACK_FRAME(_hx_pos_c3da1ca762f50910_91_getName,"src.compiler.commands.WhileLoopCommand","getName",0x883e67ea,"src.compiler.commands.WhileLoopCommand.getName","src/compiler/commands/WhileLoopCommand.hx",91,0xfba50a46)
+HX_LOCAL_STACK_FRAME(_hx_pos_c3da1ca762f50910_96_getFriendlyName,"src.compiler.commands.WhileLoopCommand","getFriendlyName",0x47b668f5,"src.compiler.commands.WhileLoopCommand.getFriendlyName","src/compiler/commands/WhileLoopCommand.hx",96,0xfba50a46)
+HX_LOCAL_STACK_FRAME(_hx_pos_c3da1ca762f50910_101_getBytecode,"src.compiler.commands.WhileLoopCommand","getBytecode",0xc6aba554,"src.compiler.commands.WhileLoopCommand.getBytecode","src/compiler/commands/WhileLoopCommand.hx",101,0xfba50a46)
+HX_LOCAL_STACK_FRAME(_hx_pos_c3da1ca762f50910_106_reconstruct,"src.compiler.commands.WhileLoopCommand","reconstruct",0xd93a546d,"src.compiler.commands.WhileLoopCommand.reconstruct","src/compiler/commands/WhileLoopCommand.hx",106,0xfba50a46)
+HX_LOCAL_STACK_FRAME(_hx_pos_c3da1ca762f50910_23_fromTokens,"src.compiler.commands.WhileLoopCommand","fromTokens",0x3baaae1b,"src.compiler.commands.WhileLoopCommand.fromTokens","src/compiler/commands/WhileLoopCommand.hx",23,0xfba50a46)
+HX_LOCAL_STACK_FRAME(_hx_pos_c3da1ca762f50910_43_fromBytecode,"src.compiler.commands.WhileLoopCommand","fromBytecode",0xaa7f7d36,"src.compiler.commands.WhileLoopCommand.fromBytecode","src/compiler/commands/WhileLoopCommand.hx",43,0xfba50a46)
 namespace src{
 namespace compiler{
 namespace commands{
 
 void WhileLoopCommand_obj::__construct( ::src::compiler::Scope scope, ::src::compiler::commands::value::ValueCommand condition, ::src::compiler::commands::Command code){
-            	HX_STACKFRAME(&_hx_pos_c3da1ca762f50910_48_new)
-HXLINE(  49)		super::__construct(scope);
-HXLINE(  50)		this->condition = condition;
-HXLINE(  51)		this->code = code;
+            	HX_STACKFRAME(&_hx_pos_c3da1ca762f50910_19_new)
+HXLINE(  48)		this->completedCode = true;
+HXLINE(  51)		super::__construct(scope);
+HXLINE(  52)		this->condition = condition;
+HXLINE(  53)		this->code = code;
             	}
 
 Dynamic WhileLoopCommand_obj::__CreateEmpty() { return new WhileLoopCommand_obj; }
@@ -85,111 +89,145 @@ bool WhileLoopCommand_obj::_hx_isInstanceOf(int inClassId) {
 	}
 }
 
+ ::src::compiler::commands::Command WhileLoopCommand_obj::copy( ::src::compiler::Scope scope){
+            	HX_GC_STACKFRAME(&_hx_pos_c3da1ca762f50910_58_copy)
+HXDLIN(  58)		 ::src::compiler::commands::value::ValueCommand _hx_tmp = hx::TCast<  ::src::compiler::commands::value::ValueCommand >::cast(this->condition->copy(scope));
+HXDLIN(  58)		return  ::src::compiler::commands::WhileLoopCommand_obj::__alloc( HX_CTX ,scope,_hx_tmp,this->code->copy(scope));
+            	}
+
+
+void WhileLoopCommand_obj::setScope( ::src::compiler::Scope scope){
+            	HX_STACKFRAME(&_hx_pos_c3da1ca762f50910_62_setScope)
+HXLINE(  63)		this->super::setScope(scope);
+HXLINE(  64)		this->condition->setScope(scope);
+HXLINE(  65)		this->code->setScope(scope);
+            	}
+
+
 ::Array< ::Dynamic> WhileLoopCommand_obj::walk(){
-            	HX_STACKFRAME(&_hx_pos_c3da1ca762f50910_56_walk)
-HXDLIN(  56)		return ::Array_obj< ::Dynamic>::__new(2)->init(0,this->condition)->init(1,this->code);
+            	HX_STACKFRAME(&_hx_pos_c3da1ca762f50910_70_walk)
+HXDLIN(  70)		return ::Array_obj< ::Dynamic>::__new(2)->init(0,this->condition)->init(1,this->code);
             	}
 
 
  ::src::compiler::object::Object WhileLoopCommand_obj::run(){
-            	HX_STACKFRAME(&_hx_pos_c3da1ca762f50910_60_run)
-HXLINE(  61)		while(this->condition->run()->rawBool()){
-HXLINE(  62)			try {
+            	HX_STACKFRAME(&_hx_pos_c3da1ca762f50910_74_run)
+HXLINE(  75)		while(true){
+HXLINE(  75)			bool _hx_tmp;
+HXDLIN(  75)			if (!(!(this->completedCode))) {
+HXLINE(  75)				_hx_tmp = this->condition->run()->rawBool();
+            			}
+            			else {
+HXLINE(  75)				_hx_tmp = true;
+            			}
+HXDLIN(  75)			if (!(_hx_tmp)) {
+HXLINE(  75)				goto _hx_goto_4;
+            			}
+HXLINE(  76)			try {
             				HX_STACK_CATCHABLE( ::src::compiler::signals::LoopBreakSignal, 0);
             				HX_STACK_CATCHABLE( ::src::compiler::signals::LoopContinueSignal, 1);
-HXLINE(  63)				this->code->run();
+HXLINE(  77)				this->completedCode = false;
+HXLINE(  78)				this->code->run();
+HXLINE(  79)				this->completedCode = true;
             			}
             			catch( ::Dynamic _hx_e){
             				if (_hx_e.IsClass<  ::src::compiler::signals::LoopBreakSignal >() ){
             					HX_STACK_BEGIN_CATCH
             					 ::src::compiler::signals::LoopBreakSignal lpbreak = _hx_e;
-HXLINE(  65)					goto _hx_goto_2;
+HXLINE(  81)					goto _hx_goto_4;
             				}
             				else if (_hx_e.IsClass<  ::src::compiler::signals::LoopContinueSignal >() ){
             					HX_STACK_BEGIN_CATCH
             					 ::src::compiler::signals::LoopContinueSignal lpcont = _hx_e;
+HXLINE(  83)					this->completedCode = true;
             				}
             				else {
             					HX_STACK_DO_THROW(_hx_e);
             				}
             			}
             		}
-            		_hx_goto_2:;
-HXLINE(  70)		return null();
+            		_hx_goto_4:;
+HXLINE(  86)		return null();
             	}
 
 
 ::String WhileLoopCommand_obj::getName(){
-            	HX_STACKFRAME(&_hx_pos_c3da1ca762f50910_75_getName)
-HXDLIN(  75)		return HX_("ForLoopCommand",de,e6,e8,2e);
+            	HX_STACKFRAME(&_hx_pos_c3da1ca762f50910_91_getName)
+HXDLIN(  91)		return HX_("WhileLoopCommand",36,23,38,dc);
+            	}
+
+
+::String WhileLoopCommand_obj::getFriendlyName(){
+            	HX_STACKFRAME(&_hx_pos_c3da1ca762f50910_96_getFriendlyName)
+HXDLIN(  96)		return HX_("while loop",33,f1,04,2c);
             	}
 
 
  ::src::compiler::bytecode::Bytecode WhileLoopCommand_obj::getBytecode(){
-            	HX_STACKFRAME(&_hx_pos_c3da1ca762f50910_80_getBytecode)
-HXDLIN(  80)		::cpp::VirtualArray _hx_tmp = ::cpp::VirtualArray_obj::__new(2)->init(0,this->condition)->init(1,this->code);
-HXDLIN(  80)		return ::src::compiler::bytecode::Bytecode_obj::fromArray(_hx_tmp,this->getCodeID());
+            	HX_STACKFRAME(&_hx_pos_c3da1ca762f50910_101_getBytecode)
+HXDLIN( 101)		::cpp::VirtualArray _hx_tmp = ::cpp::VirtualArray_obj::__new(2)->init(0,this->condition)->init(1,this->code);
+HXDLIN( 101)		return ::src::compiler::bytecode::Bytecode_obj::fromArray(_hx_tmp,this->getCodeID());
             	}
 
 
 ::Array< ::Dynamic> WhileLoopCommand_obj::reconstruct(){
-            	HX_GC_STACKFRAME(&_hx_pos_c3da1ca762f50910_85_reconstruct)
-HXDLIN(  85)		 ::src::ast::base::KwdToken _hx_tmp =  ::src::ast::base::KwdToken_obj::__alloc( HX_CTX ,HX_("while",b1,43,bd,c9));
-HXDLIN(  85)		 ::src::ast::base::BracketToken _hx_tmp1 = ::src::ast::base::BracketToken_obj::fromRaw(this->condition->reconstruct());
-HXDLIN(  85)		return ::src::ast::Token_obj::merge(::cpp::VirtualArray_obj::__new(3)->init(0,_hx_tmp)->init(1,_hx_tmp1)->init(2,::src::ast::base::BlockToken_obj::fromRaw(this->code->reconstruct())));
+            	HX_GC_STACKFRAME(&_hx_pos_c3da1ca762f50910_106_reconstruct)
+HXDLIN( 106)		 ::src::ast::base::KwdToken _hx_tmp =  ::src::ast::base::KwdToken_obj::__alloc( HX_CTX ,HX_("while",b1,43,bd,c9));
+HXDLIN( 106)		 ::src::ast::base::BracketToken _hx_tmp1 = ::src::ast::base::BracketToken_obj::fromRaw(this->condition->reconstruct());
+HXDLIN( 106)		return ::src::ast::Token_obj::merge(::cpp::VirtualArray_obj::__new(3)->init(0,_hx_tmp)->init(1,_hx_tmp1)->init(2,::src::ast::base::BlockToken_obj::fromRaw(this->code->reconstruct())));
             	}
 
 
  ::src::compiler::commands::WhileLoopCommand WhileLoopCommand_obj::fromTokens( ::src::compiler::Scope scope,::Array< ::Dynamic> tokens){
-            	HX_GC_STACKFRAME(&_hx_pos_c3da1ca762f50910_22_fromTokens)
-HXLINE(  23)		if ((tokens->length == (int)0)) {
-HXLINE(  23)			HX_STACK_DO_THROW( ::src::compiler::signals::SyntaxErrorSignal_obj::__alloc( HX_CTX ,HX_("Empty command",98,14,47,aa)));
+            	HX_GC_STACKFRAME(&_hx_pos_c3da1ca762f50910_23_fromTokens)
+HXLINE(  24)		if ((tokens->length == (int)0)) {
+HXLINE(  24)			HX_STACK_DO_THROW( ::src::compiler::signals::SyntaxErrorSignal_obj::__alloc( HX_CTX ,HX_("Empty command",98,14,47,aa)));
             		}
-HXLINE(  25)		 ::src::ast::Token start = tokens->shift().StaticCast<  ::src::ast::Token >();
-HXLINE(  26)		bool _hx_tmp;
-HXDLIN(  26)		if ((start->getName() == HX_("KwdToken",c1,aa,4a,b9))) {
-HXLINE(  26)			_hx_tmp = hx::IsNotEq( start->getContent(),HX_("while",b1,43,bd,c9) );
-            		}
-            		else {
-HXLINE(  26)			_hx_tmp = true;
-            		}
-HXDLIN(  26)		if (_hx_tmp) {
-HXLINE(  26)			HX_STACK_DO_THROW( ::src::compiler::signals::SyntaxErrorSignal_obj::__alloc( HX_CTX ,HX_("Invalid for while command, for keyword must be at the start",ea,ca,47,9f)));
-            		}
-HXLINE(  28)		 ::src::ast::Token conditionToken = tokens->shift().StaticCast<  ::src::ast::Token >();
-HXLINE(  29)		if ((conditionToken->getName() != HX_("BracketToken",d1,67,c5,1e))) {
-HXLINE(  29)			HX_STACK_DO_THROW( ::src::compiler::signals::SyntaxErrorSignal_obj::__alloc( HX_CTX ,(HX_("Invalid while loop command, expected bracket found ",63,e7,b5,61) + conditionToken->getName())));
-            		}
-HXLINE(  30)		 ::src::compiler::commands::value::ValueCommand condition = ::src::compiler::commands::value::ValueCommand_obj::fromTokens(scope,( (::Array< ::Dynamic>)(conditionToken->getContent()) ));
-HXLINE(  32)		 ::src::compiler::commands::Command command;
-HXLINE(  33)		bool _hx_tmp1;
-HXDLIN(  33)		if ((tokens->length == (int)1)) {
-HXLINE(  33)			_hx_tmp1 = (tokens->__get((int)0).StaticCast<  ::src::ast::Token >()->getName() == HX_("BlockToken",8c,2a,40,e2));
+HXLINE(  26)		 ::src::ast::Token start = tokens->shift().StaticCast<  ::src::ast::Token >();
+HXLINE(  27)		bool _hx_tmp;
+HXDLIN(  27)		if ((start->getName() == HX_("KwdToken",c1,aa,4a,b9))) {
+HXLINE(  27)			_hx_tmp = hx::IsNotEq( start->getContent(),HX_("while",b1,43,bd,c9) );
             		}
             		else {
-HXLINE(  33)			_hx_tmp1 = false;
+HXLINE(  27)			_hx_tmp = true;
             		}
-HXDLIN(  33)		if (_hx_tmp1) {
-HXLINE(  34)			return  ::src::compiler::commands::WhileLoopCommand_obj::__alloc( HX_CTX ,scope,condition,::src::compiler::commands::LoopCodeCommand_obj::fromTokens(scope,( (::Array< ::Dynamic>)(tokens->__get((int)0).StaticCast<  ::src::ast::Token >()->getContent()) )));
+HXDLIN(  27)		if (_hx_tmp) {
+HXLINE(  27)			HX_STACK_DO_THROW( ::src::compiler::signals::SyntaxErrorSignal_obj::__alloc( HX_CTX ,HX_("Invalid for while command, for keyword must be at the start",ea,ca,47,9f)));
+            		}
+HXLINE(  29)		 ::src::ast::Token conditionToken = tokens->shift().StaticCast<  ::src::ast::Token >();
+HXLINE(  30)		if ((conditionToken->getName() != HX_("BracketToken",d1,67,c5,1e))) {
+HXLINE(  30)			HX_STACK_DO_THROW( ::src::compiler::signals::SyntaxErrorSignal_obj::__alloc( HX_CTX ,(HX_("Invalid while loop command, expected bracket found ",63,e7,b5,61) + conditionToken->getName())));
+            		}
+HXLINE(  31)		 ::src::compiler::commands::value::ValueCommand condition = ::src::compiler::commands::value::ValueCommand_obj::fromTokens(scope,( (::Array< ::Dynamic>)(conditionToken->getContent()) ));
+HXLINE(  33)		 ::src::compiler::commands::Command command;
+HXLINE(  34)		bool _hx_tmp1;
+HXDLIN(  34)		if ((tokens->length == (int)1)) {
+HXLINE(  34)			_hx_tmp1 = (tokens->__get((int)0).StaticCast<  ::src::ast::Token >()->getName() == HX_("BlockToken",8c,2a,40,e2));
             		}
             		else {
-HXLINE(  35)			if ((tokens->__get((tokens->length - (int)1)).StaticCast<  ::src::ast::Token >()->getName() == HX_("EndLineToken",2a,db,3a,32))) {
-HXLINE(  36)				return  ::src::compiler::commands::WhileLoopCommand_obj::__alloc( HX_CTX ,scope,condition,::src::compiler::commands::LoopCodeCommand_obj::fromTokens(scope,tokens));
+HXLINE(  34)			_hx_tmp1 = false;
+            		}
+HXDLIN(  34)		if (_hx_tmp1) {
+HXLINE(  35)			return  ::src::compiler::commands::WhileLoopCommand_obj::__alloc( HX_CTX ,scope,condition,::src::compiler::commands::LoopCodeCommand_obj::fromTokens(scope,( (::Array< ::Dynamic>)(tokens->__get((int)0).StaticCast<  ::src::ast::Token >()->getContent()) )));
+            		}
+            		else {
+HXLINE(  36)			if ((tokens->__get((tokens->length - (int)1)).StaticCast<  ::src::ast::Token >()->getName() == HX_("EndLineToken",2a,db,3a,32))) {
+HXLINE(  37)				return  ::src::compiler::commands::WhileLoopCommand_obj::__alloc( HX_CTX ,scope,condition,::src::compiler::commands::LoopCodeCommand_obj::fromTokens(scope,tokens));
             			}
             			else {
-HXLINE(  37)				HX_STACK_DO_THROW( ::src::compiler::signals::SyntaxErrorSignal_obj::__alloc( HX_CTX ,HX_("Invalid while loop syntax",27,a6,b6,e8)));
+HXLINE(  38)				HX_STACK_DO_THROW( ::src::compiler::signals::SyntaxErrorSignal_obj::__alloc( HX_CTX ,HX_("Invalid while loop syntax",27,a6,b6,e8)));
             			}
             		}
-HXLINE(  33)		return null();
+HXLINE(  34)		return null();
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(WhileLoopCommand_obj,fromTokens,return )
 
  ::src::compiler::commands::WhileLoopCommand WhileLoopCommand_obj::fromBytecode( ::src::compiler::Scope scope,::Array< ::Dynamic> arr){
-            	HX_GC_STACKFRAME(&_hx_pos_c3da1ca762f50910_42_fromBytecode)
-HXDLIN(  42)		 ::Dynamic _hx_tmp = arr->shift().StaticCast<  ::src::compiler::bytecode::Bytecode >()->convert(scope);
-HXDLIN(  42)		return  ::src::compiler::commands::WhileLoopCommand_obj::__alloc( HX_CTX ,scope,_hx_tmp,arr->shift().StaticCast<  ::src::compiler::bytecode::Bytecode >()->convert(scope));
+            	HX_GC_STACKFRAME(&_hx_pos_c3da1ca762f50910_43_fromBytecode)
+HXDLIN(  43)		 ::Dynamic _hx_tmp = arr->shift().StaticCast<  ::src::compiler::bytecode::Bytecode >()->convert(scope);
+HXDLIN(  43)		return  ::src::compiler::commands::WhileLoopCommand_obj::__alloc( HX_CTX ,scope,_hx_tmp,arr->shift().StaticCast<  ::src::compiler::bytecode::Bytecode >()->convert(scope));
             	}
 
 
@@ -218,6 +256,7 @@ void WhileLoopCommand_obj::__Mark(HX_MARK_PARAMS)
 	HX_MARK_BEGIN_CLASS(WhileLoopCommand);
 	HX_MARK_MEMBER_NAME(condition,"condition");
 	HX_MARK_MEMBER_NAME(code,"code");
+	HX_MARK_MEMBER_NAME(completedCode,"completedCode");
 	 ::src::compiler::commands::Command_obj::__Mark(HX_MARK_ARG);
 	HX_MARK_END_CLASS();
 }
@@ -226,6 +265,7 @@ void WhileLoopCommand_obj::__Visit(HX_VISIT_PARAMS)
 {
 	HX_VISIT_MEMBER_NAME(condition,"condition");
 	HX_VISIT_MEMBER_NAME(code,"code");
+	HX_VISIT_MEMBER_NAME(completedCode,"completedCode");
 	 ::src::compiler::commands::Command_obj::__Visit(HX_VISIT_ARG);
 }
 
@@ -237,10 +277,14 @@ hx::Val WhileLoopCommand_obj::__Field(const ::String &inName,hx::PropertyAccess 
 		break;
 	case 4:
 		if (HX_FIELD_EQ(inName,"code") ) { return hx::Val( code ); }
+		if (HX_FIELD_EQ(inName,"copy") ) { return hx::Val( copy_dyn() ); }
 		if (HX_FIELD_EQ(inName,"walk") ) { return hx::Val( walk_dyn() ); }
 		break;
 	case 7:
 		if (HX_FIELD_EQ(inName,"getName") ) { return hx::Val( getName_dyn() ); }
+		break;
+	case 8:
+		if (HX_FIELD_EQ(inName,"setScope") ) { return hx::Val( setScope_dyn() ); }
 		break;
 	case 9:
 		if (HX_FIELD_EQ(inName,"condition") ) { return hx::Val( condition ); }
@@ -248,6 +292,12 @@ hx::Val WhileLoopCommand_obj::__Field(const ::String &inName,hx::PropertyAccess 
 	case 11:
 		if (HX_FIELD_EQ(inName,"getBytecode") ) { return hx::Val( getBytecode_dyn() ); }
 		if (HX_FIELD_EQ(inName,"reconstruct") ) { return hx::Val( reconstruct_dyn() ); }
+		break;
+	case 13:
+		if (HX_FIELD_EQ(inName,"completedCode") ) { return hx::Val( completedCode ); }
+		break;
+	case 15:
+		if (HX_FIELD_EQ(inName,"getFriendlyName") ) { return hx::Val( getFriendlyName_dyn() ); }
 	}
 	return super::__Field(inName,inCallProp);
 }
@@ -272,6 +322,9 @@ hx::Val WhileLoopCommand_obj::__SetField(const ::String &inName,const hx::Val &i
 		break;
 	case 9:
 		if (HX_FIELD_EQ(inName,"condition") ) { condition=inValue.Cast<  ::src::compiler::commands::value::ValueCommand >(); return inValue; }
+		break;
+	case 13:
+		if (HX_FIELD_EQ(inName,"completedCode") ) { completedCode=inValue.Cast< bool >(); return inValue; }
 	}
 	return super::__SetField(inName,inValue,inCallProp);
 }
@@ -280,6 +333,7 @@ void WhileLoopCommand_obj::__GetFields(Array< ::String> &outFields)
 {
 	outFields->push(HX_HCSTRING("condition","\x9b","\xe9","\x33","\xfc"));
 	outFields->push(HX_HCSTRING("code","\x2d","\xb1","\xc4","\x41"));
+	outFields->push(HX_HCSTRING("completedCode","\x58","\xa0","\xed","\x03"));
 	super::__GetFields(outFields);
 };
 
@@ -287,6 +341,7 @@ void WhileLoopCommand_obj::__GetFields(Array< ::String> &outFields)
 static hx::StorageInfo WhileLoopCommand_obj_sMemberStorageInfo[] = {
 	{hx::fsObject /*::src::compiler::commands::value::ValueCommand*/ ,(int)offsetof(WhileLoopCommand_obj,condition),HX_HCSTRING("condition","\x9b","\xe9","\x33","\xfc")},
 	{hx::fsObject /*::src::compiler::commands::Command*/ ,(int)offsetof(WhileLoopCommand_obj,code),HX_HCSTRING("code","\x2d","\xb1","\xc4","\x41")},
+	{hx::fsBool,(int)offsetof(WhileLoopCommand_obj,completedCode),HX_HCSTRING("completedCode","\x58","\xa0","\xed","\x03")},
 	{ hx::fsUnknown, 0, null()}
 };
 static hx::StaticInfo *WhileLoopCommand_obj_sStaticStorageInfo = 0;
@@ -295,9 +350,13 @@ static hx::StaticInfo *WhileLoopCommand_obj_sStaticStorageInfo = 0;
 static ::String WhileLoopCommand_obj_sMemberFields[] = {
 	HX_HCSTRING("condition","\x9b","\xe9","\x33","\xfc"),
 	HX_HCSTRING("code","\x2d","\xb1","\xc4","\x41"),
+	HX_HCSTRING("completedCode","\x58","\xa0","\xed","\x03"),
+	HX_HCSTRING("copy","\xb5","\xbb","\xc4","\x41"),
+	HX_HCSTRING("setScope","\x92","\xda","\x0d","\x87"),
 	HX_HCSTRING("walk","\x09","\x5d","\xf2","\x4e"),
 	HX_HCSTRING("run","\x4b","\xe7","\x56","\x00"),
 	HX_HCSTRING("getName","\x01","\x22","\x82","\x1b"),
+	HX_HCSTRING("getFriendlyName","\x0c","\x92","\xf4","\xaf"),
 	HX_HCSTRING("getBytecode","\xeb","\xb6","\x8b","\x7d"),
 	HX_HCSTRING("reconstruct","\x04","\x66","\x1a","\x90"),
 	::String(null()) };

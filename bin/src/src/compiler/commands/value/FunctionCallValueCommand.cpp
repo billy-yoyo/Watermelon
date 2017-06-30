@@ -78,11 +78,14 @@
 #endif
 
 HX_DEFINE_STACK_FRAME(_hx_pos_378f1ce6cb88ec27_79_new,"src.compiler.commands.value.FunctionCallValueCommand","new",0xd54c9360,"src.compiler.commands.value.FunctionCallValueCommand.new","src/compiler/commands/value/FunctionCallValueCommand.hx",79,0x6f3c406e)
-HX_LOCAL_STACK_FRAME(_hx_pos_378f1ce6cb88ec27_88_walk,"src.compiler.commands.value.FunctionCallValueCommand","walk",0xd3a43a09,"src.compiler.commands.value.FunctionCallValueCommand.walk","src/compiler/commands/value/FunctionCallValueCommand.hx",88,0x6f3c406e)
-HX_LOCAL_STACK_FRAME(_hx_pos_378f1ce6cb88ec27_97_run,"src.compiler.commands.value.FunctionCallValueCommand","run",0xd54faa4b,"src.compiler.commands.value.FunctionCallValueCommand.run","src/compiler/commands/value/FunctionCallValueCommand.hx",97,0x6f3c406e)
-HX_LOCAL_STACK_FRAME(_hx_pos_378f1ce6cb88ec27_148_getName,"src.compiler.commands.value.FunctionCallValueCommand","getName",0xef986501,"src.compiler.commands.value.FunctionCallValueCommand.getName","src/compiler/commands/value/FunctionCallValueCommand.hx",148,0x6f3c406e)
-HX_LOCAL_STACK_FRAME(_hx_pos_378f1ce6cb88ec27_152_getBytecode,"src.compiler.commands.value.FunctionCallValueCommand","getBytecode",0xed7f79eb,"src.compiler.commands.value.FunctionCallValueCommand.getBytecode","src/compiler/commands/value/FunctionCallValueCommand.hx",152,0x6f3c406e)
-HX_LOCAL_STACK_FRAME(_hx_pos_378f1ce6cb88ec27_164_reconstruct,"src.compiler.commands.value.FunctionCallValueCommand","reconstruct",0x000e2904,"src.compiler.commands.value.FunctionCallValueCommand.reconstruct","src/compiler/commands/value/FunctionCallValueCommand.hx",164,0x6f3c406e)
+HX_LOCAL_STACK_FRAME(_hx_pos_378f1ce6cb88ec27_88_copy,"src.compiler.commands.value.FunctionCallValueCommand","copy",0xc67698b5,"src.compiler.commands.value.FunctionCallValueCommand.copy","src/compiler/commands/value/FunctionCallValueCommand.hx",88,0x6f3c406e)
+HX_LOCAL_STACK_FRAME(_hx_pos_378f1ce6cb88ec27_97_setScope,"src.compiler.commands.value.FunctionCallValueCommand","setScope",0x46723792,"src.compiler.commands.value.FunctionCallValueCommand.setScope","src/compiler/commands/value/FunctionCallValueCommand.hx",97,0x6f3c406e)
+HX_LOCAL_STACK_FRAME(_hx_pos_378f1ce6cb88ec27_105_walk,"src.compiler.commands.value.FunctionCallValueCommand","walk",0xd3a43a09,"src.compiler.commands.value.FunctionCallValueCommand.walk","src/compiler/commands/value/FunctionCallValueCommand.hx",105,0x6f3c406e)
+HX_LOCAL_STACK_FRAME(_hx_pos_378f1ce6cb88ec27_114_run,"src.compiler.commands.value.FunctionCallValueCommand","run",0xd54faa4b,"src.compiler.commands.value.FunctionCallValueCommand.run","src/compiler/commands/value/FunctionCallValueCommand.hx",114,0x6f3c406e)
+HX_LOCAL_STACK_FRAME(_hx_pos_378f1ce6cb88ec27_167_getName,"src.compiler.commands.value.FunctionCallValueCommand","getName",0xef986501,"src.compiler.commands.value.FunctionCallValueCommand.getName","src/compiler/commands/value/FunctionCallValueCommand.hx",167,0x6f3c406e)
+HX_LOCAL_STACK_FRAME(_hx_pos_378f1ce6cb88ec27_171_getFriendlyName,"src.compiler.commands.value.FunctionCallValueCommand","getFriendlyName",0xb885d50c,"src.compiler.commands.value.FunctionCallValueCommand.getFriendlyName","src/compiler/commands/value/FunctionCallValueCommand.hx",171,0x6f3c406e)
+HX_LOCAL_STACK_FRAME(_hx_pos_378f1ce6cb88ec27_177_getBytecode,"src.compiler.commands.value.FunctionCallValueCommand","getBytecode",0xed7f79eb,"src.compiler.commands.value.FunctionCallValueCommand.getBytecode","src/compiler/commands/value/FunctionCallValueCommand.hx",177,0x6f3c406e)
+HX_LOCAL_STACK_FRAME(_hx_pos_378f1ce6cb88ec27_189_reconstruct,"src.compiler.commands.value.FunctionCallValueCommand","reconstruct",0x000e2904,"src.compiler.commands.value.FunctionCallValueCommand.reconstruct","src/compiler/commands/value/FunctionCallValueCommand.hx",189,0x6f3c406e)
 HX_LOCAL_STACK_FRAME(_hx_pos_378f1ce6cb88ec27_31_getArgumentFromBytes,"src.compiler.commands.value.FunctionCallValueCommand","getArgumentFromBytes",0xcf7a3fee,"src.compiler.commands.value.FunctionCallValueCommand.getArgumentFromBytes","src/compiler/commands/value/FunctionCallValueCommand.hx",31,0x6f3c406e)
 HX_LOCAL_STACK_FRAME(_hx_pos_378f1ce6cb88ec27_35_fromTokens,"src.compiler.commands.value.FunctionCallValueCommand","fromTokens",0x7c20b964,"src.compiler.commands.value.FunctionCallValueCommand.fromTokens","src/compiler/commands/value/FunctionCallValueCommand.hx",35,0x6f3c406e)
 HX_LOCAL_STACK_FRAME(_hx_pos_378f1ce6cb88ec27_72_fromBytecode,"src.compiler.commands.value.FunctionCallValueCommand","fromBytecode",0x7d05acbf,"src.compiler.commands.value.FunctionCallValueCommand.fromBytecode","src/compiler/commands/value/FunctionCallValueCommand.hx",72,0x6f3c406e)
@@ -125,210 +128,272 @@ bool FunctionCallValueCommand_obj::_hx_isInstanceOf(int inClassId) {
 	}
 }
 
-::Array< ::Dynamic> FunctionCallValueCommand_obj::walk(){
-            	HX_STACKFRAME(&_hx_pos_378f1ce6cb88ec27_88_walk)
-HXLINE(  89)		::Array< ::Dynamic> cmds = ::Array_obj< ::Dynamic>::__new();
-HXLINE(  90)		{
-HXLINE(  90)			 ::Dynamic arg = this->kwdArgs->iterator();
-HXDLIN(  90)			while(( (bool)(arg->__Field(HX_("hasNext",6d,a5,46,18),hx::paccDynamic)()) )){
-HXLINE(  90)				 ::src::compiler::commands::value::Argument arg1 = ( ( ::src::compiler::commands::value::Argument)(arg->__Field(HX_("next",f3,84,02,49),hx::paccDynamic)()) );
-HXDLIN(  90)				cmds->push(arg1);
-            			}
-            		}
+ ::src::compiler::commands::Command FunctionCallValueCommand_obj::copy( ::src::compiler::Scope scope){
+            	HX_GC_STACKFRAME(&_hx_pos_378f1ce6cb88ec27_88_copy)
+HXLINE(  89)		::Array< ::Dynamic> newArgs = ::Array_obj< ::Dynamic>::__new();
+HXLINE(  90)		 ::haxe::ds::StringMap newKwdArgs =  ::haxe::ds::StringMap_obj::__alloc( HX_CTX );
 HXLINE(  91)		{
 HXLINE(  91)			int _g = (int)0;
 HXDLIN(  91)			::Array< ::Dynamic> _g1 = this->args;
 HXDLIN(  91)			while((_g < _g1->length)){
-HXLINE(  91)				 ::src::compiler::commands::value::Argument arg2 = _g1->__get(_g).StaticCast<  ::src::compiler::commands::value::Argument >();
+HXLINE(  91)				 ::src::compiler::commands::value::Argument arg = _g1->__get(_g).StaticCast<  ::src::compiler::commands::value::Argument >();
 HXDLIN(  91)				_g = (_g + (int)1);
-HXDLIN(  91)				cmds->push(arg2);
+HXDLIN(  91)				newArgs->push(arg->copy(scope));
             			}
             		}
-HXLINE(  92)		cmds->push(this->func);
-HXLINE(  93)		return cmds;
+HXLINE(  92)		{
+HXLINE(  92)			 ::Dynamic kwd = this->kwdArgs->keys();
+HXDLIN(  92)			while(( (bool)(kwd->__Field(HX_("hasNext",6d,a5,46,18),hx::paccDynamic)()) )){
+HXLINE(  92)				::String kwd1 = ( (::String)(kwd->__Field(HX_("next",f3,84,02,49),hx::paccDynamic)()) );
+HXDLIN(  92)				newKwdArgs->set(kwd1,this->kwdArgs->get(kwd1).StaticCast<  ::src::compiler::commands::value::Argument >()->copy(scope));
+            			}
+            		}
+HXLINE(  93)		return  ::src::compiler::commands::value::FunctionCallValueCommand_obj::__alloc( HX_CTX ,scope,this->func->copy(scope),newArgs,newKwdArgs);
             	}
 
 
- ::src::compiler::object::Object FunctionCallValueCommand_obj::run(){
-            	HX_GC_STACKFRAME(&_hx_pos_378f1ce6cb88ec27_97_run)
-HXLINE(  98)		::Array< ::Dynamic> args = ::Array_obj< ::Dynamic>::__new();
-HXLINE(  99)		 ::src::compiler::object::Object iter;
+void FunctionCallValueCommand_obj::setScope( ::src::compiler::Scope scope){
+            	HX_STACKFRAME(&_hx_pos_378f1ce6cb88ec27_97_setScope)
+HXLINE(  98)		this->super::setScope(scope);
+HXLINE(  99)		this->func->setScope(scope);
 HXLINE( 100)		{
 HXLINE( 100)			int _g = (int)0;
 HXDLIN( 100)			::Array< ::Dynamic> _g1 = this->args;
 HXDLIN( 100)			while((_g < _g1->length)){
 HXLINE( 100)				 ::src::compiler::commands::value::Argument arg = _g1->__get(_g).StaticCast<  ::src::compiler::commands::value::Argument >();
 HXDLIN( 100)				_g = (_g + (int)1);
-HXLINE( 101)				if (arg->collapsed) {
-HXLINE( 102)					iter = arg->value->run();
-HXLINE( 104)					bool _hx_tmp;
-HXDLIN( 104)					if (iter->hasMember(HX_("__next__",f3,a5,93,1a))) {
-HXLINE( 104)						_hx_tmp = iter->hasMember(HX_("__hasnext__",8d,c2,e4,ac));
+HXDLIN( 100)				arg->setScope(scope);
+            			}
+            		}
+HXLINE( 101)		{
+HXLINE( 101)			 ::Dynamic arg1 = this->kwdArgs->iterator();
+HXDLIN( 101)			while(( (bool)(arg1->__Field(HX_("hasNext",6d,a5,46,18),hx::paccDynamic)()) )){
+HXLINE( 101)				 ::src::compiler::commands::value::Argument arg2 = ( ( ::src::compiler::commands::value::Argument)(arg1->__Field(HX_("next",f3,84,02,49),hx::paccDynamic)()) );
+HXDLIN( 101)				arg2->setScope(scope);
+            			}
+            		}
+            	}
+
+
+::Array< ::Dynamic> FunctionCallValueCommand_obj::walk(){
+            	HX_STACKFRAME(&_hx_pos_378f1ce6cb88ec27_105_walk)
+HXLINE( 106)		::Array< ::Dynamic> cmds = ::Array_obj< ::Dynamic>::__new();
+HXLINE( 107)		{
+HXLINE( 107)			 ::Dynamic arg = this->kwdArgs->iterator();
+HXDLIN( 107)			while(( (bool)(arg->__Field(HX_("hasNext",6d,a5,46,18),hx::paccDynamic)()) )){
+HXLINE( 107)				 ::src::compiler::commands::value::Argument arg1 = ( ( ::src::compiler::commands::value::Argument)(arg->__Field(HX_("next",f3,84,02,49),hx::paccDynamic)()) );
+HXDLIN( 107)				cmds->push(arg1);
+            			}
+            		}
+HXLINE( 108)		{
+HXLINE( 108)			int _g = (int)0;
+HXDLIN( 108)			::Array< ::Dynamic> _g1 = this->args;
+HXDLIN( 108)			while((_g < _g1->length)){
+HXLINE( 108)				 ::src::compiler::commands::value::Argument arg2 = _g1->__get(_g).StaticCast<  ::src::compiler::commands::value::Argument >();
+HXDLIN( 108)				_g = (_g + (int)1);
+HXDLIN( 108)				cmds->push(arg2);
+            			}
+            		}
+HXLINE( 109)		cmds->push(this->func);
+HXLINE( 110)		return cmds;
+            	}
+
+
+ ::src::compiler::object::Object FunctionCallValueCommand_obj::run(){
+            	HX_GC_STACKFRAME(&_hx_pos_378f1ce6cb88ec27_114_run)
+HXLINE( 115)		::Array< ::Dynamic> args = ::Array_obj< ::Dynamic>::__new();
+HXLINE( 116)		 ::src::compiler::object::Object iter;
+HXLINE( 117)		{
+HXLINE( 117)			int _g = (int)0;
+HXDLIN( 117)			::Array< ::Dynamic> _g1 = this->args;
+HXDLIN( 117)			while((_g < _g1->length)){
+HXLINE( 117)				 ::src::compiler::commands::value::Argument arg = _g1->__get(_g).StaticCast<  ::src::compiler::commands::value::Argument >();
+HXDLIN( 117)				_g = (_g + (int)1);
+HXLINE( 118)				if (arg->collapsed) {
+HXLINE( 119)					iter = arg->value->run();
+HXLINE( 121)					bool _hx_tmp;
+HXDLIN( 121)					if (iter->hasMember(HX_("__next__",f3,a5,93,1a))) {
+HXLINE( 121)						_hx_tmp = iter->hasMember(HX_("__hasnext__",8d,c2,e4,ac));
             					}
             					else {
-HXLINE( 104)						_hx_tmp = false;
+HXLINE( 121)						_hx_tmp = false;
             					}
-HXDLIN( 104)					if (!(_hx_tmp)) {
-HXLINE( 105)						bool _hx_tmp1;
-HXDLIN( 105)						bool _hx_tmp2;
-HXDLIN( 105)						if (!(iter->isInstance(HX_("TupleType",c2,3e,8e,1a)))) {
-HXLINE( 105)							_hx_tmp2 = iter->isInstance(HX_("ListType",58,7e,af,06));
+HXDLIN( 121)					if (!(_hx_tmp)) {
+HXLINE( 122)						bool _hx_tmp1;
+HXDLIN( 122)						bool _hx_tmp2;
+HXDLIN( 122)						if (!(iter->isInstance(HX_("TupleType",c2,3e,8e,1a)))) {
+HXLINE( 122)							_hx_tmp2 = iter->isInstance(HX_("ListType",58,7e,af,06));
             						}
             						else {
-HXLINE( 105)							_hx_tmp2 = true;
+HXLINE( 122)							_hx_tmp2 = true;
             						}
-HXDLIN( 105)						if (!(_hx_tmp2)) {
-HXLINE( 105)							_hx_tmp1 = iter->hasMember(HX_("__iter__",58,f9,3c,b1));
-            						}
-            						else {
-HXLINE( 105)							_hx_tmp1 = true;
-            						}
-HXDLIN( 105)						if (_hx_tmp1) {
-HXLINE( 106)							iter = iter->iter();
+HXDLIN( 122)						if (!(_hx_tmp2)) {
+HXLINE( 122)							_hx_tmp1 = iter->hasMember(HX_("__iter__",58,f9,3c,b1));
             						}
             						else {
-HXLINE( 108)							HX_STACK_DO_THROW( ::src::compiler::signals::InvalidArgumentSignal_obj::__alloc( HX_CTX ,HX_("Cannot collapse a non-iterable",a7,99,c7,5d)));
+HXLINE( 122)							_hx_tmp1 = true;
+            						}
+HXDLIN( 122)						if (_hx_tmp1) {
+HXLINE( 123)							iter = iter->iter();
+            						}
+            						else {
+HXLINE( 125)							HX_STACK_DO_THROW( ::src::compiler::signals::InvalidArgumentSignal_obj::__alloc( HX_CTX ,HX_("Cannot collapse a non-iterable",a7,99,c7,5d)));
             						}
             					}
-HXLINE( 111)					 ::src::compiler::object::Object obj;
-HXLINE( 112)					while(iter->hasNext()->rawBool()){
-HXLINE( 113)						obj = iter->next();
-HXLINE( 114)						args->push(obj);
+HXLINE( 128)					 ::src::compiler::object::Object obj;
+HXLINE( 129)					while(iter->hasNext()->rawBool()){
+HXLINE( 130)						obj = iter->next();
+HXLINE( 131)						args->push(obj);
             					}
             				}
             				else {
-HXLINE( 117)					args->push(arg->value->run());
+HXLINE( 134)					args->push(arg->value->run());
             				}
             			}
             		}
-HXLINE( 120)		 ::src::compiler::commands::value::Argument arg1;
-HXDLIN( 120)		 ::src::compiler::object::Object map;
-HXLINE( 121)		{
-HXLINE( 121)			 ::Dynamic key = this->kwdArgs->keys();
-HXDLIN( 121)			while(( (bool)(key->__Field(HX_("hasNext",6d,a5,46,18),hx::paccDynamic)()) )){
-HXLINE( 121)				::String key1 = ( (::String)(key->__Field(HX_("next",f3,84,02,49),hx::paccDynamic)()) );
-HXLINE( 122)				arg1 = this->kwdArgs->get(key1).StaticCast<  ::src::compiler::commands::value::Argument >();
-HXLINE( 123)				if (arg1->collapsed) {
-HXLINE( 124)					map = arg1->value->run();
-HXLINE( 125)					if (!(map->hasMember(HX_("__get__",16,fe,be,fb)))) {
-HXLINE( 125)						HX_STACK_DO_THROW( ::src::compiler::signals::InvalidArgumentSignal_obj::__alloc( HX_CTX ,HX_("Cannot collapse a non-map",c7,f3,83,e0)));
+HXLINE( 137)		 ::src::compiler::commands::value::Argument arg1;
+HXDLIN( 137)		 ::src::compiler::object::Object map;
+HXLINE( 138)		{
+HXLINE( 138)			 ::Dynamic key = this->kwdArgs->keys();
+HXDLIN( 138)			while(( (bool)(key->__Field(HX_("hasNext",6d,a5,46,18),hx::paccDynamic)()) )){
+HXLINE( 138)				::String key1 = ( (::String)(key->__Field(HX_("next",f3,84,02,49),hx::paccDynamic)()) );
+HXLINE( 139)				arg1 = this->kwdArgs->get(key1).StaticCast<  ::src::compiler::commands::value::Argument >();
+HXLINE( 140)				if (arg1->collapsed) {
+HXLINE( 141)					map = arg1->value->run();
+HXLINE( 142)					if (!(map->hasMember(HX_("__get__",16,fe,be,fb)))) {
+HXLINE( 142)						HX_STACK_DO_THROW( ::src::compiler::signals::InvalidArgumentSignal_obj::__alloc( HX_CTX ,HX_("Cannot collapse a non-map",c7,f3,83,e0)));
             					}
-HXLINE( 126)					iter = map;
-HXLINE( 127)					bool _hx_tmp3;
-HXDLIN( 127)					if (iter->hasMember(HX_("__next__",f3,a5,93,1a))) {
-HXLINE( 127)						_hx_tmp3 = iter->hasMember(HX_("__hasnext__",8d,c2,e4,ac));
+HXLINE( 143)					iter = map;
+HXLINE( 144)					bool _hx_tmp3;
+HXDLIN( 144)					if (iter->hasMember(HX_("__next__",f3,a5,93,1a))) {
+HXLINE( 144)						_hx_tmp3 = iter->hasMember(HX_("__hasnext__",8d,c2,e4,ac));
             					}
             					else {
-HXLINE( 127)						_hx_tmp3 = false;
+HXLINE( 144)						_hx_tmp3 = false;
             					}
-HXDLIN( 127)					if (!(_hx_tmp3)) {
-HXLINE( 128)						bool _hx_tmp4;
-HXDLIN( 128)						if (!(iter->isInstance(HX_("MapType",56,cf,55,ff)))) {
-HXLINE( 128)							_hx_tmp4 = iter->hasMember(HX_("__iter__",58,f9,3c,b1));
+HXDLIN( 144)					if (!(_hx_tmp3)) {
+HXLINE( 145)						bool _hx_tmp4;
+HXDLIN( 145)						if (!(iter->isInstance(HX_("MapType",56,cf,55,ff)))) {
+HXLINE( 145)							_hx_tmp4 = iter->hasMember(HX_("__iter__",58,f9,3c,b1));
             						}
             						else {
-HXLINE( 128)							_hx_tmp4 = true;
+HXLINE( 145)							_hx_tmp4 = true;
             						}
-HXDLIN( 128)						if (_hx_tmp4) {
-HXLINE( 129)							iter = iter->iter();
+HXDLIN( 145)						if (_hx_tmp4) {
+HXLINE( 146)							iter = iter->iter();
             						}
             						else {
-HXLINE( 131)							HX_STACK_DO_THROW( ::src::compiler::signals::InvalidArgumentSignal_obj::__alloc( HX_CTX ,HX_("Cannot kwd-collapse a non-map or non-iterable",ab,e1,f2,7b)));
+HXLINE( 148)							HX_STACK_DO_THROW( ::src::compiler::signals::InvalidArgumentSignal_obj::__alloc( HX_CTX ,HX_("Cannot kwd-collapse a non-map or non-iterable",ab,e1,f2,7b)));
             						}
             					}
-HXLINE( 133)					 ::src::compiler::object::Object key2;
-HXLINE( 134)					while(iter->hasNext()->rawBool()){
-HXLINE( 135)						key2 = iter->next();
-HXLINE( 136)						 ::src::compiler::object::ObjectType _hx_tmp5 = this->scope->getType(HX_("PairType",14,cc,6e,78),null());
-HXDLIN( 136)						::String _hx_tmp6 = key2->rawString();
-HXDLIN( 136)						args->push(_hx_tmp5->createValue(::src::compiler::object::builtin::PairObject_obj::createPair(_hx_tmp6,map->get(key2)),null()));
+HXLINE( 150)					 ::src::compiler::object::Object key2;
+HXLINE( 151)					while(iter->hasNext()->rawBool()){
+HXLINE( 152)						key2 = iter->next();
+HXLINE( 153)						 ::src::compiler::object::ObjectType _hx_tmp5 = this->scope->getType(HX_("PairType",14,cc,6e,78),null());
+HXDLIN( 153)						::String _hx_tmp6 = key2->rawString();
+HXDLIN( 153)						 ::src::compiler::object::builtin::_PairObject::Pair _hx_tmp7 = ::src::compiler::object::builtin::PairObject_obj::createPair(_hx_tmp6,map->get(key2));
+HXDLIN( 153)						args->push(_hx_tmp5->createValue(_hx_tmp7,this->scope,null()));
             					}
             				}
             				else {
-HXLINE( 139)					 ::src::compiler::object::ObjectType _hx_tmp7 = this->scope->getType(HX_("PairType",14,cc,6e,78),null());
-HXDLIN( 139)					args->push(_hx_tmp7->createValue(::src::compiler::object::builtin::PairObject_obj::createPair(key1,arg1->value->run()),null()));
+HXLINE( 156)					 ::src::compiler::object::ObjectType _hx_tmp8 = this->scope->getType(HX_("PairType",14,cc,6e,78),null());
+HXDLIN( 156)					 ::src::compiler::object::builtin::_PairObject::Pair _hx_tmp9 = ::src::compiler::object::builtin::PairObject_obj::createPair(key1,arg1->value->run());
+HXDLIN( 156)					args->push(_hx_tmp8->createValue(_hx_tmp9,this->scope,null()));
             				}
             			}
             		}
-HXLINE( 142)		 ::src::compiler::object::Object fobj = this->func->getVariable();
-HXLINE( 143)		return fobj->call(args);
+HXLINE( 159)		 ::src::compiler::object::Object fobj = this->func->getVariable();
+HXLINE( 160)		 ::src::compiler::object::Object result = fobj->call(args);
+HXLINE( 161)		if (hx::IsNotNull( result )) {
+HXLINE( 161)			result->setScope(this->scope);
+            		}
+HXLINE( 162)		return result;
             	}
 
 
 ::String FunctionCallValueCommand_obj::getName(){
-            	HX_STACKFRAME(&_hx_pos_378f1ce6cb88ec27_148_getName)
-HXDLIN( 148)		return HX_("FunctionCallValueCommand",f0,66,19,6a);
+            	HX_STACKFRAME(&_hx_pos_378f1ce6cb88ec27_167_getName)
+HXDLIN( 167)		return HX_("FunctionCallValueCommand",f0,66,19,6a);
+            	}
+
+
+::String FunctionCallValueCommand_obj::getFriendlyName(){
+            	HX_STACKFRAME(&_hx_pos_378f1ce6cb88ec27_171_getFriendlyName)
+HXLINE( 172)		if (hx::IsNull( this->func )) {
+HXLINE( 172)			return HX_("function call null",41,8e,92,cd);
+            		}
+HXLINE( 173)		return (HX_("function call ",ba,0a,af,e6) + this->func->getReconstructedString());
             	}
 
 
  ::src::compiler::bytecode::Bytecode FunctionCallValueCommand_obj::getBytecode(){
-            	HX_STACKFRAME(&_hx_pos_378f1ce6cb88ec27_152_getBytecode)
-HXLINE( 153)		bool containsValues = false;
-HXLINE( 154)		{
-HXLINE( 154)			 ::Dynamic v = this->kwdArgs->iterator();
-HXDLIN( 154)			while(( (bool)(v->__Field(HX_("hasNext",6d,a5,46,18),hx::paccDynamic)()) )){
-HXLINE( 154)				 ::src::compiler::commands::value::Argument v1 = ( ( ::src::compiler::commands::value::Argument)(v->__Field(HX_("next",f3,84,02,49),hx::paccDynamic)()) );
-HXLINE( 155)				containsValues = true;
-HXLINE( 156)				goto _hx_goto_10;
+            	HX_STACKFRAME(&_hx_pos_378f1ce6cb88ec27_177_getBytecode)
+HXLINE( 178)		bool containsValues = false;
+HXLINE( 179)		{
+HXLINE( 179)			 ::Dynamic v = this->kwdArgs->iterator();
+HXDLIN( 179)			while(( (bool)(v->__Field(HX_("hasNext",6d,a5,46,18),hx::paccDynamic)()) )){
+HXLINE( 179)				 ::src::compiler::commands::value::Argument v1 = ( ( ::src::compiler::commands::value::Argument)(v->__Field(HX_("next",f3,84,02,49),hx::paccDynamic)()) );
+HXLINE( 180)				containsValues = true;
+HXLINE( 181)				goto _hx_goto_17;
             			}
-            			_hx_goto_10:;
+            			_hx_goto_17:;
             		}
-HXLINE( 158)		 ::haxe::ds::StringMap map = null();
-HXLINE( 159)		if (containsValues) {
-HXLINE( 159)			map = this->kwdArgs;
+HXLINE( 183)		 ::haxe::ds::StringMap map = null();
+HXLINE( 184)		if (containsValues) {
+HXLINE( 184)			map = this->kwdArgs;
             		}
-HXLINE( 160)		::cpp::VirtualArray _hx_tmp = ::cpp::VirtualArray_obj::__new(3)->init(0,this->func)->init(1,this->args)->init(2,map);
-HXDLIN( 160)		return ::src::compiler::bytecode::Bytecode_obj::fromArray(_hx_tmp,this->getCodeID());
+HXLINE( 185)		::cpp::VirtualArray _hx_tmp = ::cpp::VirtualArray_obj::__new(3)->init(0,this->func)->init(1,this->args)->init(2,map);
+HXDLIN( 185)		return ::src::compiler::bytecode::Bytecode_obj::fromArray(_hx_tmp,this->getCodeID());
             	}
 
 
 ::Array< ::Dynamic> FunctionCallValueCommand_obj::reconstruct(){
-            	HX_GC_STACKFRAME(&_hx_pos_378f1ce6cb88ec27_164_reconstruct)
-HXLINE( 165)		::Array< ::Dynamic> argTokens = ::Array_obj< ::Dynamic>::__new();
-HXDLIN( 165)		::Array< ::Dynamic> tokens;
-HXLINE( 166)		{
-HXLINE( 166)			int _g = (int)0;
-HXDLIN( 166)			::Array< ::Dynamic> _g1 = this->args;
-HXDLIN( 166)			while((_g < _g1->length)){
-HXLINE( 166)				 ::src::compiler::commands::value::Argument arg = _g1->__get(_g).StaticCast<  ::src::compiler::commands::value::Argument >();
-HXDLIN( 166)				_g = (_g + (int)1);
-HXLINE( 167)				tokens = arg->value->reconstruct();
-HXLINE( 168)				if (arg->collapsed) {
-HXLINE( 168)					tokens->insert((int)0, ::src::ast::maths::MathsOperatorToken_obj::__alloc( HX_CTX ,HX_("*",2a,00,00,00)));
+            	HX_GC_STACKFRAME(&_hx_pos_378f1ce6cb88ec27_189_reconstruct)
+HXLINE( 190)		::Array< ::Dynamic> argTokens = ::Array_obj< ::Dynamic>::__new();
+HXDLIN( 190)		::Array< ::Dynamic> tokens;
+HXLINE( 191)		{
+HXLINE( 191)			int _g = (int)0;
+HXDLIN( 191)			::Array< ::Dynamic> _g1 = this->args;
+HXDLIN( 191)			while((_g < _g1->length)){
+HXLINE( 191)				 ::src::compiler::commands::value::Argument arg = _g1->__get(_g).StaticCast<  ::src::compiler::commands::value::Argument >();
+HXDLIN( 191)				_g = (_g + (int)1);
+HXLINE( 192)				tokens = arg->value->reconstruct();
+HXLINE( 193)				if (arg->collapsed) {
+HXLINE( 193)					tokens->insert((int)0, ::src::ast::maths::MathsOperatorToken_obj::__alloc( HX_CTX ,HX_("*",2a,00,00,00)));
             				}
-HXLINE( 169)				tokens->push( ::src::ast::base::CommaToken_obj::__alloc( HX_CTX ,HX_(",",2c,00,00,00)));
-HXLINE( 170)				argTokens->push(tokens);
+HXLINE( 194)				tokens->push( ::src::ast::base::CommaToken_obj::__alloc( HX_CTX ,HX_(",",2c,00,00,00)));
+HXLINE( 195)				argTokens->push(tokens);
             			}
             		}
-HXLINE( 172)		 ::src::compiler::commands::value::Argument arg1;
-HXLINE( 173)		{
-HXLINE( 173)			 ::Dynamic key = this->kwdArgs->keys();
-HXDLIN( 173)			while(( (bool)(key->__Field(HX_("hasNext",6d,a5,46,18),hx::paccDynamic)()) )){
-HXLINE( 173)				::String key1 = ( (::String)(key->__Field(HX_("next",f3,84,02,49),hx::paccDynamic)()) );
-HXLINE( 174)				arg1 = this->kwdArgs->get(key1).StaticCast<  ::src::compiler::commands::value::Argument >();
-HXLINE( 175)				tokens = arg1->value->reconstruct();
-HXLINE( 176)				if (arg1->collapsed) {
-HXLINE( 176)					tokens->insert((int)0, ::src::ast::maths::MathsOperatorToken_obj::__alloc( HX_CTX ,HX_("**",c0,24,00,00)));
+HXLINE( 197)		 ::src::compiler::commands::value::Argument arg1;
+HXLINE( 198)		{
+HXLINE( 198)			 ::Dynamic key = this->kwdArgs->keys();
+HXDLIN( 198)			while(( (bool)(key->__Field(HX_("hasNext",6d,a5,46,18),hx::paccDynamic)()) )){
+HXLINE( 198)				::String key1 = ( (::String)(key->__Field(HX_("next",f3,84,02,49),hx::paccDynamic)()) );
+HXLINE( 199)				arg1 = this->kwdArgs->get(key1).StaticCast<  ::src::compiler::commands::value::Argument >();
+HXLINE( 200)				tokens = arg1->value->reconstruct();
+HXLINE( 201)				if (arg1->collapsed) {
+HXLINE( 201)					tokens->insert((int)0, ::src::ast::maths::MathsOperatorToken_obj::__alloc( HX_CTX ,HX_("**",c0,24,00,00)));
             				}
-HXLINE( 177)				tokens->insert((int)0, ::src::ast::base::VariableToken_obj::__alloc( HX_CTX ,key1));
-HXLINE( 178)				tokens->insert((int)0, ::src::ast::script::AssignmentToken_obj::__alloc( HX_CTX ,HX_("=",3d,00,00,00)));
-HXLINE( 179)				tokens->push( ::src::ast::base::CommaToken_obj::__alloc( HX_CTX ,HX_(",",2c,00,00,00)));
-HXLINE( 180)				argTokens->push(tokens);
+HXLINE( 202)				tokens->insert((int)0, ::src::ast::base::VariableToken_obj::__alloc( HX_CTX ,key1));
+HXLINE( 203)				tokens->insert((int)0, ::src::ast::script::AssignmentToken_obj::__alloc( HX_CTX ,HX_("=",3d,00,00,00)));
+HXLINE( 204)				tokens->push( ::src::ast::base::CommaToken_obj::__alloc( HX_CTX ,HX_(",",2c,00,00,00)));
+HXLINE( 205)				argTokens->push(tokens);
             			}
             		}
-HXLINE( 182)		::Array< ::Dynamic> final = ::src::ast::Token_obj::merge(argTokens);
-HXLINE( 183)		bool _hx_tmp;
-HXDLIN( 183)		if ((final->length > (int)0)) {
-HXLINE( 183)			_hx_tmp = (final->__get((final->length - (int)1)).StaticCast<  ::src::ast::Token >()->getName() == HX_("CommaToken",04,01,3f,49));
+HXLINE( 207)		::Array< ::Dynamic> final = ::src::ast::Token_obj::merge(argTokens);
+HXLINE( 208)		bool _hx_tmp;
+HXDLIN( 208)		if ((final->length > (int)0)) {
+HXLINE( 208)			_hx_tmp = (final->__get((final->length - (int)1)).StaticCast<  ::src::ast::Token >()->getName() == HX_("CommaToken",04,01,3f,49));
             		}
             		else {
-HXLINE( 183)			_hx_tmp = false;
+HXLINE( 208)			_hx_tmp = false;
             		}
-HXDLIN( 183)		if (_hx_tmp) {
-HXLINE( 183)			final->pop().StaticCast<  ::src::ast::Token >();
+HXDLIN( 208)		if (_hx_tmp) {
+HXLINE( 208)			final->pop().StaticCast<  ::src::ast::Token >();
             		}
-HXLINE( 184)		::Array< ::Dynamic> _hx_tmp1 = this->func->reconstruct();
-HXDLIN( 184)		return ::src::ast::Token_obj::merge(::cpp::VirtualArray_obj::__new(2)->init(0,_hx_tmp1)->init(1,::src::ast::base::BracketToken_obj::fromRaw(final)));
+HXLINE( 209)		::Array< ::Dynamic> _hx_tmp1 = this->func->reconstruct();
+HXDLIN( 209)		return ::src::ast::Token_obj::merge(::cpp::VirtualArray_obj::__new(2)->init(0,_hx_tmp1)->init(1,::src::ast::base::BracketToken_obj::fromRaw(final)));
             	}
 
 
@@ -475,15 +540,22 @@ hx::Val FunctionCallValueCommand_obj::__Field(const ::String &inName,hx::Propert
 	case 4:
 		if (HX_FIELD_EQ(inName,"func") ) { return hx::Val( func ); }
 		if (HX_FIELD_EQ(inName,"args") ) { return hx::Val( args ); }
+		if (HX_FIELD_EQ(inName,"copy") ) { return hx::Val( copy_dyn() ); }
 		if (HX_FIELD_EQ(inName,"walk") ) { return hx::Val( walk_dyn() ); }
 		break;
 	case 7:
 		if (HX_FIELD_EQ(inName,"kwdArgs") ) { return hx::Val( kwdArgs ); }
 		if (HX_FIELD_EQ(inName,"getName") ) { return hx::Val( getName_dyn() ); }
 		break;
+	case 8:
+		if (HX_FIELD_EQ(inName,"setScope") ) { return hx::Val( setScope_dyn() ); }
+		break;
 	case 11:
 		if (HX_FIELD_EQ(inName,"getBytecode") ) { return hx::Val( getBytecode_dyn() ); }
 		if (HX_FIELD_EQ(inName,"reconstruct") ) { return hx::Val( reconstruct_dyn() ); }
+		break;
+	case 15:
+		if (HX_FIELD_EQ(inName,"getFriendlyName") ) { return hx::Val( getFriendlyName_dyn() ); }
 	}
 	return super::__Field(inName,inCallProp);
 }
@@ -538,9 +610,12 @@ static ::String FunctionCallValueCommand_obj_sMemberFields[] = {
 	HX_HCSTRING("func","\x44","\xeb","\xc4","\x43"),
 	HX_HCSTRING("args","\x5d","\x8d","\x74","\x40"),
 	HX_HCSTRING("kwdArgs","\xb5","\x4e","\x50","\xb5"),
+	HX_HCSTRING("copy","\xb5","\xbb","\xc4","\x41"),
+	HX_HCSTRING("setScope","\x92","\xda","\x0d","\x87"),
 	HX_HCSTRING("walk","\x09","\x5d","\xf2","\x4e"),
 	HX_HCSTRING("run","\x4b","\xe7","\x56","\x00"),
 	HX_HCSTRING("getName","\x01","\x22","\x82","\x1b"),
+	HX_HCSTRING("getFriendlyName","\x0c","\x92","\xf4","\xaf"),
 	HX_HCSTRING("getBytecode","\xeb","\xb6","\x8b","\x7d"),
 	HX_HCSTRING("reconstruct","\x04","\x66","\x1a","\x90"),
 	::String(null()) };

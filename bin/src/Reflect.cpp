@@ -5,6 +5,7 @@
 #include <Reflect.h>
 #endif
 
+HX_LOCAL_STACK_FRAME(_hx_pos_4da882ff114ca894_43_getProperty,"Reflect","getProperty",0x632ca13a,"Reflect.getProperty","C:\\HaxeToolkit\\haxe\\std/cpp/_std/Reflect.hx",43,0x487b3827)
 HX_LOCAL_STACK_FRAME(_hx_pos_4da882ff114ca894_70_compare,"Reflect","compare",0xa2d92b54,"Reflect.compare","C:\\HaxeToolkit\\haxe\\std/cpp/_std/Reflect.hx",70,0x487b3827)
 HX_LOCAL_STACK_FRAME(_hx_pos_4da882ff114ca894_81_isObject,"Reflect","isObject",0xd04960ba,"Reflect.isObject","C:\\HaxeToolkit\\haxe\\std/cpp/_std/Reflect.hx",81,0x487b3827)
 HX_LOCAL_STACK_FRAME(_hx_pos_4da882ff114ca894_89_isEnumValue,"Reflect","isEnumValue",0x97884d95,"Reflect.isEnumValue","C:\\HaxeToolkit\\haxe\\std/cpp/_std/Reflect.hx",89,0x487b3827)
@@ -25,6 +26,14 @@ Dynamic Reflect_obj::__Create(hx::DynamicArray inArgs)
 bool Reflect_obj::_hx_isInstanceOf(int inClassId) {
 	return inClassId==(int)0x00000001 || inClassId==(int)0x0e2f4039;
 }
+
+ ::Dynamic Reflect_obj::getProperty( ::Dynamic o,::String field){
+            	HX_STACKFRAME(&_hx_pos_4da882ff114ca894_43_getProperty)
+HXDLIN(  43)		return hx::IsNull( o ) ? null() : o->__Field(field,hx::paccAlways);
+            	}
+
+
+STATIC_HX_DEFINE_DYNAMIC_FUNC2(Reflect_obj,getProperty,return )
 
 int Reflect_obj::compare( ::Dynamic a, ::Dynamic b){
             	HX_STACKFRAME(&_hx_pos_4da882ff114ca894_70_compare)
@@ -69,6 +78,7 @@ bool Reflect_obj::__GetStatic(const ::String &inName, Dynamic &outValue, hx::Pro
 		if (HX_FIELD_EQ(inName,"isObject") ) { outValue = isObject_dyn(); return true; }
 		break;
 	case 11:
+		if (HX_FIELD_EQ(inName,"getProperty") ) { outValue = getProperty_dyn(); return true; }
 		if (HX_FIELD_EQ(inName,"isEnumValue") ) { outValue = isEnumValue_dyn(); return true; }
 	}
 	return false;
@@ -93,6 +103,7 @@ static void Reflect_obj_sVisitStatics(HX_VISIT_PARAMS) {
 hx::Class Reflect_obj::__mClass;
 
 static ::String Reflect_obj_sStaticFields[] = {
+	HX_HCSTRING("getProperty","\x0b","\x0b","\x2c","\xd2"),
 	HX_HCSTRING("compare","\xa5","\x18","\x69","\x83"),
 	HX_HCSTRING("isObject","\x49","\x1a","\xa9","\x6d"),
 	HX_HCSTRING("isEnumValue","\x66","\xb7","\x87","\x06"),

@@ -3,6 +3,8 @@ import src.compiler.Scope;
 import src.compiler.object.Object;
 import src.compiler.object.builtin.IntObject;
 import src.compiler.object.builtin.StringObject;
+import src.compiler.signals.IndexOutOfBoundsSignal;
+import src.compiler.signals.ValueErrorSignal;
 
 /**
  * ...
@@ -27,32 +29,71 @@ class ListObject extends Object
     }
 
     public var arr:Array<Object> = new Array<Object>();
+    public function _index(i:Int):Int
+    {
+        if (i < 0) return i + arr.length;
+        return i;
+    }
     
     override public function get(index:Object):Object 
     {
         if (hasMember("__get__")) return callMember("__get__", [index]);
-        return arr[index.rawInt()];
+        if (index.isInstance("SpliceType")) {
+            var splice:SpliceValue = cast(index, SpliceObject).getValue(arr.length);
+            var newArr:Array<Object> = new Array<Object>();
+            var i:Int = splice.start;
+            
+            while (i < splice.end) {
+                newArr.push(arr[i]);
+                i += splice.step;
+            }
+            return _list(newArr);
+        }
+        var i:Int = _index(index.rawInt());
+        if (i >= 0 && i < arr.length) {
+            return arr[i];
+        } else {
+            throw new IndexOutOfBoundsSignal('Index $i is out of bounds, should be between 0 and ${arr.length}');
+        }
     }
     
     override public function set(index:Object, obj:Object) 
     {
         if (hasMember("__set__")) { callMember("__set__", [index, obj]); return; }
-        var i:Int = index.rawInt();
-        if (arr.length > i) {
+        if (index.isInstance("SpliceType")) {
+            var splice:SpliceValue = cast(index, SpliceObject).getValue(arr.length);
+            var i:Int = splice.start; var j:Int = 0;
+            while (i < splice.end) {
+                arr[i] = obj.get(_int(j));
+                i += splice.step; j++;
+            }
+            return;
+        }
+        var i:Int = _index(index.rawInt());
+        if (i >= 0 && i < arr.length) {
             arr[i] = obj;
         } else {
-            throw "Index out of bounds";
+            throw new IndexOutOfBoundsSignal('Index $i is out of bounds, should be between 0 and ${arr.length}');
         }
     }
     
     override public function delete(index:Object):Void 
     {
         if (hasMember("__delete__")) { callMember("__delete__", [index]); return; }
-        var i:Int = index.rawInt();
-        if (arr.length > i) {
+        if (index.isInstance("SpliceType")) {
+            var splice:SpliceValue = cast(index, SpliceObject).getValue(arr.length);
+            var i:Int = splice.start;
+            while (i < splice.end) {
+                arr = arr.splice(0, i).concat(arr.splice(i + 1, arr.length - (i + 1)));
+                i += splice.step;
+            }
+            return;
+        }
+        var i:Int = _index(index.rawInt());
+        if (i >= 0 && i < arr.length) {
             arr = arr.splice(0, i).concat(arr.splice(i + 1, arr.length - (i + 1)));
         } else {
-            throw "Index out of bounds";
+            throw new IndexOutOfBoundsSignal('Index $i is out of bounds, should be between 0 and ${arr.length}');
         }
     }
     
@@ -87,7 +128,7 @@ class ListObject extends Object
         if (hasMember("__div__")) return callMember("__div__", [other]);
         if (other.hasMember("__rdiv__")) return other.rdiv(this);
         var div:Int = other.rawInt();
-        var result:ListObject = cast(scope.getType("ListType").createObject(), ListObject);
+        var result:ListObject = cast(scope.getType("ListType").createObject(scope), ListObject);
         var arr:Array<Object> = result.getArray();
         for (i in 0...Math.ceil(this.arr.length / div)) {
             arr.push(_list(this.arr.slice(i * div, div)));

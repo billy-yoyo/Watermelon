@@ -63,11 +63,18 @@ class HXCPP_CLASS_ATTRIBUTES WhileLoopCommand_obj : public  ::src::compiler::com
 
 		 ::src::compiler::commands::value::ValueCommand condition;
 		 ::src::compiler::commands::Command code;
+		bool completedCode;
+		 ::src::compiler::commands::Command copy( ::src::compiler::Scope scope);
+
+		void setScope( ::src::compiler::Scope scope);
+
 		::Array< ::Dynamic> walk();
 
 		 ::src::compiler::object::Object run();
 
 		::String getName();
+
+		::String getFriendlyName();
 
 		 ::src::compiler::bytecode::Bytecode getBytecode();
 

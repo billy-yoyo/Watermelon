@@ -8,10 +8,16 @@ import src.ast.Token;
 class StringToken extends Token
 {
 
-    private static var regex:EReg = ~/^"[^"]*"$/;
-    private static var partialRegex:EReg = ~/^"[^"]*"?$/;
+    private static var regex:EReg = ~/^(b|f|r)?"[^"]*"$/;
+    private static var partialRegex:EReg = ~/^(b|f|r)?"[^"]*"?$/;
+    
+    public var flag:String = "";
     public override function new(content:String)
     {
+        if (content.charAt(0) != '"') {
+            flag = content.charAt(0);
+            content = content.substr(1, content.length - 1);
+        }
         super(content.substring(1, content.length - 1));
     }
     

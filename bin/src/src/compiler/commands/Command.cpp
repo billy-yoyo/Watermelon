@@ -23,25 +23,29 @@
 #include <src/compiler/object/Object.h>
 #endif
 
-HX_DEFINE_STACK_FRAME(_hx_pos_5ff0e33c307295fb_51_new,"src.compiler.commands.Command","new",0x4590ed1c,"src.compiler.commands.Command.new","src/compiler/commands/Command.hx",51,0x17028935)
-HX_LOCAL_STACK_FRAME(_hx_pos_5ff0e33c307295fb_56_run,"src.compiler.commands.Command","run",0x45940407,"src.compiler.commands.Command.run","src/compiler/commands/Command.hx",56,0x17028935)
-HX_LOCAL_STACK_FRAME(_hx_pos_5ff0e33c307295fb_61_getScope,"src.compiler.commands.Command","getScope",0x9f85bae2,"src.compiler.commands.Command.getScope","src/compiler/commands/Command.hx",61,0x17028935)
-HX_LOCAL_STACK_FRAME(_hx_pos_5ff0e33c307295fb_66_getName,"src.compiler.commands.Command","getName",0xbad24cbd,"src.compiler.commands.Command.getName","src/compiler/commands/Command.hx",66,0x17028935)
-HX_LOCAL_STACK_FRAME(_hx_pos_5ff0e33c307295fb_71_getBytecode,"src.compiler.commands.Command","getBytecode",0x188defa7,"src.compiler.commands.Command.getBytecode","src/compiler/commands/Command.hx",71,0x17028935)
-HX_LOCAL_STACK_FRAME(_hx_pos_5ff0e33c307295fb_76_getCodeID,"src.compiler.commands.Command","getCodeID",0x7149313a,"src.compiler.commands.Command.getCodeID","src/compiler/commands/Command.hx",76,0x17028935)
-HX_LOCAL_STACK_FRAME(_hx_pos_5ff0e33c307295fb_80_walk,"src.compiler.commands.Command","walk",0x9f2e64cd,"src.compiler.commands.Command.walk","src/compiler/commands/Command.hx",80,0x17028935)
-HX_LOCAL_STACK_FRAME(_hx_pos_5ff0e33c307295fb_85_toString,"src.compiler.commands.Command","toString",0xff440a70,"src.compiler.commands.Command.toString","src/compiler/commands/Command.hx",85,0x17028935)
-HX_LOCAL_STACK_FRAME(_hx_pos_5ff0e33c307295fb_90_reconstruct,"src.compiler.commands.Command","reconstruct",0x2b1c9ec0,"src.compiler.commands.Command.reconstruct","src/compiler/commands/Command.hx",90,0x17028935)
-HX_LOCAL_STACK_FRAME(_hx_pos_5ff0e33c307295fb_14_splitTokens,"src.compiler.commands.Command","splitTokens",0xb13f4e90,"src.compiler.commands.Command.splitTokens","src/compiler/commands/Command.hx",14,0x17028935)
-HX_LOCAL_STACK_FRAME(_hx_pos_5ff0e33c307295fb_30_reconstructCommands,"src.compiler.commands.Command","reconstructCommands",0x7300cba8,"src.compiler.commands.Command.reconstructCommands","src/compiler/commands/Command.hx",30,0x17028935)
-HX_LOCAL_STACK_FRAME(_hx_pos_5ff0e33c307295fb_39_contains,"src.compiler.commands.Command","contains",0xf35093e3,"src.compiler.commands.Command.contains","src/compiler/commands/Command.hx",39,0x17028935)
+HX_DEFINE_STACK_FRAME(_hx_pos_5ff0e33c307295fb_59_new,"src.compiler.commands.Command","new",0x4590ed1c,"src.compiler.commands.Command.new","src/compiler/commands/Command.hx",59,0x17028935)
+HX_LOCAL_STACK_FRAME(_hx_pos_5ff0e33c307295fb_64_copy,"src.compiler.commands.Command","copy",0x9200c379,"src.compiler.commands.Command.copy","src/compiler/commands/Command.hx",64,0x17028935)
+HX_LOCAL_STACK_FRAME(_hx_pos_5ff0e33c307295fb_69_run,"src.compiler.commands.Command","run",0x45940407,"src.compiler.commands.Command.run","src/compiler/commands/Command.hx",69,0x17028935)
+HX_LOCAL_STACK_FRAME(_hx_pos_5ff0e33c307295fb_74_getScope,"src.compiler.commands.Command","getScope",0x9f85bae2,"src.compiler.commands.Command.getScope","src/compiler/commands/Command.hx",74,0x17028935)
+HX_LOCAL_STACK_FRAME(_hx_pos_5ff0e33c307295fb_79_getName,"src.compiler.commands.Command","getName",0xbad24cbd,"src.compiler.commands.Command.getName","src/compiler/commands/Command.hx",79,0x17028935)
+HX_LOCAL_STACK_FRAME(_hx_pos_5ff0e33c307295fb_84_getFriendlyName,"src.compiler.commands.Command","getFriendlyName",0xa3c7d8c8,"src.compiler.commands.Command.getFriendlyName","src/compiler/commands/Command.hx",84,0x17028935)
+HX_LOCAL_STACK_FRAME(_hx_pos_5ff0e33c307295fb_89_getBytecode,"src.compiler.commands.Command","getBytecode",0x188defa7,"src.compiler.commands.Command.getBytecode","src/compiler/commands/Command.hx",89,0x17028935)
+HX_LOCAL_STACK_FRAME(_hx_pos_5ff0e33c307295fb_94_getCodeID,"src.compiler.commands.Command","getCodeID",0x7149313a,"src.compiler.commands.Command.getCodeID","src/compiler/commands/Command.hx",94,0x17028935)
+HX_LOCAL_STACK_FRAME(_hx_pos_5ff0e33c307295fb_98_walk,"src.compiler.commands.Command","walk",0x9f2e64cd,"src.compiler.commands.Command.walk","src/compiler/commands/Command.hx",98,0x17028935)
+HX_LOCAL_STACK_FRAME(_hx_pos_5ff0e33c307295fb_103_setScope,"src.compiler.commands.Command","setScope",0x4de31456,"src.compiler.commands.Command.setScope","src/compiler/commands/Command.hx",103,0x17028935)
+HX_LOCAL_STACK_FRAME(_hx_pos_5ff0e33c307295fb_108_toString,"src.compiler.commands.Command","toString",0xff440a70,"src.compiler.commands.Command.toString","src/compiler/commands/Command.hx",108,0x17028935)
+HX_LOCAL_STACK_FRAME(_hx_pos_5ff0e33c307295fb_113_reconstruct,"src.compiler.commands.Command","reconstruct",0x2b1c9ec0,"src.compiler.commands.Command.reconstruct","src/compiler/commands/Command.hx",113,0x17028935)
+HX_LOCAL_STACK_FRAME(_hx_pos_5ff0e33c307295fb_15_splitTokens,"src.compiler.commands.Command","splitTokens",0xb13f4e90,"src.compiler.commands.Command.splitTokens","src/compiler/commands/Command.hx",15,0x17028935)
+HX_LOCAL_STACK_FRAME(_hx_pos_5ff0e33c307295fb_31_reconstructCommands,"src.compiler.commands.Command","reconstructCommands",0x7300cba8,"src.compiler.commands.Command.reconstructCommands","src/compiler/commands/Command.hx",31,0x17028935)
+HX_LOCAL_STACK_FRAME(_hx_pos_5ff0e33c307295fb_40_contains,"src.compiler.commands.Command","contains",0xf35093e3,"src.compiler.commands.Command.contains","src/compiler/commands/Command.hx",40,0x17028935)
+HX_LOCAL_STACK_FRAME(_hx_pos_5ff0e33c307295fb_50_copyArray,"src.compiler.commands.Command","copyArray",0xdf47e360,"src.compiler.commands.Command.copyArray","src/compiler/commands/Command.hx",50,0x17028935)
 namespace src{
 namespace compiler{
 namespace commands{
 
 void Command_obj::__construct( ::src::compiler::Scope scope){
-            	HX_STACKFRAME(&_hx_pos_5ff0e33c307295fb_51_new)
-HXDLIN(  51)		this->scope = scope;
+            	HX_STACKFRAME(&_hx_pos_5ff0e33c307295fb_59_new)
+HXDLIN(  59)		this->scope = scope;
             	}
 
 Dynamic Command_obj::__CreateEmpty() { return new Command_obj; }
@@ -59,154 +63,195 @@ bool Command_obj::_hx_isInstanceOf(int inClassId) {
 	return inClassId==(int)0x00000001 || inClassId==(int)0x20538180;
 }
 
+ ::src::compiler::commands::Command Command_obj::copy( ::src::compiler::Scope scope){
+            	HX_GC_STACKFRAME(&_hx_pos_5ff0e33c307295fb_64_copy)
+HXDLIN(  64)		return  ::src::compiler::commands::Command_obj::__alloc( HX_CTX ,scope);
+            	}
+
+
+HX_DEFINE_DYNAMIC_FUNC1(Command_obj,copy,return )
+
  ::src::compiler::object::Object Command_obj::run(){
-            	HX_STACKFRAME(&_hx_pos_5ff0e33c307295fb_56_run)
-HXDLIN(  56)		return null();
+            	HX_STACKFRAME(&_hx_pos_5ff0e33c307295fb_69_run)
+HXDLIN(  69)		return null();
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Command_obj,run,return )
 
  ::src::compiler::Scope Command_obj::getScope(){
-            	HX_STACKFRAME(&_hx_pos_5ff0e33c307295fb_61_getScope)
-HXDLIN(  61)		return this->scope;
+            	HX_STACKFRAME(&_hx_pos_5ff0e33c307295fb_74_getScope)
+HXDLIN(  74)		return this->scope;
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Command_obj,getScope,return )
 
 ::String Command_obj::getName(){
-            	HX_STACKFRAME(&_hx_pos_5ff0e33c307295fb_66_getName)
-HXDLIN(  66)		return HX_("Command",2b,99,be,4e);
+            	HX_STACKFRAME(&_hx_pos_5ff0e33c307295fb_79_getName)
+HXDLIN(  79)		return HX_("Command",2b,99,be,4e);
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Command_obj,getName,return )
 
+::String Command_obj::getFriendlyName(){
+            	HX_STACKFRAME(&_hx_pos_5ff0e33c307295fb_84_getFriendlyName)
+HXDLIN(  84)		return HX_("command",4b,71,6d,81);
+            	}
+
+
+HX_DEFINE_DYNAMIC_FUNC0(Command_obj,getFriendlyName,return )
+
  ::src::compiler::bytecode::Bytecode Command_obj::getBytecode(){
-            	HX_STACKFRAME(&_hx_pos_5ff0e33c307295fb_71_getBytecode)
-HXDLIN(  71)		return null();
+            	HX_STACKFRAME(&_hx_pos_5ff0e33c307295fb_89_getBytecode)
+HXDLIN(  89)		return null();
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Command_obj,getBytecode,return )
 
 int Command_obj::getCodeID(){
-            	HX_STACKFRAME(&_hx_pos_5ff0e33c307295fb_76_getCodeID)
-HXDLIN(  76)		return ::src::compiler::bytecode::BytecodeMap_obj::fromCommand(hx::ObjectPtr<OBJ_>(this));
+            	HX_STACKFRAME(&_hx_pos_5ff0e33c307295fb_94_getCodeID)
+HXDLIN(  94)		return ::src::compiler::bytecode::BytecodeMap_obj::fromCommand(hx::ObjectPtr<OBJ_>(this));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Command_obj,getCodeID,return )
 
 ::Array< ::Dynamic> Command_obj::walk(){
-            	HX_STACKFRAME(&_hx_pos_5ff0e33c307295fb_80_walk)
-HXDLIN(  80)		return ::Array_obj< ::Dynamic>::__new();
+            	HX_STACKFRAME(&_hx_pos_5ff0e33c307295fb_98_walk)
+HXDLIN(  98)		return ::Array_obj< ::Dynamic>::__new();
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Command_obj,walk,return )
 
+void Command_obj::setScope( ::src::compiler::Scope scope){
+            	HX_STACKFRAME(&_hx_pos_5ff0e33c307295fb_103_setScope)
+HXDLIN( 103)		this->scope = scope;
+            	}
+
+
+HX_DEFINE_DYNAMIC_FUNC1(Command_obj,setScope,(void))
+
 ::String Command_obj::toString(){
-            	HX_STACKFRAME(&_hx_pos_5ff0e33c307295fb_85_toString)
-HXDLIN(  85)		::String _hx_tmp = ((HX_("",00,00,00,00) + ::Std_obj::string(this->scope)) + HX_(".",2e,00,00,00));
-HXDLIN(  85)		return (_hx_tmp + this->getName());
+            	HX_STACKFRAME(&_hx_pos_5ff0e33c307295fb_108_toString)
+HXDLIN( 108)		::String _hx_tmp = ((HX_("",00,00,00,00) + ::Std_obj::string(this->scope)) + HX_(".",2e,00,00,00));
+HXDLIN( 108)		return (_hx_tmp + this->getName());
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Command_obj,toString,return )
 
 ::Array< ::Dynamic> Command_obj::reconstruct(){
-            	HX_STACKFRAME(&_hx_pos_5ff0e33c307295fb_90_reconstruct)
-HXDLIN(  90)		return ::Array_obj< ::Dynamic>::__new(0);
+            	HX_STACKFRAME(&_hx_pos_5ff0e33c307295fb_113_reconstruct)
+HXDLIN( 113)		return ::Array_obj< ::Dynamic>::__new(0);
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Command_obj,reconstruct,return )
 
 ::Array< ::Dynamic> Command_obj::splitTokens(::Array< ::Dynamic> tokens,::String splitToken,::String content, ::Dynamic checker){
-            	HX_STACKFRAME(&_hx_pos_5ff0e33c307295fb_14_splitTokens)
-HXLINE(  15)		::Array< ::Dynamic> result = ::Array_obj< ::Dynamic>::__new();
-HXLINE(  16)		::Array< ::Dynamic> arr = ::Array_obj< ::Dynamic>::__new();
-HXLINE(  17)		{
-HXLINE(  17)			int _g = (int)0;
-HXDLIN(  17)			while((_g < tokens->length)){
-HXLINE(  17)				 ::src::ast::Token token = tokens->__get(_g).StaticCast<  ::src::ast::Token >();
-HXDLIN(  17)				_g = (_g + (int)1);
-HXLINE(  18)				bool _hx_tmp;
-HXDLIN(  18)				bool _hx_tmp1;
-HXDLIN(  18)				if ((token->getName() == splitToken)) {
-HXLINE(  18)					if (hx::IsNotNull( content )) {
-HXLINE(  18)						_hx_tmp1 = hx::IsEq( token->getContent(),content );
+            	HX_STACKFRAME(&_hx_pos_5ff0e33c307295fb_15_splitTokens)
+HXLINE(  16)		::Array< ::Dynamic> result = ::Array_obj< ::Dynamic>::__new();
+HXLINE(  17)		::Array< ::Dynamic> arr = ::Array_obj< ::Dynamic>::__new();
+HXLINE(  18)		{
+HXLINE(  18)			int _g = (int)0;
+HXDLIN(  18)			while((_g < tokens->length)){
+HXLINE(  18)				 ::src::ast::Token token = tokens->__get(_g).StaticCast<  ::src::ast::Token >();
+HXDLIN(  18)				_g = (_g + (int)1);
+HXLINE(  19)				bool _hx_tmp;
+HXDLIN(  19)				bool _hx_tmp1;
+HXDLIN(  19)				if ((token->getName() == splitToken)) {
+HXLINE(  19)					if (hx::IsNotNull( content )) {
+HXLINE(  19)						_hx_tmp1 = hx::IsEq( token->getContent(),content );
             					}
             					else {
-HXLINE(  18)						_hx_tmp1 = true;
+HXLINE(  19)						_hx_tmp1 = true;
             					}
             				}
             				else {
-HXLINE(  18)					_hx_tmp1 = false;
+HXLINE(  19)					_hx_tmp1 = false;
             				}
-HXDLIN(  18)				if (_hx_tmp1) {
-HXLINE(  18)					if (hx::IsNotNull( checker )) {
-HXLINE(  18)						_hx_tmp = ( (bool)(checker(token)) );
+HXDLIN(  19)				if (_hx_tmp1) {
+HXLINE(  19)					if (hx::IsNotNull( checker )) {
+HXLINE(  19)						_hx_tmp = ( (bool)(checker(token)) );
             					}
             					else {
-HXLINE(  18)						_hx_tmp = true;
+HXLINE(  19)						_hx_tmp = true;
             					}
             				}
             				else {
-HXLINE(  18)					_hx_tmp = false;
+HXLINE(  19)					_hx_tmp = false;
             				}
-HXDLIN(  18)				if (_hx_tmp) {
-HXLINE(  19)					result->push(arr);
-HXLINE(  20)					arr = ::Array_obj< ::Dynamic>::__new();
+HXDLIN(  19)				if (_hx_tmp) {
+HXLINE(  20)					result->push(arr);
+HXLINE(  21)					arr = ::Array_obj< ::Dynamic>::__new();
             				}
             				else {
-HXLINE(  22)					arr->push(token);
+HXLINE(  23)					arr->push(token);
             				}
             			}
             		}
-HXLINE(  25)		result->push(arr);
-HXLINE(  26)		return result;
+HXLINE(  26)		result->push(arr);
+HXLINE(  27)		return result;
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC4(Command_obj,splitTokens,return )
 
 ::Array< ::Dynamic> Command_obj::reconstructCommands(::cpp::VirtualArray commands){
-            	HX_STACKFRAME(&_hx_pos_5ff0e33c307295fb_30_reconstructCommands)
-HXLINE(  31)		::Array< ::Dynamic> tokens = ::Array_obj< ::Dynamic>::__new();
-HXLINE(  32)		{
-HXLINE(  32)			int _g = (int)0;
-HXDLIN(  32)			while((_g < commands->get_length())){
-HXLINE(  32)				 ::Dynamic cmd = commands->__get(_g);
-HXDLIN(  32)				_g = (_g + (int)1);
-HXLINE(  33)				tokens->push(cmd->__Field(HX_("reconstruct",04,66,1a,90),hx::paccDynamic)());
+            	HX_STACKFRAME(&_hx_pos_5ff0e33c307295fb_31_reconstructCommands)
+HXLINE(  32)		::Array< ::Dynamic> tokens = ::Array_obj< ::Dynamic>::__new();
+HXLINE(  33)		{
+HXLINE(  33)			int _g = (int)0;
+HXDLIN(  33)			while((_g < commands->get_length())){
+HXLINE(  33)				 ::Dynamic cmd = commands->__get(_g);
+HXDLIN(  33)				_g = (_g + (int)1);
+HXLINE(  34)				tokens->push(cmd->__Field(HX_("reconstruct",04,66,1a,90),hx::paccDynamic)());
             			}
             		}
-HXLINE(  35)		return tokens;
+HXLINE(  36)		return tokens;
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC1(Command_obj,reconstructCommands,return )
 
 bool Command_obj::contains(::Array< ::Dynamic> tokens,::String type){
-            	HX_STACKFRAME(&_hx_pos_5ff0e33c307295fb_39_contains)
-HXLINE(  40)		{
-HXLINE(  40)			int _g = (int)0;
-HXDLIN(  40)			while((_g < tokens->length)){
-HXLINE(  40)				 ::src::ast::Token token = tokens->__get(_g).StaticCast<  ::src::ast::Token >();
-HXDLIN(  40)				_g = (_g + (int)1);
-HXLINE(  41)				if ((token->getName() == type)) {
-HXLINE(  42)					return true;
+            	HX_STACKFRAME(&_hx_pos_5ff0e33c307295fb_40_contains)
+HXLINE(  41)		{
+HXLINE(  41)			int _g = (int)0;
+HXDLIN(  41)			while((_g < tokens->length)){
+HXLINE(  41)				 ::src::ast::Token token = tokens->__get(_g).StaticCast<  ::src::ast::Token >();
+HXDLIN(  41)				_g = (_g + (int)1);
+HXLINE(  42)				if ((token->getName() == type)) {
+HXLINE(  43)					return true;
             				}
             			}
             		}
-HXLINE(  45)		return false;
+HXLINE(  46)		return false;
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(Command_obj,contains,return )
+
+::Array< ::Dynamic> Command_obj::copyArray( ::src::compiler::Scope scope,::Array< ::Dynamic> arr){
+            	HX_STACKFRAME(&_hx_pos_5ff0e33c307295fb_50_copyArray)
+HXLINE(  51)		::Array< ::Dynamic> newArr = ::Array_obj< ::Dynamic>::__new();
+HXLINE(  52)		{
+HXLINE(  52)			int _g = (int)0;
+HXDLIN(  52)			while((_g < arr->length)){
+HXLINE(  52)				 ::src::compiler::commands::Command x = arr->__get(_g).StaticCast<  ::src::compiler::commands::Command >();
+HXDLIN(  52)				_g = (_g + (int)1);
+HXDLIN(  52)				newArr->push(x->copy(scope));
+            			}
+            		}
+HXLINE(  53)		return newArr;
+            	}
+
+
+STATIC_HX_DEFINE_DYNAMIC_FUNC2(Command_obj,copyArray,return )
 
 
 hx::ObjectPtr< Command_obj > Command_obj::__new( ::src::compiler::Scope scope) {
@@ -245,6 +290,7 @@ hx::Val Command_obj::__Field(const ::String &inName,hx::PropertyAccess inCallPro
 		if (HX_FIELD_EQ(inName,"run") ) { return hx::Val( run_dyn() ); }
 		break;
 	case 4:
+		if (HX_FIELD_EQ(inName,"copy") ) { return hx::Val( copy_dyn() ); }
 		if (HX_FIELD_EQ(inName,"walk") ) { return hx::Val( walk_dyn() ); }
 		break;
 	case 5:
@@ -255,6 +301,7 @@ hx::Val Command_obj::__Field(const ::String &inName,hx::PropertyAccess inCallPro
 		break;
 	case 8:
 		if (HX_FIELD_EQ(inName,"getScope") ) { return hx::Val( getScope_dyn() ); }
+		if (HX_FIELD_EQ(inName,"setScope") ) { return hx::Val( setScope_dyn() ); }
 		if (HX_FIELD_EQ(inName,"toString") ) { return hx::Val( toString_dyn() ); }
 		break;
 	case 9:
@@ -263,6 +310,9 @@ hx::Val Command_obj::__Field(const ::String &inName,hx::PropertyAccess inCallPro
 	case 11:
 		if (HX_FIELD_EQ(inName,"getBytecode") ) { return hx::Val( getBytecode_dyn() ); }
 		if (HX_FIELD_EQ(inName,"reconstruct") ) { return hx::Val( reconstruct_dyn() ); }
+		break;
+	case 15:
+		if (HX_FIELD_EQ(inName,"getFriendlyName") ) { return hx::Val( getFriendlyName_dyn() ); }
 	}
 	return super::__Field(inName,inCallProp);
 }
@@ -272,6 +322,9 @@ bool Command_obj::__GetStatic(const ::String &inName, Dynamic &outValue, hx::Pro
 	switch(inName.length) {
 	case 8:
 		if (HX_FIELD_EQ(inName,"contains") ) { outValue = contains_dyn(); return true; }
+		break;
+	case 9:
+		if (HX_FIELD_EQ(inName,"copyArray") ) { outValue = copyArray_dyn(); return true; }
 		break;
 	case 11:
 		if (HX_FIELD_EQ(inName,"splitTokens") ) { outValue = splitTokens_dyn(); return true; }
@@ -307,12 +360,15 @@ static hx::StaticInfo *Command_obj_sStaticStorageInfo = 0;
 
 static ::String Command_obj_sMemberFields[] = {
 	HX_HCSTRING("scope","\x94","\x71","\xd9","\x78"),
+	HX_HCSTRING("copy","\xb5","\xbb","\xc4","\x41"),
 	HX_HCSTRING("run","\x4b","\xe7","\x56","\x00"),
 	HX_HCSTRING("getScope","\x1e","\x81","\xb0","\xd8"),
 	HX_HCSTRING("getName","\x01","\x22","\x82","\x1b"),
+	HX_HCSTRING("getFriendlyName","\x0c","\x92","\xf4","\xaf"),
 	HX_HCSTRING("getBytecode","\xeb","\xb6","\x8b","\x7d"),
 	HX_HCSTRING("getCodeID","\x7e","\xdf","\x8b","\x3d"),
 	HX_HCSTRING("walk","\x09","\x5d","\xf2","\x4e"),
+	HX_HCSTRING("setScope","\x92","\xda","\x0d","\x87"),
 	HX_HCSTRING("toString","\xac","\xd0","\x6e","\x38"),
 	HX_HCSTRING("reconstruct","\x04","\x66","\x1a","\x90"),
 	::String(null()) };
@@ -334,6 +390,7 @@ static ::String Command_obj_sStaticFields[] = {
 	HX_HCSTRING("splitTokens","\xd4","\x15","\x3d","\x16"),
 	HX_HCSTRING("reconstructCommands","\xec","\x76","\xbd","\x4d"),
 	HX_HCSTRING("contains","\x1f","\x5a","\x7b","\x2c"),
+	HX_HCSTRING("copyArray","\xa4","\x91","\x8a","\xab"),
 	::String(null())
 };
 

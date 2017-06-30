@@ -66,6 +66,9 @@ class HXCPP_CLASS_ATTRIBUTES ListObject_obj : public  ::src::compiler::object::O
 		static ::Dynamic objectIndex_dyn();
 
 		::Array< ::Dynamic> arr;
+		int _index(int i);
+		::Dynamic _index_dyn();
+
 		 ::src::compiler::object::Object get( ::src::compiler::object::Object index);
 
 		void set( ::src::compiler::object::Object index, ::src::compiler::object::Object obj);

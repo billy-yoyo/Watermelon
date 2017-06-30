@@ -61,11 +61,18 @@ class HXCPP_CLASS_ATTRIBUTES FunctionCodeCommand_obj : public  ::src::compiler::
 		static ::Dynamic fromBytecode_dyn();
 
 		::Array< ::Dynamic> commands;
+		int progress;
+		 ::src::compiler::commands::Command copy( ::src::compiler::Scope scope);
+
+		void setScope( ::src::compiler::Scope scope);
+
 		::Array< ::Dynamic> walk();
 
 		 ::src::compiler::object::Object run();
 
 		::String getName();
+
+		::String getFriendlyName();
 
 		 ::src::compiler::bytecode::Bytecode getBytecode();
 

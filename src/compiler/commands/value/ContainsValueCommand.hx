@@ -37,6 +37,18 @@ class ContainsValueCommand extends ValueCommand
         this.right = right;
     }
     
+    override public function copy(scope:Scope):Command 
+    {
+        return new ContainsValueCommand(scope, cast(left.copy(scope), ValueCommand), cast(right.copy(scope), ValueCommand));
+    }
+    
+    override public function setScope(scope:Scope) 
+    {
+        super.setScope(scope);
+        left.setScope(scope);
+        right.setScope(scope);
+    }
+    
     override public function walk():Array<Command> 
     {
         return [left, right];
@@ -50,6 +62,11 @@ class ContainsValueCommand extends ValueCommand
     override public function getName():String 
     {
         return "ContainsValueCommand";
+    }
+    
+    override public function getFriendlyName():String 
+    {
+        return "contains expression";
     }
     
     override public function getBytecode():Bytecode 

@@ -1,6 +1,7 @@
 package src.compiler.commands.value;
 import src.ast.Token;
 import src.ast.base.BracketToken;
+import src.ast.base.ListToken;
 import src.compiler.Scope;
 import src.compiler.bytecode.Bytecode;
 import src.compiler.commands.Command;
@@ -38,6 +39,18 @@ class ObjectIndexPair extends Command
         this.index = index;
     }
     
+    override public function copy(scope:Scope):Command 
+    {
+        return new ObjectIndexPair(scope, cast(variable.copy(scope), ValueCommand), cast(index.copy(scope), ValueCommand));
+    }
+    
+    override public function setScope(scope:Scope) 
+    {
+        super.setScope(scope);
+        variable.setScope(scope);
+        index.setScope(scope);
+    }
+    
     override public function walk():Array<Command> 
     {
         return [variable, index];
@@ -48,6 +61,11 @@ class ObjectIndexPair extends Command
         return "ObjectIndexPair";
     }
     
+    override public function getFriendlyName():String 
+    {
+        return "variable and index pair";
+    }
+    
     override public function getBytecode():Bytecode 
     {
         return Bytecode.fromArray([variable, index], getCodeID());
@@ -55,6 +73,6 @@ class ObjectIndexPair extends Command
     
     override public function reconstruct():Array<Token> 
     {
-        return Token.merge([variable.reconstruct(), BracketToken.fromRaw(index.reconstruct())]);
+        return Token.merge([variable.reconstruct(), ListToken.fromRaw(index.reconstruct())]);
     }
 }

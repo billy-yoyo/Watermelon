@@ -50,10 +50,9 @@ class IfCommand extends ValueCommand
             // everything else is if/elif
             // either: if|elif (cond) {expr}
             //     or: if|elif (cond) expr
-            trace(spl);
+            //trace(spl);
             var ifCodes:Array<CondAndExpr> = new Array<CondAndExpr>();
             for (tokens in spl) {
-                trace(tokens);
                 if (tokens[0].getName() != "BracketToken") throw new SyntaxErrorSignal("If condition must be surrounded in brackets");
                 var cond:ValueCommand = ValueCommand.fromTokens(scope, tokens.shift().getContent());
                 if (tokens.length == 1 && tokens[0].getName() == "BlockToken") {
@@ -87,11 +86,29 @@ class IfCommand extends ValueCommand
 
     private var ifCodes:Array<CondAndExpr>;
     private var elseCode:Array<Command>;
+    private var runningCommands:Array<Command> = null;
+    private var progress:Int = 0;
     override public function new(scope:Scope, ifCodes:Array<CondAndExpr>, ?elseCode:Array<Command>) 
     {
         super(scope);
         this.ifCodes = ifCodes;
         this.elseCode = elseCode;
+    }
+    
+    override public function copy(scope:Scope):Command 
+    {
+        var newIfCodes:Array<CondAndExpr> = new Array<CondAndExpr>();
+        for (x in ifCodes) newIfCodes.push(cast(x.copy(scope), CondAndExpr));
+        return new IfCommand(scope, newIfCodes, if (elseCode == null) null else Command.copyArray(scope, elseCode));
+    }
+    
+    override public function setScope(scope:Scope) 
+    {
+        super.setScope(scope);
+        for (x in ifCodes) x.setScope(scope);
+        if (elseCode != null) {
+            for (cmd in elseCode) cmd.setScope(scope);
+        }
     }
     
     override public function walk():Array<Command> 
@@ -104,17 +121,27 @@ class IfCommand extends ValueCommand
     
     override public function run():Object 
     {
-        for (condAndExpr in ifCodes) {
-            if (condAndExpr.cond.run().rawBool()) {
-                for (cmd in condAndExpr.code) {
-                    cmd.run();
+        if (runningCommands == null) {
+            for (condAndExpr in ifCodes) {
+                if (condAndExpr.cond.run().rawBool()) {
+                    runningCommands = condAndExpr.code;
                 }
-                return null;
+            }
+            if (elseCode != null) {
+                runningCommands = elseCode;
             }
         }
-        if (elseCode != null) {
-            for (cmd in elseCode) {
-                cmd.run();
+        if (runningCommands != null) {
+            var cmd:Command;
+            while (progress < runningCommands.length) {
+                cmd = runningCommands[progress];
+                if (cmd.getName() == "PipeReadCommand" || cmd.getName() == "PipeWriteCommand") {
+                    progress++;
+                    cmd.run();
+                } else {
+                    cmd.run();
+                    progress++;
+                }
             }
         }
         return null;
@@ -123,6 +150,11 @@ class IfCommand extends ValueCommand
     override public function getName():String 
     {
         return "IfCommand";
+    }
+    
+    override public function getFriendlyName():String 
+    {
+        return "if statement";
     }
     
     override public function getBytecode():Bytecode 
@@ -163,6 +195,18 @@ class CondAndExpr extends Command {
         this.code = code;
     }
     
+    override public function copy(scope:Scope):Command 
+    {
+        return new CondAndExpr(cast(cond.copy(scope), ValueCommand), Command.copyArray(scope, code));
+    }
+    
+    override public function setScope(scope:Scope) 
+    {
+        super.setScope(scope);
+        cond.setScope(scope);
+        for (cmd in code) cmd.setScope(scope);
+    }
+    
     override public function walk():Array<Command> 
     {
         var cmds:Array<Command> = code.copy();
@@ -173,6 +217,11 @@ class CondAndExpr extends Command {
     override public function getName():String 
     {
         return "CondAndExpr";
+    }
+    
+    override public function getFriendlyName():String 
+    {
+        return "condition and expression";
     }
     
     override public function getBytecode():Bytecode 

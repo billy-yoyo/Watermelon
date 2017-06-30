@@ -61,29 +61,29 @@
 #endif
 
 HX_DEFINE_STACK_FRAME(_hx_pos_1876dfaa47a56244_16_new,"src.compiler.bytecode.Bytecode","new",0xad8709db,"src.compiler.bytecode.Bytecode.new","src/compiler/bytecode/Bytecode.hx",16,0x6e0b3f74)
-HX_LOCAL_STACK_FRAME(_hx_pos_1876dfaa47a56244_341_getCode,"src.compiler.bytecode.Bytecode","getCode",0x805473de,"src.compiler.bytecode.Bytecode.getCode","src/compiler/bytecode/Bytecode.hx",341,0x6e0b3f74)
-HX_LOCAL_STACK_FRAME(_hx_pos_1876dfaa47a56244_346_getData,"src.compiler.bytecode.Bytecode","getData",0x80f318db,"src.compiler.bytecode.Bytecode.getData","src/compiler/bytecode/Bytecode.hx",346,0x6e0b3f74)
-HX_LOCAL_STACK_FRAME(_hx_pos_1876dfaa47a56244_351_getLengthBytes,"src.compiler.bytecode.Bytecode","getLengthBytes",0xa787c714,"src.compiler.bytecode.Bytecode.getLengthBytes","src/compiler/bytecode/Bytecode.hx",351,0x6e0b3f74)
-HX_LOCAL_STACK_FRAME(_hx_pos_1876dfaa47a56244_355_getByteData,"src.compiler.bytecode.Bytecode","getByteData",0x1b953483,"src.compiler.bytecode.Bytecode.getByteData","src/compiler/bytecode/Bytecode.hx",355,0x6e0b3f74)
-HX_LOCAL_STACK_FRAME(_hx_pos_1876dfaa47a56244_366_convert,"src.compiler.bytecode.Bytecode","convert",0x86d710ee,"src.compiler.bytecode.Bytecode.convert","src/compiler/bytecode/Bytecode.hx",366,0x6e0b3f74)
+HX_LOCAL_STACK_FRAME(_hx_pos_1876dfaa47a56244_323_getCode,"src.compiler.bytecode.Bytecode","getCode",0x805473de,"src.compiler.bytecode.Bytecode.getCode","src/compiler/bytecode/Bytecode.hx",323,0x6e0b3f74)
+HX_LOCAL_STACK_FRAME(_hx_pos_1876dfaa47a56244_328_getData,"src.compiler.bytecode.Bytecode","getData",0x80f318db,"src.compiler.bytecode.Bytecode.getData","src/compiler/bytecode/Bytecode.hx",328,0x6e0b3f74)
+HX_LOCAL_STACK_FRAME(_hx_pos_1876dfaa47a56244_332_getLengthBytes,"src.compiler.bytecode.Bytecode","getLengthBytes",0xa787c714,"src.compiler.bytecode.Bytecode.getLengthBytes","src/compiler/bytecode/Bytecode.hx",332,0x6e0b3f74)
+HX_LOCAL_STACK_FRAME(_hx_pos_1876dfaa47a56244_344_getByteData,"src.compiler.bytecode.Bytecode","getByteData",0x1b953483,"src.compiler.bytecode.Bytecode.getByteData","src/compiler/bytecode/Bytecode.hx",344,0x6e0b3f74)
+HX_LOCAL_STACK_FRAME(_hx_pos_1876dfaa47a56244_355_convert,"src.compiler.bytecode.Bytecode","convert",0x86d710ee,"src.compiler.bytecode.Bytecode.convert","src/compiler/bytecode/Bytecode.hx",355,0x6e0b3f74)
 HX_LOCAL_STACK_FRAME(_hx_pos_1876dfaa47a56244_22_fromDynamic,"src.compiler.bytecode.Bytecode","fromDynamic",0x80e7afb0,"src.compiler.bytecode.Bytecode.fromDynamic","src/compiler/bytecode/Bytecode.hx",22,0x6e0b3f74)
 HX_LOCAL_STACK_FRAME(_hx_pos_1876dfaa47a56244_49_fromNull,"src.compiler.bytecode.Bytecode","fromNull",0xc63df5b6,"src.compiler.bytecode.Bytecode.fromNull","src/compiler/bytecode/Bytecode.hx",49,0x6e0b3f74)
 HX_LOCAL_STACK_FRAME(_hx_pos_1876dfaa47a56244_54_fromCommand,"src.compiler.bytecode.Bytecode","fromCommand",0xcc3f817c,"src.compiler.bytecode.Bytecode.fromCommand","src/compiler/bytecode/Bytecode.hx",54,0x6e0b3f74)
 HX_LOCAL_STACK_FRAME(_hx_pos_1876dfaa47a56244_59_fromKeyword,"src.compiler.bytecode.Bytecode","fromKeyword",0x08cf571a,"src.compiler.bytecode.Bytecode.fromKeyword","src/compiler/bytecode/Bytecode.hx",59,0x6e0b3f74)
 HX_LOCAL_STACK_FRAME(_hx_pos_1876dfaa47a56244_63_fromString,"src.compiler.bytecode.Bytecode","fromString",0xba46e9c0,"src.compiler.bytecode.Bytecode.fromString","src/compiler/bytecode/Bytecode.hx",63,0x6e0b3f74)
-HX_LOCAL_STACK_FRAME(_hx_pos_1876dfaa47a56244_125_fromInt,"src.compiler.bytecode.Bytecode","fromInt",0xc407f0a0,"src.compiler.bytecode.Bytecode.fromInt","src/compiler/bytecode/Bytecode.hx",125,0x6e0b3f74)
-HX_LOCAL_STACK_FRAME(_hx_pos_1876dfaa47a56244_152_fromVariable,"src.compiler.bytecode.Bytecode","fromVariable",0x96092ceb,"src.compiler.bytecode.Bytecode.fromVariable","src/compiler/bytecode/Bytecode.hx",152,0x6e0b3f74)
-HX_LOCAL_STACK_FRAME(_hx_pos_1876dfaa47a56244_167_fromFloat,"src.compiler.bytecode.Bytecode","fromFloat",0x0ed3b78d,"src.compiler.bytecode.Bytecode.fromFloat","src/compiler/bytecode/Bytecode.hx",167,0x6e0b3f74)
-HX_LOCAL_STACK_FRAME(_hx_pos_1876dfaa47a56244_185_fromBool,"src.compiler.bytecode.Bytecode","fromBool",0xbe4adb59,"src.compiler.bytecode.Bytecode.fromBool","src/compiler/bytecode/Bytecode.hx",185,0x6e0b3f74)
-HX_LOCAL_STACK_FRAME(_hx_pos_1876dfaa47a56244_190_fromArray,"src.compiler.bytecode.Bytecode","fromArray",0x31cc5f8a,"src.compiler.bytecode.Bytecode.fromArray","src/compiler/bytecode/Bytecode.hx",190,0x6e0b3f74)
-HX_LOCAL_STACK_FRAME(_hx_pos_1876dfaa47a56244_200_fromStringPool,"src.compiler.bytecode.Bytecode","fromStringPool",0x749476bc,"src.compiler.bytecode.Bytecode.fromStringPool","src/compiler/bytecode/Bytecode.hx",200,0x6e0b3f74)
-HX_LOCAL_STACK_FRAME(_hx_pos_1876dfaa47a56244_211_fromMap,"src.compiler.bytecode.Bytecode","fromMap",0xc40aee4d,"src.compiler.bytecode.Bytecode.fromMap","src/compiler/bytecode/Bytecode.hx",211,0x6e0b3f74)
-HX_LOCAL_STACK_FRAME(_hx_pos_1876dfaa47a56244_222_lengthToBytes,"src.compiler.bytecode.Bytecode","lengthToBytes",0x0044f1e5,"src.compiler.bytecode.Bytecode.lengthToBytes","src/compiler/bytecode/Bytecode.hx",222,0x6e0b3f74)
-HX_LOCAL_STACK_FRAME(_hx_pos_1876dfaa47a56244_248_bytesToLength,"src.compiler.bytecode.Bytecode","bytesToLength",0x2770e587,"src.compiler.bytecode.Bytecode.bytesToLength","src/compiler/bytecode/Bytecode.hx",248,0x6e0b3f74)
-HX_LOCAL_STACK_FRAME(_hx_pos_1876dfaa47a56244_263_lengthOfLength,"src.compiler.bytecode.Bytecode","lengthOfLength",0x1f698ec8,"src.compiler.bytecode.Bytecode.lengthOfLength","src/compiler/bytecode/Bytecode.hx",263,0x6e0b3f74)
-HX_LOCAL_STACK_FRAME(_hx_pos_1876dfaa47a56244_268_join,"src.compiler.bytecode.Bytecode","join",0x2604460f,"src.compiler.bytecode.Bytecode.join","src/compiler/bytecode/Bytecode.hx",268,0x6e0b3f74)
-HX_LOCAL_STACK_FRAME(_hx_pos_1876dfaa47a56244_279_isKeyword,"src.compiler.bytecode.Bytecode","isKeyword",0x19afcbda,"src.compiler.bytecode.Bytecode.isKeyword","src/compiler/bytecode/Bytecode.hx",279,0x6e0b3f74)
-HX_LOCAL_STACK_FRAME(_hx_pos_1876dfaa47a56244_283_fromBytes,"src.compiler.bytecode.Bytecode","fromBytes",0xc9d4fa5c,"src.compiler.bytecode.Bytecode.fromBytes","src/compiler/bytecode/Bytecode.hx",283,0x6e0b3f74)
+HX_LOCAL_STACK_FRAME(_hx_pos_1876dfaa47a56244_109_fromInt,"src.compiler.bytecode.Bytecode","fromInt",0xc407f0a0,"src.compiler.bytecode.Bytecode.fromInt","src/compiler/bytecode/Bytecode.hx",109,0x6e0b3f74)
+HX_LOCAL_STACK_FRAME(_hx_pos_1876dfaa47a56244_136_fromVariable,"src.compiler.bytecode.Bytecode","fromVariable",0x96092ceb,"src.compiler.bytecode.Bytecode.fromVariable","src/compiler/bytecode/Bytecode.hx",136,0x6e0b3f74)
+HX_LOCAL_STACK_FRAME(_hx_pos_1876dfaa47a56244_151_fromFloat,"src.compiler.bytecode.Bytecode","fromFloat",0x0ed3b78d,"src.compiler.bytecode.Bytecode.fromFloat","src/compiler/bytecode/Bytecode.hx",151,0x6e0b3f74)
+HX_LOCAL_STACK_FRAME(_hx_pos_1876dfaa47a56244_169_fromBool,"src.compiler.bytecode.Bytecode","fromBool",0xbe4adb59,"src.compiler.bytecode.Bytecode.fromBool","src/compiler/bytecode/Bytecode.hx",169,0x6e0b3f74)
+HX_LOCAL_STACK_FRAME(_hx_pos_1876dfaa47a56244_174_fromArray,"src.compiler.bytecode.Bytecode","fromArray",0x31cc5f8a,"src.compiler.bytecode.Bytecode.fromArray","src/compiler/bytecode/Bytecode.hx",174,0x6e0b3f74)
+HX_LOCAL_STACK_FRAME(_hx_pos_1876dfaa47a56244_184_fromStringPool,"src.compiler.bytecode.Bytecode","fromStringPool",0x749476bc,"src.compiler.bytecode.Bytecode.fromStringPool","src/compiler/bytecode/Bytecode.hx",184,0x6e0b3f74)
+HX_LOCAL_STACK_FRAME(_hx_pos_1876dfaa47a56244_195_fromMap,"src.compiler.bytecode.Bytecode","fromMap",0xc40aee4d,"src.compiler.bytecode.Bytecode.fromMap","src/compiler/bytecode/Bytecode.hx",195,0x6e0b3f74)
+HX_LOCAL_STACK_FRAME(_hx_pos_1876dfaa47a56244_206_lengthToBytes,"src.compiler.bytecode.Bytecode","lengthToBytes",0x0044f1e5,"src.compiler.bytecode.Bytecode.lengthToBytes","src/compiler/bytecode/Bytecode.hx",206,0x6e0b3f74)
+HX_LOCAL_STACK_FRAME(_hx_pos_1876dfaa47a56244_234_bytesToLength,"src.compiler.bytecode.Bytecode","bytesToLength",0x2770e587,"src.compiler.bytecode.Bytecode.bytesToLength","src/compiler/bytecode/Bytecode.hx",234,0x6e0b3f74)
+HX_LOCAL_STACK_FRAME(_hx_pos_1876dfaa47a56244_251_lengthOfLength,"src.compiler.bytecode.Bytecode","lengthOfLength",0x1f698ec8,"src.compiler.bytecode.Bytecode.lengthOfLength","src/compiler/bytecode/Bytecode.hx",251,0x6e0b3f74)
+HX_LOCAL_STACK_FRAME(_hx_pos_1876dfaa47a56244_256_join,"src.compiler.bytecode.Bytecode","join",0x2604460f,"src.compiler.bytecode.Bytecode.join","src/compiler/bytecode/Bytecode.hx",256,0x6e0b3f74)
+HX_LOCAL_STACK_FRAME(_hx_pos_1876dfaa47a56244_266_isKeyword,"src.compiler.bytecode.Bytecode","isKeyword",0x19afcbda,"src.compiler.bytecode.Bytecode.isKeyword","src/compiler/bytecode/Bytecode.hx",266,0x6e0b3f74)
+HX_LOCAL_STACK_FRAME(_hx_pos_1876dfaa47a56244_270_fromBytes,"src.compiler.bytecode.Bytecode","fromBytes",0xc9d4fa5c,"src.compiler.bytecode.Bytecode.fromBytes","src/compiler/bytecode/Bytecode.hx",270,0x6e0b3f74)
 HX_LOCAL_STACK_FRAME(_hx_pos_1876dfaa47a56244_18_boot,"src.compiler.bytecode.Bytecode","boot",0x20ba9657,"src.compiler.bytecode.Bytecode.boot","src/compiler/bytecode/Bytecode.hx",18,0x6e0b3f74)
 namespace src{
 namespace compiler{
@@ -91,76 +91,9 @@ namespace bytecode{
 
 void Bytecode_obj::__construct(int code, ::haxe::io::Bytes data){
             	HX_STACKFRAME(&_hx_pos_1876dfaa47a56244_16_new)
-HXLINE( 327)		this->lengthBytes = null();
-HXLINE( 330)		this->code = code;
-HXLINE( 331)		this->data = data;
-HXLINE( 332)		::String cmd = ::src::compiler::bytecode::BytecodeMap_obj::getCommand(code);
-HXLINE( 333)		bool _hx_tmp;
-HXDLIN( 333)		bool _hx_tmp1;
-HXDLIN( 333)		bool _hx_tmp2;
-HXDLIN( 333)		bool _hx_tmp3;
-HXDLIN( 333)		bool _hx_tmp4;
-HXDLIN( 333)		bool _hx_tmp5;
-HXDLIN( 333)		bool _hx_tmp6;
-HXDLIN( 333)		bool _hx_tmp7;
-HXDLIN( 333)		bool _hx_tmp8;
-HXDLIN( 333)		if ((cmd != HX_("Int8",89,70,94,30))) {
-HXLINE( 333)			_hx_tmp8 = (cmd != HX_("Int32",2e,03,4e,51));
-            		}
-            		else {
-HXLINE( 333)			_hx_tmp8 = false;
-            		}
-HXDLIN( 333)		if (_hx_tmp8) {
-HXLINE( 333)			_hx_tmp7 = (cmd != HX_("Int64",cd,05,4e,51));
-            		}
-            		else {
-HXLINE( 333)			_hx_tmp7 = false;
-            		}
-HXDLIN( 333)		if (_hx_tmp7) {
-HXLINE( 333)			_hx_tmp6 = (cmd != HX_("Variable8",5c,c2,35,24));
-            		}
-            		else {
-HXLINE( 333)			_hx_tmp6 = false;
-            		}
-HXDLIN( 333)		if (_hx_tmp6) {
-HXLINE( 333)			_hx_tmp5 = (cmd != HX_("Variable32",fb,49,d4,8a));
-            		}
-            		else {
-HXLINE( 333)			_hx_tmp5 = false;
-            		}
-HXDLIN( 333)		if (_hx_tmp5) {
-HXLINE( 333)			_hx_tmp4 = (cmd != HX_("Variable64",9a,4c,d4,8a));
-            		}
-            		else {
-HXLINE( 333)			_hx_tmp4 = false;
-            		}
-HXDLIN( 333)		if (_hx_tmp4) {
-HXLINE( 333)			_hx_tmp3 = (cmd != HX_("Float",7c,35,c4,95));
-            		}
-            		else {
-HXLINE( 333)			_hx_tmp3 = false;
-            		}
-HXDLIN( 333)		if (_hx_tmp3) {
-HXLINE( 333)			_hx_tmp2 = (cmd != HX_("Double",31,9f,5f,67));
-            		}
-            		else {
-HXLINE( 333)			_hx_tmp2 = false;
-            		}
-HXDLIN( 333)		if (_hx_tmp2) {
-HXLINE( 333)			_hx_tmp1 = !(::src::compiler::bytecode::Bytecode_obj::isKeyword(cmd));
-            		}
-            		else {
-HXLINE( 333)			_hx_tmp1 = false;
-            		}
-HXDLIN( 333)		if (_hx_tmp1) {
-HXLINE( 333)			_hx_tmp = (cmd != HX_("StringPool",6d,16,0a,f3));
-            		}
-            		else {
-HXLINE( 333)			_hx_tmp = false;
-            		}
-HXDLIN( 333)		if (_hx_tmp) {
-HXLINE( 335)			this->lengthBytes = ::src::compiler::bytecode::Bytecode_obj::lengthToBytes(data->length);
-            		}
+HXLINE( 314)		this->lengthBytes = null();
+HXLINE( 317)		this->code = code;
+HXLINE( 318)		this->data = data;
             	}
 
 Dynamic Bytecode_obj::__CreateEmpty() { return new Bytecode_obj; }
@@ -179,280 +112,349 @@ bool Bytecode_obj::_hx_isInstanceOf(int inClassId) {
 }
 
 int Bytecode_obj::getCode(){
-            	HX_STACKFRAME(&_hx_pos_1876dfaa47a56244_341_getCode)
-HXDLIN( 341)		return this->code;
+            	HX_STACKFRAME(&_hx_pos_1876dfaa47a56244_323_getCode)
+HXDLIN( 323)		return this->code;
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Bytecode_obj,getCode,return )
 
  ::haxe::io::Bytes Bytecode_obj::getData(){
-            	HX_STACKFRAME(&_hx_pos_1876dfaa47a56244_346_getData)
-HXDLIN( 346)		return this->data;
+            	HX_STACKFRAME(&_hx_pos_1876dfaa47a56244_328_getData)
+HXDLIN( 328)		return this->data;
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Bytecode_obj,getData,return )
 
  ::haxe::io::Bytes Bytecode_obj::getLengthBytes(){
-            	HX_STACKFRAME(&_hx_pos_1876dfaa47a56244_351_getLengthBytes)
-HXDLIN( 351)		return this->lengthBytes;
+            	HX_STACKFRAME(&_hx_pos_1876dfaa47a56244_332_getLengthBytes)
+HXLINE( 333)		if (hx::IsNull( this->lengthBytes )) {
+HXLINE( 334)			::String cmd = ::src::compiler::bytecode::BytecodeMap_obj::getCommand(this->code);
+HXLINE( 335)			bool _hx_tmp;
+HXDLIN( 335)			bool _hx_tmp1;
+HXDLIN( 335)			bool _hx_tmp2;
+HXDLIN( 335)			bool _hx_tmp3;
+HXDLIN( 335)			bool _hx_tmp4;
+HXDLIN( 335)			bool _hx_tmp5;
+HXDLIN( 335)			bool _hx_tmp6;
+HXDLIN( 335)			bool _hx_tmp7;
+HXDLIN( 335)			bool _hx_tmp8;
+HXDLIN( 335)			if ((cmd != HX_("Int8",89,70,94,30))) {
+HXLINE( 335)				_hx_tmp8 = (cmd != HX_("Int32",2e,03,4e,51));
+            			}
+            			else {
+HXLINE( 335)				_hx_tmp8 = false;
+            			}
+HXDLIN( 335)			if (_hx_tmp8) {
+HXLINE( 335)				_hx_tmp7 = (cmd != HX_("Int64",cd,05,4e,51));
+            			}
+            			else {
+HXLINE( 335)				_hx_tmp7 = false;
+            			}
+HXDLIN( 335)			if (_hx_tmp7) {
+HXLINE( 335)				_hx_tmp6 = (cmd != HX_("Variable8",5c,c2,35,24));
+            			}
+            			else {
+HXLINE( 335)				_hx_tmp6 = false;
+            			}
+HXDLIN( 335)			if (_hx_tmp6) {
+HXLINE( 335)				_hx_tmp5 = (cmd != HX_("Variable32",fb,49,d4,8a));
+            			}
+            			else {
+HXLINE( 335)				_hx_tmp5 = false;
+            			}
+HXDLIN( 335)			if (_hx_tmp5) {
+HXLINE( 335)				_hx_tmp4 = (cmd != HX_("Variable64",9a,4c,d4,8a));
+            			}
+            			else {
+HXLINE( 335)				_hx_tmp4 = false;
+            			}
+HXDLIN( 335)			if (_hx_tmp4) {
+HXLINE( 335)				_hx_tmp3 = (cmd != HX_("Float",7c,35,c4,95));
+            			}
+            			else {
+HXLINE( 335)				_hx_tmp3 = false;
+            			}
+HXDLIN( 335)			if (_hx_tmp3) {
+HXLINE( 335)				_hx_tmp2 = (cmd != HX_("Double",31,9f,5f,67));
+            			}
+            			else {
+HXLINE( 335)				_hx_tmp2 = false;
+            			}
+HXDLIN( 335)			if (_hx_tmp2) {
+HXLINE( 335)				_hx_tmp1 = !(::src::compiler::bytecode::Bytecode_obj::isKeyword(cmd));
+            			}
+            			else {
+HXLINE( 335)				_hx_tmp1 = false;
+            			}
+HXDLIN( 335)			if (_hx_tmp1) {
+HXLINE( 335)				_hx_tmp = (cmd != HX_("StringPool",6d,16,0a,f3));
+            			}
+            			else {
+HXLINE( 335)				_hx_tmp = false;
+            			}
+HXDLIN( 335)			if (_hx_tmp) {
+HXLINE( 337)				this->lengthBytes = ::src::compiler::bytecode::Bytecode_obj::lengthToBytes(this->data->length);
+            			}
+            		}
+HXLINE( 340)		return this->lengthBytes;
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Bytecode_obj,getLengthBytes,return )
 
  ::haxe::io::Bytes Bytecode_obj::getByteData(){
-            	HX_GC_STACKFRAME(&_hx_pos_1876dfaa47a56244_355_getByteData)
-HXLINE( 356)		 ::haxe::io::BytesBuffer total =  ::haxe::io::BytesBuffer_obj::__alloc( HX_CTX );
-HXLINE( 357)		::String cmd = ::src::compiler::bytecode::BytecodeMap_obj::getCommand(this->code);
-HXLINE( 358)		total->b->push(this->code);
-HXLINE( 359)		bool _hx_tmp;
-HXDLIN( 359)		bool _hx_tmp1;
-HXDLIN( 359)		bool _hx_tmp2;
-HXDLIN( 359)		bool _hx_tmp3;
-HXDLIN( 359)		bool _hx_tmp4;
-HXDLIN( 359)		bool _hx_tmp5;
-HXDLIN( 359)		bool _hx_tmp6;
-HXDLIN( 359)		bool _hx_tmp7;
-HXDLIN( 359)		bool _hx_tmp8;
-HXDLIN( 359)		if ((cmd != HX_("Int8",89,70,94,30))) {
-HXLINE( 359)			_hx_tmp8 = (cmd != HX_("Int32",2e,03,4e,51));
+            	HX_GC_STACKFRAME(&_hx_pos_1876dfaa47a56244_344_getByteData)
+HXLINE( 345)		 ::haxe::io::BytesBuffer total =  ::haxe::io::BytesBuffer_obj::__alloc( HX_CTX );
+HXLINE( 346)		::String cmd = ::src::compiler::bytecode::BytecodeMap_obj::getCommand(this->code);
+HXLINE( 347)		total->b->push(this->code);
+HXLINE( 348)		bool _hx_tmp;
+HXDLIN( 348)		bool _hx_tmp1;
+HXDLIN( 348)		bool _hx_tmp2;
+HXDLIN( 348)		bool _hx_tmp3;
+HXDLIN( 348)		bool _hx_tmp4;
+HXDLIN( 348)		bool _hx_tmp5;
+HXDLIN( 348)		bool _hx_tmp6;
+HXDLIN( 348)		bool _hx_tmp7;
+HXDLIN( 348)		bool _hx_tmp8;
+HXDLIN( 348)		if ((cmd != HX_("Int8",89,70,94,30))) {
+HXLINE( 348)			_hx_tmp8 = (cmd != HX_("Int32",2e,03,4e,51));
             		}
             		else {
-HXLINE( 359)			_hx_tmp8 = false;
+HXLINE( 348)			_hx_tmp8 = false;
             		}
-HXDLIN( 359)		if (_hx_tmp8) {
-HXLINE( 359)			_hx_tmp7 = (cmd != HX_("Int64",cd,05,4e,51));
-            		}
-            		else {
-HXLINE( 359)			_hx_tmp7 = false;
-            		}
-HXDLIN( 359)		if (_hx_tmp7) {
-HXLINE( 359)			_hx_tmp6 = (cmd != HX_("Variable8",5c,c2,35,24));
+HXDLIN( 348)		if (_hx_tmp8) {
+HXLINE( 348)			_hx_tmp7 = (cmd != HX_("Int64",cd,05,4e,51));
             		}
             		else {
-HXLINE( 359)			_hx_tmp6 = false;
+HXLINE( 348)			_hx_tmp7 = false;
             		}
-HXDLIN( 359)		if (_hx_tmp6) {
-HXLINE( 359)			_hx_tmp5 = (cmd != HX_("Variable32",fb,49,d4,8a));
-            		}
-            		else {
-HXLINE( 359)			_hx_tmp5 = false;
-            		}
-HXDLIN( 359)		if (_hx_tmp5) {
-HXLINE( 359)			_hx_tmp4 = (cmd != HX_("Variable64",9a,4c,d4,8a));
+HXDLIN( 348)		if (_hx_tmp7) {
+HXLINE( 348)			_hx_tmp6 = (cmd != HX_("Variable8",5c,c2,35,24));
             		}
             		else {
-HXLINE( 359)			_hx_tmp4 = false;
+HXLINE( 348)			_hx_tmp6 = false;
             		}
-HXDLIN( 359)		if (_hx_tmp4) {
-HXLINE( 359)			_hx_tmp3 = (cmd != HX_("Float",7c,35,c4,95));
-            		}
-            		else {
-HXLINE( 359)			_hx_tmp3 = false;
-            		}
-HXDLIN( 359)		if (_hx_tmp3) {
-HXLINE( 359)			_hx_tmp2 = (cmd != HX_("Double",31,9f,5f,67));
+HXDLIN( 348)		if (_hx_tmp6) {
+HXLINE( 348)			_hx_tmp5 = (cmd != HX_("Variable32",fb,49,d4,8a));
             		}
             		else {
-HXLINE( 359)			_hx_tmp2 = false;
+HXLINE( 348)			_hx_tmp5 = false;
             		}
-HXDLIN( 359)		if (_hx_tmp2) {
-HXLINE( 359)			_hx_tmp1 = !(::src::compiler::bytecode::Bytecode_obj::isKeyword(cmd));
-            		}
-            		else {
-HXLINE( 359)			_hx_tmp1 = false;
-            		}
-HXDLIN( 359)		if (_hx_tmp1) {
-HXLINE( 359)			_hx_tmp = (cmd != HX_("StringPool",6d,16,0a,f3));
+HXDLIN( 348)		if (_hx_tmp5) {
+HXLINE( 348)			_hx_tmp4 = (cmd != HX_("Variable64",9a,4c,d4,8a));
             		}
             		else {
-HXLINE( 359)			_hx_tmp = false;
+HXLINE( 348)			_hx_tmp4 = false;
             		}
-HXDLIN( 359)		if (_hx_tmp) {
-HXLINE( 360)			 ::haxe::io::Bytes src1 = this->lengthBytes;
-HXDLIN( 360)			::Array< unsigned char > b1 = total->b;
-HXDLIN( 360)			::Array< unsigned char > b2 = src1->b;
-HXDLIN( 360)			{
-HXLINE( 360)				int _g1 = (int)0;
-HXDLIN( 360)				int _g = src1->length;
-HXDLIN( 360)				while((_g1 < _g)){
-HXLINE( 360)					_g1 = (_g1 + (int)1);
-HXDLIN( 360)					int i = (_g1 - (int)1);
-HXDLIN( 360)					::Array< unsigned char > total1 = total->b;
-HXDLIN( 360)					total1->push(b2->__get(i));
+HXDLIN( 348)		if (_hx_tmp4) {
+HXLINE( 348)			_hx_tmp3 = (cmd != HX_("Float",7c,35,c4,95));
+            		}
+            		else {
+HXLINE( 348)			_hx_tmp3 = false;
+            		}
+HXDLIN( 348)		if (_hx_tmp3) {
+HXLINE( 348)			_hx_tmp2 = (cmd != HX_("Double",31,9f,5f,67));
+            		}
+            		else {
+HXLINE( 348)			_hx_tmp2 = false;
+            		}
+HXDLIN( 348)		if (_hx_tmp2) {
+HXLINE( 348)			_hx_tmp1 = !(::src::compiler::bytecode::Bytecode_obj::isKeyword(cmd));
+            		}
+            		else {
+HXLINE( 348)			_hx_tmp1 = false;
+            		}
+HXDLIN( 348)		if (_hx_tmp1) {
+HXLINE( 348)			_hx_tmp = (cmd != HX_("StringPool",6d,16,0a,f3));
+            		}
+            		else {
+HXLINE( 348)			_hx_tmp = false;
+            		}
+HXDLIN( 348)		if (_hx_tmp) {
+HXLINE( 349)			 ::haxe::io::Bytes src1 = this->getLengthBytes();
+HXDLIN( 349)			::Array< unsigned char > b1 = total->b;
+HXDLIN( 349)			::Array< unsigned char > b2 = src1->b;
+HXDLIN( 349)			{
+HXLINE( 349)				int _g1 = (int)0;
+HXDLIN( 349)				int _g = src1->length;
+HXDLIN( 349)				while((_g1 < _g)){
+HXLINE( 349)					_g1 = (_g1 + (int)1);
+HXDLIN( 349)					int i = (_g1 - (int)1);
+HXDLIN( 349)					::Array< unsigned char > total1 = total->b;
+HXDLIN( 349)					total1->push(b2->__get(i));
             				}
             			}
             		}
-HXLINE( 361)		{
-HXLINE( 361)			 ::haxe::io::Bytes src2 = this->data;
-HXDLIN( 361)			::Array< unsigned char > b11 = total->b;
-HXDLIN( 361)			::Array< unsigned char > b21 = src2->b;
-HXDLIN( 361)			{
-HXLINE( 361)				int _g11 = (int)0;
-HXDLIN( 361)				int _g2 = src2->length;
-HXDLIN( 361)				while((_g11 < _g2)){
-HXLINE( 361)					_g11 = (_g11 + (int)1);
-HXDLIN( 361)					int i1 = (_g11 - (int)1);
-HXDLIN( 361)					::Array< unsigned char > total2 = total->b;
-HXDLIN( 361)					total2->push(b21->__get(i1));
+HXLINE( 350)		{
+HXLINE( 350)			 ::haxe::io::Bytes src2 = this->data;
+HXDLIN( 350)			::Array< unsigned char > b11 = total->b;
+HXDLIN( 350)			::Array< unsigned char > b21 = src2->b;
+HXDLIN( 350)			{
+HXLINE( 350)				int _g11 = (int)0;
+HXDLIN( 350)				int _g2 = src2->length;
+HXDLIN( 350)				while((_g11 < _g2)){
+HXLINE( 350)					_g11 = (_g11 + (int)1);
+HXDLIN( 350)					int i1 = (_g11 - (int)1);
+HXDLIN( 350)					::Array< unsigned char > total2 = total->b;
+HXDLIN( 350)					total2->push(b21->__get(i1));
             				}
             			}
             		}
-HXLINE( 362)		return total->getBytes();
+HXLINE( 351)		return total->getBytes();
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Bytecode_obj,getByteData,return )
 
  ::Dynamic Bytecode_obj::convert( ::src::compiler::Scope scope){
-            	HX_GC_STACKFRAME(&_hx_pos_1876dfaa47a56244_366_convert)
-HXLINE( 367)		::String cmd = ::src::compiler::bytecode::BytecodeMap_obj::getCommand(this->code);
-HXLINE( 368)		int _hx_tmp = this->code;
-HXDLIN( 368)		if ((_hx_tmp <= ::src::compiler::bytecode::BytecodeMap_obj::fromString(HX_("Null",a7,ca,e7,33)))) {
-HXLINE( 369)			if ((cmd == HX_("Int8",89,70,94,30))) {
-HXLINE( 370)				return this->data->b->__get((int)0);
+            	HX_GC_STACKFRAME(&_hx_pos_1876dfaa47a56244_355_convert)
+HXLINE( 356)		::String cmd = ::src::compiler::bytecode::BytecodeMap_obj::getCommand(this->code);
+HXLINE( 357)		int _hx_tmp = this->code;
+HXDLIN( 357)		if ((_hx_tmp <= ::src::compiler::bytecode::BytecodeMap_obj::fromString(HX_("Null",a7,ca,e7,33)))) {
+HXLINE( 358)			if ((cmd == HX_("Int8",89,70,94,30))) {
+HXLINE( 359)				return this->data->b->__get((int)0);
             			}
             			else {
-HXLINE( 371)				if ((cmd == HX_("Int32",2e,03,4e,51))) {
-HXLINE( 372)					 ::haxe::io::Bytes _this = this->data;
-HXDLIN( 372)					int _this1 = _this->b->__get((int)0);
-HXDLIN( 372)					int _hx_tmp1 = ((int)_this1 | (int)((int)_this->b->__get((int)1) << (int)(int)8));
-HXDLIN( 372)					int _hx_tmp2 = ((int)_hx_tmp1 | (int)((int)_this->b->__get((int)2) << (int)(int)16));
-HXDLIN( 372)					return ((int)_hx_tmp2 | (int)((int)_this->b->__get((int)3) << (int)(int)24));
+HXLINE( 360)				if ((cmd == HX_("Int32",2e,03,4e,51))) {
+HXLINE( 361)					 ::haxe::io::Bytes _this = this->data;
+HXDLIN( 361)					int _this1 = _this->b->__get((int)0);
+HXDLIN( 361)					int _hx_tmp1 = ((int)_this1 | (int)((int)_this->b->__get((int)1) << (int)(int)8));
+HXDLIN( 361)					int _hx_tmp2 = ((int)_hx_tmp1 | (int)((int)_this->b->__get((int)2) << (int)(int)16));
+HXDLIN( 361)					return ((int)_hx_tmp2 | (int)((int)_this->b->__get((int)3) << (int)(int)24));
             				}
             				else {
-HXLINE( 373)					if ((cmd == HX_("Int64",cd,05,4e,51))) {
-HXLINE( 374)						 ::haxe::io::Bytes _this2 = this->data;
-HXDLIN( 374)						int pos = (int)4;
-HXDLIN( 374)						int _this3 = _this2->b->__get(pos);
-HXDLIN( 374)						::Array< unsigned char > _this4 = _this2->b;
-HXDLIN( 374)						int high = ((int)_this3 | (int)((int)_this4->__get((pos + (int)1)) << (int)(int)8));
-HXDLIN( 374)						::Array< unsigned char > _this5 = _this2->b;
-HXDLIN( 374)						int high1 = ((int)high | (int)((int)_this5->__get((pos + (int)2)) << (int)(int)16));
-HXDLIN( 374)						::Array< unsigned char > _this6 = _this2->b;
-HXDLIN( 374)						int _this7 = _this2->b->__get((int)0);
-HXDLIN( 374)						int low = ((int)_this7 | (int)((int)_this2->b->__get((int)1) << (int)(int)8));
-HXDLIN( 374)						int low1 = ((int)low | (int)((int)_this2->b->__get((int)2) << (int)(int)16));
-HXDLIN( 374)						 cpp::Int64Struct i64 = _hx_int64_make(((int)high1 | (int)((int)_this6->__get((pos + (int)3)) << (int)(int)24)),((int)low1 | (int)((int)_this2->b->__get((int)3) << (int)(int)24)));
-HXLINE( 375)						int a = _hx_int64_low(i64);
-HXDLIN( 375)						return (a + ((int)_hx_int64_high(i64) >> (int)(int)32));
+HXLINE( 362)					if ((cmd == HX_("Int64",cd,05,4e,51))) {
+HXLINE( 363)						 ::haxe::io::Bytes _this2 = this->data;
+HXDLIN( 363)						int pos = (int)4;
+HXDLIN( 363)						int _this3 = _this2->b->__get(pos);
+HXDLIN( 363)						::Array< unsigned char > _this4 = _this2->b;
+HXDLIN( 363)						int high = ((int)_this3 | (int)((int)_this4->__get((pos + (int)1)) << (int)(int)8));
+HXDLIN( 363)						::Array< unsigned char > _this5 = _this2->b;
+HXDLIN( 363)						int high1 = ((int)high | (int)((int)_this5->__get((pos + (int)2)) << (int)(int)16));
+HXDLIN( 363)						::Array< unsigned char > _this6 = _this2->b;
+HXDLIN( 363)						int _this7 = _this2->b->__get((int)0);
+HXDLIN( 363)						int low = ((int)_this7 | (int)((int)_this2->b->__get((int)1) << (int)(int)8));
+HXDLIN( 363)						int low1 = ((int)low | (int)((int)_this2->b->__get((int)2) << (int)(int)16));
+HXDLIN( 363)						 cpp::Int64Struct i64 = _hx_int64_make(((int)high1 | (int)((int)_this6->__get((pos + (int)3)) << (int)(int)24)),((int)low1 | (int)((int)_this2->b->__get((int)3) << (int)(int)24)));
+HXLINE( 364)						int a = _hx_int64_low(i64);
+HXDLIN( 364)						return (a + ((int)_hx_int64_high(i64) >> (int)(int)32));
             					}
             					else {
-HXLINE( 376)						if ((cmd == HX_("Float",7c,35,c4,95))) {
-HXLINE( 377)							 ::haxe::io::Bytes _this8 = this->data;
-HXDLIN( 377)							if (((int)4 > _this8->length)) {
-HXLINE( 377)								HX_STACK_DO_THROW(::haxe::io::Error_obj::OutsideBounds_dyn());
+HXLINE( 365)						if ((cmd == HX_("Float",7c,35,c4,95))) {
+HXLINE( 366)							 ::haxe::io::Bytes _this8 = this->data;
+HXDLIN( 366)							if (((int)4 > _this8->length)) {
+HXLINE( 366)								HX_STACK_DO_THROW(::haxe::io::Error_obj::OutsideBounds_dyn());
             							}
-HXDLIN( 377)							return ::__hxcpp_memory_get_float(_this8->b,(int)0);
+HXDLIN( 366)							return ::__hxcpp_memory_get_float(_this8->b,(int)0);
             						}
             						else {
-HXLINE( 378)							if ((cmd == HX_("Double",31,9f,5f,67))) {
-HXLINE( 379)								 ::haxe::io::Bytes _this9 = this->data;
-HXDLIN( 379)								if (((int)8 > _this9->length)) {
-HXLINE( 379)									HX_STACK_DO_THROW(::haxe::io::Error_obj::OutsideBounds_dyn());
+HXLINE( 367)							if ((cmd == HX_("Double",31,9f,5f,67))) {
+HXLINE( 368)								 ::haxe::io::Bytes _this9 = this->data;
+HXDLIN( 368)								if (((int)8 > _this9->length)) {
+HXLINE( 368)									HX_STACK_DO_THROW(::haxe::io::Error_obj::OutsideBounds_dyn());
             								}
-HXDLIN( 379)								return ::__hxcpp_memory_get_double(_this9->b,(int)0);
+HXDLIN( 368)								return ::__hxcpp_memory_get_double(_this9->b,(int)0);
             							}
             							else {
-HXLINE( 380)								if ((cmd == HX_("Variable8",5c,c2,35,24))) {
-HXLINE( 381)									return ::src::compiler::commands::value::VariableAccess_obj::fromInt(scope,this->data->b->__get((int)0));
+HXLINE( 369)								if ((cmd == HX_("Variable8",5c,c2,35,24))) {
+HXLINE( 370)									return ::src::compiler::commands::value::VariableAccess_obj::fromInt(scope,this->data->b->__get((int)0));
             								}
             								else {
-HXLINE( 382)									if ((cmd == HX_("Variable32",fb,49,d4,8a))) {
-HXLINE( 383)										 ::haxe::io::Bytes _this10 = this->data;
-HXDLIN( 383)										int _this11 = _this10->b->__get((int)0);
-HXDLIN( 383)										int _hx_tmp3 = ((int)_this11 | (int)((int)_this10->b->__get((int)1) << (int)(int)8));
-HXDLIN( 383)										int _hx_tmp4 = ((int)_hx_tmp3 | (int)((int)_this10->b->__get((int)2) << (int)(int)16));
-HXDLIN( 383)										return ::src::compiler::commands::value::VariableAccess_obj::fromInt(scope,((int)_hx_tmp4 | (int)((int)_this10->b->__get((int)3) << (int)(int)24)));
+HXLINE( 371)									if ((cmd == HX_("Variable32",fb,49,d4,8a))) {
+HXLINE( 372)										 ::haxe::io::Bytes _this10 = this->data;
+HXDLIN( 372)										int _this11 = _this10->b->__get((int)0);
+HXDLIN( 372)										int _hx_tmp3 = ((int)_this11 | (int)((int)_this10->b->__get((int)1) << (int)(int)8));
+HXDLIN( 372)										int _hx_tmp4 = ((int)_hx_tmp3 | (int)((int)_this10->b->__get((int)2) << (int)(int)16));
+HXDLIN( 372)										return ::src::compiler::commands::value::VariableAccess_obj::fromInt(scope,((int)_hx_tmp4 | (int)((int)_this10->b->__get((int)3) << (int)(int)24)));
             									}
             									else {
-HXLINE( 384)										if ((cmd == HX_("Variable64",9a,4c,d4,8a))) {
-HXLINE( 385)											 ::haxe::io::Bytes _this12 = this->data;
-HXDLIN( 385)											int pos1 = (int)4;
-HXDLIN( 385)											int _this13 = _this12->b->__get(pos1);
-HXDLIN( 385)											::Array< unsigned char > _this14 = _this12->b;
-HXDLIN( 385)											int high2 = ((int)_this13 | (int)((int)_this14->__get((pos1 + (int)1)) << (int)(int)8));
-HXDLIN( 385)											::Array< unsigned char > _this15 = _this12->b;
-HXDLIN( 385)											int high3 = ((int)high2 | (int)((int)_this15->__get((pos1 + (int)2)) << (int)(int)16));
-HXDLIN( 385)											::Array< unsigned char > _this16 = _this12->b;
-HXDLIN( 385)											int _this17 = _this12->b->__get((int)0);
-HXDLIN( 385)											int low2 = ((int)_this17 | (int)((int)_this12->b->__get((int)1) << (int)(int)8));
-HXDLIN( 385)											int low3 = ((int)low2 | (int)((int)_this12->b->__get((int)2) << (int)(int)16));
-HXDLIN( 385)											 cpp::Int64Struct i641 = _hx_int64_make(((int)high3 | (int)((int)_this16->__get((pos1 + (int)3)) << (int)(int)24)),((int)low3 | (int)((int)_this12->b->__get((int)3) << (int)(int)24)));
-HXLINE( 386)											int a1 = _hx_int64_low(i641);
-HXDLIN( 386)											return ::src::compiler::commands::value::VariableAccess_obj::fromInt(scope,(a1 + ((int)_hx_int64_high(i641) >> (int)(int)32)));
+HXLINE( 373)										if ((cmd == HX_("Variable64",9a,4c,d4,8a))) {
+HXLINE( 374)											 ::haxe::io::Bytes _this12 = this->data;
+HXDLIN( 374)											int pos1 = (int)4;
+HXDLIN( 374)											int _this13 = _this12->b->__get(pos1);
+HXDLIN( 374)											::Array< unsigned char > _this14 = _this12->b;
+HXDLIN( 374)											int high2 = ((int)_this13 | (int)((int)_this14->__get((pos1 + (int)1)) << (int)(int)8));
+HXDLIN( 374)											::Array< unsigned char > _this15 = _this12->b;
+HXDLIN( 374)											int high3 = ((int)high2 | (int)((int)_this15->__get((pos1 + (int)2)) << (int)(int)16));
+HXDLIN( 374)											::Array< unsigned char > _this16 = _this12->b;
+HXDLIN( 374)											int _this17 = _this12->b->__get((int)0);
+HXDLIN( 374)											int low2 = ((int)_this17 | (int)((int)_this12->b->__get((int)1) << (int)(int)8));
+HXDLIN( 374)											int low3 = ((int)low2 | (int)((int)_this12->b->__get((int)2) << (int)(int)16));
+HXDLIN( 374)											 cpp::Int64Struct i641 = _hx_int64_make(((int)high3 | (int)((int)_this16->__get((pos1 + (int)3)) << (int)(int)24)),((int)low3 | (int)((int)_this12->b->__get((int)3) << (int)(int)24)));
+HXLINE( 375)											int a1 = _hx_int64_low(i641);
+HXDLIN( 375)											return ::src::compiler::commands::value::VariableAccess_obj::fromInt(scope,(a1 + ((int)_hx_int64_high(i641) >> (int)(int)32)));
             										}
             										else {
-HXLINE( 387)											if ((cmd == HX_("String",f1,9c,c4,45))) {
-HXLINE( 388)												::String s = this->data->getString((int)0,this->data->length);
-HXLINE( 390)												return s;
+HXLINE( 376)											if ((cmd == HX_("String",f1,9c,c4,45))) {
+HXLINE( 377)												::String s = this->data->getString((int)0,this->data->length);
+HXLINE( 379)												return s;
             											}
             											else {
-HXLINE( 391)												if ((cmd == HX_("Literal",4f,d1,6c,61))) {
-HXLINE( 392)													::String s1 = this->data->getString((int)0,this->data->length);
-HXLINE( 394)													return  ::src::compiler::commands::value::LiteralValueCommand_obj::__alloc( HX_CTX ,scope,s1);
+HXLINE( 380)												if ((cmd == HX_("Literal",4f,d1,6c,61))) {
+HXLINE( 381)													::String s1 = this->data->getString((int)0,this->data->length);
+HXLINE( 383)													return  ::src::compiler::commands::value::LiteralValueCommand_obj::__alloc( HX_CTX ,scope,s1);
             												}
             												else {
-HXLINE( 395)													if (::src::compiler::bytecode::Bytecode_obj::isKeyword(cmd)) {
-HXLINE( 396)														if ((cmd == HX_("Null",a7,ca,e7,33))) {
-HXLINE( 396)															return null();
+HXLINE( 384)													if (::src::compiler::bytecode::Bytecode_obj::isKeyword(cmd)) {
+HXLINE( 385)														if ((cmd == HX_("Null",a7,ca,e7,33))) {
+HXLINE( 385)															return null();
             														}
             														else {
-HXLINE( 397)															if ((cmd == HX_("True",6e,d3,dc,37))) {
-HXLINE( 397)																return true;
+HXLINE( 386)															if ((cmd == HX_("True",6e,d3,dc,37))) {
+HXLINE( 386)																return true;
             															}
             															else {
-HXLINE( 398)																if ((cmd == HX_("False",83,a5,7c,8e))) {
-HXLINE( 398)																	return false;
+HXLINE( 387)																if ((cmd == HX_("False",83,a5,7c,8e))) {
+HXLINE( 387)																	return false;
             																}
             																else {
-HXLINE( 399)																	if ((cmd == HX_("Zero",48,3b,ca,3b))) {
-HXLINE( 399)																		return (int)0;
+HXLINE( 388)																	if ((cmd == HX_("Zero",48,3b,ca,3b))) {
+HXLINE( 388)																		return (int)0;
             																	}
             																	else {
-HXLINE( 400)																		if ((cmd == HX_("One",46,52,3c,00))) {
-HXLINE( 400)																			return (int)1;
+HXLINE( 389)																		if ((cmd == HX_("One",46,52,3c,00))) {
+HXLINE( 389)																			return (int)1;
             																		}
             																		else {
-HXLINE( 401)																			if ((cmd == HX_("Two",6c,25,40,00))) {
-HXLINE( 401)																				return (int)2;
+HXLINE( 390)																			if ((cmd == HX_("Two",6c,25,40,00))) {
+HXLINE( 390)																				return (int)2;
             																			}
             																			else {
-HXLINE( 402)																				if ((cmd == HX_("Three",3e,c4,bd,a2))) {
-HXLINE( 402)																					return (int)3;
+HXLINE( 391)																				if ((cmd == HX_("Three",3e,c4,bd,a2))) {
+HXLINE( 391)																					return (int)3;
             																				}
             																				else {
-HXLINE( 403)																					if ((cmd == HX_("Four",06,90,99,2e))) {
-HXLINE( 403)																						return (int)4;
+HXLINE( 392)																					if ((cmd == HX_("Four",06,90,99,2e))) {
+HXLINE( 392)																						return (int)4;
             																					}
             																					else {
-HXLINE( 404)																						if ((cmd == HX_("Five",52,03,95,2e))) {
-HXLINE( 404)																							return (int)5;
+HXLINE( 393)																						if ((cmd == HX_("Five",52,03,95,2e))) {
+HXLINE( 393)																							return (int)5;
             																						}
             																						else {
-HXLINE( 405)																							if ((cmd == HX_("Six",02,57,3f,00))) {
-HXLINE( 405)																								return (int)6;
+HXLINE( 394)																							if ((cmd == HX_("Six",02,57,3f,00))) {
+HXLINE( 394)																								return (int)6;
             																							}
             																							else {
-HXLINE( 406)																								if ((cmd == HX_("Seven",ed,94,5e,0d))) {
-HXLINE( 406)																									return (int)7;
+HXLINE( 395)																								if ((cmd == HX_("Seven",ed,94,5e,0d))) {
+HXLINE( 395)																									return (int)7;
             																								}
             																								else {
-HXLINE( 407)																									if ((cmd == HX_("Eight",2f,f1,5b,00))) {
-HXLINE( 407)																										return (int)8;
+HXLINE( 396)																									if ((cmd == HX_("Eight",2f,f1,5b,00))) {
+HXLINE( 396)																										return (int)8;
             																									}
             																									else {
-HXLINE( 408)																										if ((cmd == HX_("Nine",52,b1,de,33))) {
-HXLINE( 408)																											return (int)9;
+HXLINE( 397)																										if ((cmd == HX_("Nine",52,b1,de,33))) {
+HXLINE( 397)																											return (int)9;
             																										}
             																										else {
-HXLINE( 409)																											if ((cmd == HX_("Ten",bd,15,40,00))) {
-HXLINE( 409)																												return (int)10;
+HXLINE( 398)																											if ((cmd == HX_("Ten",bd,15,40,00))) {
+HXLINE( 398)																												return (int)10;
             																											}
             																											else {
-HXLINE( 410)																												return null();
+HXLINE( 399)																												return null();
             																											}
             																										}
             																									}
@@ -469,85 +471,85 @@ HXLINE( 410)																												return null();
             														}
             													}
             													else {
-HXLINE( 411)														if ((cmd == HX_("Array",79,dd,bc,b8))) {
-HXLINE( 412)															::Array< ::Dynamic> codes = ::src::compiler::bytecode::Bytecode_obj::fromBytes(this->data,scope);
-HXLINE( 413)															::cpp::VirtualArray result = ::cpp::VirtualArray_obj::__new();
-HXLINE( 414)															{
-HXLINE( 414)																int _g = (int)0;
-HXDLIN( 414)																while((_g < codes->length)){
-HXLINE( 414)																	 ::src::compiler::bytecode::Bytecode code = codes->__get(_g).StaticCast<  ::src::compiler::bytecode::Bytecode >();
-HXDLIN( 414)																	_g = (_g + (int)1);
-HXDLIN( 414)																	result->push(code->convert(scope));
+HXLINE( 400)														if ((cmd == HX_("Array",79,dd,bc,b8))) {
+HXLINE( 401)															::Array< ::Dynamic> codes = ::src::compiler::bytecode::Bytecode_obj::fromBytes(this->data,scope);
+HXLINE( 402)															::cpp::VirtualArray result = ::cpp::VirtualArray_obj::__new();
+HXLINE( 403)															{
+HXLINE( 403)																int _g = (int)0;
+HXDLIN( 403)																while((_g < codes->length)){
+HXLINE( 403)																	 ::src::compiler::bytecode::Bytecode code = codes->__get(_g).StaticCast<  ::src::compiler::bytecode::Bytecode >();
+HXDLIN( 403)																	_g = (_g + (int)1);
+HXDLIN( 403)																	result->push(code->convert(scope));
             																}
             															}
-HXLINE( 415)															return result;
+HXLINE( 404)															return result;
             														}
             														else {
-HXLINE( 416)															if ((cmd == HX_("Map",7c,c2,3a,00))) {
-HXLINE( 417)																::Array< ::Dynamic> codes1 = ::src::compiler::bytecode::Bytecode_obj::fromBytes(this->data,scope);
-HXLINE( 418)																 ::haxe::ds::StringMap result1 =  ::haxe::ds::StringMap_obj::__alloc( HX_CTX );
-HXLINE( 419)																int i = (int)0;
-HXLINE( 420)																if ((hx::Mod(codes1->length,(int)2) == (int)1)) {
-HXLINE( 420)																	HX_STACK_DO_THROW(HX_("Invalid map code, key with no pair",ee,07,62,e0));
+HXLINE( 405)															if ((cmd == HX_("Map",7c,c2,3a,00))) {
+HXLINE( 406)																::Array< ::Dynamic> codes1 = ::src::compiler::bytecode::Bytecode_obj::fromBytes(this->data,scope);
+HXLINE( 407)																 ::haxe::ds::StringMap result1 =  ::haxe::ds::StringMap_obj::__alloc( HX_CTX );
+HXLINE( 408)																int i = (int)0;
+HXLINE( 409)																if ((hx::Mod(codes1->length,(int)2) == (int)1)) {
+HXLINE( 409)																	HX_STACK_DO_THROW(HX_("Invalid map code, key with no pair",ee,07,62,e0));
             																}
-HXLINE( 421)																while((i < codes1->length)){
-HXLINE( 422)																	{
-HXLINE( 422)																		::String key = ( (::String)(codes1->__get(i).StaticCast<  ::src::compiler::bytecode::Bytecode >()->convert(scope)) );
-HXDLIN( 422)																		result1->set(key,codes1->__get((i + (int)1)).StaticCast<  ::src::compiler::bytecode::Bytecode >()->convert(scope));
+HXLINE( 410)																while((i < codes1->length)){
+HXLINE( 411)																	{
+HXLINE( 411)																		::String key = ( (::String)(codes1->__get(i).StaticCast<  ::src::compiler::bytecode::Bytecode >()->convert(scope)) );
+HXDLIN( 411)																		result1->set(key,codes1->__get((i + (int)1)).StaticCast<  ::src::compiler::bytecode::Bytecode >()->convert(scope));
             																	}
-HXLINE( 423)																	i = (i + (int)2);
+HXLINE( 412)																	i = (i + (int)2);
             																}
-HXLINE( 425)																return result1;
+HXLINE( 414)																return result1;
             															}
             															else {
-HXLINE( 426)																if ((cmd == HX_("StringPoolString",1e,c3,26,a9))) {
-HXLINE( 427)																	::Array< ::String > pool = scope->getRoot()->stringPool;
-HXLINE( 428)																	::String poolString;
-HXDLIN( 428)																	int poolIndex;
-HXLINE( 429)																	::String s2 = HX_("",00,00,00,00);
-HXLINE( 430)																	int index = (int)0;
-HXLINE( 431)																	int length = (int)1;
-HXLINE( 432)																	while((index < this->data->length)){
-HXLINE( 433)																		if ((this->data->b->__get(index) == (int)0)) {
-HXLINE( 434)																			::Array< unsigned char > _this18 = this->data->b;
-HXDLIN( 434)																			poolIndex = _this18->__get((index + (int)1));
-HXLINE( 435)																			bool _hx_tmp5;
-HXDLIN( 435)																			if ((poolIndex >= (int)0)) {
-HXLINE( 435)																				_hx_tmp5 = (poolIndex >= pool->length);
+HXLINE( 415)																if ((cmd == HX_("StringPoolString",1e,c3,26,a9))) {
+HXLINE( 416)																	::Array< ::String > pool = scope->getRoot()->stringPool;
+HXLINE( 417)																	::String poolString;
+HXDLIN( 417)																	int poolIndex;
+HXLINE( 418)																	::String s2 = HX_("",00,00,00,00);
+HXLINE( 419)																	int index = (int)0;
+HXLINE( 420)																	int length = (int)1;
+HXLINE( 421)																	while((index < this->data->length)){
+HXLINE( 422)																		if ((this->data->b->__get(index) == (int)0)) {
+HXLINE( 423)																			::Array< unsigned char > _this18 = this->data->b;
+HXDLIN( 423)																			poolIndex = _this18->__get((index + (int)1));
+HXLINE( 424)																			bool _hx_tmp5;
+HXDLIN( 424)																			if ((poolIndex >= (int)0)) {
+HXLINE( 424)																				_hx_tmp5 = (poolIndex >= pool->length);
             																			}
             																			else {
-HXLINE( 435)																				_hx_tmp5 = true;
+HXLINE( 424)																				_hx_tmp5 = true;
             																			}
-HXDLIN( 435)																			if (_hx_tmp5) {
-HXLINE( 435)																				HX_STACK_DO_THROW((HX_("Invalid pool index ",c9,9c,da,77) + poolIndex));
+HXDLIN( 424)																			if (_hx_tmp5) {
+HXLINE( 424)																				HX_STACK_DO_THROW((HX_("Invalid pool index ",c9,9c,da,77) + poolIndex));
             																			}
-HXLINE( 436)																			s2 = (s2 + pool->__get(poolIndex));
-HXLINE( 437)																			index = (index + (int)2);
+HXLINE( 425)																			s2 = (s2 + pool->__get(poolIndex));
+HXLINE( 426)																			index = (index + (int)2);
             																		}
             																		else {
-HXLINE( 439)																			while(true){
-HXLINE( 439)																				bool _hx_tmp6;
-HXDLIN( 439)																				::Array< unsigned char > _this19 = this->data->b;
-HXDLIN( 439)																				if ((_this19->__get((index + length)) != (int)0)) {
-HXLINE( 439)																					_hx_tmp6 = ((index + length) < this->data->length);
+HXLINE( 428)																			while(true){
+HXLINE( 428)																				bool _hx_tmp6;
+HXDLIN( 428)																				::Array< unsigned char > _this19 = this->data->b;
+HXDLIN( 428)																				if ((_this19->__get((index + length)) != (int)0)) {
+HXLINE( 428)																					_hx_tmp6 = ((index + length) < this->data->length);
             																				}
             																				else {
-HXLINE( 439)																					_hx_tmp6 = false;
+HXLINE( 428)																					_hx_tmp6 = false;
             																				}
-HXDLIN( 439)																				if (!(_hx_tmp6)) {
-HXLINE( 439)																					goto _hx_goto_10;
+HXDLIN( 428)																				if (!(_hx_tmp6)) {
+HXLINE( 428)																					goto _hx_goto_10;
             																				}
-HXDLIN( 439)																				length = (length + (int)1);
+HXDLIN( 428)																				length = (length + (int)1);
             																			}
             																			_hx_goto_10:;
-HXLINE( 440)																			s2 = (s2 + this->data->getString(index,length));
-HXLINE( 441)																			index = (index + length);
+HXLINE( 429)																			s2 = (s2 + this->data->getString(index,length));
+HXLINE( 430)																			index = (index + length);
             																		}
             																	}
-HXLINE( 444)																	return s2;
+HXLINE( 433)																	return s2;
             																}
             																else {
-HXLINE( 446)																	HX_STACK_DO_THROW(HX_("Invalid raw value",b0,d0,06,10));
+HXLINE( 435)																	HX_STACK_DO_THROW(HX_("Invalid raw value",b0,d0,06,10));
             																}
             															}
             														}
@@ -564,25 +566,26 @@ HXLINE( 446)																	HX_STACK_DO_THROW(HX_("Invalid raw value",b0,d0,06,
             			}
             		}
             		else {
-HXLINE( 449)			::Array< ::Dynamic> bytecodes = ::src::compiler::bytecode::Bytecode_obj::fromBytes(this->data,scope);
-HXLINE( 452)			::String name = ::src::compiler::bytecode::BytecodeMap_obj::getCommand(this->code);
-HXLINE( 454)			 ::Dynamic converter = ::src::compiler::bytecode::BytecodeMap_obj::getConverter(name);
-HXLINE( 455)			 ::src::compiler::commands::Command command = ( ( ::src::compiler::commands::Command)(converter(scope,bytecodes)) );
-HXLINE( 456)			if ((bytecodes->length > (int)0)) {
-HXLINE( 457)				::Array< ::String > codes2 = ::Array_obj< ::String >::__new();
-HXLINE( 458)				{
-HXLINE( 458)					int _g1 = (int)0;
-HXDLIN( 458)					while((_g1 < bytecodes->length)){
-HXLINE( 458)						 ::src::compiler::bytecode::Bytecode bytecode = bytecodes->__get(_g1).StaticCast<  ::src::compiler::bytecode::Bytecode >();
-HXDLIN( 458)						_g1 = (_g1 + (int)1);
-HXDLIN( 458)						codes2->push(::src::compiler::bytecode::BytecodeMap_obj::getCommand(bytecode->getCode()));
+HXLINE( 439)			::Array< ::Dynamic> bytecodes = ::src::compiler::bytecode::Bytecode_obj::fromBytes(this->data,scope);
+HXLINE( 442)			::String name = ::src::compiler::bytecode::BytecodeMap_obj::getCommand(this->code);
+HXLINE( 444)			 ::Dynamic converter = ::src::compiler::bytecode::BytecodeMap_obj::getConverter(name);
+HXLINE( 445)			bool _hx_tmp7 = hx::IsNull( converter );
+HXLINE( 446)			 ::src::compiler::commands::Command command = ( ( ::src::compiler::commands::Command)(converter(scope,bytecodes)) );
+HXLINE( 447)			if ((bytecodes->length > (int)0)) {
+HXLINE( 448)				::Array< ::String > codes2 = ::Array_obj< ::String >::__new();
+HXLINE( 449)				{
+HXLINE( 449)					int _g1 = (int)0;
+HXDLIN( 449)					while((_g1 < bytecodes->length)){
+HXLINE( 449)						 ::src::compiler::bytecode::Bytecode bytecode = bytecodes->__get(_g1).StaticCast<  ::src::compiler::bytecode::Bytecode >();
+HXDLIN( 449)						_g1 = (_g1 + (int)1);
+HXDLIN( 449)						codes2->push(::src::compiler::bytecode::BytecodeMap_obj::getCommand(bytecode->getCode()));
             					}
             				}
-HXLINE( 459)				HX_STACK_DO_THROW((HX_("Unprocessed commands: ",b9,64,43,39) + codes2->join(HX_(", ",74,26,00,00))));
+HXLINE( 450)				HX_STACK_DO_THROW((HX_("Unprocessed commands: ",b9,64,43,39) + codes2->join(HX_(", ",74,26,00,00))));
             			}
-HXLINE( 463)			return command;
+HXLINE( 455)			return command;
             		}
-HXLINE( 368)		return null();
+HXLINE( 357)		return null();
             	}
 
 
@@ -736,128 +739,128 @@ HXLINE(  83)					spl = newSpl;
 HXLINE(  84)					poolIndex = (poolIndex + (int)1);
             				}
             			}
-HXLINE( 101)			if ((spl->get_length() > (int)1)) {
-HXLINE( 102)				::cpp::VirtualArray final = ::cpp::VirtualArray_obj::__new();
-HXLINE( 103)				{
-HXLINE( 103)					int _g3 = (int)0;
-HXDLIN( 103)					while((_g3 < spl->get_length())){
-HXLINE( 103)						 ::Dynamic x1 = spl->__get(_g3);
-HXDLIN( 103)						_g3 = (_g3 + (int)1);
-HXLINE( 104)						if (hx::IsNotEq( x1,HX_("",00,00,00,00) )) {
-HXLINE( 104)							final->push(x1);
+HXLINE(  86)			if ((spl->get_length() > (int)1)) {
+HXLINE(  87)				::cpp::VirtualArray final = ::cpp::VirtualArray_obj::__new();
+HXLINE(  88)				{
+HXLINE(  88)					int _g3 = (int)0;
+HXDLIN(  88)					while((_g3 < spl->get_length())){
+HXLINE(  88)						 ::Dynamic x1 = spl->__get(_g3);
+HXDLIN(  88)						_g3 = (_g3 + (int)1);
+HXLINE(  89)						if (hx::IsNotEq( x1,HX_("",00,00,00,00) )) {
+HXLINE(  89)							final->push(x1);
             						}
             					}
             				}
-HXLINE( 107)				 ::haxe::io::BytesBuffer buffer =  ::haxe::io::BytesBuffer_obj::__alloc( HX_CTX );
-HXLINE( 108)				{
-HXLINE( 108)					int _g4 = (int)0;
-HXDLIN( 108)					while((_g4 < spl->get_length())){
-HXLINE( 108)						 ::Dynamic el = spl->__get(_g4);
-HXDLIN( 108)						_g4 = (_g4 + (int)1);
-HXLINE( 109)						if (hx::IsEq( ::Type_obj::_hx_typeof(el),::ValueType_obj::TInt_dyn() )) {
-HXLINE( 110)							buffer->b->push((int)0);
-HXLINE( 111)							buffer->b->push(( (int)(el) ));
+HXLINE(  91)				 ::haxe::io::BytesBuffer buffer =  ::haxe::io::BytesBuffer_obj::__alloc( HX_CTX );
+HXLINE(  92)				{
+HXLINE(  92)					int _g4 = (int)0;
+HXDLIN(  92)					while((_g4 < spl->get_length())){
+HXLINE(  92)						 ::Dynamic el = spl->__get(_g4);
+HXDLIN(  92)						_g4 = (_g4 + (int)1);
+HXLINE(  93)						if (hx::IsEq( ::Type_obj::_hx_typeof(el),::ValueType_obj::TInt_dyn() )) {
+HXLINE(  94)							buffer->b->push((int)0);
+HXLINE(  95)							buffer->b->push(( (int)(el) ));
             						}
             						else {
-HXLINE( 113)							 ::haxe::io::Bytes src1 = ::haxe::io::Bytes_obj::ofString(( (::String)(el) ));
-HXDLIN( 113)							::Array< unsigned char > b1 = buffer->b;
-HXDLIN( 113)							::Array< unsigned char > b2 = src1->b;
-HXDLIN( 113)							{
-HXLINE( 113)								int _g11 = (int)0;
-HXDLIN( 113)								int _g5 = src1->length;
-HXDLIN( 113)								while((_g11 < _g5)){
-HXLINE( 113)									_g11 = (_g11 + (int)1);
-HXDLIN( 113)									int i = (_g11 - (int)1);
-HXDLIN( 113)									::Array< unsigned char > buffer1 = buffer->b;
-HXDLIN( 113)									buffer1->push(b2->__get(i));
+HXLINE(  97)							 ::haxe::io::Bytes src1 = ::haxe::io::Bytes_obj::ofString(( (::String)(el) ));
+HXDLIN(  97)							::Array< unsigned char > b1 = buffer->b;
+HXDLIN(  97)							::Array< unsigned char > b2 = src1->b;
+HXDLIN(  97)							{
+HXLINE(  97)								int _g11 = (int)0;
+HXDLIN(  97)								int _g5 = src1->length;
+HXDLIN(  97)								while((_g11 < _g5)){
+HXLINE(  97)									_g11 = (_g11 + (int)1);
+HXDLIN(  97)									int i = (_g11 - (int)1);
+HXDLIN(  97)									::Array< unsigned char > buffer1 = buffer->b;
+HXDLIN(  97)									buffer1->push(b2->__get(i));
             								}
             							}
             						}
             					}
             				}
-HXLINE( 116)				int _hx_tmp1;
-HXDLIN( 116)				if (hx::IsNull( code )) {
-HXLINE( 116)					_hx_tmp1 = ::src::compiler::bytecode::BytecodeMap_obj::fromString(HX_("StringPoolString",1e,c3,26,a9));
+HXLINE( 100)				int _hx_tmp1;
+HXDLIN( 100)				if (hx::IsNull( code )) {
+HXLINE( 100)					_hx_tmp1 = ::src::compiler::bytecode::BytecodeMap_obj::fromString(HX_("StringPoolString",1e,c3,26,a9));
             				}
             				else {
-HXLINE( 116)					_hx_tmp1 = code;
+HXLINE( 100)					_hx_tmp1 = code;
             				}
-HXDLIN( 116)				return  ::src::compiler::bytecode::Bytecode_obj::__alloc( HX_CTX ,_hx_tmp1,buffer->getBytes());
+HXDLIN( 100)				return  ::src::compiler::bytecode::Bytecode_obj::__alloc( HX_CTX ,_hx_tmp1,buffer->getBytes());
             			}
             		}
-HXLINE( 119)		 ::haxe::io::BytesBuffer buffer2 =  ::haxe::io::BytesBuffer_obj::__alloc( HX_CTX );
-HXLINE( 120)		{
-HXLINE( 120)			 ::haxe::io::Bytes src2 = ::haxe::io::Bytes_obj::ofString(str);
-HXDLIN( 120)			::Array< unsigned char > b11 = buffer2->b;
-HXDLIN( 120)			::Array< unsigned char > b21 = src2->b;
-HXDLIN( 120)			{
-HXLINE( 120)				int _g12 = (int)0;
-HXDLIN( 120)				int _g6 = src2->length;
-HXDLIN( 120)				while((_g12 < _g6)){
-HXLINE( 120)					_g12 = (_g12 + (int)1);
-HXDLIN( 120)					int i1 = (_g12 - (int)1);
-HXDLIN( 120)					::Array< unsigned char > buffer3 = buffer2->b;
-HXDLIN( 120)					buffer3->push(b21->__get(i1));
+HXLINE( 103)		 ::haxe::io::BytesBuffer buffer2 =  ::haxe::io::BytesBuffer_obj::__alloc( HX_CTX );
+HXLINE( 104)		{
+HXLINE( 104)			 ::haxe::io::Bytes src2 = ::haxe::io::Bytes_obj::ofString(str);
+HXDLIN( 104)			::Array< unsigned char > b11 = buffer2->b;
+HXDLIN( 104)			::Array< unsigned char > b21 = src2->b;
+HXDLIN( 104)			{
+HXLINE( 104)				int _g12 = (int)0;
+HXDLIN( 104)				int _g6 = src2->length;
+HXDLIN( 104)				while((_g12 < _g6)){
+HXLINE( 104)					_g12 = (_g12 + (int)1);
+HXDLIN( 104)					int i1 = (_g12 - (int)1);
+HXDLIN( 104)					::Array< unsigned char > buffer3 = buffer2->b;
+HXDLIN( 104)					buffer3->push(b21->__get(i1));
             				}
             			}
             		}
-HXLINE( 121)		int _hx_tmp2;
-HXDLIN( 121)		if (hx::IsNull( code )) {
-HXLINE( 121)			_hx_tmp2 = ::src::compiler::bytecode::BytecodeMap_obj::fromString(HX_("String",f1,9c,c4,45));
+HXLINE( 105)		int _hx_tmp2;
+HXDLIN( 105)		if (hx::IsNull( code )) {
+HXLINE( 105)			_hx_tmp2 = ::src::compiler::bytecode::BytecodeMap_obj::fromString(HX_("String",f1,9c,c4,45));
             		}
             		else {
-HXLINE( 121)			_hx_tmp2 = code;
+HXLINE( 105)			_hx_tmp2 = code;
             		}
-HXDLIN( 121)		return  ::src::compiler::bytecode::Bytecode_obj::__alloc( HX_CTX ,_hx_tmp2,buffer2->getBytes());
+HXDLIN( 105)		return  ::src::compiler::bytecode::Bytecode_obj::__alloc( HX_CTX ,_hx_tmp2,buffer2->getBytes());
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC3(Bytecode_obj,fromString,return )
 
  ::src::compiler::bytecode::Bytecode Bytecode_obj::fromInt(int x, ::Dynamic code){
-            	HX_GC_STACKFRAME(&_hx_pos_1876dfaa47a56244_125_fromInt)
-HXLINE( 126)		if ((x == (int)0)) {
-HXLINE( 126)			return ::src::compiler::bytecode::Bytecode_obj::fromKeyword(HX_("Zero",48,3b,ca,3b));
+            	HX_GC_STACKFRAME(&_hx_pos_1876dfaa47a56244_109_fromInt)
+HXLINE( 110)		if ((x == (int)0)) {
+HXLINE( 110)			return ::src::compiler::bytecode::Bytecode_obj::fromKeyword(HX_("Zero",48,3b,ca,3b));
             		}
             		else {
-HXLINE( 127)			if ((x == (int)1)) {
-HXLINE( 127)				return ::src::compiler::bytecode::Bytecode_obj::fromKeyword(HX_("One",46,52,3c,00));
+HXLINE( 111)			if ((x == (int)1)) {
+HXLINE( 111)				return ::src::compiler::bytecode::Bytecode_obj::fromKeyword(HX_("One",46,52,3c,00));
             			}
             			else {
-HXLINE( 128)				if ((x == (int)2)) {
-HXLINE( 128)					return ::src::compiler::bytecode::Bytecode_obj::fromKeyword(HX_("Two",6c,25,40,00));
+HXLINE( 112)				if ((x == (int)2)) {
+HXLINE( 112)					return ::src::compiler::bytecode::Bytecode_obj::fromKeyword(HX_("Two",6c,25,40,00));
             				}
             				else {
-HXLINE( 129)					if ((x == (int)3)) {
-HXLINE( 129)						return ::src::compiler::bytecode::Bytecode_obj::fromKeyword(HX_("Three",3e,c4,bd,a2));
+HXLINE( 113)					if ((x == (int)3)) {
+HXLINE( 113)						return ::src::compiler::bytecode::Bytecode_obj::fromKeyword(HX_("Three",3e,c4,bd,a2));
             					}
             					else {
-HXLINE( 130)						if ((x == (int)4)) {
-HXLINE( 130)							return ::src::compiler::bytecode::Bytecode_obj::fromKeyword(HX_("Four",06,90,99,2e));
+HXLINE( 114)						if ((x == (int)4)) {
+HXLINE( 114)							return ::src::compiler::bytecode::Bytecode_obj::fromKeyword(HX_("Four",06,90,99,2e));
             						}
             						else {
-HXLINE( 131)							if ((x == (int)5)) {
-HXLINE( 131)								return ::src::compiler::bytecode::Bytecode_obj::fromKeyword(HX_("Five",52,03,95,2e));
+HXLINE( 115)							if ((x == (int)5)) {
+HXLINE( 115)								return ::src::compiler::bytecode::Bytecode_obj::fromKeyword(HX_("Five",52,03,95,2e));
             							}
             							else {
-HXLINE( 132)								if ((x == (int)6)) {
-HXLINE( 132)									return ::src::compiler::bytecode::Bytecode_obj::fromKeyword(HX_("Six",02,57,3f,00));
+HXLINE( 116)								if ((x == (int)6)) {
+HXLINE( 116)									return ::src::compiler::bytecode::Bytecode_obj::fromKeyword(HX_("Six",02,57,3f,00));
             								}
             								else {
-HXLINE( 133)									if ((x == (int)7)) {
-HXLINE( 133)										return ::src::compiler::bytecode::Bytecode_obj::fromKeyword(HX_("Seven",ed,94,5e,0d));
+HXLINE( 117)									if ((x == (int)7)) {
+HXLINE( 117)										return ::src::compiler::bytecode::Bytecode_obj::fromKeyword(HX_("Seven",ed,94,5e,0d));
             									}
             									else {
-HXLINE( 134)										if ((x == (int)8)) {
-HXLINE( 134)											return ::src::compiler::bytecode::Bytecode_obj::fromKeyword(HX_("Eight",2f,f1,5b,00));
+HXLINE( 118)										if ((x == (int)8)) {
+HXLINE( 118)											return ::src::compiler::bytecode::Bytecode_obj::fromKeyword(HX_("Eight",2f,f1,5b,00));
             										}
             										else {
-HXLINE( 135)											if ((x == (int)9)) {
-HXLINE( 135)												return ::src::compiler::bytecode::Bytecode_obj::fromKeyword(HX_("Nine",52,b1,de,33));
+HXLINE( 119)											if ((x == (int)9)) {
+HXLINE( 119)												return ::src::compiler::bytecode::Bytecode_obj::fromKeyword(HX_("Nine",52,b1,de,33));
             											}
             											else {
-HXLINE( 136)												if ((x == (int)10)) {
-HXLINE( 136)													return ::src::compiler::bytecode::Bytecode_obj::fromKeyword(HX_("Ten",bd,15,40,00));
+HXLINE( 120)												if ((x == (int)10)) {
+HXLINE( 120)													return ::src::compiler::bytecode::Bytecode_obj::fromKeyword(HX_("Ten",bd,15,40,00));
             												}
             											}
             										}
@@ -869,610 +872,629 @@ HXLINE( 136)													return ::src::compiler::bytecode::Bytecode_obj::fromKey
             				}
             			}
             		}
-HXLINE( 138)		 ::haxe::io::BytesBuffer buffer =  ::haxe::io::BytesBuffer_obj::__alloc( HX_CTX );
-HXLINE( 139)		if ((x < (int)255)) {
-HXLINE( 140)			buffer->b->push(x);
-HXLINE( 141)			int _hx_tmp;
-HXDLIN( 141)			if (hx::IsNull( code )) {
-HXLINE( 141)				_hx_tmp = ::src::compiler::bytecode::BytecodeMap_obj::fromString(HX_("Int8",89,70,94,30));
+HXLINE( 122)		 ::haxe::io::BytesBuffer buffer =  ::haxe::io::BytesBuffer_obj::__alloc( HX_CTX );
+HXLINE( 123)		if ((x < (int)255)) {
+HXLINE( 124)			buffer->b->push(x);
+HXLINE( 125)			int _hx_tmp;
+HXDLIN( 125)			if (hx::IsNull( code )) {
+HXLINE( 125)				_hx_tmp = ::src::compiler::bytecode::BytecodeMap_obj::fromString(HX_("Int8",89,70,94,30));
             			}
             			else {
-HXLINE( 141)				_hx_tmp = code;
+HXLINE( 125)				_hx_tmp = code;
             			}
-HXDLIN( 141)			return  ::src::compiler::bytecode::Bytecode_obj::__alloc( HX_CTX ,_hx_tmp,buffer->getBytes());
+HXDLIN( 125)			return  ::src::compiler::bytecode::Bytecode_obj::__alloc( HX_CTX ,_hx_tmp,buffer->getBytes());
             		}
             		else {
-HXLINE( 142)			if ((x < (int)1)) {
-HXLINE( 143)				buffer->addInt32(x);
-HXLINE( 144)				int _hx_tmp1;
-HXDLIN( 144)				if (hx::IsNull( code )) {
-HXLINE( 144)					_hx_tmp1 = ::src::compiler::bytecode::BytecodeMap_obj::fromString(HX_("Int32",2e,03,4e,51));
+HXLINE( 126)			if ((x < (int)1)) {
+HXLINE( 127)				buffer->addInt32(x);
+HXLINE( 128)				int _hx_tmp1;
+HXDLIN( 128)				if (hx::IsNull( code )) {
+HXLINE( 128)					_hx_tmp1 = ::src::compiler::bytecode::BytecodeMap_obj::fromString(HX_("Int32",2e,03,4e,51));
             				}
             				else {
-HXLINE( 144)					_hx_tmp1 = code;
+HXLINE( 128)					_hx_tmp1 = code;
             				}
-HXDLIN( 144)				return  ::src::compiler::bytecode::Bytecode_obj::__alloc( HX_CTX ,_hx_tmp1,buffer->getBytes());
+HXDLIN( 128)				return  ::src::compiler::bytecode::Bytecode_obj::__alloc( HX_CTX ,_hx_tmp1,buffer->getBytes());
             			}
             			else {
-HXLINE( 146)				buffer->addInt64(( ::cpp::Int64Struct(x)));
-HXLINE( 147)				int _hx_tmp2;
-HXDLIN( 147)				if (hx::IsNull( code )) {
-HXLINE( 147)					_hx_tmp2 = ::src::compiler::bytecode::BytecodeMap_obj::fromString(HX_("Int64",cd,05,4e,51));
+HXLINE( 130)				buffer->addInt64(( ::cpp::Int64Struct(x)));
+HXLINE( 131)				int _hx_tmp2;
+HXDLIN( 131)				if (hx::IsNull( code )) {
+HXLINE( 131)					_hx_tmp2 = ::src::compiler::bytecode::BytecodeMap_obj::fromString(HX_("Int64",cd,05,4e,51));
             				}
             				else {
-HXLINE( 147)					_hx_tmp2 = code;
+HXLINE( 131)					_hx_tmp2 = code;
             				}
-HXDLIN( 147)				return  ::src::compiler::bytecode::Bytecode_obj::__alloc( HX_CTX ,_hx_tmp2,buffer->getBytes());
+HXDLIN( 131)				return  ::src::compiler::bytecode::Bytecode_obj::__alloc( HX_CTX ,_hx_tmp2,buffer->getBytes());
             			}
             		}
-HXLINE( 139)		return null();
+HXLINE( 123)		return null();
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(Bytecode_obj,fromInt,return )
 
  ::src::compiler::bytecode::Bytecode Bytecode_obj::fromVariable(int x, ::Dynamic code){
-            	HX_GC_STACKFRAME(&_hx_pos_1876dfaa47a56244_152_fromVariable)
-HXLINE( 153)		 ::haxe::io::BytesBuffer buffer =  ::haxe::io::BytesBuffer_obj::__alloc( HX_CTX );
-HXLINE( 154)		if ((x < (int)255)) {
-HXLINE( 155)			buffer->b->push(x);
-HXLINE( 156)			int _hx_tmp;
-HXDLIN( 156)			if (hx::IsNull( code )) {
-HXLINE( 156)				_hx_tmp = ::src::compiler::bytecode::BytecodeMap_obj::fromString(HX_("Variable8",5c,c2,35,24));
+            	HX_GC_STACKFRAME(&_hx_pos_1876dfaa47a56244_136_fromVariable)
+HXLINE( 137)		 ::haxe::io::BytesBuffer buffer =  ::haxe::io::BytesBuffer_obj::__alloc( HX_CTX );
+HXLINE( 138)		if ((x < (int)255)) {
+HXLINE( 139)			buffer->b->push(x);
+HXLINE( 140)			int _hx_tmp;
+HXDLIN( 140)			if (hx::IsNull( code )) {
+HXLINE( 140)				_hx_tmp = ::src::compiler::bytecode::BytecodeMap_obj::fromString(HX_("Variable8",5c,c2,35,24));
             			}
             			else {
-HXLINE( 156)				_hx_tmp = code;
+HXLINE( 140)				_hx_tmp = code;
             			}
-HXDLIN( 156)			return  ::src::compiler::bytecode::Bytecode_obj::__alloc( HX_CTX ,_hx_tmp,buffer->getBytes());
+HXDLIN( 140)			return  ::src::compiler::bytecode::Bytecode_obj::__alloc( HX_CTX ,_hx_tmp,buffer->getBytes());
             		}
             		else {
-HXLINE( 157)			if ((x < (int)1)) {
-HXLINE( 158)				buffer->addInt32(x);
-HXLINE( 159)				int _hx_tmp1;
-HXDLIN( 159)				if (hx::IsNull( code )) {
-HXLINE( 159)					_hx_tmp1 = ::src::compiler::bytecode::BytecodeMap_obj::fromString(HX_("Variable32",fb,49,d4,8a));
+HXLINE( 141)			if ((x < (int)1)) {
+HXLINE( 142)				buffer->addInt32(x);
+HXLINE( 143)				int _hx_tmp1;
+HXDLIN( 143)				if (hx::IsNull( code )) {
+HXLINE( 143)					_hx_tmp1 = ::src::compiler::bytecode::BytecodeMap_obj::fromString(HX_("Variable32",fb,49,d4,8a));
             				}
             				else {
-HXLINE( 159)					_hx_tmp1 = code;
+HXLINE( 143)					_hx_tmp1 = code;
             				}
-HXDLIN( 159)				return  ::src::compiler::bytecode::Bytecode_obj::__alloc( HX_CTX ,_hx_tmp1,buffer->getBytes());
+HXDLIN( 143)				return  ::src::compiler::bytecode::Bytecode_obj::__alloc( HX_CTX ,_hx_tmp1,buffer->getBytes());
             			}
             			else {
-HXLINE( 161)				buffer->addInt64(( ::cpp::Int64Struct(x)));
-HXLINE( 162)				int _hx_tmp2;
-HXDLIN( 162)				if (hx::IsNull( code )) {
-HXLINE( 162)					_hx_tmp2 = ::src::compiler::bytecode::BytecodeMap_obj::fromString(HX_("Variable64",9a,4c,d4,8a));
+HXLINE( 145)				buffer->addInt64(( ::cpp::Int64Struct(x)));
+HXLINE( 146)				int _hx_tmp2;
+HXDLIN( 146)				if (hx::IsNull( code )) {
+HXLINE( 146)					_hx_tmp2 = ::src::compiler::bytecode::BytecodeMap_obj::fromString(HX_("Variable64",9a,4c,d4,8a));
             				}
             				else {
-HXLINE( 162)					_hx_tmp2 = code;
+HXLINE( 146)					_hx_tmp2 = code;
             				}
-HXDLIN( 162)				return  ::src::compiler::bytecode::Bytecode_obj::__alloc( HX_CTX ,_hx_tmp2,buffer->getBytes());
+HXDLIN( 146)				return  ::src::compiler::bytecode::Bytecode_obj::__alloc( HX_CTX ,_hx_tmp2,buffer->getBytes());
             			}
             		}
-HXLINE( 154)		return null();
+HXLINE( 138)		return null();
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(Bytecode_obj,fromVariable,return )
 
  ::src::compiler::bytecode::Bytecode Bytecode_obj::fromFloat(Float x, ::Dynamic code, ::Dynamic _hx_double){
-            	HX_GC_STACKFRAME(&_hx_pos_1876dfaa47a56244_167_fromFloat)
-HXLINE( 168)		 ::haxe::io::BytesBuffer buffer =  ::haxe::io::BytesBuffer_obj::__alloc( HX_CTX );
-HXLINE( 170)		bool _hx_tmp;
-HXDLIN( 170)		if (hx::IsNotNull( _hx_double )) {
-HXLINE( 170)			_hx_tmp = _hx_double;
+            	HX_GC_STACKFRAME(&_hx_pos_1876dfaa47a56244_151_fromFloat)
+HXLINE( 152)		 ::haxe::io::BytesBuffer buffer =  ::haxe::io::BytesBuffer_obj::__alloc( HX_CTX );
+HXLINE( 154)		bool _hx_tmp;
+HXDLIN( 154)		if (hx::IsNotNull( _hx_double )) {
+HXLINE( 154)			_hx_tmp = _hx_double;
             		}
             		else {
-HXLINE( 170)			_hx_tmp = true;
+HXLINE( 154)			_hx_tmp = true;
             		}
-HXDLIN( 170)		if (_hx_tmp) {
-HXLINE( 170)			buffer->addInt64(::haxe::io::FPHelper_obj::doubleToI64(x));
+HXDLIN( 154)		if (_hx_tmp) {
+HXLINE( 154)			buffer->addInt64(::haxe::io::FPHelper_obj::doubleToI64(x));
             		}
             		else {
-HXLINE( 171)			buffer->addInt32(::haxe::io::FPHelper_obj::floatToI32(x));
+HXLINE( 155)			buffer->addInt32(::haxe::io::FPHelper_obj::floatToI32(x));
             		}
-HXLINE( 173)		 ::haxe::io::Bytes bytes = buffer->getBytes();
-HXLINE( 174)		if ((bytes->length == (int)4)) {
-HXLINE( 176)			int _hx_tmp1;
-HXDLIN( 176)			if (hx::IsNull( code )) {
-HXLINE( 176)				_hx_tmp1 = ::src::compiler::bytecode::BytecodeMap_obj::fromString(HX_("Float",7c,35,c4,95));
+HXLINE( 157)		 ::haxe::io::Bytes bytes = buffer->getBytes();
+HXLINE( 158)		if ((bytes->length == (int)4)) {
+HXLINE( 160)			int _hx_tmp1;
+HXDLIN( 160)			if (hx::IsNull( code )) {
+HXLINE( 160)				_hx_tmp1 = ::src::compiler::bytecode::BytecodeMap_obj::fromString(HX_("Float",7c,35,c4,95));
             			}
             			else {
-HXLINE( 176)				_hx_tmp1 = code;
+HXLINE( 160)				_hx_tmp1 = code;
             			}
-HXDLIN( 176)			return  ::src::compiler::bytecode::Bytecode_obj::__alloc( HX_CTX ,_hx_tmp1,bytes);
+HXDLIN( 160)			return  ::src::compiler::bytecode::Bytecode_obj::__alloc( HX_CTX ,_hx_tmp1,bytes);
             		}
             		else {
-HXLINE( 177)			if ((bytes->length == (int)8)) {
-HXLINE( 179)				int _hx_tmp2;
-HXDLIN( 179)				if (hx::IsNull( code )) {
-HXLINE( 179)					_hx_tmp2 = ::src::compiler::bytecode::BytecodeMap_obj::fromString(HX_("Double",31,9f,5f,67));
+HXLINE( 161)			if ((bytes->length == (int)8)) {
+HXLINE( 163)				int _hx_tmp2;
+HXDLIN( 163)				if (hx::IsNull( code )) {
+HXLINE( 163)					_hx_tmp2 = ::src::compiler::bytecode::BytecodeMap_obj::fromString(HX_("Double",31,9f,5f,67));
             				}
             				else {
-HXLINE( 179)					_hx_tmp2 = code;
+HXLINE( 163)					_hx_tmp2 = code;
             				}
-HXDLIN( 179)				return  ::src::compiler::bytecode::Bytecode_obj::__alloc( HX_CTX ,_hx_tmp2,bytes);
+HXDLIN( 163)				return  ::src::compiler::bytecode::Bytecode_obj::__alloc( HX_CTX ,_hx_tmp2,bytes);
             			}
             			else {
-HXLINE( 180)				HX_STACK_DO_THROW(((((HX_("Allocated unexpected amount of bytes for float ",a7,41,fd,cc) + x) + HX_(" (allocated ",41,89,01,1a)) + bytes->length) + HX_(" bytes)",7e,2d,1e,5a)));
+HXLINE( 164)				HX_STACK_DO_THROW(((((HX_("Allocated unexpected amount of bytes for float ",a7,41,fd,cc) + x) + HX_(" (allocated ",41,89,01,1a)) + bytes->length) + HX_(" bytes)",7e,2d,1e,5a)));
             			}
             		}
-HXLINE( 174)		return null();
+HXLINE( 158)		return null();
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC3(Bytecode_obj,fromFloat,return )
 
  ::src::compiler::bytecode::Bytecode Bytecode_obj::fromBool(bool b, ::Dynamic code){
-            	HX_STACKFRAME(&_hx_pos_1876dfaa47a56244_185_fromBool)
-HXDLIN( 185)		if (b) {
-HXDLIN( 185)			return ::src::compiler::bytecode::Bytecode_obj::fromKeyword(HX_("True",6e,d3,dc,37));
+            	HX_STACKFRAME(&_hx_pos_1876dfaa47a56244_169_fromBool)
+HXDLIN( 169)		if (b) {
+HXDLIN( 169)			return ::src::compiler::bytecode::Bytecode_obj::fromKeyword(HX_("True",6e,d3,dc,37));
             		}
             		else {
-HXLINE( 186)			return ::src::compiler::bytecode::Bytecode_obj::fromKeyword(HX_("False",83,a5,7c,8e));
+HXLINE( 170)			return ::src::compiler::bytecode::Bytecode_obj::fromKeyword(HX_("False",83,a5,7c,8e));
             		}
-HXLINE( 185)		return null();
+HXLINE( 169)		return null();
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(Bytecode_obj,fromBool,return )
 
  ::src::compiler::bytecode::Bytecode Bytecode_obj::fromArray(::cpp::VirtualArray arr, ::Dynamic code){
-            	HX_STACKFRAME(&_hx_pos_1876dfaa47a56244_190_fromArray)
-HXLINE( 191)		::Array< ::Dynamic> codes = ::Array_obj< ::Dynamic>::__new();
-HXLINE( 192)		if (hx::IsNull( code )) {
-HXLINE( 192)			code = ::src::compiler::bytecode::BytecodeMap_obj::fromString(HX_("Array",79,dd,bc,b8));
+            	HX_STACKFRAME(&_hx_pos_1876dfaa47a56244_174_fromArray)
+HXLINE( 175)		::Array< ::Dynamic> codes = ::Array_obj< ::Dynamic>::__new();
+HXLINE( 176)		if (hx::IsNull( code )) {
+HXLINE( 176)			code = ::src::compiler::bytecode::BytecodeMap_obj::fromString(HX_("Array",79,dd,bc,b8));
             		}
-HXLINE( 193)		{
-HXLINE( 193)			int _g = (int)0;
-HXDLIN( 193)			while((_g < arr->get_length())){
-HXLINE( 193)				 ::Dynamic el = arr->__get(_g);
-HXDLIN( 193)				_g = (_g + (int)1);
-HXLINE( 194)				codes->push(::src::compiler::bytecode::Bytecode_obj::fromDynamic(el,null()));
+HXLINE( 177)		{
+HXLINE( 177)			int _g = (int)0;
+HXDLIN( 177)			while((_g < arr->get_length())){
+HXLINE( 177)				 ::Dynamic el = arr->__get(_g);
+HXDLIN( 177)				_g = (_g + (int)1);
+HXLINE( 178)				codes->push(::src::compiler::bytecode::Bytecode_obj::fromDynamic(el,null()));
             			}
             		}
-HXLINE( 196)		return ::src::compiler::bytecode::Bytecode_obj::join(code,codes);
+HXLINE( 180)		return ::src::compiler::bytecode::Bytecode_obj::join(code,codes);
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(Bytecode_obj,fromArray,return )
 
  ::src::compiler::bytecode::Bytecode Bytecode_obj::fromStringPool( ::src::compiler::bytecode::StringPool pool, ::Dynamic code){
-            	HX_GC_STACKFRAME(&_hx_pos_1876dfaa47a56244_200_fromStringPool)
-HXLINE( 201)		 ::haxe::io::BytesBuffer buffer =  ::haxe::io::BytesBuffer_obj::__alloc( HX_CTX );
-HXLINE( 202)		{
-HXLINE( 202)			int byte = pool->getPool()->length;
-HXDLIN( 202)			buffer->b->push(byte);
+            	HX_GC_STACKFRAME(&_hx_pos_1876dfaa47a56244_184_fromStringPool)
+HXLINE( 185)		 ::haxe::io::BytesBuffer buffer =  ::haxe::io::BytesBuffer_obj::__alloc( HX_CTX );
+HXLINE( 186)		{
+HXLINE( 186)			int byte = pool->getPool()->length;
+HXDLIN( 186)			buffer->b->push(byte);
             		}
-HXLINE( 203)		{
-HXLINE( 203)			int _g = (int)0;
-HXDLIN( 203)			::Array< ::String > _g1 = pool->getPool();
-HXDLIN( 203)			while((_g < _g1->length)){
-HXLINE( 203)				::String string = _g1->__get(_g);
-HXDLIN( 203)				_g = (_g + (int)1);
-HXLINE( 204)				{
-HXLINE( 204)					 ::haxe::io::Bytes src1 = ::src::compiler::bytecode::Bytecode_obj::lengthToBytes(string.length);
-HXDLIN( 204)					::Array< unsigned char > b1 = buffer->b;
-HXDLIN( 204)					::Array< unsigned char > b2 = src1->b;
-HXDLIN( 204)					{
-HXLINE( 204)						int _g11 = (int)0;
-HXDLIN( 204)						int _g2 = src1->length;
-HXDLIN( 204)						while((_g11 < _g2)){
-HXLINE( 204)							_g11 = (_g11 + (int)1);
-HXDLIN( 204)							int i = (_g11 - (int)1);
-HXDLIN( 204)							::Array< unsigned char > buffer1 = buffer->b;
-HXDLIN( 204)							buffer1->push(b2->__get(i));
+HXLINE( 187)		{
+HXLINE( 187)			int _g = (int)0;
+HXDLIN( 187)			::Array< ::String > _g1 = pool->getPool();
+HXDLIN( 187)			while((_g < _g1->length)){
+HXLINE( 187)				::String string = _g1->__get(_g);
+HXDLIN( 187)				_g = (_g + (int)1);
+HXLINE( 188)				{
+HXLINE( 188)					 ::haxe::io::Bytes src1 = ::src::compiler::bytecode::Bytecode_obj::lengthToBytes(string.length);
+HXDLIN( 188)					::Array< unsigned char > b1 = buffer->b;
+HXDLIN( 188)					::Array< unsigned char > b2 = src1->b;
+HXDLIN( 188)					{
+HXLINE( 188)						int _g11 = (int)0;
+HXDLIN( 188)						int _g2 = src1->length;
+HXDLIN( 188)						while((_g11 < _g2)){
+HXLINE( 188)							_g11 = (_g11 + (int)1);
+HXDLIN( 188)							int i = (_g11 - (int)1);
+HXDLIN( 188)							::Array< unsigned char > buffer1 = buffer->b;
+HXDLIN( 188)							buffer1->push(b2->__get(i));
             						}
             					}
             				}
-HXLINE( 205)				{
-HXLINE( 205)					 ::haxe::io::Bytes src2 = ::haxe::io::Bytes_obj::ofString(string);
-HXDLIN( 205)					::Array< unsigned char > b11 = buffer->b;
-HXDLIN( 205)					::Array< unsigned char > b21 = src2->b;
-HXDLIN( 205)					{
-HXLINE( 205)						int _g12 = (int)0;
-HXDLIN( 205)						int _g3 = src2->length;
-HXDLIN( 205)						while((_g12 < _g3)){
-HXLINE( 205)							_g12 = (_g12 + (int)1);
-HXDLIN( 205)							int i1 = (_g12 - (int)1);
-HXDLIN( 205)							::Array< unsigned char > buffer2 = buffer->b;
-HXDLIN( 205)							buffer2->push(b21->__get(i1));
+HXLINE( 189)				{
+HXLINE( 189)					 ::haxe::io::Bytes src2 = ::haxe::io::Bytes_obj::ofString(string);
+HXDLIN( 189)					::Array< unsigned char > b11 = buffer->b;
+HXDLIN( 189)					::Array< unsigned char > b21 = src2->b;
+HXDLIN( 189)					{
+HXLINE( 189)						int _g12 = (int)0;
+HXDLIN( 189)						int _g3 = src2->length;
+HXDLIN( 189)						while((_g12 < _g3)){
+HXLINE( 189)							_g12 = (_g12 + (int)1);
+HXDLIN( 189)							int i1 = (_g12 - (int)1);
+HXDLIN( 189)							::Array< unsigned char > buffer2 = buffer->b;
+HXDLIN( 189)							buffer2->push(b21->__get(i1));
             						}
             					}
             				}
             			}
             		}
-HXLINE( 207)		int _hx_tmp = ::src::compiler::bytecode::BytecodeMap_obj::fromString(HX_("StringPool",6d,16,0a,f3));
-HXDLIN( 207)		return  ::src::compiler::bytecode::Bytecode_obj::__alloc( HX_CTX ,_hx_tmp,buffer->getBytes());
+HXLINE( 191)		int _hx_tmp = ::src::compiler::bytecode::BytecodeMap_obj::fromString(HX_("StringPool",6d,16,0a,f3));
+HXDLIN( 191)		return  ::src::compiler::bytecode::Bytecode_obj::__alloc( HX_CTX ,_hx_tmp,buffer->getBytes());
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(Bytecode_obj,fromStringPool,return )
 
  ::src::compiler::bytecode::Bytecode Bytecode_obj::fromMap( ::haxe::ds::StringMap map, ::Dynamic code){
-            	HX_STACKFRAME(&_hx_pos_1876dfaa47a56244_211_fromMap)
-HXLINE( 212)		::Array< ::Dynamic> codes = ::Array_obj< ::Dynamic>::__new();
-HXLINE( 213)		if (hx::IsNull( code )) {
-HXLINE( 213)			code = ::src::compiler::bytecode::BytecodeMap_obj::fromString(HX_("Map",7c,c2,3a,00));
+            	HX_STACKFRAME(&_hx_pos_1876dfaa47a56244_195_fromMap)
+HXLINE( 196)		::Array< ::Dynamic> codes = ::Array_obj< ::Dynamic>::__new();
+HXLINE( 197)		if (hx::IsNull( code )) {
+HXLINE( 197)			code = ::src::compiler::bytecode::BytecodeMap_obj::fromString(HX_("Map",7c,c2,3a,00));
             		}
-HXLINE( 214)		{
-HXLINE( 214)			 ::Dynamic key = map->keys();
-HXDLIN( 214)			while(( (bool)(key->__Field(HX_("hasNext",6d,a5,46,18),hx::paccDynamic)()) )){
-HXLINE( 214)				::String key1 = ( (::String)(key->__Field(HX_("next",f3,84,02,49),hx::paccDynamic)()) );
-HXLINE( 215)				codes->push(::src::compiler::bytecode::Bytecode_obj::fromString(key1,null(),null()));
-HXLINE( 216)				codes->push(::src::compiler::bytecode::Bytecode_obj::fromDynamic(map->get(key1),null()));
+HXLINE( 198)		{
+HXLINE( 198)			 ::Dynamic key = map->keys();
+HXDLIN( 198)			while(( (bool)(key->__Field(HX_("hasNext",6d,a5,46,18),hx::paccDynamic)()) )){
+HXLINE( 198)				::String key1 = ( (::String)(key->__Field(HX_("next",f3,84,02,49),hx::paccDynamic)()) );
+HXLINE( 199)				codes->push(::src::compiler::bytecode::Bytecode_obj::fromString(key1,null(),null()));
+HXLINE( 200)				codes->push(::src::compiler::bytecode::Bytecode_obj::fromDynamic(map->get(key1),null()));
             			}
             		}
-HXLINE( 218)		return ::src::compiler::bytecode::Bytecode_obj::join(code,codes);
+HXLINE( 202)		return ::src::compiler::bytecode::Bytecode_obj::join(code,codes);
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(Bytecode_obj,fromMap,return )
 
  ::haxe::io::Bytes Bytecode_obj::lengthToBytes(int length){
-            	HX_GC_STACKFRAME(&_hx_pos_1876dfaa47a56244_222_lengthToBytes)
-HXLINE( 223)		 ::haxe::io::BytesBuffer buffer =  ::haxe::io::BytesBuffer_obj::__alloc( HX_CTX );
-HXLINE( 224)		if ((length < (int)255)) {
-HXLINE( 225)			buffer->b->push(length);
+            	HX_GC_STACKFRAME(&_hx_pos_1876dfaa47a56244_206_lengthToBytes)
+HXLINE( 207)		 ::haxe::io::BytesBuffer buffer =  ::haxe::io::BytesBuffer_obj::__alloc( HX_CTX );
+HXLINE( 208)		bool aNeg = ((int)255 < (int)0);
+HXDLIN( 208)		bool bNeg = (length < (int)0);
+HXDLIN( 208)		bool _hx_tmp;
+HXDLIN( 208)		if ((aNeg != bNeg)) {
+HXLINE( 208)			_hx_tmp = aNeg;
             		}
             		else {
-HXLINE( 227)			buffer->b->push((int)255);
-HXLINE( 228)			length = (length - (int)255);
-HXLINE( 229)			if ((length < (int)16777215)) {
-HXLINE( 230)				::Array< unsigned char > buffer1 = buffer->b;
-HXDLIN( 230)				buffer1->push(((int)(int)255 & (int)((int)length >> (int)(int)16)));
-HXLINE( 231)				::Array< unsigned char > buffer2 = buffer->b;
-HXDLIN( 231)				buffer2->push(((int)(int)255 & (int)((int)length >> (int)(int)8)));
-HXLINE( 232)				::Array< unsigned char > buffer3 = buffer->b;
-HXDLIN( 232)				buffer3->push(((int)(int)255 & (int)length));
+HXLINE( 208)			_hx_tmp = ((int)255 > length);
+            		}
+HXDLIN( 208)		if (_hx_tmp) {
+HXLINE( 209)			buffer->b->push(length);
+            		}
+            		else {
+HXLINE( 212)			buffer->b->push((int)255);
+HXLINE( 213)			length = (length - (int)255);
+HXLINE( 214)			bool aNeg1 = ((int)16777215 < (int)0);
+HXDLIN( 214)			bool bNeg1 = (length < (int)0);
+HXDLIN( 214)			bool _hx_tmp1;
+HXDLIN( 214)			if ((aNeg1 != bNeg1)) {
+HXLINE( 214)				_hx_tmp1 = aNeg1;
             			}
             			else {
-HXLINE( 234)				buffer->b->push((int)255);
-HXLINE( 235)				buffer->b->push((int)255);
-HXLINE( 236)				buffer->b->push((int)255);
-HXLINE( 237)				length = (length - (int)16777215);
-HXLINE( 238)				if ((length >= (int)1)) {
-HXLINE( 238)					HX_STACK_DO_THROW(HX_("Length too long (max supported length is 4,311,744,765)",cd,a1,ca,41));
+HXLINE( 214)				_hx_tmp1 = ((int)16777215 > length);
+            			}
+HXDLIN( 214)			if (_hx_tmp1) {
+HXLINE( 216)				buffer->b->push(((int)(int)255 & (int)hx::UShr(length,(int)16)));
+HXLINE( 217)				buffer->b->push(((int)(int)255 & (int)hx::UShr(length,(int)8)));
+HXLINE( 218)				buffer->b->push(((int)(int)255 & (int)length));
+            			}
+            			else {
+HXLINE( 220)				buffer->b->push((int)255);
+HXLINE( 221)				buffer->b->push((int)255);
+HXLINE( 222)				buffer->b->push((int)255);
+HXLINE( 223)				length = (length - (int)16777215);
+HXLINE( 224)				bool aNeg2 = (length < (int)0);
+HXDLIN( 224)				bool bNeg2 = ((int)1 < (int)0);
+HXDLIN( 224)				bool _hx_tmp2;
+HXDLIN( 224)				if ((aNeg2 != bNeg2)) {
+HXLINE( 224)					_hx_tmp2 = aNeg2;
             				}
             				else {
-HXLINE( 240)					buffer->addInt32(length);
+HXLINE( 224)					_hx_tmp2 = (length >= (int)1);
+            				}
+HXDLIN( 224)				if (_hx_tmp2) {
+HXLINE( 224)					HX_STACK_DO_THROW(HX_("Length too long (max supported length is 4,311,744,765)",cd,a1,ca,41));
+            				}
+            				else {
+HXLINE( 226)					buffer->addInt32(length);
             				}
             			}
             		}
-HXLINE( 244)		return buffer->getBytes();
+HXLINE( 230)		return buffer->getBytes();
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC1(Bytecode_obj,lengthToBytes,return )
 
 int Bytecode_obj::bytesToLength( ::haxe::io::Bytes bytes,int index){
-            	HX_STACKFRAME(&_hx_pos_1876dfaa47a56244_248_bytesToLength)
-HXLINE( 249)		int length = (int)0;
-HXLINE( 250)		length = bytes->b->__get(index);
-HXLINE( 251)		if ((length == (int)255)) {
-HXLINE( 252)			::Array< unsigned char > bytes1 = bytes->b;
-HXDLIN( 252)			int bytes2 = bytes1->__get((index + (int)1));
-HXDLIN( 252)			::Array< unsigned char > bytes3 = bytes->b;
-HXDLIN( 252)			int x = (bytes2 + ((int)bytes3->__get((index + (int)2)) >> (int)(int)8));
-HXDLIN( 252)			::Array< unsigned char > bytes4 = bytes->b;
-HXDLIN( 252)			int x1 = (x + ((int)bytes4->__get((index + (int)3)) >> (int)(int)8));
-HXLINE( 253)			length = (length + x1);
-HXLINE( 254)			if ((x1 == (int)16777215)) {
-HXLINE( 255)				int pos = (index + (int)4);
-HXDLIN( 255)				int bytes5 = bytes->b->__get(pos);
-HXDLIN( 255)				::Array< unsigned char > bytes6 = bytes->b;
-HXDLIN( 255)				int length1 = ((int)bytes5 | (int)((int)bytes6->__get((pos + (int)1)) << (int)(int)8));
-HXDLIN( 255)				::Array< unsigned char > bytes7 = bytes->b;
-HXDLIN( 255)				int length2 = ((int)length1 | (int)((int)bytes7->__get((pos + (int)2)) << (int)(int)16));
-HXDLIN( 255)				::Array< unsigned char > bytes8 = bytes->b;
-HXDLIN( 255)				length = (length + ((int)length2 | (int)((int)bytes8->__get((pos + (int)3)) << (int)(int)24)));
+            	HX_STACKFRAME(&_hx_pos_1876dfaa47a56244_234_bytesToLength)
+HXLINE( 235)		int length = (int)0;
+HXLINE( 236)		length = bytes->b->__get(index);
+HXLINE( 237)		if ((length == (int)255)) {
+HXLINE( 238)			int b0 = ((int)bytes->b->__get((index + (int)1)) << (int)(int)16);
+HXDLIN( 238)			int b1 = ((int)bytes->b->__get((index + (int)2)) << (int)(int)8);
+HXDLIN( 238)			int b2 = bytes->b->__get((index + (int)3));
+HXLINE( 239)			int x = ((b0 + b1) + b2);
+HXLINE( 240)			length = (length + x);
+HXLINE( 242)			if ((x == (int)16777215)) {
+HXLINE( 243)				int pos = (index + (int)4);
+HXDLIN( 243)				int bytes1 = bytes->b->__get(pos);
+HXDLIN( 243)				::Array< unsigned char > bytes2 = bytes->b;
+HXDLIN( 243)				int b = ((int)bytes1 | (int)((int)bytes2->__get((pos + (int)1)) << (int)(int)8));
+HXDLIN( 243)				::Array< unsigned char > bytes3 = bytes->b;
+HXDLIN( 243)				int b3 = ((int)b | (int)((int)bytes3->__get((pos + (int)2)) << (int)(int)16));
+HXDLIN( 243)				::Array< unsigned char > bytes4 = bytes->b;
+HXDLIN( 243)				length = (length + ((int)b3 | (int)((int)bytes4->__get((pos + (int)3)) << (int)(int)24)));
             			}
             		}
-HXLINE( 258)		return length;
+HXLINE( 246)		return length;
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(Bytecode_obj,bytesToLength,return )
 
 int Bytecode_obj::lengthOfLength(int length){
-            	HX_STACKFRAME(&_hx_pos_1876dfaa47a56244_263_lengthOfLength)
-HXDLIN( 263)		if ((length < (int)255)) {
-HXDLIN( 263)			return (int)1;
+            	HX_STACKFRAME(&_hx_pos_1876dfaa47a56244_251_lengthOfLength)
+HXDLIN( 251)		if ((length < (int)255)) {
+HXDLIN( 251)			return (int)1;
             		}
             		else {
-HXLINE( 264)			if ((length < (int)16777470)) {
-HXLINE( 264)				return (int)4;
+HXLINE( 252)			if ((length < (int)16777470)) {
+HXLINE( 252)				return (int)4;
             			}
             			else {
-HXLINE( 265)				return (int)8;
+HXLINE( 253)				return (int)8;
             			}
             		}
-HXLINE( 263)		return (int)0;
+HXLINE( 251)		return (int)0;
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC1(Bytecode_obj,lengthOfLength,return )
 
  ::src::compiler::bytecode::Bytecode Bytecode_obj::join(int code,::Array< ::Dynamic> arr){
-            	HX_GC_STACKFRAME(&_hx_pos_1876dfaa47a56244_268_join)
-HXLINE( 269)		int length = (int)0;
-HXDLIN( 269)		int codeLength;
-HXLINE( 270)		 ::haxe::io::BytesBuffer buffer =  ::haxe::io::BytesBuffer_obj::__alloc( HX_CTX );
-HXLINE( 271)		{
-HXLINE( 271)			int _g = (int)0;
-HXDLIN( 271)			while((_g < arr->length)){
-HXLINE( 271)				 ::src::compiler::bytecode::Bytecode code1 = arr->__get(_g).StaticCast<  ::src::compiler::bytecode::Bytecode >();
-HXDLIN( 271)				_g = (_g + (int)1);
-HXLINE( 272)				{
-HXLINE( 272)					 ::haxe::io::Bytes src1 = code1->getByteData();
-HXDLIN( 272)					::Array< unsigned char > b1 = buffer->b;
-HXDLIN( 272)					::Array< unsigned char > b2 = src1->b;
-HXDLIN( 272)					{
-HXLINE( 272)						int _g1 = (int)0;
-HXDLIN( 272)						int _g2 = src1->length;
-HXDLIN( 272)						while((_g1 < _g2)){
-HXLINE( 272)							_g1 = (_g1 + (int)1);
-HXDLIN( 272)							int i = (_g1 - (int)1);
-HXDLIN( 272)							::Array< unsigned char > buffer1 = buffer->b;
-HXDLIN( 272)							buffer1->push(b2->__get(i));
+            	HX_GC_STACKFRAME(&_hx_pos_1876dfaa47a56244_256_join)
+HXLINE( 257)		 ::haxe::io::BytesBuffer buffer =  ::haxe::io::BytesBuffer_obj::__alloc( HX_CTX );
+HXLINE( 258)		{
+HXLINE( 258)			int _g = (int)0;
+HXDLIN( 258)			while((_g < arr->length)){
+HXLINE( 258)				 ::src::compiler::bytecode::Bytecode code1 = arr->__get(_g).StaticCast<  ::src::compiler::bytecode::Bytecode >();
+HXDLIN( 258)				_g = (_g + (int)1);
+HXLINE( 259)				{
+HXLINE( 259)					 ::haxe::io::Bytes src1 = code1->getByteData();
+HXDLIN( 259)					::Array< unsigned char > b1 = buffer->b;
+HXDLIN( 259)					::Array< unsigned char > b2 = src1->b;
+HXDLIN( 259)					{
+HXLINE( 259)						int _g1 = (int)0;
+HXDLIN( 259)						int _g2 = src1->length;
+HXDLIN( 259)						while((_g1 < _g2)){
+HXLINE( 259)							_g1 = (_g1 + (int)1);
+HXDLIN( 259)							int i = (_g1 - (int)1);
+HXDLIN( 259)							::Array< unsigned char > buffer1 = buffer->b;
+HXDLIN( 259)							buffer1->push(b2->__get(i));
             						}
             					}
             				}
             			}
             		}
-HXLINE( 274)		return  ::src::compiler::bytecode::Bytecode_obj::__alloc( HX_CTX ,code,buffer->getBytes());
+HXLINE( 261)		return  ::src::compiler::bytecode::Bytecode_obj::__alloc( HX_CTX ,code,buffer->getBytes());
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(Bytecode_obj,join,return )
 
 bool Bytecode_obj::isKeyword(::String cmd){
-            	HX_STACKFRAME(&_hx_pos_1876dfaa47a56244_279_isKeyword)
-HXDLIN( 279)		bool _hx_tmp;
-HXDLIN( 279)		bool _hx_tmp1;
-HXDLIN( 279)		bool _hx_tmp2;
-HXDLIN( 279)		bool _hx_tmp3;
-HXDLIN( 279)		bool _hx_tmp4;
-HXDLIN( 279)		bool _hx_tmp5;
-HXDLIN( 279)		bool _hx_tmp6;
-HXDLIN( 279)		bool _hx_tmp7;
-HXDLIN( 279)		bool _hx_tmp8;
-HXDLIN( 279)		bool _hx_tmp9;
-HXDLIN( 279)		bool _hx_tmp10;
-HXDLIN( 279)		bool _hx_tmp11;
-HXDLIN( 279)		if ((cmd != HX_("Null",a7,ca,e7,33))) {
-HXDLIN( 279)			_hx_tmp11 = (cmd == HX_("Zero",48,3b,ca,3b));
+            	HX_STACKFRAME(&_hx_pos_1876dfaa47a56244_266_isKeyword)
+HXDLIN( 266)		bool _hx_tmp;
+HXDLIN( 266)		bool _hx_tmp1;
+HXDLIN( 266)		bool _hx_tmp2;
+HXDLIN( 266)		bool _hx_tmp3;
+HXDLIN( 266)		bool _hx_tmp4;
+HXDLIN( 266)		bool _hx_tmp5;
+HXDLIN( 266)		bool _hx_tmp6;
+HXDLIN( 266)		bool _hx_tmp7;
+HXDLIN( 266)		bool _hx_tmp8;
+HXDLIN( 266)		bool _hx_tmp9;
+HXDLIN( 266)		bool _hx_tmp10;
+HXDLIN( 266)		bool _hx_tmp11;
+HXDLIN( 266)		if ((cmd != HX_("Null",a7,ca,e7,33))) {
+HXDLIN( 266)			_hx_tmp11 = (cmd == HX_("Zero",48,3b,ca,3b));
             		}
             		else {
-HXDLIN( 279)			_hx_tmp11 = true;
+HXDLIN( 266)			_hx_tmp11 = true;
             		}
-HXDLIN( 279)		if (!(_hx_tmp11)) {
-HXDLIN( 279)			_hx_tmp10 = (cmd == HX_("One",46,52,3c,00));
-            		}
-            		else {
-HXDLIN( 279)			_hx_tmp10 = true;
-            		}
-HXDLIN( 279)		if (!(_hx_tmp10)) {
-HXDLIN( 279)			_hx_tmp9 = (cmd == HX_("Two",6c,25,40,00));
+HXDLIN( 266)		if (!(_hx_tmp11)) {
+HXDLIN( 266)			_hx_tmp10 = (cmd == HX_("One",46,52,3c,00));
             		}
             		else {
-HXDLIN( 279)			_hx_tmp9 = true;
+HXDLIN( 266)			_hx_tmp10 = true;
             		}
-HXDLIN( 279)		if (!(_hx_tmp9)) {
-HXDLIN( 279)			_hx_tmp8 = (cmd == HX_("Three",3e,c4,bd,a2));
-            		}
-            		else {
-HXDLIN( 279)			_hx_tmp8 = true;
-            		}
-HXDLIN( 279)		if (!(_hx_tmp8)) {
-HXDLIN( 279)			_hx_tmp7 = (cmd == HX_("Four",06,90,99,2e));
+HXDLIN( 266)		if (!(_hx_tmp10)) {
+HXDLIN( 266)			_hx_tmp9 = (cmd == HX_("Two",6c,25,40,00));
             		}
             		else {
-HXDLIN( 279)			_hx_tmp7 = true;
+HXDLIN( 266)			_hx_tmp9 = true;
             		}
-HXDLIN( 279)		if (!(_hx_tmp7)) {
-HXDLIN( 279)			_hx_tmp6 = (cmd == HX_("Five",52,03,95,2e));
-            		}
-            		else {
-HXDLIN( 279)			_hx_tmp6 = true;
-            		}
-HXDLIN( 279)		if (!(_hx_tmp6)) {
-HXDLIN( 279)			_hx_tmp5 = (cmd == HX_("Six",02,57,3f,00));
+HXDLIN( 266)		if (!(_hx_tmp9)) {
+HXDLIN( 266)			_hx_tmp8 = (cmd == HX_("Three",3e,c4,bd,a2));
             		}
             		else {
-HXDLIN( 279)			_hx_tmp5 = true;
+HXDLIN( 266)			_hx_tmp8 = true;
             		}
-HXDLIN( 279)		if (!(_hx_tmp5)) {
-HXDLIN( 279)			_hx_tmp4 = (cmd == HX_("Seven",ed,94,5e,0d));
-            		}
-            		else {
-HXDLIN( 279)			_hx_tmp4 = true;
-            		}
-HXDLIN( 279)		if (!(_hx_tmp4)) {
-HXDLIN( 279)			_hx_tmp3 = (cmd == HX_("Eight",2f,f1,5b,00));
+HXDLIN( 266)		if (!(_hx_tmp8)) {
+HXDLIN( 266)			_hx_tmp7 = (cmd == HX_("Four",06,90,99,2e));
             		}
             		else {
-HXDLIN( 279)			_hx_tmp3 = true;
+HXDLIN( 266)			_hx_tmp7 = true;
             		}
-HXDLIN( 279)		if (!(_hx_tmp3)) {
-HXDLIN( 279)			_hx_tmp2 = (cmd == HX_("Nine",52,b1,de,33));
-            		}
-            		else {
-HXDLIN( 279)			_hx_tmp2 = true;
-            		}
-HXDLIN( 279)		if (!(_hx_tmp2)) {
-HXDLIN( 279)			_hx_tmp1 = (cmd == HX_("Ten",bd,15,40,00));
+HXDLIN( 266)		if (!(_hx_tmp7)) {
+HXDLIN( 266)			_hx_tmp6 = (cmd == HX_("Five",52,03,95,2e));
             		}
             		else {
-HXDLIN( 279)			_hx_tmp1 = true;
+HXDLIN( 266)			_hx_tmp6 = true;
             		}
-HXDLIN( 279)		if (!(_hx_tmp1)) {
-HXDLIN( 279)			_hx_tmp = (cmd == HX_("True",6e,d3,dc,37));
-            		}
-            		else {
-HXDLIN( 279)			_hx_tmp = true;
-            		}
-HXDLIN( 279)		if (!(_hx_tmp)) {
-HXLINE( 280)			return (cmd == HX_("False",83,a5,7c,8e));
+HXDLIN( 266)		if (!(_hx_tmp6)) {
+HXDLIN( 266)			_hx_tmp5 = (cmd == HX_("Six",02,57,3f,00));
             		}
             		else {
-HXDLIN( 279)			return true;
+HXDLIN( 266)			_hx_tmp5 = true;
             		}
-HXDLIN( 279)		return false;
+HXDLIN( 266)		if (!(_hx_tmp5)) {
+HXDLIN( 266)			_hx_tmp4 = (cmd == HX_("Seven",ed,94,5e,0d));
+            		}
+            		else {
+HXDLIN( 266)			_hx_tmp4 = true;
+            		}
+HXDLIN( 266)		if (!(_hx_tmp4)) {
+HXDLIN( 266)			_hx_tmp3 = (cmd == HX_("Eight",2f,f1,5b,00));
+            		}
+            		else {
+HXDLIN( 266)			_hx_tmp3 = true;
+            		}
+HXDLIN( 266)		if (!(_hx_tmp3)) {
+HXDLIN( 266)			_hx_tmp2 = (cmd == HX_("Nine",52,b1,de,33));
+            		}
+            		else {
+HXDLIN( 266)			_hx_tmp2 = true;
+            		}
+HXDLIN( 266)		if (!(_hx_tmp2)) {
+HXDLIN( 266)			_hx_tmp1 = (cmd == HX_("Ten",bd,15,40,00));
+            		}
+            		else {
+HXDLIN( 266)			_hx_tmp1 = true;
+            		}
+HXDLIN( 266)		if (!(_hx_tmp1)) {
+HXDLIN( 266)			_hx_tmp = (cmd == HX_("True",6e,d3,dc,37));
+            		}
+            		else {
+HXDLIN( 266)			_hx_tmp = true;
+            		}
+HXDLIN( 266)		if (!(_hx_tmp)) {
+HXLINE( 267)			return (cmd == HX_("False",83,a5,7c,8e));
+            		}
+            		else {
+HXDLIN( 266)			return true;
+            		}
+HXDLIN( 266)		return false;
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC1(Bytecode_obj,isKeyword,return )
 
 ::Array< ::Dynamic> Bytecode_obj::fromBytes( ::haxe::io::Bytes bytes, ::src::compiler::Scope scope){
-            	HX_GC_STACKFRAME(&_hx_pos_1876dfaa47a56244_283_fromBytes)
-HXLINE( 284)		::Array< ::Dynamic> result = ::Array_obj< ::Dynamic>::__new();
-HXLINE( 285)		int code;
-HXDLIN( 285)		int index;
-HXDLIN( 285)		int length;
-HXLINE( 286)		while((bytes->length > (int)0)){
-HXLINE( 287)			code = bytes->b->__get((int)0);
-HXLINE( 288)			::String cmd = ::src::compiler::bytecode::BytecodeMap_obj::getCommand(code);
-HXLINE( 289)			if ((cmd == HX_("StringPool",6d,16,0a,f3))) {
-HXLINE( 290)				::Array< ::String > strings = ::Array_obj< ::String >::__new();
-HXLINE( 291)				int amount = bytes->b->__get((int)1);
-HXDLIN( 291)				int stringLength = (int)0;
-HXLINE( 292)				length = (int)0;
-HXLINE( 293)				index = (int)2;
-HXLINE( 294)				{
-HXLINE( 294)					int _g1 = (int)0;
-HXDLIN( 294)					int _g = amount;
-HXDLIN( 294)					while((_g1 < _g)){
-HXLINE( 294)						_g1 = (_g1 + (int)1);
-HXDLIN( 294)						int i = (_g1 - (int)1);
-HXLINE( 295)						stringLength = ::src::compiler::bytecode::Bytecode_obj::bytesToLength(bytes,index);
-HXLINE( 296)						index = (index + ::src::compiler::bytecode::Bytecode_obj::lengthOfLength(stringLength));
-HXLINE( 297)						strings->push(bytes->getString(index,stringLength));
-HXLINE( 298)						index = (index + stringLength);
+            	HX_GC_STACKFRAME(&_hx_pos_1876dfaa47a56244_270_fromBytes)
+HXLINE( 271)		::Array< ::Dynamic> result = ::Array_obj< ::Dynamic>::__new();
+HXLINE( 272)		int code;
+HXDLIN( 272)		int index;
+HXDLIN( 272)		int length;
+HXLINE( 273)		while((bytes->length > (int)0)){
+HXLINE( 274)			code = bytes->b->__get((int)0);
+HXLINE( 275)			::String cmd = ::src::compiler::bytecode::BytecodeMap_obj::getCommand(code);
+HXLINE( 276)			if ((cmd == HX_("StringPool",6d,16,0a,f3))) {
+HXLINE( 277)				::Array< ::String > strings = ::Array_obj< ::String >::__new();
+HXLINE( 278)				int amount = bytes->b->__get((int)1);
+HXDLIN( 278)				int stringLength = (int)0;
+HXLINE( 279)				length = (int)0;
+HXLINE( 280)				index = (int)2;
+HXLINE( 281)				{
+HXLINE( 281)					int _g1 = (int)0;
+HXDLIN( 281)					int _g = amount;
+HXDLIN( 281)					while((_g1 < _g)){
+HXLINE( 281)						_g1 = (_g1 + (int)1);
+HXDLIN( 281)						int i = (_g1 - (int)1);
+HXLINE( 282)						stringLength = ::src::compiler::bytecode::Bytecode_obj::bytesToLength(bytes,index);
+HXLINE( 283)						index = (index + ::src::compiler::bytecode::Bytecode_obj::lengthOfLength(stringLength));
+HXLINE( 284)						strings->push(bytes->getString(index,stringLength));
+HXLINE( 285)						index = (index + stringLength);
             					}
             				}
-HXLINE( 300)				if (hx::IsNotNull( scope )) {
-HXLINE( 300)					scope->getRoot()->stringPool = strings;
+HXLINE( 287)				if (hx::IsNotNull( scope )) {
+HXLINE( 287)					scope->getRoot()->stringPool = strings;
             				}
-HXLINE( 303)				bytes = bytes->sub(index,(bytes->length - index));
+HXLINE( 290)				bytes = bytes->sub(index,(bytes->length - index));
             			}
             			else {
-HXLINE( 305)				bool _hx_tmp;
-HXDLIN( 305)				bool _hx_tmp1;
-HXDLIN( 305)				bool _hx_tmp2;
-HXDLIN( 305)				bool _hx_tmp3;
-HXDLIN( 305)				bool _hx_tmp4;
-HXDLIN( 305)				bool _hx_tmp5;
-HXDLIN( 305)				bool _hx_tmp6;
-HXDLIN( 305)				bool _hx_tmp7;
-HXDLIN( 305)				if ((cmd != HX_("Int8",89,70,94,30))) {
-HXLINE( 305)					_hx_tmp7 = (cmd == HX_("Int32",2e,03,4e,51));
+HXLINE( 292)				bool _hx_tmp;
+HXDLIN( 292)				bool _hx_tmp1;
+HXDLIN( 292)				bool _hx_tmp2;
+HXDLIN( 292)				bool _hx_tmp3;
+HXDLIN( 292)				bool _hx_tmp4;
+HXDLIN( 292)				bool _hx_tmp5;
+HXDLIN( 292)				bool _hx_tmp6;
+HXDLIN( 292)				bool _hx_tmp7;
+HXDLIN( 292)				if ((cmd != HX_("Int8",89,70,94,30))) {
+HXLINE( 292)					_hx_tmp7 = (cmd == HX_("Int32",2e,03,4e,51));
             				}
             				else {
-HXLINE( 305)					_hx_tmp7 = true;
+HXLINE( 292)					_hx_tmp7 = true;
             				}
-HXDLIN( 305)				if (!(_hx_tmp7)) {
-HXLINE( 305)					_hx_tmp6 = (cmd == HX_("Int64",cd,05,4e,51));
-            				}
-            				else {
-HXLINE( 305)					_hx_tmp6 = true;
-            				}
-HXDLIN( 305)				if (!(_hx_tmp6)) {
-HXLINE( 305)					_hx_tmp5 = (cmd == HX_("Variable8",5c,c2,35,24));
+HXDLIN( 292)				if (!(_hx_tmp7)) {
+HXLINE( 292)					_hx_tmp6 = (cmd == HX_("Int64",cd,05,4e,51));
             				}
             				else {
-HXLINE( 305)					_hx_tmp5 = true;
+HXLINE( 292)					_hx_tmp6 = true;
             				}
-HXDLIN( 305)				if (!(_hx_tmp5)) {
-HXLINE( 305)					_hx_tmp4 = (cmd == HX_("Variable32",fb,49,d4,8a));
-            				}
-            				else {
-HXLINE( 305)					_hx_tmp4 = true;
-            				}
-HXDLIN( 305)				if (!(_hx_tmp4)) {
-HXLINE( 305)					_hx_tmp3 = (cmd == HX_("Variable64",9a,4c,d4,8a));
+HXDLIN( 292)				if (!(_hx_tmp6)) {
+HXLINE( 292)					_hx_tmp5 = (cmd == HX_("Variable8",5c,c2,35,24));
             				}
             				else {
-HXLINE( 305)					_hx_tmp3 = true;
+HXLINE( 292)					_hx_tmp5 = true;
             				}
-HXDLIN( 305)				if (!(_hx_tmp3)) {
-HXLINE( 305)					_hx_tmp2 = (cmd == HX_("Float",7c,35,c4,95));
-            				}
-            				else {
-HXLINE( 305)					_hx_tmp2 = true;
-            				}
-HXDLIN( 305)				if (!(_hx_tmp2)) {
-HXLINE( 305)					_hx_tmp1 = (cmd == HX_("Double",31,9f,5f,67));
+HXDLIN( 292)				if (!(_hx_tmp5)) {
+HXLINE( 292)					_hx_tmp4 = (cmd == HX_("Variable32",fb,49,d4,8a));
             				}
             				else {
-HXLINE( 305)					_hx_tmp1 = true;
+HXLINE( 292)					_hx_tmp4 = true;
             				}
-HXDLIN( 305)				if (!(_hx_tmp1)) {
-HXLINE( 305)					_hx_tmp = ::src::compiler::bytecode::Bytecode_obj::isKeyword(cmd);
+HXDLIN( 292)				if (!(_hx_tmp4)) {
+HXLINE( 292)					_hx_tmp3 = (cmd == HX_("Variable64",9a,4c,d4,8a));
             				}
             				else {
-HXLINE( 305)					_hx_tmp = true;
+HXLINE( 292)					_hx_tmp3 = true;
             				}
-HXDLIN( 305)				if (_hx_tmp) {
-HXLINE( 307)					length = (int)1;
-HXLINE( 308)					bool _hx_tmp8;
-HXDLIN( 308)					bool _hx_tmp9;
-HXDLIN( 308)					if ((cmd != HX_("Int32",2e,03,4e,51))) {
-HXLINE( 308)						_hx_tmp9 = (cmd == HX_("Float",7c,35,c4,95));
+HXDLIN( 292)				if (!(_hx_tmp3)) {
+HXLINE( 292)					_hx_tmp2 = (cmd == HX_("Float",7c,35,c4,95));
+            				}
+            				else {
+HXLINE( 292)					_hx_tmp2 = true;
+            				}
+HXDLIN( 292)				if (!(_hx_tmp2)) {
+HXLINE( 292)					_hx_tmp1 = (cmd == HX_("Double",31,9f,5f,67));
+            				}
+            				else {
+HXLINE( 292)					_hx_tmp1 = true;
+            				}
+HXDLIN( 292)				if (!(_hx_tmp1)) {
+HXLINE( 292)					_hx_tmp = ::src::compiler::bytecode::Bytecode_obj::isKeyword(cmd);
+            				}
+            				else {
+HXLINE( 292)					_hx_tmp = true;
+            				}
+HXDLIN( 292)				if (_hx_tmp) {
+HXLINE( 294)					length = (int)1;
+HXLINE( 295)					bool _hx_tmp8;
+HXDLIN( 295)					bool _hx_tmp9;
+HXDLIN( 295)					if ((cmd != HX_("Int32",2e,03,4e,51))) {
+HXLINE( 295)						_hx_tmp9 = (cmd == HX_("Float",7c,35,c4,95));
             					}
             					else {
-HXLINE( 308)						_hx_tmp9 = true;
+HXLINE( 295)						_hx_tmp9 = true;
             					}
-HXDLIN( 308)					if (!(_hx_tmp9)) {
-HXLINE( 308)						_hx_tmp8 = (cmd == HX_("Variable32",fb,49,d4,8a));
-            					}
-            					else {
-HXLINE( 308)						_hx_tmp8 = true;
-            					}
-HXDLIN( 308)					if (_hx_tmp8) {
-HXLINE( 308)						length = (int)4;
+HXDLIN( 295)					if (!(_hx_tmp9)) {
+HXLINE( 295)						_hx_tmp8 = (cmd == HX_("Variable32",fb,49,d4,8a));
             					}
             					else {
-HXLINE( 309)						bool _hx_tmp10;
-HXDLIN( 309)						bool _hx_tmp11;
-HXDLIN( 309)						if ((cmd != HX_("Int64",cd,05,4e,51))) {
-HXLINE( 309)							_hx_tmp11 = (cmd == HX_("Double",31,9f,5f,67));
+HXLINE( 295)						_hx_tmp8 = true;
+            					}
+HXDLIN( 295)					if (_hx_tmp8) {
+HXLINE( 295)						length = (int)4;
+            					}
+            					else {
+HXLINE( 296)						bool _hx_tmp10;
+HXDLIN( 296)						bool _hx_tmp11;
+HXDLIN( 296)						if ((cmd != HX_("Int64",cd,05,4e,51))) {
+HXLINE( 296)							_hx_tmp11 = (cmd == HX_("Double",31,9f,5f,67));
             						}
             						else {
-HXLINE( 309)							_hx_tmp11 = true;
+HXLINE( 296)							_hx_tmp11 = true;
             						}
-HXDLIN( 309)						if (!(_hx_tmp11)) {
-HXLINE( 309)							_hx_tmp10 = (cmd == HX_("Variable64",9a,4c,d4,8a));
-            						}
-            						else {
-HXLINE( 309)							_hx_tmp10 = true;
-            						}
-HXDLIN( 309)						if (_hx_tmp10) {
-HXLINE( 309)							length = (int)8;
+HXDLIN( 296)						if (!(_hx_tmp11)) {
+HXLINE( 296)							_hx_tmp10 = (cmd == HX_("Variable64",9a,4c,d4,8a));
             						}
             						else {
-HXLINE( 310)							if (::src::compiler::bytecode::Bytecode_obj::isKeyword(cmd)) {
-HXLINE( 310)								length = (int)0;
+HXLINE( 296)							_hx_tmp10 = true;
+            						}
+HXDLIN( 296)						if (_hx_tmp10) {
+HXLINE( 296)							length = (int)8;
+            						}
+            						else {
+HXLINE( 297)							if (::src::compiler::bytecode::Bytecode_obj::isKeyword(cmd)) {
+HXLINE( 297)								length = (int)0;
             							}
             						}
             					}
-HXLINE( 311)					index = (int)1;
+HXLINE( 298)					index = (int)1;
             				}
             				else {
-HXLINE( 313)					length = ::src::compiler::bytecode::Bytecode_obj::bytesToLength(bytes,(int)1);
-HXLINE( 314)					index = ((int)1 + ::src::compiler::bytecode::Bytecode_obj::lengthOfLength(length));
+HXLINE( 300)					length = ::src::compiler::bytecode::Bytecode_obj::bytesToLength(bytes,(int)1);
+HXLINE( 301)					index = ((int)1 + ::src::compiler::bytecode::Bytecode_obj::lengthOfLength(length));
             				}
-HXLINE( 317)				if ((length == (int)0)) {
-HXLINE( 317)					result->push( ::src::compiler::bytecode::Bytecode_obj::__alloc( HX_CTX ,code,::haxe::io::Bytes_obj::alloc((int)0)));
+HXLINE( 304)				if ((length == (int)0)) {
+HXLINE( 304)					result->push( ::src::compiler::bytecode::Bytecode_obj::__alloc( HX_CTX ,code,::haxe::io::Bytes_obj::alloc((int)0)));
             				}
             				else {
-HXLINE( 318)					result->push( ::src::compiler::bytecode::Bytecode_obj::__alloc( HX_CTX ,code,bytes->sub(index,length)));
+HXLINE( 305)					result->push( ::src::compiler::bytecode::Bytecode_obj::__alloc( HX_CTX ,code,bytes->sub(index,length)));
             				}
-HXLINE( 319)				int bytes1 = bytes->length;
-HXDLIN( 319)				bytes = bytes->sub((index + length),(bytes1 - (index + length)));
+HXLINE( 306)				bytes = bytes->sub((index + length),(bytes->length - (index + length)));
             			}
             		}
-HXLINE( 322)		return result;
+HXLINE( 309)		return result;
             	}
 
 

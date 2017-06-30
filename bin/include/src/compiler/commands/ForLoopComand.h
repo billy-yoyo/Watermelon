@@ -62,11 +62,18 @@ class HXCPP_CLASS_ATTRIBUTES ForLoopComand_obj : public  ::src::compiler::comman
 
 		 ::src::compiler::commands::Command iterator;
 		 ::src::compiler::commands::Command code;
+		bool completedLoop;
+		 ::src::compiler::commands::Command copy( ::src::compiler::Scope scope);
+
+		void setScope( ::src::compiler::Scope scope);
+
 		::Array< ::Dynamic> walk();
 
 		 ::src::compiler::object::Object run();
 
 		::String getName();
+
+		::String getFriendlyName();
 
 		 ::src::compiler::bytecode::Bytecode getBytecode();
 

@@ -10,12 +10,14 @@
 #include <src/compiler/object/Object.h>
 #endif
 HX_DECLARE_CLASS1(haxe,IMap)
+HX_DECLARE_CLASS2(haxe,ds,IntMap)
 HX_DECLARE_CLASS2(haxe,ds,StringMap)
 HX_DECLARE_CLASS2(src,compiler,Scope)
 HX_DECLARE_CLASS3(src,compiler,object,Object)
 HX_DECLARE_CLASS3(src,compiler,object,ObjectType)
 HX_DECLARE_CLASS4(src,compiler,object,builtin,IntObject)
 HX_DECLARE_CLASS4(src,compiler,object,builtin,MapObject)
+HX_DECLARE_CLASS4(src,compiler,object,builtin,StringObject)
 HX_DECLARE_CLASS4(src,compiler,object,builtin,ValuedObject)
 
 namespace src{
@@ -56,8 +58,8 @@ class HXCPP_CLASS_ATTRIBUTES MapObject_obj : public  ::src::compiler::object::Ob
 		bool _hx_isInstanceOf(int inClassId);
 		::String __ToString() const { return HX_HCSTRING("MapObject","\x5b","\xba","\xf1","\x99"); }
 
-		 ::haxe::ds::StringMap _map;
-		 ::haxe::ds::StringMap hashMap;
+		 ::haxe::ds::IntMap objMap;
+		 ::haxe::ds::IntMap hashMap;
 		 ::src::compiler::object::Object get( ::src::compiler::object::Object key);
 
 		void set( ::src::compiler::object::Object key, ::src::compiler::object::Object obj);
@@ -74,7 +76,9 @@ class HXCPP_CLASS_ATTRIBUTES MapObject_obj : public  ::src::compiler::object::Ob
 
 		 ::src::compiler::object::builtin::MapObject map();
 
-		 ::haxe::ds::StringMap getMap();
+		 ::src::compiler::object::builtin::StringObject str();
+
+		 ::haxe::ds::IntMap getMap();
 		::Dynamic getMap_dyn();
 
 };

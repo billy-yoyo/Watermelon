@@ -3,6 +3,7 @@ import src.ast.Token;
 import src.ast.base.KwdToken;
 import src.compiler.Scope;
 import src.compiler.bytecode.Bytecode;
+import src.compiler.commands.Command;
 import src.compiler.object.Object;
 import src.compiler.signals.LoopBreakSignal;
 import src.compiler.signals.SyntaxErrorSignal;
@@ -26,6 +27,11 @@ class BreakCommand extends Command
         return new BreakCommand(scope);
     }
     
+    override public function copy(scope:Scope):Command 
+    {
+        return new BreakCommand(scope);
+    }
+    
     override public function run():Object 
     {
         throw new LoopBreakSignal();
@@ -34,6 +40,11 @@ class BreakCommand extends Command
     override public function getName():String 
     {
         return "BreakCommand";
+    }
+    
+    override public function getFriendlyName():String 
+    {
+        return "break";
     }
     
     override public function getBytecode():Bytecode 

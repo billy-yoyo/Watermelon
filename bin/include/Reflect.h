@@ -49,6 +49,9 @@ class HXCPP_CLASS_ATTRIBUTES Reflect_obj : public hx::Object
 		bool _hx_isInstanceOf(int inClassId);
 		::String __ToString() const { return HX_HCSTRING("Reflect","\x1d","\xac","\x7a","\xb6"); }
 
+		static  ::Dynamic getProperty( ::Dynamic o,::String field);
+		static ::Dynamic getProperty_dyn();
+
 		static int compare( ::Dynamic a, ::Dynamic b);
 		static ::Dynamic compare_dyn();
 

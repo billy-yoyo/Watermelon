@@ -67,11 +67,19 @@ class HXCPP_CLASS_ATTRIBUTES IfCommand_obj : public  ::src::compiler::commands::
 
 		::Array< ::Dynamic> ifCodes;
 		::Array< ::Dynamic> elseCode;
+		::Array< ::Dynamic> runningCommands;
+		int progress;
+		 ::src::compiler::commands::Command copy( ::src::compiler::Scope scope);
+
+		void setScope( ::src::compiler::Scope scope);
+
 		::Array< ::Dynamic> walk();
 
 		 ::src::compiler::object::Object run();
 
 		::String getName();
+
+		::String getFriendlyName();
 
 		 ::src::compiler::bytecode::Bytecode getBytecode();
 

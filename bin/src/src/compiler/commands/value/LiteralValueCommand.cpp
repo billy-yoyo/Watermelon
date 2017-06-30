@@ -32,22 +32,24 @@
 #include <src/compiler/object/ObjectType.h>
 #endif
 
-HX_DEFINE_STACK_FRAME(_hx_pos_1a83e04d6e44c9a4_18_new,"src.compiler.commands.value.LiteralValueCommand","new",0x1c51c87d,"src.compiler.commands.value.LiteralValueCommand.new","src/compiler/commands/value/LiteralValueCommand.hx",18,0xc52b29f5)
-HX_LOCAL_STACK_FRAME(_hx_pos_1a83e04d6e44c9a4_25_getContent,"src.compiler.commands.value.LiteralValueCommand","getContent",0xcfc108c6,"src.compiler.commands.value.LiteralValueCommand.getContent","src/compiler/commands/value/LiteralValueCommand.hx",25,0xc52b29f5)
-HX_LOCAL_STACK_FRAME(_hx_pos_1a83e04d6e44c9a4_30_setContent,"src.compiler.commands.value.LiteralValueCommand","setContent",0xd33ea73a,"src.compiler.commands.value.LiteralValueCommand.setContent","src/compiler/commands/value/LiteralValueCommand.hx",30,0xc52b29f5)
-HX_LOCAL_STACK_FRAME(_hx_pos_1a83e04d6e44c9a4_35_run,"src.compiler.commands.value.LiteralValueCommand","run",0x1c54df68,"src.compiler.commands.value.LiteralValueCommand.run","src/compiler/commands/value/LiteralValueCommand.hx",35,0xc52b29f5)
-HX_LOCAL_STACK_FRAME(_hx_pos_1a83e04d6e44c9a4_40_getName,"src.compiler.commands.value.LiteralValueCommand","getName",0x8c7aec9e,"src.compiler.commands.value.LiteralValueCommand.getName","src/compiler/commands/value/LiteralValueCommand.hx",40,0xc52b29f5)
-HX_LOCAL_STACK_FRAME(_hx_pos_1a83e04d6e44c9a4_45_getBytecode,"src.compiler.commands.value.LiteralValueCommand","getBytecode",0x219a9408,"src.compiler.commands.value.LiteralValueCommand.getBytecode","src/compiler/commands/value/LiteralValueCommand.hx",45,0xc52b29f5)
-HX_LOCAL_STACK_FRAME(_hx_pos_1a83e04d6e44c9a4_50_reconstruct,"src.compiler.commands.value.LiteralValueCommand","reconstruct",0x34294321,"src.compiler.commands.value.LiteralValueCommand.reconstruct","src/compiler/commands/value/LiteralValueCommand.hx",50,0xc52b29f5)
+HX_DEFINE_STACK_FRAME(_hx_pos_1a83e04d6e44c9a4_19_new,"src.compiler.commands.value.LiteralValueCommand","new",0x1c51c87d,"src.compiler.commands.value.LiteralValueCommand.new","src/compiler/commands/value/LiteralValueCommand.hx",19,0xc52b29f5)
+HX_LOCAL_STACK_FRAME(_hx_pos_1a83e04d6e44c9a4_26_copy,"src.compiler.commands.value.LiteralValueCommand","copy",0xa3ffdcf8,"src.compiler.commands.value.LiteralValueCommand.copy","src/compiler/commands/value/LiteralValueCommand.hx",26,0xc52b29f5)
+HX_LOCAL_STACK_FRAME(_hx_pos_1a83e04d6e44c9a4_31_getContent,"src.compiler.commands.value.LiteralValueCommand","getContent",0xcfc108c6,"src.compiler.commands.value.LiteralValueCommand.getContent","src/compiler/commands/value/LiteralValueCommand.hx",31,0xc52b29f5)
+HX_LOCAL_STACK_FRAME(_hx_pos_1a83e04d6e44c9a4_36_setContent,"src.compiler.commands.value.LiteralValueCommand","setContent",0xd33ea73a,"src.compiler.commands.value.LiteralValueCommand.setContent","src/compiler/commands/value/LiteralValueCommand.hx",36,0xc52b29f5)
+HX_LOCAL_STACK_FRAME(_hx_pos_1a83e04d6e44c9a4_41_run,"src.compiler.commands.value.LiteralValueCommand","run",0x1c54df68,"src.compiler.commands.value.LiteralValueCommand.run","src/compiler/commands/value/LiteralValueCommand.hx",41,0xc52b29f5)
+HX_LOCAL_STACK_FRAME(_hx_pos_1a83e04d6e44c9a4_46_getName,"src.compiler.commands.value.LiteralValueCommand","getName",0x8c7aec9e,"src.compiler.commands.value.LiteralValueCommand.getName","src/compiler/commands/value/LiteralValueCommand.hx",46,0xc52b29f5)
+HX_LOCAL_STACK_FRAME(_hx_pos_1a83e04d6e44c9a4_51_getFriendlyName,"src.compiler.commands.value.LiteralValueCommand","getFriendlyName",0xb3d4c1a9,"src.compiler.commands.value.LiteralValueCommand.getFriendlyName","src/compiler/commands/value/LiteralValueCommand.hx",51,0xc52b29f5)
+HX_LOCAL_STACK_FRAME(_hx_pos_1a83e04d6e44c9a4_56_getBytecode,"src.compiler.commands.value.LiteralValueCommand","getBytecode",0x219a9408,"src.compiler.commands.value.LiteralValueCommand.getBytecode","src/compiler/commands/value/LiteralValueCommand.hx",56,0xc52b29f5)
+HX_LOCAL_STACK_FRAME(_hx_pos_1a83e04d6e44c9a4_61_reconstruct,"src.compiler.commands.value.LiteralValueCommand","reconstruct",0x34294321,"src.compiler.commands.value.LiteralValueCommand.reconstruct","src/compiler/commands/value/LiteralValueCommand.hx",61,0xc52b29f5)
 namespace src{
 namespace compiler{
 namespace commands{
 namespace value{
 
 void LiteralValueCommand_obj::__construct( ::src::compiler::Scope scope,::String content){
-            	HX_STACKFRAME(&_hx_pos_1a83e04d6e44c9a4_18_new)
-HXLINE(  19)		super::__construct(scope);
-HXLINE(  20)		this->content = content;
+            	HX_STACKFRAME(&_hx_pos_1a83e04d6e44c9a4_19_new)
+HXLINE(  20)		super::__construct(scope);
+HXLINE(  21)		this->content = content;
             	}
 
 Dynamic LiteralValueCommand_obj::__CreateEmpty() { return new LiteralValueCommand_obj; }
@@ -73,44 +75,56 @@ bool LiteralValueCommand_obj::_hx_isInstanceOf(int inClassId) {
 	}
 }
 
+ ::src::compiler::commands::Command LiteralValueCommand_obj::copy( ::src::compiler::Scope scope){
+            	HX_GC_STACKFRAME(&_hx_pos_1a83e04d6e44c9a4_26_copy)
+HXDLIN(  26)		return  ::src::compiler::commands::value::LiteralValueCommand_obj::__alloc( HX_CTX ,scope,this->content);
+            	}
+
+
 ::String LiteralValueCommand_obj::getContent(){
-            	HX_STACKFRAME(&_hx_pos_1a83e04d6e44c9a4_25_getContent)
-HXDLIN(  25)		return this->content;
+            	HX_STACKFRAME(&_hx_pos_1a83e04d6e44c9a4_31_getContent)
+HXDLIN(  31)		return this->content;
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(LiteralValueCommand_obj,getContent,return )
 
 void LiteralValueCommand_obj::setContent(::String content){
-            	HX_STACKFRAME(&_hx_pos_1a83e04d6e44c9a4_30_setContent)
-HXDLIN(  30)		this->content = content;
+            	HX_STACKFRAME(&_hx_pos_1a83e04d6e44c9a4_36_setContent)
+HXDLIN(  36)		this->content = content;
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(LiteralValueCommand_obj,setContent,(void))
 
  ::src::compiler::object::Object LiteralValueCommand_obj::run(){
-            	HX_STACKFRAME(&_hx_pos_1a83e04d6e44c9a4_35_run)
-HXDLIN(  35)		return this->scope->getType(HX_("StringType",4b,88,b6,f5),null())->createValue(this->content,null());
+            	HX_STACKFRAME(&_hx_pos_1a83e04d6e44c9a4_41_run)
+HXDLIN(  41)		return this->scope->getType(HX_("StringType",4b,88,b6,f5),null())->createValue(this->content,this->scope,null());
             	}
 
 
 ::String LiteralValueCommand_obj::getName(){
-            	HX_STACKFRAME(&_hx_pos_1a83e04d6e44c9a4_40_getName)
-HXDLIN(  40)		return HX_("LiteralValueCommand",c9,b1,43,d2);
+            	HX_STACKFRAME(&_hx_pos_1a83e04d6e44c9a4_46_getName)
+HXDLIN(  46)		return HX_("LiteralValueCommand",c9,b1,43,d2);
+            	}
+
+
+::String LiteralValueCommand_obj::getFriendlyName(){
+            	HX_STACKFRAME(&_hx_pos_1a83e04d6e44c9a4_51_getFriendlyName)
+HXDLIN(  51)		return HX_("literal",6f,a9,1b,94);
             	}
 
 
  ::src::compiler::bytecode::Bytecode LiteralValueCommand_obj::getBytecode(){
-            	HX_STACKFRAME(&_hx_pos_1a83e04d6e44c9a4_45_getBytecode)
-HXDLIN(  45)		::String _hx_tmp = this->content;
-HXDLIN(  45)		return ::src::compiler::bytecode::Bytecode_obj::fromString(_hx_tmp,::src::compiler::bytecode::BytecodeMap_obj::fromString(HX_("Literal",4f,d1,6c,61)),null());
+            	HX_STACKFRAME(&_hx_pos_1a83e04d6e44c9a4_56_getBytecode)
+HXDLIN(  56)		::String _hx_tmp = this->content;
+HXDLIN(  56)		return ::src::compiler::bytecode::Bytecode_obj::fromString(_hx_tmp,::src::compiler::bytecode::BytecodeMap_obj::fromString(HX_("Literal",4f,d1,6c,61)),null());
             	}
 
 
 ::Array< ::Dynamic> LiteralValueCommand_obj::reconstruct(){
-            	HX_GC_STACKFRAME(&_hx_pos_1a83e04d6e44c9a4_50_reconstruct)
-HXDLIN(  50)		return ::Array_obj< ::Dynamic>::__new(1)->init(0, ::src::ast::base::VariableToken_obj::__alloc( HX_CTX ,this->content));
+            	HX_GC_STACKFRAME(&_hx_pos_1a83e04d6e44c9a4_61_reconstruct)
+HXDLIN(  61)		return ::Array_obj< ::Dynamic>::__new(1)->init(0, ::src::ast::base::VariableToken_obj::__alloc( HX_CTX ,this->content));
             	}
 
 
@@ -152,6 +166,9 @@ hx::Val LiteralValueCommand_obj::__Field(const ::String &inName,hx::PropertyAcce
 	case 3:
 		if (HX_FIELD_EQ(inName,"run") ) { return hx::Val( run_dyn() ); }
 		break;
+	case 4:
+		if (HX_FIELD_EQ(inName,"copy") ) { return hx::Val( copy_dyn() ); }
+		break;
 	case 7:
 		if (HX_FIELD_EQ(inName,"content") ) { return hx::Val( content ); }
 		if (HX_FIELD_EQ(inName,"getName") ) { return hx::Val( getName_dyn() ); }
@@ -163,6 +180,9 @@ hx::Val LiteralValueCommand_obj::__Field(const ::String &inName,hx::PropertyAcce
 	case 11:
 		if (HX_FIELD_EQ(inName,"getBytecode") ) { return hx::Val( getBytecode_dyn() ); }
 		if (HX_FIELD_EQ(inName,"reconstruct") ) { return hx::Val( reconstruct_dyn() ); }
+		break;
+	case 15:
+		if (HX_FIELD_EQ(inName,"getFriendlyName") ) { return hx::Val( getFriendlyName_dyn() ); }
 	}
 	return super::__Field(inName,inCallProp);
 }
@@ -192,10 +212,12 @@ static hx::StaticInfo *LiteralValueCommand_obj_sStaticStorageInfo = 0;
 
 static ::String LiteralValueCommand_obj_sMemberFields[] = {
 	HX_HCSTRING("content","\x39","\x8d","\x77","\x19"),
+	HX_HCSTRING("copy","\xb5","\xbb","\xc4","\x41"),
 	HX_HCSTRING("getContent","\x43","\x13","\xd9","\x68"),
 	HX_HCSTRING("setContent","\xb7","\xb1","\x56","\x6c"),
 	HX_HCSTRING("run","\x4b","\xe7","\x56","\x00"),
 	HX_HCSTRING("getName","\x01","\x22","\x82","\x1b"),
+	HX_HCSTRING("getFriendlyName","\x0c","\x92","\xf4","\xaf"),
 	HX_HCSTRING("getBytecode","\xeb","\xb6","\x8b","\x7d"),
 	HX_HCSTRING("reconstruct","\x04","\x66","\x1a","\x90"),
 	::String(null()) };

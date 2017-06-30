@@ -2,6 +2,7 @@ package src.compiler.object.builtin;
 import haxe.macro.Expr.FunctionArg;
 import src.compiler.Scope;
 import src.compiler.commands.Command;
+import src.compiler.commands.FunctionCodeCommand;
 import src.compiler.object.Object;
 import src.compiler.object.builtin.FunctionArgument;
 import src.compiler.signals.InvalidArgumentSignal;
@@ -20,6 +21,11 @@ class FunctionObject extends ValuedObject
         this.code = code;
         
         verifyArgumentIntegrity();
+    }
+    
+    public function getCode():FunctionCode
+    {
+        return code;
     }
     
     public function verifyArgumentIntegrity()
@@ -67,11 +73,8 @@ class FunctionObject extends ValuedObject
         return null;
     }
     
-    override public function call(arguments:Array<Object>):Object
+    public function setFunctionArguments(fscope:Scope, arguments:Array<Object>):Void
     {
-        if (hasMember("__bound__")) arguments.insert(0, getMember("__bound__"));
-        var fscope:Scope = code.code.getScope();
-        
         var index:Int = 0; var posArg:FunctionArgument;
         var positional:Int = 0;
         
@@ -115,11 +118,20 @@ class FunctionObject extends ValuedObject
                 } else throw new InvalidArgumentSignal('Not enough positional arguments, expected ${code.positional}, was given $positional');
             }
         }
+    }
+    
+    override public function call(arguments:Array<Object>):Object
+    {
+        if (hasMember("__bound__")) arguments.insert(0, getMember("__bound__"));
+        setFunctionArguments(code.code.getScope(), arguments);
         
         var object:Object = code.code.run();
         
         //fscope.reset();
-        fscope = new Scope(fscope.getName(), fscope.getParent());
+        //fscope = new Scope(code.code.getName(), fscope.getParent());
+        //code.code.getScope().reset();
+        code.code = code.code.copy(new Scope(code.code.getScope().getName(), code.code.getScope().getParent()));
+        //code.code = new FunctionCodeCommand(new Scope(code.code.getScope().getName(), code.code.getScope().getParent()), cast(code.code, FunctionCodeCommand).commands);
         return object;
     }
     

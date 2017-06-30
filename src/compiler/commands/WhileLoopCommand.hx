@@ -3,6 +3,7 @@ import src.ast.Token;
 import src.ast.base.BlockToken;
 import src.ast.base.BracketToken;
 import src.ast.base.KwdToken;
+import src.compiler.Scope;
 import src.compiler.bytecode.Bytecode;
 import src.compiler.commands.Command;
 import src.compiler.commands.value.ValueCommand;
@@ -44,11 +45,24 @@ class WhileLoopCommand extends Command
     
     private var condition:ValueCommand;
     private var code:Command;
+    private var completedCode:Bool = true;
     override public function new(scope:Scope, condition:ValueCommand, code:Command) 
     {
         super(scope);
         this.condition = condition;
         this.code = code;
+    }
+    
+    override public function copy(scope:Scope):Command 
+    {
+        return new WhileLoopCommand(scope, cast(condition.copy(scope), ValueCommand), code.copy(scope));
+    }
+    
+    override public function setScope(scope:Scope) 
+    {
+        super.setScope(scope);
+        condition.setScope(scope);
+        code.setScope(scope);
     }
     
     override public function walk():Array<Command> 
@@ -58,13 +72,15 @@ class WhileLoopCommand extends Command
     
     override public function run():Object 
     {
-        while (condition.run().rawBool()) {
+        while (!completedCode || condition.run().rawBool()) {
             try {
+                completedCode = false;
                 code.run();
+                completedCode = true;
             } catch ( lpbreak:LoopBreakSignal ) {
                 break;
             } catch ( lpcont:LoopContinueSignal ) {
-                
+                completedCode = true;
             }
         }
         return null;
@@ -72,7 +88,12 @@ class WhileLoopCommand extends Command
     
     override public function getName():String 
     {
-        return "ForLoopCommand";
+        return "WhileLoopCommand";
+    }
+    
+    override public function getFriendlyName():String 
+    {
+        return "while loop";
     }
     
     override public function getBytecode():Bytecode 

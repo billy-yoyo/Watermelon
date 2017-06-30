@@ -82,28 +82,12 @@ class Bytecode
                 }
                 spl = newSpl;
                 poolIndex++;
-                /*newSpl = new Array<Dynamic>();
-                for (sub in spl) {
-                    if (Type.typeof(sub) != Type.ValueType.TInt) {
-                        var subspl:Array<String> = sub.split(string);
-                        if (subspl.length > 1 || subspl[0].length > 0) {
-                            for (x in subspl) {
-                                newSpl.push(x);
-                                newSpl.push(poolIndex);
-                            }
-                        }
-                    } else newSpl.push(sub);
-                }
-                newSpl.pop();
-                spl = newSpl;
-                poolIndex++;*/
             }
             if (spl.length > 1) {
                 var final:Array<Dynamic> = new Array<Dynamic>();
                 for (x in spl) {
                     if (x != "") final.push(x);
                 }
-                //trace('$str => $final');
                 var buffer:BytesBuffer = new BytesBuffer();
                 for (el in spl) {
                     if (Type.typeof(el) == Type.ValueType.TInt) {
@@ -218,15 +202,17 @@ class Bytecode
         return Bytecode.join(code, codes);
     }
      
-    public static function lengthToBytes(length:Int):Bytes
+    public static function lengthToBytes(length:UInt):Bytes
     {
         var buffer:BytesBuffer = new BytesBuffer();
-        if (length < 255) { // one byte
+        if (length < 0xFF) { // one byte
             buffer.addByte(length);
         } else { // four bytes
+            trace('converting $length to more bytes');
             buffer.addByte(0xFF);
-            length -= 255;
+            length -= 0xFF;
             if (length < 0xFFFFFF) {
+                trace('adding bytes of $length (${0xFF & (length >> 16)}, ${0xFF & (length >> 8)}, ${0xFF & length})');
                 buffer.addByte(0xFF & (length >> 16));
                 buffer.addByte(0xFF & (length >> 8));
                 buffer.addByte(0xFF & length);
@@ -244,13 +230,15 @@ class Bytecode
         return buffer.getBytes();
     }
     
-    public static function bytesToLength(bytes:Bytes, index:Int):Int
+    public static function bytesToLength(bytes:Bytes, index:UInt):UInt
     {
-        var length:Int = 0;
+        var length:UInt = 0;
         length = bytes.get(index);
         if (length == 0xFF) {
-            var x:Int = bytes.get(index+1) + (bytes.get(index+2) >> 8) + (bytes.get(index+3) >> 8);
+            var b0:UInt = bytes.get(index + 1) << 16; var b1:UInt = bytes.get(index + 2) << 8; var b2:UInt = bytes.get(index + 3);
+            var x:UInt = b0 + b1 + b2;
             length += x;
+            //trace('length is big, got an additional $x bytes ($b0, $b1, $b2), length is now $length');
             if (x == 0xFFFFFF) {
                 length = length + bytes.getInt32(index+4);
             }
@@ -266,7 +254,6 @@ class Bytecode
     }
     
     public static function join(code:Int, arr:Array<Bytecode>) {
-        var length:Int = 0; var codeLength:Int;
         var buffer:BytesBuffer = new BytesBuffer();
         for (code in arr) {
             buffer.add(code.getByteData());
@@ -282,13 +269,13 @@ class Bytecode
     
     public static function fromBytes(bytes:Bytes, ?scope:Scope):Array<Bytecode> {
         var result:Array<Bytecode> = new Array<Bytecode>();
-        var code:Int; var index:Int; var length:Int; 
+        var code:Int; var index:Int; var length:UInt; 
         while (bytes.length > 0) {
             code = bytes.get(0);
             var cmd:String = BytecodeMap.getCommand(code);
             if (cmd == "StringPool") { // immediatly process and throw away this command
                 var strings:Array<String> = new Array<String>();
-                var amount:Int = bytes.get(1); var stringLength:Int = 0;
+                var amount:Int = bytes.get(1); var stringLength:UInt = 0;
                 length = 0;
                 index = 2;
                 for (i in 0...amount) {
@@ -329,11 +316,6 @@ class Bytecode
     {
         this.code = code;
         this.data = data;
-        var cmd:String = BytecodeMap.getCommand(code);
-        if (cmd != "Int8" && cmd != "Int32" && cmd != "Int64" && cmd != "Variable8" && cmd != "Variable32" && cmd != "Variable64"
-            && cmd != "Float" && cmd != "Double" && !isKeyword(cmd) && cmd != "StringPool") {
-            this.lengthBytes = lengthToBytes(data.length);
-        }
     }
     
     public function getCode():Int
@@ -348,7 +330,14 @@ class Bytecode
     
     public function getLengthBytes():Bytes
     {
-        return lengthBytes;
+        if (lengthBytes == null) {
+            var cmd:String = BytecodeMap.getCommand(code);
+            if (cmd != "Int8" && cmd != "Int32" && cmd != "Int64" && cmd != "Variable8" && cmd != "Variable32" && cmd != "Variable64"
+            && cmd != "Float" && cmd != "Double" && !isKeyword(cmd) && cmd != "StringPool") {
+                this.lengthBytes = lengthToBytes(data.length);
+            }
+        }
+        return this.lengthBytes;
     }
     
     public function getByteData():Bytes
@@ -357,7 +346,7 @@ class Bytecode
         var cmd:String = BytecodeMap.getCommand(code);
         total.addByte(code);
         if (cmd != "Int8" && cmd != "Int32" && cmd != "Int64" && cmd != "Variable8" && cmd != "Variable32" && cmd != "Variable64"
-            && cmd != "Float" && cmd != "Double" && !isKeyword(cmd) && cmd != "StringPool") total.add(lengthBytes);
+            && cmd != "Float" && cmd != "Double" && !isKeyword(cmd) && cmd != "StringPool") total.add(getLengthBytes());
         total.add(data);
         return total.getBytes();
     }
@@ -446,12 +435,14 @@ class Bytecode
                 throw "Invalid raw value";
             }
         } else {
+            //trace('CONVERTING $cmd');
             var bytecodes:Array<Bytecode> = fromBytes(data, scope);
             //var result:Array<Dynamic> = new Array<Dynamic>();
             //for (bytecode in bytecodes) result.push(bytecode.convert());
             var name:String = BytecodeMap.getCommand(code);
             //trace('creating command $name');
             var converter:Scope-> Array<Bytecode>->Command = BytecodeMap.getConverter(name);
+            if (converter == null) trace('no converter for $name');
             var command:Command = converter(scope, bytecodes);
             if (bytecodes.length > 0) {
                 var codes:Array<String> = new Array<String>();
@@ -460,6 +451,7 @@ class Bytecode
             } else {
                 //trace('created command $command');
             }
+            //trace('FINISHED CONVERTINNG $cmd');
             return command;
         }
     }

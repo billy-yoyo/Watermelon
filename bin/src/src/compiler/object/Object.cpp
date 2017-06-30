@@ -10,8 +10,14 @@
 #ifndef INCLUDED_haxe_IMap
 #include <haxe/IMap.h>
 #endif
+#ifndef INCLUDED_haxe_ds_IntMap
+#include <haxe/ds/IntMap.h>
+#endif
 #ifndef INCLUDED_haxe_ds_StringMap
 #include <haxe/ds/StringMap.h>
+#endif
+#ifndef INCLUDED_haxe_io_Bytes
+#include <haxe/io/Bytes.h>
 #endif
 #ifndef INCLUDED_src_compiler_Scope
 #include <src/compiler/Scope.h>
@@ -24,6 +30,9 @@
 #endif
 #ifndef INCLUDED_src_compiler_object_builtin_BoolObject
 #include <src/compiler/object/builtin/BoolObject.h>
+#endif
+#ifndef INCLUDED_src_compiler_object_builtin_BytesObject
+#include <src/compiler/object/builtin/BytesObject.h>
 #endif
 #ifndef INCLUDED_src_compiler_object_builtin_FloatObject
 #include <src/compiler/object/builtin/FloatObject.h>
@@ -50,105 +59,114 @@
 #include <src/compiler/object/builtin/ValuedObject.h>
 #endif
 
-HX_DEFINE_STACK_FRAME(_hx_pos_ede0be52e7af136d_24_new,"src.compiler.object.Object","new",0x7344d55b,"src.compiler.object.Object.new","src/compiler/object/Object.hx",24,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_38_copy,"src.compiler.object.Object","copy",0x61b8125a,"src.compiler.object.Object.copy","src/compiler/object/Object.hx",38,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_48__value,"src.compiler.object.Object","_value",0xb211d097,"src.compiler.object.Object._value","src/compiler/object/Object.hx",48,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_53__float,"src.compiler.object.Object","_float",0x82f016c2,"src.compiler.object.Object._float","src/compiler/object/Object.hx",53,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_58__int,"src.compiler.object.Object","_int",0x5f0ea895,"src.compiler.object.Object._int","src/compiler/object/Object.hx",58,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_63__bool,"src.compiler.object.Object","_bool",0xc92519c4,"src.compiler.object.Object._bool","src/compiler/object/Object.hx",63,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_68__str,"src.compiler.object.Object","_str",0x5f164457,"src.compiler.object.Object._str","src/compiler/object/Object.hx",68,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_73__iter,"src.compiler.object.Object","_iter",0xcdc95ab2,"src.compiler.object.Object._iter","src/compiler/object/Object.hx",73,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_77__list,"src.compiler.object.Object","_list",0xcfbcb1f8,"src.compiler.object.Object._list","src/compiler/object/Object.hx",77,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_84__tuple,"src.compiler.object.Object","_tuple",0x987fed2e,"src.compiler.object.Object._tuple","src/compiler/object/Object.hx",84,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_92_isInstance,"src.compiler.object.Object","isInstance",0xeffd9204,"src.compiler.object.Object.isInstance","src/compiler/object/Object.hx",92,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_97_getType,"src.compiler.object.Object","getType",0x7ee240eb,"src.compiler.object.Object.getType","src/compiler/object/Object.hx",97,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_102_getScope,"src.compiler.object.Object","getScope",0xe5248e43,"src.compiler.object.Object.getScope","src/compiler/object/Object.hx",102,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_107_getMembers,"src.compiler.object.Object","getMembers",0x853f1348,"src.compiler.object.Object.getMembers","src/compiler/object/Object.hx",107,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_112_getMember,"src.compiler.object.Object","getMember",0x5a23decb,"src.compiler.object.Object.getMember","src/compiler/object/Object.hx",112,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_116_callMember,"src.compiler.object.Object","callMember",0x4b5319fd,"src.compiler.object.Object.callMember","src/compiler/object/Object.hx",116,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_127_setMember,"src.compiler.object.Object","setMember",0x3d74cad7,"src.compiler.object.Object.setMember","src/compiler/object/Object.hx",127,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_134_deleteMember,"src.compiler.object.Object","deleteMember",0x45200c8a,"src.compiler.object.Object.deleteMember","src/compiler/object/Object.hx",134,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_139_hasMember,"src.compiler.object.Object","hasMember",0x1eb6088f,"src.compiler.object.Object.hasMember","src/compiler/object/Object.hx",139,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_149_init,"src.compiler.object.Object","init",0x65ae91b5,"src.compiler.object.Object.init","src/compiler/object/Object.hx",149,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_153_bind,"src.compiler.object.Object","bind",0x610a4c62,"src.compiler.object.Object.bind","src/compiler/object/Object.hx",153,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_159_call,"src.compiler.object.Object","call",0x61ad6f43,"src.compiler.object.Object.call","src/compiler/object/Object.hx",159,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_166_getfield,"src.compiler.object.Object","getfield",0xd9b14189,"src.compiler.object.Object.getfield","src/compiler/object/Object.hx",166,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_172_hasfield,"src.compiler.object.Object","hasfield",0x06327c45,"src.compiler.object.Object.hasfield","src/compiler/object/Object.hx",172,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_179_setfield,"src.compiler.object.Object","setfield",0x880e9afd,"src.compiler.object.Object.setfield","src/compiler/object/Object.hx",179,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_185_delfield,"src.compiler.object.Object","delfield",0xfb3f0834,"src.compiler.object.Object.delfield","src/compiler/object/Object.hx",185,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_191_getfields,"src.compiler.object.Object","getfields",0xa16816ca,"src.compiler.object.Object.getfields","src/compiler/object/Object.hx",191,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_201_getmembers,"src.compiler.object.Object","getmembers",0xb7edeb68,"src.compiler.object.Object.getmembers","src/compiler/object/Object.hx",201,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_211_get,"src.compiler.object.Object","get",0x733f8591,"src.compiler.object.Object.get","src/compiler/object/Object.hx",211,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_216_set,"src.compiler.object.Object","set",0x7348a09d,"src.compiler.object.Object.set","src/compiler/object/Object.hx",216,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_221_delete,"src.compiler.object.Object","delete",0xef4aca10,"src.compiler.object.Object.delete","src/compiler/object/Object.hx",221,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_226_int,"src.compiler.object.Object","int",0x734111ea,"src.compiler.object.Object.int","src/compiler/object/Object.hx",226,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_231_float,"src.compiler.object.Object","float",0xd78f3f57,"src.compiler.object.Object.float","src/compiler/object/Object.hx",231,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_236_list,"src.compiler.object.Object","list",0x67a67303,"src.compiler.object.Object.list","src/compiler/object/Object.hx",236,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_241_tuple,"src.compiler.object.Object","tuple",0xed1f15c3,"src.compiler.object.Object.tuple","src/compiler/object/Object.hx",241,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_246_map,"src.compiler.object.Object","map",0x73440f97,"src.compiler.object.Object.map","src/compiler/object/Object.hx",246,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_251_shiftright,"src.compiler.object.Object","shiftright",0x80fbe87f,"src.compiler.object.Object.shiftright","src/compiler/object/Object.hx",251,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_256_rshiftright,"src.compiler.object.Object","rshiftright",0xace14307,"src.compiler.object.Object.rshiftright","src/compiler/object/Object.hx",256,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_261_shiftleft,"src.compiler.object.Object","shiftleft",0xc0e7d0c4,"src.compiler.object.Object.shiftleft","src/compiler/object/Object.hx",261,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_266_rshiftleft,"src.compiler.object.Object","rshiftleft",0xa4671f3c,"src.compiler.object.Object.rshiftleft","src/compiler/object/Object.hx",266,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_271_add,"src.compiler.object.Object","add",0x733af71c,"src.compiler.object.Object.add","src/compiler/object/Object.hx",271,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_276_sub,"src.compiler.object.Object","sub",0x7348ae7b,"src.compiler.object.Object.sub","src/compiler/object/Object.hx",276,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_281_rsub,"src.compiler.object.Object","rsub",0x6ba552f3,"src.compiler.object.Object.rsub","src/compiler/object/Object.hx",281,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_286_mult,"src.compiler.object.Object","mult",0x6858be95,"src.compiler.object.Object.mult","src/compiler/object/Object.hx",286,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_291_div,"src.compiler.object.Object","div",0x733d424c,"src.compiler.object.Object.div","src/compiler/object/Object.hx",291,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_296_rdiv,"src.compiler.object.Object","rdiv",0x6b99e6c4,"src.compiler.object.Object.rdiv","src/compiler/object/Object.hx",296,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_301_intdiv,"src.compiler.object.Object","intdiv",0x22f7b9a7,"src.compiler.object.Object.intdiv","src/compiler/object/Object.hx",301,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_306_rintdiv,"src.compiler.object.Object","rintdiv",0x826b302f,"src.compiler.object.Object.rintdiv","src/compiler/object/Object.hx",306,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_311_pow,"src.compiler.object.Object","pow",0x73466293,"src.compiler.object.Object.pow","src/compiler/object/Object.hx",311,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_316_rpow,"src.compiler.object.Object","rpow",0x6ba3070b,"src.compiler.object.Object.rpow","src/compiler/object/Object.hx",316,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_321_mod,"src.compiler.object.Object","mod",0x73441bbd,"src.compiler.object.Object.mod","src/compiler/object/Object.hx",321,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_326_rmod,"src.compiler.object.Object","rmod",0x6ba0c035,"src.compiler.object.Object.rmod","src/compiler/object/Object.hx",326,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_331_len,"src.compiler.object.Object","len",0x734350d0,"src.compiler.object.Object.len","src/compiler/object/Object.hx",331,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_336_str,"src.compiler.object.Object","str",0x7348adac,"src.compiler.object.Object.str","src/compiler/object/Object.hx",336,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_342_bool,"src.compiler.object.Object","bool",0x610edacf,"src.compiler.object.Object.bool","src/compiler/object/Object.hx",342,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_347_and,"src.compiler.object.Object","and",0x733affd2,"src.compiler.object.Object.and","src/compiler/object/Object.hx",347,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_352_or,"src.compiler.object.Object","or",0x00845488,"src.compiler.object.Object.or","src/compiler/object/Object.hx",352,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_357_xor,"src.compiler.object.Object","xor",0x734c7496,"src.compiler.object.Object.xor","src/compiler/object/Object.hx",357,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_362_not,"src.compiler.object.Object","not",0x7344de0e,"src.compiler.object.Object.not","src/compiler/object/Object.hx",362,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_367_eq,"src.compiler.object.Object","eq",0x00844bd1,"src.compiler.object.Object.eq","src/compiler/object/Object.hx",367,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_372_neq,"src.compiler.object.Object","neq",0x7344d555,"src.compiler.object.Object.neq","src/compiler/object/Object.hx",372,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_377_ls,"src.compiler.object.Object","ls",0x008451ec,"src.compiler.object.Object.ls","src/compiler/object/Object.hx",377,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_382_lseq,"src.compiler.object.Object","lseq",0x67adfd58,"src.compiler.object.Object.lseq","src/compiler/object/Object.hx",382,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_387_gr,"src.compiler.object.Object","gr",0x00844d90,"src.compiler.object.Object.gr","src/compiler/object/Object.hx",387,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_392_greq,"src.compiler.object.Object","greq",0x645f29fc,"src.compiler.object.Object.greq","src/compiler/object/Object.hx",392,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_397_complement,"src.compiler.object.Object","complement",0x1921a34b,"src.compiler.object.Object.complement","src/compiler/object/Object.hx",397,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_402_iter,"src.compiler.object.Object","iter",0x65b31bbd,"src.compiler.object.Object.iter","src/compiler/object/Object.hx",402,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_407_next,"src.compiler.object.Object","next",0x68f5db98,"src.compiler.object.Object.next","src/compiler/object/Object.hx",407,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_412_hasNext,"src.compiler.object.Object","hasNext",0x779d43e8,"src.compiler.object.Object.hasNext","src/compiler/object/Object.hx",412,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_417_isin,"src.compiler.object.Object","isin",0x65b25cf4,"src.compiler.object.Object.isin","src/compiler/object/Object.hx",417,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_422_toString,"src.compiler.object.Object","toString",0x44e2ddd1,"src.compiler.object.Object.toString","src/compiler/object/Object.hx",422,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_427_rawInt,"src.compiler.object.Object","rawInt",0x41df99cc,"src.compiler.object.Object.rawInt","src/compiler/object/Object.hx",427,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_432_rawFloat,"src.compiler.object.Object","rawFloat",0x70c903b9,"src.compiler.object.Object.rawFloat","src/compiler/object/Object.hx",432,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_437_rawBool,"src.compiler.object.Object","rawBool",0x5d2738ad,"src.compiler.object.Object.rawBool","src/compiler/object/Object.hx",437,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_442_rawString,"src.compiler.object.Object","rawString",0x0ef44414,"src.compiler.object.Object.rawString","src/compiler/object/Object.hx",442,0x210efe34)
-HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_447_getHash,"src.compiler.object.Object","getHash",0x76e17dff,"src.compiler.object.Object.getHash","src/compiler/object/Object.hx",447,0x210efe34)
+HX_DEFINE_STACK_FRAME(_hx_pos_ede0be52e7af136d_28_new,"src.compiler.object.Object","new",0x7344d55b,"src.compiler.object.Object.new","src/compiler/object/Object.hx",28,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_44_setScope,"src.compiler.object.Object","setScope",0x9381e7b7,"src.compiler.object.Object.setScope","src/compiler/object/Object.hx",44,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_48_copy,"src.compiler.object.Object","copy",0x61b8125a,"src.compiler.object.Object.copy","src/compiler/object/Object.hx",48,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_58__value,"src.compiler.object.Object","_value",0xb211d097,"src.compiler.object.Object._value","src/compiler/object/Object.hx",58,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_63__float,"src.compiler.object.Object","_float",0x82f016c2,"src.compiler.object.Object._float","src/compiler/object/Object.hx",63,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_68__int,"src.compiler.object.Object","_int",0x5f0ea895,"src.compiler.object.Object._int","src/compiler/object/Object.hx",68,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_73__bool,"src.compiler.object.Object","_bool",0xc92519c4,"src.compiler.object.Object._bool","src/compiler/object/Object.hx",73,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_78__str,"src.compiler.object.Object","_str",0x5f164457,"src.compiler.object.Object._str","src/compiler/object/Object.hx",78,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_83__iter,"src.compiler.object.Object","_iter",0xcdc95ab2,"src.compiler.object.Object._iter","src/compiler/object/Object.hx",83,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_87__list,"src.compiler.object.Object","_list",0xcfbcb1f8,"src.compiler.object.Object._list","src/compiler/object/Object.hx",87,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_94__tuple,"src.compiler.object.Object","_tuple",0x987fed2e,"src.compiler.object.Object._tuple","src/compiler/object/Object.hx",94,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_102__bytes,"src.compiler.object.Object","_bytes",0x3df15991,"src.compiler.object.Object._bytes","src/compiler/object/Object.hx",102,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_107_isInstance,"src.compiler.object.Object","isInstance",0xeffd9204,"src.compiler.object.Object.isInstance","src/compiler/object/Object.hx",107,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_112_getType,"src.compiler.object.Object","getType",0x7ee240eb,"src.compiler.object.Object.getType","src/compiler/object/Object.hx",112,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_117_getScope,"src.compiler.object.Object","getScope",0xe5248e43,"src.compiler.object.Object.getScope","src/compiler/object/Object.hx",117,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_122_getMembers,"src.compiler.object.Object","getMembers",0x853f1348,"src.compiler.object.Object.getMembers","src/compiler/object/Object.hx",122,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_127_getMember,"src.compiler.object.Object","getMember",0x5a23decb,"src.compiler.object.Object.getMember","src/compiler/object/Object.hx",127,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_131_callMember,"src.compiler.object.Object","callMember",0x4b5319fd,"src.compiler.object.Object.callMember","src/compiler/object/Object.hx",131,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_142_setMember,"src.compiler.object.Object","setMember",0x3d74cad7,"src.compiler.object.Object.setMember","src/compiler/object/Object.hx",142,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_149_deleteMember,"src.compiler.object.Object","deleteMember",0x45200c8a,"src.compiler.object.Object.deleteMember","src/compiler/object/Object.hx",149,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_154_hasMember,"src.compiler.object.Object","hasMember",0x1eb6088f,"src.compiler.object.Object.hasMember","src/compiler/object/Object.hx",154,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_164_init,"src.compiler.object.Object","init",0x65ae91b5,"src.compiler.object.Object.init","src/compiler/object/Object.hx",164,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_168_bind,"src.compiler.object.Object","bind",0x610a4c62,"src.compiler.object.Object.bind","src/compiler/object/Object.hx",168,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_174_call,"src.compiler.object.Object","call",0x61ad6f43,"src.compiler.object.Object.call","src/compiler/object/Object.hx",174,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_181_getfield,"src.compiler.object.Object","getfield",0xd9b14189,"src.compiler.object.Object.getfield","src/compiler/object/Object.hx",181,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_187_hasfield,"src.compiler.object.Object","hasfield",0x06327c45,"src.compiler.object.Object.hasfield","src/compiler/object/Object.hx",187,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_194_setfield,"src.compiler.object.Object","setfield",0x880e9afd,"src.compiler.object.Object.setfield","src/compiler/object/Object.hx",194,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_200_delfield,"src.compiler.object.Object","delfield",0xfb3f0834,"src.compiler.object.Object.delfield","src/compiler/object/Object.hx",200,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_206_getfields,"src.compiler.object.Object","getfields",0xa16816ca,"src.compiler.object.Object.getfields","src/compiler/object/Object.hx",206,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_216_getmembers,"src.compiler.object.Object","getmembers",0xb7edeb68,"src.compiler.object.Object.getmembers","src/compiler/object/Object.hx",216,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_226_get,"src.compiler.object.Object","get",0x733f8591,"src.compiler.object.Object.get","src/compiler/object/Object.hx",226,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_231_set,"src.compiler.object.Object","set",0x7348a09d,"src.compiler.object.Object.set","src/compiler/object/Object.hx",231,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_236_delete,"src.compiler.object.Object","delete",0xef4aca10,"src.compiler.object.Object.delete","src/compiler/object/Object.hx",236,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_241_int,"src.compiler.object.Object","int",0x734111ea,"src.compiler.object.Object.int","src/compiler/object/Object.hx",241,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_246_float,"src.compiler.object.Object","float",0xd78f3f57,"src.compiler.object.Object.float","src/compiler/object/Object.hx",246,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_251_list,"src.compiler.object.Object","list",0x67a67303,"src.compiler.object.Object.list","src/compiler/object/Object.hx",251,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_256_tuple,"src.compiler.object.Object","tuple",0xed1f15c3,"src.compiler.object.Object.tuple","src/compiler/object/Object.hx",256,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_261_bytes,"src.compiler.object.Object","bytes",0x92908226,"src.compiler.object.Object.bytes","src/compiler/object/Object.hx",261,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_266_map,"src.compiler.object.Object","map",0x73440f97,"src.compiler.object.Object.map","src/compiler/object/Object.hx",266,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_271_shiftright,"src.compiler.object.Object","shiftright",0x80fbe87f,"src.compiler.object.Object.shiftright","src/compiler/object/Object.hx",271,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_276_rshiftright,"src.compiler.object.Object","rshiftright",0xace14307,"src.compiler.object.Object.rshiftright","src/compiler/object/Object.hx",276,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_281_shiftleft,"src.compiler.object.Object","shiftleft",0xc0e7d0c4,"src.compiler.object.Object.shiftleft","src/compiler/object/Object.hx",281,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_286_rshiftleft,"src.compiler.object.Object","rshiftleft",0xa4671f3c,"src.compiler.object.Object.rshiftleft","src/compiler/object/Object.hx",286,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_291_add,"src.compiler.object.Object","add",0x733af71c,"src.compiler.object.Object.add","src/compiler/object/Object.hx",291,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_296_sub,"src.compiler.object.Object","sub",0x7348ae7b,"src.compiler.object.Object.sub","src/compiler/object/Object.hx",296,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_301_rsub,"src.compiler.object.Object","rsub",0x6ba552f3,"src.compiler.object.Object.rsub","src/compiler/object/Object.hx",301,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_306_mult,"src.compiler.object.Object","mult",0x6858be95,"src.compiler.object.Object.mult","src/compiler/object/Object.hx",306,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_311_div,"src.compiler.object.Object","div",0x733d424c,"src.compiler.object.Object.div","src/compiler/object/Object.hx",311,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_316_rdiv,"src.compiler.object.Object","rdiv",0x6b99e6c4,"src.compiler.object.Object.rdiv","src/compiler/object/Object.hx",316,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_321_intdiv,"src.compiler.object.Object","intdiv",0x22f7b9a7,"src.compiler.object.Object.intdiv","src/compiler/object/Object.hx",321,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_326_rintdiv,"src.compiler.object.Object","rintdiv",0x826b302f,"src.compiler.object.Object.rintdiv","src/compiler/object/Object.hx",326,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_331_pow,"src.compiler.object.Object","pow",0x73466293,"src.compiler.object.Object.pow","src/compiler/object/Object.hx",331,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_336_rpow,"src.compiler.object.Object","rpow",0x6ba3070b,"src.compiler.object.Object.rpow","src/compiler/object/Object.hx",336,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_341_mod,"src.compiler.object.Object","mod",0x73441bbd,"src.compiler.object.Object.mod","src/compiler/object/Object.hx",341,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_346_rmod,"src.compiler.object.Object","rmod",0x6ba0c035,"src.compiler.object.Object.rmod","src/compiler/object/Object.hx",346,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_351_negate,"src.compiler.object.Object","negate",0xeb8b4ba7,"src.compiler.object.Object.negate","src/compiler/object/Object.hx",351,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_356_len,"src.compiler.object.Object","len",0x734350d0,"src.compiler.object.Object.len","src/compiler/object/Object.hx",356,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_361_str,"src.compiler.object.Object","str",0x7348adac,"src.compiler.object.Object.str","src/compiler/object/Object.hx",361,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_367_bool,"src.compiler.object.Object","bool",0x610edacf,"src.compiler.object.Object.bool","src/compiler/object/Object.hx",367,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_372_and,"src.compiler.object.Object","and",0x733affd2,"src.compiler.object.Object.and","src/compiler/object/Object.hx",372,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_377_or,"src.compiler.object.Object","or",0x00845488,"src.compiler.object.Object.or","src/compiler/object/Object.hx",377,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_382_xor,"src.compiler.object.Object","xor",0x734c7496,"src.compiler.object.Object.xor","src/compiler/object/Object.hx",382,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_387_not,"src.compiler.object.Object","not",0x7344de0e,"src.compiler.object.Object.not","src/compiler/object/Object.hx",387,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_392_eq,"src.compiler.object.Object","eq",0x00844bd1,"src.compiler.object.Object.eq","src/compiler/object/Object.hx",392,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_397_neq,"src.compiler.object.Object","neq",0x7344d555,"src.compiler.object.Object.neq","src/compiler/object/Object.hx",397,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_402_ls,"src.compiler.object.Object","ls",0x008451ec,"src.compiler.object.Object.ls","src/compiler/object/Object.hx",402,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_407_lseq,"src.compiler.object.Object","lseq",0x67adfd58,"src.compiler.object.Object.lseq","src/compiler/object/Object.hx",407,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_412_gr,"src.compiler.object.Object","gr",0x00844d90,"src.compiler.object.Object.gr","src/compiler/object/Object.hx",412,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_417_greq,"src.compiler.object.Object","greq",0x645f29fc,"src.compiler.object.Object.greq","src/compiler/object/Object.hx",417,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_422_complement,"src.compiler.object.Object","complement",0x1921a34b,"src.compiler.object.Object.complement","src/compiler/object/Object.hx",422,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_427_iter,"src.compiler.object.Object","iter",0x65b31bbd,"src.compiler.object.Object.iter","src/compiler/object/Object.hx",427,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_432_next,"src.compiler.object.Object","next",0x68f5db98,"src.compiler.object.Object.next","src/compiler/object/Object.hx",432,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_437_hasNext,"src.compiler.object.Object","hasNext",0x779d43e8,"src.compiler.object.Object.hasNext","src/compiler/object/Object.hx",437,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_442_isin,"src.compiler.object.Object","isin",0x65b25cf4,"src.compiler.object.Object.isin","src/compiler/object/Object.hx",442,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_447_toString,"src.compiler.object.Object","toString",0x44e2ddd1,"src.compiler.object.Object.toString","src/compiler/object/Object.hx",447,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_452_rawInt,"src.compiler.object.Object","rawInt",0x41df99cc,"src.compiler.object.Object.rawInt","src/compiler/object/Object.hx",452,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_457_rawFloat,"src.compiler.object.Object","rawFloat",0x70c903b9,"src.compiler.object.Object.rawFloat","src/compiler/object/Object.hx",457,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_462_rawBool,"src.compiler.object.Object","rawBool",0x5d2738ad,"src.compiler.object.Object.rawBool","src/compiler/object/Object.hx",462,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_467_rawBytes,"src.compiler.object.Object","rawBytes",0x2bca4688,"src.compiler.object.Object.rawBytes","src/compiler/object/Object.hx",467,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_472_rawList,"src.compiler.object.Object","rawList",0x63bed0e1,"src.compiler.object.Object.rawList","src/compiler/object/Object.hx",472,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_477_rawTuple,"src.compiler.object.Object","rawTuple",0x8658da25,"src.compiler.object.Object.rawTuple","src/compiler/object/Object.hx",477,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_482_rawMap,"src.compiler.object.Object","rawMap",0x41e29779,"src.compiler.object.Object.rawMap","src/compiler/object/Object.hx",482,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_487_rawString,"src.compiler.object.Object","rawString",0x0ef44414,"src.compiler.object.Object.rawString","src/compiler/object/Object.hx",487,0x210efe34)
+HX_LOCAL_STACK_FRAME(_hx_pos_ede0be52e7af136d_491_getHash,"src.compiler.object.Object","getHash",0x76e17dff,"src.compiler.object.Object.getHash","src/compiler/object/Object.hx",491,0x210efe34)
 namespace src{
 namespace compiler{
 namespace object{
 
 void Object_obj::__construct( ::src::compiler::Scope scope, ::src::compiler::object::ObjectType type, ::haxe::ds::StringMap members,::Array< ::Dynamic> args){
-            	HX_GC_STACKFRAME(&_hx_pos_ede0be52e7af136d_24_new)
-HXLINE(  25)		this->scope = scope;
-HXLINE(  26)		this->type = type;
-HXLINE(  27)		this->members = members;
-HXLINE(  28)		if (hx::IsNull( members )) {
-HXLINE(  28)			this->members =  ::haxe::ds::StringMap_obj::__alloc( HX_CTX );
+            	HX_GC_STACKFRAME(&_hx_pos_ede0be52e7af136d_28_new)
+HXLINE(  29)		this->scope = scope;
+HXLINE(  30)		this->objID = scope->nextObjectID();
+HXLINE(  31)		this->type = type;
+HXLINE(  32)		this->members = members;
+HXLINE(  33)		if (hx::IsNull( members )) {
+HXLINE(  33)			this->members =  ::haxe::ds::StringMap_obj::__alloc( HX_CTX );
             		}
-HXLINE(  29)		{
-HXLINE(  29)			 ::Dynamic member = this->members->iterator();
-HXDLIN(  29)			while(( (bool)(member->__Field(HX_("hasNext",6d,a5,46,18),hx::paccDynamic)()) )){
-HXLINE(  29)				 ::src::compiler::object::Object member1 = ( ( ::src::compiler::object::Object)(member->__Field(HX_("next",f3,84,02,49),hx::paccDynamic)()) );
-HXLINE(  30)				member1->bind(hx::ObjectPtr<OBJ_>(this));
+HXLINE(  34)		{
+HXLINE(  34)			 ::Dynamic member = this->members->iterator();
+HXDLIN(  34)			while(( (bool)(member->__Field(HX_("hasNext",6d,a5,46,18),hx::paccDynamic)()) )){
+HXLINE(  34)				 ::src::compiler::object::Object member1 = ( ( ::src::compiler::object::Object)(member->__Field(HX_("next",f3,84,02,49),hx::paccDynamic)()) );
+HXLINE(  35)				member1->bind(hx::ObjectPtr<OBJ_>(this));
             			}
             		}
-HXLINE(  33)		if (hx::IsNull( args )) {
-HXLINE(  33)			args = ::Array_obj< ::Dynamic>::__new();
+HXLINE(  38)		if (hx::IsNull( args )) {
+HXLINE(  38)			args = ::Array_obj< ::Dynamic>::__new();
             		}
-HXLINE(  34)		this->init(args);
+HXLINE(  39)		this->init(args);
             	}
 
 Dynamic Object_obj::__CreateEmpty() { return new Object_obj; }
@@ -166,228 +184,242 @@ bool Object_obj::_hx_isInstanceOf(int inClassId) {
 	return inClassId==(int)0x00000001 || inClassId==(int)0x15de4261;
 }
 
+void Object_obj::setScope( ::src::compiler::Scope scope){
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_44_setScope)
+HXDLIN(  44)		this->scope = scope;
+            	}
+
+
+HX_DEFINE_DYNAMIC_FUNC1(Object_obj,setScope,(void))
+
  ::src::compiler::object::Object Object_obj::copy(){
-            	HX_GC_STACKFRAME(&_hx_pos_ede0be52e7af136d_38_copy)
-HXLINE(  39)		 ::haxe::ds::StringMap members =  ::haxe::ds::StringMap_obj::__alloc( HX_CTX );
-HXLINE(  40)		{
-HXLINE(  40)			 ::Dynamic key = this->members->keys();
-HXDLIN(  40)			while(( (bool)(key->__Field(HX_("hasNext",6d,a5,46,18),hx::paccDynamic)()) )){
-HXLINE(  40)				::String key1 = ( (::String)(key->__Field(HX_("next",f3,84,02,49),hx::paccDynamic)()) );
-HXLINE(  41)				members->set(key1,this->members->get(key1).StaticCast<  ::src::compiler::object::Object >()->copy());
+            	HX_GC_STACKFRAME(&_hx_pos_ede0be52e7af136d_48_copy)
+HXLINE(  49)		 ::haxe::ds::StringMap members =  ::haxe::ds::StringMap_obj::__alloc( HX_CTX );
+HXLINE(  50)		{
+HXLINE(  50)			 ::Dynamic key = this->members->keys();
+HXDLIN(  50)			while(( (bool)(key->__Field(HX_("hasNext",6d,a5,46,18),hx::paccDynamic)()) )){
+HXLINE(  50)				::String key1 = ( (::String)(key->__Field(HX_("next",f3,84,02,49),hx::paccDynamic)()) );
+HXLINE(  51)				members->set(key1,this->members->get(key1).StaticCast<  ::src::compiler::object::Object >()->copy());
             			}
             		}
-HXLINE(  43)		hx::Class _hx_tmp = this->type->getObjectClass();
-HXDLIN(  43)		return ( ( ::src::compiler::object::Object)(::Type_obj::createInstance(_hx_tmp,::cpp::VirtualArray_obj::__new(3)->init(0,this->scope)->init(1,this->type)->init(2,members))) );
+HXLINE(  53)		hx::Class _hx_tmp = this->type->getObjectClass();
+HXDLIN(  53)		return ( ( ::src::compiler::object::Object)(::Type_obj::createInstance(_hx_tmp,::cpp::VirtualArray_obj::__new(3)->init(0,this->scope)->init(1,this->type)->init(2,members))) );
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Object_obj,copy,return )
 
  ::src::compiler::object::Object Object_obj::_value(::String type, ::Dynamic value,::Array< ::Dynamic> args){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_48__value)
-HXDLIN(  48)		return this->scope->getType(type,null())->createValue(value,args);
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_58__value)
+HXDLIN(  58)		return this->scope->getType(type,null())->createValue(value,this->scope,args);
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC3(Object_obj,_value,return )
 
  ::src::compiler::object::builtin::FloatObject Object_obj::_float(Float value,::Array< ::Dynamic> args){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_53__float)
-HXDLIN(  53)		return hx::TCast<  ::src::compiler::object::builtin::FloatObject >::cast(this->_value(HX_("FloatType",56,c2,14,a2),value,args));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_63__float)
+HXDLIN(  63)		return hx::TCast<  ::src::compiler::object::builtin::FloatObject >::cast(this->_value(HX_("FloatType",56,c2,14,a2),value,args));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC2(Object_obj,_float,return )
 
  ::src::compiler::object::builtin::IntObject Object_obj::_int(int value,::Array< ::Dynamic> args){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_58__int)
-HXDLIN(  58)		return hx::TCast<  ::src::compiler::object::builtin::IntObject >::cast(this->_value(HX_("IntType",29,f7,3d,d9),value,args));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_68__int)
+HXDLIN(  68)		return hx::TCast<  ::src::compiler::object::builtin::IntObject >::cast(this->_value(HX_("IntType",29,f7,3d,d9),value,args));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC2(Object_obj,_int,return )
 
  ::src::compiler::object::builtin::BoolObject Object_obj::_bool(bool value,::Array< ::Dynamic> args){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_63__bool)
-HXDLIN(  63)		return hx::TCast<  ::src::compiler::object::builtin::BoolObject >::cast(this->_value(HX_("BoolType",24,bc,95,8f),value,args));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_73__bool)
+HXDLIN(  73)		return hx::TCast<  ::src::compiler::object::builtin::BoolObject >::cast(this->_value(HX_("BoolType",24,bc,95,8f),value,args));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC2(Object_obj,_bool,return )
 
  ::src::compiler::object::builtin::StringObject Object_obj::_str(::String value,::Array< ::Dynamic> args){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_68__str)
-HXDLIN(  68)		return hx::TCast<  ::src::compiler::object::builtin::StringObject >::cast(this->_value(HX_("StringType",4b,88,b6,f5),value,args));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_78__str)
+HXDLIN(  78)		return hx::TCast<  ::src::compiler::object::builtin::StringObject >::cast(this->_value(HX_("StringType",4b,88,b6,f5),value,args));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC2(Object_obj,_str,return )
 
  ::src::compiler::object::builtin::IteratorObject Object_obj::_iter(::Array< ::Dynamic> value,::Array< ::Dynamic> args){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_73__iter)
-HXDLIN(  73)		return hx::TCast<  ::src::compiler::object::builtin::IteratorObject >::cast(this->_value(HX_("IteratorType",e8,43,45,b2),value,args));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_83__iter)
+HXDLIN(  83)		return hx::TCast<  ::src::compiler::object::builtin::IteratorObject >::cast(this->_value(HX_("IteratorType",e8,43,45,b2),value,args));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC2(Object_obj,_iter,return )
 
  ::src::compiler::object::builtin::ListObject Object_obj::_list(::Array< ::Dynamic> values,::Array< ::Dynamic> args){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_77__list)
-HXLINE(  78)		 ::src::compiler::object::builtin::ListObject list = hx::TCast<  ::src::compiler::object::builtin::ListObject >::cast(this->scope->getType(HX_("ListType",58,7e,af,06),null())->createObject(null()));
-HXLINE(  79)		list->arr->concat(values);
-HXLINE(  80)		return list;
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_87__list)
+HXLINE(  88)		 ::src::compiler::object::builtin::ListObject list = hx::TCast<  ::src::compiler::object::builtin::ListObject >::cast(this->scope->getType(HX_("ListType",58,7e,af,06),null())->createObject(this->scope,args));
+HXLINE(  89)		list->arr = values;
+HXLINE(  90)		return list;
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC2(Object_obj,_list,return )
 
  ::src::compiler::object::builtin::TupleObject Object_obj::_tuple(::Array< ::Dynamic> values,::Array< ::Dynamic> args){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_84__tuple)
-HXLINE(  85)		 ::src::compiler::object::builtin::TupleObject tuple = hx::TCast<  ::src::compiler::object::builtin::TupleObject >::cast(this->scope->getType(HX_("TupleType",c2,3e,8e,1a),null())->createObject(null()));
-HXLINE(  86)		tuple->arr->concat(values);
-HXLINE(  87)		return tuple;
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_94__tuple)
+HXLINE(  95)		 ::src::compiler::object::builtin::TupleObject tuple = hx::TCast<  ::src::compiler::object::builtin::TupleObject >::cast(this->scope->getType(HX_("TupleType",c2,3e,8e,1a),null())->createObject(this->scope,args));
+HXLINE(  96)		tuple->arr = values;
+HXLINE(  97)		return tuple;
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC2(Object_obj,_tuple,return )
 
+ ::src::compiler::object::builtin::BytesObject Object_obj::_bytes( ::haxe::io::Bytes value,::Array< ::Dynamic> args){
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_102__bytes)
+HXDLIN( 102)		return hx::TCast<  ::src::compiler::object::builtin::BytesObject >::cast(this->_value(HX_("BytesType",a5,18,d1,13),value,args));
+            	}
+
+
+HX_DEFINE_DYNAMIC_FUNC2(Object_obj,_bytes,return )
+
 bool Object_obj::isInstance(::String type){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_92_isInstance)
-HXDLIN(  92)		return this->type->inheritsType(type);
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_107_isInstance)
+HXDLIN( 107)		return this->type->inheritsType(type);
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(Object_obj,isInstance,return )
 
  ::src::compiler::object::ObjectType Object_obj::getType(){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_97_getType)
-HXDLIN(  97)		return this->type;
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_112_getType)
+HXDLIN( 112)		return this->type;
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Object_obj,getType,return )
 
  ::src::compiler::Scope Object_obj::getScope(){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_102_getScope)
-HXDLIN( 102)		return this->scope;
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_117_getScope)
+HXDLIN( 117)		return this->scope;
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Object_obj,getScope,return )
 
  ::haxe::ds::StringMap Object_obj::getMembers(){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_107_getMembers)
-HXDLIN( 107)		return this->members;
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_122_getMembers)
+HXDLIN( 122)		return this->members;
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Object_obj,getMembers,return )
 
  ::src::compiler::object::Object Object_obj::getMember(::String name){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_112_getMember)
-HXDLIN( 112)		return this->members->get(name).StaticCast<  ::src::compiler::object::Object >();
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_127_getMember)
+HXDLIN( 127)		return this->members->get(name).StaticCast<  ::src::compiler::object::Object >();
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(Object_obj,getMember,return )
 
  ::src::compiler::object::Object Object_obj::callMember(::String name,::Array< ::Dynamic> args){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_116_callMember)
-HXLINE( 118)		 ::src::compiler::object::Object member = this->getMember(name);
-HXLINE( 119)		if (hx::IsNotNull( member )) {
-HXLINE( 120)			 ::src::compiler::object::Object result = member->call(args);
-HXLINE( 121)			return result;
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_131_callMember)
+HXLINE( 133)		 ::src::compiler::object::Object member = this->getMember(name);
+HXLINE( 134)		if (hx::IsNotNull( member )) {
+HXLINE( 135)			 ::src::compiler::object::Object result = member->call(args);
+HXLINE( 136)			return result;
             		}
-HXLINE( 123)		return null();
+HXLINE( 138)		return null();
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC2(Object_obj,callMember,return )
 
 void Object_obj::setMember(::String name, ::src::compiler::object::Object obj){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_127_setMember)
-HXLINE( 128)		this->members->set(name,obj);
-HXLINE( 129)		obj->bind(hx::ObjectPtr<OBJ_>(this));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_142_setMember)
+HXLINE( 143)		this->members->set(name,obj);
+HXLINE( 144)		obj->bind(hx::ObjectPtr<OBJ_>(this));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC2(Object_obj,setMember,(void))
 
 void Object_obj::deleteMember(::String name){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_134_deleteMember)
-HXDLIN( 134)		this->members->remove(name);
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_149_deleteMember)
+HXDLIN( 149)		this->members->remove(name);
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(Object_obj,deleteMember,(void))
 
 bool Object_obj::hasMember(::String name){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_139_hasMember)
-HXDLIN( 139)		return this->members->exists(name);
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_154_hasMember)
+HXDLIN( 154)		return this->members->exists(name);
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(Object_obj,hasMember,return )
 
 void Object_obj::init(::Array< ::Dynamic> args){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_149_init)
-HXDLIN( 149)		this->callMember(HX_("__init__",50,dd,7b,3f),args);
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_164_init)
+HXDLIN( 164)		this->callMember(HX_("__init__",50,dd,7b,3f),args);
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(Object_obj,init,(void))
 
 void Object_obj::bind( ::src::compiler::object::Object obj){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_153_bind)
-HXLINE( 154)		this->members->set(HX_("__bound__",be,5f,06,75),obj);
-HXLINE( 155)		this->callMember(HX_("__bind__",3d,5d,3d,95),::Array_obj< ::Dynamic>::__new(1)->init(0,obj));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_168_bind)
+HXLINE( 169)		this->members->set(HX_("__bound__",be,5f,06,75),obj);
+HXLINE( 170)		this->callMember(HX_("__bind__",3d,5d,3d,95),::Array_obj< ::Dynamic>::__new(1)->init(0,obj));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(Object_obj,bind,(void))
 
  ::src::compiler::object::Object Object_obj::call(::Array< ::Dynamic> values){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_159_call)
-HXLINE( 161)		if (this->hasMember(HX_("__call__",5e,ba,17,5f))) {
-HXLINE( 161)			return this->getMember(HX_("__call__",5e,ba,17,5f))->call(values);
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_174_call)
+HXLINE( 176)		if (this->hasMember(HX_("__call__",5e,ba,17,5f))) {
+HXLINE( 176)			return this->getMember(HX_("__call__",5e,ba,17,5f))->call(values);
             		}
-HXLINE( 162)		return null();
+HXLINE( 177)		return null();
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(Object_obj,call,return )
 
  ::src::compiler::object::Object Object_obj::getfield( ::src::compiler::object::Object index){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_166_getfield)
-HXLINE( 167)		if (this->hasMember(HX_("__getfield__",a4,e3,d1,b6))) {
-HXLINE( 167)			return this->getMember(HX_("__getfield__",a4,e3,d1,b6))->call(::Array_obj< ::Dynamic>::__new(1)->init(0,index));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_181_getfield)
+HXLINE( 182)		if (this->hasMember(HX_("__getfield__",a4,e3,d1,b6))) {
+HXLINE( 182)			return this->getMember(HX_("__getfield__",a4,e3,d1,b6))->call(::Array_obj< ::Dynamic>::__new(1)->init(0,index));
             		}
-HXLINE( 168)		::Dynamic this1 = this->members;
-HXDLIN( 168)		return ( ( ::haxe::ds::StringMap)(this1) )->get(index->rawString()).StaticCast<  ::src::compiler::object::Object >();
+HXLINE( 183)		return this->getMember(index->rawString());
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(Object_obj,getfield,return )
 
  ::src::compiler::object::builtin::BoolObject Object_obj::hasfield( ::src::compiler::object::Object index){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_172_hasfield)
-HXLINE( 173)		if (this->hasMember(HX_("__hasfield__",60,45,24,f2))) {
-HXLINE( 173)			return hx::TCast<  ::src::compiler::object::builtin::BoolObject >::cast(this->getMember(HX_("__hasfield__",60,45,24,f2))->call(::Array_obj< ::Dynamic>::__new(1)->init(0,index)));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_187_hasfield)
+HXLINE( 188)		if (this->hasMember(HX_("__hasfield__",60,45,24,f2))) {
+HXLINE( 188)			return hx::TCast<  ::src::compiler::object::builtin::BoolObject >::cast(this->getMember(HX_("__hasfield__",60,45,24,f2))->call(::Array_obj< ::Dynamic>::__new(1)->init(0,index)));
             		}
-HXLINE( 174)		::Dynamic this1 = this->members;
-HXDLIN( 174)		return this->_bool(( ( ::haxe::ds::StringMap)(this1) )->exists(index->rawString()),null());
+HXLINE( 189)		return this->_bool(this->hasMember(index->rawString()),null());
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(Object_obj,hasfield,return )
 
 void Object_obj::setfield( ::src::compiler::object::Object index, ::src::compiler::object::Object member){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_179_setfield)
-HXDLIN( 179)		if (this->hasMember(HX_("__setfield__",18,82,4f,ba))) {
-HXDLIN( 179)			this->getMember(HX_("__setfield__",18,82,4f,ba))->call(::Array_obj< ::Dynamic>::__new(2)->init(0,index)->init(1,member));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_194_setfield)
+HXDLIN( 194)		if (this->hasMember(HX_("__setfield__",18,82,4f,ba))) {
+HXDLIN( 194)			this->getMember(HX_("__setfield__",18,82,4f,ba))->call(::Array_obj< ::Dynamic>::__new(2)->init(0,index)->init(1,member));
             		}
             		else {
-HXLINE( 180)			this->setMember(index->rawString(),member);
+HXLINE( 195)			this->setMember(index->rawString(),member);
             		}
             	}
 
@@ -395,12 +427,12 @@ HXLINE( 180)			this->setMember(index->rawString(),member);
 HX_DEFINE_DYNAMIC_FUNC2(Object_obj,setfield,(void))
 
 void Object_obj::delfield( ::src::compiler::object::Object index){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_185_delfield)
-HXDLIN( 185)		if (this->hasMember(HX_("__delfield__",0f,eb,5e,ac))) {
-HXDLIN( 185)			this->getMember(HX_("__delfield__",0f,eb,5e,ac))->call(::Array_obj< ::Dynamic>::__new(1)->init(0,index));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_200_delfield)
+HXDLIN( 200)		if (this->hasMember(HX_("__delfield__",0f,eb,5e,ac))) {
+HXDLIN( 200)			this->getMember(HX_("__delfield__",0f,eb,5e,ac))->call(::Array_obj< ::Dynamic>::__new(1)->init(0,index));
             		}
             		else {
-HXLINE( 186)			this->deleteMember(index->rawString());
+HXLINE( 201)			this->deleteMember(index->rawString());
             		}
             	}
 
@@ -408,435 +440,541 @@ HXLINE( 186)			this->deleteMember(index->rawString());
 HX_DEFINE_DYNAMIC_FUNC1(Object_obj,delfield,(void))
 
  ::src::compiler::object::builtin::ListObject Object_obj::getfields(){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_191_getfields)
-HXDLIN( 191)		if (this->hasMember(HX_("__getfields__",4f,79,e4,40))) {
-HXDLIN( 191)			return hx::TCast<  ::src::compiler::object::builtin::ListObject >::cast(this->getMember(HX_("__getfields__",4f,79,e4,40))->call(::Array_obj< ::Dynamic>::__new(0)));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_206_getfields)
+HXDLIN( 206)		if (this->hasMember(HX_("__getfields__",4f,79,e4,40))) {
+HXDLIN( 206)			return hx::TCast<  ::src::compiler::object::builtin::ListObject >::cast(this->getMember(HX_("__getfields__",4f,79,e4,40))->call(::Array_obj< ::Dynamic>::__new(0)));
             		}
             		else {
-HXLINE( 193)			::Array< ::Dynamic> fields = ::Array_obj< ::Dynamic>::__new();
-HXLINE( 194)			{
-HXLINE( 194)				 ::Dynamic field = this->members->keys();
-HXDLIN( 194)				while(( (bool)(field->__Field(HX_("hasNext",6d,a5,46,18),hx::paccDynamic)()) )){
-HXLINE( 194)					::String field1 = ( (::String)(field->__Field(HX_("next",f3,84,02,49),hx::paccDynamic)()) );
-HXDLIN( 194)					fields->push(this->_str(field1,null()));
+HXLINE( 208)			::Array< ::Dynamic> fields = ::Array_obj< ::Dynamic>::__new();
+HXLINE( 209)			{
+HXLINE( 209)				 ::Dynamic field = this->members->keys();
+HXDLIN( 209)				while(( (bool)(field->__Field(HX_("hasNext",6d,a5,46,18),hx::paccDynamic)()) )){
+HXLINE( 209)					::String field1 = ( (::String)(field->__Field(HX_("next",f3,84,02,49),hx::paccDynamic)()) );
+HXDLIN( 209)					fields->push(this->_str(field1,null()));
             				}
             			}
-HXLINE( 195)			return this->_list(fields,null());
+HXLINE( 210)			return this->_list(fields,null());
             		}
-HXLINE( 191)		return null();
+HXLINE( 206)		return null();
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Object_obj,getfields,return )
 
  ::src::compiler::object::builtin::ListObject Object_obj::getmembers(){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_201_getmembers)
-HXDLIN( 201)		if (this->hasMember(HX_("__getmembers__",03,68,bc,46))) {
-HXDLIN( 201)			return hx::TCast<  ::src::compiler::object::builtin::ListObject >::cast(this->getMember(HX_("__getmembers__",03,68,bc,46))->call(::Array_obj< ::Dynamic>::__new(0)));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_216_getmembers)
+HXDLIN( 216)		if (this->hasMember(HX_("__getmembers__",03,68,bc,46))) {
+HXDLIN( 216)			return hx::TCast<  ::src::compiler::object::builtin::ListObject >::cast(this->getMember(HX_("__getmembers__",03,68,bc,46))->call(::Array_obj< ::Dynamic>::__new(0)));
             		}
             		else {
-HXLINE( 203)			::Array< ::Dynamic> objs = ::Array_obj< ::Dynamic>::__new();
-HXLINE( 204)			{
-HXLINE( 204)				 ::Dynamic member = this->members->iterator();
-HXDLIN( 204)				while(( (bool)(member->__Field(HX_("hasNext",6d,a5,46,18),hx::paccDynamic)()) )){
-HXLINE( 204)					 ::src::compiler::object::Object member1 = ( ( ::src::compiler::object::Object)(member->__Field(HX_("next",f3,84,02,49),hx::paccDynamic)()) );
-HXDLIN( 204)					objs->push(member1);
+HXLINE( 218)			::Array< ::Dynamic> objs = ::Array_obj< ::Dynamic>::__new();
+HXLINE( 219)			{
+HXLINE( 219)				 ::Dynamic member = this->members->iterator();
+HXDLIN( 219)				while(( (bool)(member->__Field(HX_("hasNext",6d,a5,46,18),hx::paccDynamic)()) )){
+HXLINE( 219)					 ::src::compiler::object::Object member1 = ( ( ::src::compiler::object::Object)(member->__Field(HX_("next",f3,84,02,49),hx::paccDynamic)()) );
+HXDLIN( 219)					objs->push(member1);
             				}
             			}
-HXLINE( 205)			return this->_list(objs,null());
+HXLINE( 220)			return this->_list(objs,null());
             		}
-HXLINE( 201)		return null();
+HXLINE( 216)		return null();
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Object_obj,getmembers,return )
 
  ::src::compiler::object::Object Object_obj::get( ::src::compiler::object::Object index){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_211_get)
-HXDLIN( 211)		return this->callMember(HX_("__get__",16,fe,be,fb),::Array_obj< ::Dynamic>::__new(1)->init(0,index));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_226_get)
+HXDLIN( 226)		return this->callMember(HX_("__get__",16,fe,be,fb),::Array_obj< ::Dynamic>::__new(1)->init(0,index));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(Object_obj,get,return )
 
 void Object_obj::set( ::src::compiler::object::Object index, ::src::compiler::object::Object obj){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_216_set)
-HXDLIN( 216)		this->callMember(HX_("__set__",22,f4,8d,e4),::Array_obj< ::Dynamic>::__new(2)->init(0,index)->init(1,obj));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_231_set)
+HXDLIN( 231)		this->callMember(HX_("__set__",22,f4,8d,e4),::Array_obj< ::Dynamic>::__new(2)->init(0,index)->init(1,obj));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC2(Object_obj,set,(void))
 
 void Object_obj::_hx_delete( ::src::compiler::object::Object index){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_221_delete)
-HXDLIN( 221)		this->callMember(HX_("__del__",8b,2e,85,41),::Array_obj< ::Dynamic>::__new(1)->init(0,index));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_236_delete)
+HXDLIN( 236)		this->callMember(HX_("__del__",8b,2e,85,41),::Array_obj< ::Dynamic>::__new(1)->init(0,index));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(Object_obj,_hx_delete,(void))
 
  ::src::compiler::object::builtin::IntObject Object_obj::_hx_int(){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_226_int)
-HXDLIN( 226)		return hx::TCast<  ::src::compiler::object::builtin::IntObject >::cast(this->getMember(HX_("__int__",af,12,7f,28))->call(::Array_obj< ::Dynamic>::__new(0)));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_241_int)
+HXDLIN( 241)		return hx::TCast<  ::src::compiler::object::builtin::IntObject >::cast(this->callMember(HX_("__int__",af,12,7f,28),::Array_obj< ::Dynamic>::__new(0)));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Object_obj,_hx_int,return )
 
  ::src::compiler::object::builtin::FloatObject Object_obj::_hx_float(){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_231_float)
-HXDLIN( 231)		return hx::TCast<  ::src::compiler::object::builtin::FloatObject >::cast(this->callMember(HX_("__float__",9c,08,57,6b),::Array_obj< ::Dynamic>::__new(0)));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_246_float)
+HXDLIN( 246)		return hx::TCast<  ::src::compiler::object::builtin::FloatObject >::cast(this->callMember(HX_("__float__",9c,08,57,6b),::Array_obj< ::Dynamic>::__new(0)));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Object_obj,_hx_float,return )
 
  ::src::compiler::object::builtin::ListObject Object_obj::list(){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_236_list)
-HXDLIN( 236)		return hx::TCast<  ::src::compiler::object::builtin::ListObject >::cast(this->callMember(HX_("__list__",1e,2e,29,98),::Array_obj< ::Dynamic>::__new(0)));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_251_list)
+HXDLIN( 251)		return hx::TCast<  ::src::compiler::object::builtin::ListObject >::cast(this->callMember(HX_("__list__",1e,2e,29,98),::Array_obj< ::Dynamic>::__new(0)));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Object_obj,list,return )
 
  ::src::compiler::object::builtin::TupleObject Object_obj::tuple(){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_241_tuple)
-HXDLIN( 241)		return hx::TCast<  ::src::compiler::object::builtin::TupleObject >::cast(this->callMember(HX_("__tuple__",08,52,5a,e5),::Array_obj< ::Dynamic>::__new(0)));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_256_tuple)
+HXDLIN( 256)		return hx::TCast<  ::src::compiler::object::builtin::TupleObject >::cast(this->callMember(HX_("__tuple__",08,52,5a,e5),::Array_obj< ::Dynamic>::__new(0)));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Object_obj,tuple,return )
 
+ ::src::compiler::object::builtin::BytesObject Object_obj::bytes(){
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_261_bytes)
+HXDLIN( 261)		return hx::TCast<  ::src::compiler::object::builtin::BytesObject >::cast(this->callMember(HX_("__bytes__",2b,dd,49,db),::Array_obj< ::Dynamic>::__new(0)));
+            	}
+
+
+HX_DEFINE_DYNAMIC_FUNC0(Object_obj,bytes,return )
+
  ::src::compiler::object::builtin::MapObject Object_obj::map(){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_246_map)
-HXDLIN( 246)		return hx::TCast<  ::src::compiler::object::builtin::MapObject >::cast(this->callMember(HX_("__map__",9c,95,7e,6d),::Array_obj< ::Dynamic>::__new(0)));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_266_map)
+HXDLIN( 266)		return hx::TCast<  ::src::compiler::object::builtin::MapObject >::cast(this->callMember(HX_("__map__",9c,95,7e,6d),::Array_obj< ::Dynamic>::__new(0)));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Object_obj,map,return )
 
  ::src::compiler::object::Object Object_obj::shiftright( ::src::compiler::object::Object other){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_251_shiftright)
-HXDLIN( 251)		return this->callMember(HX_("__shiftright__",da,18,15,ed),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_271_shiftright)
+HXDLIN( 271)		return this->callMember(HX_("__shiftright__",da,18,15,ed),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(Object_obj,shiftright,return )
 
  ::src::compiler::object::Object Object_obj::rshiftright( ::src::compiler::object::Object other){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_256_rshiftright)
-HXDLIN( 256)		return this->callMember(HX_("__rshiftright__",0c,b2,be,63),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_276_rshiftright)
+HXDLIN( 276)		return this->callMember(HX_("__rshiftright__",0c,b2,be,63),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(Object_obj,rshiftright,return )
 
  ::src::compiler::object::Object Object_obj::shiftleft( ::src::compiler::object::Object other){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_261_shiftleft)
-HXDLIN( 261)		return this->callMember(HX_("__shiftleft__",c9,25,42,0b),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_281_shiftleft)
+HXDLIN( 281)		return this->callMember(HX_("__shiftleft__",c9,25,42,0b),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(Object_obj,shiftleft,return )
 
  ::src::compiler::object::Object Object_obj::rshiftleft( ::src::compiler::object::Object other){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_266_rshiftleft)
-HXDLIN( 266)		return this->callMember(HX_("__rshiftleft__",d7,38,c9,2a),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_286_rshiftleft)
+HXDLIN( 286)		return this->callMember(HX_("__rshiftleft__",d7,38,c9,2a),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(Object_obj,rshiftleft,return )
 
  ::src::compiler::object::Object Object_obj::add( ::src::compiler::object::Object other){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_271_add)
-HXDLIN( 271)		return this->callMember(HX_("__add__",61,28,a2,86),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_291_add)
+HXDLIN( 291)		return this->callMember(HX_("__add__",61,28,a2,86),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(Object_obj,add,return )
 
  ::src::compiler::object::Object Object_obj::sub( ::src::compiler::object::Object other){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_276_sub)
-HXDLIN( 276)		return this->callMember(HX_("__sub__",80,b5,13,ef),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_296_sub)
+HXDLIN( 296)		return this->callMember(HX_("__sub__",80,b5,13,ef),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(Object_obj,sub,return )
 
  ::src::compiler::object::Object Object_obj::rsub( ::src::compiler::object::Object other){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_281_rsub)
-HXDLIN( 281)		return this->callMember(HX_("__rsub__",0e,ea,93,c1),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_301_rsub)
+HXDLIN( 301)		return this->callMember(HX_("__rsub__",0e,ea,93,c1),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(Object_obj,rsub,return )
 
  ::src::compiler::object::Object Object_obj::mult( ::src::compiler::object::Object other){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_286_mult)
-HXDLIN( 286)		return this->callMember(HX_("__mult__",30,02,b3,e2),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_306_mult)
+HXDLIN( 306)		return this->callMember(HX_("__mult__",30,02,b3,e2),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(Object_obj,mult,return )
 
  ::src::compiler::object::Object Object_obj::div( ::src::compiler::object::Object other){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_291_div)
-HXDLIN( 291)		return this->callMember(HX_("__div__",91,9f,31,44),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_311_div)
+HXDLIN( 311)		return this->callMember(HX_("__div__",91,9f,31,44),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(Object_obj,div,return )
 
  ::src::compiler::object::Object Object_obj::rdiv( ::src::compiler::object::Object other){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_296_rdiv)
-HXDLIN( 296)		return this->callMember(HX_("__rdiv__",1f,d4,b1,16),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_316_rdiv)
+HXDLIN( 316)		return this->callMember(HX_("__rdiv__",1f,d4,b1,16),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(Object_obj,rdiv,return )
 
  ::src::compiler::object::Object Object_obj::intdiv( ::src::compiler::object::Object other){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_301_intdiv)
-HXDLIN( 301)		return this->callMember(HX_("__intdiv__",82,6a,5b,32),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_321_intdiv)
+HXDLIN( 321)		return this->callMember(HX_("__intdiv__",82,6a,5b,32),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(Object_obj,intdiv,return )
 
  ::src::compiler::object::Object Object_obj::rintdiv( ::src::compiler::object::Object other){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_306_rintdiv)
-HXDLIN( 306)		return this->callMember(HX_("__rintdiv__",b4,02,d0,ac),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_326_rintdiv)
+HXDLIN( 326)		return this->callMember(HX_("__rintdiv__",b4,02,d0,ac),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(Object_obj,rintdiv,return )
 
  ::src::compiler::object::Object Object_obj::pow( ::src::compiler::object::Object other){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_311_pow)
-HXDLIN( 311)		return this->callMember(HX_("__pow__",98,9f,f8,30),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_331_pow)
+HXDLIN( 331)		return this->callMember(HX_("__pow__",98,9f,f8,30),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(Object_obj,pow,return )
 
  ::src::compiler::object::Object Object_obj::rpow( ::src::compiler::object::Object other){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_316_rpow)
-HXDLIN( 316)		return this->callMember(HX_("__rpow__",26,d4,78,03),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_336_rpow)
+HXDLIN( 336)		return this->callMember(HX_("__rpow__",26,d4,78,03),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(Object_obj,rpow,return )
 
  ::src::compiler::object::Object Object_obj::mod( ::src::compiler::object::Object other){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_321_mod)
-HXDLIN( 321)		return this->callMember(HX_("__mod__",42,77,b6,76),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_341_mod)
+HXDLIN( 341)		return this->callMember(HX_("__mod__",42,77,b6,76),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(Object_obj,mod,return )
 
  ::src::compiler::object::Object Object_obj::rmod( ::src::compiler::object::Object other){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_326_rmod)
-HXDLIN( 326)		return this->callMember(HX_("__rmod__",d0,ab,36,49),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_346_rmod)
+HXDLIN( 346)		return this->callMember(HX_("__rmod__",d0,ab,36,49),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(Object_obj,rmod,return )
 
+ ::src::compiler::object::Object Object_obj::negate(){
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_351_negate)
+HXDLIN( 351)		return this->callMember(HX_("__neg__",50,30,83,03),::Array_obj< ::Dynamic>::__new(0));
+            	}
+
+
+HX_DEFINE_DYNAMIC_FUNC0(Object_obj,negate,return )
+
  ::src::compiler::object::builtin::IntObject Object_obj::len(){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_331_len)
-HXDLIN( 331)		return hx::TCast<  ::src::compiler::object::builtin::IntObject >::cast(this->callMember(HX_("__len__",15,57,bb,dc),::Array_obj< ::Dynamic>::__new(0)));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_356_len)
+HXDLIN( 356)		return hx::TCast<  ::src::compiler::object::builtin::IntObject >::cast(this->callMember(HX_("__len__",15,57,bb,dc),::Array_obj< ::Dynamic>::__new(0)));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Object_obj,len,return )
 
  ::src::compiler::object::builtin::StringObject Object_obj::str(){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_336_str)
-HXDLIN( 336)		if (this->hasMember(HX_("__str__",f1,a2,76,ee))) {
-HXDLIN( 336)			return hx::TCast<  ::src::compiler::object::builtin::StringObject >::cast(this->callMember(HX_("__str__",f1,a2,76,ee),::Array_obj< ::Dynamic>::__new(0)));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_361_str)
+HXDLIN( 361)		if (this->hasMember(HX_("__str__",f1,a2,76,ee))) {
+HXDLIN( 361)			return hx::TCast<  ::src::compiler::object::builtin::StringObject >::cast(this->callMember(HX_("__str__",f1,a2,76,ee),::Array_obj< ::Dynamic>::__new(0)));
             		}
             		else {
-HXLINE( 337)			::String _hx_tmp = ((HX_("",00,00,00,00) + ::Std_obj::string(this->scope)) + HX_(".",2e,00,00,00));
-HXDLIN( 337)			return this->_str((_hx_tmp + this->type->getName()),null());
+HXLINE( 362)			::String _hx_tmp = ((HX_("",00,00,00,00) + ::Std_obj::string(this->scope)) + HX_(".",2e,00,00,00));
+HXDLIN( 362)			return this->_str((_hx_tmp + this->type->getName()),null());
             		}
-HXLINE( 336)		return null();
+HXLINE( 361)		return null();
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Object_obj,str,return )
 
  ::src::compiler::object::builtin::BoolObject Object_obj::_hx_bool(){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_342_bool)
-HXDLIN( 342)		return hx::TCast<  ::src::compiler::object::builtin::BoolObject >::cast(this->callMember(HX_("__bool__",ea,20,54,0a),::Array_obj< ::Dynamic>::__new(0)));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_367_bool)
+HXDLIN( 367)		return hx::TCast<  ::src::compiler::object::builtin::BoolObject >::cast(this->callMember(HX_("__bool__",ea,20,54,0a),::Array_obj< ::Dynamic>::__new(0)));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Object_obj,_hx_bool,return )
 
  ::src::compiler::object::Object Object_obj::_hx_and( ::src::compiler::object::Object other){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_347_and)
-HXDLIN( 347)		return this->callMember(HX_("__and__",97,4a,3e,8d),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_372_and)
+HXDLIN( 372)		return this->callMember(HX_("__and__",97,4a,3e,8d),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(Object_obj,_hx_and,return )
 
  ::src::compiler::object::Object Object_obj::_hx_or( ::src::compiler::object::Object other){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_352_or)
-HXDLIN( 352)		return this->callMember(HX_("__or__",23,e6,ad,f8),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_377_or)
+HXDLIN( 377)		return this->callMember(HX_("__or__",23,e6,ad,f8),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(Object_obj,_hx_or,return )
 
  ::src::compiler::object::Object Object_obj::_hx_xor( ::src::compiler::object::Object other){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_357_xor)
-HXDLIN( 357)		return this->callMember(HX_("__xor__",5b,78,29,cc),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_382_xor)
+HXDLIN( 382)		return this->callMember(HX_("__xor__",5b,78,29,cc),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(Object_obj,_hx_xor,return )
 
  ::src::compiler::object::Object Object_obj::_hx_not(){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_362_not)
-HXDLIN( 362)		return this->callMember(HX_("__not__",d3,2f,29,0a),::Array_obj< ::Dynamic>::__new(0));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_387_not)
+HXDLIN( 387)		return this->callMember(HX_("__not__",d3,2f,29,0a),::Array_obj< ::Dynamic>::__new(0));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Object_obj,_hx_not,return )
 
  ::src::compiler::object::Object Object_obj::eq( ::src::compiler::object::Object other){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_367_eq)
-HXDLIN( 367)		return this->callMember(HX_("__eq__",ac,01,11,f2),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_392_eq)
+HXDLIN( 392)		return this->callMember(HX_("__eq__",ac,01,11,f2),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(Object_obj,eq,return )
 
  ::src::compiler::object::Object Object_obj::neq( ::src::compiler::object::Object other){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_372_neq)
-HXDLIN( 372)		return this->callMember(HX_("__neq__",da,c6,8a,03),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_397_neq)
+HXDLIN( 397)		return this->callMember(HX_("__neq__",da,c6,8a,03),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(Object_obj,neq,return )
 
  ::src::compiler::object::Object Object_obj::ls( ::src::compiler::object::Object other){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_377_ls)
-HXDLIN( 377)		return this->callMember(HX_("__ls__",87,04,b3,f6),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_402_ls)
+HXDLIN( 402)		return this->callMember(HX_("__ls__",87,04,b3,f6),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(Object_obj,ls,return )
 
  ::src::compiler::object::Object Object_obj::lseq( ::src::compiler::object::Object other){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_382_lseq)
-HXDLIN( 382)		return this->callMember(HX_("__lseq__",b3,b7,e7,50),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_407_lseq)
+HXDLIN( 407)		return this->callMember(HX_("__lseq__",b3,b7,e7,50),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(Object_obj,lseq,return )
 
  ::src::compiler::object::Object Object_obj::gr( ::src::compiler::object::Object other){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_387_gr)
-HXDLIN( 387)		return this->callMember(HX_("__gr__",2b,31,64,f3),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_412_gr)
+HXDLIN( 412)		return this->callMember(HX_("__gr__",2b,31,64,f3),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(Object_obj,gr,return )
 
  ::src::compiler::object::Object Object_obj::greq( ::src::compiler::object::Object other){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_392_greq)
-HXDLIN( 392)		return this->callMember(HX_("__greq__",57,55,b8,bd),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_417_greq)
+HXDLIN( 417)		return this->callMember(HX_("__greq__",57,55,b8,bd),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(Object_obj,greq,return )
 
  ::src::compiler::object::Object Object_obj::complement(){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_397_complement)
-HXDLIN( 397)		return this->callMember(HX_("__compl__",bd,b1,bf,04),::Array_obj< ::Dynamic>::__new(0));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_422_complement)
+HXDLIN( 422)		return this->callMember(HX_("__compl__",bd,b1,bf,04),::Array_obj< ::Dynamic>::__new(0));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Object_obj,complement,return )
 
  ::src::compiler::object::Object Object_obj::iter(){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_402_iter)
-HXDLIN( 402)		return this->callMember(HX_("__iter__",58,f9,3c,b1),::Array_obj< ::Dynamic>::__new(0));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_427_iter)
+HXDLIN( 427)		return this->callMember(HX_("__iter__",58,f9,3c,b1),::Array_obj< ::Dynamic>::__new(0));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Object_obj,iter,return )
 
  ::src::compiler::object::Object Object_obj::next(){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_407_next)
-HXDLIN( 407)		return this->callMember(HX_("__next__",f3,a5,93,1a),::Array_obj< ::Dynamic>::__new(0));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_432_next)
+HXDLIN( 432)		return this->callMember(HX_("__next__",f3,a5,93,1a),::Array_obj< ::Dynamic>::__new(0));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Object_obj,next,return )
 
  ::src::compiler::object::builtin::BoolObject Object_obj::hasNext(){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_412_hasNext)
-HXDLIN( 412)		return hx::TCast<  ::src::compiler::object::builtin::BoolObject >::cast(this->callMember(HX_("__hasnext",2d,ca,bb,ae),::Array_obj< ::Dynamic>::__new(0)));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_437_hasNext)
+HXDLIN( 437)		return hx::TCast<  ::src::compiler::object::builtin::BoolObject >::cast(this->callMember(HX_("__hasnext",2d,ca,bb,ae),::Array_obj< ::Dynamic>::__new(0)));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Object_obj,hasNext,return )
 
  ::src::compiler::object::Object Object_obj::isin( ::src::compiler::object::Object other){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_417_isin)
-HXDLIN( 417)		return this->callMember(HX_("__in__",65,95,b3,f4),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_442_isin)
+HXDLIN( 442)		return this->callMember(HX_("__in__",65,95,b3,f4),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(Object_obj,isin,return )
 
 ::String Object_obj::toString(){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_422_toString)
-HXDLIN( 422)		return this->rawString();
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_447_toString)
+HXDLIN( 447)		return this->rawString();
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Object_obj,toString,return )
 
 int Object_obj::rawInt(){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_427_rawInt)
-HXDLIN( 427)		return this->_hx_int()->getValue();
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_452_rawInt)
+HXDLIN( 452)		return this->_hx_int()->getValue();
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Object_obj,rawInt,return )
 
 Float Object_obj::rawFloat(){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_432_rawFloat)
-HXDLIN( 432)		return this->_hx_float()->getValue();
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_457_rawFloat)
+HXDLIN( 457)		return this->_hx_float()->getValue();
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Object_obj,rawFloat,return )
 
 bool Object_obj::rawBool(){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_437_rawBool)
-HXDLIN( 437)		return this->_hx_bool()->getValue();
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_462_rawBool)
+HXDLIN( 462)		return this->_hx_bool()->getValue();
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Object_obj,rawBool,return )
 
+ ::haxe::io::Bytes Object_obj::rawBytes(){
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_467_rawBytes)
+HXDLIN( 467)		return this->bytes()->value;
+            	}
+
+
+HX_DEFINE_DYNAMIC_FUNC0(Object_obj,rawBytes,return )
+
+::Array< ::Dynamic> Object_obj::rawList(){
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_472_rawList)
+HXDLIN( 472)		return this->list()->arr;
+            	}
+
+
+HX_DEFINE_DYNAMIC_FUNC0(Object_obj,rawList,return )
+
+::Array< ::Dynamic> Object_obj::rawTuple(){
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_477_rawTuple)
+HXDLIN( 477)		return this->tuple()->arr;
+            	}
+
+
+HX_DEFINE_DYNAMIC_FUNC0(Object_obj,rawTuple,return )
+
+ ::haxe::ds::IntMap Object_obj::rawMap(){
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_482_rawMap)
+HXDLIN( 482)		return this->map()->objMap;
+            	}
+
+
+HX_DEFINE_DYNAMIC_FUNC0(Object_obj,rawMap,return )
+
 ::String Object_obj::rawString(){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_442_rawString)
-HXDLIN( 442)		return this->str()->getValue();
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_487_rawString)
+HXDLIN( 487)		return this->str()->getValue();
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Object_obj,rawString,return )
 
-::String Object_obj::getHash(){
-            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_447_getHash)
-HXDLIN( 447)		return HX_("",00,00,00,00);
+int Object_obj::getHash(){
+            	HX_STACKFRAME(&_hx_pos_ede0be52e7af136d_491_getHash)
+HXLINE( 492)		if (this->hasMember(HX_("__hash__",8e,fd,7d,63))) {
+HXLINE( 492)			return this->callMember(HX_("__hash__",8e,fd,7d,63),::Array_obj< ::Dynamic>::__new(0))->rawInt();
+            		}
+HXLINE( 494)		::String scopeName = this->scope->toString();
+HXLINE( 495)		::String typeName = this->type->getName();
+HXLINE( 496)		int x = (int)1;
+HXDLIN( 496)		int y = (int)1;
+HXDLIN( 496)		int z = this->objID;
+HXLINE( 497)		{
+HXLINE( 497)			int _g1 = (int)0;
+HXDLIN( 497)			int _g = scopeName.length;
+HXDLIN( 497)			while((_g1 < _g)){
+HXLINE( 497)				_g1 = (_g1 + (int)1);
+HXDLIN( 497)				int i = (_g1 - (int)1);
+HXDLIN( 497)				int _hx_int = ((x * (int)31) + scopeName.charCodeAt(i));
+HXDLIN( 497)				Float x1;
+HXDLIN( 497)				if ((_hx_int < (int)0)) {
+HXLINE( 497)					x1 = (((Float)4294967296.0) + _hx_int);
+            				}
+            				else {
+HXLINE( 497)					x1 = (_hx_int + ((Float)0.0));
+            				}
+HXDLIN( 497)				int int1 = (int)-1;
+HXDLIN( 497)				Float x2;
+HXDLIN( 497)				if ((int1 < (int)0)) {
+HXLINE( 497)					x2 = (((Float)4294967296.0) + int1);
+            				}
+            				else {
+HXLINE( 497)					x2 = (int1 + ((Float)0.0));
+            				}
+HXDLIN( 497)				x = ::Std_obj::_hx_int(hx::Mod(x1,x2));
+            			}
+            		}
+HXLINE( 498)		{
+HXLINE( 498)			int _g11 = (int)0;
+HXDLIN( 498)			int _g2 = typeName.length;
+HXDLIN( 498)			while((_g11 < _g2)){
+HXLINE( 498)				_g11 = (_g11 + (int)1);
+HXDLIN( 498)				int i1 = (_g11 - (int)1);
+HXDLIN( 498)				int int2 = ((y * (int)31) + typeName.charCodeAt(i1));
+HXDLIN( 498)				Float y1;
+HXDLIN( 498)				if ((int2 < (int)0)) {
+HXLINE( 498)					y1 = (((Float)4294967296.0) + int2);
+            				}
+            				else {
+HXLINE( 498)					y1 = (int2 + ((Float)0.0));
+            				}
+HXDLIN( 498)				int int3 = (int)-1;
+HXDLIN( 498)				Float y2;
+HXDLIN( 498)				if ((int3 < (int)0)) {
+HXLINE( 498)					y2 = (((Float)4294967296.0) + int3);
+            				}
+            				else {
+HXLINE( 498)					y2 = (int3 + ((Float)0.0));
+            				}
+HXDLIN( 498)				y = ::Std_obj::_hx_int(hx::Mod(y1,y2));
+            			}
+            		}
+HXLINE( 499)		return (((((((((x * x) * y) * y) * y) * z) * z) * z) * z) * z);
             	}
 
 
@@ -866,6 +1004,7 @@ void Object_obj::__Mark(HX_MARK_PARAMS)
 	HX_MARK_MEMBER_NAME(members,"members");
 	HX_MARK_MEMBER_NAME(scope,"scope");
 	HX_MARK_MEMBER_NAME(type,"type");
+	HX_MARK_MEMBER_NAME(objID,"objID");
 	HX_MARK_END_CLASS();
 }
 
@@ -874,6 +1013,7 @@ void Object_obj::__Visit(HX_VISIT_PARAMS)
 	HX_VISIT_MEMBER_NAME(members,"members");
 	HX_VISIT_MEMBER_NAME(scope,"scope");
 	HX_VISIT_MEMBER_NAME(type,"type");
+	HX_VISIT_MEMBER_NAME(objID,"objID");
 }
 
 hx::Val Object_obj::__Field(const ::String &inName,hx::PropertyAccess inCallProp)
@@ -925,19 +1065,24 @@ hx::Val Object_obj::__Field(const ::String &inName,hx::PropertyAccess inCallProp
 		break;
 	case 5:
 		if (HX_FIELD_EQ(inName,"scope") ) { return hx::Val( scope ); }
+		if (HX_FIELD_EQ(inName,"objID") ) { return hx::Val( objID ); }
 		if (HX_FIELD_EQ(inName,"_bool") ) { return hx::Val( _bool_dyn() ); }
 		if (HX_FIELD_EQ(inName,"_iter") ) { return hx::Val( _iter_dyn() ); }
 		if (HX_FIELD_EQ(inName,"_list") ) { return hx::Val( _list_dyn() ); }
 		if (HX_FIELD_EQ(inName,"float") ) { return hx::Val( _hx_float_dyn() ); }
 		if (HX_FIELD_EQ(inName,"tuple") ) { return hx::Val( tuple_dyn() ); }
+		if (HX_FIELD_EQ(inName,"bytes") ) { return hx::Val( bytes_dyn() ); }
 		break;
 	case 6:
 		if (HX_FIELD_EQ(inName,"_value") ) { return hx::Val( _value_dyn() ); }
 		if (HX_FIELD_EQ(inName,"_float") ) { return hx::Val( _float_dyn() ); }
 		if (HX_FIELD_EQ(inName,"_tuple") ) { return hx::Val( _tuple_dyn() ); }
+		if (HX_FIELD_EQ(inName,"_bytes") ) { return hx::Val( _bytes_dyn() ); }
 		if (HX_FIELD_EQ(inName,"delete") ) { return hx::Val( _hx_delete_dyn() ); }
 		if (HX_FIELD_EQ(inName,"intdiv") ) { return hx::Val( intdiv_dyn() ); }
+		if (HX_FIELD_EQ(inName,"negate") ) { return hx::Val( negate_dyn() ); }
 		if (HX_FIELD_EQ(inName,"rawInt") ) { return hx::Val( rawInt_dyn() ); }
+		if (HX_FIELD_EQ(inName,"rawMap") ) { return hx::Val( rawMap_dyn() ); }
 		break;
 	case 7:
 		if (HX_FIELD_EQ(inName,"members") ) { return hx::Val( members ); }
@@ -945,9 +1090,11 @@ hx::Val Object_obj::__Field(const ::String &inName,hx::PropertyAccess inCallProp
 		if (HX_FIELD_EQ(inName,"rintdiv") ) { return hx::Val( rintdiv_dyn() ); }
 		if (HX_FIELD_EQ(inName,"hasNext") ) { return hx::Val( hasNext_dyn() ); }
 		if (HX_FIELD_EQ(inName,"rawBool") ) { return hx::Val( rawBool_dyn() ); }
+		if (HX_FIELD_EQ(inName,"rawList") ) { return hx::Val( rawList_dyn() ); }
 		if (HX_FIELD_EQ(inName,"getHash") ) { return hx::Val( getHash_dyn() ); }
 		break;
 	case 8:
+		if (HX_FIELD_EQ(inName,"setScope") ) { return hx::Val( setScope_dyn() ); }
 		if (HX_FIELD_EQ(inName,"getScope") ) { return hx::Val( getScope_dyn() ); }
 		if (HX_FIELD_EQ(inName,"getfield") ) { return hx::Val( getfield_dyn() ); }
 		if (HX_FIELD_EQ(inName,"hasfield") ) { return hx::Val( hasfield_dyn() ); }
@@ -955,6 +1102,8 @@ hx::Val Object_obj::__Field(const ::String &inName,hx::PropertyAccess inCallProp
 		if (HX_FIELD_EQ(inName,"delfield") ) { return hx::Val( delfield_dyn() ); }
 		if (HX_FIELD_EQ(inName,"toString") ) { return hx::Val( toString_dyn() ); }
 		if (HX_FIELD_EQ(inName,"rawFloat") ) { return hx::Val( rawFloat_dyn() ); }
+		if (HX_FIELD_EQ(inName,"rawBytes") ) { return hx::Val( rawBytes_dyn() ); }
+		if (HX_FIELD_EQ(inName,"rawTuple") ) { return hx::Val( rawTuple_dyn() ); }
 		break;
 	case 9:
 		if (HX_FIELD_EQ(inName,"getMember") ) { return hx::Val( getMember_dyn() ); }
@@ -990,6 +1139,7 @@ hx::Val Object_obj::__SetField(const ::String &inName,const hx::Val &inValue,hx:
 		break;
 	case 5:
 		if (HX_FIELD_EQ(inName,"scope") ) { scope=inValue.Cast<  ::src::compiler::Scope >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"objID") ) { objID=inValue.Cast< int >(); return inValue; }
 		break;
 	case 7:
 		if (HX_FIELD_EQ(inName,"members") ) { members=inValue.Cast<  ::haxe::ds::StringMap >(); return inValue; }
@@ -1002,6 +1152,7 @@ void Object_obj::__GetFields(Array< ::String> &outFields)
 	outFields->push(HX_HCSTRING("members","\xd9","\x2c","\x70","\x1a"));
 	outFields->push(HX_HCSTRING("scope","\x94","\x71","\xd9","\x78"));
 	outFields->push(HX_HCSTRING("type","\xba","\xf2","\x08","\x4d"));
+	outFields->push(HX_HCSTRING("objID","\x92","\xfb","\x91","\x2a"));
 	super::__GetFields(outFields);
 };
 
@@ -1010,6 +1161,7 @@ static hx::StorageInfo Object_obj_sMemberStorageInfo[] = {
 	{hx::fsObject /*::haxe::ds::StringMap*/ ,(int)offsetof(Object_obj,members),HX_HCSTRING("members","\xd9","\x2c","\x70","\x1a")},
 	{hx::fsObject /*::src::compiler::Scope*/ ,(int)offsetof(Object_obj,scope),HX_HCSTRING("scope","\x94","\x71","\xd9","\x78")},
 	{hx::fsObject /*::src::compiler::object::ObjectType*/ ,(int)offsetof(Object_obj,type),HX_HCSTRING("type","\xba","\xf2","\x08","\x4d")},
+	{hx::fsInt,(int)offsetof(Object_obj,objID),HX_HCSTRING("objID","\x92","\xfb","\x91","\x2a")},
 	{ hx::fsUnknown, 0, null()}
 };
 static hx::StaticInfo *Object_obj_sStaticStorageInfo = 0;
@@ -1019,6 +1171,8 @@ static ::String Object_obj_sMemberFields[] = {
 	HX_HCSTRING("members","\xd9","\x2c","\x70","\x1a"),
 	HX_HCSTRING("scope","\x94","\x71","\xd9","\x78"),
 	HX_HCSTRING("type","\xba","\xf2","\x08","\x4d"),
+	HX_HCSTRING("objID","\x92","\xfb","\x91","\x2a"),
+	HX_HCSTRING("setScope","\x92","\xda","\x0d","\x87"),
 	HX_HCSTRING("copy","\xb5","\xbb","\xc4","\x41"),
 	HX_HCSTRING("_value","\xb2","\xc6","\x9f","\x2d"),
 	HX_HCSTRING("_float","\xdd","\x0c","\x7e","\xfe"),
@@ -1028,6 +1182,7 @@ static ::String Object_obj_sMemberFields[] = {
 	HX_HCSTRING("_iter","\xf7","\xe0","\xd0","\xf8"),
 	HX_HCSTRING("_list","\x3d","\x38","\xc4","\xfa"),
 	HX_HCSTRING("_tuple","\x49","\xe3","\x0d","\x14"),
+	HX_HCSTRING("_bytes","\xac","\x4f","\x7f","\xb9"),
 	HX_HCSTRING("isInstance","\x9f","\x31","\x90","\xd4"),
 	HX_HCSTRING("getType","\x70","\xa2","\x8b","\x1f"),
 	HX_HCSTRING("getScope","\x1e","\x81","\xb0","\xd8"),
@@ -1053,6 +1208,7 @@ static ::String Object_obj_sMemberFields[] = {
 	HX_HCSTRING("float","\x9c","\xc5","\x96","\x02"),
 	HX_HCSTRING("list","\x5e","\x1c","\xb3","\x47"),
 	HX_HCSTRING("tuple","\x08","\x9c","\x26","\x18"),
+	HX_HCSTRING("bytes","\x6b","\x08","\x98","\xbd"),
 	HX_HCSTRING("map","\x9c","\x0a","\x53","\x00"),
 	HX_HCSTRING("shiftright","\x1a","\x88","\x8e","\x65"),
 	HX_HCSTRING("rshiftright","\x0c","\x4b","\x9a","\xc8"),
@@ -1070,6 +1226,7 @@ static ::String Object_obj_sMemberFields[] = {
 	HX_HCSTRING("rpow","\x66","\xb0","\xaf","\x4b"),
 	HX_HCSTRING("mod","\xc2","\x16","\x53","\x00"),
 	HX_HCSTRING("rmod","\x90","\x69","\xad","\x4b"),
+	HX_HCSTRING("negate","\xc2","\x41","\x19","\x67"),
 	HX_HCSTRING("len","\xd5","\x4b","\x52","\x00"),
 	HX_HCSTRING("str","\xb1","\xa8","\x57","\x00"),
 	HX_HCSTRING("bool","\x2a","\x84","\x1b","\x41"),
@@ -1092,6 +1249,10 @@ static ::String Object_obj_sMemberFields[] = {
 	HX_HCSTRING("rawInt","\xe7","\x8f","\x6d","\xbd"),
 	HX_HCSTRING("rawFloat","\x94","\xf6","\x54","\x64"),
 	HX_HCSTRING("rawBool","\x32","\x9a","\xd0","\xfd"),
+	HX_HCSTRING("rawBytes","\x63","\x39","\x56","\x1f"),
+	HX_HCSTRING("rawList","\x66","\x32","\x68","\x04"),
+	HX_HCSTRING("rawTuple","\x00","\xcd","\xe4","\x79"),
+	HX_HCSTRING("rawMap","\x94","\x8d","\x70","\xbd"),
 	HX_HCSTRING("rawString","\xd9","\xd0","\xdc","\x35"),
 	HX_HCSTRING("getHash","\x84","\xdf","\x8a","\x17"),
 	::String(null()) };

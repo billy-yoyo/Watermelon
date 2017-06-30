@@ -63,11 +63,17 @@ class HXCPP_CLASS_ATTRIBUTES TupleValueCommand_obj : public  ::src::compiler::co
 		static ::Dynamic fromBytecode_dyn();
 
 		::Array< ::Dynamic> values;
+		 ::src::compiler::commands::Command copy( ::src::compiler::Scope scope);
+
+		void setScope( ::src::compiler::Scope scope);
+
 		::Array< ::Dynamic> walk();
 
 		 ::src::compiler::object::Object run();
 
 		::String getName();
+
+		::String getFriendlyName();
 
 		 ::src::compiler::bytecode::Bytecode getBytecode();
 

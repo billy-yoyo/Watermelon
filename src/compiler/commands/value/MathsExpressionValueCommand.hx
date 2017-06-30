@@ -59,6 +59,17 @@ class MathsExpressionValueCommand extends ValueCommand
         this.values = values;
     }
     
+    override public function copy(scope:Scope):Command 
+    {
+        return new MathsExpressionValueCommand(scope, operator, ValueCommand.copyArray(scope, values));
+    }
+    
+    override public function setScope(scope:Scope) 
+    {
+        super.setScope(scope);
+        for (value in values) value.setScope(scope);
+    }
+    
     override public function walk():Array<Command> 
     {
         var cmds:Array<Command> = new Array<Command>();
@@ -119,6 +130,11 @@ class MathsExpressionValueCommand extends ValueCommand
     override public function getName():String 
     {
         return "MathsExpressionValueCommand";
+    }
+    
+    override public function getFriendlyName():String 
+    {
+        return "maths expression";
     }
     
     override public function getBytecode():Bytecode 

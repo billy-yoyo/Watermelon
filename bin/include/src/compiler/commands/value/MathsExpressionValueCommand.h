@@ -64,11 +64,17 @@ class HXCPP_CLASS_ATTRIBUTES MathsExpressionValueCommand_obj : public  ::src::co
 
 		int _hx_operator;
 		::Array< ::Dynamic> values;
+		 ::src::compiler::commands::Command copy( ::src::compiler::Scope scope);
+
+		void setScope( ::src::compiler::Scope scope);
+
 		::Array< ::Dynamic> walk();
 
 		 ::src::compiler::object::Object run();
 
 		::String getName();
+
+		::String getFriendlyName();
 
 		 ::src::compiler::bytecode::Bytecode getBytecode();
 

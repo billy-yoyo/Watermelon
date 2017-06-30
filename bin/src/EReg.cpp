@@ -4,9 +4,22 @@
 #ifndef INCLUDED_EReg
 #include <EReg.h>
 #endif
+#ifndef INCLUDED_Std
+#include <Std.h>
+#endif
+#ifndef INCLUDED_StringBuf
+#include <StringBuf.h>
+#endif
 
 HX_DEFINE_STACK_FRAME(_hx_pos_2cd113ad60e10261_30_new,"EReg","new",0x8b859e81,"EReg.new","C:\\HaxeToolkit\\haxe\\std/cpp/_std/EReg.hx",30,0xa4513ee9)
 HX_LOCAL_STACK_FRAME(_hx_pos_2cd113ad60e10261_38_match,"EReg","match",0x18fda1a6,"EReg.match","C:\\HaxeToolkit\\haxe\\std/cpp/_std/EReg.hx",38,0xa4513ee9)
+HX_LOCAL_STACK_FRAME(_hx_pos_2cd113ad60e10261_100_replace,"EReg","replace",0xae923ad5,"EReg.replace","C:\\HaxeToolkit\\haxe\\std/cpp/_std/EReg.hx",100,0xa4513ee9)
+static const ::String _hx_array_data_2dda4a0f_5[] = {
+	HX_("$",24,00,00,00),
+};
+static const ::String _hx_array_data_2dda4a0f_6[] = {
+	HX_("$",24,00,00,00),
+};
 
 void EReg_obj::__construct(::String r,::String opt){
             	HX_STACKFRAME(&_hx_pos_2cd113ad60e10261_30_new)
@@ -48,6 +61,229 @@ HXLINE(  44)		return p;
 
 HX_DEFINE_DYNAMIC_FUNC1(EReg_obj,match,return )
 
+::String EReg_obj::replace(::String s,::String by){
+            	HX_GC_STACKFRAME(&_hx_pos_2cd113ad60e10261_100_replace)
+HXLINE( 101)		 ::StringBuf b =  ::StringBuf_obj::__alloc( HX_CTX );
+HXLINE( 102)		int pos = (int)0;
+HXLINE( 103)		int len = s.length;
+HXLINE( 104)		::Array< ::String > a = by.split(HX_("$",24,00,00,00));
+HXLINE( 105)		bool first = true;
+HXLINE( 106)		while(_hx_regexp_match(this->r,s,pos,len)){
+HXLINE( 109)			 ::Dynamic p = _hx_regexp_matched_pos(this->r,(int)0);
+HXLINE( 110)			bool _hx_tmp;
+HXDLIN( 110)			if ((( (int)(p->__Field(HX_("len",d5,4b,52,00),hx::paccDynamic)) ) == (int)0)) {
+HXLINE( 110)				_hx_tmp = !(first);
+            			}
+            			else {
+HXLINE( 110)				_hx_tmp = false;
+            			}
+HXDLIN( 110)			if (_hx_tmp) {
+HXLINE( 111)				if ((( (int)(p->__Field(HX_("pos",94,5d,55,00),hx::paccDynamic)) ) == s.length)) {
+HXLINE( 112)					goto _hx_goto_2;
+            				}
+HXLINE( 113)				 ::Dynamic p1 = p;
+HXDLIN( 113)				p1->__SetField(HX_("pos",94,5d,55,00),(( (int)(p1->__Field(HX_("pos",94,5d,55,00),hx::paccDynamic)) ) + (int)1),hx::paccDynamic);
+            			}
+HXLINE( 115)			{
+HXLINE( 115)				 ::Dynamic len1 = (( (int)(p->__Field(HX_("pos",94,5d,55,00),hx::paccDynamic)) ) - pos);
+HXDLIN( 115)				if (hx::IsNotNull( b->charBuf )) {
+HXLINE( 115)					b->flush();
+            				}
+HXDLIN( 115)				if (hx::IsNull( b->b )) {
+HXLINE( 115)					b->b = ::Array_obj< ::String >::__new(1)->init(0,s.substr(pos,len1));
+            				}
+            				else {
+HXLINE( 115)					::Array< ::String > b1 = b->b;
+HXDLIN( 115)					b1->push(s.substr(pos,len1));
+            				}
+            			}
+HXLINE( 116)			if ((a->length > (int)0)) {
+HXLINE( 117)				::String x = a->__get((int)0);
+HXDLIN( 117)				if (hx::IsNotNull( b->charBuf )) {
+HXLINE( 117)					b->flush();
+            				}
+HXDLIN( 117)				if (hx::IsNull( b->b )) {
+HXLINE( 117)					b->b = ::Array_obj< ::String >::__new(1)->init(0,::Std_obj::string(x));
+            				}
+            				else {
+HXLINE( 117)					::Array< ::String > b2 = b->b;
+HXDLIN( 117)					b2->push(::Std_obj::string(x));
+            				}
+            			}
+HXLINE( 118)			int i = (int)1;
+HXLINE( 119)			while((i < a->length)){
+HXLINE( 120)				::String k = a->__get(i);
+HXLINE( 121)				 ::Dynamic c = k.charCodeAt((int)0);
+HXLINE( 123)				bool _hx_tmp1;
+HXDLIN( 123)				if (hx::IsGreaterEq( c,(int)49 )) {
+HXLINE( 123)					_hx_tmp1 = hx::IsLessEq( c,(int)57 );
+            				}
+            				else {
+HXLINE( 123)					_hx_tmp1 = false;
+            				}
+HXDLIN( 123)				if (_hx_tmp1) {
+HXLINE( 124)					 ::Dynamic p2;
+HXDLIN( 124)					try {
+            						HX_STACK_CATCHABLE(::String, 0);
+HXLINE( 124)						 ::Dynamic p3 = this->r;
+HXDLIN( 124)						p2 = _hx_regexp_matched_pos(p3,(::Std_obj::_hx_int(c) - (int)48));
+            					}
+            					catch( ::Dynamic _hx_e){
+            						if (_hx_e.IsClass< ::String >() ){
+            							HX_STACK_BEGIN_CATCH
+            							::String e = _hx_e;
+HXLINE( 124)							p2 = null();
+            						}
+            						else {
+            							HX_STACK_DO_THROW(_hx_e);
+            						}
+            					}
+HXLINE( 125)					if (hx::IsNull( p2 )) {
+HXLINE( 126)						{
+HXLINE( 126)							if (hx::IsNotNull( b->charBuf )) {
+HXLINE( 126)								b->flush();
+            							}
+HXDLIN( 126)							if (hx::IsNull( b->b )) {
+HXLINE( 126)								b->b = ::Array_obj< ::String >::fromData( _hx_array_data_2dda4a0f_5,1);
+            							}
+            							else {
+HXLINE( 126)								b->b->push(HX_("$",24,00,00,00));
+            							}
+            						}
+HXLINE( 127)						{
+HXLINE( 127)							if (hx::IsNotNull( b->charBuf )) {
+HXLINE( 127)								b->flush();
+            							}
+HXDLIN( 127)							if (hx::IsNull( b->b )) {
+HXLINE( 127)								b->b = ::Array_obj< ::String >::__new(1)->init(0,::Std_obj::string(k));
+            							}
+            							else {
+HXLINE( 127)								::Array< ::String > b3 = b->b;
+HXDLIN( 127)								b3->push(::Std_obj::string(k));
+            							}
+            						}
+            					}
+            					else {
+HXLINE( 129)						{
+HXLINE( 129)							int pos1 = ( (int)(p2->__Field(HX_("pos",94,5d,55,00),hx::paccDynamic)) );
+HXDLIN( 129)							 ::Dynamic len2 = p2->__Field(HX_("len",d5,4b,52,00),hx::paccDynamic);
+HXDLIN( 129)							if (hx::IsNotNull( b->charBuf )) {
+HXLINE( 129)								b->flush();
+            							}
+HXDLIN( 129)							if (hx::IsNull( b->b )) {
+HXLINE( 129)								b->b = ::Array_obj< ::String >::__new(1)->init(0,s.substr(pos1,len2));
+            							}
+            							else {
+HXLINE( 129)								::Array< ::String > b4 = b->b;
+HXDLIN( 129)								b4->push(s.substr(pos1,len2));
+            							}
+            						}
+HXLINE( 130)						{
+HXLINE( 130)							 ::Dynamic len3 = (k.length - (int)1);
+HXDLIN( 130)							if (hx::IsNotNull( b->charBuf )) {
+HXLINE( 130)								b->flush();
+            							}
+HXDLIN( 130)							if (hx::IsNull( b->b )) {
+HXLINE( 130)								b->b = ::Array_obj< ::String >::__new(1)->init(0,k.substr((int)1,len3));
+            							}
+            							else {
+HXLINE( 130)								::Array< ::String > b5 = b->b;
+HXDLIN( 130)								b5->push(k.substr((int)1,len3));
+            							}
+            						}
+            					}
+            				}
+            				else {
+HXLINE( 132)					if (hx::IsNull( c )) {
+HXLINE( 133)						{
+HXLINE( 133)							if (hx::IsNotNull( b->charBuf )) {
+HXLINE( 133)								b->flush();
+            							}
+HXDLIN( 133)							if (hx::IsNull( b->b )) {
+HXLINE( 133)								b->b = ::Array_obj< ::String >::fromData( _hx_array_data_2dda4a0f_6,1);
+            							}
+            							else {
+HXLINE( 133)								b->b->push(HX_("$",24,00,00,00));
+            							}
+            						}
+HXLINE( 134)						i = (i + (int)1);
+HXLINE( 135)						::String k2 = a->__get(i);
+HXLINE( 136)						bool _hx_tmp2;
+HXDLIN( 136)						if (hx::IsNotNull( k2 )) {
+HXLINE( 136)							_hx_tmp2 = (k2.length > (int)0);
+            						}
+            						else {
+HXLINE( 136)							_hx_tmp2 = false;
+            						}
+HXDLIN( 136)						if (_hx_tmp2) {
+HXLINE( 137)							if (hx::IsNotNull( b->charBuf )) {
+HXLINE( 137)								b->flush();
+            							}
+HXDLIN( 137)							if (hx::IsNull( b->b )) {
+HXLINE( 137)								b->b = ::Array_obj< ::String >::__new(1)->init(0,::Std_obj::string(k2));
+            							}
+            							else {
+HXLINE( 137)								::Array< ::String > b6 = b->b;
+HXDLIN( 137)								b6->push(::Std_obj::string(k2));
+            							}
+            						}
+            					}
+            					else {
+HXLINE( 139)						::String x1 = (HX_("$",24,00,00,00) + k);
+HXDLIN( 139)						if (hx::IsNotNull( b->charBuf )) {
+HXLINE( 139)							b->flush();
+            						}
+HXDLIN( 139)						if (hx::IsNull( b->b )) {
+HXLINE( 139)							b->b = ::Array_obj< ::String >::__new(1)->init(0,::Std_obj::string(x1));
+            						}
+            						else {
+HXLINE( 139)							::Array< ::String > b7 = b->b;
+HXDLIN( 139)							b7->push(::Std_obj::string(x1));
+            						}
+            					}
+            				}
+HXLINE( 140)				i = (i + (int)1);
+            			}
+HXLINE( 142)			int tot = ((( (int)(p->__Field(HX_("pos",94,5d,55,00),hx::paccDynamic)) ) + ( (int)(p->__Field(HX_("len",d5,4b,52,00),hx::paccDynamic)) )) - pos);
+HXLINE( 143)			pos = (pos + tot);
+HXLINE( 144)			len = (len - tot);
+HXLINE( 145)			first = false;
+HXLINE( 106)			if (!(this->global)) {
+HXLINE( 106)				goto _hx_goto_2;
+            			}
+            		}
+            		_hx_goto_2:;
+HXLINE( 147)		{
+HXLINE( 147)			if (hx::IsNotNull( b->charBuf )) {
+HXLINE( 147)				b->flush();
+            			}
+HXDLIN( 147)			if (hx::IsNull( b->b )) {
+HXLINE( 147)				b->b = ::Array_obj< ::String >::__new(1)->init(0,s.substr(pos,len));
+            			}
+            			else {
+HXLINE( 147)				::Array< ::String > b8 = b->b;
+HXDLIN( 147)				b8->push(s.substr(pos,len));
+            			}
+            		}
+HXLINE( 148)		return b->toString();
+            	}
+
+
+HX_DEFINE_DYNAMIC_FUNC2(EReg_obj,replace,return )
+
+
+hx::ObjectPtr< EReg_obj > EReg_obj::__new(::String r,::String opt) {
+	hx::ObjectPtr< EReg_obj > __this = new EReg_obj();
+	__this->__construct(r,opt);
+	return __this;
+}
+
+hx::ObjectPtr< EReg_obj > EReg_obj::__alloc(hx::Ctx *_hx_ctx,::String r,::String opt) {
+	EReg_obj *__this = (EReg_obj*)(hx::Ctx::alloc(_hx_ctx, sizeof(EReg_obj), true, "EReg"));
+	*(void **)__this = EReg_obj::_hx_vtable;
+	__this->__construct(r,opt);
+	return __this;
+}
 
 EReg_obj::EReg_obj()
 {
@@ -83,6 +319,9 @@ hx::Val EReg_obj::__Field(const ::String &inName,hx::PropertyAccess inCallProp)
 		break;
 	case 6:
 		if (HX_FIELD_EQ(inName,"global") ) { return hx::Val( global ); }
+		break;
+	case 7:
+		if (HX_FIELD_EQ(inName,"replace") ) { return hx::Val( replace_dyn() ); }
 	}
 	return super::__Field(inName,inCallProp);
 }
@@ -125,6 +364,7 @@ static ::String EReg_obj_sMemberFields[] = {
 	HX_HCSTRING("last","\x56","\x0a","\xad","\x47"),
 	HX_HCSTRING("global","\x63","\x31","\xb2","\xa7"),
 	HX_HCSTRING("match","\x45","\x49","\x23","\x03"),
+	HX_HCSTRING("replace","\x34","\x48","\x28","\xab"),
 	::String(null()) };
 
 static void EReg_obj_sMarkStatics(HX_MARK_PARAMS) {

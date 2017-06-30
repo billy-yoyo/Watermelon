@@ -33,13 +33,13 @@ class HXCPP_CLASS_ATTRIBUTES AssignmentCommand_obj : public  ::src::compiler::co
 	public:
 		enum { _hx_ClassId = 0x260b3757 };
 
-		void __construct( ::src::compiler::Scope scope,::Array< ::Dynamic> variables, ::src::compiler::commands::value::ValueCommand value);
+		void __construct( ::src::compiler::Scope scope,::Array< ::Dynamic> variables, ::src::compiler::commands::value::ValueCommand value,int _hx_operator);
 		inline void *operator new(size_t inSize, bool inContainer=true,const char *inName="src.compiler.commands.AssignmentCommand")
 			{ return hx::Object::operator new(inSize,inContainer,inName); }
 		inline void *operator new(size_t inSize, int extra)
 			{ return hx::Object::operator new(inSize+extra,true,"src.compiler.commands.AssignmentCommand"); }
-		static hx::ObjectPtr< AssignmentCommand_obj > __new( ::src::compiler::Scope scope,::Array< ::Dynamic> variables, ::src::compiler::commands::value::ValueCommand value);
-		static hx::ObjectPtr< AssignmentCommand_obj > __alloc(hx::Ctx *_hx_ctx, ::src::compiler::Scope scope,::Array< ::Dynamic> variables, ::src::compiler::commands::value::ValueCommand value);
+		static hx::ObjectPtr< AssignmentCommand_obj > __new( ::src::compiler::Scope scope,::Array< ::Dynamic> variables, ::src::compiler::commands::value::ValueCommand value,int _hx_operator);
+		static hx::ObjectPtr< AssignmentCommand_obj > __alloc(hx::Ctx *_hx_ctx, ::src::compiler::Scope scope,::Array< ::Dynamic> variables, ::src::compiler::commands::value::ValueCommand value,int _hx_operator);
 		static void * _hx_vtable;
 		static Dynamic __CreateEmpty();
 		static Dynamic __Create(hx::DynamicArray inArgs);
@@ -62,19 +62,26 @@ class HXCPP_CLASS_ATTRIBUTES AssignmentCommand_obj : public  ::src::compiler::co
 		static  ::src::compiler::commands::AssignmentCommand fromBytecode( ::src::compiler::Scope scope,::Array< ::Dynamic> arr);
 		static ::Dynamic fromBytecode_dyn();
 
-		static void assignVariable( ::src::compiler::Scope scope,::Array< ::String > variable, ::src::compiler::object::Object obj);
-		static ::Dynamic assignVariable_dyn();
+		static void setVariable( ::src::compiler::commands::value::VariableAccess variable, ::src::compiler::object::Object obj,int _hx_operator);
+		static ::Dynamic setVariable_dyn();
 
-		static void assign( ::src::compiler::Scope scope,::Array< ::Dynamic> variables, ::src::compiler::object::Object obj);
+		static void assign(::Array< ::Dynamic> variables, ::src::compiler::object::Object obj,int _hx_operator);
 		static ::Dynamic assign_dyn();
 
 		::Array< ::Dynamic> variables;
 		 ::src::compiler::commands::value::ValueCommand value;
+		int _hx_operator;
+		 ::src::compiler::commands::Command copy( ::src::compiler::Scope scope);
+
+		void setScope( ::src::compiler::Scope scope);
+
 		::Array< ::Dynamic> walk();
 
 		 ::src::compiler::object::Object run();
 
 		::String getName();
+
+		::String getFriendlyName();
 
 		 ::src::compiler::bytecode::Bytecode getBytecode();
 

@@ -34,6 +34,17 @@ class ListValueCommand extends ValueCommand
         this.values = values;
     }
     
+    override public function copy(scope:Scope):Command 
+    {
+        return new ListValueCommand(scope, ValueCommand.copyArray(scope, values));
+    }
+    
+    override public function setScope(scope:Scope) 
+    {
+        super.setScope(scope);
+        for (value in values) value.setScope(scope);
+    }
+    
     override public function walk():Array<Command> 
     {
         var cmds:Array<Command> = new Array<Command>();
@@ -43,7 +54,7 @@ class ListValueCommand extends ValueCommand
     
     override public function run():Object
     {
-        var obj:ListObject = cast(scope.getType("ListType").createObject(), ListObject);
+        var obj:ListObject = cast(scope.getType("ListType").createObject(scope), ListObject);
         var arr:Array<Object> = obj.getArray();
         for (cmd in values) {
             arr.push(cmd.run());
@@ -54,6 +65,11 @@ class ListValueCommand extends ValueCommand
     override public function getName():String 
     {
         return "ListValueCommand";
+    }
+    
+    override public function getFriendlyName():String 
+    {
+        return "list";
     }
     
     override public function getBytecode():Bytecode 

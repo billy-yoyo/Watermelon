@@ -32,20 +32,22 @@
 #include <src/compiler/signals/SyntaxErrorSignal.h>
 #endif
 
-HX_DEFINE_STACK_FRAME(_hx_pos_2bc63b9a182b711b_13_new,"src.compiler.commands.ContinueCommand","new",0xaf82b6f5,"src.compiler.commands.ContinueCommand.new","src/compiler/commands/ContinueCommand.hx",13,0xfdf6467c)
-HX_LOCAL_STACK_FRAME(_hx_pos_2bc63b9a182b711b_30_run,"src.compiler.commands.ContinueCommand","run",0xaf85cde0,"src.compiler.commands.ContinueCommand.run","src/compiler/commands/ContinueCommand.hx",30,0xfdf6467c)
-HX_LOCAL_STACK_FRAME(_hx_pos_2bc63b9a182b711b_35_getName,"src.compiler.commands.ContinueCommand","getName",0xedd07716,"src.compiler.commands.ContinueCommand.getName","src/compiler/commands/ContinueCommand.hx",35,0xfdf6467c)
-HX_LOCAL_STACK_FRAME(_hx_pos_2bc63b9a182b711b_40_getBytecode,"src.compiler.commands.ContinueCommand","getBytecode",0xb592ba80,"src.compiler.commands.ContinueCommand.getBytecode","src/compiler/commands/ContinueCommand.hx",40,0xfdf6467c)
-HX_LOCAL_STACK_FRAME(_hx_pos_2bc63b9a182b711b_45_reconstruct,"src.compiler.commands.ContinueCommand","reconstruct",0xc8216999,"src.compiler.commands.ContinueCommand.reconstruct","src/compiler/commands/ContinueCommand.hx",45,0xfdf6467c)
-HX_LOCAL_STACK_FRAME(_hx_pos_2bc63b9a182b711b_16_fromBytecode,"src.compiler.commands.ContinueCommand","fromBytecode",0xc5caee8a,"src.compiler.commands.ContinueCommand.fromBytecode","src/compiler/commands/ContinueCommand.hx",16,0xfdf6467c)
-HX_LOCAL_STACK_FRAME(_hx_pos_2bc63b9a182b711b_22_fromTokens,"src.compiler.commands.ContinueCommand","fromTokens",0x24a1626f,"src.compiler.commands.ContinueCommand.fromTokens","src/compiler/commands/ContinueCommand.hx",22,0xfdf6467c)
+HX_DEFINE_STACK_FRAME(_hx_pos_2bc63b9a182b711b_15_new,"src.compiler.commands.ContinueCommand","new",0xaf82b6f5,"src.compiler.commands.ContinueCommand.new","src/compiler/commands/ContinueCommand.hx",15,0xfdf6467c)
+HX_LOCAL_STACK_FRAME(_hx_pos_2bc63b9a182b711b_32_copy,"src.compiler.commands.ContinueCommand","copy",0xdb9f9780,"src.compiler.commands.ContinueCommand.copy","src/compiler/commands/ContinueCommand.hx",32,0xfdf6467c)
+HX_LOCAL_STACK_FRAME(_hx_pos_2bc63b9a182b711b_37_run,"src.compiler.commands.ContinueCommand","run",0xaf85cde0,"src.compiler.commands.ContinueCommand.run","src/compiler/commands/ContinueCommand.hx",37,0xfdf6467c)
+HX_LOCAL_STACK_FRAME(_hx_pos_2bc63b9a182b711b_42_getName,"src.compiler.commands.ContinueCommand","getName",0xedd07716,"src.compiler.commands.ContinueCommand.getName","src/compiler/commands/ContinueCommand.hx",42,0xfdf6467c)
+HX_LOCAL_STACK_FRAME(_hx_pos_2bc63b9a182b711b_47_getFriendlyName,"src.compiler.commands.ContinueCommand","getFriendlyName",0xf5ed8421,"src.compiler.commands.ContinueCommand.getFriendlyName","src/compiler/commands/ContinueCommand.hx",47,0xfdf6467c)
+HX_LOCAL_STACK_FRAME(_hx_pos_2bc63b9a182b711b_52_getBytecode,"src.compiler.commands.ContinueCommand","getBytecode",0xb592ba80,"src.compiler.commands.ContinueCommand.getBytecode","src/compiler/commands/ContinueCommand.hx",52,0xfdf6467c)
+HX_LOCAL_STACK_FRAME(_hx_pos_2bc63b9a182b711b_57_reconstruct,"src.compiler.commands.ContinueCommand","reconstruct",0xc8216999,"src.compiler.commands.ContinueCommand.reconstruct","src/compiler/commands/ContinueCommand.hx",57,0xfdf6467c)
+HX_LOCAL_STACK_FRAME(_hx_pos_2bc63b9a182b711b_18_fromBytecode,"src.compiler.commands.ContinueCommand","fromBytecode",0xc5caee8a,"src.compiler.commands.ContinueCommand.fromBytecode","src/compiler/commands/ContinueCommand.hx",18,0xfdf6467c)
+HX_LOCAL_STACK_FRAME(_hx_pos_2bc63b9a182b711b_24_fromTokens,"src.compiler.commands.ContinueCommand","fromTokens",0x24a1626f,"src.compiler.commands.ContinueCommand.fromTokens","src/compiler/commands/ContinueCommand.hx",24,0xfdf6467c)
 namespace src{
 namespace compiler{
 namespace commands{
 
 void ContinueCommand_obj::__construct( ::src::compiler::Scope scope){
-            	HX_STACKFRAME(&_hx_pos_2bc63b9a182b711b_13_new)
-HXDLIN(  13)		super::__construct(scope);
+            	HX_STACKFRAME(&_hx_pos_2bc63b9a182b711b_15_new)
+HXDLIN(  15)		super::__construct(scope);
             	}
 
 Dynamic ContinueCommand_obj::__CreateEmpty() { return new ContinueCommand_obj; }
@@ -67,63 +69,75 @@ bool ContinueCommand_obj::_hx_isInstanceOf(int inClassId) {
 	}
 }
 
+ ::src::compiler::commands::Command ContinueCommand_obj::copy( ::src::compiler::Scope scope){
+            	HX_GC_STACKFRAME(&_hx_pos_2bc63b9a182b711b_32_copy)
+HXDLIN(  32)		return  ::src::compiler::commands::ContinueCommand_obj::__alloc( HX_CTX ,scope);
+            	}
+
+
  ::src::compiler::object::Object ContinueCommand_obj::run(){
-            	HX_GC_STACKFRAME(&_hx_pos_2bc63b9a182b711b_30_run)
-HXDLIN(  30)		HX_STACK_DO_THROW( ::src::compiler::signals::LoopContinueSignal_obj::__alloc( HX_CTX ));
-HXDLIN(  30)		return null();
+            	HX_GC_STACKFRAME(&_hx_pos_2bc63b9a182b711b_37_run)
+HXDLIN(  37)		HX_STACK_DO_THROW( ::src::compiler::signals::LoopContinueSignal_obj::__alloc( HX_CTX ));
+HXDLIN(  37)		return null();
             	}
 
 
 ::String ContinueCommand_obj::getName(){
-            	HX_STACKFRAME(&_hx_pos_2bc63b9a182b711b_35_getName)
-HXDLIN(  35)		return HX_("ContinueCommand",84,ab,a9,ed);
+            	HX_STACKFRAME(&_hx_pos_2bc63b9a182b711b_42_getName)
+HXDLIN(  42)		return HX_("ContinueCommand",84,ab,a9,ed);
+            	}
+
+
+::String ContinueCommand_obj::getFriendlyName(){
+            	HX_STACKFRAME(&_hx_pos_2bc63b9a182b711b_47_getFriendlyName)
+HXDLIN(  47)		return HX_("continue",67,e0,c8,31);
             	}
 
 
  ::src::compiler::bytecode::Bytecode ContinueCommand_obj::getBytecode(){
-            	HX_STACKFRAME(&_hx_pos_2bc63b9a182b711b_40_getBytecode)
-HXDLIN(  40)		return ::src::compiler::bytecode::Bytecode_obj::fromNull(this->getCodeID());
+            	HX_STACKFRAME(&_hx_pos_2bc63b9a182b711b_52_getBytecode)
+HXDLIN(  52)		return ::src::compiler::bytecode::Bytecode_obj::fromNull(this->getCodeID());
             	}
 
 
 ::Array< ::Dynamic> ContinueCommand_obj::reconstruct(){
-            	HX_GC_STACKFRAME(&_hx_pos_2bc63b9a182b711b_45_reconstruct)
-HXDLIN(  45)		return ::Array_obj< ::Dynamic>::__new(1)->init(0, ::src::ast::base::KwdToken_obj::__alloc( HX_CTX ,HX_("continue",67,e0,c8,31)));
+            	HX_GC_STACKFRAME(&_hx_pos_2bc63b9a182b711b_57_reconstruct)
+HXDLIN(  57)		return ::Array_obj< ::Dynamic>::__new(1)->init(0, ::src::ast::base::KwdToken_obj::__alloc( HX_CTX ,HX_("continue",67,e0,c8,31)));
             	}
 
 
  ::src::compiler::commands::ContinueCommand ContinueCommand_obj::fromBytecode( ::src::compiler::Scope scope,::Array< ::Dynamic> arr){
-            	HX_GC_STACKFRAME(&_hx_pos_2bc63b9a182b711b_16_fromBytecode)
-HXLINE(  17)		arr->shift().StaticCast<  ::src::compiler::bytecode::Bytecode >();
-HXLINE(  18)		return  ::src::compiler::commands::ContinueCommand_obj::__alloc( HX_CTX ,scope);
+            	HX_GC_STACKFRAME(&_hx_pos_2bc63b9a182b711b_18_fromBytecode)
+HXLINE(  19)		arr->shift().StaticCast<  ::src::compiler::bytecode::Bytecode >();
+HXLINE(  20)		return  ::src::compiler::commands::ContinueCommand_obj::__alloc( HX_CTX ,scope);
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(ContinueCommand_obj,fromBytecode,return )
 
  ::src::compiler::commands::ContinueCommand ContinueCommand_obj::fromTokens( ::src::compiler::Scope scope,::Array< ::Dynamic> tokens){
-            	HX_GC_STACKFRAME(&_hx_pos_2bc63b9a182b711b_22_fromTokens)
-HXLINE(  23)		bool _hx_tmp;
-HXDLIN(  23)		if ((tokens->length == (int)2)) {
-HXLINE(  23)			_hx_tmp = (tokens->__get((int)1).StaticCast<  ::src::ast::Token >()->getName() != HX_("EndLineToken",2a,db,3a,32));
+            	HX_GC_STACKFRAME(&_hx_pos_2bc63b9a182b711b_24_fromTokens)
+HXLINE(  25)		bool _hx_tmp;
+HXDLIN(  25)		if ((tokens->length == (int)2)) {
+HXLINE(  25)			_hx_tmp = (tokens->__get((int)1).StaticCast<  ::src::ast::Token >()->getName() != HX_("EndLineToken",2a,db,3a,32));
             		}
             		else {
-HXLINE(  23)			_hx_tmp = true;
+HXLINE(  25)			_hx_tmp = true;
             		}
-HXDLIN(  23)		if (_hx_tmp) {
-HXLINE(  23)			HX_STACK_DO_THROW( ::src::compiler::signals::SyntaxErrorSignal_obj::__alloc( HX_CTX ,HX_("Continue must by itself in an expression",8e,a7,d0,79)));
+HXDLIN(  25)		if (_hx_tmp) {
+HXLINE(  25)			HX_STACK_DO_THROW( ::src::compiler::signals::SyntaxErrorSignal_obj::__alloc( HX_CTX ,HX_("Continue must by itself in an expression",8e,a7,d0,79)));
             		}
-HXLINE(  24)		bool _hx_tmp1;
-HXDLIN(  24)		if ((tokens->__get((int)0).StaticCast<  ::src::ast::Token >()->getName() == HX_("KwdToken",c1,aa,4a,b9))) {
-HXLINE(  24)			_hx_tmp1 = hx::IsNotEq( tokens->__get((int)0).StaticCast<  ::src::ast::Token >()->getContent(),HX_("continue",67,e0,c8,31) );
+HXLINE(  26)		bool _hx_tmp1;
+HXDLIN(  26)		if ((tokens->__get((int)0).StaticCast<  ::src::ast::Token >()->getName() == HX_("KwdToken",c1,aa,4a,b9))) {
+HXLINE(  26)			_hx_tmp1 = hx::IsNotEq( tokens->__get((int)0).StaticCast<  ::src::ast::Token >()->getContent(),HX_("continue",67,e0,c8,31) );
             		}
             		else {
-HXLINE(  24)			_hx_tmp1 = true;
+HXLINE(  26)			_hx_tmp1 = true;
             		}
-HXDLIN(  24)		if (_hx_tmp1) {
-HXLINE(  24)			HX_STACK_DO_THROW( ::src::compiler::signals::SyntaxErrorSignal_obj::__alloc( HX_CTX ,HX_("Invalid continue expression",e8,60,02,77)));
+HXDLIN(  26)		if (_hx_tmp1) {
+HXLINE(  26)			HX_STACK_DO_THROW( ::src::compiler::signals::SyntaxErrorSignal_obj::__alloc( HX_CTX ,HX_("Invalid continue expression",e8,60,02,77)));
             		}
-HXLINE(  25)		return  ::src::compiler::commands::ContinueCommand_obj::__alloc( HX_CTX ,scope);
+HXLINE(  27)		return  ::src::compiler::commands::ContinueCommand_obj::__alloc( HX_CTX ,scope);
             	}
 
 
@@ -153,12 +167,18 @@ hx::Val ContinueCommand_obj::__Field(const ::String &inName,hx::PropertyAccess i
 	case 3:
 		if (HX_FIELD_EQ(inName,"run") ) { return hx::Val( run_dyn() ); }
 		break;
+	case 4:
+		if (HX_FIELD_EQ(inName,"copy") ) { return hx::Val( copy_dyn() ); }
+		break;
 	case 7:
 		if (HX_FIELD_EQ(inName,"getName") ) { return hx::Val( getName_dyn() ); }
 		break;
 	case 11:
 		if (HX_FIELD_EQ(inName,"getBytecode") ) { return hx::Val( getBytecode_dyn() ); }
 		if (HX_FIELD_EQ(inName,"reconstruct") ) { return hx::Val( reconstruct_dyn() ); }
+		break;
+	case 15:
+		if (HX_FIELD_EQ(inName,"getFriendlyName") ) { return hx::Val( getFriendlyName_dyn() ); }
 	}
 	return super::__Field(inName,inCallProp);
 }
@@ -181,8 +201,10 @@ static hx::StaticInfo *ContinueCommand_obj_sStaticStorageInfo = 0;
 #endif
 
 static ::String ContinueCommand_obj_sMemberFields[] = {
+	HX_HCSTRING("copy","\xb5","\xbb","\xc4","\x41"),
 	HX_HCSTRING("run","\x4b","\xe7","\x56","\x00"),
 	HX_HCSTRING("getName","\x01","\x22","\x82","\x1b"),
+	HX_HCSTRING("getFriendlyName","\x0c","\x92","\xf4","\xaf"),
 	HX_HCSTRING("getBytecode","\xeb","\xb6","\x8b","\x7d"),
 	HX_HCSTRING("reconstruct","\x04","\x66","\x1a","\x90"),
 	::String(null()) };

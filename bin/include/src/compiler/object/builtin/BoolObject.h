@@ -82,7 +82,7 @@ class HXCPP_CLASS_ATTRIBUTES BoolObject_obj : public  ::src::compiler::object::b
 
 		 ::src::compiler::object::Object neq( ::src::compiler::object::Object other);
 
-		::String getHash();
+		int getHash();
 
 };
 

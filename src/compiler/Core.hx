@@ -1,10 +1,15 @@
 package src.compiler;
 import haxe.io.Bytes;
 import src.ast.Token;
+import src.ast.script.PipeWriteToken;
 import src.ast.base.RootToken;
 import src.compiler.commands.*;
 import src.compiler.commands.value.*;
 import src.compiler.bytecode.Bytecode;
+import src.compiler.commands.coroutine.CoroutineDefinitionCommand;
+import src.compiler.commands.coroutine.CoroutineForLoopCommand;
+import src.compiler.commands.coroutine.PipeReadCommand;
+import src.compiler.commands.coroutine.PipeWriteCommand;
 import src.compiler.signals.SyntaxErrorSignal;
 
 /**
@@ -27,6 +32,7 @@ class Core
         "EndLineToken" => [_opcap("EndLineToken")],
         "KwdToken" => [
             _opcap("BlockToken", "func"), 
+            _opcap("BlockToken", "coro"), 
             _opcap("EndLineToken", "return"), 
             _opcap(["EndLineToken", "BlockToken"], "for"), 
             _opcap("EndLineToken", "del"),
@@ -41,15 +47,25 @@ class Core
             }),
             _opcap("EndLineToken", "break"),
             _opcap("EndLineToken", "continue"),
-            _opcap("BlockToken", "type")
-        ]
+            _opcap("BlockToken", "type"),
+            _opcap("EndLineToken", "raise"),
+            _opcap("", "try", "", function(lastVal:Dynamic, token:Token, nextToken:Token):Bool {
+                return token.getName() == "BlockToken" && (nextToken == null || nextToken.getName() != "KwdToken" || (nextToken.getContent() != "catch" && nextToken.getContent() != "else"));
+            }),
+            _opcap("EndLineToken", "import")
+        ],
+        "PipeWriteToken" => [_opcap("EndLineToken")],
+        "PipeReadToken" => [_opcap("EndLineToken")]
     ];
     
     
-    public static function convertRoot(root:RootToken, ?scope:Scope):RootCommand
+    public static function convertRoot(root:RootToken, ?scope:Scope, ?moduleName:String):RootCommand
     {
         if (scope == null) scope = new Scope("root");
-        return new RootCommand(scope, convert(scope, root.getContent()));
+        if (moduleName == null) moduleName = "__main__";
+        
+        var moduleScope:Scope = new Scope(moduleName, scope);
+        return new RootCommand(moduleScope, convert(moduleScope, root.getContent()));
     }
     
     public static function convert(scope:Scope, tokens:Array<Token>):Array<Command>
@@ -98,29 +114,46 @@ class Core
                 return ObjectArrayAssignmentCommand.fromTokens(scope, tokens);
             }
             return AssignmentCommand.fromTokens(scope, tokens);
-        }
-        else if (operative.getName() == "EndLineToken") {
+        } else if (operative.getName() == "PipeReadToken") {
+            return PipeReadCommand.fromTokens(scope, tokens);
+        } else if (operative.getName() == "PipeWriteToken") {
+            return PipeWriteCommand.fromTokens(scope, tokens);
+        } else if (operative.getName() == "EndLineToken") {
             tokens.pop(); // remove end line;
             // not sure what this should be, so try making it a value
             return ValueCommand.fromTokens(scope, tokens);
         } else if (operative.getName() == "KwdToken") {
             if (operative.getContent() == "func") return FunctionDefinitionCommand.fromTokens(scope, tokens);
+            else if (operative.getContent() == "coro") return CoroutineDefinitionCommand.fromTokens(scope, tokens);
             else if (operative.getContent() == "return") return ReturnCommand.fromTokens(scope, tokens);
             else if (operative.getContent() == "del") return DeleteCommand.fromTokens(scope, tokens);
-            else if (operative.getContent() == "for") return ForLoopComand.fromTokens(scope, tokens);
-            else if (operative.getContent() == "while") return WhileLoopCommand.fromTokens(scope, tokens);
+            else if (operative.getContent() == "for") {
+                if (tokens.length >= 2 && tokens[1].getName() == "BracketToken") {
+                    var subtokens:Array<Token> = tokens[1].getContent();
+                    for (token in subtokens) {
+                        if (token.getName() == "PipeReadToken") return CoroutineForLoopCommand.fromTokens(scope, tokens);
+                    }
+                }
+                return ForLoopComand.fromTokens(scope, tokens);
+            } else if (operative.getContent() == "while") return WhileLoopCommand.fromTokens(scope, tokens);
             else if (operative.getContent() == "if") return IfCommand.fromTokens(scope, tokens);
             else if (operative.getContent() == "break") return BreakCommand.fromTokens(scope, tokens);
             else if (operative.getContent() == "continue") return ContinueCommand.fromTokens(scope, tokens);
             else if (operative.getContent() == "type") return TypeDefinitionCommand.fromTokens(scope, tokens);
+            else if (operative.getContent() == "raise") return RaiseCommand.fromTokens(scope, tokens);
+            else if (operative.getContent() == "try") return TryCatchCommand.fromTokens(scope, tokens);
+            else if (operative.getContent() == "import") return ImportCommand.fromTokens(scope, tokens);
         }
         return null;
     }
     
-    public static function convertBytes(bytes:Bytes, ?scope:Scope):RootCommand
+    public static function convertBytes(bytes:Bytes, ?scope:Scope, ?moduleName:String):RootCommand
     {
         if (scope == null) scope = new Scope("root");
-        return RootCommand.fromBytecode(scope, Bytecode.fromBytes(bytes, scope));
+        if (moduleName == null) moduleName = "__main__";
+        
+        var moduleScope:Scope = new Scope(moduleName, scope);
+        return RootCommand.fromBytecode(moduleScope, Bytecode.fromBytes(bytes, scope));
     }
     
     public static function compile(root:RootCommand, ?stringPool:Bool):Bytecode

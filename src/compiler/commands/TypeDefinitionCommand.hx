@@ -16,6 +16,7 @@ import src.compiler.object.builtin.ObjectTypeObject;
 import src.compiler.signals.InvalidArgumentSignal;
 import src.compiler.signals.SyntaxErrorSignal;
 import src.compiler.commands.value.VariableValueCommand;
+import src.compiler.signals.YieldSignal;
 
 /**
  * ...
@@ -71,6 +72,20 @@ class TypeDefinitionCommand extends Command
         this.code = code;
     }
     
+    override public function copy(scope:Scope):Command 
+    {
+        var typeScope:Scope = new Scope(typeScope.getName(), scope);
+        return new TypeDefinitionCommand(scope, typeScope, name, VariableAccess.copyArray(scope, extensions), Command.copyArray(scope, code));
+    }
+    
+    override public function setScope(scope:Scope) 
+    {
+        super.setScope(scope);
+        typeScope.setParent(scope);
+        for (ext in extensions) ext.setScope(scope);
+        for (cmd in code) cmd.setScope(scope);
+    }
+    
     override public function walk():Array<Command> 
     {
         var cmds:Array<Command> = code.copy();
@@ -81,7 +96,11 @@ class TypeDefinitionCommand extends Command
     
     override public function run():Object 
     {
-        for (cmd in code) cmd.run();
+        try {
+            for (cmd in code) cmd.run();
+        } catch (e : YieldSignal) {
+            throw new SyntaxErrorSignal("Cannot yield from within a type definition");
+        }
         var members:Map<String, Object> = new Map<String, Object>();
         for (name in typeScope.getVariables().keys()) {
             members.set(name, typeScope.getVariables().get(name));
@@ -99,7 +118,7 @@ class TypeDefinitionCommand extends Command
             scope.setType(this.name, new ObjectType(scope, this.name, members, null, parents), true);
             return null;
         } else {
-            return scope.getType("ObjectTypeType").createValue(new ObjectType(scope, "&TYPE&", members, null, parents));
+            return scope.getType("ObjectTypeType").createValue(new ObjectType(scope, scope.getName(), members, null, parents), scope);
         }
        
     }
@@ -107,6 +126,11 @@ class TypeDefinitionCommand extends Command
     override public function getName():String 
     {
         return "TypeDefinitionCommand";
+    }
+    
+    override public function getFriendlyName():String 
+    {
+        return "type definition";
     }
     
     override public function getBytecode():Bytecode 

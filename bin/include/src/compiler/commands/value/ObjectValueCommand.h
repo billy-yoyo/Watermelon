@@ -61,9 +61,13 @@ class HXCPP_CLASS_ATTRIBUTES ObjectValueCommand_obj : public  ::src::compiler::c
 
 		 ::Dynamic value;
 		::String type;
+		 ::src::compiler::commands::Command copy( ::src::compiler::Scope scope);
+
 		 ::src::compiler::object::Object run();
 
 		::String getName();
+
+		::String getFriendlyName();
 
 		 ::src::compiler::bytecode::Bytecode getBytecode();
 

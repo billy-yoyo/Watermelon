@@ -63,8 +63,8 @@ class ObjectTypeObject extends ValuedObject
     
     override public function call(values:Array<Object>):Object 
     {
-        if (isSubType(value.getObjectClass(), ValuedObject)) return value.createValue(cast(values.shift(), ValuedObject).getInitVar(), values);
-        return value.createObject(values);
+        if (isSubType(value.getObjectClass(), ValuedObject)) return value.createValue(cast(values.shift(), ValuedObject).getInitVar(), scope, values);
+        return value.createObject(scope, values);
     }
     
 }

@@ -56,9 +56,13 @@ class HXCPP_CLASS_ATTRIBUTES BreakCommand_obj : public  ::src::compiler::command
 		static  ::src::compiler::commands::BreakCommand fromTokens( ::src::compiler::Scope scope,::Array< ::Dynamic> tokens);
 		static ::Dynamic fromTokens_dyn();
 
+		 ::src::compiler::commands::Command copy( ::src::compiler::Scope scope);
+
 		 ::src::compiler::object::Object run();
 
 		::String getName();
+
+		::String getFriendlyName();
 
 		 ::src::compiler::bytecode::Bytecode getBytecode();
 

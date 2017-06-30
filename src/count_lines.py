@@ -9,8 +9,12 @@ def count(path):
         if isfile(join(path + "/", f)):
             if f.endswith(".hx"):
                 try:
+                    found = False
                     for line in open(path + "/" + f):
                         c += 1
+                        if not found and ("createObject" in line or "createValue" in line): 
+                            print("File %s contains object creation" % (path + "/" + f))
+                            found = True
                 except:
                     print("encountered error with file {}".format(f + "/" + path))
         else:

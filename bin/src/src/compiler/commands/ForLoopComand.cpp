@@ -50,12 +50,15 @@
 #include <src/compiler/signals/SyntaxErrorSignal.h>
 #endif
 
-HX_DEFINE_STACK_FRAME(_hx_pos_e62140f5b2aa2f61_49_new,"src.compiler.commands.ForLoopComand","new",0xb0d2c034,"src.compiler.commands.ForLoopComand.new","src/compiler/commands/ForLoopComand.hx",49,0x94a8dfdd)
-HX_LOCAL_STACK_FRAME(_hx_pos_e62140f5b2aa2f61_57_walk,"src.compiler.commands.ForLoopComand","walk",0x0d8546b5,"src.compiler.commands.ForLoopComand.walk","src/compiler/commands/ForLoopComand.hx",57,0x94a8dfdd)
-HX_LOCAL_STACK_FRAME(_hx_pos_e62140f5b2aa2f61_61_run,"src.compiler.commands.ForLoopComand","run",0xb0d5d71f,"src.compiler.commands.ForLoopComand.run","src/compiler/commands/ForLoopComand.hx",61,0x94a8dfdd)
-HX_LOCAL_STACK_FRAME(_hx_pos_e62140f5b2aa2f61_79_getName,"src.compiler.commands.ForLoopComand","getName",0xb8978bd5,"src.compiler.commands.ForLoopComand.getName","src/compiler/commands/ForLoopComand.hx",79,0x94a8dfdd)
-HX_LOCAL_STACK_FRAME(_hx_pos_e62140f5b2aa2f61_84_getBytecode,"src.compiler.commands.ForLoopComand","getBytecode",0xecfc9abf,"src.compiler.commands.ForLoopComand.getBytecode","src/compiler/commands/ForLoopComand.hx",84,0x94a8dfdd)
-HX_LOCAL_STACK_FRAME(_hx_pos_e62140f5b2aa2f61_89_reconstruct,"src.compiler.commands.ForLoopComand","reconstruct",0xff8b49d8,"src.compiler.commands.ForLoopComand.reconstruct","src/compiler/commands/ForLoopComand.hx",89,0x94a8dfdd)
+HX_DEFINE_STACK_FRAME(_hx_pos_e62140f5b2aa2f61_50_new,"src.compiler.commands.ForLoopComand","new",0xb0d2c034,"src.compiler.commands.ForLoopComand.new","src/compiler/commands/ForLoopComand.hx",50,0x94a8dfdd)
+HX_LOCAL_STACK_FRAME(_hx_pos_e62140f5b2aa2f61_58_copy,"src.compiler.commands.ForLoopComand","copy",0x0057a561,"src.compiler.commands.ForLoopComand.copy","src/compiler/commands/ForLoopComand.hx",58,0x94a8dfdd)
+HX_LOCAL_STACK_FRAME(_hx_pos_e62140f5b2aa2f61_62_setScope,"src.compiler.commands.ForLoopComand","setScope",0x5cb50a3e,"src.compiler.commands.ForLoopComand.setScope","src/compiler/commands/ForLoopComand.hx",62,0x94a8dfdd)
+HX_LOCAL_STACK_FRAME(_hx_pos_e62140f5b2aa2f61_70_walk,"src.compiler.commands.ForLoopComand","walk",0x0d8546b5,"src.compiler.commands.ForLoopComand.walk","src/compiler/commands/ForLoopComand.hx",70,0x94a8dfdd)
+HX_LOCAL_STACK_FRAME(_hx_pos_e62140f5b2aa2f61_74_run,"src.compiler.commands.ForLoopComand","run",0xb0d5d71f,"src.compiler.commands.ForLoopComand.run","src/compiler/commands/ForLoopComand.hx",74,0x94a8dfdd)
+HX_LOCAL_STACK_FRAME(_hx_pos_e62140f5b2aa2f61_94_getName,"src.compiler.commands.ForLoopComand","getName",0xb8978bd5,"src.compiler.commands.ForLoopComand.getName","src/compiler/commands/ForLoopComand.hx",94,0x94a8dfdd)
+HX_LOCAL_STACK_FRAME(_hx_pos_e62140f5b2aa2f61_99_getFriendlyName,"src.compiler.commands.ForLoopComand","getFriendlyName",0x9e05efe0,"src.compiler.commands.ForLoopComand.getFriendlyName","src/compiler/commands/ForLoopComand.hx",99,0x94a8dfdd)
+HX_LOCAL_STACK_FRAME(_hx_pos_e62140f5b2aa2f61_104_getBytecode,"src.compiler.commands.ForLoopComand","getBytecode",0xecfc9abf,"src.compiler.commands.ForLoopComand.getBytecode","src/compiler/commands/ForLoopComand.hx",104,0x94a8dfdd)
+HX_LOCAL_STACK_FRAME(_hx_pos_e62140f5b2aa2f61_109_reconstruct,"src.compiler.commands.ForLoopComand","reconstruct",0xff8b49d8,"src.compiler.commands.ForLoopComand.reconstruct","src/compiler/commands/ForLoopComand.hx",109,0x94a8dfdd)
 HX_LOCAL_STACK_FRAME(_hx_pos_e62140f5b2aa2f61_23_fromTokens,"src.compiler.commands.ForLoopComand","fromTokens",0xc6be8f10,"src.compiler.commands.ForLoopComand.fromTokens","src/compiler/commands/ForLoopComand.hx",23,0x94a8dfdd)
 HX_LOCAL_STACK_FRAME(_hx_pos_e62140f5b2aa2f61_43_fromBytecode,"src.compiler.commands.ForLoopComand","fromBytecode",0x0b05456b,"src.compiler.commands.ForLoopComand.fromBytecode","src/compiler/commands/ForLoopComand.hx",43,0x94a8dfdd)
 namespace src{
@@ -63,10 +66,10 @@ namespace compiler{
 namespace commands{
 
 void ForLoopComand_obj::__construct( ::src::compiler::Scope scope, ::src::compiler::commands::Command iterator, ::src::compiler::commands::Command code){
-            	HX_STACKFRAME(&_hx_pos_e62140f5b2aa2f61_49_new)
-HXLINE(  50)		super::__construct(scope);
-HXLINE(  51)		this->iterator = iterator;
-HXLINE(  52)		this->code = code;
+            	HX_STACKFRAME(&_hx_pos_e62140f5b2aa2f61_50_new)
+HXLINE(  51)		super::__construct(scope);
+HXLINE(  52)		this->iterator = iterator;
+HXLINE(  53)		this->code = code;
             	}
 
 Dynamic ForLoopComand_obj::__CreateEmpty() { return new ForLoopComand_obj; }
@@ -88,65 +91,91 @@ bool ForLoopComand_obj::_hx_isInstanceOf(int inClassId) {
 	}
 }
 
+ ::src::compiler::commands::Command ForLoopComand_obj::copy( ::src::compiler::Scope scope){
+            	HX_GC_STACKFRAME(&_hx_pos_e62140f5b2aa2f61_58_copy)
+HXDLIN(  58)		 ::src::compiler::commands::Command _hx_tmp = this->iterator->copy(scope);
+HXDLIN(  58)		return  ::src::compiler::commands::ForLoopComand_obj::__alloc( HX_CTX ,scope,_hx_tmp,this->code->copy(scope));
+            	}
+
+
+void ForLoopComand_obj::setScope( ::src::compiler::Scope scope){
+            	HX_STACKFRAME(&_hx_pos_e62140f5b2aa2f61_62_setScope)
+HXLINE(  63)		this->super::setScope(scope);
+HXLINE(  64)		this->iterator->setScope(scope);
+HXLINE(  65)		this->code->setScope(scope);
+            	}
+
+
 ::Array< ::Dynamic> ForLoopComand_obj::walk(){
-            	HX_STACKFRAME(&_hx_pos_e62140f5b2aa2f61_57_walk)
-HXDLIN(  57)		return ::Array_obj< ::Dynamic>::__new(2)->init(0,this->iterator)->init(1,this->code);
+            	HX_STACKFRAME(&_hx_pos_e62140f5b2aa2f61_70_walk)
+HXDLIN(  70)		return ::Array_obj< ::Dynamic>::__new(2)->init(0,this->iterator)->init(1,this->code);
             	}
 
 
  ::src::compiler::object::Object ForLoopComand_obj::run(){
-            	HX_STACKFRAME(&_hx_pos_e62140f5b2aa2f61_61_run)
-HXLINE(  62)		while(true){
-HXLINE(  63)			try {
+            	HX_STACKFRAME(&_hx_pos_e62140f5b2aa2f61_74_run)
+HXLINE(  75)		while(true){
+HXLINE(  76)			try {
             				HX_STACK_CATCHABLE( ::src::compiler::signals::IteratorExitSignal, 0);
             				HX_STACK_CATCHABLE( ::src::compiler::signals::LoopBreakSignal, 1);
             				HX_STACK_CATCHABLE( ::src::compiler::signals::LoopContinueSignal, 2);
-HXLINE(  64)				this->iterator->run();
-HXLINE(  65)				this->code->run();
+HXLINE(  77)				if (this->completedLoop) {
+HXLINE(  77)					this->iterator->run();
+            				}
+HXLINE(  78)				this->completedLoop = false;
+HXLINE(  79)				this->code->run();
+HXLINE(  80)				this->completedLoop = true;
             			}
             			catch( ::Dynamic _hx_e){
             				if (_hx_e.IsClass<  ::src::compiler::signals::IteratorExitSignal >() ){
             					HX_STACK_BEGIN_CATCH
             					 ::src::compiler::signals::IteratorExitSignal itexit = _hx_e;
-HXLINE(  67)					goto _hx_goto_2;
+HXLINE(  82)					goto _hx_goto_4;
             				}
             				else if (_hx_e.IsClass<  ::src::compiler::signals::LoopBreakSignal >() ){
             					HX_STACK_BEGIN_CATCH
             					 ::src::compiler::signals::LoopBreakSignal lpbreak = _hx_e;
-HXLINE(  69)					goto _hx_goto_2;
+HXLINE(  84)					goto _hx_goto_4;
             				}
             				else if (_hx_e.IsClass<  ::src::compiler::signals::LoopContinueSignal >() ){
             					HX_STACK_BEGIN_CATCH
             					 ::src::compiler::signals::LoopContinueSignal lpcont = _hx_e;
+HXLINE(  86)					this->completedLoop = true;
             				}
             				else {
             					HX_STACK_DO_THROW(_hx_e);
             				}
             			}
             		}
-            		_hx_goto_2:;
-HXLINE(  74)		return null();
+            		_hx_goto_4:;
+HXLINE(  89)		return null();
             	}
 
 
 ::String ForLoopComand_obj::getName(){
-            	HX_STACKFRAME(&_hx_pos_e62140f5b2aa2f61_79_getName)
-HXDLIN(  79)		return HX_("ForLoopCommand",de,e6,e8,2e);
+            	HX_STACKFRAME(&_hx_pos_e62140f5b2aa2f61_94_getName)
+HXDLIN(  94)		return HX_("ForLoopCommand",de,e6,e8,2e);
+            	}
+
+
+::String ForLoopComand_obj::getFriendlyName(){
+            	HX_STACKFRAME(&_hx_pos_e62140f5b2aa2f61_99_getFriendlyName)
+HXDLIN(  99)		return HX_("for loop",db,4e,21,1b);
             	}
 
 
  ::src::compiler::bytecode::Bytecode ForLoopComand_obj::getBytecode(){
-            	HX_STACKFRAME(&_hx_pos_e62140f5b2aa2f61_84_getBytecode)
-HXDLIN(  84)		::cpp::VirtualArray _hx_tmp = ::cpp::VirtualArray_obj::__new(2)->init(0,this->iterator)->init(1,this->code);
-HXDLIN(  84)		return ::src::compiler::bytecode::Bytecode_obj::fromArray(_hx_tmp,this->getCodeID());
+            	HX_STACKFRAME(&_hx_pos_e62140f5b2aa2f61_104_getBytecode)
+HXDLIN( 104)		::cpp::VirtualArray _hx_tmp = ::cpp::VirtualArray_obj::__new(2)->init(0,this->iterator)->init(1,this->code);
+HXDLIN( 104)		return ::src::compiler::bytecode::Bytecode_obj::fromArray(_hx_tmp,this->getCodeID());
             	}
 
 
 ::Array< ::Dynamic> ForLoopComand_obj::reconstruct(){
-            	HX_GC_STACKFRAME(&_hx_pos_e62140f5b2aa2f61_89_reconstruct)
-HXDLIN(  89)		 ::src::ast::base::KwdToken _hx_tmp =  ::src::ast::base::KwdToken_obj::__alloc( HX_CTX ,HX_("for",09,c7,4d,00));
-HXDLIN(  89)		 ::src::ast::base::BracketToken _hx_tmp1 = ::src::ast::base::BracketToken_obj::fromRaw(this->iterator->reconstruct());
-HXDLIN(  89)		return ::src::ast::Token_obj::merge(::cpp::VirtualArray_obj::__new(3)->init(0,_hx_tmp)->init(1,_hx_tmp1)->init(2,::src::ast::base::BlockToken_obj::fromRaw(this->code->reconstruct())));
+            	HX_GC_STACKFRAME(&_hx_pos_e62140f5b2aa2f61_109_reconstruct)
+HXDLIN( 109)		 ::src::ast::base::KwdToken _hx_tmp =  ::src::ast::base::KwdToken_obj::__alloc( HX_CTX ,HX_("for",09,c7,4d,00));
+HXDLIN( 109)		 ::src::ast::base::BracketToken _hx_tmp1 = ::src::ast::base::BracketToken_obj::fromRaw(this->iterator->reconstruct());
+HXDLIN( 109)		return ::src::ast::Token_obj::merge(::cpp::VirtualArray_obj::__new(3)->init(0,_hx_tmp)->init(1,_hx_tmp1)->init(2,::src::ast::base::BlockToken_obj::fromRaw(this->code->reconstruct())));
             	}
 
 
@@ -228,6 +257,7 @@ void ForLoopComand_obj::__Mark(HX_MARK_PARAMS)
 	HX_MARK_BEGIN_CLASS(ForLoopComand);
 	HX_MARK_MEMBER_NAME(iterator,"iterator");
 	HX_MARK_MEMBER_NAME(code,"code");
+	HX_MARK_MEMBER_NAME(completedLoop,"completedLoop");
 	 ::src::compiler::commands::Command_obj::__Mark(HX_MARK_ARG);
 	HX_MARK_END_CLASS();
 }
@@ -236,6 +266,7 @@ void ForLoopComand_obj::__Visit(HX_VISIT_PARAMS)
 {
 	HX_VISIT_MEMBER_NAME(iterator,"iterator");
 	HX_VISIT_MEMBER_NAME(code,"code");
+	HX_VISIT_MEMBER_NAME(completedLoop,"completedLoop");
 	 ::src::compiler::commands::Command_obj::__Visit(HX_VISIT_ARG);
 }
 
@@ -247,6 +278,7 @@ hx::Val ForLoopComand_obj::__Field(const ::String &inName,hx::PropertyAccess inC
 		break;
 	case 4:
 		if (HX_FIELD_EQ(inName,"code") ) { return hx::Val( code ); }
+		if (HX_FIELD_EQ(inName,"copy") ) { return hx::Val( copy_dyn() ); }
 		if (HX_FIELD_EQ(inName,"walk") ) { return hx::Val( walk_dyn() ); }
 		break;
 	case 7:
@@ -254,10 +286,17 @@ hx::Val ForLoopComand_obj::__Field(const ::String &inName,hx::PropertyAccess inC
 		break;
 	case 8:
 		if (HX_FIELD_EQ(inName,"iterator") ) { return hx::Val( iterator ); }
+		if (HX_FIELD_EQ(inName,"setScope") ) { return hx::Val( setScope_dyn() ); }
 		break;
 	case 11:
 		if (HX_FIELD_EQ(inName,"getBytecode") ) { return hx::Val( getBytecode_dyn() ); }
 		if (HX_FIELD_EQ(inName,"reconstruct") ) { return hx::Val( reconstruct_dyn() ); }
+		break;
+	case 13:
+		if (HX_FIELD_EQ(inName,"completedLoop") ) { return hx::Val( completedLoop ); }
+		break;
+	case 15:
+		if (HX_FIELD_EQ(inName,"getFriendlyName") ) { return hx::Val( getFriendlyName_dyn() ); }
 	}
 	return super::__Field(inName,inCallProp);
 }
@@ -282,6 +321,9 @@ hx::Val ForLoopComand_obj::__SetField(const ::String &inName,const hx::Val &inVa
 		break;
 	case 8:
 		if (HX_FIELD_EQ(inName,"iterator") ) { iterator=inValue.Cast<  ::src::compiler::commands::Command >(); return inValue; }
+		break;
+	case 13:
+		if (HX_FIELD_EQ(inName,"completedLoop") ) { completedLoop=inValue.Cast< bool >(); return inValue; }
 	}
 	return super::__SetField(inName,inValue,inCallProp);
 }
@@ -290,6 +332,7 @@ void ForLoopComand_obj::__GetFields(Array< ::String> &outFields)
 {
 	outFields->push(HX_HCSTRING("iterator","\xee","\x49","\x9a","\x93"));
 	outFields->push(HX_HCSTRING("code","\x2d","\xb1","\xc4","\x41"));
+	outFields->push(HX_HCSTRING("completedLoop","\x8f","\x95","\xe0","\x09"));
 	super::__GetFields(outFields);
 };
 
@@ -297,6 +340,7 @@ void ForLoopComand_obj::__GetFields(Array< ::String> &outFields)
 static hx::StorageInfo ForLoopComand_obj_sMemberStorageInfo[] = {
 	{hx::fsObject /*::src::compiler::commands::Command*/ ,(int)offsetof(ForLoopComand_obj,iterator),HX_HCSTRING("iterator","\xee","\x49","\x9a","\x93")},
 	{hx::fsObject /*::src::compiler::commands::Command*/ ,(int)offsetof(ForLoopComand_obj,code),HX_HCSTRING("code","\x2d","\xb1","\xc4","\x41")},
+	{hx::fsBool,(int)offsetof(ForLoopComand_obj,completedLoop),HX_HCSTRING("completedLoop","\x8f","\x95","\xe0","\x09")},
 	{ hx::fsUnknown, 0, null()}
 };
 static hx::StaticInfo *ForLoopComand_obj_sStaticStorageInfo = 0;
@@ -305,9 +349,13 @@ static hx::StaticInfo *ForLoopComand_obj_sStaticStorageInfo = 0;
 static ::String ForLoopComand_obj_sMemberFields[] = {
 	HX_HCSTRING("iterator","\xee","\x49","\x9a","\x93"),
 	HX_HCSTRING("code","\x2d","\xb1","\xc4","\x41"),
+	HX_HCSTRING("completedLoop","\x8f","\x95","\xe0","\x09"),
+	HX_HCSTRING("copy","\xb5","\xbb","\xc4","\x41"),
+	HX_HCSTRING("setScope","\x92","\xda","\x0d","\x87"),
 	HX_HCSTRING("walk","\x09","\x5d","\xf2","\x4e"),
 	HX_HCSTRING("run","\x4b","\xe7","\x56","\x00"),
 	HX_HCSTRING("getName","\x01","\x22","\x82","\x1b"),
+	HX_HCSTRING("getFriendlyName","\x0c","\x92","\xf4","\xaf"),
 	HX_HCSTRING("getBytecode","\xeb","\xb6","\x8b","\x7d"),
 	HX_HCSTRING("reconstruct","\x04","\x66","\x1a","\x90"),
 	::String(null()) };

@@ -48,6 +48,14 @@ class GlobalProcessor
         HexToken, HexToken.match, HexToken.partialMatch
     ).addClass(
         BinaryOperatorToken, BinaryOperatorToken.match, BinaryOperatorToken.partialMatch
+    ).addClass(
+        SpliceToken, SpliceToken.match, SpliceToken.partialMatch
+    ).addClass(
+        PipeWriteToken, PipeWriteToken.match, PipeWriteToken.partialMatch
+    ).addClass(
+        PipeReadToken, PipeReadToken.match, PipeReadToken.partialMatch
+    ).addClass(
+        WildcardToken, WildcardToken.match, WildcardToken.partialMatch
     );
     
     public static function process(s:String):RootToken

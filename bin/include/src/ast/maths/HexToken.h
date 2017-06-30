@@ -43,7 +43,9 @@ class HXCPP_CLASS_ATTRIBUTES HexToken_obj : public  ::src::ast::Token_obj
 		HX_DO_RTTI_ALL;
 		hx::Val __Field(const ::String &inString, hx::PropertyAccess inCallProp);
 		static bool __GetStatic(const ::String &inString, Dynamic &outValue, hx::PropertyAccess inCallProp);
+		hx::Val __SetField(const ::String &inString,const hx::Val &inValue, hx::PropertyAccess inCallProp);
 		static bool __SetStatic(const ::String &inString, Dynamic &ioValue, hx::PropertyAccess inCallProp);
+		void __GetFields(Array< ::String> &outFields);
 		static void __register();
 		bool _hx_isInstanceOf(int inClassId);
 		::String __ToString() const { return HX_HCSTRING("HexToken","\x3e","\x32","\x54","\x20"); }
@@ -56,6 +58,7 @@ class HXCPP_CLASS_ATTRIBUTES HexToken_obj : public  ::src::ast::Token_obj
 		static bool partialMatch(::String s);
 		static ::Dynamic partialMatch_dyn();
 
+		bool isBytes;
 		::String getName();
 
 };

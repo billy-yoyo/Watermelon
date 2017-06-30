@@ -40,6 +40,17 @@ class ReturnCommand extends Command
         this.value = value;
     }
     
+    override public function copy(scope:Scope):Command 
+    {
+        return new ReturnCommand(scope, cast(value.copy(scope), ValueCommand));
+    }
+    
+    override public function setScope(scope:Scope) 
+    {
+        super.setScope(scope);
+        value.setScope(scope);
+    }
+    
     override public function walk():Array<Command> 
     {
         return value.walk();
@@ -54,6 +65,11 @@ class ReturnCommand extends Command
     override public function getName():String 
     {
         return "ReturnCommand";
+    }
+    
+    override public function getFriendlyName():String 
+    {
+        return "return";
     }
     
     override public function getBytecode():Bytecode 

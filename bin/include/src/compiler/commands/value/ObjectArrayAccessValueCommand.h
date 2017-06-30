@@ -64,11 +64,17 @@ class HXCPP_CLASS_ATTRIBUTES ObjectArrayAccessValueCommand_obj : public  ::src::
 		static ::Dynamic fromBytecode_dyn();
 
 		 ::src::compiler::commands::value::ObjectIndexPair objectIndexPair;
+		 ::src::compiler::commands::Command copy( ::src::compiler::Scope scope);
+
+		void setScope( ::src::compiler::Scope scope);
+
 		::Array< ::Dynamic> walk();
 
 		 ::src::compiler::object::Object run();
 
 		::String getName();
+
+		::String getFriendlyName();
 
 		 ::src::compiler::bytecode::Bytecode getBytecode();
 

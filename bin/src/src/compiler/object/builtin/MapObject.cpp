@@ -4,6 +4,9 @@
 #ifndef INCLUDED_haxe_IMap
 #include <haxe/IMap.h>
 #endif
+#ifndef INCLUDED_haxe_ds_IntMap
+#include <haxe/ds/IntMap.h>
+#endif
 #ifndef INCLUDED_haxe_ds_StringMap
 #include <haxe/ds/StringMap.h>
 #endif
@@ -28,30 +31,34 @@
 #ifndef INCLUDED_src_compiler_object_builtin_MapObject
 #include <src/compiler/object/builtin/MapObject.h>
 #endif
+#ifndef INCLUDED_src_compiler_object_builtin_StringObject
+#include <src/compiler/object/builtin/StringObject.h>
+#endif
 #ifndef INCLUDED_src_compiler_object_builtin_ValuedObject
 #include <src/compiler/object/builtin/ValuedObject.h>
 #endif
 
-HX_DEFINE_STACK_FRAME(_hx_pos_6eaf2fd5ac251040_9_new,"src.compiler.object.builtin.MapObject","new",0x89aa7bf8,"src.compiler.object.builtin.MapObject.new","src/compiler/object/builtin/MapObject.hx",9,0x08d8229a)
-HX_LOCAL_STACK_FRAME(_hx_pos_6eaf2fd5ac251040_16_get,"src.compiler.object.builtin.MapObject","get",0x89a52c2e,"src.compiler.object.builtin.MapObject.get","src/compiler/object/builtin/MapObject.hx",16,0x08d8229a)
-HX_LOCAL_STACK_FRAME(_hx_pos_6eaf2fd5ac251040_22_set,"src.compiler.object.builtin.MapObject","set",0x89ae473a,"src.compiler.object.builtin.MapObject.set","src/compiler/object/builtin/MapObject.hx",22,0x08d8229a)
-HX_LOCAL_STACK_FRAME(_hx_pos_6eaf2fd5ac251040_30_delete,"src.compiler.object.builtin.MapObject","delete",0x47376393,"src.compiler.object.builtin.MapObject.delete","src/compiler/object/builtin/MapObject.hx",30,0x08d8229a)
-HX_LOCAL_STACK_FRAME(_hx_pos_6eaf2fd5ac251040_39_add,"src.compiler.object.builtin.MapObject","add",0x89a09db9,"src.compiler.object.builtin.MapObject.add","src/compiler/object/builtin/MapObject.hx",39,0x08d8229a)
-HX_LOCAL_STACK_FRAME(_hx_pos_6eaf2fd5ac251040_56_len,"src.compiler.object.builtin.MapObject","len",0x89a8f76d,"src.compiler.object.builtin.MapObject.len","src/compiler/object/builtin/MapObject.hx",56,0x08d8229a)
-HX_LOCAL_STACK_FRAME(_hx_pos_6eaf2fd5ac251040_64_isin,"src.compiler.object.builtin.MapObject","isin",0xe83e7fb7,"src.compiler.object.builtin.MapObject.isin","src/compiler/object/builtin/MapObject.hx",64,0x08d8229a)
-HX_LOCAL_STACK_FRAME(_hx_pos_6eaf2fd5ac251040_70_iter,"src.compiler.object.builtin.MapObject","iter",0xe83f3e80,"src.compiler.object.builtin.MapObject.iter","src/compiler/object/builtin/MapObject.hx",70,0x08d8229a)
-HX_LOCAL_STACK_FRAME(_hx_pos_6eaf2fd5ac251040_80_map,"src.compiler.object.builtin.MapObject","map",0x89a9b634,"src.compiler.object.builtin.MapObject.map","src/compiler/object/builtin/MapObject.hx",80,0x08d8229a)
-HX_LOCAL_STACK_FRAME(_hx_pos_6eaf2fd5ac251040_87_getMap,"src.compiler.object.builtin.MapObject","getMap",0x7f80e70e,"src.compiler.object.builtin.MapObject.getMap","src/compiler/object/builtin/MapObject.hx",87,0x08d8229a)
+HX_DEFINE_STACK_FRAME(_hx_pos_6eaf2fd5ac251040_10_new,"src.compiler.object.builtin.MapObject","new",0x89aa7bf8,"src.compiler.object.builtin.MapObject.new","src/compiler/object/builtin/MapObject.hx",10,0x08d8229a)
+HX_LOCAL_STACK_FRAME(_hx_pos_6eaf2fd5ac251040_17_get,"src.compiler.object.builtin.MapObject","get",0x89a52c2e,"src.compiler.object.builtin.MapObject.get","src/compiler/object/builtin/MapObject.hx",17,0x08d8229a)
+HX_LOCAL_STACK_FRAME(_hx_pos_6eaf2fd5ac251040_23_set,"src.compiler.object.builtin.MapObject","set",0x89ae473a,"src.compiler.object.builtin.MapObject.set","src/compiler/object/builtin/MapObject.hx",23,0x08d8229a)
+HX_LOCAL_STACK_FRAME(_hx_pos_6eaf2fd5ac251040_31_delete,"src.compiler.object.builtin.MapObject","delete",0x47376393,"src.compiler.object.builtin.MapObject.delete","src/compiler/object/builtin/MapObject.hx",31,0x08d8229a)
+HX_LOCAL_STACK_FRAME(_hx_pos_6eaf2fd5ac251040_40_add,"src.compiler.object.builtin.MapObject","add",0x89a09db9,"src.compiler.object.builtin.MapObject.add","src/compiler/object/builtin/MapObject.hx",40,0x08d8229a)
+HX_LOCAL_STACK_FRAME(_hx_pos_6eaf2fd5ac251040_57_len,"src.compiler.object.builtin.MapObject","len",0x89a8f76d,"src.compiler.object.builtin.MapObject.len","src/compiler/object/builtin/MapObject.hx",57,0x08d8229a)
+HX_LOCAL_STACK_FRAME(_hx_pos_6eaf2fd5ac251040_65_isin,"src.compiler.object.builtin.MapObject","isin",0xe83e7fb7,"src.compiler.object.builtin.MapObject.isin","src/compiler/object/builtin/MapObject.hx",65,0x08d8229a)
+HX_LOCAL_STACK_FRAME(_hx_pos_6eaf2fd5ac251040_71_iter,"src.compiler.object.builtin.MapObject","iter",0xe83f3e80,"src.compiler.object.builtin.MapObject.iter","src/compiler/object/builtin/MapObject.hx",71,0x08d8229a)
+HX_LOCAL_STACK_FRAME(_hx_pos_6eaf2fd5ac251040_81_map,"src.compiler.object.builtin.MapObject","map",0x89a9b634,"src.compiler.object.builtin.MapObject.map","src/compiler/object/builtin/MapObject.hx",81,0x08d8229a)
+HX_LOCAL_STACK_FRAME(_hx_pos_6eaf2fd5ac251040_87_str,"src.compiler.object.builtin.MapObject","str",0x89ae5449,"src.compiler.object.builtin.MapObject.str","src/compiler/object/builtin/MapObject.hx",87,0x08d8229a)
+HX_LOCAL_STACK_FRAME(_hx_pos_6eaf2fd5ac251040_100_getMap,"src.compiler.object.builtin.MapObject","getMap",0x7f80e70e,"src.compiler.object.builtin.MapObject.getMap","src/compiler/object/builtin/MapObject.hx",100,0x08d8229a)
 namespace src{
 namespace compiler{
 namespace object{
 namespace builtin{
 
 void MapObject_obj::__construct( ::src::compiler::Scope scope, ::src::compiler::object::ObjectType type, ::haxe::ds::StringMap members,::Array< ::Dynamic> args){
-            	HX_GC_STACKFRAME(&_hx_pos_6eaf2fd5ac251040_9_new)
-HXLINE(  13)		this->hashMap =  ::haxe::ds::StringMap_obj::__alloc( HX_CTX );
-HXLINE(  12)		this->_map =  ::haxe::ds::StringMap_obj::__alloc( HX_CTX );
-HXLINE(   9)		super::__construct(scope,type,members,args);
+            	HX_GC_STACKFRAME(&_hx_pos_6eaf2fd5ac251040_10_new)
+HXLINE(  14)		this->hashMap =  ::haxe::ds::IntMap_obj::__alloc( HX_CTX );
+HXLINE(  13)		this->objMap =  ::haxe::ds::IntMap_obj::__alloc( HX_CTX );
+HXLINE(  10)		super::__construct(scope,type,members,args);
             	}
 
 Dynamic MapObject_obj::__CreateEmpty() { return new MapObject_obj; }
@@ -74,125 +81,145 @@ bool MapObject_obj::_hx_isInstanceOf(int inClassId) {
 }
 
  ::src::compiler::object::Object MapObject_obj::get( ::src::compiler::object::Object key){
-            	HX_STACKFRAME(&_hx_pos_6eaf2fd5ac251040_16_get)
-HXLINE(  17)		if (this->hasMember(HX_("__get__",16,fe,be,fb))) {
-HXLINE(  17)			return this->callMember(HX_("__get__",16,fe,be,fb),::Array_obj< ::Dynamic>::__new(1)->init(0,key));
+            	HX_STACKFRAME(&_hx_pos_6eaf2fd5ac251040_17_get)
+HXLINE(  18)		if (this->hasMember(HX_("__get__",16,fe,be,fb))) {
+HXLINE(  18)			return this->callMember(HX_("__get__",16,fe,be,fb),::Array_obj< ::Dynamic>::__new(1)->init(0,key));
             		}
-HXLINE(  18)		::Dynamic this1 = this->_map;
-HXDLIN(  18)		return ( ( ::haxe::ds::StringMap)(this1) )->get(key->getHash()).StaticCast<  ::src::compiler::object::Object >();
+HXLINE(  19)		::Dynamic this1 = this->objMap;
+HXDLIN(  19)		return ( ( ::haxe::ds::IntMap)(this1) )->get(key->getHash()).StaticCast<  ::src::compiler::object::Object >();
             	}
 
 
 void MapObject_obj::set( ::src::compiler::object::Object key, ::src::compiler::object::Object obj){
-            	HX_STACKFRAME(&_hx_pos_6eaf2fd5ac251040_22_set)
-HXLINE(  23)		if (this->hasMember(HX_("__set__",22,f4,8d,e4))) {
-HXLINE(  23)			this->callMember(HX_("__set__",22,f4,8d,e4),::Array_obj< ::Dynamic>::__new(2)->init(0,key)->init(1,obj));
-HXDLIN(  23)			return;
+            	HX_STACKFRAME(&_hx_pos_6eaf2fd5ac251040_23_set)
+HXLINE(  24)		if (this->hasMember(HX_("__set__",22,f4,8d,e4))) {
+HXLINE(  24)			this->callMember(HX_("__set__",22,f4,8d,e4),::Array_obj< ::Dynamic>::__new(2)->init(0,key)->init(1,obj));
+HXDLIN(  24)			return;
             		}
-HXLINE(  24)		::String hash = key->getHash();
-HXLINE(  25)		this->_map->set(hash,obj);
-HXLINE(  26)		this->hashMap->set(hash,key);
+HXLINE(  25)		int hash = key->getHash();
+HXLINE(  26)		this->objMap->set(hash,obj);
+HXLINE(  27)		this->hashMap->set(hash,key);
             	}
 
 
 void MapObject_obj::_hx_delete( ::src::compiler::object::Object key){
-            	HX_STACKFRAME(&_hx_pos_6eaf2fd5ac251040_30_delete)
-HXLINE(  31)		if (this->hasMember(HX_("__delete__",2b,27,e2,05))) {
-HXLINE(  31)			this->callMember(HX_("__delete__",2b,27,e2,05),::Array_obj< ::Dynamic>::__new(1)->init(0,key));
-HXDLIN(  31)			return;
+            	HX_STACKFRAME(&_hx_pos_6eaf2fd5ac251040_31_delete)
+HXLINE(  32)		if (this->hasMember(HX_("__delete__",2b,27,e2,05))) {
+HXLINE(  32)			this->callMember(HX_("__delete__",2b,27,e2,05),::Array_obj< ::Dynamic>::__new(1)->init(0,key));
+HXDLIN(  32)			return;
             		}
-HXLINE(  32)		::String hash = key->getHash();
-HXLINE(  33)		this->_map->remove(hash);
-HXLINE(  34)		this->hashMap->remove(hash);
+HXLINE(  33)		int hash = key->getHash();
+HXLINE(  34)		this->objMap->remove(hash);
+HXLINE(  35)		this->hashMap->remove(hash);
             	}
 
 
  ::src::compiler::object::Object MapObject_obj::add( ::src::compiler::object::Object other){
-            	HX_GC_STACKFRAME(&_hx_pos_6eaf2fd5ac251040_39_add)
-HXDLIN(  39)		if (other->isInstance(HX_("MapType",56,cf,55,ff))) {
-HXLINE(  40)			 ::haxe::ds::StringMap result =  ::haxe::ds::StringMap_obj::__alloc( HX_CTX );
-HXLINE(  41)			 ::haxe::ds::StringMap omap = hx::TCast<  ::src::compiler::object::builtin::MapObject >::cast(other)->_map;
-HXLINE(  42)			{
-HXLINE(  42)				 ::Dynamic key = this->_map->keys();
-HXDLIN(  42)				while(( (bool)(key->__Field(HX_("hasNext",6d,a5,46,18),hx::paccDynamic)()) )){
-HXLINE(  42)					::String key1 = ( (::String)(key->__Field(HX_("next",f3,84,02,49),hx::paccDynamic)()) );
-HXLINE(  43)					result->set(key1,this->_map->get(key1).StaticCast<  ::src::compiler::object::Object >());
+            	HX_GC_STACKFRAME(&_hx_pos_6eaf2fd5ac251040_40_add)
+HXDLIN(  40)		if (other->isInstance(HX_("MapType",56,cf,55,ff))) {
+HXLINE(  41)			 ::haxe::ds::IntMap result =  ::haxe::ds::IntMap_obj::__alloc( HX_CTX );
+HXLINE(  42)			 ::haxe::ds::IntMap omap = hx::TCast<  ::src::compiler::object::builtin::MapObject >::cast(other)->objMap;
+HXLINE(  43)			{
+HXLINE(  43)				 ::Dynamic key = this->objMap->keys();
+HXDLIN(  43)				while(( (bool)(key->__Field(HX_("hasNext",6d,a5,46,18),hx::paccDynamic)()) )){
+HXLINE(  43)					int key1 = ( (int)(key->__Field(HX_("next",f3,84,02,49),hx::paccDynamic)()) );
+HXLINE(  44)					result->set(key1,this->objMap->get(key1).StaticCast<  ::src::compiler::object::Object >());
             				}
             			}
-HXLINE(  45)			{
-HXLINE(  45)				 ::Dynamic key2 = omap->keys();
-HXDLIN(  45)				while(( (bool)(key2->__Field(HX_("hasNext",6d,a5,46,18),hx::paccDynamic)()) )){
-HXLINE(  45)					::String key3 = ( (::String)(key2->__Field(HX_("next",f3,84,02,49),hx::paccDynamic)()) );
-HXLINE(  46)					result->set(key3,omap->get(key3).StaticCast<  ::src::compiler::object::Object >());
+HXLINE(  46)			{
+HXLINE(  46)				 ::Dynamic key2 = omap->keys();
+HXDLIN(  46)				while(( (bool)(key2->__Field(HX_("hasNext",6d,a5,46,18),hx::paccDynamic)()) )){
+HXLINE(  46)					int key3 = ( (int)(key2->__Field(HX_("next",f3,84,02,49),hx::paccDynamic)()) );
+HXLINE(  47)					result->set(key3,omap->get(key3).StaticCast<  ::src::compiler::object::Object >());
             				}
             			}
-HXLINE(  48)			 ::src::compiler::object::builtin::MapObject obj = hx::TCast<  ::src::compiler::object::builtin::MapObject >::cast(this->scope->getType(HX_("MapType",56,cf,55,ff),null())->createObject(null()));
-HXLINE(  49)			obj->_map = result;
-HXLINE(  50)			return obj;
+HXLINE(  49)			 ::src::compiler::object::builtin::MapObject obj = hx::TCast<  ::src::compiler::object::builtin::MapObject >::cast(this->scope->getType(HX_("MapType",56,cf,55,ff),null())->createObject(this->scope,null()));
+HXLINE(  50)			obj->objMap = result;
+HXLINE(  51)			return obj;
             		}
             		else {
-HXLINE(  52)			return other->add(hx::ObjectPtr<OBJ_>(this));
+HXLINE(  53)			return other->add(hx::ObjectPtr<OBJ_>(this));
             		}
-HXLINE(  39)		return null();
+HXLINE(  40)		return null();
             	}
 
 
  ::src::compiler::object::builtin::IntObject MapObject_obj::len(){
-            	HX_STACKFRAME(&_hx_pos_6eaf2fd5ac251040_56_len)
-HXLINE(  57)		if (this->hasMember(HX_("__len__",15,57,bb,dc))) {
-HXLINE(  57)			return hx::TCast<  ::src::compiler::object::builtin::IntObject >::cast(this->callMember(HX_("__len__",15,57,bb,dc),::Array_obj< ::Dynamic>::__new(0)));
+            	HX_STACKFRAME(&_hx_pos_6eaf2fd5ac251040_57_len)
+HXLINE(  58)		if (this->hasMember(HX_("__len__",15,57,bb,dc))) {
+HXLINE(  58)			return hx::TCast<  ::src::compiler::object::builtin::IntObject >::cast(this->callMember(HX_("__len__",15,57,bb,dc),::Array_obj< ::Dynamic>::__new(0)));
             		}
-HXLINE(  58)		int count = (int)0;
-HXLINE(  59)		{
-HXLINE(  59)			 ::Dynamic key = this->_map->keys();
-HXDLIN(  59)			while(( (bool)(key->__Field(HX_("hasNext",6d,a5,46,18),hx::paccDynamic)()) )){
-HXLINE(  59)				::String key1 = ( (::String)(key->__Field(HX_("next",f3,84,02,49),hx::paccDynamic)()) );
-HXDLIN(  59)				count = (count + (int)1);
+HXLINE(  59)		int count = (int)0;
+HXLINE(  60)		{
+HXLINE(  60)			 ::Dynamic key = this->objMap->keys();
+HXDLIN(  60)			while(( (bool)(key->__Field(HX_("hasNext",6d,a5,46,18),hx::paccDynamic)()) )){
+HXLINE(  60)				int key1 = ( (int)(key->__Field(HX_("next",f3,84,02,49),hx::paccDynamic)()) );
+HXDLIN(  60)				count = (count + (int)1);
             			}
             		}
-HXLINE(  60)		return this->_int(count,null());
+HXLINE(  61)		return this->_int(count,null());
             	}
 
 
  ::src::compiler::object::Object MapObject_obj::isin( ::src::compiler::object::Object other){
-            	HX_STACKFRAME(&_hx_pos_6eaf2fd5ac251040_64_isin)
-HXLINE(  65)		if (this->hasMember(HX_("__isin__",4f,36,78,20))) {
-HXLINE(  65)			return this->callMember(HX_("__isin__",4f,36,78,20),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
+            	HX_STACKFRAME(&_hx_pos_6eaf2fd5ac251040_65_isin)
+HXLINE(  66)		if (this->hasMember(HX_("__isin__",4f,36,78,20))) {
+HXLINE(  66)			return this->callMember(HX_("__isin__",4f,36,78,20),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
             		}
-HXLINE(  66)		::Dynamic this1 = this->_map;
-HXDLIN(  66)		return this->_bool(( ( ::haxe::ds::StringMap)(this1) )->exists(other->getHash()),null());
+HXLINE(  67)		::Dynamic this1 = this->objMap;
+HXDLIN(  67)		return this->_bool(( ( ::haxe::ds::IntMap)(this1) )->exists(other->getHash()),null());
             	}
 
 
  ::src::compiler::object::Object MapObject_obj::iter(){
-            	HX_STACKFRAME(&_hx_pos_6eaf2fd5ac251040_70_iter)
-HXLINE(  71)		if (this->hasMember(HX_("__iter__",58,f9,3c,b1))) {
-HXLINE(  71)			return this->callMember(HX_("__iter__",58,f9,3c,b1),::Array_obj< ::Dynamic>::__new(0));
+            	HX_STACKFRAME(&_hx_pos_6eaf2fd5ac251040_71_iter)
+HXLINE(  72)		if (this->hasMember(HX_("__iter__",58,f9,3c,b1))) {
+HXLINE(  72)			return this->callMember(HX_("__iter__",58,f9,3c,b1),::Array_obj< ::Dynamic>::__new(0));
             		}
-HXLINE(  72)		::Array< ::Dynamic> keys = ::Array_obj< ::Dynamic>::__new();
-HXLINE(  73)		{
-HXLINE(  73)			 ::Dynamic key = this->hashMap->iterator();
-HXDLIN(  73)			while(( (bool)(key->__Field(HX_("hasNext",6d,a5,46,18),hx::paccDynamic)()) )){
-HXLINE(  73)				 ::src::compiler::object::Object key1 = ( ( ::src::compiler::object::Object)(key->__Field(HX_("next",f3,84,02,49),hx::paccDynamic)()) );
-HXLINE(  74)				keys->push(key1);
+HXLINE(  73)		::Array< ::Dynamic> keys = ::Array_obj< ::Dynamic>::__new();
+HXLINE(  74)		{
+HXLINE(  74)			 ::Dynamic key = this->hashMap->iterator();
+HXDLIN(  74)			while(( (bool)(key->__Field(HX_("hasNext",6d,a5,46,18),hx::paccDynamic)()) )){
+HXLINE(  74)				 ::src::compiler::object::Object key1 = ( ( ::src::compiler::object::Object)(key->__Field(HX_("next",f3,84,02,49),hx::paccDynamic)()) );
+HXLINE(  75)				keys->push(key1);
             			}
             		}
-HXLINE(  76)		return this->_iter(keys,null());
+HXLINE(  77)		return this->_iter(keys,null());
             	}
 
 
  ::src::compiler::object::builtin::MapObject MapObject_obj::map(){
-            	HX_STACKFRAME(&_hx_pos_6eaf2fd5ac251040_80_map)
-HXLINE(  81)		if (this->hasMember(HX_("__map__",9c,95,7e,6d))) {
-HXLINE(  81)			return hx::TCast<  ::src::compiler::object::builtin::MapObject >::cast(this->callMember(HX_("__map__",9c,95,7e,6d),::Array_obj< ::Dynamic>::__new(0)));
+            	HX_STACKFRAME(&_hx_pos_6eaf2fd5ac251040_81_map)
+HXLINE(  82)		if (this->hasMember(HX_("__map__",9c,95,7e,6d))) {
+HXLINE(  82)			return hx::TCast<  ::src::compiler::object::builtin::MapObject >::cast(this->callMember(HX_("__map__",9c,95,7e,6d),::Array_obj< ::Dynamic>::__new(0)));
             		}
-HXLINE(  82)		return hx::ObjectPtr<OBJ_>(this);
+HXLINE(  83)		return hx::ObjectPtr<OBJ_>(this);
             	}
 
 
- ::haxe::ds::StringMap MapObject_obj::getMap(){
-            	HX_STACKFRAME(&_hx_pos_6eaf2fd5ac251040_87_getMap)
-HXDLIN(  87)		return this->_map;
+ ::src::compiler::object::builtin::StringObject MapObject_obj::str(){
+            	HX_STACKFRAME(&_hx_pos_6eaf2fd5ac251040_87_str)
+HXLINE(  88)		if (this->hasMember(HX_("__str__",f1,a2,76,ee))) {
+HXLINE(  88)			return hx::TCast<  ::src::compiler::object::builtin::StringObject >::cast(this->callMember(HX_("__str__",f1,a2,76,ee),::Array_obj< ::Dynamic>::__new(0)));
+            		}
+HXLINE(  89)		::Array< ::String > arr = ::Array_obj< ::String >::__new();
+HXLINE(  90)		{
+HXLINE(  90)			 ::Dynamic hash = this->hashMap->keys();
+HXDLIN(  90)			while(( (bool)(hash->__Field(HX_("hasNext",6d,a5,46,18),hx::paccDynamic)()) )){
+HXLINE(  90)				int hash1 = ( (int)(hash->__Field(HX_("next",f3,84,02,49),hx::paccDynamic)()) );
+HXLINE(  91)				 ::src::compiler::object::Object left = this->hashMap->get(hash1).StaticCast<  ::src::compiler::object::Object >();
+HXLINE(  92)				 ::src::compiler::object::Object right = this->objMap->get(hash1).StaticCast<  ::src::compiler::object::Object >();
+HXLINE(  93)				::String _hx_tmp = (left->rawString() + HX_("=",3d,00,00,00));
+HXDLIN(  93)				arr->push((_hx_tmp + right->rawString()));
+            			}
+            		}
+HXLINE(  95)		return this->_str(((HX_("{",7b,00,00,00) + arr->join(HX_(", ",74,26,00,00))) + HX_("}",7d,00,00,00)),null());
+            	}
+
+
+ ::haxe::ds::IntMap MapObject_obj::getMap(){
+            	HX_STACKFRAME(&_hx_pos_6eaf2fd5ac251040_100_getMap)
+HXDLIN( 100)		return this->objMap;
             	}
 
 
@@ -219,7 +246,7 @@ MapObject_obj::MapObject_obj()
 void MapObject_obj::__Mark(HX_MARK_PARAMS)
 {
 	HX_MARK_BEGIN_CLASS(MapObject);
-	HX_MARK_MEMBER_NAME(_map,"_map");
+	HX_MARK_MEMBER_NAME(objMap,"objMap");
 	HX_MARK_MEMBER_NAME(hashMap,"hashMap");
 	 ::src::compiler::object::Object_obj::__Mark(HX_MARK_ARG);
 	HX_MARK_END_CLASS();
@@ -227,7 +254,7 @@ void MapObject_obj::__Mark(HX_MARK_PARAMS)
 
 void MapObject_obj::__Visit(HX_VISIT_PARAMS)
 {
-	HX_VISIT_MEMBER_NAME(_map,"_map");
+	HX_VISIT_MEMBER_NAME(objMap,"objMap");
 	HX_VISIT_MEMBER_NAME(hashMap,"hashMap");
 	 ::src::compiler::object::Object_obj::__Visit(HX_VISIT_ARG);
 }
@@ -241,13 +268,14 @@ hx::Val MapObject_obj::__Field(const ::String &inName,hx::PropertyAccess inCallP
 		if (HX_FIELD_EQ(inName,"add") ) { return hx::Val( add_dyn() ); }
 		if (HX_FIELD_EQ(inName,"len") ) { return hx::Val( len_dyn() ); }
 		if (HX_FIELD_EQ(inName,"map") ) { return hx::Val( map_dyn() ); }
+		if (HX_FIELD_EQ(inName,"str") ) { return hx::Val( str_dyn() ); }
 		break;
 	case 4:
-		if (HX_FIELD_EQ(inName,"_map") ) { return hx::Val( _map ); }
 		if (HX_FIELD_EQ(inName,"isin") ) { return hx::Val( isin_dyn() ); }
 		if (HX_FIELD_EQ(inName,"iter") ) { return hx::Val( iter_dyn() ); }
 		break;
 	case 6:
+		if (HX_FIELD_EQ(inName,"objMap") ) { return hx::Val( objMap ); }
 		if (HX_FIELD_EQ(inName,"delete") ) { return hx::Val( _hx_delete_dyn() ); }
 		if (HX_FIELD_EQ(inName,"getMap") ) { return hx::Val( getMap_dyn() ); }
 		break;
@@ -260,33 +288,33 @@ hx::Val MapObject_obj::__Field(const ::String &inName,hx::PropertyAccess inCallP
 hx::Val MapObject_obj::__SetField(const ::String &inName,const hx::Val &inValue,hx::PropertyAccess inCallProp)
 {
 	switch(inName.length) {
-	case 4:
-		if (HX_FIELD_EQ(inName,"_map") ) { _map=inValue.Cast<  ::haxe::ds::StringMap >(); return inValue; }
+	case 6:
+		if (HX_FIELD_EQ(inName,"objMap") ) { objMap=inValue.Cast<  ::haxe::ds::IntMap >(); return inValue; }
 		break;
 	case 7:
-		if (HX_FIELD_EQ(inName,"hashMap") ) { hashMap=inValue.Cast<  ::haxe::ds::StringMap >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"hashMap") ) { hashMap=inValue.Cast<  ::haxe::ds::IntMap >(); return inValue; }
 	}
 	return super::__SetField(inName,inValue,inCallProp);
 }
 
 void MapObject_obj::__GetFields(Array< ::String> &outFields)
 {
-	outFields->push(HX_HCSTRING("_map","\x9d","\x4f","\x1e","\x3f"));
+	outFields->push(HX_HCSTRING("objMap","\xe5","\x46","\x2d","\x15"));
 	outFields->push(HX_HCSTRING("hashMap","\x6e","\xe7","\x63","\x29"));
 	super::__GetFields(outFields);
 };
 
 #if HXCPP_SCRIPTABLE
 static hx::StorageInfo MapObject_obj_sMemberStorageInfo[] = {
-	{hx::fsObject /*::haxe::ds::StringMap*/ ,(int)offsetof(MapObject_obj,_map),HX_HCSTRING("_map","\x9d","\x4f","\x1e","\x3f")},
-	{hx::fsObject /*::haxe::ds::StringMap*/ ,(int)offsetof(MapObject_obj,hashMap),HX_HCSTRING("hashMap","\x6e","\xe7","\x63","\x29")},
+	{hx::fsObject /*::haxe::ds::IntMap*/ ,(int)offsetof(MapObject_obj,objMap),HX_HCSTRING("objMap","\xe5","\x46","\x2d","\x15")},
+	{hx::fsObject /*::haxe::ds::IntMap*/ ,(int)offsetof(MapObject_obj,hashMap),HX_HCSTRING("hashMap","\x6e","\xe7","\x63","\x29")},
 	{ hx::fsUnknown, 0, null()}
 };
 static hx::StaticInfo *MapObject_obj_sStaticStorageInfo = 0;
 #endif
 
 static ::String MapObject_obj_sMemberFields[] = {
-	HX_HCSTRING("_map","\x9d","\x4f","\x1e","\x3f"),
+	HX_HCSTRING("objMap","\xe5","\x46","\x2d","\x15"),
 	HX_HCSTRING("hashMap","\x6e","\xe7","\x63","\x29"),
 	HX_HCSTRING("get","\x96","\x80","\x4e","\x00"),
 	HX_HCSTRING("set","\xa2","\x9b","\x57","\x00"),
@@ -296,6 +324,7 @@ static ::String MapObject_obj_sMemberFields[] = {
 	HX_HCSTRING("isin","\x4f","\x06","\xbf","\x45"),
 	HX_HCSTRING("iter","\x18","\xc5","\xbf","\x45"),
 	HX_HCSTRING("map","\x9c","\x0a","\x53","\x00"),
+	HX_HCSTRING("str","\xb1","\xa8","\x57","\x00"),
 	HX_HCSTRING("getMap","\xa6","\x43","\x22","\xa3"),
 	::String(null()) };
 

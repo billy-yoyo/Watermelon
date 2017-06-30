@@ -32,7 +32,7 @@ class ObjectType
         
         this.objectClass = objectClass;
         if (objectClass == null) {
-            for (type in parentTypes) {
+            for (type in this.parentTypes) {
                 if (type.getObjectClass() != null) {
                     this.objectClass = type.getObjectClass();
                     break;
@@ -85,15 +85,17 @@ class ObjectType
         return members.exists(name);
     }
     
-    public function createObject(?args:Array<Object>):Object
+    public function createObject(scope:Scope, ?args:Array<Object>):Object
     {
+        if (scope == null) scope = this.scope;
         var members:Map<String, Object> = new Map<String, Object>();
         for (member in this.members.keys()) members.set(member, this.members.get(member).copy());
         return Type.createInstance(if(objectClass == null) Object else objectClass, [scope, this, members, args]);
     }
     
-    public function createValue(value:Dynamic, ?args:Array<Object>):Object 
+    public function createValue(value:Dynamic, scope:Scope, ?args:Array<Object>):Object 
     {
+        if (scope == null) scope = this.scope;
         var members:Map<String, Object> = new Map<String, Object>();
         for (member in this.members.keys()) members.set(member, this.members.get(member).copy());
         if (objectClass == null) trace('creating default object with $value');

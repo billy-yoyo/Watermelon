@@ -63,6 +63,14 @@ class HXCPP_CLASS_ATTRIBUTES Builtins_obj : public hx::Object
 		 ::src::compiler::object::ObjectType objTypeType;
 		 ::src::compiler::object::ObjectType pairType;
 		 ::src::compiler::object::ObjectType iteratorType;
+		 ::src::compiler::object::ObjectType bytesType;
+		 ::src::compiler::object::ObjectType spliceType;
+		 ::src::compiler::object::ObjectType moduleType;
+		 ::src::compiler::object::ObjectType signalType;
+		 ::src::compiler::object::ObjectType coroType;
+		 ::src::compiler::object::ObjectType coroFuncType;
+		 ::src::compiler::object::ObjectType coroLoopType;
+		 ::src::compiler::object::ObjectType yieldType;
 		::Array< ::Dynamic> types;
 		 ::haxe::ds::StringMap objects;
 		 ::src::compiler::Scope root;

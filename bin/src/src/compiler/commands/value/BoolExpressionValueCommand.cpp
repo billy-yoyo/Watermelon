@@ -30,12 +30,15 @@
 #endif
 
 HX_DEFINE_STACK_FRAME(_hx_pos_888100616a7c3ce3_57_new,"src.compiler.commands.value.BoolExpressionValueCommand","new",0x3a5de56c,"src.compiler.commands.value.BoolExpressionValueCommand.new","src/compiler/commands/value/BoolExpressionValueCommand.hx",57,0x48114762)
-HX_LOCAL_STACK_FRAME(_hx_pos_888100616a7c3ce3_64_walk,"src.compiler.commands.value.BoolExpressionValueCommand","walk",0xddbab27d,"src.compiler.commands.value.BoolExpressionValueCommand.walk","src/compiler/commands/value/BoolExpressionValueCommand.hx",64,0x48114762)
-HX_LOCAL_STACK_FRAME(_hx_pos_888100616a7c3ce3_71_run,"src.compiler.commands.value.BoolExpressionValueCommand","run",0x3a60fc57,"src.compiler.commands.value.BoolExpressionValueCommand.run","src/compiler/commands/value/BoolExpressionValueCommand.hx",71,0x48114762)
-HX_LOCAL_STACK_FRAME(_hx_pos_888100616a7c3ce3_90_getName,"src.compiler.commands.value.BoolExpressionValueCommand","getName",0x7589ad0d,"src.compiler.commands.value.BoolExpressionValueCommand.getName","src/compiler/commands/value/BoolExpressionValueCommand.hx",90,0x48114762)
-HX_LOCAL_STACK_FRAME(_hx_pos_888100616a7c3ce3_94_getBytecode,"src.compiler.commands.value.BoolExpressionValueCommand","getBytecode",0x8283b7f7,"src.compiler.commands.value.BoolExpressionValueCommand.getBytecode","src/compiler/commands/value/BoolExpressionValueCommand.hx",94,0x48114762)
-HX_LOCAL_STACK_FRAME(_hx_pos_888100616a7c3ce3_102_reconstruct,"src.compiler.commands.value.BoolExpressionValueCommand","reconstruct",0x95126710,"src.compiler.commands.value.BoolExpressionValueCommand.reconstruct","src/compiler/commands/value/BoolExpressionValueCommand.hx",102,0x48114762)
-static const ::String _hx_array_data_0953ff7a_9[] = {
+HX_LOCAL_STACK_FRAME(_hx_pos_888100616a7c3ce3_65_copy,"src.compiler.commands.value.BoolExpressionValueCommand","copy",0xd08d1129,"src.compiler.commands.value.BoolExpressionValueCommand.copy","src/compiler/commands/value/BoolExpressionValueCommand.hx",65,0x48114762)
+HX_LOCAL_STACK_FRAME(_hx_pos_888100616a7c3ce3_69_setScope,"src.compiler.commands.value.BoolExpressionValueCommand","setScope",0xf39ffa06,"src.compiler.commands.value.BoolExpressionValueCommand.setScope","src/compiler/commands/value/BoolExpressionValueCommand.hx",69,0x48114762)
+HX_LOCAL_STACK_FRAME(_hx_pos_888100616a7c3ce3_75_walk,"src.compiler.commands.value.BoolExpressionValueCommand","walk",0xddbab27d,"src.compiler.commands.value.BoolExpressionValueCommand.walk","src/compiler/commands/value/BoolExpressionValueCommand.hx",75,0x48114762)
+HX_LOCAL_STACK_FRAME(_hx_pos_888100616a7c3ce3_82_run,"src.compiler.commands.value.BoolExpressionValueCommand","run",0x3a60fc57,"src.compiler.commands.value.BoolExpressionValueCommand.run","src/compiler/commands/value/BoolExpressionValueCommand.hx",82,0x48114762)
+HX_LOCAL_STACK_FRAME(_hx_pos_888100616a7c3ce3_101_getName,"src.compiler.commands.value.BoolExpressionValueCommand","getName",0x7589ad0d,"src.compiler.commands.value.BoolExpressionValueCommand.getName","src/compiler/commands/value/BoolExpressionValueCommand.hx",101,0x48114762)
+HX_LOCAL_STACK_FRAME(_hx_pos_888100616a7c3ce3_106_getFriendlyName,"src.compiler.commands.value.BoolExpressionValueCommand","getFriendlyName",0xe0500918,"src.compiler.commands.value.BoolExpressionValueCommand.getFriendlyName","src/compiler/commands/value/BoolExpressionValueCommand.hx",106,0x48114762)
+HX_LOCAL_STACK_FRAME(_hx_pos_888100616a7c3ce3_110_getBytecode,"src.compiler.commands.value.BoolExpressionValueCommand","getBytecode",0x8283b7f7,"src.compiler.commands.value.BoolExpressionValueCommand.getBytecode","src/compiler/commands/value/BoolExpressionValueCommand.hx",110,0x48114762)
+HX_LOCAL_STACK_FRAME(_hx_pos_888100616a7c3ce3_118_reconstruct,"src.compiler.commands.value.BoolExpressionValueCommand","reconstruct",0x95126710,"src.compiler.commands.value.BoolExpressionValueCommand.reconstruct","src/compiler/commands/value/BoolExpressionValueCommand.hx",118,0x48114762)
+static const ::String _hx_array_data_0953ff7a_13[] = {
 	HX_("&&",40,21,00,00),HX_("||",80,6c,00,00),HX_("!",21,00,00,00),
 };
 HX_LOCAL_STACK_FRAME(_hx_pos_888100616a7c3ce3_17_fromTokens,"src.compiler.commands.value.BoolExpressionValueCommand","fromTokens",0x221b00d8,"src.compiler.commands.value.BoolExpressionValueCommand.fromTokens","src/compiler/commands/value/BoolExpressionValueCommand.hx",17,0x48114762)
@@ -75,83 +78,111 @@ bool BoolExpressionValueCommand_obj::_hx_isInstanceOf(int inClassId) {
 	}
 }
 
-::Array< ::Dynamic> BoolExpressionValueCommand_obj::walk(){
-            	HX_STACKFRAME(&_hx_pos_888100616a7c3ce3_64_walk)
-HXLINE(  65)		::Array< ::Dynamic> cmds = ::Array_obj< ::Dynamic>::__new();
-HXLINE(  66)		{
-HXLINE(  66)			int _g = (int)0;
-HXDLIN(  66)			::Array< ::Dynamic> _g1 = this->values;
-HXDLIN(  66)			while((_g < _g1->length)){
-HXLINE(  66)				 ::src::compiler::commands::value::ValueCommand x = _g1->__get(_g).StaticCast<  ::src::compiler::commands::value::ValueCommand >();
-HXDLIN(  66)				_g = (_g + (int)1);
-HXDLIN(  66)				cmds->push(x);
+ ::src::compiler::commands::Command BoolExpressionValueCommand_obj::copy( ::src::compiler::Scope scope){
+            	HX_GC_STACKFRAME(&_hx_pos_888100616a7c3ce3_65_copy)
+HXDLIN(  65)		int _hx_tmp = this->_hx_operator;
+HXDLIN(  65)		return  ::src::compiler::commands::value::BoolExpressionValueCommand_obj::__alloc( HX_CTX ,scope,_hx_tmp,::src::compiler::commands::value::ValueCommand_obj::copyArray(scope,this->values));
+            	}
+
+
+void BoolExpressionValueCommand_obj::setScope( ::src::compiler::Scope scope){
+            	HX_STACKFRAME(&_hx_pos_888100616a7c3ce3_69_setScope)
+HXLINE(  70)		this->super::setScope(scope);
+HXLINE(  71)		{
+HXLINE(  71)			int _g = (int)0;
+HXDLIN(  71)			::Array< ::Dynamic> _g1 = this->values;
+HXDLIN(  71)			while((_g < _g1->length)){
+HXLINE(  71)				 ::src::compiler::commands::value::ValueCommand value = _g1->__get(_g).StaticCast<  ::src::compiler::commands::value::ValueCommand >();
+HXDLIN(  71)				_g = (_g + (int)1);
+HXDLIN(  71)				value->setScope(scope);
             			}
             		}
-HXLINE(  67)		return cmds;
+            	}
+
+
+::Array< ::Dynamic> BoolExpressionValueCommand_obj::walk(){
+            	HX_STACKFRAME(&_hx_pos_888100616a7c3ce3_75_walk)
+HXLINE(  76)		::Array< ::Dynamic> cmds = ::Array_obj< ::Dynamic>::__new();
+HXLINE(  77)		{
+HXLINE(  77)			int _g = (int)0;
+HXDLIN(  77)			::Array< ::Dynamic> _g1 = this->values;
+HXDLIN(  77)			while((_g < _g1->length)){
+HXLINE(  77)				 ::src::compiler::commands::value::ValueCommand x = _g1->__get(_g).StaticCast<  ::src::compiler::commands::value::ValueCommand >();
+HXDLIN(  77)				_g = (_g + (int)1);
+HXDLIN(  77)				cmds->push(x);
+            			}
+            		}
+HXLINE(  78)		return cmds;
             	}
 
 
  ::src::compiler::object::Object BoolExpressionValueCommand_obj::run(){
-            	HX_STACKFRAME(&_hx_pos_888100616a7c3ce3_71_run)
-HXLINE(  72)		if ((this->_hx_operator == (int)0)) {
-HXLINE(  73)			{
-HXLINE(  73)				int _g = (int)0;
-HXDLIN(  73)				::Array< ::Dynamic> _g1 = this->values;
-HXDLIN(  73)				while((_g < _g1->length)){
-HXLINE(  73)					 ::src::compiler::commands::value::ValueCommand value = _g1->__get(_g).StaticCast<  ::src::compiler::commands::value::ValueCommand >();
-HXDLIN(  73)					_g = (_g + (int)1);
-HXLINE(  74)					if (!(value->run()->rawBool())) {
-HXLINE(  74)						return this->scope->getType(HX_("BoolType",24,bc,95,8f),null())->createValue(false,null());
+            	HX_STACKFRAME(&_hx_pos_888100616a7c3ce3_82_run)
+HXLINE(  83)		if ((this->_hx_operator == (int)0)) {
+HXLINE(  84)			{
+HXLINE(  84)				int _g = (int)0;
+HXDLIN(  84)				::Array< ::Dynamic> _g1 = this->values;
+HXDLIN(  84)				while((_g < _g1->length)){
+HXLINE(  84)					 ::src::compiler::commands::value::ValueCommand value = _g1->__get(_g).StaticCast<  ::src::compiler::commands::value::ValueCommand >();
+HXDLIN(  84)					_g = (_g + (int)1);
+HXLINE(  85)					if (!(value->run()->rawBool())) {
+HXLINE(  85)						return this->scope->getType(HX_("BoolType",24,bc,95,8f),null())->createValue(false,this->scope,null());
             					}
             				}
             			}
-HXLINE(  76)			return this->scope->getType(HX_("BoolType",24,bc,95,8f),null())->createValue(true,null());
+HXLINE(  87)			return this->scope->getType(HX_("BoolType",24,bc,95,8f),null())->createValue(true,this->scope,null());
             		}
             		else {
-HXLINE(  77)			if ((this->_hx_operator == (int)1)) {
-HXLINE(  78)				{
-HXLINE(  78)					int _g2 = (int)0;
-HXDLIN(  78)					::Array< ::Dynamic> _g11 = this->values;
-HXDLIN(  78)					while((_g2 < _g11->length)){
-HXLINE(  78)						 ::src::compiler::commands::value::ValueCommand value1 = _g11->__get(_g2).StaticCast<  ::src::compiler::commands::value::ValueCommand >();
-HXDLIN(  78)						_g2 = (_g2 + (int)1);
-HXLINE(  79)						if (value1->run()->rawBool()) {
-HXLINE(  79)							return this->scope->getType(HX_("BoolType",24,bc,95,8f),null())->createValue(true,null());
+HXLINE(  88)			if ((this->_hx_operator == (int)1)) {
+HXLINE(  89)				{
+HXLINE(  89)					int _g2 = (int)0;
+HXDLIN(  89)					::Array< ::Dynamic> _g11 = this->values;
+HXDLIN(  89)					while((_g2 < _g11->length)){
+HXLINE(  89)						 ::src::compiler::commands::value::ValueCommand value1 = _g11->__get(_g2).StaticCast<  ::src::compiler::commands::value::ValueCommand >();
+HXDLIN(  89)						_g2 = (_g2 + (int)1);
+HXLINE(  90)						if (value1->run()->rawBool()) {
+HXLINE(  90)							return this->scope->getType(HX_("BoolType",24,bc,95,8f),null())->createValue(true,this->scope,null());
             						}
             					}
             				}
-HXLINE(  81)				return this->scope->getType(HX_("BoolType",24,bc,95,8f),null())->createValue(false,null());
+HXLINE(  92)				return this->scope->getType(HX_("BoolType",24,bc,95,8f),null())->createValue(false,this->scope,null());
             			}
             			else {
-HXLINE(  82)				if ((this->_hx_operator == (int)2)) {
-HXLINE(  83)					return this->values->__get((int)0).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run()->_hx_not();
+HXLINE(  93)				if ((this->_hx_operator == (int)2)) {
+HXLINE(  94)					return this->values->__get((int)0).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run()->_hx_not();
             				}
             			}
             		}
-HXLINE(  85)		return null();
+HXLINE(  96)		return null();
             	}
 
 
 ::String BoolExpressionValueCommand_obj::getName(){
-            	HX_STACKFRAME(&_hx_pos_888100616a7c3ce3_90_getName)
-HXDLIN(  90)		return HX_("BoolExpressionValueCommand",7c,27,97,d7);
+            	HX_STACKFRAME(&_hx_pos_888100616a7c3ce3_101_getName)
+HXDLIN( 101)		return HX_("BoolExpressionValueCommand",7c,27,97,d7);
+            	}
+
+
+::String BoolExpressionValueCommand_obj::getFriendlyName(){
+            	HX_STACKFRAME(&_hx_pos_888100616a7c3ce3_106_getFriendlyName)
+HXDLIN( 106)		return HX_("boolean expression",10,c0,01,d1);
             	}
 
 
  ::src::compiler::bytecode::Bytecode BoolExpressionValueCommand_obj::getBytecode(){
-            	HX_STACKFRAME(&_hx_pos_888100616a7c3ce3_94_getBytecode)
-HXLINE(  95)		 ::src::compiler::bytecode::Bytecode op = ::src::compiler::bytecode::Bytecode_obj::fromInt(this->_hx_operator,null());
-HXLINE(  96)		::cpp::VirtualArray arr = this->values;
-HXLINE(  97)		arr->insert((int)0,op);
-HXLINE(  98)		return ::src::compiler::bytecode::Bytecode_obj::fromArray(arr,this->getCodeID());
+            	HX_STACKFRAME(&_hx_pos_888100616a7c3ce3_110_getBytecode)
+HXLINE( 111)		 ::src::compiler::bytecode::Bytecode op = ::src::compiler::bytecode::Bytecode_obj::fromInt(this->_hx_operator,null());
+HXLINE( 112)		::cpp::VirtualArray arr = this->values;
+HXLINE( 113)		arr->insert((int)0,op);
+HXLINE( 114)		return ::src::compiler::bytecode::Bytecode_obj::fromArray(arr,this->getCodeID());
             	}
 
 
 ::Array< ::Dynamic> BoolExpressionValueCommand_obj::reconstruct(){
-            	HX_GC_STACKFRAME(&_hx_pos_888100616a7c3ce3_102_reconstruct)
-HXLINE( 103)		::String op = ::Array_obj< ::String >::fromData( _hx_array_data_0953ff7a_9,3)->__get(this->_hx_operator);
-HXLINE( 104)		 ::src::ast::script::BooleanOperatorToken _hx_tmp =  ::src::ast::script::BooleanOperatorToken_obj::__alloc( HX_CTX ,op);
-HXDLIN( 104)		return _hx_tmp->join(::src::compiler::commands::Command_obj::reconstructCommands(this->values),null());
+            	HX_GC_STACKFRAME(&_hx_pos_888100616a7c3ce3_118_reconstruct)
+HXLINE( 119)		::String op = ::Array_obj< ::String >::fromData( _hx_array_data_0953ff7a_13,3)->__get(this->_hx_operator);
+HXLINE( 120)		 ::src::ast::script::BooleanOperatorToken _hx_tmp =  ::src::ast::script::BooleanOperatorToken_obj::__alloc( HX_CTX ,op);
+HXDLIN( 120)		return _hx_tmp->join(::src::compiler::commands::Command_obj::reconstructCommands(this->values),null());
             	}
 
 
@@ -271,6 +302,7 @@ hx::Val BoolExpressionValueCommand_obj::__Field(const ::String &inName,hx::Prope
 		if (HX_FIELD_EQ(inName,"run") ) { return hx::Val( run_dyn() ); }
 		break;
 	case 4:
+		if (HX_FIELD_EQ(inName,"copy") ) { return hx::Val( copy_dyn() ); }
 		if (HX_FIELD_EQ(inName,"walk") ) { return hx::Val( walk_dyn() ); }
 		break;
 	case 6:
@@ -281,10 +313,14 @@ hx::Val BoolExpressionValueCommand_obj::__Field(const ::String &inName,hx::Prope
 		break;
 	case 8:
 		if (HX_FIELD_EQ(inName,"operator") ) { return hx::Val( _hx_operator ); }
+		if (HX_FIELD_EQ(inName,"setScope") ) { return hx::Val( setScope_dyn() ); }
 		break;
 	case 11:
 		if (HX_FIELD_EQ(inName,"getBytecode") ) { return hx::Val( getBytecode_dyn() ); }
 		if (HX_FIELD_EQ(inName,"reconstruct") ) { return hx::Val( reconstruct_dyn() ); }
+		break;
+	case 15:
+		if (HX_FIELD_EQ(inName,"getFriendlyName") ) { return hx::Val( getFriendlyName_dyn() ); }
 	}
 	return super::__Field(inName,inCallProp);
 }
@@ -332,9 +368,12 @@ static hx::StaticInfo *BoolExpressionValueCommand_obj_sStaticStorageInfo = 0;
 static ::String BoolExpressionValueCommand_obj_sMemberFields[] = {
 	HX_HCSTRING("operator","\xa4","\x1b","\x73","\x44"),
 	HX_HCSTRING("values","\xe2","\x03","\xb7","\x4f"),
+	HX_HCSTRING("copy","\xb5","\xbb","\xc4","\x41"),
+	HX_HCSTRING("setScope","\x92","\xda","\x0d","\x87"),
 	HX_HCSTRING("walk","\x09","\x5d","\xf2","\x4e"),
 	HX_HCSTRING("run","\x4b","\xe7","\x56","\x00"),
 	HX_HCSTRING("getName","\x01","\x22","\x82","\x1b"),
+	HX_HCSTRING("getFriendlyName","\x0c","\x92","\xf4","\xaf"),
 	HX_HCSTRING("getBytecode","\xeb","\xb6","\x8b","\x7d"),
 	HX_HCSTRING("reconstruct","\x04","\x66","\x1a","\x90"),
 	::String(null()) };

@@ -63,7 +63,7 @@ class HXCPP_CLASS_ATTRIBUTES NoneObject_obj : public  ::src::compiler::object::O
 
 		 ::src::compiler::object::builtin::FloatObject _hx_float();
 
-		::String getHash();
+		int getHash();
 
 };
 

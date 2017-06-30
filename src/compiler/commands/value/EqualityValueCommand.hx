@@ -32,7 +32,14 @@ class EqualityValueCommand extends ValueCommand
     
     public static function fromBytecode(scope:Scope, arr:Array<Bytecode>):EqualityValueCommand
     {
-        return new EqualityValueCommand(scope, arr.shift().convert(scope), arr.shift().convert(scope));
+        var values:Array<ValueCommand> = new Array<ValueCommand>();
+        var operators:Array<Int> = new Array<Int>();
+        values.push(arr.shift().convert(scope));
+        while (arr.length > 0) {
+            operators.push(arr.shift().convert(scope));
+            values.push(arr.shift().convert(scope));
+        }
+        return new EqualityValueCommand(scope, values, operators);
     }
 
     private var values:Array<ValueCommand>;
@@ -64,16 +71,27 @@ class EqualityValueCommand extends ValueCommand
                 });
             } else if (operator == 4) {
                 checkers.push(function(left:Object, right:Object):Bool {
-                    return left.ls(right).rawBool();
+                    return left.gr(right).rawBool();
                 });
             } else if (operator == 5) {
                 checkers.push(function(left:Object, right:Object):Bool {
-                    return left.gr(right).rawBool();
+                    return left.ls(right).rawBool();
                 });
             } else {
                 throw 'Invalid operator $operator';
             }
         }
+    }
+    
+    override public function copy(scope:Scope):Command 
+    {
+        return new EqualityValueCommand(scope, ValueCommand.copyArray(scope, values), _operators.copy());
+    }
+    
+    override public function setScope(scope:Scope) 
+    {
+        super.setScope(scope);
+        for (value in values) value.setScope(scope);
     }
     
     override public function walk():Array<Command> 
@@ -94,12 +112,17 @@ class EqualityValueCommand extends ValueCommand
                 break;
             }
         }
-        return scope.getType("BoolType").createValue(result);
+        return scope.getType("BoolType").createValue(result, scope);
     }
     
     override public function getName():String 
     {
         return "EqualityValueCommand";
+    }
+    
+    override public function getFriendlyName():String 
+    {
+        return "equality expression";
     }
     
     override public function getBytecode():Bytecode 

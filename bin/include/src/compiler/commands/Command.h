@@ -59,7 +59,13 @@ class HXCPP_CLASS_ATTRIBUTES Command_obj : public hx::Object
 		static bool contains(::Array< ::Dynamic> tokens,::String type);
 		static ::Dynamic contains_dyn();
 
+		static ::Array< ::Dynamic> copyArray( ::src::compiler::Scope scope,::Array< ::Dynamic> arr);
+		static ::Dynamic copyArray_dyn();
+
 		 ::src::compiler::Scope scope;
+		virtual  ::src::compiler::commands::Command copy( ::src::compiler::Scope scope);
+		::Dynamic copy_dyn();
+
 		virtual  ::src::compiler::object::Object run();
 		::Dynamic run_dyn();
 
@@ -69,6 +75,9 @@ class HXCPP_CLASS_ATTRIBUTES Command_obj : public hx::Object
 		virtual ::String getName();
 		::Dynamic getName_dyn();
 
+		virtual ::String getFriendlyName();
+		::Dynamic getFriendlyName_dyn();
+
 		virtual  ::src::compiler::bytecode::Bytecode getBytecode();
 		::Dynamic getBytecode_dyn();
 
@@ -77,6 +86,9 @@ class HXCPP_CLASS_ATTRIBUTES Command_obj : public hx::Object
 
 		virtual ::Array< ::Dynamic> walk();
 		::Dynamic walk_dyn();
+
+		virtual void setScope( ::src::compiler::Scope scope);
+		::Dynamic setScope_dyn();
 
 		virtual ::String toString();
 		::Dynamic toString_dyn();

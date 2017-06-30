@@ -63,9 +63,15 @@ class HXCPP_CLASS_ATTRIBUTES ObjectIndexPair_obj : public  ::src::compiler::comm
 
 		 ::src::compiler::commands::value::ValueCommand variable;
 		 ::src::compiler::commands::value::ValueCommand index;
+		 ::src::compiler::commands::Command copy( ::src::compiler::Scope scope);
+
+		void setScope( ::src::compiler::Scope scope);
+
 		::Array< ::Dynamic> walk();
 
 		::String getName();
+
+		::String getFriendlyName();
 
 		 ::src::compiler::bytecode::Bytecode getBytecode();
 

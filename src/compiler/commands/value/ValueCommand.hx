@@ -1,6 +1,11 @@
 package src.compiler.commands.value;
+import haxe.io.Bytes;
+import haxe.io.BytesBuffer;
 import src.ast.Token;
 import src.ast.base.KwdToken;
+import src.ast.base.StringToken;
+import src.ast.maths.HexToken;
+import src.ast.maths.IntegerToken;
 import src.compiler.Scope;
 import src.compiler.object.Object;
 import src.compiler.commands.value.VariableValueCommand;
@@ -12,6 +17,10 @@ import src.compiler.signals.SyntaxErrorSignal;
  */
 class ValueCommand extends Command
 {
+    public static function processStringEscapes(content:String):String
+    {
+        return content; // TODO
+    }
     
     public static function splitTokens(scope:Scope, tokens:Array<Token>, splitToken:String, ?singular:Bool, ?content:String):Array<ValueCommand>
     {
@@ -47,6 +56,10 @@ class ValueCommand extends Command
                 return ObjectArrayAccessValueCommand.fromTokens(scope, tokens);
             }
             
+            if (tokens.length > 1 && tokens[0].getName() == "MathsOperatorToken" && tokens[0].getContent() == "-") {
+                return NegationValueCommand.fromTokens(scope, tokens);
+            }
+            
             var isFunc:Bool = false;
             var isIn:Bool = false;
             var isTuple:Bool = false;
@@ -55,6 +68,7 @@ class ValueCommand extends Command
             var isVarAccess:Bool = false;
             var isMathsExpression:Bool = false;
             var isBinaryExpression:Bool = false;
+            var isSplice:Bool = false;
             
             for (token in tokens) {
                 if (token.getName() == "KwdToken" && token.getContent() == "in") isIn = true;
@@ -65,10 +79,13 @@ class ValueCommand extends Command
                 if (token.getName() == "AccessToken") isVarAccess = true;
                 if (token.getName() == "MathsOperatorToken") isMathsExpression = true;
                 if (token.getName() == "BinaryOperatorToken") isBinaryExpression = true;
+                if (token.getName() == "SpliceToken") isSplice = true;
             }
             
             if (isTuple) { // tuple of values
                 return TupleValueCommand.fromTokens(scope, tokens);
+            } else if (isSplice) {
+                return SpliceValueCommand.fromTokens(scope, tokens);
             } else if(isEquality) { // equality expression
                 return EqualityValueCommand.fromTokens(scope, tokens);
             } else if (isBool) { // boolean expression
@@ -112,18 +129,52 @@ class ValueCommand extends Command
                 throw 'Keyword token being used as a value, $content';
             }
         } else if (name == "IntegerToken" || name == "HexToken") {
-            return new ObjectValueCommand(scope, Std.parseInt(token.getContent()), "IntType");
+            var value:Int = Std.parseInt(token.getContent());
+            if ((name == "IntegerToken" && cast(token, IntegerToken).isBytes) || (name == "BytesToken" && cast(token, HexToken).isBytes)) {
+                var value:Int = Std.parseInt(token.getContent());
+                var buffer:BytesBuffer = new BytesBuffer();
+                if (value < 0xFF) buffer.addByte(value);
+                else if (value < 1 >> 32) buffer.addInt32(value);
+                else buffer.addInt64(value);
+                return new ObjectValueCommand(scope, buffer.getBytes(), "BytesType");
+            } else {
+                return new ObjectValueCommand(scope, Std.parseInt(token.getContent()), "IntType");
+            }
         } else if (name == "FloatToken") {
             return new ObjectValueCommand(scope, Std.parseFloat(token.getContent()), "FloatType");
         } else if (name == "StringToken") {
-            return new ObjectValueCommand(scope, token.getContent(), "StringType");
+            var flag:String = cast(token, StringToken).flag;
+            if (flag == "") {
+                return new ObjectValueCommand(scope, processStringEscapes(token.getContent()), "StringType");
+            } else if (flag == "b") { // bytes
+                return new ObjectValueCommand(scope, Bytes.ofString(token.getContent()), "BytesType");
+            } else if (flag == "r") { // regex
+                // TODO: regex
+                throw 'Regex not yet supported';
+            } else if (flag == "f") { // format
+                return new StringFormatValueCommand(scope, token.getContent());
+            } else {
+                throw 'Invalid string flag $flag';
+            }
         } else {
             throw 'Invalid value token $name';
         }
     }
     
+    public static function copyArray(scope:Scope, arr:Array<ValueCommand>):Array<ValueCommand>
+    {
+        var newArr:Array<ValueCommand> = new Array<ValueCommand>();
+        for (x in arr) newArr.push(cast(x.copy(scope), ValueCommand));
+        return newArr;
+    }
+    
     override public function getName():String 
     {
         return "ValueCommand";
+    }
+    
+    override public function getFriendlyName():String 
+    {
+        return "value";
     }
 }

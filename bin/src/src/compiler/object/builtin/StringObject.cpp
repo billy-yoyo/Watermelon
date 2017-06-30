@@ -14,6 +14,9 @@
 #ifndef INCLUDED_haxe_ds_StringMap
 #include <haxe/ds/StringMap.h>
 #endif
+#ifndef INCLUDED_haxe_io_Bytes
+#include <haxe/io/Bytes.h>
+#endif
 #ifndef INCLUDED_src_ast_GlobalProcessor
 #include <src/ast/GlobalProcessor.h>
 #endif
@@ -50,6 +53,9 @@
 #ifndef INCLUDED_src_compiler_object_builtin_BoolObject
 #include <src/compiler/object/builtin/BoolObject.h>
 #endif
+#ifndef INCLUDED_src_compiler_object_builtin_BytesObject
+#include <src/compiler/object/builtin/BytesObject.h>
+#endif
 #ifndef INCLUDED_src_compiler_object_builtin_FloatObject
 #include <src/compiler/object/builtin/FloatObject.h>
 #endif
@@ -71,33 +77,40 @@
 #ifndef INCLUDED_src_compiler_object_builtin_ValuedObject
 #include <src/compiler/object/builtin/ValuedObject.h>
 #endif
+#ifndef INCLUDED_src_compiler_signals_ExitSignal
+#include <src/compiler/signals/ExitSignal.h>
+#endif
+#ifndef INCLUDED_src_compiler_signals_InvalidArgumentSignal
+#include <src/compiler/signals/InvalidArgumentSignal.h>
+#endif
 
-HX_DEFINE_STACK_FRAME(_hx_pos_da3b51da93407a2f_17_new,"src.compiler.object.builtin.StringObject","new",0x9bc9b937,"src.compiler.object.builtin.StringObject.new","src/compiler/object/builtin/StringObject.hx",17,0x00cce337)
-HX_LOCAL_STACK_FRAME(_hx_pos_da3b51da93407a2f_23_setup,"src.compiler.object.builtin.StringObject","setup",0x4d92bb14,"src.compiler.object.builtin.StringObject.setup","src/compiler/object/builtin/StringObject.hx",23,0x00cce337)
-HX_LOCAL_STACK_FRAME(_hx_pos_da3b51da93407a2f_28_getValue,"src.compiler.object.builtin.StringObject","getValue",0x106b3ac4,"src.compiler.object.builtin.StringObject.getValue","src/compiler/object/builtin/StringObject.hx",28,0x00cce337)
-HX_LOCAL_STACK_FRAME(_hx_pos_da3b51da93407a2f_32_get,"src.compiler.object.builtin.StringObject","get",0x9bc4696d,"src.compiler.object.builtin.StringObject.get","src/compiler/object/builtin/StringObject.hx",32,0x00cce337)
-HX_LOCAL_STACK_FRAME(_hx_pos_da3b51da93407a2f_38_bool,"src.compiler.object.builtin.StringObject","bool",0xacd15773,"src.compiler.object.builtin.StringObject.bool","src/compiler/object/builtin/StringObject.hx",38,0x00cce337)
-HX_LOCAL_STACK_FRAME(_hx_pos_da3b51da93407a2f_46_float,"src.compiler.object.builtin.StringObject","float",0xd5f9d233,"src.compiler.object.builtin.StringObject.float","src/compiler/object/builtin/StringObject.hx",46,0x00cce337)
-HX_LOCAL_STACK_FRAME(_hx_pos_da3b51da93407a2f_52_int,"src.compiler.object.builtin.StringObject","int",0x9bc5f5c6,"src.compiler.object.builtin.StringObject.int","src/compiler/object/builtin/StringObject.hx",52,0x00cce337)
-HX_LOCAL_STACK_FRAME(_hx_pos_da3b51da93407a2f_58_list,"src.compiler.object.builtin.StringObject","list",0xb368efa7,"src.compiler.object.builtin.StringObject.list","src/compiler/object/builtin/StringObject.hx",58,0x00cce337)
-HX_LOCAL_STACK_FRAME(_hx_pos_da3b51da93407a2f_66_tuple,"src.compiler.object.builtin.StringObject","tuple",0xeb89a89f,"src.compiler.object.builtin.StringObject.tuple","src/compiler/object/builtin/StringObject.hx",66,0x00cce337)
-HX_LOCAL_STACK_FRAME(_hx_pos_da3b51da93407a2f_74_map,"src.compiler.object.builtin.StringObject","map",0x9bc8f373,"src.compiler.object.builtin.StringObject.map","src/compiler/object/builtin/StringObject.hx",74,0x00cce337)
-HX_LOCAL_STACK_FRAME(_hx_pos_da3b51da93407a2f_82_len,"src.compiler.object.builtin.StringObject","len",0x9bc834ac,"src.compiler.object.builtin.StringObject.len","src/compiler/object/builtin/StringObject.hx",82,0x00cce337)
-HX_LOCAL_STACK_FRAME(_hx_pos_da3b51da93407a2f_88_eq,"src.compiler.object.builtin.StringObject","eq",0xd1a19775,"src.compiler.object.builtin.StringObject.eq","src/compiler/object/builtin/StringObject.hx",88,0x00cce337)
-HX_LOCAL_STACK_FRAME(_hx_pos_da3b51da93407a2f_94_neq,"src.compiler.object.builtin.StringObject","neq",0x9bc9b931,"src.compiler.object.builtin.StringObject.neq","src/compiler/object/builtin/StringObject.hx",94,0x00cce337)
-HX_LOCAL_STACK_FRAME(_hx_pos_da3b51da93407a2f_100_add,"src.compiler.object.builtin.StringObject","add",0x9bbfdaf8,"src.compiler.object.builtin.StringObject.add","src/compiler/object/builtin/StringObject.hx",100,0x00cce337)
-HX_LOCAL_STACK_FRAME(_hx_pos_da3b51da93407a2f_107_mult,"src.compiler.object.builtin.StringObject","mult",0xb41b3b39,"src.compiler.object.builtin.StringObject.mult","src/compiler/object/builtin/StringObject.hx",107,0x00cce337)
-HX_LOCAL_STACK_FRAME(_hx_pos_da3b51da93407a2f_119_div,"src.compiler.object.builtin.StringObject","div",0x9bc22628,"src.compiler.object.builtin.StringObject.div","src/compiler/object/builtin/StringObject.hx",119,0x00cce337)
-HX_LOCAL_STACK_FRAME(_hx_pos_da3b51da93407a2f_133_str,"src.compiler.object.builtin.StringObject","str",0x9bcd9188,"src.compiler.object.builtin.StringObject.str","src/compiler/object/builtin/StringObject.hx",133,0x00cce337)
-HX_LOCAL_STACK_FRAME(_hx_pos_da3b51da93407a2f_140_getHash,"src.compiler.object.builtin.StringObject","getHash",0xd33b7fdb,"src.compiler.object.builtin.StringObject.getHash","src/compiler/object/builtin/StringObject.hx",140,0x00cce337)
+HX_DEFINE_STACK_FRAME(_hx_pos_da3b51da93407a2f_20_new,"src.compiler.object.builtin.StringObject","new",0x9bc9b937,"src.compiler.object.builtin.StringObject.new","src/compiler/object/builtin/StringObject.hx",20,0x00cce337)
+HX_LOCAL_STACK_FRAME(_hx_pos_da3b51da93407a2f_26_setup,"src.compiler.object.builtin.StringObject","setup",0x4d92bb14,"src.compiler.object.builtin.StringObject.setup","src/compiler/object/builtin/StringObject.hx",26,0x00cce337)
+HX_LOCAL_STACK_FRAME(_hx_pos_da3b51da93407a2f_31_getValue,"src.compiler.object.builtin.StringObject","getValue",0x106b3ac4,"src.compiler.object.builtin.StringObject.getValue","src/compiler/object/builtin/StringObject.hx",31,0x00cce337)
+HX_LOCAL_STACK_FRAME(_hx_pos_da3b51da93407a2f_35_get,"src.compiler.object.builtin.StringObject","get",0x9bc4696d,"src.compiler.object.builtin.StringObject.get","src/compiler/object/builtin/StringObject.hx",35,0x00cce337)
+HX_LOCAL_STACK_FRAME(_hx_pos_da3b51da93407a2f_41_bool,"src.compiler.object.builtin.StringObject","bool",0xacd15773,"src.compiler.object.builtin.StringObject.bool","src/compiler/object/builtin/StringObject.hx",41,0x00cce337)
+HX_LOCAL_STACK_FRAME(_hx_pos_da3b51da93407a2f_49_float,"src.compiler.object.builtin.StringObject","float",0xd5f9d233,"src.compiler.object.builtin.StringObject.float","src/compiler/object/builtin/StringObject.hx",49,0x00cce337)
+HX_LOCAL_STACK_FRAME(_hx_pos_da3b51da93407a2f_57_int,"src.compiler.object.builtin.StringObject","int",0x9bc5f5c6,"src.compiler.object.builtin.StringObject.int","src/compiler/object/builtin/StringObject.hx",57,0x00cce337)
+HX_LOCAL_STACK_FRAME(_hx_pos_da3b51da93407a2f_65_list,"src.compiler.object.builtin.StringObject","list",0xb368efa7,"src.compiler.object.builtin.StringObject.list","src/compiler/object/builtin/StringObject.hx",65,0x00cce337)
+HX_LOCAL_STACK_FRAME(_hx_pos_da3b51da93407a2f_73_tuple,"src.compiler.object.builtin.StringObject","tuple",0xeb89a89f,"src.compiler.object.builtin.StringObject.tuple","src/compiler/object/builtin/StringObject.hx",73,0x00cce337)
+HX_LOCAL_STACK_FRAME(_hx_pos_da3b51da93407a2f_81_map,"src.compiler.object.builtin.StringObject","map",0x9bc8f373,"src.compiler.object.builtin.StringObject.map","src/compiler/object/builtin/StringObject.hx",81,0x00cce337)
+HX_LOCAL_STACK_FRAME(_hx_pos_da3b51da93407a2f_89_len,"src.compiler.object.builtin.StringObject","len",0x9bc834ac,"src.compiler.object.builtin.StringObject.len","src/compiler/object/builtin/StringObject.hx",89,0x00cce337)
+HX_LOCAL_STACK_FRAME(_hx_pos_da3b51da93407a2f_95_eq,"src.compiler.object.builtin.StringObject","eq",0xd1a19775,"src.compiler.object.builtin.StringObject.eq","src/compiler/object/builtin/StringObject.hx",95,0x00cce337)
+HX_LOCAL_STACK_FRAME(_hx_pos_da3b51da93407a2f_101_neq,"src.compiler.object.builtin.StringObject","neq",0x9bc9b931,"src.compiler.object.builtin.StringObject.neq","src/compiler/object/builtin/StringObject.hx",101,0x00cce337)
+HX_LOCAL_STACK_FRAME(_hx_pos_da3b51da93407a2f_107_add,"src.compiler.object.builtin.StringObject","add",0x9bbfdaf8,"src.compiler.object.builtin.StringObject.add","src/compiler/object/builtin/StringObject.hx",107,0x00cce337)
+HX_LOCAL_STACK_FRAME(_hx_pos_da3b51da93407a2f_114_mult,"src.compiler.object.builtin.StringObject","mult",0xb41b3b39,"src.compiler.object.builtin.StringObject.mult","src/compiler/object/builtin/StringObject.hx",114,0x00cce337)
+HX_LOCAL_STACK_FRAME(_hx_pos_da3b51da93407a2f_126_div,"src.compiler.object.builtin.StringObject","div",0x9bc22628,"src.compiler.object.builtin.StringObject.div","src/compiler/object/builtin/StringObject.hx",126,0x00cce337)
+HX_LOCAL_STACK_FRAME(_hx_pos_da3b51da93407a2f_140_str,"src.compiler.object.builtin.StringObject","str",0x9bcd9188,"src.compiler.object.builtin.StringObject.str","src/compiler/object/builtin/StringObject.hx",140,0x00cce337)
+HX_LOCAL_STACK_FRAME(_hx_pos_da3b51da93407a2f_146_bytes,"src.compiler.object.builtin.StringObject","bytes",0x90fb1502,"src.compiler.object.builtin.StringObject.bytes","src/compiler/object/builtin/StringObject.hx",146,0x00cce337)
+HX_LOCAL_STACK_FRAME(_hx_pos_da3b51da93407a2f_152_getHash,"src.compiler.object.builtin.StringObject","getHash",0xd33b7fdb,"src.compiler.object.builtin.StringObject.getHash","src/compiler/object/builtin/StringObject.hx",152,0x00cce337)
 namespace src{
 namespace compiler{
 namespace object{
 namespace builtin{
 
 void StringObject_obj::__construct( ::src::compiler::Scope scope, ::src::compiler::object::ObjectType type, ::haxe::ds::StringMap members, ::Dynamic value,::Array< ::Dynamic> args){
-            	HX_STACKFRAME(&_hx_pos_da3b51da93407a2f_17_new)
-HXDLIN(  17)		super::__construct(scope,type,members,value,args);
+            	HX_STACKFRAME(&_hx_pos_da3b51da93407a2f_20_new)
+HXDLIN(  20)		super::__construct(scope,type,members,value,args);
             	}
 
 Dynamic StringObject_obj::__CreateEmpty() { return new StringObject_obj; }
@@ -124,211 +137,274 @@ bool StringObject_obj::_hx_isInstanceOf(int inClassId) {
 }
 
 void StringObject_obj::setup( ::Dynamic value){
-            	HX_STACKFRAME(&_hx_pos_da3b51da93407a2f_23_setup)
-HXDLIN(  23)		this->value = ( (::String)(value) );
+            	HX_STACKFRAME(&_hx_pos_da3b51da93407a2f_26_setup)
+HXDLIN(  26)		this->value = ( (::String)(value) );
             	}
 
 
 ::String StringObject_obj::getValue(){
-            	HX_STACKFRAME(&_hx_pos_da3b51da93407a2f_28_getValue)
-HXDLIN(  28)		return this->value;
+            	HX_STACKFRAME(&_hx_pos_da3b51da93407a2f_31_getValue)
+HXDLIN(  31)		return this->value;
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(StringObject_obj,getValue,return )
 
  ::src::compiler::object::Object StringObject_obj::get( ::src::compiler::object::Object index){
-            	HX_STACKFRAME(&_hx_pos_da3b51da93407a2f_32_get)
-HXLINE(  33)		if (this->hasMember(HX_("__get__",16,fe,be,fb))) {
-HXLINE(  33)			return this->callMember(HX_("__get__",16,fe,be,fb),::Array_obj< ::Dynamic>::__new(1)->init(0,index));
+            	HX_STACKFRAME(&_hx_pos_da3b51da93407a2f_35_get)
+HXLINE(  36)		if (this->hasMember(HX_("__get__",16,fe,be,fb))) {
+HXLINE(  36)			return this->callMember(HX_("__get__",16,fe,be,fb),::Array_obj< ::Dynamic>::__new(1)->init(0,index));
             		}
-HXLINE(  34)		::String _hx_tmp = this->value;
-HXDLIN(  34)		return this->_str(_hx_tmp.charAt(index->rawInt()),null());
+HXLINE(  37)		::String _hx_tmp = this->value;
+HXDLIN(  37)		return this->_str(_hx_tmp.charAt(index->rawInt()),null());
             	}
 
 
  ::src::compiler::object::builtin::BoolObject StringObject_obj::_hx_bool(){
-            	HX_STACKFRAME(&_hx_pos_da3b51da93407a2f_38_bool)
-HXLINE(  39)		if (this->hasMember(HX_("__bool__",ea,20,54,0a))) {
-HXLINE(  39)			return hx::TCast<  ::src::compiler::object::builtin::BoolObject >::cast(this->callMember(HX_("__bool__",ea,20,54,0a),::Array_obj< ::Dynamic>::__new(0)));
+            	HX_STACKFRAME(&_hx_pos_da3b51da93407a2f_41_bool)
+HXLINE(  42)		if (this->hasMember(HX_("__bool__",ea,20,54,0a))) {
+HXLINE(  42)			return hx::TCast<  ::src::compiler::object::builtin::BoolObject >::cast(this->callMember(HX_("__bool__",ea,20,54,0a),::Array_obj< ::Dynamic>::__new(0)));
             		}
-HXLINE(  40)		bool b;
-HXDLIN(  40)		if ((this->value == HX_("true",4e,a7,03,4d))) {
-HXLINE(  40)			b = true;
-            		}
-            		else {
-HXLINE(  40)			b = false;
-            		}
-HXLINE(  41)		bool _hx_tmp;
-HXDLIN(  41)		if (!(b)) {
-HXLINE(  41)			_hx_tmp = (this->value != HX_("false",a3,35,4f,fb));
+HXLINE(  43)		bool b;
+HXDLIN(  43)		if ((this->value == HX_("true",4e,a7,03,4d))) {
+HXLINE(  43)			b = true;
             		}
             		else {
-HXLINE(  41)			_hx_tmp = false;
+HXLINE(  43)			b = false;
             		}
-HXDLIN(  41)		if (_hx_tmp) {
-HXLINE(  41)			HX_STACK_DO_THROW(HX_("String doesn't represent a bool",6e,a3,39,56));
+HXLINE(  44)		bool _hx_tmp;
+HXDLIN(  44)		if (!(b)) {
+HXLINE(  44)			_hx_tmp = (this->value != HX_("false",a3,35,4f,fb));
             		}
-HXLINE(  42)		return this->_bool(b,null());
+            		else {
+HXLINE(  44)			_hx_tmp = false;
+            		}
+HXDLIN(  44)		if (_hx_tmp) {
+HXLINE(  44)			HX_STACK_DO_THROW(HX_("String doesn't represent a bool",6e,a3,39,56));
+            		}
+HXLINE(  45)		return this->_bool(b,null());
             	}
 
 
  ::src::compiler::object::builtin::FloatObject StringObject_obj::_hx_float(){
-            	HX_STACKFRAME(&_hx_pos_da3b51da93407a2f_46_float)
-HXLINE(  47)		if (this->hasMember(HX_("__float__",9c,08,57,6b))) {
-HXLINE(  47)			return hx::TCast<  ::src::compiler::object::builtin::FloatObject >::cast(this->callMember(HX_("__float__",9c,08,57,6b),::Array_obj< ::Dynamic>::__new(0)));
+            	HX_GC_STACKFRAME(&_hx_pos_da3b51da93407a2f_49_float)
+HXLINE(  50)		if (this->hasMember(HX_("__float__",9c,08,57,6b))) {
+HXLINE(  50)			return hx::TCast<  ::src::compiler::object::builtin::FloatObject >::cast(this->callMember(HX_("__float__",9c,08,57,6b),::Array_obj< ::Dynamic>::__new(0)));
             		}
-HXLINE(  48)		return this->_float(::Std_obj::parseFloat(this->value),null());
+HXLINE(  51)		try {
+            			HX_STACK_CATCHABLE( ::Dynamic, 0);
+HXLINE(  52)			return this->_float(::Std_obj::parseFloat(this->value),null());
+            		}
+            		catch( ::Dynamic _hx_e){
+            			if (_hx_e.IsClass<  ::Dynamic >() ){
+            				HX_STACK_BEGIN_CATCH
+            				 ::Dynamic e = _hx_e;
+HXLINE(  53)				HX_STACK_DO_THROW( ::src::compiler::signals::InvalidArgumentSignal_obj::__alloc( HX_CTX ,((HX_("failed to convert string ",e0,56,5d,f9) + this->value) + HX_(" to float",57,a5,d9,1e))));
+            			}
+            			else {
+            				HX_STACK_DO_THROW(_hx_e);
+            			}
+            		}
+HXLINE(  51)		return null();
             	}
 
 
  ::src::compiler::object::builtin::IntObject StringObject_obj::_hx_int(){
-            	HX_STACKFRAME(&_hx_pos_da3b51da93407a2f_52_int)
-HXLINE(  53)		if (this->hasMember(HX_("__int__",af,12,7f,28))) {
-HXLINE(  53)			return hx::TCast<  ::src::compiler::object::builtin::IntObject >::cast(this->callMember(HX_("__int__",af,12,7f,28),::Array_obj< ::Dynamic>::__new(0)));
+            	HX_GC_STACKFRAME(&_hx_pos_da3b51da93407a2f_57_int)
+HXLINE(  58)		if (this->hasMember(HX_("__int__",af,12,7f,28))) {
+HXLINE(  58)			return hx::TCast<  ::src::compiler::object::builtin::IntObject >::cast(this->callMember(HX_("__int__",af,12,7f,28),::Array_obj< ::Dynamic>::__new(0)));
             		}
-HXLINE(  54)		return this->_int(::Std_obj::parseInt(this->value),null());
+HXLINE(  59)		try {
+            			HX_STACK_CATCHABLE( ::Dynamic, 0);
+HXLINE(  60)			return this->_int(::Std_obj::parseInt(this->value),null());
+            		}
+            		catch( ::Dynamic _hx_e){
+            			if (_hx_e.IsClass<  ::Dynamic >() ){
+            				HX_STACK_BEGIN_CATCH
+            				 ::Dynamic e = _hx_e;
+HXLINE(  61)				HX_STACK_DO_THROW( ::src::compiler::signals::InvalidArgumentSignal_obj::__alloc( HX_CTX ,((HX_("failed to convert string ",e0,56,5d,f9) + this->value) + HX_(" to float",57,a5,d9,1e))));
+            			}
+            			else {
+            				HX_STACK_DO_THROW(_hx_e);
+            			}
+            		}
+HXLINE(  59)		return null();
             	}
 
 
  ::src::compiler::object::builtin::ListObject StringObject_obj::list(){
-            	HX_STACKFRAME(&_hx_pos_da3b51da93407a2f_58_list)
-HXLINE(  59)		if (this->hasMember(HX_("__list__",1e,2e,29,98))) {
-HXLINE(  59)			return hx::TCast<  ::src::compiler::object::builtin::ListObject >::cast(this->callMember(HX_("__list__",1e,2e,29,98),::Array_obj< ::Dynamic>::__new(0)));
+            	HX_STACKFRAME(&_hx_pos_da3b51da93407a2f_65_list)
+HXLINE(  66)		if (this->hasMember(HX_("__list__",1e,2e,29,98))) {
+HXLINE(  66)			return hx::TCast<  ::src::compiler::object::builtin::ListObject >::cast(this->callMember(HX_("__list__",1e,2e,29,98),::Array_obj< ::Dynamic>::__new(0)));
             		}
-HXLINE(  60)		::Array< ::Dynamic> tokens = ( (::Array< ::Dynamic>)(::src::ast::GlobalProcessor_obj::process(this->value)->content) );
-HXLINE(  61)		 ::src::compiler::commands::value::ListValueCommand listCmd = ::src::compiler::commands::value::ListValueCommand_obj::fromTokens(this->scope,tokens);
-HXLINE(  62)		return hx::TCast<  ::src::compiler::object::builtin::ListObject >::cast(listCmd->run());
+HXLINE(  67)		::Array< ::Dynamic> tokens = ( (::Array< ::Dynamic>)(::src::ast::GlobalProcessor_obj::process(this->value)->content) );
+HXLINE(  68)		 ::src::compiler::commands::value::ListValueCommand listCmd = ::src::compiler::commands::value::ListValueCommand_obj::fromTokens(this->scope,tokens);
+HXLINE(  69)		return hx::TCast<  ::src::compiler::object::builtin::ListObject >::cast(listCmd->run());
             	}
 
 
  ::src::compiler::object::builtin::TupleObject StringObject_obj::tuple(){
-            	HX_STACKFRAME(&_hx_pos_da3b51da93407a2f_66_tuple)
-HXLINE(  67)		if (this->hasMember(HX_("__tuple__",08,52,5a,e5))) {
-HXLINE(  67)			return hx::TCast<  ::src::compiler::object::builtin::TupleObject >::cast(this->callMember(HX_("__tuple__",08,52,5a,e5),::Array_obj< ::Dynamic>::__new(0)));
+            	HX_STACKFRAME(&_hx_pos_da3b51da93407a2f_73_tuple)
+HXLINE(  74)		if (this->hasMember(HX_("__tuple__",08,52,5a,e5))) {
+HXLINE(  74)			return hx::TCast<  ::src::compiler::object::builtin::TupleObject >::cast(this->callMember(HX_("__tuple__",08,52,5a,e5),::Array_obj< ::Dynamic>::__new(0)));
             		}
-HXLINE(  68)		::Array< ::Dynamic> tokens = ( (::Array< ::Dynamic>)(::src::ast::GlobalProcessor_obj::process(this->value)->content) );
-HXLINE(  69)		 ::src::compiler::commands::value::TupleValueCommand listCmd = ::src::compiler::commands::value::TupleValueCommand_obj::fromTokens(this->scope,tokens);
-HXLINE(  70)		return hx::TCast<  ::src::compiler::object::builtin::TupleObject >::cast(listCmd->run());
+HXLINE(  75)		::Array< ::Dynamic> tokens = ( (::Array< ::Dynamic>)(::src::ast::GlobalProcessor_obj::process(this->value)->content) );
+HXLINE(  76)		 ::src::compiler::commands::value::TupleValueCommand listCmd = ::src::compiler::commands::value::TupleValueCommand_obj::fromTokens(this->scope,tokens);
+HXLINE(  77)		return hx::TCast<  ::src::compiler::object::builtin::TupleObject >::cast(listCmd->run());
             	}
 
 
  ::src::compiler::object::builtin::MapObject StringObject_obj::map(){
-            	HX_STACKFRAME(&_hx_pos_da3b51da93407a2f_74_map)
-HXLINE(  75)		if (this->hasMember(HX_("__map__",9c,95,7e,6d))) {
-HXLINE(  75)			return hx::TCast<  ::src::compiler::object::builtin::MapObject >::cast(this->callMember(HX_("__map__",9c,95,7e,6d),::Array_obj< ::Dynamic>::__new(0)));
+            	HX_STACKFRAME(&_hx_pos_da3b51da93407a2f_81_map)
+HXLINE(  82)		if (this->hasMember(HX_("__map__",9c,95,7e,6d))) {
+HXLINE(  82)			return hx::TCast<  ::src::compiler::object::builtin::MapObject >::cast(this->callMember(HX_("__map__",9c,95,7e,6d),::Array_obj< ::Dynamic>::__new(0)));
             		}
-HXLINE(  76)		::Array< ::Dynamic> tokens = ( (::Array< ::Dynamic>)(::src::ast::GlobalProcessor_obj::process(this->value)->content) );
-HXLINE(  77)		 ::src::compiler::commands::value::MapValueCommand listCmd = ::src::compiler::commands::value::MapValueCommand_obj::fromTokens(this->scope,tokens);
-HXLINE(  78)		return hx::TCast<  ::src::compiler::object::builtin::MapObject >::cast(listCmd->run());
+HXLINE(  83)		::Array< ::Dynamic> tokens = ( (::Array< ::Dynamic>)(::src::ast::GlobalProcessor_obj::process(this->value)->content) );
+HXLINE(  84)		 ::src::compiler::commands::value::MapValueCommand listCmd = ::src::compiler::commands::value::MapValueCommand_obj::fromTokens(this->scope,tokens);
+HXLINE(  85)		return hx::TCast<  ::src::compiler::object::builtin::MapObject >::cast(listCmd->run());
             	}
 
 
  ::src::compiler::object::builtin::IntObject StringObject_obj::len(){
-            	HX_STACKFRAME(&_hx_pos_da3b51da93407a2f_82_len)
-HXLINE(  83)		if (this->hasMember(HX_("__len__",15,57,bb,dc))) {
-HXLINE(  83)			return hx::TCast<  ::src::compiler::object::builtin::IntObject >::cast(this->callMember(HX_("__len__",15,57,bb,dc),::Array_obj< ::Dynamic>::__new(0)));
+            	HX_STACKFRAME(&_hx_pos_da3b51da93407a2f_89_len)
+HXLINE(  90)		if (this->hasMember(HX_("__len__",15,57,bb,dc))) {
+HXLINE(  90)			return hx::TCast<  ::src::compiler::object::builtin::IntObject >::cast(this->callMember(HX_("__len__",15,57,bb,dc),::Array_obj< ::Dynamic>::__new(0)));
             		}
-HXLINE(  84)		return this->_int(this->value.length,null());
+HXLINE(  91)		return this->_int(this->value.length,null());
             	}
 
 
  ::src::compiler::object::Object StringObject_obj::eq( ::src::compiler::object::Object other){
-            	HX_STACKFRAME(&_hx_pos_da3b51da93407a2f_88_eq)
-HXLINE(  89)		if (this->hasMember(HX_("__eq__",ac,01,11,f2))) {
-HXLINE(  89)			return this->callMember(HX_("__eq__",ac,01,11,f2),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
+            	HX_STACKFRAME(&_hx_pos_da3b51da93407a2f_95_eq)
+HXLINE(  96)		if (this->hasMember(HX_("__eq__",ac,01,11,f2))) {
+HXLINE(  96)			return this->callMember(HX_("__eq__",ac,01,11,f2),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
             		}
-HXLINE(  90)		::String _hx_tmp = other->rawString();
-HXDLIN(  90)		return this->_bool((_hx_tmp == this->rawString()),null());
+HXLINE(  97)		::String _hx_tmp = other->rawString();
+HXDLIN(  97)		return this->_bool((_hx_tmp == this->rawString()),null());
             	}
 
 
  ::src::compiler::object::Object StringObject_obj::neq( ::src::compiler::object::Object other){
-            	HX_STACKFRAME(&_hx_pos_da3b51da93407a2f_94_neq)
-HXLINE(  95)		if (this->hasMember(HX_("__neq__",da,c6,8a,03))) {
-HXLINE(  95)			return this->callMember(HX_("__neq__",da,c6,8a,03),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
+            	HX_STACKFRAME(&_hx_pos_da3b51da93407a2f_101_neq)
+HXLINE( 102)		if (this->hasMember(HX_("__neq__",da,c6,8a,03))) {
+HXLINE( 102)			return this->callMember(HX_("__neq__",da,c6,8a,03),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
             		}
-HXLINE(  96)		::String _hx_tmp = other->rawString();
-HXDLIN(  96)		return this->_bool((_hx_tmp != this->rawString()),null());
+HXLINE( 103)		::String _hx_tmp = other->rawString();
+HXDLIN( 103)		return this->_bool((_hx_tmp != this->rawString()),null());
             	}
 
 
  ::src::compiler::object::Object StringObject_obj::add( ::src::compiler::object::Object other){
-            	HX_STACKFRAME(&_hx_pos_da3b51da93407a2f_100_add)
-HXLINE( 101)		if (this->hasMember(HX_("__add__",61,28,a2,86))) {
-HXLINE( 101)			return this->callMember(HX_("__add__",61,28,a2,86),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
+            	HX_STACKFRAME(&_hx_pos_da3b51da93407a2f_107_add)
+HXLINE( 108)		if (this->hasMember(HX_("__add__",61,28,a2,86))) {
+HXLINE( 108)			return this->callMember(HX_("__add__",61,28,a2,86),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
             		}
-HXLINE( 102)		if (!(other->hasMember(HX_("__add__",61,28,a2,86)))) {
-HXLINE( 102)			::String _hx_tmp = this->rawString();
-HXDLIN( 102)			return this->_str((_hx_tmp + other->rawString()),null());
+HXLINE( 109)		if (!(other->hasMember(HX_("__add__",61,28,a2,86)))) {
+HXLINE( 109)			::String _hx_tmp = this->rawString();
+HXDLIN( 109)			return this->_str((_hx_tmp + other->rawString()),null());
             		}
             		else {
-HXLINE( 103)			return other->add(hx::ObjectPtr<OBJ_>(this));
+HXLINE( 110)			return other->add(hx::ObjectPtr<OBJ_>(this));
             		}
-HXLINE( 102)		return null();
+HXLINE( 109)		return null();
             	}
 
 
  ::src::compiler::object::Object StringObject_obj::mult( ::src::compiler::object::Object other){
-            	HX_STACKFRAME(&_hx_pos_da3b51da93407a2f_107_mult)
-HXLINE( 108)		if (this->hasMember(HX_("__mult__",30,02,b3,e2))) {
-HXLINE( 108)			return this->callMember(HX_("__mult__",30,02,b3,e2),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
+            	HX_STACKFRAME(&_hx_pos_da3b51da93407a2f_114_mult)
+HXLINE( 115)		if (this->hasMember(HX_("__mult__",30,02,b3,e2))) {
+HXLINE( 115)			return this->callMember(HX_("__mult__",30,02,b3,e2),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
             		}
-HXLINE( 109)		if (other->hasMember(HX_("__mult__",30,02,b3,e2))) {
-HXLINE( 109)			other->mult(hx::ObjectPtr<OBJ_>(this));
+HXLINE( 116)		if (other->hasMember(HX_("__mult__",30,02,b3,e2))) {
+HXLINE( 116)			other->mult(hx::ObjectPtr<OBJ_>(this));
             		}
-HXLINE( 110)		::String s = this->rawString();
-HXLINE( 111)		::String result = HX_("",00,00,00,00);
-HXLINE( 112)		{
-HXLINE( 112)			int _g1 = (int)0;
-HXDLIN( 112)			int _g = other->rawInt();
-HXDLIN( 112)			while((_g1 < _g)){
-HXLINE( 112)				_g1 = (_g1 + (int)1);
-HXDLIN( 112)				int i = (_g1 - (int)1);
-HXLINE( 113)				result = (result + s);
+HXLINE( 117)		::String s = this->rawString();
+HXLINE( 118)		::String result = HX_("",00,00,00,00);
+HXLINE( 119)		{
+HXLINE( 119)			int _g1 = (int)0;
+HXDLIN( 119)			int _g = other->rawInt();
+HXDLIN( 119)			while((_g1 < _g)){
+HXLINE( 119)				_g1 = (_g1 + (int)1);
+HXDLIN( 119)				int i = (_g1 - (int)1);
+HXLINE( 120)				result = (result + s);
             			}
             		}
-HXLINE( 115)		return this->_str(result,null());
+HXLINE( 122)		return this->_str(result,null());
             	}
 
 
  ::src::compiler::object::Object StringObject_obj::div( ::src::compiler::object::Object other){
-            	HX_STACKFRAME(&_hx_pos_da3b51da93407a2f_119_div)
-HXLINE( 120)		if (this->hasMember(HX_("__div__",91,9f,31,44))) {
-HXLINE( 120)			return this->callMember(HX_("__div__",91,9f,31,44),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
+            	HX_STACKFRAME(&_hx_pos_da3b51da93407a2f_126_div)
+HXLINE( 127)		if (this->hasMember(HX_("__div__",91,9f,31,44))) {
+HXLINE( 127)			return this->callMember(HX_("__div__",91,9f,31,44),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
             		}
-HXLINE( 121)		if (other->hasMember(HX_("__rdiv__",1f,d4,b1,16))) {
-HXLINE( 121)			return other->rdiv(hx::ObjectPtr<OBJ_>(this));
+HXLINE( 128)		if (other->hasMember(HX_("__rdiv__",1f,d4,b1,16))) {
+HXLINE( 128)			return other->rdiv(hx::ObjectPtr<OBJ_>(this));
             		}
-HXLINE( 122)		::String s = this->rawString();
-HXLINE( 123)		int div = other->rawInt();
-HXLINE( 124)		 ::src::compiler::object::builtin::ListObject result = hx::TCast<  ::src::compiler::object::builtin::ListObject >::cast(this->scope->getType(HX_("ListType",58,7e,af,06),null())->createObject(null()));
-HXLINE( 125)		::Array< ::Dynamic> arr = result->getArray();
-HXLINE( 126)		{
-HXLINE( 126)			int _g1 = (int)0;
-HXDLIN( 126)			int _g = ::Math_obj::ceil(((Float)s.length / (Float)div));
-HXDLIN( 126)			while((_g1 < _g)){
-HXLINE( 126)				_g1 = (_g1 + (int)1);
-HXDLIN( 126)				int i = (_g1 - (int)1);
-HXLINE( 127)				arr->push(this->_str(s.substr((i * div),div),null()));
+HXLINE( 129)		::String s = this->rawString();
+HXLINE( 130)		int div = other->rawInt();
+HXLINE( 131)		 ::src::compiler::object::builtin::ListObject result = hx::TCast<  ::src::compiler::object::builtin::ListObject >::cast(this->scope->getType(HX_("ListType",58,7e,af,06),null())->createObject(this->scope,null()));
+HXLINE( 132)		::Array< ::Dynamic> arr = result->getArray();
+HXLINE( 133)		{
+HXLINE( 133)			int _g1 = (int)0;
+HXDLIN( 133)			int _g = ::Math_obj::ceil(((Float)s.length / (Float)div));
+HXDLIN( 133)			while((_g1 < _g)){
+HXLINE( 133)				_g1 = (_g1 + (int)1);
+HXDLIN( 133)				int i = (_g1 - (int)1);
+HXLINE( 134)				arr->push(this->_str(s.substr((i * div),div),null()));
             			}
             		}
-HXLINE( 129)		return result;
+HXLINE( 136)		return result;
             	}
 
 
  ::src::compiler::object::builtin::StringObject StringObject_obj::str(){
-            	HX_STACKFRAME(&_hx_pos_da3b51da93407a2f_133_str)
-HXLINE( 134)		if (this->hasMember(HX_("__str__",f1,a2,76,ee))) {
-HXLINE( 134)			return hx::TCast<  ::src::compiler::object::builtin::StringObject >::cast(this->callMember(HX_("__str__",f1,a2,76,ee),::Array_obj< ::Dynamic>::__new(0)));
+            	HX_STACKFRAME(&_hx_pos_da3b51da93407a2f_140_str)
+HXLINE( 141)		if (this->hasMember(HX_("__str__",f1,a2,76,ee))) {
+HXLINE( 141)			return hx::TCast<  ::src::compiler::object::builtin::StringObject >::cast(this->callMember(HX_("__str__",f1,a2,76,ee),::Array_obj< ::Dynamic>::__new(0)));
             		}
-HXLINE( 135)		return hx::ObjectPtr<OBJ_>(this);
+HXLINE( 142)		return hx::ObjectPtr<OBJ_>(this);
             	}
 
 
-::String StringObject_obj::getHash(){
-            	HX_STACKFRAME(&_hx_pos_da3b51da93407a2f_140_getHash)
-HXDLIN( 140)		return this->value;
+ ::src::compiler::object::builtin::BytesObject StringObject_obj::bytes(){
+            	HX_STACKFRAME(&_hx_pos_da3b51da93407a2f_146_bytes)
+HXLINE( 147)		if (this->hasMember(HX_("__bytes__",2b,dd,49,db))) {
+HXLINE( 147)			return hx::TCast<  ::src::compiler::object::builtin::BytesObject >::cast(this->callMember(HX_("__bytes__",2b,dd,49,db),::Array_obj< ::Dynamic>::__new(0)));
+            		}
+HXLINE( 148)		return this->_bytes(::haxe::io::Bytes_obj::ofString(this->value),null());
+            	}
+
+
+int StringObject_obj::getHash(){
+            	HX_STACKFRAME(&_hx_pos_da3b51da93407a2f_152_getHash)
+HXLINE( 153)		int x = (int)1;
+HXLINE( 154)		{
+HXLINE( 154)			int _g1 = (int)0;
+HXDLIN( 154)			int _g = this->value.length;
+HXDLIN( 154)			while((_g1 < _g)){
+HXLINE( 154)				_g1 = (_g1 + (int)1);
+HXDLIN( 154)				int i = (_g1 - (int)1);
+HXDLIN( 154)				int _hx_int = ((x * (int)31) + this->value.charCodeAt(i));
+HXDLIN( 154)				Float x1;
+HXDLIN( 154)				if ((_hx_int < (int)0)) {
+HXLINE( 154)					x1 = (((Float)4294967296.0) + _hx_int);
+            				}
+            				else {
+HXLINE( 154)					x1 = (_hx_int + ((Float)0.0));
+            				}
+HXDLIN( 154)				int int1 = (int)-1;
+HXDLIN( 154)				Float x2;
+HXDLIN( 154)				if ((int1 < (int)0)) {
+HXLINE( 154)					x2 = (((Float)4294967296.0) + int1);
+            				}
+            				else {
+HXLINE( 154)					x2 = (int1 + ((Float)0.0));
+            				}
+HXDLIN( 154)				x = ::Std_obj::_hx_int(hx::Mod(x1,x2));
+            			}
+            		}
+HXLINE( 155)		return x;
             	}
 
 
@@ -390,6 +466,7 @@ hx::Val StringObject_obj::__Field(const ::String &inName,hx::PropertyAccess inCa
 		if (HX_FIELD_EQ(inName,"setup") ) { return hx::Val( setup_dyn() ); }
 		if (HX_FIELD_EQ(inName,"float") ) { return hx::Val( _hx_float_dyn() ); }
 		if (HX_FIELD_EQ(inName,"tuple") ) { return hx::Val( tuple_dyn() ); }
+		if (HX_FIELD_EQ(inName,"bytes") ) { return hx::Val( bytes_dyn() ); }
 		break;
 	case 7:
 		if (HX_FIELD_EQ(inName,"getHash") ) { return hx::Val( getHash_dyn() ); }
@@ -441,6 +518,7 @@ static ::String StringObject_obj_sMemberFields[] = {
 	HX_HCSTRING("mult","\xf0","\x67","\x65","\x48"),
 	HX_HCSTRING("div","\x51","\x3d","\x4c","\x00"),
 	HX_HCSTRING("str","\xb1","\xa8","\x57","\x00"),
+	HX_HCSTRING("bytes","\x6b","\x08","\x98","\xbd"),
 	HX_HCSTRING("getHash","\x84","\xdf","\x8a","\x17"),
 	::String(null()) };
 

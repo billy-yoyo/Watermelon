@@ -10,8 +10,14 @@
 #ifndef INCLUDED_haxe_io_Error
 #include <haxe/io/Error.h>
 #endif
+#ifndef INCLUDED_haxe_StackItem
+#include <haxe/StackItem.h>
+#endif
 #ifndef INCLUDED_ValueType
 #include <ValueType.h>
+#endif
+#ifndef INCLUDED_src_compiler_object_builtin_coroutine_CoroutineObject
+#include <src/compiler/object/builtin/coroutine/CoroutineObject.h>
 #endif
 #ifndef INCLUDED_src_compiler_bytecode_BytecodeMap
 #include <src/compiler/bytecode/BytecodeMap.h>
@@ -21,6 +27,9 @@
 #endif
 #ifndef INCLUDED_src_compiler_VariableNamePool
 #include <src/compiler/VariableNamePool.h>
+#endif
+#ifndef INCLUDED_src_compiler_Scope
+#include <src/compiler/Scope.h>
 #endif
 #ifndef INCLUDED_src_compiler_Core
 #include <src/compiler/Core.h>
@@ -49,8 +58,8 @@
 #ifndef INCLUDED_src_ast_base_StringToken
 #include <src/ast/base/StringToken.h>
 #endif
-#ifndef INCLUDED_src_Main
-#include <src/Main.h>
+#ifndef INCLUDED_src_Watermelon
+#include <src/Watermelon.h>
 #endif
 #ifndef INCLUDED_sys_io_FileOutput
 #include <sys/io/FileOutput.h>
@@ -63,6 +72,9 @@
 #endif
 #ifndef INCLUDED_sys_FileSystem
 #include <sys/FileSystem.h>
+#endif
+#ifndef INCLUDED_src_compiler_signals_YieldSignal
+#include <src/compiler/signals/YieldSignal.h>
 #endif
 #ifndef INCLUDED_src_compiler_signals_ValueErrorSignal
 #include <src/compiler/signals/ValueErrorSignal.h>
@@ -82,17 +94,56 @@
 #ifndef INCLUDED_src_compiler_signals_InvalidArgumentSignal
 #include <src/compiler/signals/InvalidArgumentSignal.h>
 #endif
+#ifndef INCLUDED_src_compiler_signals_IndexOutOfBoundsSignal
+#include <src/compiler/signals/IndexOutOfBoundsSignal.h>
+#endif
+#ifndef INCLUDED_src_compiler_signals_ImportErrorSignal
+#include <src/compiler/signals/ImportErrorSignal.h>
+#endif
 #ifndef INCLUDED_src_compiler_signals_FunctionReturnSignal
 #include <src/compiler/signals/FunctionReturnSignal.h>
 #endif
 #ifndef INCLUDED_src_compiler_signals_ExitCodeSignal
 #include <src/compiler/signals/ExitCodeSignal.h>
 #endif
+#ifndef INCLUDED_src_compiler_signals_CustomErrorSignal
+#include <src/compiler/signals/CustomErrorSignal.h>
+#endif
+#ifndef INCLUDED_src_compiler_signals_CoroutineEmptyReadSignal
+#include <src/compiler/signals/CoroutineEmptyReadSignal.h>
+#endif
+#ifndef INCLUDED_src_compiler_object_builtin_coroutine_YieldObject
+#include <src/compiler/object/builtin/coroutine/YieldObject.h>
+#endif
+#ifndef INCLUDED_src_compiler_object_builtin_coroutine_CoroutinePacket
+#include <src/compiler/object/builtin/coroutine/CoroutinePacket.h>
+#endif
+#ifndef INCLUDED_src_compiler_object_builtin_coroutine_CoroutineLoop
+#include <src/compiler/object/builtin/coroutine/CoroutineLoop.h>
+#endif
+#ifndef INCLUDED_src_compiler_object_builtin_coroutine_CoroutineFunctionObject
+#include <src/compiler/object/builtin/coroutine/CoroutineFunctionObject.h>
+#endif
 #ifndef INCLUDED_src_compiler_object_builtin_TupleObject
 #include <src/compiler/object/builtin/TupleObject.h>
 #endif
 #ifndef INCLUDED_src_compiler_object_builtin_StringObject
 #include <src/compiler/object/builtin/StringObject.h>
+#endif
+#ifndef INCLUDED_src_compiler_object_builtin_SpliceValue
+#include <src/compiler/object/builtin/SpliceValue.h>
+#endif
+#ifndef INCLUDED_src_compiler_object_builtin_SpliceObject
+#include <src/compiler/object/builtin/SpliceObject.h>
+#endif
+#ifndef INCLUDED_src_compiler_object_builtin_SignalObject
+#include <src/compiler/object/builtin/SignalObject.h>
+#endif
+#ifndef INCLUDED_src_compiler_object_builtin_Signal
+#include <src/compiler/object/builtin/Signal.h>
+#endif
+#ifndef INCLUDED_src_compiler_object_builtin_RangeObject
+#include <src/compiler/object/builtin/RangeObject.h>
 #endif
 #ifndef INCLUDED_src_compiler_object_builtin__PairObject_Pair
 #include <src/compiler/object/builtin/_PairObject/Pair.h>
@@ -105,6 +156,9 @@
 #endif
 #ifndef INCLUDED_src_compiler_object_builtin_NoneObject
 #include <src/compiler/object/builtin/NoneObject.h>
+#endif
+#ifndef INCLUDED_src_compiler_object_builtin_ModuleObject
+#include <src/compiler/object/builtin/ModuleObject.h>
 #endif
 #ifndef INCLUDED_src_compiler_object_builtin_MapObject
 #include <src/compiler/object/builtin/MapObject.h>
@@ -130,8 +184,8 @@
 #ifndef INCLUDED_src_compiler_object_builtin_FloatObject
 #include <src/compiler/object/builtin/FloatObject.h>
 #endif
-#ifndef INCLUDED_src_compiler_object_builtin_RangeObject
-#include <src/compiler/object/builtin/RangeObject.h>
+#ifndef INCLUDED_src_compiler_object_builtin_BytesObject
+#include <src/compiler/object/builtin/BytesObject.h>
 #endif
 #ifndef INCLUDED_src_compiler_object_builtin_IntRangeObject
 #include <src/compiler/object/builtin/IntRangeObject.h>
@@ -151,14 +205,53 @@
 #ifndef INCLUDED_src_compiler_object_Object
 #include <src/compiler/object/Object.h>
 #endif
-#ifndef INCLUDED_src_compiler_commands_value_LiteralValueCommand
-#include <src/compiler/commands/value/LiteralValueCommand.h>
+#ifndef INCLUDED_src_compiler_commands_StaticCatchStatement
+#include <src/compiler/commands/StaticCatchStatement.h>
 #endif
 #ifndef INCLUDED_src_compiler_bytecode_MatchFound
 #include <src/compiler/bytecode/MatchFound.h>
 #endif
 #ifndef INCLUDED_src_compiler_bytecode_StringPool
 #include <src/compiler/bytecode/StringPool.h>
+#endif
+#ifndef INCLUDED_src_compiler_commands_ImportCommand
+#include <src/compiler/commands/ImportCommand.h>
+#endif
+#ifndef INCLUDED_src_compiler_commands_CatchStatement
+#include <src/compiler/commands/CatchStatement.h>
+#endif
+#ifndef INCLUDED_src_compiler_commands_TryCatchCommand
+#include <src/compiler/commands/TryCatchCommand.h>
+#endif
+#ifndef INCLUDED_src_compiler_commands_RaiseCommand
+#include <src/compiler/commands/RaiseCommand.h>
+#endif
+#ifndef INCLUDED_src_compiler_commands_coroutine_CoroutineForLoopCommand
+#include <src/compiler/commands/coroutine/CoroutineForLoopCommand.h>
+#endif
+#ifndef INCLUDED_src_compiler_commands_coroutine_CoroutineCodeCommand
+#include <src/compiler/commands/coroutine/CoroutineCodeCommand.h>
+#endif
+#ifndef INCLUDED_src_compiler_commands_coroutine_CoroutineDefinitionCommand
+#include <src/compiler/commands/coroutine/CoroutineDefinitionCommand.h>
+#endif
+#ifndef INCLUDED_src_compiler_commands_coroutine_PipeWriteCommand
+#include <src/compiler/commands/coroutine/PipeWriteCommand.h>
+#endif
+#ifndef INCLUDED_src_compiler_commands_coroutine_PipeReadCommand
+#include <src/compiler/commands/coroutine/PipeReadCommand.h>
+#endif
+#ifndef INCLUDED_src_compiler_commands_value_SpliceValueCommand
+#include <src/compiler/commands/value/SpliceValueCommand.h>
+#endif
+#ifndef INCLUDED_src_compiler_commands_value_NegationValueCommand
+#include <src/compiler/commands/value/NegationValueCommand.h>
+#endif
+#ifndef INCLUDED_src_compiler_commands_value_LiteralValueCommand
+#include <src/compiler/commands/value/LiteralValueCommand.h>
+#endif
+#ifndef INCLUDED_src_compiler_commands_value_StringFormatValueCommand
+#include <src/compiler/commands/value/StringFormatValueCommand.h>
 #endif
 #ifndef INCLUDED_src_compiler_commands_value_BinaryExpressionValueCommand
 #include <src/compiler/commands/value/BinaryExpressionValueCommand.h>
@@ -229,11 +322,11 @@
 #ifndef INCLUDED_src_compiler_commands_value_ObjectValueCommand
 #include <src/compiler/commands/value/ObjectValueCommand.h>
 #endif
-#ifndef INCLUDED_src_compiler_commands_value_ObjectIndexPair
-#include <src/compiler/commands/value/ObjectIndexPair.h>
-#endif
 #ifndef INCLUDED_src_compiler_commands_value_ObjectArrayAssignmentCommand
 #include <src/compiler/commands/value/ObjectArrayAssignmentCommand.h>
+#endif
+#ifndef INCLUDED_src_compiler_commands_value_ObjectIndexPair
+#include <src/compiler/commands/value/ObjectIndexPair.h>
 #endif
 #ifndef INCLUDED_src_compiler_commands_value_ObjectArrayAccessValueCommand
 #include <src/compiler/commands/value/ObjectArrayAccessValueCommand.h>
@@ -274,9 +367,6 @@
 #ifndef INCLUDED_src_compiler_commands_Command
 #include <src/compiler/commands/Command.h>
 #endif
-#ifndef INCLUDED_src_compiler_Scope
-#include <src/compiler/Scope.h>
-#endif
 #ifndef INCLUDED_src_compiler__Core_OperativeCapture
 #include <src/compiler/_Core/OperativeCapture.h>
 #endif
@@ -285,6 +375,18 @@
 #endif
 #ifndef INCLUDED_src_ast__TokenProcessor_TokenClass
 #include <src/ast/_TokenProcessor/TokenClass.h>
+#endif
+#ifndef INCLUDED_src_ast_base_WildcardToken
+#include <src/ast/base/WildcardToken.h>
+#endif
+#ifndef INCLUDED_src_ast_script_PipeReadToken
+#include <src/ast/script/PipeReadToken.h>
+#endif
+#ifndef INCLUDED_src_ast_script_PipeWriteToken
+#include <src/ast/script/PipeWriteToken.h>
+#endif
+#ifndef INCLUDED_src_ast_base_SpliceToken
+#include <src/ast/base/SpliceToken.h>
 #endif
 #ifndef INCLUDED_src_ast_maths_BinaryOperatorToken
 #include <src/ast/maths/BinaryOperatorToken.h>
@@ -328,9 +430,6 @@
 #ifndef INCLUDED_haxe_io_Path
 #include <haxe/io/Path.h>
 #endif
-#ifndef INCLUDED_haxe_io_Output
-#include <haxe/io/Output.h>
-#endif
 #ifndef INCLUDED_haxe_io_Input
 #include <haxe/io/Input.h>
 #endif
@@ -339,6 +438,9 @@
 #endif
 #ifndef INCLUDED_haxe_io_Eof
 #include <haxe/io/Eof.h>
+#endif
+#ifndef INCLUDED_haxe_io_Output
+#include <haxe/io/Output.h>
 #endif
 #ifndef INCLUDED_haxe_io_BytesBuffer
 #include <haxe/io/BytesBuffer.h>
@@ -367,11 +469,17 @@
 #ifndef INCLUDED_haxe_IMap
 #include <haxe/IMap.h>
 #endif
+#ifndef INCLUDED_haxe_CallStack
+#include <haxe/CallStack.h>
+#endif
 #ifndef INCLUDED_Type
 #include <Type.h>
 #endif
 #ifndef INCLUDED_Sys
 #include <Sys.h>
+#endif
+#ifndef INCLUDED_StringBuf
+#include <StringBuf.h>
 #endif
 #ifndef INCLUDED_Std
 #include <Std.h>
@@ -395,10 +503,13 @@ hx::RegisterResources( hx::GetResources() );
 ::src::ast::TokenPriority_obj::__register();
 ::src::Mode_obj::__register();
 ::haxe::io::Error_obj::__register();
+::haxe::StackItem_obj::__register();
 ::ValueType_obj::__register();
+::src::compiler::object::builtin::coroutine::CoroutineObject_obj::__register();
 ::src::compiler::bytecode::BytecodeMap_obj::__register();
 ::src::compiler::bytecode::Bytecode_obj::__register();
 ::src::compiler::VariableNamePool_obj::__register();
+::src::compiler::Scope_obj::__register();
 ::src::compiler::Core_obj::__register();
 ::src::ast::GlobalProcessor_obj::__register();
 ::src::ast::maths::HexToken_obj::__register();
@@ -408,25 +519,40 @@ hx::RegisterResources( hx::GetResources() );
 ::src::ast::base::WhitespaceToken_obj::__register();
 ::src::ast::base::VariableToken_obj::__register();
 ::src::ast::base::StringToken_obj::__register();
-::src::Main_obj::__register();
+::src::Watermelon_obj::__register();
 ::sys::io::FileOutput_obj::__register();
 ::sys::io::FileInput_obj::__register();
 ::sys::io::File_obj::__register();
 ::sys::FileSystem_obj::__register();
+::src::compiler::signals::YieldSignal_obj::__register();
 ::src::compiler::signals::ValueErrorSignal_obj::__register();
 ::src::compiler::signals::LoopContinueSignal_obj::__register();
 ::src::compiler::signals::LoopBreakSignal_obj::__register();
 ::src::compiler::signals::IteratorExitSignal_obj::__register();
 ::src::compiler::signals::InvalidFieldAccessSignal_obj::__register();
 ::src::compiler::signals::InvalidArgumentSignal_obj::__register();
+::src::compiler::signals::IndexOutOfBoundsSignal_obj::__register();
+::src::compiler::signals::ImportErrorSignal_obj::__register();
 ::src::compiler::signals::FunctionReturnSignal_obj::__register();
 ::src::compiler::signals::ExitCodeSignal_obj::__register();
+::src::compiler::signals::CustomErrorSignal_obj::__register();
+::src::compiler::signals::CoroutineEmptyReadSignal_obj::__register();
+::src::compiler::object::builtin::coroutine::YieldObject_obj::__register();
+::src::compiler::object::builtin::coroutine::CoroutinePacket_obj::__register();
+::src::compiler::object::builtin::coroutine::CoroutineLoop_obj::__register();
+::src::compiler::object::builtin::coroutine::CoroutineFunctionObject_obj::__register();
 ::src::compiler::object::builtin::TupleObject_obj::__register();
 ::src::compiler::object::builtin::StringObject_obj::__register();
+::src::compiler::object::builtin::SpliceValue_obj::__register();
+::src::compiler::object::builtin::SpliceObject_obj::__register();
+::src::compiler::object::builtin::SignalObject_obj::__register();
+::src::compiler::object::builtin::Signal_obj::__register();
+::src::compiler::object::builtin::RangeObject_obj::__register();
 ::src::compiler::object::builtin::_PairObject::Pair_obj::__register();
 ::src::compiler::object::builtin::PairObject_obj::__register();
 ::src::compiler::object::builtin::ObjectTypeObject_obj::__register();
 ::src::compiler::object::builtin::NoneObject_obj::__register();
+::src::compiler::object::builtin::ModuleObject_obj::__register();
 ::src::compiler::object::builtin::MapObject_obj::__register();
 ::src::compiler::object::builtin::ListObject_obj::__register();
 ::src::compiler::object::builtin::IteratorObject_obj::__register();
@@ -435,16 +561,29 @@ hx::RegisterResources( hx::GetResources() );
 ::src::compiler::object::builtin::FunctionCode_obj::__register();
 ::src::compiler::object::builtin::FunctionArgument_obj::__register();
 ::src::compiler::object::builtin::FloatObject_obj::__register();
-::src::compiler::object::builtin::RangeObject_obj::__register();
+::src::compiler::object::builtin::BytesObject_obj::__register();
 ::src::compiler::object::builtin::IntRangeObject_obj::__register();
 ::src::compiler::object::builtin::BuiltinFunction_obj::__register();
 ::src::compiler::object::builtin::BoolObject_obj::__register();
 ::src::compiler::object::builtin::ValuedObject_obj::__register();
 ::src::compiler::object::ObjectType_obj::__register();
 ::src::compiler::object::Object_obj::__register();
-::src::compiler::commands::value::LiteralValueCommand_obj::__register();
+::src::compiler::commands::StaticCatchStatement_obj::__register();
 ::src::compiler::bytecode::MatchFound_obj::__register();
 ::src::compiler::bytecode::StringPool_obj::__register();
+::src::compiler::commands::ImportCommand_obj::__register();
+::src::compiler::commands::CatchStatement_obj::__register();
+::src::compiler::commands::TryCatchCommand_obj::__register();
+::src::compiler::commands::RaiseCommand_obj::__register();
+::src::compiler::commands::coroutine::CoroutineForLoopCommand_obj::__register();
+::src::compiler::commands::coroutine::CoroutineCodeCommand_obj::__register();
+::src::compiler::commands::coroutine::CoroutineDefinitionCommand_obj::__register();
+::src::compiler::commands::coroutine::PipeWriteCommand_obj::__register();
+::src::compiler::commands::coroutine::PipeReadCommand_obj::__register();
+::src::compiler::commands::value::SpliceValueCommand_obj::__register();
+::src::compiler::commands::value::NegationValueCommand_obj::__register();
+::src::compiler::commands::value::LiteralValueCommand_obj::__register();
+::src::compiler::commands::value::StringFormatValueCommand_obj::__register();
 ::src::compiler::commands::value::BinaryExpressionValueCommand_obj::__register();
 ::src::compiler::commands::value::VariableAccess_obj::__register();
 ::src::compiler::commands::FunctionArgumentCommand_obj::__register();
@@ -468,8 +607,8 @@ hx::RegisterResources( hx::GetResources() );
 ::src::compiler::commands::value::VariableValueCommand_obj::__register();
 ::src::compiler::commands::value::TupleValueCommand_obj::__register();
 ::src::compiler::commands::value::ObjectValueCommand_obj::__register();
-::src::compiler::commands::value::ObjectIndexPair_obj::__register();
 ::src::compiler::commands::value::ObjectArrayAssignmentCommand_obj::__register();
+::src::compiler::commands::value::ObjectIndexPair_obj::__register();
 ::src::compiler::commands::value::ObjectArrayAccessValueCommand_obj::__register();
 ::src::compiler::commands::value::MathsExpressionValueCommand_obj::__register();
 ::src::compiler::commands::value::ValueCommandPair_obj::__register();
@@ -483,10 +622,13 @@ hx::RegisterResources( hx::GetResources() );
 ::src::compiler::commands::value::BoolExpressionValueCommand_obj::__register();
 ::src::compiler::commands::value::ValueCommand_obj::__register();
 ::src::compiler::commands::Command_obj::__register();
-::src::compiler::Scope_obj::__register();
 ::src::compiler::_Core::OperativeCapture_obj::__register();
 ::src::ast::base::RootToken_obj::__register();
 ::src::ast::_TokenProcessor::TokenClass_obj::__register();
+::src::ast::base::WildcardToken_obj::__register();
+::src::ast::script::PipeReadToken_obj::__register();
+::src::ast::script::PipeWriteToken_obj::__register();
+::src::ast::base::SpliceToken_obj::__register();
 ::src::ast::maths::BinaryOperatorToken_obj::__register();
 ::src::ast::base::AccessToken_obj::__register();
 ::src::ast::base::ListToken_obj::__register();
@@ -501,10 +643,10 @@ hx::RegisterResources( hx::GetResources() );
 ::src::ast::Token_obj::__register();
 ::src::ast::TokenProcessor_obj::__register();
 ::haxe::io::Path_obj::__register();
-::haxe::io::Output_obj::__register();
 ::haxe::io::Input_obj::__register();
 ::haxe::io::FPHelper_obj::__register();
 ::haxe::io::Eof_obj::__register();
+::haxe::io::Output_obj::__register();
 ::haxe::io::BytesBuffer_obj::__register();
 ::haxe::io::Bytes_obj::__register();
 ::haxe::ds::StringMap_obj::__register();
@@ -514,8 +656,10 @@ hx::RegisterResources( hx::GetResources() );
 ::haxe::ds::TreeNode_obj::__register();
 ::haxe::ds::BalancedTree_obj::__register();
 ::haxe::IMap_obj::__register();
+::haxe::CallStack_obj::__register();
 ::Type_obj::__register();
 ::Sys_obj::__register();
+::StringBuf_obj::__register();
 ::Std_obj::__register();
 ::Reflect_obj::__register();
 ::_Map::Map_Impl__obj::__register();
@@ -523,8 +667,9 @@ hx::RegisterResources( hx::GetResources() );
 ::src::ast::TokenPriority_obj::__boot();
 ::src::Mode_obj::__boot();
 ::haxe::io::Error_obj::__boot();
+::haxe::StackItem_obj::__boot();
 ::ValueType_obj::__boot();
-::src::Main_obj::__boot();
+::src::Watermelon_obj::__boot();
 ::src::ast::base::StringToken_obj::__boot();
 ::src::ast::base::VariableToken_obj::__boot();
 ::src::ast::base::WhitespaceToken_obj::__boot();
@@ -534,8 +679,10 @@ hx::RegisterResources( hx::GetResources() );
 ::src::ast::maths::HexToken_obj::__boot();
 ::src::ast::GlobalProcessor_obj::__boot();
 ::src::compiler::Core_obj::__boot();
+::src::compiler::Scope_obj::__boot();
 ::src::compiler::VariableNamePool_obj::__boot();
 ::src::compiler::bytecode::Bytecode_obj::__boot();
 ::src::compiler::bytecode::BytecodeMap_obj::__boot();
+::src::compiler::object::builtin::coroutine::CoroutineObject_obj::__boot();
 }
 

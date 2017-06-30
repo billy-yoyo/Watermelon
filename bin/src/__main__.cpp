@@ -7,8 +7,8 @@ extern "C" void __hxcpp_main();
 
 extern "C" void __hxcpp_lib_main();
 
-#ifndef INCLUDED_src_Main
-#include <src/Main.h>
+#ifndef INCLUDED_src_Watermelon
+#include <src/Watermelon.h>
 #endif
 HX_LOCAL_STACK_FRAME(_hx_pos_fe66fde75063e1fc_1___hxcpp_main,"hxcpp","__hxcpp_main",0x10478780,"hxcpp.__hxcpp_main","?",1,0x0000003f)
 
@@ -19,7 +19,7 @@ HX_LOCAL_STACK_FRAME(_hx_pos_fe66fde75063e1fc_1___hxcpp_main,"hxcpp","__hxcpp_ma
 void __hxcpp_main() {
 {
             	HX_STACKFRAME(&_hx_pos_fe66fde75063e1fc_1___hxcpp_main)
-HXDLIN(   1)		::src::Main_obj::main();
+HXDLIN(   1)		::src::Watermelon_obj::main();
             	}
 	}
 

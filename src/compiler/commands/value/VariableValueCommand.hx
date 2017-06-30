@@ -30,6 +30,17 @@ class VariableValueCommand extends ValueCommand
         this.variable = variable;
     }
     
+    override public function copy(scope:Scope):Command 
+    {
+        return new VariableValueCommand(scope, cast(variable.copy(scope), VariableAccess));
+    }
+    
+    override public function setScope(scope:Scope) 
+    {
+        super.setScope(scope);
+        variable.setScope(scope);
+    }
+    
     override public function walk():Array<Command> 
     {
         return [variable];
@@ -44,6 +55,11 @@ class VariableValueCommand extends ValueCommand
     override public function getName():String 
     {
         return "VariableValueCommand";
+    }
+    
+    override public function getFriendlyName():String 
+    {
+        return "variable";
     }
     
     override public function getBytecode():Bytecode 

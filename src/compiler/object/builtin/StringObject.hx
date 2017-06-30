@@ -1,4 +1,5 @@
 package src.compiler.object.builtin;
+import haxe.io.Bytes;
 import src.ast.GlobalProcessor;
 import src.ast.Token;
 import src.compiler.Scope;
@@ -7,8 +8,10 @@ import src.compiler.commands.value.MapValueCommand;
 import src.compiler.commands.value.TupleValueCommand;
 import src.compiler.object.Object;
 import src.compiler.object.ObjectType;
+import src.compiler.object.builtin.BytesObject;
 import src.compiler.object.builtin.IntObject;
 import src.compiler.object.builtin.ListObject;
+import src.compiler.signals.InvalidArgumentSignal;
 
 /**
  * ...
@@ -45,13 +48,17 @@ class StringObject extends ValuedObject
     override public function float():FloatObject
     {
         if (hasMember("__float__")) return cast(callMember("__float__", []), FloatObject);
-        return _float(Std.parseFloat(value));
+        try {
+            return _float(Std.parseFloat(value));
+        } catch (e : Dynamic) throw new InvalidArgumentSignal('failed to convert string $value to float');
     }
     
     override public function int():IntObject
     {
         if (hasMember("__int__")) return cast(callMember("__int__", []), IntObject);
-        return _int(Std.parseInt(value));
+        try {
+            return _int(Std.parseInt(value));
+        } catch (e : Dynamic) throw new InvalidArgumentSignal('failed to convert string $value to float');
     }
     
     override public function list():ListObject 
@@ -121,7 +128,7 @@ class StringObject extends ValuedObject
         if (other.hasMember("__rdiv__")) return other.rdiv(this);
         var s:String = rawString();
         var div:Int = other.rawInt();
-        var result:ListObject = cast(scope.getType("ListType").createObject(), ListObject);
+        var result:ListObject = cast(scope.getType("ListType").createObject(scope), ListObject);
         var arr:Array<Object> = result.getArray();
         for (i in 0...Math.ceil(s.length / div)) {
             arr.push(_str(s.substr(i * div, div)));
@@ -135,8 +142,16 @@ class StringObject extends ValuedObject
         return this;
     }
     
-    override public function getHash():String 
+    override public function bytes():BytesObject 
     {
-        return value;
+        if (hasMember("__bytes__")) return cast(callMember("__bytes__", []), BytesObject);
+        return _bytes(Bytes.ofString(value));
+    }
+    // 0xFF | bxFF 
+    override public function getHash():Int 
+    {
+        var x:UInt = 1;
+        for (i in 0...value.length) x = ((x * 31) + value.charCodeAt(i)) % 0xFFFFFFFF;
+        return x;
     }
 }

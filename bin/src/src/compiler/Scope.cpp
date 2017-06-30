@@ -28,73 +28,84 @@
 #ifndef INCLUDED_src_compiler_object_builtin_ValuedObject
 #include <src/compiler/object/builtin/ValuedObject.h>
 #endif
+#ifndef INCLUDED_src_compiler_object_builtin_coroutine_CoroutineObject
+#include <src/compiler/object/builtin/coroutine/CoroutineObject.h>
+#endif
 
-HX_DEFINE_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_26_new,"src.compiler.Scope","new",0xf0bb2e21,"src.compiler.Scope.new","src/compiler/Scope.hx",26,0x27d9084f)
-HX_LOCAL_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_65_nextFuncScopeName,"src.compiler.Scope","nextFuncScopeName",0x6201d2a9,"src.compiler.Scope.nextFuncScopeName","src/compiler/Scope.hx",65,0x27d9084f)
-HX_LOCAL_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_71_nextTypeScopeName,"src.compiler.Scope","nextTypeScopeName",0xbbd82c73,"src.compiler.Scope.nextTypeScopeName","src/compiler/Scope.hx",71,0x27d9084f)
-HX_LOCAL_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_76_createObject,"src.compiler.Scope","createObject",0x87fe20fa,"src.compiler.Scope.createObject","src/compiler/Scope.hx",76,0x27d9084f)
-HX_LOCAL_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_86_getBuiltins,"src.compiler.Scope","getBuiltins",0x6edb95e7,"src.compiler.Scope.getBuiltins","src/compiler/Scope.hx",86,0x27d9084f)
-HX_LOCAL_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_91_getParent,"src.compiler.Scope","getParent",0xc74e32e1,"src.compiler.Scope.getParent","src/compiler/Scope.hx",91,0x27d9084f)
-HX_LOCAL_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_96_getRoot,"src.compiler.Scope","getRoot",0x32617019,"src.compiler.Scope.getRoot","src/compiler/Scope.hx",96,0x27d9084f)
-HX_LOCAL_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_101_getName,"src.compiler.Scope","getName",0x2fb1f442,"src.compiler.Scope.getName","src/compiler/Scope.hx",101,0x27d9084f)
-HX_LOCAL_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_106_getVariables,"src.compiler.Scope","getVariables",0xe222e160,"src.compiler.Scope.getVariables","src/compiler/Scope.hx",106,0x27d9084f)
-HX_LOCAL_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_110_getVariable,"src.compiler.Scope","getVariable",0x798d5bb3,"src.compiler.Scope.getVariable","src/compiler/Scope.hx",110,0x27d9084f)
-HX_LOCAL_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_124_setVariable,"src.compiler.Scope","setVariable",0x83fa62bf,"src.compiler.Scope.setVariable","src/compiler/Scope.hx",124,0x27d9084f)
-HX_LOCAL_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_132_hasVariable,"src.compiler.Scope","hasVariable",0x26507e77,"src.compiler.Scope.hasVariable","src/compiler/Scope.hx",132,0x27d9084f)
-HX_LOCAL_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_143_deleteVariable,"src.compiler.Scope","deleteVariable",0x0a019966,"src.compiler.Scope.deleteVariable","src/compiler/Scope.hx",143,0x27d9084f)
-HX_LOCAL_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_159_getTypes,"src.compiler.Scope","getTypes",0x104aa6a2,"src.compiler.Scope.getTypes","src/compiler/Scope.hx",159,0x27d9084f)
-HX_LOCAL_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_163_getType,"src.compiler.Scope","getType",0x33bb74b1,"src.compiler.Scope.getType","src/compiler/Scope.hx",163,0x27d9084f)
-HX_LOCAL_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_177_setType,"src.compiler.Scope","setType",0x26bd05bd,"src.compiler.Scope.setType","src/compiler/Scope.hx",177,0x27d9084f)
-HX_LOCAL_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_184_hasType,"src.compiler.Scope","hasType",0x307ce575,"src.compiler.Scope.hasType","src/compiler/Scope.hx",184,0x27d9084f)
-HX_LOCAL_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_195_reset,"src.compiler.Scope","reset",0x461359d0,"src.compiler.Scope.reset","src/compiler/Scope.hx",195,0x27d9084f)
-HX_LOCAL_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_202_toString,"src.compiler.Scope","toString",0xce16f74b,"src.compiler.Scope.toString","src/compiler/Scope.hx",202,0x27d9084f)
+HX_DEFINE_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_31_new,"src.compiler.Scope","new",0xf0bb2e21,"src.compiler.Scope.new","src/compiler/Scope.hx",31,0x27d9084f)
+HX_LOCAL_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_72_getClosestCoroutine,"src.compiler.Scope","getClosestCoroutine",0x9f573cb6,"src.compiler.Scope.getClosestCoroutine","src/compiler/Scope.hx",72,0x27d9084f)
+HX_LOCAL_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_82_nextObjectID,"src.compiler.Scope","nextObjectID",0x7d947a8c,"src.compiler.Scope.nextObjectID","src/compiler/Scope.hx",82,0x27d9084f)
+HX_LOCAL_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_89_nextFuncScopeName,"src.compiler.Scope","nextFuncScopeName",0x6201d2a9,"src.compiler.Scope.nextFuncScopeName","src/compiler/Scope.hx",89,0x27d9084f)
+HX_LOCAL_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_95_nextTypeScopeName,"src.compiler.Scope","nextTypeScopeName",0xbbd82c73,"src.compiler.Scope.nextTypeScopeName","src/compiler/Scope.hx",95,0x27d9084f)
+HX_LOCAL_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_101_nextCoroScopeName,"src.compiler.Scope","nextCoroScopeName",0x0d3b13e4,"src.compiler.Scope.nextCoroScopeName","src/compiler/Scope.hx",101,0x27d9084f)
+HX_LOCAL_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_106_createObject,"src.compiler.Scope","createObject",0x87fe20fa,"src.compiler.Scope.createObject","src/compiler/Scope.hx",106,0x27d9084f)
+HX_LOCAL_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_116_getBuiltins,"src.compiler.Scope","getBuiltins",0x6edb95e7,"src.compiler.Scope.getBuiltins","src/compiler/Scope.hx",116,0x27d9084f)
+HX_LOCAL_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_121_getParent,"src.compiler.Scope","getParent",0xc74e32e1,"src.compiler.Scope.getParent","src/compiler/Scope.hx",121,0x27d9084f)
+HX_LOCAL_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_126_setParent,"src.compiler.Scope","setParent",0xaa9f1eed,"src.compiler.Scope.setParent","src/compiler/Scope.hx",126,0x27d9084f)
+HX_LOCAL_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_131_getRoot,"src.compiler.Scope","getRoot",0x32617019,"src.compiler.Scope.getRoot","src/compiler/Scope.hx",131,0x27d9084f)
+HX_LOCAL_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_136_getName,"src.compiler.Scope","getName",0x2fb1f442,"src.compiler.Scope.getName","src/compiler/Scope.hx",136,0x27d9084f)
+HX_LOCAL_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_141_getVariables,"src.compiler.Scope","getVariables",0xe222e160,"src.compiler.Scope.getVariables","src/compiler/Scope.hx",141,0x27d9084f)
+HX_LOCAL_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_145_getVariable,"src.compiler.Scope","getVariable",0x798d5bb3,"src.compiler.Scope.getVariable","src/compiler/Scope.hx",145,0x27d9084f)
+HX_LOCAL_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_159_setVariable,"src.compiler.Scope","setVariable",0x83fa62bf,"src.compiler.Scope.setVariable","src/compiler/Scope.hx",159,0x27d9084f)
+HX_LOCAL_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_167_hasVariable,"src.compiler.Scope","hasVariable",0x26507e77,"src.compiler.Scope.hasVariable","src/compiler/Scope.hx",167,0x27d9084f)
+HX_LOCAL_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_177_deleteVariable,"src.compiler.Scope","deleteVariable",0x0a019966,"src.compiler.Scope.deleteVariable","src/compiler/Scope.hx",177,0x27d9084f)
+HX_LOCAL_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_193_getTypes,"src.compiler.Scope","getTypes",0x104aa6a2,"src.compiler.Scope.getTypes","src/compiler/Scope.hx",193,0x27d9084f)
+HX_LOCAL_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_197_getType,"src.compiler.Scope","getType",0x33bb74b1,"src.compiler.Scope.getType","src/compiler/Scope.hx",197,0x27d9084f)
+HX_LOCAL_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_211_setType,"src.compiler.Scope","setType",0x26bd05bd,"src.compiler.Scope.setType","src/compiler/Scope.hx",211,0x27d9084f)
+HX_LOCAL_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_218_hasType,"src.compiler.Scope","hasType",0x307ce575,"src.compiler.Scope.hasType","src/compiler/Scope.hx",218,0x27d9084f)
+HX_LOCAL_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_229_reset,"src.compiler.Scope","reset",0x461359d0,"src.compiler.Scope.reset","src/compiler/Scope.hx",229,0x27d9084f)
+HX_LOCAL_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_236_toString,"src.compiler.Scope","toString",0xce16f74b,"src.compiler.Scope.toString","src/compiler/Scope.hx",236,0x27d9084f)
+HX_LOCAL_STACK_FRAME(_hx_pos_21c6e9ed59d37f78_14_boot,"src.compiler.Scope","boot",0xab262f51,"src.compiler.Scope.boot","src/compiler/Scope.hx",14,0x27d9084f)
 namespace src{
 namespace compiler{
 
 void Scope_obj::__construct(::String name, ::src::compiler::Scope parent){
-            	HX_GC_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_26_new)
-HXLINE(  27)		this->name = name;
-HXLINE(  28)		this->parent = parent;
-HXLINE(  29)		this->variables =  ::haxe::ds::StringMap_obj::__alloc( HX_CTX );
-HXLINE(  30)		this->types =  ::haxe::ds::StringMap_obj::__alloc( HX_CTX );
-HXLINE(  31)		this->stringPool = ::Array_obj< ::String >::__new();
-HXLINE(  32)		this->indepFuncScopes = (int)0;
-HXLINE(  33)		this->indepTypeScopes = (int)0;
-HXLINE(  34)		this->children = ::Array_obj< ::Dynamic>::__new();
-HXLINE(  36)		 ::src::compiler::Scope lastScope = hx::ObjectPtr<OBJ_>(this);
-HXLINE(  37)		 ::src::compiler::Scope scope = hx::ObjectPtr<OBJ_>(this);
-HXLINE(  38)		while(hx::IsNotNull( scope )){
-HXLINE(  39)			lastScope = scope;
-HXLINE(  40)			scope = scope->getParent();
+            	HX_GC_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_31_new)
+HXLINE(  32)		this->name = name;
+HXLINE(  33)		this->parent = parent;
+HXLINE(  34)		this->variables =  ::haxe::ds::StringMap_obj::__alloc( HX_CTX );
+HXLINE(  35)		this->types =  ::haxe::ds::StringMap_obj::__alloc( HX_CTX );
+HXLINE(  36)		this->stringPool = ::Array_obj< ::String >::__new();
+HXLINE(  37)		this->indepFuncScopes = (int)0;
+HXLINE(  38)		this->indepTypeScopes = (int)0;
+HXLINE(  39)		this->indepCoroScopes = (int)0;
+HXLINE(  40)		this->children = ::Array_obj< ::Dynamic>::__new();
+HXLINE(  41)		this->objectID = (int)0;
+HXLINE(  42)		this->coroutineObject = null();
+HXLINE(  44)		 ::src::compiler::Scope lastScope = hx::ObjectPtr<OBJ_>(this);
+HXLINE(  45)		 ::src::compiler::Scope scope = hx::ObjectPtr<OBJ_>(this);
+HXLINE(  46)		while(hx::IsNotNull( scope )){
+HXLINE(  47)			lastScope = scope;
+HXLINE(  48)			scope = scope->getParent();
             		}
-HXLINE(  43)		this->root = lastScope;
-HXLINE(  45)		if (hx::IsNull( parent )) {
-HXLINE(  46)			this->builtins =  ::src::compiler::object::builtin::Builtins_obj::__alloc( HX_CTX ,hx::ObjectPtr<OBJ_>(this));
-HXLINE(  47)			{
-HXLINE(  47)				int _g = (int)0;
-HXDLIN(  47)				::Array< ::Dynamic> _g1 = this->builtins->types;
-HXDLIN(  47)				while((_g < _g1->length)){
-HXLINE(  47)					 ::src::compiler::object::ObjectType type = _g1->__get(_g).StaticCast<  ::src::compiler::object::ObjectType >();
-HXDLIN(  47)					_g = (_g + (int)1);
-HXLINE(  49)					{
-HXLINE(  49)						::Dynamic this1 = this->types;
-HXDLIN(  49)						::String key = type->getName();
-HXDLIN(  49)						( ( ::haxe::ds::StringMap)(this1) )->set(key,this->builtins->objTypeType->createValue(type,null()));
+HXLINE(  51)		this->root = lastScope;
+HXLINE(  53)		if (hx::IsNull( parent )) {
+HXLINE(  54)			this->builtins =  ::src::compiler::object::builtin::Builtins_obj::__alloc( HX_CTX ,hx::ObjectPtr<OBJ_>(this));
+HXLINE(  55)			{
+HXLINE(  55)				int _g = (int)0;
+HXDLIN(  55)				::Array< ::Dynamic> _g1 = this->builtins->types;
+HXDLIN(  55)				while((_g < _g1->length)){
+HXLINE(  55)					 ::src::compiler::object::ObjectType type = _g1->__get(_g).StaticCast<  ::src::compiler::object::ObjectType >();
+HXDLIN(  55)					_g = (_g + (int)1);
+HXLINE(  57)					{
+HXLINE(  57)						::Dynamic this1 = this->types;
+HXDLIN(  57)						::String key = type->getName();
+HXDLIN(  57)						( ( ::haxe::ds::StringMap)(this1) )->set(key,this->builtins->objTypeType->createValue(type,scope,null()));
             					}
             				}
             			}
-HXLINE(  51)			{
-HXLINE(  51)				 ::Dynamic name1 = this->builtins->objects->keys();
-HXDLIN(  51)				while(( (bool)(name1->__Field(HX_("hasNext",6d,a5,46,18),hx::paccDynamic)()) )){
-HXLINE(  51)					::String name2 = ( (::String)(name1->__Field(HX_("next",f3,84,02,49),hx::paccDynamic)()) );
-HXLINE(  53)					::Dynamic this2 = this->variables;
-HXDLIN(  53)					( ( ::haxe::ds::StringMap)(this2) )->set(name2,this->builtins->objects->get(name2).StaticCast<  ::src::compiler::object::Object >());
+HXLINE(  59)			{
+HXLINE(  59)				 ::Dynamic name1 = this->builtins->objects->keys();
+HXDLIN(  59)				while(( (bool)(name1->__Field(HX_("hasNext",6d,a5,46,18),hx::paccDynamic)()) )){
+HXLINE(  59)					::String name2 = ( (::String)(name1->__Field(HX_("next",f3,84,02,49),hx::paccDynamic)()) );
+HXLINE(  61)					::Dynamic this2 = this->variables;
+HXDLIN(  61)					( ( ::haxe::ds::StringMap)(this2) )->set(name2,this->builtins->objects->get(name2).StaticCast<  ::src::compiler::object::Object >());
             				}
             			}
             		}
             		else {
-HXLINE(  57)			parent->children->push(hx::ObjectPtr<OBJ_>(this));
-HXLINE(  58)			this->builtins = this->getRoot()->builtins;
+HXLINE(  65)			parent->children->push(hx::ObjectPtr<OBJ_>(this));
+HXLINE(  66)			this->builtins = this->getRoot()->builtins;
             		}
             	}
 
@@ -113,238 +124,284 @@ bool Scope_obj::_hx_isInstanceOf(int inClassId) {
 	return inClassId==(int)0x00000001 || inClassId==(int)0x60e52135;
 }
 
+ ::src::compiler::object::builtin::coroutine::CoroutineObject Scope_obj::getClosestCoroutine(){
+            	HX_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_72_getClosestCoroutine)
+HXLINE(  73)		 ::src::compiler::Scope scope = hx::ObjectPtr<OBJ_>(this);
+HXLINE(  74)		while(hx::IsNotNull( scope )){
+HXLINE(  75)			if (hx::IsNotNull( scope->coroutineObject )) {
+HXLINE(  75)				return scope->coroutineObject;
+            			}
+HXLINE(  76)			scope = scope->getParent();
+            		}
+HXLINE(  78)		return null();
+            	}
+
+
+HX_DEFINE_DYNAMIC_FUNC0(Scope_obj,getClosestCoroutine,return )
+
+int Scope_obj::nextObjectID(){
+            	HX_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_82_nextObjectID)
+HXLINE(  83)		this->objectID++;
+HXLINE(  84)		if ((this->objectID > ::src::compiler::Scope_obj::objectIDLimit)) {
+HXLINE(  84)			this->objectID = (int)0;
+            		}
+HXLINE(  85)		return this->objectID;
+            	}
+
+
+HX_DEFINE_DYNAMIC_FUNC0(Scope_obj,nextObjectID,return )
+
 ::String Scope_obj::nextFuncScopeName(){
-            	HX_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_65_nextFuncScopeName)
-HXLINE(  66)		this->indepFuncScopes++;
-HXLINE(  67)		return ((HX_("&FUNC",6a,be,bf,0f) + this->indepFuncScopes) + HX_("&",26,00,00,00));
+            	HX_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_89_nextFuncScopeName)
+HXLINE(  90)		this->indepFuncScopes++;
+HXLINE(  91)		return ((HX_("&FUNC",6a,be,bf,0f) + this->indepFuncScopes) + HX_("&",26,00,00,00));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Scope_obj,nextFuncScopeName,return )
 
 ::String Scope_obj::nextTypeScopeName(){
-            	HX_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_71_nextTypeScopeName)
-HXLINE(  72)		this->indepTypeScopes++;
-HXLINE(  73)		return ((HX_("&TYPE",e0,c5,03,19) + this->indepTypeScopes) + HX_("&",26,00,00,00));
+            	HX_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_95_nextTypeScopeName)
+HXLINE(  96)		this->indepTypeScopes++;
+HXLINE(  97)		return ((HX_("&TYPE",e0,c5,03,19) + this->indepTypeScopes) + HX_("&",26,00,00,00));
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Scope_obj,nextTypeScopeName,return )
 
+::String Scope_obj::nextCoroScopeName(){
+            	HX_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_101_nextCoroScopeName)
+HXLINE( 102)		this->indepCoroScopes++;
+HXLINE( 103)		return ((HX_("&CORO",8f,90,bf,0d) + this->indepCoroScopes) + HX_("&",26,00,00,00));
+            	}
+
+
+HX_DEFINE_DYNAMIC_FUNC0(Scope_obj,nextCoroScopeName,return )
+
  ::src::compiler::object::Object Scope_obj::createObject(::String type,::String objName,::Array< ::Dynamic> args){
-            	HX_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_76_createObject)
-HXLINE(  77)		 ::src::compiler::object::ObjectType type1 = this->getType(type,null());
-HXLINE(  78)		if (hx::IsNull( type1 )) {
-HXLINE(  78)			HX_STACK_DO_THROW((HX_("Unknown type ",f0,b2,b0,b7) + ::Std_obj::string(type1)));
+            	HX_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_106_createObject)
+HXLINE( 107)		 ::src::compiler::object::ObjectType type1 = this->getType(type,null());
+HXLINE( 108)		if (hx::IsNull( type1 )) {
+HXLINE( 108)			HX_STACK_DO_THROW((HX_("Unknown type ",f0,b2,b0,b7) + ::Std_obj::string(type1)));
             		}
-HXLINE(  79)		 ::src::compiler::object::Object obj = type1->createObject(args);
-HXLINE(  80)		this->variables->set(objName,obj);
-HXLINE(  81)		return obj;
+HXLINE( 109)		 ::src::compiler::object::Object obj = type1->createObject(hx::ObjectPtr<OBJ_>(this),args);
+HXLINE( 110)		this->variables->set(objName,obj);
+HXLINE( 111)		return obj;
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC3(Scope_obj,createObject,return )
 
  ::src::compiler::object::builtin::Builtins Scope_obj::getBuiltins(){
-            	HX_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_86_getBuiltins)
-HXDLIN(  86)		return this->builtins;
+            	HX_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_116_getBuiltins)
+HXDLIN( 116)		return this->builtins;
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Scope_obj,getBuiltins,return )
 
  ::src::compiler::Scope Scope_obj::getParent(){
-            	HX_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_91_getParent)
-HXDLIN(  91)		return this->parent;
+            	HX_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_121_getParent)
+HXDLIN( 121)		return this->parent;
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Scope_obj,getParent,return )
 
+void Scope_obj::setParent( ::src::compiler::Scope parent){
+            	HX_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_126_setParent)
+HXDLIN( 126)		this->parent = parent;
+            	}
+
+
+HX_DEFINE_DYNAMIC_FUNC1(Scope_obj,setParent,(void))
+
  ::src::compiler::Scope Scope_obj::getRoot(){
-            	HX_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_96_getRoot)
-HXDLIN(  96)		return this->root;
+            	HX_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_131_getRoot)
+HXDLIN( 131)		return this->root;
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Scope_obj,getRoot,return )
 
 ::String Scope_obj::getName(){
-            	HX_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_101_getName)
-HXDLIN( 101)		return this->name;
+            	HX_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_136_getName)
+HXDLIN( 136)		return this->name;
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Scope_obj,getName,return )
 
  ::haxe::ds::StringMap Scope_obj::getVariables(){
-            	HX_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_106_getVariables)
-HXDLIN( 106)		return this->variables;
+            	HX_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_141_getVariables)
+HXDLIN( 141)		return this->variables;
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Scope_obj,getVariables,return )
 
  ::src::compiler::object::Object Scope_obj::getVariable(::String name){
-            	HX_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_110_getVariable)
-HXLINE( 111)		 ::src::compiler::Scope scope = hx::ObjectPtr<OBJ_>(this);
-HXLINE( 112)		 ::src::compiler::object::Object obj;
-HXLINE( 113)		while(hx::IsNotNull( scope )){
-HXLINE( 114)			obj = scope->getVariables()->get(name).StaticCast<  ::src::compiler::object::Object >();
-HXLINE( 115)			if (hx::IsNotNull( obj )) {
-HXLINE( 115)				return obj;
+            	HX_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_145_getVariable)
+HXLINE( 146)		 ::src::compiler::Scope scope = hx::ObjectPtr<OBJ_>(this);
+HXLINE( 147)		 ::src::compiler::object::Object obj;
+HXLINE( 148)		while(hx::IsNotNull( scope )){
+HXLINE( 149)			obj = scope->getVariables()->get(name).StaticCast<  ::src::compiler::object::Object >();
+HXLINE( 150)			if (hx::IsNotNull( obj )) {
+HXLINE( 150)				return obj;
             			}
-HXLINE( 116)			obj = scope->getTypes()->get(name).StaticCast<  ::src::compiler::object::Object >();
-HXLINE( 117)			if (hx::IsNotNull( obj )) {
-HXLINE( 117)				return obj;
+HXLINE( 151)			obj = scope->getTypes()->get(name).StaticCast<  ::src::compiler::object::Object >();
+HXLINE( 152)			if (hx::IsNotNull( obj )) {
+HXLINE( 152)				return obj;
             			}
-HXLINE( 118)			scope = scope->getParent();
+HXLINE( 153)			scope = scope->getParent();
             		}
-HXLINE( 120)		return null();
+HXLINE( 155)		return null();
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(Scope_obj,getVariable,return )
 
  ::src::compiler::Scope Scope_obj::setVariable(::String name, ::src::compiler::object::Object obj){
-            	HX_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_124_setVariable)
-HXLINE( 125)		if (obj->isInstance(HX_("ObjectTypeType",93,1c,e6,5d))) {
-HXLINE( 125)			this->types->set(name,obj);
+            	HX_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_159_setVariable)
+HXLINE( 160)		if (obj->isInstance(HX_("ObjectTypeType",93,1c,e6,5d))) {
+HXLINE( 160)			this->types->set(name,obj);
             		}
             		else {
-HXLINE( 126)			this->variables->set(name,obj);
+HXLINE( 161)			this->variables->set(name,obj);
             		}
-HXLINE( 128)		return hx::ObjectPtr<OBJ_>(this);
+HXLINE( 163)		return hx::ObjectPtr<OBJ_>(this);
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC2(Scope_obj,setVariable,return )
 
 bool Scope_obj::hasVariable(::String name){
-            	HX_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_132_hasVariable)
-HXLINE( 133)		 ::src::compiler::Scope scope = hx::ObjectPtr<OBJ_>(this);
-HXLINE( 134)		while(hx::IsNotNull( scope )){
-HXLINE( 136)			bool _hx_tmp;
-HXDLIN( 136)			if (!(scope->getVariables()->exists(name))) {
-HXLINE( 136)				_hx_tmp = scope->getTypes()->exists(name);
+            	HX_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_167_hasVariable)
+HXLINE( 168)		 ::src::compiler::Scope scope = hx::ObjectPtr<OBJ_>(this);
+HXLINE( 169)		while(hx::IsNotNull( scope )){
+HXLINE( 170)			bool _hx_tmp;
+HXDLIN( 170)			if (!(scope->getVariables()->exists(name))) {
+HXLINE( 170)				_hx_tmp = scope->getTypes()->exists(name);
             			}
             			else {
-HXLINE( 136)				_hx_tmp = true;
+HXLINE( 170)				_hx_tmp = true;
             			}
-HXDLIN( 136)			if (_hx_tmp) {
-HXLINE( 136)				return true;
+HXDLIN( 170)			if (_hx_tmp) {
+HXLINE( 170)				return true;
             			}
-HXLINE( 137)			scope = scope->getParent();
+HXLINE( 171)			scope = scope->getParent();
             		}
-HXLINE( 139)		return false;
+HXLINE( 173)		return false;
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(Scope_obj,hasVariable,return )
 
 bool Scope_obj::deleteVariable(::String name){
-            	HX_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_143_deleteVariable)
-HXLINE( 144)		 ::src::compiler::Scope scope = hx::ObjectPtr<OBJ_>(this);
-HXLINE( 145)		while(hx::IsNotNull( scope )){
-HXLINE( 146)			if (scope->getVariables()->exists(name)) {
-HXLINE( 147)				scope->getVariables()->remove(name);
-HXLINE( 148)				return true;
+            	HX_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_177_deleteVariable)
+HXLINE( 178)		 ::src::compiler::Scope scope = hx::ObjectPtr<OBJ_>(this);
+HXLINE( 179)		while(hx::IsNotNull( scope )){
+HXLINE( 180)			if (scope->getVariables()->exists(name)) {
+HXLINE( 181)				scope->getVariables()->remove(name);
+HXLINE( 182)				return true;
             			}
             			else {
-HXLINE( 149)				if (scope->getTypes()->exists(name)) {
-HXLINE( 150)					scope->getTypes()->remove(name);
-HXLINE( 151)					return true;
+HXLINE( 183)				if (scope->getTypes()->exists(name)) {
+HXLINE( 184)					scope->getTypes()->remove(name);
+HXLINE( 185)					return true;
             				}
             			}
             		}
-HXLINE( 154)		return false;
+HXLINE( 188)		return false;
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC1(Scope_obj,deleteVariable,return )
 
  ::haxe::ds::StringMap Scope_obj::getTypes(){
-            	HX_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_159_getTypes)
-HXDLIN( 159)		return this->types;
+            	HX_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_193_getTypes)
+HXDLIN( 193)		return this->types;
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Scope_obj,getTypes,return )
 
  ::src::compiler::object::ObjectType Scope_obj::getType(::String name, ::Dynamic obfuscated){
-            	HX_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_163_getType)
-HXLINE( 165)		 ::src::compiler::Scope scope = hx::ObjectPtr<OBJ_>(this);
-HXLINE( 166)		 ::src::compiler::object::Object obj;
-HXLINE( 167)		while(hx::IsNotNull( scope )){
-HXLINE( 168)			obj = scope->getTypes()->get(name).StaticCast<  ::src::compiler::object::Object >();
-HXLINE( 169)			bool _hx_tmp;
-HXDLIN( 169)			if (hx::IsNotNull( obj )) {
-HXLINE( 169)				_hx_tmp = obj->isInstance(HX_("ObjectTypeType",93,1c,e6,5d));
+            	HX_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_197_getType)
+HXLINE( 199)		 ::src::compiler::Scope scope = hx::ObjectPtr<OBJ_>(this);
+HXLINE( 200)		 ::src::compiler::object::Object obj;
+HXLINE( 201)		while(hx::IsNotNull( scope )){
+HXLINE( 202)			obj = scope->getTypes()->get(name).StaticCast<  ::src::compiler::object::Object >();
+HXLINE( 203)			bool _hx_tmp;
+HXDLIN( 203)			if (hx::IsNotNull( obj )) {
+HXLINE( 203)				_hx_tmp = obj->isInstance(HX_("ObjectTypeType",93,1c,e6,5d));
             			}
             			else {
-HXLINE( 169)				_hx_tmp = false;
+HXLINE( 203)				_hx_tmp = false;
             			}
-HXDLIN( 169)			if (_hx_tmp) {
-HXLINE( 169)				return hx::TCast<  ::src::compiler::object::builtin::ObjectTypeObject >::cast(obj)->getValue();
+HXDLIN( 203)			if (_hx_tmp) {
+HXLINE( 203)				return hx::TCast<  ::src::compiler::object::builtin::ObjectTypeObject >::cast(obj)->getValue();
             			}
-HXLINE( 170)			scope = scope->getParent();
+HXLINE( 204)			scope = scope->getParent();
             		}
-HXLINE( 173)		return null();
+HXLINE( 207)		return null();
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC2(Scope_obj,getType,return )
 
  ::src::compiler::Scope Scope_obj::setType(::String name, ::src::compiler::object::ObjectType type, ::Dynamic obfuscated){
-            	HX_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_177_setType)
-HXLINE( 179)		{
-HXLINE( 179)			::Dynamic this1 = this->types;
-HXDLIN( 179)			( ( ::haxe::ds::StringMap)(this1) )->set(name,this->getType(HX_("ObjectTypeType",93,1c,e6,5d),null())->createValue(type,null()));
+            	HX_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_211_setType)
+HXLINE( 213)		{
+HXLINE( 213)			::Dynamic this1 = this->types;
+HXDLIN( 213)			( ( ::haxe::ds::StringMap)(this1) )->set(name,this->getType(HX_("ObjectTypeType",93,1c,e6,5d),null())->createValue(type,hx::ObjectPtr<OBJ_>(this),null()));
             		}
-HXLINE( 180)		return hx::ObjectPtr<OBJ_>(this);
+HXLINE( 214)		return hx::ObjectPtr<OBJ_>(this);
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC3(Scope_obj,setType,return )
 
 bool Scope_obj::hasType(::String name, ::Dynamic obfuscated){
-            	HX_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_184_hasType)
-HXLINE( 186)		 ::src::compiler::Scope scope = hx::ObjectPtr<OBJ_>(this);
-HXLINE( 187)		while(hx::IsNotNull( scope )){
-HXLINE( 188)			if (scope->getTypes()->exists(name)) {
-HXLINE( 188)				return true;
+            	HX_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_218_hasType)
+HXLINE( 220)		 ::src::compiler::Scope scope = hx::ObjectPtr<OBJ_>(this);
+HXLINE( 221)		while(hx::IsNotNull( scope )){
+HXLINE( 222)			if (scope->getTypes()->exists(name)) {
+HXLINE( 222)				return true;
             			}
-HXLINE( 189)			scope = scope->getParent();
+HXLINE( 223)			scope = scope->getParent();
             		}
-HXLINE( 191)		return false;
+HXLINE( 225)		return false;
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC2(Scope_obj,hasType,return )
 
 void Scope_obj::reset(){
-            	HX_GC_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_195_reset)
-HXLINE( 196)		this->variables =  ::haxe::ds::StringMap_obj::__alloc( HX_CTX );
-HXLINE( 197)		this->types =  ::haxe::ds::StringMap_obj::__alloc( HX_CTX );
+            	HX_GC_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_229_reset)
+HXLINE( 230)		this->variables =  ::haxe::ds::StringMap_obj::__alloc( HX_CTX );
+HXLINE( 231)		this->types =  ::haxe::ds::StringMap_obj::__alloc( HX_CTX );
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Scope_obj,reset,(void))
 
 ::String Scope_obj::toString(){
-            	HX_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_202_toString)
-HXDLIN( 202)		if (hx::IsNull( this->parent )) {
-HXDLIN( 202)			return this->name;
+            	HX_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_236_toString)
+HXDLIN( 236)		if (hx::IsNull( this->parent )) {
+HXDLIN( 236)			return this->name;
             		}
             		else {
-HXLINE( 204)			::String _hx_tmp = ((HX_("",00,00,00,00) + ::Std_obj::string(this->parent)) + HX_(".",2e,00,00,00));
-HXDLIN( 204)			return (_hx_tmp + this->name);
+HXLINE( 238)			::String _hx_tmp = ((HX_("",00,00,00,00) + ::Std_obj::string(this->parent)) + HX_(".",2e,00,00,00));
+HXDLIN( 238)			return (_hx_tmp + this->name);
             		}
-HXLINE( 202)		return null();
+HXLINE( 236)		return null();
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(Scope_obj,toString,return )
+
+int Scope_obj::objectIDLimit;
 
 
 hx::ObjectPtr< Scope_obj > Scope_obj::__new(::String name, ::src::compiler::Scope parent) {
@@ -375,8 +432,11 @@ void Scope_obj::__Mark(HX_MARK_PARAMS)
 	HX_MARK_MEMBER_NAME(builtins,"builtins");
 	HX_MARK_MEMBER_NAME(indepFuncScopes,"indepFuncScopes");
 	HX_MARK_MEMBER_NAME(indepTypeScopes,"indepTypeScopes");
+	HX_MARK_MEMBER_NAME(indepCoroScopes,"indepCoroScopes");
 	HX_MARK_MEMBER_NAME(stringPool,"stringPool");
 	HX_MARK_MEMBER_NAME(children,"children");
+	HX_MARK_MEMBER_NAME(objectID,"objectID");
+	HX_MARK_MEMBER_NAME(coroutineObject,"coroutineObject");
 	HX_MARK_END_CLASS();
 }
 
@@ -390,8 +450,11 @@ void Scope_obj::__Visit(HX_VISIT_PARAMS)
 	HX_VISIT_MEMBER_NAME(builtins,"builtins");
 	HX_VISIT_MEMBER_NAME(indepFuncScopes,"indepFuncScopes");
 	HX_VISIT_MEMBER_NAME(indepTypeScopes,"indepTypeScopes");
+	HX_VISIT_MEMBER_NAME(indepCoroScopes,"indepCoroScopes");
 	HX_VISIT_MEMBER_NAME(stringPool,"stringPool");
 	HX_VISIT_MEMBER_NAME(children,"children");
+	HX_VISIT_MEMBER_NAME(objectID,"objectID");
+	HX_VISIT_MEMBER_NAME(coroutineObject,"coroutineObject");
 }
 
 hx::Val Scope_obj::__Field(const ::String &inName,hx::PropertyAccess inCallProp)
@@ -418,12 +481,14 @@ hx::Val Scope_obj::__Field(const ::String &inName,hx::PropertyAccess inCallProp)
 	case 8:
 		if (HX_FIELD_EQ(inName,"builtins") ) { return hx::Val( builtins ); }
 		if (HX_FIELD_EQ(inName,"children") ) { return hx::Val( children ); }
+		if (HX_FIELD_EQ(inName,"objectID") ) { return hx::Val( objectID ); }
 		if (HX_FIELD_EQ(inName,"getTypes") ) { return hx::Val( getTypes_dyn() ); }
 		if (HX_FIELD_EQ(inName,"toString") ) { return hx::Val( toString_dyn() ); }
 		break;
 	case 9:
 		if (HX_FIELD_EQ(inName,"variables") ) { return hx::Val( variables ); }
 		if (HX_FIELD_EQ(inName,"getParent") ) { return hx::Val( getParent_dyn() ); }
+		if (HX_FIELD_EQ(inName,"setParent") ) { return hx::Val( setParent_dyn() ); }
 		break;
 	case 10:
 		if (HX_FIELD_EQ(inName,"stringPool") ) { return hx::Val( stringPool ); }
@@ -435,6 +500,7 @@ hx::Val Scope_obj::__Field(const ::String &inName,hx::PropertyAccess inCallProp)
 		if (HX_FIELD_EQ(inName,"hasVariable") ) { return hx::Val( hasVariable_dyn() ); }
 		break;
 	case 12:
+		if (HX_FIELD_EQ(inName,"nextObjectID") ) { return hx::Val( nextObjectID_dyn() ); }
 		if (HX_FIELD_EQ(inName,"createObject") ) { return hx::Val( createObject_dyn() ); }
 		if (HX_FIELD_EQ(inName,"getVariables") ) { return hx::Val( getVariables_dyn() ); }
 		break;
@@ -444,12 +510,27 @@ hx::Val Scope_obj::__Field(const ::String &inName,hx::PropertyAccess inCallProp)
 	case 15:
 		if (HX_FIELD_EQ(inName,"indepFuncScopes") ) { return hx::Val( indepFuncScopes ); }
 		if (HX_FIELD_EQ(inName,"indepTypeScopes") ) { return hx::Val( indepTypeScopes ); }
+		if (HX_FIELD_EQ(inName,"indepCoroScopes") ) { return hx::Val( indepCoroScopes ); }
+		if (HX_FIELD_EQ(inName,"coroutineObject") ) { return hx::Val( coroutineObject ); }
 		break;
 	case 17:
 		if (HX_FIELD_EQ(inName,"nextFuncScopeName") ) { return hx::Val( nextFuncScopeName_dyn() ); }
 		if (HX_FIELD_EQ(inName,"nextTypeScopeName") ) { return hx::Val( nextTypeScopeName_dyn() ); }
+		if (HX_FIELD_EQ(inName,"nextCoroScopeName") ) { return hx::Val( nextCoroScopeName_dyn() ); }
+		break;
+	case 19:
+		if (HX_FIELD_EQ(inName,"getClosestCoroutine") ) { return hx::Val( getClosestCoroutine_dyn() ); }
 	}
 	return super::__Field(inName,inCallProp);
+}
+
+bool Scope_obj::__GetStatic(const ::String &inName, Dynamic &outValue, hx::PropertyAccess inCallProp)
+{
+	switch(inName.length) {
+	case 13:
+		if (HX_FIELD_EQ(inName,"objectIDLimit") ) { outValue = ( objectIDLimit ); return true; }
+	}
+	return false;
 }
 
 hx::Val Scope_obj::__SetField(const ::String &inName,const hx::Val &inValue,hx::PropertyAccess inCallProp)
@@ -468,6 +549,7 @@ hx::Val Scope_obj::__SetField(const ::String &inName,const hx::Val &inValue,hx::
 	case 8:
 		if (HX_FIELD_EQ(inName,"builtins") ) { builtins=inValue.Cast<  ::src::compiler::object::builtin::Builtins >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"children") ) { children=inValue.Cast< ::Array< ::Dynamic> >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"objectID") ) { objectID=inValue.Cast< int >(); return inValue; }
 		break;
 	case 9:
 		if (HX_FIELD_EQ(inName,"variables") ) { variables=inValue.Cast<  ::haxe::ds::StringMap >(); return inValue; }
@@ -478,8 +560,19 @@ hx::Val Scope_obj::__SetField(const ::String &inName,const hx::Val &inValue,hx::
 	case 15:
 		if (HX_FIELD_EQ(inName,"indepFuncScopes") ) { indepFuncScopes=inValue.Cast< int >(); return inValue; }
 		if (HX_FIELD_EQ(inName,"indepTypeScopes") ) { indepTypeScopes=inValue.Cast< int >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"indepCoroScopes") ) { indepCoroScopes=inValue.Cast< int >(); return inValue; }
+		if (HX_FIELD_EQ(inName,"coroutineObject") ) { coroutineObject=inValue.Cast<  ::src::compiler::object::builtin::coroutine::CoroutineObject >(); return inValue; }
 	}
 	return super::__SetField(inName,inValue,inCallProp);
+}
+
+bool Scope_obj::__SetStatic(const ::String &inName,Dynamic &ioValue,hx::PropertyAccess inCallProp)
+{
+	switch(inName.length) {
+	case 13:
+		if (HX_FIELD_EQ(inName,"objectIDLimit") ) { objectIDLimit=ioValue.Cast< int >(); return true; }
+	}
+	return false;
 }
 
 void Scope_obj::__GetFields(Array< ::String> &outFields)
@@ -492,8 +585,11 @@ void Scope_obj::__GetFields(Array< ::String> &outFields)
 	outFields->push(HX_HCSTRING("builtins","\x70","\x4c","\x5b","\x5e"));
 	outFields->push(HX_HCSTRING("indepFuncScopes","\x6d","\xaa","\xde","\x71"));
 	outFields->push(HX_HCSTRING("indepTypeScopes","\x63","\xae","\x46","\x07"));
+	outFields->push(HX_HCSTRING("indepCoroScopes","\x52","\x26","\x22","\x17"));
 	outFields->push(HX_HCSTRING("stringPool","\x4d","\x12","\x59","\xfc"));
 	outFields->push(HX_HCSTRING("children","\x3f","\x19","\x6a","\x70"));
+	outFields->push(HX_HCSTRING("objectID","\x5a","\x2c","\x2c","\x83"));
+	outFields->push(HX_HCSTRING("coroutineObject","\xb7","\x96","\x10","\x6a"));
 	super::__GetFields(outFields);
 };
 
@@ -507,11 +603,17 @@ static hx::StorageInfo Scope_obj_sMemberStorageInfo[] = {
 	{hx::fsObject /*::src::compiler::object::builtin::Builtins*/ ,(int)offsetof(Scope_obj,builtins),HX_HCSTRING("builtins","\x70","\x4c","\x5b","\x5e")},
 	{hx::fsInt,(int)offsetof(Scope_obj,indepFuncScopes),HX_HCSTRING("indepFuncScopes","\x6d","\xaa","\xde","\x71")},
 	{hx::fsInt,(int)offsetof(Scope_obj,indepTypeScopes),HX_HCSTRING("indepTypeScopes","\x63","\xae","\x46","\x07")},
+	{hx::fsInt,(int)offsetof(Scope_obj,indepCoroScopes),HX_HCSTRING("indepCoroScopes","\x52","\x26","\x22","\x17")},
 	{hx::fsObject /*Array< ::String >*/ ,(int)offsetof(Scope_obj,stringPool),HX_HCSTRING("stringPool","\x4d","\x12","\x59","\xfc")},
 	{hx::fsObject /*Array< ::Dynamic >*/ ,(int)offsetof(Scope_obj,children),HX_HCSTRING("children","\x3f","\x19","\x6a","\x70")},
+	{hx::fsInt,(int)offsetof(Scope_obj,objectID),HX_HCSTRING("objectID","\x5a","\x2c","\x2c","\x83")},
+	{hx::fsObject /*::src::compiler::object::builtin::coroutine::CoroutineObject*/ ,(int)offsetof(Scope_obj,coroutineObject),HX_HCSTRING("coroutineObject","\xb7","\x96","\x10","\x6a")},
 	{ hx::fsUnknown, 0, null()}
 };
-static hx::StaticInfo *Scope_obj_sStaticStorageInfo = 0;
+static hx::StaticInfo Scope_obj_sStaticStorageInfo[] = {
+	{hx::fsInt,(void *) &Scope_obj::objectIDLimit,HX_HCSTRING("objectIDLimit","\x81","\x5c","\x81","\x35")},
+	{ hx::fsUnknown, 0, null()}
+};
 #endif
 
 static ::String Scope_obj_sMemberFields[] = {
@@ -523,13 +625,20 @@ static ::String Scope_obj_sMemberFields[] = {
 	HX_HCSTRING("builtins","\x70","\x4c","\x5b","\x5e"),
 	HX_HCSTRING("indepFuncScopes","\x6d","\xaa","\xde","\x71"),
 	HX_HCSTRING("indepTypeScopes","\x63","\xae","\x46","\x07"),
+	HX_HCSTRING("indepCoroScopes","\x52","\x26","\x22","\x17"),
 	HX_HCSTRING("stringPool","\x4d","\x12","\x59","\xfc"),
 	HX_HCSTRING("children","\x3f","\x19","\x6a","\x70"),
+	HX_HCSTRING("objectID","\x5a","\x2c","\x2c","\x83"),
+	HX_HCSTRING("coroutineObject","\xb7","\x96","\x10","\x6a"),
+	HX_HCSTRING("getClosestCoroutine","\xf5","\x8c","\xd4","\xe3"),
+	HX_HCSTRING("nextObjectID","\x6d","\x18","\x2b","\x2d"),
 	HX_HCSTRING("nextFuncScopeName","\x28","\x45","\x9e","\x70"),
 	HX_HCSTRING("nextTypeScopeName","\xf2","\x9e","\x74","\xca"),
+	HX_HCSTRING("nextCoroScopeName","\x63","\x86","\xd7","\x1b"),
 	HX_HCSTRING("createObject","\xdb","\xbe","\x94","\x37"),
 	HX_HCSTRING("getBuiltins","\x26","\x0f","\x4f","\x84"),
 	HX_HCSTRING("getParent","\x60","\x8e","\xd4","\x69"),
+	HX_HCSTRING("setParent","\x6c","\x7a","\x25","\x4d"),
 	HX_HCSTRING("getRoot","\xd8","\x9d","\x31","\x1e"),
 	HX_HCSTRING("getName","\x01","\x22","\x82","\x1b"),
 	HX_HCSTRING("getVariables","\x41","\x7f","\xb9","\x91"),
@@ -547,16 +656,23 @@ static ::String Scope_obj_sMemberFields[] = {
 
 static void Scope_obj_sMarkStatics(HX_MARK_PARAMS) {
 	HX_MARK_MEMBER_NAME(Scope_obj::__mClass,"__mClass");
+	HX_MARK_MEMBER_NAME(Scope_obj::objectIDLimit,"objectIDLimit");
 };
 
 #ifdef HXCPP_VISIT_ALLOCS
 static void Scope_obj_sVisitStatics(HX_VISIT_PARAMS) {
 	HX_VISIT_MEMBER_NAME(Scope_obj::__mClass,"__mClass");
+	HX_VISIT_MEMBER_NAME(Scope_obj::objectIDLimit,"objectIDLimit");
 };
 
 #endif
 
 hx::Class Scope_obj::__mClass;
+
+static ::String Scope_obj_sStaticFields[] = {
+	HX_HCSTRING("objectIDLimit","\x81","\x5c","\x81","\x35"),
+	::String(null())
+};
 
 void Scope_obj::__register()
 {
@@ -567,10 +683,10 @@ void Scope_obj::__register()
 	__mClass->mSuper = &super::__SGetClass();
 	__mClass->mConstructEmpty = &__CreateEmpty;
 	__mClass->mConstructArgs = &__Create;
-	__mClass->mGetStaticField = &hx::Class_obj::GetNoStaticField;
-	__mClass->mSetStaticField = &hx::Class_obj::SetNoStaticField;
+	__mClass->mGetStaticField = &Scope_obj::__GetStatic;
+	__mClass->mSetStaticField = &Scope_obj::__SetStatic;
 	__mClass->mMarkFunc = Scope_obj_sMarkStatics;
-	__mClass->mStatics = hx::Class_obj::dupFunctions(0 /* sStaticFields */);
+	__mClass->mStatics = hx::Class_obj::dupFunctions(Scope_obj_sStaticFields);
 	__mClass->mMembers = hx::Class_obj::dupFunctions(Scope_obj_sMemberFields);
 	__mClass->mCanCast = hx::TCanCast< Scope_obj >;
 #ifdef HXCPP_VISIT_ALLOCS
@@ -583,6 +699,14 @@ void Scope_obj::__register()
 	__mClass->mStaticStorageInfo = Scope_obj_sStaticStorageInfo;
 #endif
 	hx::_hx_RegisterClass(__mClass->mName, __mClass);
+}
+
+void Scope_obj::__boot()
+{
+{
+            	HX_STACKFRAME(&_hx_pos_21c6e9ed59d37f78_14_boot)
+HXDLIN(  14)		objectIDLimit = (int)-1;
+            	}
 }
 
 } // end namespace src

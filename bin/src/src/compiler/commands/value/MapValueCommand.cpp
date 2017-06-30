@@ -33,11 +33,14 @@
 #endif
 
 HX_DEFINE_STACK_FRAME(_hx_pos_bb3664ae4f06aa80_48_new,"src.compiler.commands.value.MapValueCommand","new",0xbb215aaa,"src.compiler.commands.value.MapValueCommand.new","src/compiler/commands/value/MapValueCommand.hx",48,0x37dd6368)
-HX_LOCAL_STACK_FRAME(_hx_pos_bb3664ae4f06aa80_54_walk,"src.compiler.commands.value.MapValueCommand","walk",0x07fdd37f,"src.compiler.commands.value.MapValueCommand.walk","src/compiler/commands/value/MapValueCommand.hx",54,0x37dd6368)
-HX_LOCAL_STACK_FRAME(_hx_pos_bb3664ae4f06aa80_61_run,"src.compiler.commands.value.MapValueCommand","run",0xbb247195,"src.compiler.commands.value.MapValueCommand.run","src/compiler/commands/value/MapValueCommand.hx",61,0x37dd6368)
-HX_LOCAL_STACK_FRAME(_hx_pos_bb3664ae4f06aa80_71_getName,"src.compiler.commands.value.MapValueCommand","getName",0xa883994b,"src.compiler.commands.value.MapValueCommand.getName","src/compiler/commands/value/MapValueCommand.hx",71,0x37dd6368)
-HX_LOCAL_STACK_FRAME(_hx_pos_bb3664ae4f06aa80_75_getBytecode,"src.compiler.commands.value.MapValueCommand","getBytecode",0x69bb9b35,"src.compiler.commands.value.MapValueCommand.getBytecode","src/compiler/commands/value/MapValueCommand.hx",75,0x37dd6368)
-HX_LOCAL_STACK_FRAME(_hx_pos_bb3664ae4f06aa80_86_reconstruct,"src.compiler.commands.value.MapValueCommand","reconstruct",0x7c4a4a4e,"src.compiler.commands.value.MapValueCommand.reconstruct","src/compiler/commands/value/MapValueCommand.hx",86,0x37dd6368)
+HX_LOCAL_STACK_FRAME(_hx_pos_bb3664ae4f06aa80_54_copy,"src.compiler.commands.value.MapValueCommand","copy",0xfad0322b,"src.compiler.commands.value.MapValueCommand.copy","src/compiler/commands/value/MapValueCommand.hx",54,0x37dd6368)
+HX_LOCAL_STACK_FRAME(_hx_pos_bb3664ae4f06aa80_61_setScope,"src.compiler.commands.value.MapValueCommand","setScope",0x5b54c408,"src.compiler.commands.value.MapValueCommand.setScope","src/compiler/commands/value/MapValueCommand.hx",61,0x37dd6368)
+HX_LOCAL_STACK_FRAME(_hx_pos_bb3664ae4f06aa80_67_walk,"src.compiler.commands.value.MapValueCommand","walk",0x07fdd37f,"src.compiler.commands.value.MapValueCommand.walk","src/compiler/commands/value/MapValueCommand.hx",67,0x37dd6368)
+HX_LOCAL_STACK_FRAME(_hx_pos_bb3664ae4f06aa80_74_run,"src.compiler.commands.value.MapValueCommand","run",0xbb247195,"src.compiler.commands.value.MapValueCommand.run","src/compiler/commands/value/MapValueCommand.hx",74,0x37dd6368)
+HX_LOCAL_STACK_FRAME(_hx_pos_bb3664ae4f06aa80_84_getName,"src.compiler.commands.value.MapValueCommand","getName",0xa883994b,"src.compiler.commands.value.MapValueCommand.getName","src/compiler/commands/value/MapValueCommand.hx",84,0x37dd6368)
+HX_LOCAL_STACK_FRAME(_hx_pos_bb3664ae4f06aa80_89_getFriendlyName,"src.compiler.commands.value.MapValueCommand","getFriendlyName",0xd78d6356,"src.compiler.commands.value.MapValueCommand.getFriendlyName","src/compiler/commands/value/MapValueCommand.hx",89,0x37dd6368)
+HX_LOCAL_STACK_FRAME(_hx_pos_bb3664ae4f06aa80_93_getBytecode,"src.compiler.commands.value.MapValueCommand","getBytecode",0x69bb9b35,"src.compiler.commands.value.MapValueCommand.getBytecode","src/compiler/commands/value/MapValueCommand.hx",93,0x37dd6368)
+HX_LOCAL_STACK_FRAME(_hx_pos_bb3664ae4f06aa80_104_reconstruct,"src.compiler.commands.value.MapValueCommand","reconstruct",0x7c4a4a4e,"src.compiler.commands.value.MapValueCommand.reconstruct","src/compiler/commands/value/MapValueCommand.hx",104,0x37dd6368)
 HX_LOCAL_STACK_FRAME(_hx_pos_bb3664ae4f06aa80_21_getValueCommandPairFromBytes,"src.compiler.commands.value.MapValueCommand","getValueCommandPairFromBytes",0x3c0471ed,"src.compiler.commands.value.MapValueCommand.getValueCommandPairFromBytes","src/compiler/commands/value/MapValueCommand.hx",21,0x37dd6368)
 HX_LOCAL_STACK_FRAME(_hx_pos_bb3664ae4f06aa80_25_fromTokens,"src.compiler.commands.value.MapValueCommand","fromTokens",0x7817cf5a,"src.compiler.commands.value.MapValueCommand.fromTokens","src/compiler/commands/value/MapValueCommand.hx",25,0x37dd6368)
 HX_LOCAL_STACK_FRAME(_hx_pos_bb3664ae4f06aa80_40_fromBytecode,"src.compiler.commands.value.MapValueCommand","fromBytecode",0xb566ac35,"src.compiler.commands.value.MapValueCommand.fromBytecode","src/compiler/commands/value/MapValueCommand.hx",40,0x37dd6368)
@@ -75,64 +78,101 @@ bool MapValueCommand_obj::_hx_isInstanceOf(int inClassId) {
 	}
 }
 
-::Array< ::Dynamic> MapValueCommand_obj::walk(){
-            	HX_STACKFRAME(&_hx_pos_bb3664ae4f06aa80_54_walk)
-HXLINE(  55)		::Array< ::Dynamic> cmds = ::Array_obj< ::Dynamic>::__new();
+ ::src::compiler::commands::Command MapValueCommand_obj::copy( ::src::compiler::Scope scope){
+            	HX_GC_STACKFRAME(&_hx_pos_bb3664ae4f06aa80_54_copy)
+HXLINE(  55)		::Array< ::Dynamic> newCmds = ::Array_obj< ::Dynamic>::__new();
 HXLINE(  56)		{
 HXLINE(  56)			int _g = (int)0;
-HXDLIN(  56)			while((_g < cmds->length)){
-HXLINE(  56)				 ::src::compiler::commands::Command x = cmds->__get(_g).StaticCast<  ::src::compiler::commands::Command >();
+HXDLIN(  56)			::Array< ::Dynamic> _g1 = this->cmds;
+HXDLIN(  56)			while((_g < _g1->length)){
+HXLINE(  56)				 ::src::compiler::commands::value::ValueCommandPair cmd = _g1->__get(_g).StaticCast<  ::src::compiler::commands::value::ValueCommandPair >();
 HXDLIN(  56)				_g = (_g + (int)1);
-HXDLIN(  56)				cmds->push(x);
+HXDLIN(  56)				newCmds->push(Dynamic( cmd->copy(scope)).StaticCast<  ::src::compiler::commands::value::ValueCommandPair >());
             			}
             		}
-HXLINE(  57)		return cmds;
+HXLINE(  57)		return  ::src::compiler::commands::value::MapValueCommand_obj::__alloc( HX_CTX ,scope,newCmds);
             	}
 
 
- ::src::compiler::object::Object MapValueCommand_obj::run(){
-            	HX_STACKFRAME(&_hx_pos_bb3664ae4f06aa80_61_run)
-HXLINE(  62)		 ::src::compiler::object::builtin::MapObject map = hx::TCast<  ::src::compiler::object::builtin::MapObject >::cast(this->scope->getType(HX_("MapType",56,cf,55,ff),null())->createObject(null()));
+void MapValueCommand_obj::setScope( ::src::compiler::Scope scope){
+            	HX_STACKFRAME(&_hx_pos_bb3664ae4f06aa80_61_setScope)
+HXLINE(  62)		this->super::setScope(scope);
 HXLINE(  63)		{
 HXLINE(  63)			int _g = (int)0;
 HXDLIN(  63)			::Array< ::Dynamic> _g1 = this->cmds;
 HXDLIN(  63)			while((_g < _g1->length)){
-HXLINE(  63)				 ::src::compiler::commands::value::ValueCommandPair pair = _g1->__get(_g).StaticCast<  ::src::compiler::commands::value::ValueCommandPair >();
+HXLINE(  63)				 ::src::compiler::commands::value::ValueCommandPair cmd = _g1->__get(_g).StaticCast<  ::src::compiler::commands::value::ValueCommandPair >();
 HXDLIN(  63)				_g = (_g + (int)1);
-HXLINE(  64)				 ::src::compiler::object::Object _hx_tmp = pair->left->run();
-HXDLIN(  64)				map->set(_hx_tmp,pair->right->run());
+HXDLIN(  63)				cmd->setScope(scope);
             			}
             		}
-HXLINE(  66)		return map;
+            	}
+
+
+::Array< ::Dynamic> MapValueCommand_obj::walk(){
+            	HX_STACKFRAME(&_hx_pos_bb3664ae4f06aa80_67_walk)
+HXLINE(  68)		::Array< ::Dynamic> cmds = ::Array_obj< ::Dynamic>::__new();
+HXLINE(  69)		{
+HXLINE(  69)			int _g = (int)0;
+HXDLIN(  69)			while((_g < cmds->length)){
+HXLINE(  69)				 ::src::compiler::commands::Command x = cmds->__get(_g).StaticCast<  ::src::compiler::commands::Command >();
+HXDLIN(  69)				_g = (_g + (int)1);
+HXDLIN(  69)				cmds->push(x);
+            			}
+            		}
+HXLINE(  70)		return cmds;
+            	}
+
+
+ ::src::compiler::object::Object MapValueCommand_obj::run(){
+            	HX_STACKFRAME(&_hx_pos_bb3664ae4f06aa80_74_run)
+HXLINE(  75)		 ::src::compiler::object::builtin::MapObject map = hx::TCast<  ::src::compiler::object::builtin::MapObject >::cast(this->scope->getType(HX_("MapType",56,cf,55,ff),null())->createObject(this->scope,null()));
+HXLINE(  76)		{
+HXLINE(  76)			int _g = (int)0;
+HXDLIN(  76)			::Array< ::Dynamic> _g1 = this->cmds;
+HXDLIN(  76)			while((_g < _g1->length)){
+HXLINE(  76)				 ::src::compiler::commands::value::ValueCommandPair pair = _g1->__get(_g).StaticCast<  ::src::compiler::commands::value::ValueCommandPair >();
+HXDLIN(  76)				_g = (_g + (int)1);
+HXLINE(  77)				 ::src::compiler::object::Object _hx_tmp = pair->left->run();
+HXDLIN(  77)				map->set(_hx_tmp,pair->right->run());
+            			}
+            		}
+HXLINE(  79)		return map;
             	}
 
 
 ::String MapValueCommand_obj::getName(){
-            	HX_STACKFRAME(&_hx_pos_bb3664ae4f06aa80_71_getName)
-HXDLIN(  71)		return HX_("MapValueCommand",76,32,8d,69);
+            	HX_STACKFRAME(&_hx_pos_bb3664ae4f06aa80_84_getName)
+HXDLIN(  84)		return HX_("MapValueCommand",76,32,8d,69);
+            	}
+
+
+::String MapValueCommand_obj::getFriendlyName(){
+            	HX_STACKFRAME(&_hx_pos_bb3664ae4f06aa80_89_getFriendlyName)
+HXDLIN(  89)		return HX_("map",9c,0a,53,00);
             	}
 
 
  ::src::compiler::bytecode::Bytecode MapValueCommand_obj::getBytecode(){
-            	HX_STACKFRAME(&_hx_pos_bb3664ae4f06aa80_75_getBytecode)
-HXLINE(  76)		::Array< ::Dynamic> arr = ::Array_obj< ::Dynamic>::__new();
-HXLINE(  77)		{
-HXLINE(  77)			int _g = (int)0;
-HXDLIN(  77)			::Array< ::Dynamic> _g1 = this->cmds;
-HXDLIN(  77)			while((_g < _g1->length)){
-HXLINE(  77)				 ::src::compiler::commands::value::ValueCommandPair cmd = _g1->__get(_g).StaticCast<  ::src::compiler::commands::value::ValueCommandPair >();
-HXDLIN(  77)				_g = (_g + (int)1);
-HXLINE(  78)				arr->push(cmd->left);
-HXLINE(  79)				arr->push(cmd->right);
+            	HX_STACKFRAME(&_hx_pos_bb3664ae4f06aa80_93_getBytecode)
+HXLINE(  94)		::Array< ::Dynamic> arr = ::Array_obj< ::Dynamic>::__new();
+HXLINE(  95)		{
+HXLINE(  95)			int _g = (int)0;
+HXDLIN(  95)			::Array< ::Dynamic> _g1 = this->cmds;
+HXDLIN(  95)			while((_g < _g1->length)){
+HXLINE(  95)				 ::src::compiler::commands::value::ValueCommandPair cmd = _g1->__get(_g).StaticCast<  ::src::compiler::commands::value::ValueCommandPair >();
+HXDLIN(  95)				_g = (_g + (int)1);
+HXLINE(  96)				arr->push(cmd->left);
+HXLINE(  97)				arr->push(cmd->right);
             			}
             		}
-HXLINE(  81)		return ::src::compiler::bytecode::Bytecode_obj::fromArray(arr,this->getCodeID());
+HXLINE(  99)		return ::src::compiler::bytecode::Bytecode_obj::fromArray(arr,this->getCodeID());
             	}
 
 
 ::Array< ::Dynamic> MapValueCommand_obj::reconstruct(){
-            	HX_STACKFRAME(&_hx_pos_bb3664ae4f06aa80_86_reconstruct)
-HXDLIN(  86)		return ::src::compiler::commands::Command_obj::reconstructCommands(this->cmds);
+            	HX_STACKFRAME(&_hx_pos_bb3664ae4f06aa80_104_reconstruct)
+HXDLIN( 104)		return ::src::compiler::commands::Command_obj::reconstructCommands(this->cmds);
             	}
 
 
@@ -153,7 +193,7 @@ HXLINE(  28)			int _g = (int)0;
 HXDLIN(  28)			while((_g < spl->length)){
 HXLINE(  28)				::Array< ::Dynamic> subtokens = spl->__get(_g).StaticCast< ::Array< ::Dynamic> >();
 HXDLIN(  28)				_g = (_g + (int)1);
-HXLINE(  29)				::Array< ::Dynamic> pair = ::src::compiler::commands::Command_obj::splitTokens(tokens,HX_("AssignmentToken",4c,94,e1,56),null(),null());
+HXLINE(  29)				::Array< ::Dynamic> pair = ::src::compiler::commands::Command_obj::splitTokens(subtokens,HX_("AssignmentToken",4c,94,e1,56),null(),null());
 HXLINE(  30)				if ((pair->length < (int)2)) {
 HXLINE(  30)					HX_STACK_DO_THROW(HX_("No assignment in map",d5,99,0d,c4));
             				}
@@ -227,14 +267,21 @@ hx::Val MapValueCommand_obj::__Field(const ::String &inName,hx::PropertyAccess i
 		break;
 	case 4:
 		if (HX_FIELD_EQ(inName,"cmds") ) { return hx::Val( cmds ); }
+		if (HX_FIELD_EQ(inName,"copy") ) { return hx::Val( copy_dyn() ); }
 		if (HX_FIELD_EQ(inName,"walk") ) { return hx::Val( walk_dyn() ); }
 		break;
 	case 7:
 		if (HX_FIELD_EQ(inName,"getName") ) { return hx::Val( getName_dyn() ); }
 		break;
+	case 8:
+		if (HX_FIELD_EQ(inName,"setScope") ) { return hx::Val( setScope_dyn() ); }
+		break;
 	case 11:
 		if (HX_FIELD_EQ(inName,"getBytecode") ) { return hx::Val( getBytecode_dyn() ); }
 		if (HX_FIELD_EQ(inName,"reconstruct") ) { return hx::Val( reconstruct_dyn() ); }
+		break;
+	case 15:
+		if (HX_FIELD_EQ(inName,"getFriendlyName") ) { return hx::Val( getFriendlyName_dyn() ); }
 	}
 	return super::__Field(inName,inCallProp);
 }
@@ -279,9 +326,12 @@ static hx::StaticInfo *MapValueCommand_obj_sStaticStorageInfo = 0;
 
 static ::String MapValueCommand_obj_sMemberFields[] = {
 	HX_HCSTRING("cmds","\xb9","\x2c","\xc3","\x41"),
+	HX_HCSTRING("copy","\xb5","\xbb","\xc4","\x41"),
+	HX_HCSTRING("setScope","\x92","\xda","\x0d","\x87"),
 	HX_HCSTRING("walk","\x09","\x5d","\xf2","\x4e"),
 	HX_HCSTRING("run","\x4b","\xe7","\x56","\x00"),
 	HX_HCSTRING("getName","\x01","\x22","\x82","\x1b"),
+	HX_HCSTRING("getFriendlyName","\x0c","\x92","\xf4","\xaf"),
 	HX_HCSTRING("getBytecode","\xeb","\xb6","\x8b","\x7d"),
 	HX_HCSTRING("reconstruct","\x04","\x66","\x1a","\x90"),
 	::String(null()) };

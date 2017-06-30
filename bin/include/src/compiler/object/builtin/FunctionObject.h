@@ -62,13 +62,19 @@ class HXCPP_CLASS_ATTRIBUTES FunctionObject_obj : public  ::src::compiler::objec
 		 ::src::compiler::object::builtin::FunctionArgument keywordCollectorArg;
 		void setup( ::Dynamic code);
 
+		 ::src::compiler::object::builtin::FunctionCode getCode();
+		::Dynamic getCode_dyn();
+
 		void verifyArgumentIntegrity();
 		::Dynamic verifyArgumentIntegrity_dyn();
 
 		 ::src::compiler::object::builtin::FunctionArgument findKwdArg(::String key);
 		::Dynamic findKwdArg_dyn();
 
-		 ::src::compiler::object::Object call(::Array< ::Dynamic> arguments);
+		void setFunctionArguments( ::src::compiler::Scope fscope,::Array< ::Dynamic> arguments);
+		::Dynamic setFunctionArguments_dyn();
+
+		virtual  ::src::compiler::object::Object call(::Array< ::Dynamic> arguments);
 
 };
 

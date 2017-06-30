@@ -65,11 +65,17 @@ class HXCPP_CLASS_ATTRIBUTES ObjectArrayAssignmentCommand_obj : public  ::src::c
 
 		 ::src::compiler::commands::value::ObjectIndexPair objectIndexPair;
 		 ::src::compiler::commands::value::ValueCommand value;
+		 ::src::compiler::commands::Command copy( ::src::compiler::Scope scope);
+
+		void setScope( ::src::compiler::Scope scope);
+
 		::Array< ::Dynamic> walk();
 
 		 ::src::compiler::object::Object run();
 
-		virtual ::String toString();
+		::String getName();
+
+		::String getFriendlyName();
 
 		 ::src::compiler::bytecode::Bytecode getBytecode();
 

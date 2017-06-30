@@ -6,7 +6,6 @@
 #include <hxcpp.h>
 #endif
 
-HX_DECLARE_STACK_FRAME(_hx_pos_2cd113ad60e10261_30_new)
 HX_DECLARE_CLASS0(EReg)
 
 
@@ -26,29 +25,8 @@ class HXCPP_CLASS_ATTRIBUTES EReg_obj : public hx::Object
 			{ return hx::Object::operator new(inSize,inContainer,inName); }
 		inline void *operator new(size_t inSize, int extra)
 			{ return hx::Object::operator new(inSize+extra,true,"EReg"); }
-
-		hx::ObjectPtr< EReg_obj > __new(::String r,::String opt) {
-			hx::ObjectPtr< EReg_obj > __this = new EReg_obj();
-			__this->__construct(r,opt);
-			return __this;
-		}
-
-		static hx::ObjectPtr< EReg_obj > __alloc(hx::Ctx *_hx_ctx,::String r,::String opt) {
-			EReg_obj *__this = (EReg_obj*)(hx::Ctx::alloc(_hx_ctx, sizeof(EReg_obj), true, "EReg"));
-			*(void **)__this = EReg_obj::_hx_vtable;
-{
-            	HX_STACKFRAME(&_hx_pos_2cd113ad60e10261_30_new)
-HXLINE(  31)		::Array< ::String > a = opt.split(HX_("g",67,00,00,00));
-HXLINE(  32)		( ( ::EReg)(__this) )->global = (a->length > (int)1);
-HXLINE(  33)		if (( ( ::EReg)(__this) )->global) {
-HXLINE(  34)			opt = a->join(HX_("",00,00,00,00));
-            		}
-HXLINE(  35)		( ( ::EReg)(__this) )->r = _hx_regexp_new_options(r,opt);
-            	}
-		
-			return __this;
-		}
-
+		static hx::ObjectPtr< EReg_obj > __new(::String r,::String opt);
+		static hx::ObjectPtr< EReg_obj > __alloc(hx::Ctx *_hx_ctx,::String r,::String opt);
 		static void * _hx_vtable;
 		static Dynamic __CreateEmpty();
 		static Dynamic __Create(hx::DynamicArray inArgs);
@@ -69,6 +47,9 @@ HXLINE(  35)		( ( ::EReg)(__this) )->r = _hx_regexp_new_options(r,opt);
 		bool global;
 		bool match(::String s);
 		::Dynamic match_dyn();
+
+		::String replace(::String s,::String by);
+		::Dynamic replace_dyn();
 
 };
 

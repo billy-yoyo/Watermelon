@@ -10,7 +10,6 @@ import src.ast.script.AssignmentToken;
 import src.compiler.Scope;
 import src.compiler.bytecode.Bytecode;
 import src.compiler.commands.Command;
-import src.compiler.commands.FunctionDefinitionCommand.FunctionArgumentCommand;
 import src.compiler.commands.value.LiteralValueCommand;
 import src.compiler.commands.value.ValueCommand;
 import src.compiler.commands.value.VariableValueCommand;
@@ -26,14 +25,11 @@ import src.compiler.signals.SyntaxErrorSignal;
  */
 class FunctionDefinitionCommand extends ValueCommand
 {
-    public static function getFunctionArgumentCommandFromBytes():Scope-> Array<Bytecode>->Command
-    {
-        return FunctionArgumentCommand.fromBytecode;
-    }
     
     public static function fromTokens(scope:Scope, tokens:Array<Token>):FunctionDefinitionCommand
     {
-        if (tokens.shift().getName() == "KwdToken") {
+        var start:Token = tokens.shift();
+        if (start.getName() == "KwdToken" && start.getContent() == "func") {
             var decorators:Array<VariableAccess> = null;
             if (tokens[0].getName() == "BracketToken" && (tokens[1].getName() == "VariableToken" || tokens[1].getName() == "BracketToken")) {
                 decorators = new Array<VariableAccess>();
@@ -111,6 +107,21 @@ class FunctionDefinitionCommand extends ValueCommand
         this.decorators = if (decorators == null) new Array<VariableAccess>() else decorators;
     }
     
+    override public function copy(scope:Scope):Command 
+    {
+        var newArgs:Array<FunctionArgumentCommand> = new Array<FunctionArgumentCommand>();
+        for (arg in args) newArgs.push(cast(arg.copy(scope), FunctionArgumentCommand));
+        return new FunctionDefinitionCommand(scope, name, newArgs, cast(code.copy(scope), FunctionCodeCommand), VariableAccess.copyArray(scope, decorators));
+    }
+    
+    override public function setScope(scope:Scope) 
+    {
+        super.setScope(scope);
+        for (arg in args) arg.setScope(scope);
+        code.getScope().setParent(scope);
+        for (dec in decorators) dec.setScope(scope);
+    }
+    
     override public function walk():Array<Command> 
     {
         var cmds:Array<Command> = new Array<Command>();
@@ -125,13 +136,14 @@ class FunctionDefinitionCommand extends ValueCommand
     {
         var args:Array<FunctionArgument> = new Array<FunctionArgument>();
         for (arg in this.args) args.push(arg.getFuncArg());
-        var func:Object = scope.getType("FunctionType").createValue(new FunctionCode(code, args));
+        var func:Object = scope.getType("FunctionType").createValue(new FunctionCode(code, args), scope);
         var decorator:Object;
         for (variable in decorators) {
             decorator = variable.getVariable();
             func = decorator.call([func]);
         }
         
+        func.setScope(scope);
         if (name == null) {
             return func;
         } else {
@@ -143,6 +155,11 @@ class FunctionDefinitionCommand extends ValueCommand
     override public function getName():String 
     {
         return "FunctionDefinitionCommand";
+    }
+    
+    override public function getFriendlyName():String 
+    {
+        return "function definition";
     }
     
     override public function getBytecode():Bytecode 
@@ -177,56 +194,3 @@ class FunctionDefinitionCommand extends ValueCommand
     }
 }
 
-class FunctionArgumentCommand extends Command
-{
-    public static function fromBytecode(scope:Scope, arr:Array<Bytecode>):FunctionArgumentCommand
-    {
-        return new FunctionArgumentCommand(arr.shift().convert(scope), arr.shift().convert(scope), arr.shift().convert(scope), arr.shift().convert(scope));
-    }
-    
-    private var name:String;
-    private var kwd:Bool;
-    private var collector:Bool;
-    private var _default:ValueCommand;
-    override public function new(name:String, kwd:Bool, collector:Bool, ?_default:ValueCommand)
-    {
-        super(null);
-        this.name = name;
-        this.kwd = kwd;
-        this.collector = collector;
-        this._default = _default;
-    }
-    
-    public function getFuncArg():FunctionArgument
-    {
-        if (_default == null) return new FunctionArgument(name, kwd, collector);
-        else return new FunctionArgument(name, kwd, collector, _default.run());
-    }
-    
-    override public function getName():String 
-    {
-        return "FunctionArgumentCommand";
-    }
-    
-    override public function getBytecode():Bytecode 
-    {
-        return Bytecode.fromArray([name, kwd, collector, _default], getCodeID());
-    }
-    
-    override public function reconstruct():Array<Token> 
-    {
-        if (kwd) {
-            if (collector) {
-                return Token.merge([new MathsOperatorToken("**"), new VariableToken(name), new AssignmentToken("="), _default.reconstruct()]);
-            } else {
-                return Token.merge([new VariableToken(name), new AssignmentToken("="),  _default.reconstruct()]);
-            }
-        } else {
-            if (collector) {
-                return [new MathsOperatorToken("*"), new VariableToken(name)];
-            } else {
-                return [new VariableToken(name)];
-            }
-        }
-    }
-}

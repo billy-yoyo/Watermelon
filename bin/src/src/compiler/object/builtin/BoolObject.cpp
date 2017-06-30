@@ -278,9 +278,15 @@ HXDLIN(  87)		return this->_bool((_hx_tmp != other->rawBool()),null());
             	}
 
 
-::String BoolObject_obj::getHash(){
+int BoolObject_obj::getHash(){
             	HX_STACKFRAME(&_hx_pos_199bbc350cffddea_92_getHash)
-HXDLIN(  92)		return ::Std_obj::string(this->_hx_int());
+HXDLIN(  92)		if (this->value) {
+HXDLIN(  92)			return (int)1;
+            		}
+            		else {
+HXDLIN(  92)			return (int)0;
+            		}
+HXDLIN(  92)		return (int)0;
             	}
 
 

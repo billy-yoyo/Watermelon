@@ -60,6 +60,18 @@ class HXCPP_CLASS_ATTRIBUTES Sys_obj : public hx::Object
 		static ::Array< ::String > args();
 		static ::Dynamic args_dyn();
 
+		static void sleep(Float seconds);
+		static ::Dynamic sleep_dyn();
+
+		static Float time();
+		static ::Dynamic time_dyn();
+
+		static Float cpuTime();
+		static ::Dynamic cpuTime_dyn();
+
+		static ::String programPath();
+		static ::Dynamic programPath_dyn();
+
 };
 
 

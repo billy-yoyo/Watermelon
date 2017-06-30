@@ -35,23 +35,26 @@
 #include <src/compiler/object/builtin/FunctionArgument.h>
 #endif
 
-HX_DEFINE_STACK_FRAME(_hx_pos_6547fad689b7e063_192_new,"src.compiler.commands.FunctionArgumentCommand","new",0xc67b6767,"src.compiler.commands.FunctionArgumentCommand.new","src/compiler/commands/FunctionDefinitionCommand.hx",192,0xf5c5cc60)
-HX_LOCAL_STACK_FRAME(_hx_pos_6547fad689b7e063_202_getFuncArg,"src.compiler.commands.FunctionArgumentCommand","getFuncArg",0xeed01b55,"src.compiler.commands.FunctionArgumentCommand.getFuncArg","src/compiler/commands/FunctionDefinitionCommand.hx",202,0xf5c5cc60)
-HX_LOCAL_STACK_FRAME(_hx_pos_6547fad689b7e063_208_getName,"src.compiler.commands.FunctionArgumentCommand","getName",0x0a8f4888,"src.compiler.commands.FunctionArgumentCommand.getName","src/compiler/commands/FunctionDefinitionCommand.hx",208,0xf5c5cc60)
-HX_LOCAL_STACK_FRAME(_hx_pos_6547fad689b7e063_213_getBytecode,"src.compiler.commands.FunctionArgumentCommand","getBytecode",0x6c3c2cf2,"src.compiler.commands.FunctionArgumentCommand.getBytecode","src/compiler/commands/FunctionDefinitionCommand.hx",213,0xf5c5cc60)
-HX_LOCAL_STACK_FRAME(_hx_pos_6547fad689b7e063_218_reconstruct,"src.compiler.commands.FunctionArgumentCommand","reconstruct",0x7ecadc0b,"src.compiler.commands.FunctionArgumentCommand.reconstruct","src/compiler/commands/FunctionDefinitionCommand.hx",218,0xf5c5cc60)
-HX_LOCAL_STACK_FRAME(_hx_pos_6547fad689b7e063_184_fromBytecode,"src.compiler.commands.FunctionArgumentCommand","fromBytecode",0xe3659fd8,"src.compiler.commands.FunctionArgumentCommand.fromBytecode","src/compiler/commands/FunctionDefinitionCommand.hx",184,0xf5c5cc60)
+HX_DEFINE_STACK_FRAME(_hx_pos_6821ca30098c7647_28_new,"src.compiler.commands.FunctionArgumentCommand","new",0xc67b6767,"src.compiler.commands.FunctionArgumentCommand.new","src/compiler/commands/FunctionArgumentCommand.hx",28,0x32adb34a)
+HX_LOCAL_STACK_FRAME(_hx_pos_6821ca30098c7647_38_copy,"src.compiler.commands.FunctionArgumentCommand","copy",0xde414ace,"src.compiler.commands.FunctionArgumentCommand.copy","src/compiler/commands/FunctionArgumentCommand.hx",38,0x32adb34a)
+HX_LOCAL_STACK_FRAME(_hx_pos_6821ca30098c7647_42_setScope,"src.compiler.commands.FunctionArgumentCommand","setScope",0xc3826a2b,"src.compiler.commands.FunctionArgumentCommand.setScope","src/compiler/commands/FunctionArgumentCommand.hx",42,0x32adb34a)
+HX_LOCAL_STACK_FRAME(_hx_pos_6821ca30098c7647_49_getFuncArg,"src.compiler.commands.FunctionArgumentCommand","getFuncArg",0xeed01b55,"src.compiler.commands.FunctionArgumentCommand.getFuncArg","src/compiler/commands/FunctionArgumentCommand.hx",49,0x32adb34a)
+HX_LOCAL_STACK_FRAME(_hx_pos_6821ca30098c7647_55_getName,"src.compiler.commands.FunctionArgumentCommand","getName",0x0a8f4888,"src.compiler.commands.FunctionArgumentCommand.getName","src/compiler/commands/FunctionArgumentCommand.hx",55,0x32adb34a)
+HX_LOCAL_STACK_FRAME(_hx_pos_6821ca30098c7647_60_getFriendlyName,"src.compiler.commands.FunctionArgumentCommand","getFriendlyName",0x06e61793,"src.compiler.commands.FunctionArgumentCommand.getFriendlyName","src/compiler/commands/FunctionArgumentCommand.hx",60,0x32adb34a)
+HX_LOCAL_STACK_FRAME(_hx_pos_6821ca30098c7647_65_getBytecode,"src.compiler.commands.FunctionArgumentCommand","getBytecode",0x6c3c2cf2,"src.compiler.commands.FunctionArgumentCommand.getBytecode","src/compiler/commands/FunctionArgumentCommand.hx",65,0x32adb34a)
+HX_LOCAL_STACK_FRAME(_hx_pos_6821ca30098c7647_70_reconstruct,"src.compiler.commands.FunctionArgumentCommand","reconstruct",0x7ecadc0b,"src.compiler.commands.FunctionArgumentCommand.reconstruct","src/compiler/commands/FunctionArgumentCommand.hx",70,0x32adb34a)
+HX_LOCAL_STACK_FRAME(_hx_pos_6821ca30098c7647_20_fromBytecode,"src.compiler.commands.FunctionArgumentCommand","fromBytecode",0xe3659fd8,"src.compiler.commands.FunctionArgumentCommand.fromBytecode","src/compiler/commands/FunctionArgumentCommand.hx",20,0x32adb34a)
 namespace src{
 namespace compiler{
 namespace commands{
 
 void FunctionArgumentCommand_obj::__construct(::String name,bool kwd,bool collector, ::src::compiler::commands::value::ValueCommand _default){
-            	HX_STACKFRAME(&_hx_pos_6547fad689b7e063_192_new)
-HXLINE( 193)		super::__construct(null());
-HXLINE( 194)		this->name = name;
-HXLINE( 195)		this->kwd = kwd;
-HXLINE( 196)		this->collector = collector;
-HXLINE( 197)		this->_default = _default;
+            	HX_STACKFRAME(&_hx_pos_6821ca30098c7647_28_new)
+HXLINE(  29)		super::__construct(null());
+HXLINE(  30)		this->name = name;
+HXLINE(  31)		this->kwd = kwd;
+HXLINE(  32)		this->collector = collector;
+HXLINE(  33)		this->_default = _default;
             	}
 
 Dynamic FunctionArgumentCommand_obj::__CreateEmpty() { return new FunctionArgumentCommand_obj; }
@@ -73,70 +76,101 @@ bool FunctionArgumentCommand_obj::_hx_isInstanceOf(int inClassId) {
 	}
 }
 
- ::src::compiler::object::builtin::FunctionArgument FunctionArgumentCommand_obj::getFuncArg(){
-            	HX_GC_STACKFRAME(&_hx_pos_6547fad689b7e063_202_getFuncArg)
-HXDLIN( 202)		if (hx::IsNull( this->_default )) {
-HXDLIN( 202)			return  ::src::compiler::object::builtin::FunctionArgument_obj::__alloc( HX_CTX ,this->name,this->kwd,this->collector,null());
+ ::src::compiler::commands::Command FunctionArgumentCommand_obj::copy( ::src::compiler::Scope scope){
+            	HX_GC_STACKFRAME(&_hx_pos_6821ca30098c7647_38_copy)
+HXDLIN(  38)		::String _hx_tmp = this->name;
+HXDLIN(  38)		bool _hx_tmp1 = this->kwd;
+HXDLIN(  38)		bool _hx_tmp2 = this->collector;
+HXDLIN(  38)		 ::src::compiler::commands::value::ValueCommand _hx_tmp3;
+HXDLIN(  38)		if (hx::IsNull( this->_default )) {
+HXDLIN(  38)			_hx_tmp3 = null();
             		}
             		else {
-HXLINE( 203)			::String _hx_tmp = this->name;
-HXDLIN( 203)			bool _hx_tmp1 = this->kwd;
-HXDLIN( 203)			bool _hx_tmp2 = this->collector;
-HXDLIN( 203)			return  ::src::compiler::object::builtin::FunctionArgument_obj::__alloc( HX_CTX ,_hx_tmp,_hx_tmp1,_hx_tmp2,this->_default->run());
+HXDLIN(  38)			_hx_tmp3 = hx::TCast<  ::src::compiler::commands::value::ValueCommand >::cast(this->_default->copy(scope));
             		}
-HXLINE( 202)		return null();
+HXDLIN(  38)		return  ::src::compiler::commands::FunctionArgumentCommand_obj::__alloc( HX_CTX ,_hx_tmp,_hx_tmp1,_hx_tmp2,_hx_tmp3);
+            	}
+
+
+void FunctionArgumentCommand_obj::setScope( ::src::compiler::Scope scope){
+            	HX_STACKFRAME(&_hx_pos_6821ca30098c7647_42_setScope)
+HXLINE(  43)		this->super::setScope(scope);
+HXLINE(  44)		if (hx::IsNotNull( this->_default )) {
+HXLINE(  44)			this->_default->setScope(scope);
+            		}
+            	}
+
+
+ ::src::compiler::object::builtin::FunctionArgument FunctionArgumentCommand_obj::getFuncArg(){
+            	HX_GC_STACKFRAME(&_hx_pos_6821ca30098c7647_49_getFuncArg)
+HXDLIN(  49)		if (hx::IsNull( this->_default )) {
+HXDLIN(  49)			return  ::src::compiler::object::builtin::FunctionArgument_obj::__alloc( HX_CTX ,this->name,this->kwd,this->collector,null());
+            		}
+            		else {
+HXLINE(  50)			::String _hx_tmp = this->name;
+HXDLIN(  50)			bool _hx_tmp1 = this->kwd;
+HXDLIN(  50)			bool _hx_tmp2 = this->collector;
+HXDLIN(  50)			return  ::src::compiler::object::builtin::FunctionArgument_obj::__alloc( HX_CTX ,_hx_tmp,_hx_tmp1,_hx_tmp2,this->_default->run());
+            		}
+HXLINE(  49)		return null();
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(FunctionArgumentCommand_obj,getFuncArg,return )
 
 ::String FunctionArgumentCommand_obj::getName(){
-            	HX_STACKFRAME(&_hx_pos_6547fad689b7e063_208_getName)
-HXDLIN( 208)		return HX_("FunctionArgumentCommand",f6,23,fd,a4);
+            	HX_STACKFRAME(&_hx_pos_6821ca30098c7647_55_getName)
+HXDLIN(  55)		return HX_("FunctionArgumentCommand",f6,23,fd,a4);
+            	}
+
+
+::String FunctionArgumentCommand_obj::getFriendlyName(){
+            	HX_STACKFRAME(&_hx_pos_6821ca30098c7647_60_getFriendlyName)
+HXDLIN(  60)		return HX_("function argument",85,c0,51,fa);
             	}
 
 
  ::src::compiler::bytecode::Bytecode FunctionArgumentCommand_obj::getBytecode(){
-            	HX_STACKFRAME(&_hx_pos_6547fad689b7e063_213_getBytecode)
-HXDLIN( 213)		::cpp::VirtualArray _hx_tmp = ::cpp::VirtualArray_obj::__new(4)->init(0,this->name)->init(1,this->kwd)->init(2,this->collector)->init(3,this->_default);
-HXDLIN( 213)		return ::src::compiler::bytecode::Bytecode_obj::fromArray(_hx_tmp,this->getCodeID());
+            	HX_STACKFRAME(&_hx_pos_6821ca30098c7647_65_getBytecode)
+HXDLIN(  65)		::cpp::VirtualArray _hx_tmp = ::cpp::VirtualArray_obj::__new(4)->init(0,this->name)->init(1,this->kwd)->init(2,this->collector)->init(3,this->_default);
+HXDLIN(  65)		return ::src::compiler::bytecode::Bytecode_obj::fromArray(_hx_tmp,this->getCodeID());
             	}
 
 
 ::Array< ::Dynamic> FunctionArgumentCommand_obj::reconstruct(){
-            	HX_GC_STACKFRAME(&_hx_pos_6547fad689b7e063_218_reconstruct)
-HXDLIN( 218)		if (this->kwd) {
-HXLINE( 219)			if (this->collector) {
-HXLINE( 220)				 ::src::ast::maths::MathsOperatorToken _hx_tmp =  ::src::ast::maths::MathsOperatorToken_obj::__alloc( HX_CTX ,HX_("**",c0,24,00,00));
-HXDLIN( 220)				 ::src::ast::base::VariableToken _hx_tmp1 =  ::src::ast::base::VariableToken_obj::__alloc( HX_CTX ,this->name);
-HXDLIN( 220)				 ::src::ast::script::AssignmentToken _hx_tmp2 =  ::src::ast::script::AssignmentToken_obj::__alloc( HX_CTX ,HX_("=",3d,00,00,00));
-HXDLIN( 220)				return ::src::ast::Token_obj::merge(::cpp::VirtualArray_obj::__new(4)->init(0,_hx_tmp)->init(1,_hx_tmp1)->init(2,_hx_tmp2)->init(3,this->_default->reconstruct()));
+            	HX_GC_STACKFRAME(&_hx_pos_6821ca30098c7647_70_reconstruct)
+HXDLIN(  70)		if (this->kwd) {
+HXLINE(  71)			if (this->collector) {
+HXLINE(  72)				 ::src::ast::maths::MathsOperatorToken _hx_tmp =  ::src::ast::maths::MathsOperatorToken_obj::__alloc( HX_CTX ,HX_("**",c0,24,00,00));
+HXDLIN(  72)				 ::src::ast::base::VariableToken _hx_tmp1 =  ::src::ast::base::VariableToken_obj::__alloc( HX_CTX ,this->name);
+HXDLIN(  72)				 ::src::ast::script::AssignmentToken _hx_tmp2 =  ::src::ast::script::AssignmentToken_obj::__alloc( HX_CTX ,HX_("=",3d,00,00,00));
+HXDLIN(  72)				return ::src::ast::Token_obj::merge(::cpp::VirtualArray_obj::__new(4)->init(0,_hx_tmp)->init(1,_hx_tmp1)->init(2,_hx_tmp2)->init(3,this->_default->reconstruct()));
             			}
             			else {
-HXLINE( 222)				 ::src::ast::base::VariableToken _hx_tmp3 =  ::src::ast::base::VariableToken_obj::__alloc( HX_CTX ,this->name);
-HXDLIN( 222)				 ::src::ast::script::AssignmentToken _hx_tmp4 =  ::src::ast::script::AssignmentToken_obj::__alloc( HX_CTX ,HX_("=",3d,00,00,00));
-HXDLIN( 222)				return ::src::ast::Token_obj::merge(::cpp::VirtualArray_obj::__new(3)->init(0,_hx_tmp3)->init(1,_hx_tmp4)->init(2,this->_default->reconstruct()));
+HXLINE(  74)				 ::src::ast::base::VariableToken _hx_tmp3 =  ::src::ast::base::VariableToken_obj::__alloc( HX_CTX ,this->name);
+HXDLIN(  74)				 ::src::ast::script::AssignmentToken _hx_tmp4 =  ::src::ast::script::AssignmentToken_obj::__alloc( HX_CTX ,HX_("=",3d,00,00,00));
+HXDLIN(  74)				return ::src::ast::Token_obj::merge(::cpp::VirtualArray_obj::__new(3)->init(0,_hx_tmp3)->init(1,_hx_tmp4)->init(2,this->_default->reconstruct()));
             			}
             		}
             		else {
-HXLINE( 225)			if (this->collector) {
-HXLINE( 226)				 ::src::ast::maths::MathsOperatorToken _hx_tmp5 =  ::src::ast::maths::MathsOperatorToken_obj::__alloc( HX_CTX ,HX_("*",2a,00,00,00));
-HXDLIN( 226)				return ::Array_obj< ::Dynamic>::__new(2)->init(0,_hx_tmp5)->init(1, ::src::ast::base::VariableToken_obj::__alloc( HX_CTX ,this->name));
+HXLINE(  77)			if (this->collector) {
+HXLINE(  78)				 ::src::ast::maths::MathsOperatorToken _hx_tmp5 =  ::src::ast::maths::MathsOperatorToken_obj::__alloc( HX_CTX ,HX_("*",2a,00,00,00));
+HXDLIN(  78)				return ::Array_obj< ::Dynamic>::__new(2)->init(0,_hx_tmp5)->init(1, ::src::ast::base::VariableToken_obj::__alloc( HX_CTX ,this->name));
             			}
             			else {
-HXLINE( 228)				return ::Array_obj< ::Dynamic>::__new(1)->init(0, ::src::ast::base::VariableToken_obj::__alloc( HX_CTX ,this->name));
+HXLINE(  80)				return ::Array_obj< ::Dynamic>::__new(1)->init(0, ::src::ast::base::VariableToken_obj::__alloc( HX_CTX ,this->name));
             			}
             		}
-HXLINE( 218)		return null();
+HXLINE(  70)		return null();
             	}
 
 
  ::src::compiler::commands::FunctionArgumentCommand FunctionArgumentCommand_obj::fromBytecode( ::src::compiler::Scope scope,::Array< ::Dynamic> arr){
-            	HX_GC_STACKFRAME(&_hx_pos_6547fad689b7e063_184_fromBytecode)
-HXDLIN( 184)		 ::Dynamic _hx_tmp = arr->shift().StaticCast<  ::src::compiler::bytecode::Bytecode >()->convert(scope);
-HXDLIN( 184)		 ::Dynamic _hx_tmp1 = arr->shift().StaticCast<  ::src::compiler::bytecode::Bytecode >()->convert(scope);
-HXDLIN( 184)		 ::Dynamic _hx_tmp2 = arr->shift().StaticCast<  ::src::compiler::bytecode::Bytecode >()->convert(scope);
-HXDLIN( 184)		return  ::src::compiler::commands::FunctionArgumentCommand_obj::__alloc( HX_CTX ,_hx_tmp,_hx_tmp1,_hx_tmp2,arr->shift().StaticCast<  ::src::compiler::bytecode::Bytecode >()->convert(scope));
+            	HX_GC_STACKFRAME(&_hx_pos_6821ca30098c7647_20_fromBytecode)
+HXDLIN(  20)		 ::Dynamic _hx_tmp = arr->shift().StaticCast<  ::src::compiler::bytecode::Bytecode >()->convert(scope);
+HXDLIN(  20)		 ::Dynamic _hx_tmp1 = arr->shift().StaticCast<  ::src::compiler::bytecode::Bytecode >()->convert(scope);
+HXDLIN(  20)		 ::Dynamic _hx_tmp2 = arr->shift().StaticCast<  ::src::compiler::bytecode::Bytecode >()->convert(scope);
+HXDLIN(  20)		return  ::src::compiler::commands::FunctionArgumentCommand_obj::__alloc( HX_CTX ,_hx_tmp,_hx_tmp1,_hx_tmp2,arr->shift().StaticCast<  ::src::compiler::bytecode::Bytecode >()->convert(scope));
             	}
 
 
@@ -188,12 +222,14 @@ hx::Val FunctionArgumentCommand_obj::__Field(const ::String &inName,hx::Property
 		break;
 	case 4:
 		if (HX_FIELD_EQ(inName,"name") ) { return hx::Val( name ); }
+		if (HX_FIELD_EQ(inName,"copy") ) { return hx::Val( copy_dyn() ); }
 		break;
 	case 7:
 		if (HX_FIELD_EQ(inName,"getName") ) { return hx::Val( getName_dyn() ); }
 		break;
 	case 8:
 		if (HX_FIELD_EQ(inName,"_default") ) { return hx::Val( _default ); }
+		if (HX_FIELD_EQ(inName,"setScope") ) { return hx::Val( setScope_dyn() ); }
 		break;
 	case 9:
 		if (HX_FIELD_EQ(inName,"collector") ) { return hx::Val( collector ); }
@@ -204,6 +240,9 @@ hx::Val FunctionArgumentCommand_obj::__Field(const ::String &inName,hx::Property
 	case 11:
 		if (HX_FIELD_EQ(inName,"getBytecode") ) { return hx::Val( getBytecode_dyn() ); }
 		if (HX_FIELD_EQ(inName,"reconstruct") ) { return hx::Val( reconstruct_dyn() ); }
+		break;
+	case 15:
+		if (HX_FIELD_EQ(inName,"getFriendlyName") ) { return hx::Val( getFriendlyName_dyn() ); }
 	}
 	return super::__Field(inName,inCallProp);
 }
@@ -260,8 +299,11 @@ static ::String FunctionArgumentCommand_obj_sMemberFields[] = {
 	HX_HCSTRING("kwd","\x38","\x99","\x51","\x00"),
 	HX_HCSTRING("collector","\x4d","\x45","\x15","\x83"),
 	HX_HCSTRING("_default","\x42","\x32","\x7c","\xd5"),
+	HX_HCSTRING("copy","\xb5","\xbb","\xc4","\x41"),
+	HX_HCSTRING("setScope","\x92","\xda","\x0d","\x87"),
 	HX_HCSTRING("getFuncArg","\x7c","\xb3","\x65","\x40"),
 	HX_HCSTRING("getName","\x01","\x22","\x82","\x1b"),
+	HX_HCSTRING("getFriendlyName","\x0c","\x92","\xf4","\xaf"),
 	HX_HCSTRING("getBytecode","\xeb","\xb6","\x8b","\x7d"),
 	HX_HCSTRING("reconstruct","\x04","\x66","\x1a","\x90"),
 	::String(null()) };

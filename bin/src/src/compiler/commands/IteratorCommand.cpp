@@ -42,11 +42,14 @@
 #endif
 
 HX_DEFINE_STACK_FRAME(_hx_pos_494c23514ca1bc78_16_new,"src.compiler.commands.IteratorCommand","new",0x9d3abcce,"src.compiler.commands.IteratorCommand.new","src/compiler/commands/IteratorCommand.hx",16,0x5e4f7ec3)
-HX_LOCAL_STACK_FRAME(_hx_pos_494c23514ca1bc78_62_walk,"src.compiler.commands.IteratorCommand","walk",0xfc1a50db,"src.compiler.commands.IteratorCommand.walk","src/compiler/commands/IteratorCommand.hx",62,0x5e4f7ec3)
-HX_LOCAL_STACK_FRAME(_hx_pos_494c23514ca1bc78_66_run,"src.compiler.commands.IteratorCommand","run",0x9d3dd3b9,"src.compiler.commands.IteratorCommand.run","src/compiler/commands/IteratorCommand.hx",66,0x5e4f7ec3)
-HX_LOCAL_STACK_FRAME(_hx_pos_494c23514ca1bc78_86_getName,"src.compiler.commands.IteratorCommand","getName",0x0a62dd6f,"src.compiler.commands.IteratorCommand.getName","src/compiler/commands/IteratorCommand.hx",86,0x5e4f7ec3)
-HX_LOCAL_STACK_FRAME(_hx_pos_494c23514ca1bc78_90_getBytecode,"src.compiler.commands.IteratorCommand","getBytecode",0xa0f9c159,"src.compiler.commands.IteratorCommand.getBytecode","src/compiler/commands/IteratorCommand.hx",90,0x5e4f7ec3)
-HX_LOCAL_STACK_FRAME(_hx_pos_494c23514ca1bc78_97_reconstruct,"src.compiler.commands.IteratorCommand","reconstruct",0xb3887072,"src.compiler.commands.IteratorCommand.reconstruct","src/compiler/commands/IteratorCommand.hx",97,0x5e4f7ec3)
+HX_LOCAL_STACK_FRAME(_hx_pos_494c23514ca1bc78_62_copy,"src.compiler.commands.IteratorCommand","copy",0xeeecaf87,"src.compiler.commands.IteratorCommand.copy","src/compiler/commands/IteratorCommand.hx",62,0x5e4f7ec3)
+HX_LOCAL_STACK_FRAME(_hx_pos_494c23514ca1bc78_66_setScope,"src.compiler.commands.IteratorCommand","setScope",0x9cd11f64,"src.compiler.commands.IteratorCommand.setScope","src/compiler/commands/IteratorCommand.hx",66,0x5e4f7ec3)
+HX_LOCAL_STACK_FRAME(_hx_pos_494c23514ca1bc78_73_walk,"src.compiler.commands.IteratorCommand","walk",0xfc1a50db,"src.compiler.commands.IteratorCommand.walk","src/compiler/commands/IteratorCommand.hx",73,0x5e4f7ec3)
+HX_LOCAL_STACK_FRAME(_hx_pos_494c23514ca1bc78_77_run,"src.compiler.commands.IteratorCommand","run",0x9d3dd3b9,"src.compiler.commands.IteratorCommand.run","src/compiler/commands/IteratorCommand.hx",77,0x5e4f7ec3)
+HX_LOCAL_STACK_FRAME(_hx_pos_494c23514ca1bc78_97_getName,"src.compiler.commands.IteratorCommand","getName",0x0a62dd6f,"src.compiler.commands.IteratorCommand.getName","src/compiler/commands/IteratorCommand.hx",97,0x5e4f7ec3)
+HX_LOCAL_STACK_FRAME(_hx_pos_494c23514ca1bc78_102_getFriendlyName,"src.compiler.commands.IteratorCommand","getFriendlyName",0x7a436b7a,"src.compiler.commands.IteratorCommand.getFriendlyName","src/compiler/commands/IteratorCommand.hx",102,0x5e4f7ec3)
+HX_LOCAL_STACK_FRAME(_hx_pos_494c23514ca1bc78_106_getBytecode,"src.compiler.commands.IteratorCommand","getBytecode",0xa0f9c159,"src.compiler.commands.IteratorCommand.getBytecode","src/compiler/commands/IteratorCommand.hx",106,0x5e4f7ec3)
+HX_LOCAL_STACK_FRAME(_hx_pos_494c23514ca1bc78_113_reconstruct,"src.compiler.commands.IteratorCommand","reconstruct",0xb3887072,"src.compiler.commands.IteratorCommand.reconstruct","src/compiler/commands/IteratorCommand.hx",113,0x5e4f7ec3)
 HX_LOCAL_STACK_FRAME(_hx_pos_494c23514ca1bc78_20_fromTokens,"src.compiler.commands.IteratorCommand","fromTokens",0x55e6b9b6,"src.compiler.commands.IteratorCommand.fromTokens","src/compiler/commands/IteratorCommand.hx",20,0x5e4f7ec3)
 HX_LOCAL_STACK_FRAME(_hx_pos_494c23514ca1bc78_47_fromBytecode,"src.compiler.commands.IteratorCommand","fromBytecode",0xd489e591,"src.compiler.commands.IteratorCommand.fromBytecode","src/compiler/commands/IteratorCommand.hx",47,0x5e4f7ec3)
 namespace src{
@@ -80,74 +83,94 @@ bool IteratorCommand_obj::_hx_isInstanceOf(int inClassId) {
 	}
 }
 
+ ::src::compiler::commands::Command IteratorCommand_obj::copy( ::src::compiler::Scope scope){
+            	HX_GC_STACKFRAME(&_hx_pos_494c23514ca1bc78_62_copy)
+HXDLIN(  62)		::Array< ::String > _hx_tmp = this->vars->copy();
+HXDLIN(  62)		return  ::src::compiler::commands::IteratorCommand_obj::__alloc( HX_CTX ,scope,_hx_tmp,this->value->copy(scope));
+            	}
+
+
+void IteratorCommand_obj::setScope( ::src::compiler::Scope scope){
+            	HX_STACKFRAME(&_hx_pos_494c23514ca1bc78_66_setScope)
+HXLINE(  67)		this->super::setScope(scope);
+HXLINE(  68)		this->value->setScope(scope);
+            	}
+
+
 ::Array< ::Dynamic> IteratorCommand_obj::walk(){
-            	HX_STACKFRAME(&_hx_pos_494c23514ca1bc78_62_walk)
-HXDLIN(  62)		return this->value->walk();
+            	HX_STACKFRAME(&_hx_pos_494c23514ca1bc78_73_walk)
+HXDLIN(  73)		return this->value->walk();
             	}
 
 
  ::src::compiler::object::Object IteratorCommand_obj::run(){
-            	HX_GC_STACKFRAME(&_hx_pos_494c23514ca1bc78_66_run)
-HXLINE(  67)		if (hx::IsNull( this->iterator )) {
-HXLINE(  67)			this->iterator = this->value->run();
+            	HX_GC_STACKFRAME(&_hx_pos_494c23514ca1bc78_77_run)
+HXLINE(  78)		if (hx::IsNull( this->iterator )) {
+HXLINE(  78)			this->iterator = this->value->run();
             		}
-HXLINE(  68)		bool _hx_tmp;
-HXDLIN(  68)		if (!(this->iterator->isInstance(HX_("IteratorType",e8,43,45,b2)))) {
-HXLINE(  68)			_hx_tmp = !(this->iterator->hasMember(HX_("__next__",f3,a5,93,1a)));
+HXLINE(  79)		bool _hx_tmp;
+HXDLIN(  79)		if (!(this->iterator->isInstance(HX_("IteratorType",e8,43,45,b2)))) {
+HXLINE(  79)			_hx_tmp = !(this->iterator->hasMember(HX_("__next__",f3,a5,93,1a)));
             		}
             		else {
-HXLINE(  68)			_hx_tmp = false;
+HXLINE(  79)			_hx_tmp = false;
             		}
-HXDLIN(  68)		if (_hx_tmp) {
-HXLINE(  68)			this->iterator = this->iterator->iter();
+HXDLIN(  79)		if (_hx_tmp) {
+HXLINE(  79)			this->iterator = this->iterator->iter();
             		}
-HXLINE(  69)		if (this->iterator->hasNext()->rawBool()) {
-HXLINE(  70)			if ((this->vars->length == (int)1)) {
-HXLINE(  71)				 ::src::compiler::Scope _hx_tmp1 = this->scope;
-HXDLIN(  71)				::String _hx_tmp2 = this->vars->__get((int)0);
-HXDLIN(  71)				_hx_tmp1->setVariable(_hx_tmp2,this->iterator->next());
+HXLINE(  80)		if (this->iterator->hasNext()->rawBool()) {
+HXLINE(  81)			if ((this->vars->length == (int)1)) {
+HXLINE(  82)				 ::src::compiler::Scope _hx_tmp1 = this->scope;
+HXDLIN(  82)				::String _hx_tmp2 = this->vars->__get((int)0);
+HXDLIN(  82)				_hx_tmp1->setVariable(_hx_tmp2,this->iterator->next());
             			}
             			else {
-HXLINE(  73)				 ::src::compiler::object::Object obj = this->iterator->next();
-HXLINE(  74)				{
-HXLINE(  74)					int _g1 = (int)0;
-HXDLIN(  74)					int _g = this->vars->length;
-HXDLIN(  74)					while((_g1 < _g)){
-HXLINE(  74)						_g1 = (_g1 + (int)1);
-HXDLIN(  74)						int i = (_g1 - (int)1);
-HXLINE(  75)						 ::src::compiler::Scope _hx_tmp3 = this->scope;
-HXDLIN(  75)						::String _hx_tmp4 = this->vars->__get(i);
-HXDLIN(  75)						_hx_tmp3->setVariable(_hx_tmp4,obj->get(obj->_int(i,null())));
+HXLINE(  84)				 ::src::compiler::object::Object obj = this->iterator->next();
+HXLINE(  85)				{
+HXLINE(  85)					int _g1 = (int)0;
+HXDLIN(  85)					int _g = this->vars->length;
+HXDLIN(  85)					while((_g1 < _g)){
+HXLINE(  85)						_g1 = (_g1 + (int)1);
+HXDLIN(  85)						int i = (_g1 - (int)1);
+HXLINE(  86)						 ::src::compiler::Scope _hx_tmp3 = this->scope;
+HXDLIN(  86)						::String _hx_tmp4 = this->vars->__get(i);
+HXDLIN(  86)						_hx_tmp3->setVariable(_hx_tmp4,obj->get(obj->_int(i,null())));
             					}
             				}
             			}
             		}
             		else {
-HXLINE(  79)			HX_STACK_DO_THROW( ::src::compiler::signals::IteratorExitSignal_obj::__alloc( HX_CTX ,HX_("",00,00,00,00)));
+HXLINE(  90)			HX_STACK_DO_THROW( ::src::compiler::signals::IteratorExitSignal_obj::__alloc( HX_CTX ,HX_("",00,00,00,00)));
             		}
-HXLINE(  81)		return null();
+HXLINE(  92)		return null();
             	}
 
 
 ::String IteratorCommand_obj::getName(){
-            	HX_STACKFRAME(&_hx_pos_494c23514ca1bc78_86_getName)
-HXDLIN(  86)		return HX_("IteratorCommand",dd,90,61,b2);
+            	HX_STACKFRAME(&_hx_pos_494c23514ca1bc78_97_getName)
+HXDLIN(  97)		return HX_("IteratorCommand",dd,90,61,b2);
+            	}
+
+
+::String IteratorCommand_obj::getFriendlyName(){
+            	HX_STACKFRAME(&_hx_pos_494c23514ca1bc78_102_getFriendlyName)
+HXDLIN( 102)		return HX_("iterator",ee,49,9a,93);
             	}
 
 
  ::src::compiler::bytecode::Bytecode IteratorCommand_obj::getBytecode(){
-            	HX_STACKFRAME(&_hx_pos_494c23514ca1bc78_90_getBytecode)
-HXLINE(  91)		::String joinedVars = this->vars->join(HX_("+",2b,00,00,00));
-HXLINE(  92)		::cpp::VirtualArray _hx_tmp = ::cpp::VirtualArray_obj::__new(2)->init(0,joinedVars)->init(1,this->value);
-HXDLIN(  92)		return ::src::compiler::bytecode::Bytecode_obj::fromArray(_hx_tmp,this->getCodeID());
+            	HX_STACKFRAME(&_hx_pos_494c23514ca1bc78_106_getBytecode)
+HXLINE( 107)		::String joinedVars = this->vars->join(HX_("+",2b,00,00,00));
+HXLINE( 108)		::cpp::VirtualArray _hx_tmp = ::cpp::VirtualArray_obj::__new(2)->init(0,joinedVars)->init(1,this->value);
+HXDLIN( 108)		return ::src::compiler::bytecode::Bytecode_obj::fromArray(_hx_tmp,this->getCodeID());
             	}
 
 
 ::Array< ::Dynamic> IteratorCommand_obj::reconstruct(){
-            	HX_GC_STACKFRAME(&_hx_pos_494c23514ca1bc78_97_reconstruct)
-HXDLIN(  97)		::Array< ::String > _hx_tmp = this->vars;
-HXDLIN(  97)		 ::src::ast::base::KwdToken _hx_tmp1 =  ::src::ast::base::KwdToken_obj::__alloc( HX_CTX ,HX_("in",e5,5b,00,00));
-HXDLIN(  97)		return ::src::ast::Token_obj::merge(::cpp::VirtualArray_obj::__new(3)->init(0,_hx_tmp)->init(1,_hx_tmp1)->init(2,this->value->reconstruct()));
+            	HX_GC_STACKFRAME(&_hx_pos_494c23514ca1bc78_113_reconstruct)
+HXDLIN( 113)		::Array< ::String > _hx_tmp = this->vars;
+HXDLIN( 113)		 ::src::ast::base::KwdToken _hx_tmp1 =  ::src::ast::base::KwdToken_obj::__alloc( HX_CTX ,HX_("in",e5,5b,00,00));
+HXDLIN( 113)		return ::src::ast::Token_obj::merge(::cpp::VirtualArray_obj::__new(3)->init(0,_hx_tmp)->init(1,_hx_tmp1)->init(2,this->value->reconstruct()));
             	}
 
 
@@ -270,6 +293,7 @@ hx::Val IteratorCommand_obj::__Field(const ::String &inName,hx::PropertyAccess i
 		break;
 	case 4:
 		if (HX_FIELD_EQ(inName,"vars") ) { return hx::Val( vars ); }
+		if (HX_FIELD_EQ(inName,"copy") ) { return hx::Val( copy_dyn() ); }
 		if (HX_FIELD_EQ(inName,"walk") ) { return hx::Val( walk_dyn() ); }
 		break;
 	case 5:
@@ -280,10 +304,14 @@ hx::Val IteratorCommand_obj::__Field(const ::String &inName,hx::PropertyAccess i
 		break;
 	case 8:
 		if (HX_FIELD_EQ(inName,"iterator") ) { return hx::Val( iterator ); }
+		if (HX_FIELD_EQ(inName,"setScope") ) { return hx::Val( setScope_dyn() ); }
 		break;
 	case 11:
 		if (HX_FIELD_EQ(inName,"getBytecode") ) { return hx::Val( getBytecode_dyn() ); }
 		if (HX_FIELD_EQ(inName,"reconstruct") ) { return hx::Val( reconstruct_dyn() ); }
+		break;
+	case 15:
+		if (HX_FIELD_EQ(inName,"getFriendlyName") ) { return hx::Val( getFriendlyName_dyn() ); }
 	}
 	return super::__Field(inName,inCallProp);
 }
@@ -337,9 +365,12 @@ static ::String IteratorCommand_obj_sMemberFields[] = {
 	HX_HCSTRING("iterator","\xee","\x49","\x9a","\x93"),
 	HX_HCSTRING("vars","\xac","\x2b","\x49","\x4e"),
 	HX_HCSTRING("value","\x71","\x7f","\xb8","\x31"),
+	HX_HCSTRING("copy","\xb5","\xbb","\xc4","\x41"),
+	HX_HCSTRING("setScope","\x92","\xda","\x0d","\x87"),
 	HX_HCSTRING("walk","\x09","\x5d","\xf2","\x4e"),
 	HX_HCSTRING("run","\x4b","\xe7","\x56","\x00"),
 	HX_HCSTRING("getName","\x01","\x22","\x82","\x1b"),
+	HX_HCSTRING("getFriendlyName","\x0c","\x92","\xf4","\xaf"),
 	HX_HCSTRING("getBytecode","\xeb","\xb6","\x8b","\x7d"),
 	HX_HCSTRING("reconstruct","\x04","\x66","\x1a","\x90"),
 	::String(null()) };

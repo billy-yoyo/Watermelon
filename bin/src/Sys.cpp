@@ -20,6 +20,10 @@
 HX_LOCAL_STACK_FRAME(_hx_pos_6531db758068dd5d_36_stdin,"Sys","stdin",0x03b9a107,"Sys.stdin","C:\\HaxeToolkit\\haxe\\std/cpp/_std/Sys.hx",36,0x57bbb657)
 HX_LOCAL_STACK_FRAME(_hx_pos_6531db758068dd5d_41_stdout,"Sys","stdout",0x3eb7d92c,"Sys.stdout","C:\\HaxeToolkit\\haxe\\std/cpp/_std/Sys.hx",41,0x57bbb657)
 HX_LOCAL_STACK_FRAME(_hx_pos_6531db758068dd5d_54_args,"Sys","args",0xeaeddc7e,"Sys.args","C:\\HaxeToolkit\\haxe\\std/cpp/_std/Sys.hx",54,0x57bbb657)
+HX_LOCAL_STACK_FRAME(_hx_pos_6531db758068dd5d_69_sleep,"Sys","sleep",0xfe70aad6,"Sys.sleep","C:\\HaxeToolkit\\haxe\\std/cpp/_std/Sys.hx",69,0x57bbb657)
+HX_LOCAL_STACK_FRAME(_hx_pos_6531db758068dd5d_111_time,"Sys","time",0xf7761b2e,"Sys.time","C:\\HaxeToolkit\\haxe\\std/cpp/_std/Sys.hx",111,0x57bbb657)
+HX_LOCAL_STACK_FRAME(_hx_pos_6531db758068dd5d_115_cpuTime,"Sys","cpuTime",0x274f48d4,"Sys.cpuTime","C:\\HaxeToolkit\\haxe\\std/cpp/_std/Sys.hx",115,0x57bbb657)
+HX_LOCAL_STACK_FRAME(_hx_pos_6531db758068dd5d_123_programPath,"Sys","programPath",0x38d53548,"Sys.programPath","C:\\HaxeToolkit\\haxe\\std/cpp/_std/Sys.hx",123,0x57bbb657)
 
 void Sys_obj::__construct() { }
 
@@ -62,6 +66,38 @@ HXDLIN(  54)		return ::__get_args();
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC0(Sys_obj,args,return )
 
+void Sys_obj::sleep(Float seconds){
+            	HX_STACKFRAME(&_hx_pos_6531db758068dd5d_69_sleep)
+HXDLIN(  69)		_hx_std_sys_sleep(seconds);
+            	}
+
+
+STATIC_HX_DEFINE_DYNAMIC_FUNC1(Sys_obj,sleep,(void))
+
+Float Sys_obj::time(){
+            	HX_STACKFRAME(&_hx_pos_6531db758068dd5d_111_time)
+HXDLIN( 111)		return _hx_std_sys_time();
+            	}
+
+
+STATIC_HX_DEFINE_DYNAMIC_FUNC0(Sys_obj,time,return )
+
+Float Sys_obj::cpuTime(){
+            	HX_STACKFRAME(&_hx_pos_6531db758068dd5d_115_cpuTime)
+HXDLIN( 115)		return _hx_std_sys_cpu_time();
+            	}
+
+
+STATIC_HX_DEFINE_DYNAMIC_FUNC0(Sys_obj,cpuTime,return )
+
+::String Sys_obj::programPath(){
+            	HX_STACKFRAME(&_hx_pos_6531db758068dd5d_123_programPath)
+HXDLIN( 123)		return _hx_std_sys_exe_path();
+            	}
+
+
+STATIC_HX_DEFINE_DYNAMIC_FUNC0(Sys_obj,programPath,return )
+
 
 Sys_obj::Sys_obj()
 {
@@ -72,12 +108,20 @@ bool Sys_obj::__GetStatic(const ::String &inName, Dynamic &outValue, hx::Propert
 	switch(inName.length) {
 	case 4:
 		if (HX_FIELD_EQ(inName,"args") ) { outValue = args_dyn(); return true; }
+		if (HX_FIELD_EQ(inName,"time") ) { outValue = time_dyn(); return true; }
 		break;
 	case 5:
 		if (HX_FIELD_EQ(inName,"stdin") ) { outValue = _hx_stdin_dyn(); return true; }
+		if (HX_FIELD_EQ(inName,"sleep") ) { outValue = sleep_dyn(); return true; }
 		break;
 	case 6:
 		if (HX_FIELD_EQ(inName,"stdout") ) { outValue = _hx_stdout_dyn(); return true; }
+		break;
+	case 7:
+		if (HX_FIELD_EQ(inName,"cpuTime") ) { outValue = cpuTime_dyn(); return true; }
+		break;
+	case 11:
+		if (HX_FIELD_EQ(inName,"programPath") ) { outValue = programPath_dyn(); return true; }
 	}
 	return false;
 }
@@ -104,6 +148,10 @@ static ::String Sys_obj_sStaticFields[] = {
 	HX_HCSTRING("stdin","\x48","\xb3","\x0d","\x84"),
 	HX_HCSTRING("stdout","\xcb","\xbf","\xf3","\x07"),
 	HX_HCSTRING("args","\x5d","\x8d","\x74","\x40"),
+	HX_HCSTRING("sleep","\x17","\xbd","\xc4","\x7e"),
+	HX_HCSTRING("time","\x0d","\xcc","\xfc","\x4c"),
+	HX_HCSTRING("cpuTime","\x55","\x2d","\x7d","\x72"),
+	HX_HCSTRING("programPath","\x49","\xee","\x75","\xc1"),
 	::String(null())
 };
 

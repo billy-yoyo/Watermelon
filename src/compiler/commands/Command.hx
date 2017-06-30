@@ -1,5 +1,6 @@
 package src.compiler.commands;
 import src.ast.Token;
+import src.compiler.Scope;
 import src.compiler.bytecode.Bytecode;
 import src.compiler.bytecode.BytecodeMap;
 import src.compiler.object.Object;
@@ -44,11 +45,23 @@ class Command
         }
         return false;
     }
+    
+    public static function copyArray(scope:Scope, arr:Array<Command>)
+    {
+        var newArr:Array<Command> = new Array<Command>();
+        for (x in arr) newArr.push(x.copy(scope));
+        return newArr;
+    }
 
     private var scope:Scope;
     public function new(scope:Scope) 
     {
         this.scope = scope;
+    }
+    
+    public function copy(scope:Scope):Command
+    {
+        return new Command(scope);
     }
     
     public function run():Object
@@ -66,6 +79,11 @@ class Command
         return "Command";
     }
     
+    public function getFriendlyName():String
+    {
+        return "command";
+    }
+    
     public function getBytecode():Bytecode
     {
         return null;
@@ -78,6 +96,11 @@ class Command
     
     public function walk():Array<Command> {
         return new Array<Command>();
+    }
+    
+    public function setScope(scope:Scope)
+    {
+        this.scope = scope;
     }
     
     public function toString():String

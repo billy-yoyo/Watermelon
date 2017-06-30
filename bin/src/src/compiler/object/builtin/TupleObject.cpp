@@ -35,6 +35,12 @@
 #ifndef INCLUDED_src_compiler_object_builtin_ListObject
 #include <src/compiler/object/builtin/ListObject.h>
 #endif
+#ifndef INCLUDED_src_compiler_object_builtin_SpliceObject
+#include <src/compiler/object/builtin/SpliceObject.h>
+#endif
+#ifndef INCLUDED_src_compiler_object_builtin_SpliceValue
+#include <src/compiler/object/builtin/SpliceValue.h>
+#endif
 #ifndef INCLUDED_src_compiler_object_builtin_StringObject
 #include <src/compiler/object/builtin/StringObject.h>
 #endif
@@ -47,33 +53,37 @@
 #ifndef INCLUDED_src_compiler_signals_ExitSignal
 #include <src/compiler/signals/ExitSignal.h>
 #endif
+#ifndef INCLUDED_src_compiler_signals_IndexOutOfBoundsSignal
+#include <src/compiler/signals/IndexOutOfBoundsSignal.h>
+#endif
 #ifndef INCLUDED_src_compiler_signals_InvalidFieldAccessSignal
 #include <src/compiler/signals/InvalidFieldAccessSignal.h>
 #endif
 
-HX_DEFINE_STACK_FRAME(_hx_pos_0648d16042b974d1_14_new,"src.compiler.object.builtin.TupleObject","new",0x44d2a524,"src.compiler.object.builtin.TupleObject.new","src/compiler/object/builtin/TupleObject.hx",14,0x6d940f6e)
-HX_LOCAL_STACK_FRAME(_hx_pos_0648d16042b974d1_21_getArray,"src.compiler.object.builtin.TupleObject","getArray",0x3e99e1df,"src.compiler.object.builtin.TupleObject.getArray","src/compiler/object/builtin/TupleObject.hx",21,0x6d940f6e)
-HX_LOCAL_STACK_FRAME(_hx_pos_0648d16042b974d1_25_get,"src.compiler.object.builtin.TupleObject","get",0x44cd555a,"src.compiler.object.builtin.TupleObject.get","src/compiler/object/builtin/TupleObject.hx",25,0x6d940f6e)
-HX_LOCAL_STACK_FRAME(_hx_pos_0648d16042b974d1_31_set,"src.compiler.object.builtin.TupleObject","set",0x44d67066,"src.compiler.object.builtin.TupleObject.set","src/compiler/object/builtin/TupleObject.hx",31,0x6d940f6e)
-HX_LOCAL_STACK_FRAME(_hx_pos_0648d16042b974d1_38_delete,"src.compiler.object.builtin.TupleObject","delete",0x2be43de7,"src.compiler.object.builtin.TupleObject.delete","src/compiler/object/builtin/TupleObject.hx",38,0x6d940f6e)
-HX_LOCAL_STACK_FRAME(_hx_pos_0648d16042b974d1_46_add,"src.compiler.object.builtin.TupleObject","add",0x44c8c6e5,"src.compiler.object.builtin.TupleObject.add","src/compiler/object/builtin/TupleObject.hx",46,0x6d940f6e)
-HX_LOCAL_STACK_FRAME(_hx_pos_0648d16042b974d1_59_mult,"src.compiler.object.builtin.TupleObject","mult",0xf2e0beac,"src.compiler.object.builtin.TupleObject.mult","src/compiler/object/builtin/TupleObject.hx",59,0x6d940f6e)
-HX_LOCAL_STACK_FRAME(_hx_pos_0648d16042b974d1_71_div,"src.compiler.object.builtin.TupleObject","div",0x44cb1215,"src.compiler.object.builtin.TupleObject.div","src/compiler/object/builtin/TupleObject.hx",71,0x6d940f6e)
-HX_LOCAL_STACK_FRAME(_hx_pos_0648d16042b974d1_84_iter,"src.compiler.object.builtin.TupleObject","iter",0xf03b1bd4,"src.compiler.object.builtin.TupleObject.iter","src/compiler/object/builtin/TupleObject.hx",84,0x6d940f6e)
-HX_LOCAL_STACK_FRAME(_hx_pos_0648d16042b974d1_90_isin,"src.compiler.object.builtin.TupleObject","isin",0xf03a5d0b,"src.compiler.object.builtin.TupleObject.isin","src/compiler/object/builtin/TupleObject.hx",90,0x6d940f6e)
-HX_LOCAL_STACK_FRAME(_hx_pos_0648d16042b974d1_96_len,"src.compiler.object.builtin.TupleObject","len",0x44d12099,"src.compiler.object.builtin.TupleObject.len","src/compiler/object/builtin/TupleObject.hx",96,0x6d940f6e)
-HX_LOCAL_STACK_FRAME(_hx_pos_0648d16042b974d1_102_str,"src.compiler.object.builtin.TupleObject","str",0x44d67d75,"src.compiler.object.builtin.TupleObject.str","src/compiler/object/builtin/TupleObject.hx",102,0x6d940f6e)
-HX_LOCAL_STACK_FRAME(_hx_pos_0648d16042b974d1_108_tuple,"src.compiler.object.builtin.TupleObject","tuple",0x999729cc,"src.compiler.object.builtin.TupleObject.tuple","src/compiler/object/builtin/TupleObject.hx",108,0x6d940f6e)
-HX_LOCAL_STACK_FRAME(_hx_pos_0648d16042b974d1_114_list,"src.compiler.object.builtin.TupleObject","list",0xf22e731a,"src.compiler.object.builtin.TupleObject.list","src/compiler/object/builtin/TupleObject.hx",114,0x6d940f6e)
+HX_DEFINE_STACK_FRAME(_hx_pos_0648d16042b974d1_15_new,"src.compiler.object.builtin.TupleObject","new",0x44d2a524,"src.compiler.object.builtin.TupleObject.new","src/compiler/object/builtin/TupleObject.hx",15,0x6d940f6e)
+HX_LOCAL_STACK_FRAME(_hx_pos_0648d16042b974d1_20__index,"src.compiler.object.builtin.TupleObject","_index",0x7b07600f,"src.compiler.object.builtin.TupleObject._index","src/compiler/object/builtin/TupleObject.hx",20,0x6d940f6e)
+HX_LOCAL_STACK_FRAME(_hx_pos_0648d16042b974d1_27_getArray,"src.compiler.object.builtin.TupleObject","getArray",0x3e99e1df,"src.compiler.object.builtin.TupleObject.getArray","src/compiler/object/builtin/TupleObject.hx",27,0x6d940f6e)
+HX_LOCAL_STACK_FRAME(_hx_pos_0648d16042b974d1_31_get,"src.compiler.object.builtin.TupleObject","get",0x44cd555a,"src.compiler.object.builtin.TupleObject.get","src/compiler/object/builtin/TupleObject.hx",31,0x6d940f6e)
+HX_LOCAL_STACK_FRAME(_hx_pos_0648d16042b974d1_53_set,"src.compiler.object.builtin.TupleObject","set",0x44d67066,"src.compiler.object.builtin.TupleObject.set","src/compiler/object/builtin/TupleObject.hx",53,0x6d940f6e)
+HX_LOCAL_STACK_FRAME(_hx_pos_0648d16042b974d1_60_delete,"src.compiler.object.builtin.TupleObject","delete",0x2be43de7,"src.compiler.object.builtin.TupleObject.delete","src/compiler/object/builtin/TupleObject.hx",60,0x6d940f6e)
+HX_LOCAL_STACK_FRAME(_hx_pos_0648d16042b974d1_68_add,"src.compiler.object.builtin.TupleObject","add",0x44c8c6e5,"src.compiler.object.builtin.TupleObject.add","src/compiler/object/builtin/TupleObject.hx",68,0x6d940f6e)
+HX_LOCAL_STACK_FRAME(_hx_pos_0648d16042b974d1_81_mult,"src.compiler.object.builtin.TupleObject","mult",0xf2e0beac,"src.compiler.object.builtin.TupleObject.mult","src/compiler/object/builtin/TupleObject.hx",81,0x6d940f6e)
+HX_LOCAL_STACK_FRAME(_hx_pos_0648d16042b974d1_93_div,"src.compiler.object.builtin.TupleObject","div",0x44cb1215,"src.compiler.object.builtin.TupleObject.div","src/compiler/object/builtin/TupleObject.hx",93,0x6d940f6e)
+HX_LOCAL_STACK_FRAME(_hx_pos_0648d16042b974d1_106_iter,"src.compiler.object.builtin.TupleObject","iter",0xf03b1bd4,"src.compiler.object.builtin.TupleObject.iter","src/compiler/object/builtin/TupleObject.hx",106,0x6d940f6e)
+HX_LOCAL_STACK_FRAME(_hx_pos_0648d16042b974d1_112_isin,"src.compiler.object.builtin.TupleObject","isin",0xf03a5d0b,"src.compiler.object.builtin.TupleObject.isin","src/compiler/object/builtin/TupleObject.hx",112,0x6d940f6e)
+HX_LOCAL_STACK_FRAME(_hx_pos_0648d16042b974d1_118_len,"src.compiler.object.builtin.TupleObject","len",0x44d12099,"src.compiler.object.builtin.TupleObject.len","src/compiler/object/builtin/TupleObject.hx",118,0x6d940f6e)
+HX_LOCAL_STACK_FRAME(_hx_pos_0648d16042b974d1_124_str,"src.compiler.object.builtin.TupleObject","str",0x44d67d75,"src.compiler.object.builtin.TupleObject.str","src/compiler/object/builtin/TupleObject.hx",124,0x6d940f6e)
+HX_LOCAL_STACK_FRAME(_hx_pos_0648d16042b974d1_130_tuple,"src.compiler.object.builtin.TupleObject","tuple",0x999729cc,"src.compiler.object.builtin.TupleObject.tuple","src/compiler/object/builtin/TupleObject.hx",130,0x6d940f6e)
+HX_LOCAL_STACK_FRAME(_hx_pos_0648d16042b974d1_136_list,"src.compiler.object.builtin.TupleObject","list",0xf22e731a,"src.compiler.object.builtin.TupleObject.list","src/compiler/object/builtin/TupleObject.hx",136,0x6d940f6e)
 namespace src{
 namespace compiler{
 namespace object{
 namespace builtin{
 
 void TupleObject_obj::__construct( ::src::compiler::Scope scope, ::src::compiler::object::ObjectType type, ::haxe::ds::StringMap members, ::Dynamic value,::Array< ::Dynamic> args){
-            	HX_STACKFRAME(&_hx_pos_0648d16042b974d1_14_new)
-HXLINE(  17)		this->arr = ::Array_obj< ::Dynamic>::__new();
-HXLINE(  14)		super::__construct(scope,type,members,value,args);
+            	HX_STACKFRAME(&_hx_pos_0648d16042b974d1_15_new)
+HXLINE(  18)		this->arr = ::Array_obj< ::Dynamic>::__new();
+HXLINE(  15)		super::__construct(scope,type,members,value,args);
             	}
 
 Dynamic TupleObject_obj::__CreateEmpty() { return new TupleObject_obj; }
@@ -99,183 +109,217 @@ bool TupleObject_obj::_hx_isInstanceOf(int inClassId) {
 	}
 }
 
+int TupleObject_obj::_index(int i){
+            	HX_STACKFRAME(&_hx_pos_0648d16042b974d1_20__index)
+HXLINE(  21)		if ((i < (int)0)) {
+HXLINE(  21)			return (i + this->arr->length);
+            		}
+HXLINE(  22)		return i;
+            	}
+
+
+HX_DEFINE_DYNAMIC_FUNC1(TupleObject_obj,_index,return )
+
 ::Array< ::Dynamic> TupleObject_obj::getArray(){
-            	HX_STACKFRAME(&_hx_pos_0648d16042b974d1_21_getArray)
-HXDLIN(  21)		return this->arr;
+            	HX_STACKFRAME(&_hx_pos_0648d16042b974d1_27_getArray)
+HXDLIN(  27)		return this->arr;
             	}
 
 
 HX_DEFINE_DYNAMIC_FUNC0(TupleObject_obj,getArray,return )
 
  ::src::compiler::object::Object TupleObject_obj::get( ::src::compiler::object::Object index){
-            	HX_STACKFRAME(&_hx_pos_0648d16042b974d1_25_get)
-HXLINE(  26)		if (this->hasMember(HX_("__get__",16,fe,be,fb))) {
-HXLINE(  26)			return this->callMember(HX_("__get__",16,fe,be,fb),::Array_obj< ::Dynamic>::__new(1)->init(0,index));
+            	HX_GC_STACKFRAME(&_hx_pos_0648d16042b974d1_31_get)
+HXLINE(  32)		if (this->hasMember(HX_("__get__",16,fe,be,fb))) {
+HXLINE(  32)			return this->callMember(HX_("__get__",16,fe,be,fb),::Array_obj< ::Dynamic>::__new(1)->init(0,index));
             		}
-HXLINE(  27)		::Array< ::Dynamic> _hx_tmp = this->arr;
-HXDLIN(  27)		return _hx_tmp->__get(index->rawInt()).StaticCast<  ::src::compiler::object::Object >();
+HXLINE(  33)		if (index->isInstance(HX_("SpliceType",76,16,08,c6))) {
+HXLINE(  34)			 ::src::compiler::object::builtin::SpliceValue splice = hx::TCast<  ::src::compiler::object::builtin::SpliceObject >::cast(index)->getValue(this->arr->length);
+HXLINE(  35)			::Array< ::Dynamic> newArr = ::Array_obj< ::Dynamic>::__new();
+HXLINE(  36)			int i = splice->start;
+HXLINE(  38)			while((i < splice->end)){
+HXLINE(  39)				newArr->push(this->arr->__get(i).StaticCast<  ::src::compiler::object::Object >());
+HXLINE(  40)				i = (i + splice->step);
+            			}
+HXLINE(  42)			return this->_tuple(newArr,null());
+            		}
+HXLINE(  44)		int i1 = this->_index(index->rawInt());
+HXLINE(  45)		bool _hx_tmp;
+HXDLIN(  45)		if ((i1 >= (int)0)) {
+HXLINE(  45)			_hx_tmp = (i1 < this->arr->length);
+            		}
+            		else {
+HXLINE(  45)			_hx_tmp = false;
+            		}
+HXDLIN(  45)		if (_hx_tmp) {
+HXLINE(  46)			return this->arr->__get(i1).StaticCast<  ::src::compiler::object::Object >();
+            		}
+            		else {
+HXLINE(  48)			HX_STACK_DO_THROW( ::src::compiler::signals::IndexOutOfBoundsSignal_obj::__alloc( HX_CTX ,(((HX_("Index ",ee,88,87,c8) + i1) + HX_(" is out of bounds, should be between 0 and ",eb,88,ef,1e)) + this->arr->length)));
+            		}
+HXLINE(  45)		return null();
             	}
 
 
 void TupleObject_obj::set( ::src::compiler::object::Object index, ::src::compiler::object::Object obj){
-            	HX_GC_STACKFRAME(&_hx_pos_0648d16042b974d1_31_set)
-HXLINE(  32)		if (this->hasMember(HX_("__set__",22,f4,8d,e4))) {
-HXLINE(  32)			this->callMember(HX_("__set__",22,f4,8d,e4),::Array_obj< ::Dynamic>::__new(1)->init(0,index));
-HXDLIN(  32)			return;
+            	HX_GC_STACKFRAME(&_hx_pos_0648d16042b974d1_53_set)
+HXLINE(  54)		if (this->hasMember(HX_("__set__",22,f4,8d,e4))) {
+HXLINE(  54)			this->callMember(HX_("__set__",22,f4,8d,e4),::Array_obj< ::Dynamic>::__new(1)->init(0,index));
+HXDLIN(  54)			return;
             		}
-HXLINE(  33)		HX_STACK_DO_THROW( ::src::compiler::signals::InvalidFieldAccessSignal_obj::__alloc( HX_CTX ,HX_("Tuples are immutable (cannot set index of tuple)",0a,c0,b9,f3)));
+HXLINE(  55)		HX_STACK_DO_THROW( ::src::compiler::signals::InvalidFieldAccessSignal_obj::__alloc( HX_CTX ,HX_("Tuples are immutable (cannot set index of tuple)",0a,c0,b9,f3)));
             	}
 
 
 void TupleObject_obj::_hx_delete( ::src::compiler::object::Object index){
-            	HX_GC_STACKFRAME(&_hx_pos_0648d16042b974d1_38_delete)
-HXLINE(  39)		if (this->hasMember(HX_("__delete__",2b,27,e2,05))) {
-HXLINE(  39)			this->callMember(HX_("__eq__",ac,01,11,f2),::Array_obj< ::Dynamic>::__new(1)->init(0,index));
-HXDLIN(  39)			return;
+            	HX_GC_STACKFRAME(&_hx_pos_0648d16042b974d1_60_delete)
+HXLINE(  61)		if (this->hasMember(HX_("__delete__",2b,27,e2,05))) {
+HXLINE(  61)			this->callMember(HX_("__delete__",2b,27,e2,05),::Array_obj< ::Dynamic>::__new(1)->init(0,index));
+HXDLIN(  61)			return;
             		}
-HXLINE(  40)		HX_STACK_DO_THROW( ::src::compiler::signals::InvalidFieldAccessSignal_obj::__alloc( HX_CTX ,HX_("Tuples are immutable (cannot delete index of tuple)",fb,e5,ca,a4)));
+HXLINE(  62)		HX_STACK_DO_THROW( ::src::compiler::signals::InvalidFieldAccessSignal_obj::__alloc( HX_CTX ,HX_("Tuples are immutable (cannot delete index of tuple)",fb,e5,ca,a4)));
             	}
 
 
  ::src::compiler::object::Object TupleObject_obj::add( ::src::compiler::object::Object other){
-            	HX_STACKFRAME(&_hx_pos_0648d16042b974d1_46_add)
-HXDLIN(  46)		if (other->isInstance(HX_("ListType",58,7e,af,06))) {
-HXDLIN(  46)			::Array< ::Dynamic> _hx_tmp = this->arr;
-HXDLIN(  46)			return this->_tuple(_hx_tmp->concat(other->list()->arr),null());
+            	HX_STACKFRAME(&_hx_pos_0648d16042b974d1_68_add)
+HXDLIN(  68)		if (other->isInstance(HX_("ListType",58,7e,af,06))) {
+HXDLIN(  68)			::Array< ::Dynamic> _hx_tmp = this->arr;
+HXDLIN(  68)			return this->_tuple(_hx_tmp->concat(other->list()->arr),null());
             		}
             		else {
-HXLINE(  47)			if (other->isInstance(HX_("TupleType",c2,3e,8e,1a))) {
-HXLINE(  47)				::Array< ::Dynamic> _hx_tmp1 = this->arr;
-HXDLIN(  47)				return this->_tuple(_hx_tmp1->concat(other->tuple()->arr),null());
+HXLINE(  69)			if (other->isInstance(HX_("TupleType",c2,3e,8e,1a))) {
+HXLINE(  69)				::Array< ::Dynamic> _hx_tmp1 = this->arr;
+HXDLIN(  69)				return this->_tuple(_hx_tmp1->concat(other->tuple()->arr),null());
             			}
             			else {
-HXLINE(  48)				bool _hx_tmp2;
-HXDLIN(  48)				if (!(other->hasMember(HX_("__iter__",58,f9,3c,b1)))) {
-HXLINE(  48)					_hx_tmp2 = other->hasMember(HX_("__next__",f3,a5,93,1a));
+HXLINE(  70)				bool _hx_tmp2;
+HXDLIN(  70)				if (!(other->hasMember(HX_("__iter__",58,f9,3c,b1)))) {
+HXLINE(  70)					_hx_tmp2 = other->hasMember(HX_("__next__",f3,a5,93,1a));
             				}
             				else {
-HXLINE(  48)					_hx_tmp2 = true;
+HXLINE(  70)					_hx_tmp2 = true;
             				}
-HXDLIN(  48)				if (_hx_tmp2) {
-HXLINE(  49)					if (!(other->hasMember(HX_("__next__",f3,a5,93,1a)))) {
-HXLINE(  49)						other = other->iter();
+HXDLIN(  70)				if (_hx_tmp2) {
+HXLINE(  71)					if (!(other->hasMember(HX_("__next__",f3,a5,93,1a)))) {
+HXLINE(  71)						other = other->iter();
             					}
-HXLINE(  50)					::Array< ::Dynamic> newArr = this->arr->copy();
-HXLINE(  51)					while(other->hasNext()->rawBool()){
-HXLINE(  52)						newArr->push(other->next());
+HXLINE(  72)					::Array< ::Dynamic> newArr = this->arr->copy();
+HXLINE(  73)					while(other->hasNext()->rawBool()){
+HXLINE(  74)						newArr->push(other->next());
             					}
-HXLINE(  54)					return this->_tuple(newArr,null());
+HXLINE(  76)					return this->_tuple(newArr,null());
             				}
             				else {
-HXLINE(  55)					return this->_tuple(this->arr->concat(::Array_obj< ::Dynamic>::__new(1)->init(0,other)),null());
+HXLINE(  77)					return this->_tuple(this->arr->concat(::Array_obj< ::Dynamic>::__new(1)->init(0,other)),null());
             				}
             			}
             		}
-HXLINE(  46)		return null();
+HXLINE(  68)		return null();
             	}
 
 
  ::src::compiler::object::Object TupleObject_obj::mult( ::src::compiler::object::Object other){
-            	HX_STACKFRAME(&_hx_pos_0648d16042b974d1_59_mult)
-HXLINE(  60)		if (this->hasMember(HX_("__mult__",30,02,b3,e2))) {
-HXLINE(  60)			return this->callMember(HX_("__mult__",30,02,b3,e2),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
+            	HX_STACKFRAME(&_hx_pos_0648d16042b974d1_81_mult)
+HXLINE(  82)		if (this->hasMember(HX_("__mult__",30,02,b3,e2))) {
+HXLINE(  82)			return this->callMember(HX_("__mult__",30,02,b3,e2),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
             		}
-HXLINE(  61)		if (other->hasMember(HX_("__mult__",30,02,b3,e2))) {
-HXLINE(  61)			other->mult(hx::ObjectPtr<OBJ_>(this));
+HXLINE(  83)		if (other->hasMember(HX_("__mult__",30,02,b3,e2))) {
+HXLINE(  83)			other->mult(hx::ObjectPtr<OBJ_>(this));
             		}
-HXLINE(  62)		::Array< ::Dynamic> result = ::Array_obj< ::Dynamic>::__new();
-HXLINE(  63)		::Array< ::Dynamic> arr = other->list()->arr;
-HXLINE(  64)		{
-HXLINE(  64)			int _g1 = (int)0;
-HXDLIN(  64)			int _g = other->rawInt();
-HXDLIN(  64)			while((_g1 < _g)){
-HXLINE(  64)				_g1 = (_g1 + (int)1);
-HXDLIN(  64)				int i = (_g1 - (int)1);
-HXLINE(  65)				result = result->concat(arr);
+HXLINE(  84)		::Array< ::Dynamic> result = ::Array_obj< ::Dynamic>::__new();
+HXLINE(  85)		::Array< ::Dynamic> arr = other->list()->arr;
+HXLINE(  86)		{
+HXLINE(  86)			int _g1 = (int)0;
+HXDLIN(  86)			int _g = other->rawInt();
+HXDLIN(  86)			while((_g1 < _g)){
+HXLINE(  86)				_g1 = (_g1 + (int)1);
+HXDLIN(  86)				int i = (_g1 - (int)1);
+HXLINE(  87)				result = result->concat(arr);
             			}
             		}
-HXLINE(  67)		return this->_tuple(result,null());
+HXLINE(  89)		return this->_tuple(result,null());
             	}
 
 
  ::src::compiler::object::Object TupleObject_obj::div( ::src::compiler::object::Object other){
-            	HX_STACKFRAME(&_hx_pos_0648d16042b974d1_71_div)
-HXLINE(  72)		if (this->hasMember(HX_("__div__",91,9f,31,44))) {
-HXLINE(  72)			return this->callMember(HX_("__div__",91,9f,31,44),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
+            	HX_STACKFRAME(&_hx_pos_0648d16042b974d1_93_div)
+HXLINE(  94)		if (this->hasMember(HX_("__div__",91,9f,31,44))) {
+HXLINE(  94)			return this->callMember(HX_("__div__",91,9f,31,44),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
             		}
-HXLINE(  73)		if (other->hasMember(HX_("__rdiv__",1f,d4,b1,16))) {
-HXLINE(  73)			return other->rdiv(hx::ObjectPtr<OBJ_>(this));
+HXLINE(  95)		if (other->hasMember(HX_("__rdiv__",1f,d4,b1,16))) {
+HXLINE(  95)			return other->rdiv(hx::ObjectPtr<OBJ_>(this));
             		}
-HXLINE(  74)		int div = other->rawInt();
-HXLINE(  75)		 ::src::compiler::object::builtin::TupleObject result = hx::TCast<  ::src::compiler::object::builtin::TupleObject >::cast(this->scope->getType(HX_("ListType",58,7e,af,06),null())->createObject(null()));
-HXLINE(  76)		::Array< ::Dynamic> arr = result->getArray();
-HXLINE(  77)		{
-HXLINE(  77)			int _g1 = (int)0;
-HXDLIN(  77)			int _g = ::Math_obj::ceil(((Float)this->arr->length / (Float)div));
-HXDLIN(  77)			while((_g1 < _g)){
-HXLINE(  77)				_g1 = (_g1 + (int)1);
-HXDLIN(  77)				int i = (_g1 - (int)1);
-HXLINE(  78)				::Array< ::Dynamic> _hx_tmp = this->arr;
-HXDLIN(  78)				arr->push(this->_list(_hx_tmp->slice((i * div),div),null()));
+HXLINE(  96)		int div = other->rawInt();
+HXLINE(  97)		 ::src::compiler::object::builtin::TupleObject result = hx::TCast<  ::src::compiler::object::builtin::TupleObject >::cast(this->scope->getType(HX_("TupleType",c2,3e,8e,1a),null())->createObject(this->scope,null()));
+HXLINE(  98)		::Array< ::Dynamic> arr = result->getArray();
+HXLINE(  99)		{
+HXLINE(  99)			int _g1 = (int)0;
+HXDLIN(  99)			int _g = ::Math_obj::ceil(((Float)this->arr->length / (Float)div));
+HXDLIN(  99)			while((_g1 < _g)){
+HXLINE(  99)				_g1 = (_g1 + (int)1);
+HXDLIN(  99)				int i = (_g1 - (int)1);
+HXLINE( 100)				::Array< ::Dynamic> _hx_tmp = this->arr;
+HXDLIN( 100)				arr->push(this->_list(_hx_tmp->slice((i * div),div),null()));
             			}
             		}
-HXLINE(  80)		return result;
+HXLINE( 102)		return result;
             	}
 
 
  ::src::compiler::object::Object TupleObject_obj::iter(){
-            	HX_STACKFRAME(&_hx_pos_0648d16042b974d1_84_iter)
-HXLINE(  85)		if (this->hasMember(HX_("__iter__",58,f9,3c,b1))) {
-HXLINE(  85)			return this->callMember(HX_("__iter__",58,f9,3c,b1),::Array_obj< ::Dynamic>::__new(0));
+            	HX_STACKFRAME(&_hx_pos_0648d16042b974d1_106_iter)
+HXLINE( 107)		if (this->hasMember(HX_("__iter__",58,f9,3c,b1))) {
+HXLINE( 107)			return this->callMember(HX_("__iter__",58,f9,3c,b1),::Array_obj< ::Dynamic>::__new(0));
             		}
-HXLINE(  86)		return this->_iter(this->arr,null());
+HXLINE( 108)		return this->_iter(this->arr,null());
             	}
 
 
  ::src::compiler::object::Object TupleObject_obj::isin( ::src::compiler::object::Object other){
-            	HX_STACKFRAME(&_hx_pos_0648d16042b974d1_90_isin)
-HXLINE(  91)		if (this->hasMember(HX_("__isin__",4f,36,78,20))) {
-HXLINE(  91)			return this->callMember(HX_("__isin__",4f,36,78,20),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
+            	HX_STACKFRAME(&_hx_pos_0648d16042b974d1_112_isin)
+HXLINE( 113)		if (this->hasMember(HX_("__isin__",4f,36,78,20))) {
+HXLINE( 113)			return this->callMember(HX_("__isin__",4f,36,78,20),::Array_obj< ::Dynamic>::__new(1)->init(0,other));
             		}
-HXLINE(  92)		return this->_bool(::src::compiler::object::builtin::ListObject_obj::objectInArray(other,this->arr),null());
+HXLINE( 114)		return this->_bool(::src::compiler::object::builtin::ListObject_obj::objectInArray(other,this->arr),null());
             	}
 
 
  ::src::compiler::object::builtin::IntObject TupleObject_obj::len(){
-            	HX_STACKFRAME(&_hx_pos_0648d16042b974d1_96_len)
-HXLINE(  97)		if (this->hasMember(HX_("__len__",15,57,bb,dc))) {
-HXLINE(  97)			return hx::TCast<  ::src::compiler::object::builtin::IntObject >::cast(this->callMember(HX_("__len__",15,57,bb,dc),::Array_obj< ::Dynamic>::__new(0)));
+            	HX_STACKFRAME(&_hx_pos_0648d16042b974d1_118_len)
+HXLINE( 119)		if (this->hasMember(HX_("__len__",15,57,bb,dc))) {
+HXLINE( 119)			return hx::TCast<  ::src::compiler::object::builtin::IntObject >::cast(this->callMember(HX_("__len__",15,57,bb,dc),::Array_obj< ::Dynamic>::__new(0)));
             		}
-HXLINE(  98)		return this->_int(this->arr->length,null());
+HXLINE( 120)		return this->_int(this->arr->length,null());
             	}
 
 
  ::src::compiler::object::builtin::StringObject TupleObject_obj::str(){
-            	HX_STACKFRAME(&_hx_pos_0648d16042b974d1_102_str)
-HXLINE( 103)		if (this->hasMember(HX_("__str__",f1,a2,76,ee))) {
-HXLINE( 103)			return hx::TCast<  ::src::compiler::object::builtin::StringObject >::cast(this->callMember(HX_("__str__",f1,a2,76,ee),::Array_obj< ::Dynamic>::__new(0)));
+            	HX_STACKFRAME(&_hx_pos_0648d16042b974d1_124_str)
+HXLINE( 125)		if (this->hasMember(HX_("__str__",f1,a2,76,ee))) {
+HXLINE( 125)			return hx::TCast<  ::src::compiler::object::builtin::StringObject >::cast(this->callMember(HX_("__str__",f1,a2,76,ee),::Array_obj< ::Dynamic>::__new(0)));
             		}
-HXLINE( 104)		return this->_str((HX_("",00,00,00,00) + ::Std_obj::string(this->arr)),null());
+HXLINE( 126)		return this->_str((HX_("",00,00,00,00) + ::Std_obj::string(this->arr)),null());
             	}
 
 
  ::src::compiler::object::builtin::TupleObject TupleObject_obj::tuple(){
-            	HX_STACKFRAME(&_hx_pos_0648d16042b974d1_108_tuple)
-HXLINE( 109)		if (this->hasMember(HX_("__tuple__",08,52,5a,e5))) {
-HXLINE( 109)			return hx::TCast<  ::src::compiler::object::builtin::TupleObject >::cast(this->callMember(HX_("__tuple__",08,52,5a,e5),::Array_obj< ::Dynamic>::__new(0)));
+            	HX_STACKFRAME(&_hx_pos_0648d16042b974d1_130_tuple)
+HXLINE( 131)		if (this->hasMember(HX_("__tuple__",08,52,5a,e5))) {
+HXLINE( 131)			return hx::TCast<  ::src::compiler::object::builtin::TupleObject >::cast(this->callMember(HX_("__tuple__",08,52,5a,e5),::Array_obj< ::Dynamic>::__new(0)));
             		}
-HXLINE( 110)		return hx::ObjectPtr<OBJ_>(this);
+HXLINE( 132)		return hx::ObjectPtr<OBJ_>(this);
             	}
 
 
  ::src::compiler::object::builtin::ListObject TupleObject_obj::list(){
-            	HX_STACKFRAME(&_hx_pos_0648d16042b974d1_114_list)
-HXLINE( 115)		if (this->hasMember(HX_("__list__",1e,2e,29,98))) {
-HXLINE( 115)			return hx::TCast<  ::src::compiler::object::builtin::ListObject >::cast(this->callMember(HX_("__list__",1e,2e,29,98),::Array_obj< ::Dynamic>::__new(0)));
+            	HX_STACKFRAME(&_hx_pos_0648d16042b974d1_136_list)
+HXLINE( 137)		if (this->hasMember(HX_("__list__",1e,2e,29,98))) {
+HXLINE( 137)			return hx::TCast<  ::src::compiler::object::builtin::ListObject >::cast(this->callMember(HX_("__list__",1e,2e,29,98),::Array_obj< ::Dynamic>::__new(0)));
             		}
-HXLINE( 116)		 ::src::compiler::object::builtin::ListObject list = hx::TCast<  ::src::compiler::object::builtin::ListObject >::cast(this->scope->getType(HX_("ListType",58,7e,af,06),null())->createObject(null()));
-HXLINE( 117)		list->arr->concat(this->arr);
-HXLINE( 118)		return list;
+HXLINE( 138)		 ::src::compiler::object::builtin::ListObject list = hx::TCast<  ::src::compiler::object::builtin::ListObject >::cast(this->scope->getType(HX_("ListType",58,7e,af,06),null())->createObject(this->scope,null()));
+HXLINE( 139)		list->arr->concat(this->arr);
+HXLINE( 140)		return list;
             	}
 
 
@@ -333,6 +377,7 @@ hx::Val TupleObject_obj::__Field(const ::String &inName,hx::PropertyAccess inCal
 		if (HX_FIELD_EQ(inName,"tuple") ) { return hx::Val( tuple_dyn() ); }
 		break;
 	case 6:
+		if (HX_FIELD_EQ(inName,"_index") ) { return hx::Val( _index_dyn() ); }
 		if (HX_FIELD_EQ(inName,"delete") ) { return hx::Val( _hx_delete_dyn() ); }
 		break;
 	case 8:
@@ -366,6 +411,7 @@ static hx::StaticInfo *TupleObject_obj_sStaticStorageInfo = 0;
 
 static ::String TupleObject_obj_sMemberFields[] = {
 	HX_HCSTRING("arr","\x61","\xfe","\x49","\x00"),
+	HX_HCSTRING("_index","\x53","\xe2","\xfb","\xb9"),
 	HX_HCSTRING("getArray","\x23","\x7d","\x66","\x85"),
 	HX_HCSTRING("get","\x96","\x80","\x4e","\x00"),
 	HX_HCSTRING("set","\xa2","\x9b","\x57","\x00"),

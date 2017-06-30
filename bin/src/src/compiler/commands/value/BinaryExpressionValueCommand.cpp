@@ -38,30 +38,33 @@
 #include <src/compiler/signals/ValueErrorSignal.h>
 #endif
 
-HX_DEFINE_STACK_FRAME(_hx_pos_f6d34e9933e7b6a7_55_new,"src.compiler.commands.value.BinaryExpressionValueCommand","new",0x5e675183,"src.compiler.commands.value.BinaryExpressionValueCommand.new","src/compiler/commands/value/BinaryExpressionValueCommand.hx",55,0xf1745eab)
-HX_LOCAL_STACK_FRAME(_hx_pos_f6d34e9933e7b6a7_62_walk,"src.compiler.commands.value.BinaryExpressionValueCommand","walk",0x41efda86,"src.compiler.commands.value.BinaryExpressionValueCommand.walk","src/compiler/commands/value/BinaryExpressionValueCommand.hx",62,0xf1745eab)
-HX_LOCAL_STACK_FRAME(_hx_pos_f6d34e9933e7b6a7_69_run,"src.compiler.commands.value.BinaryExpressionValueCommand","run",0x5e6a686e,"src.compiler.commands.value.BinaryExpressionValueCommand.run","src/compiler/commands/value/BinaryExpressionValueCommand.hx",69,0xf1745eab)
-HX_LOCAL_STACK_FRAME(_hx_pos_f6d34e9933e7b6a7_109_getName,"src.compiler.commands.value.BinaryExpressionValueCommand","getName",0x56f070a4,"src.compiler.commands.value.BinaryExpressionValueCommand.getName","src/compiler/commands/value/BinaryExpressionValueCommand.hx",109,0xf1745eab)
-HX_LOCAL_STACK_FRAME(_hx_pos_f6d34e9933e7b6a7_113_getBytecode,"src.compiler.commands.value.BinaryExpressionValueCommand","getBytecode",0x2389930e,"src.compiler.commands.value.BinaryExpressionValueCommand.getBytecode","src/compiler/commands/value/BinaryExpressionValueCommand.hx",113,0xf1745eab)
-HX_LOCAL_STACK_FRAME(_hx_pos_f6d34e9933e7b6a7_121_reconstruct,"src.compiler.commands.value.BinaryExpressionValueCommand","reconstruct",0x36184227,"src.compiler.commands.value.BinaryExpressionValueCommand.reconstruct","src/compiler/commands/value/BinaryExpressionValueCommand.hx",121,0xf1745eab)
-static const ::String _hx_array_data_3e61d411_12[] = {
+HX_DEFINE_STACK_FRAME(_hx_pos_f6d34e9933e7b6a7_56_new,"src.compiler.commands.value.BinaryExpressionValueCommand","new",0x5e675183,"src.compiler.commands.value.BinaryExpressionValueCommand.new","src/compiler/commands/value/BinaryExpressionValueCommand.hx",56,0xf1745eab)
+HX_LOCAL_STACK_FRAME(_hx_pos_f6d34e9933e7b6a7_64_copy,"src.compiler.commands.value.BinaryExpressionValueCommand","copy",0x34c23932,"src.compiler.commands.value.BinaryExpressionValueCommand.copy","src/compiler/commands/value/BinaryExpressionValueCommand.hx",64,0xf1745eab)
+HX_LOCAL_STACK_FRAME(_hx_pos_f6d34e9933e7b6a7_68_setScope,"src.compiler.commands.value.BinaryExpressionValueCommand","setScope",0x4c245a8f,"src.compiler.commands.value.BinaryExpressionValueCommand.setScope","src/compiler/commands/value/BinaryExpressionValueCommand.hx",68,0xf1745eab)
+HX_LOCAL_STACK_FRAME(_hx_pos_f6d34e9933e7b6a7_74_walk,"src.compiler.commands.value.BinaryExpressionValueCommand","walk",0x41efda86,"src.compiler.commands.value.BinaryExpressionValueCommand.walk","src/compiler/commands/value/BinaryExpressionValueCommand.hx",74,0xf1745eab)
+HX_LOCAL_STACK_FRAME(_hx_pos_f6d34e9933e7b6a7_81_run,"src.compiler.commands.value.BinaryExpressionValueCommand","run",0x5e6a686e,"src.compiler.commands.value.BinaryExpressionValueCommand.run","src/compiler/commands/value/BinaryExpressionValueCommand.hx",81,0xf1745eab)
+HX_LOCAL_STACK_FRAME(_hx_pos_f6d34e9933e7b6a7_121_getName,"src.compiler.commands.value.BinaryExpressionValueCommand","getName",0x56f070a4,"src.compiler.commands.value.BinaryExpressionValueCommand.getName","src/compiler/commands/value/BinaryExpressionValueCommand.hx",121,0xf1745eab)
+HX_LOCAL_STACK_FRAME(_hx_pos_f6d34e9933e7b6a7_126_getFriendlyName,"src.compiler.commands.value.BinaryExpressionValueCommand","getFriendlyName",0xe716bbaf,"src.compiler.commands.value.BinaryExpressionValueCommand.getFriendlyName","src/compiler/commands/value/BinaryExpressionValueCommand.hx",126,0xf1745eab)
+HX_LOCAL_STACK_FRAME(_hx_pos_f6d34e9933e7b6a7_130_getBytecode,"src.compiler.commands.value.BinaryExpressionValueCommand","getBytecode",0x2389930e,"src.compiler.commands.value.BinaryExpressionValueCommand.getBytecode","src/compiler/commands/value/BinaryExpressionValueCommand.hx",130,0xf1745eab)
+HX_LOCAL_STACK_FRAME(_hx_pos_f6d34e9933e7b6a7_138_reconstruct,"src.compiler.commands.value.BinaryExpressionValueCommand","reconstruct",0x36184227,"src.compiler.commands.value.BinaryExpressionValueCommand.reconstruct","src/compiler/commands/value/BinaryExpressionValueCommand.hx",138,0xf1745eab)
+static const ::String _hx_array_data_3e61d411_16[] = {
 	HX_("|",7c,00,00,00),HX_("^",5e,00,00,00),HX_("&",26,00,00,00),HX_("<<",80,34,00,00),HX_(">>",40,36,00,00),HX_("~",7e,00,00,00),
 };
-HX_LOCAL_STACK_FRAME(_hx_pos_f6d34e9933e7b6a7_18_fromTokens,"src.compiler.commands.value.BinaryExpressionValueCommand","fromTokens",0xecdf55a1,"src.compiler.commands.value.BinaryExpressionValueCommand.fromTokens","src/compiler/commands/value/BinaryExpressionValueCommand.hx",18,0xf1745eab)
-static const ::String _hx_array_data_3e61d411_15[] = {
+HX_LOCAL_STACK_FRAME(_hx_pos_f6d34e9933e7b6a7_19_fromTokens,"src.compiler.commands.value.BinaryExpressionValueCommand","fromTokens",0xecdf55a1,"src.compiler.commands.value.BinaryExpressionValueCommand.fromTokens","src/compiler/commands/value/BinaryExpressionValueCommand.hx",19,0xf1745eab)
+static const ::String _hx_array_data_3e61d411_19[] = {
 	HX_("|",7c,00,00,00),HX_("^",5e,00,00,00),HX_("&",26,00,00,00),HX_("<<",80,34,00,00),HX_(">>",40,36,00,00),HX_("~",7e,00,00,00),
 };
-HX_LOCAL_STACK_FRAME(_hx_pos_f6d34e9933e7b6a7_45_fromBytecode,"src.compiler.commands.value.BinaryExpressionValueCommand","fromBytecode",0x8fd1923c,"src.compiler.commands.value.BinaryExpressionValueCommand.fromBytecode","src/compiler/commands/value/BinaryExpressionValueCommand.hx",45,0xf1745eab)
+HX_LOCAL_STACK_FRAME(_hx_pos_f6d34e9933e7b6a7_46_fromBytecode,"src.compiler.commands.value.BinaryExpressionValueCommand","fromBytecode",0x8fd1923c,"src.compiler.commands.value.BinaryExpressionValueCommand.fromBytecode","src/compiler/commands/value/BinaryExpressionValueCommand.hx",46,0xf1745eab)
 namespace src{
 namespace compiler{
 namespace commands{
 namespace value{
 
 void BinaryExpressionValueCommand_obj::__construct( ::src::compiler::Scope scope,int _hx_operator,::Array< ::Dynamic> values){
-            	HX_STACKFRAME(&_hx_pos_f6d34e9933e7b6a7_55_new)
-HXLINE(  56)		super::__construct(scope);
-HXLINE(  57)		this->_hx_operator = _hx_operator;
-HXLINE(  58)		this->values = values;
+            	HX_STACKFRAME(&_hx_pos_f6d34e9933e7b6a7_56_new)
+HXLINE(  57)		super::__construct(scope);
+HXLINE(  58)		this->_hx_operator = _hx_operator;
+HXLINE(  59)		this->values = values;
             	}
 
 Dynamic BinaryExpressionValueCommand_obj::__CreateEmpty() { return new BinaryExpressionValueCommand_obj; }
@@ -87,204 +90,232 @@ bool BinaryExpressionValueCommand_obj::_hx_isInstanceOf(int inClassId) {
 	}
 }
 
-::Array< ::Dynamic> BinaryExpressionValueCommand_obj::walk(){
-            	HX_STACKFRAME(&_hx_pos_f6d34e9933e7b6a7_62_walk)
-HXLINE(  63)		::Array< ::Dynamic> cmds = ::Array_obj< ::Dynamic>::__new();
-HXLINE(  64)		{
-HXLINE(  64)			int _g = (int)0;
-HXDLIN(  64)			::Array< ::Dynamic> _g1 = this->values;
-HXDLIN(  64)			while((_g < _g1->length)){
-HXLINE(  64)				 ::src::compiler::commands::value::ValueCommand x = _g1->__get(_g).StaticCast<  ::src::compiler::commands::value::ValueCommand >();
-HXDLIN(  64)				_g = (_g + (int)1);
-HXDLIN(  64)				cmds->push(x);
+ ::src::compiler::commands::Command BinaryExpressionValueCommand_obj::copy( ::src::compiler::Scope scope){
+            	HX_GC_STACKFRAME(&_hx_pos_f6d34e9933e7b6a7_64_copy)
+HXDLIN(  64)		int _hx_tmp = this->_hx_operator;
+HXDLIN(  64)		return  ::src::compiler::commands::value::BinaryExpressionValueCommand_obj::__alloc( HX_CTX ,scope,_hx_tmp,::src::compiler::commands::value::ValueCommand_obj::copyArray(scope,this->values));
+            	}
+
+
+void BinaryExpressionValueCommand_obj::setScope( ::src::compiler::Scope scope){
+            	HX_STACKFRAME(&_hx_pos_f6d34e9933e7b6a7_68_setScope)
+HXLINE(  69)		this->super::setScope(scope);
+HXLINE(  70)		{
+HXLINE(  70)			int _g = (int)0;
+HXDLIN(  70)			::Array< ::Dynamic> _g1 = this->values;
+HXDLIN(  70)			while((_g < _g1->length)){
+HXLINE(  70)				 ::src::compiler::commands::value::ValueCommand value = _g1->__get(_g).StaticCast<  ::src::compiler::commands::value::ValueCommand >();
+HXDLIN(  70)				_g = (_g + (int)1);
+HXDLIN(  70)				value->setScope(scope);
             			}
             		}
-HXLINE(  65)		return cmds;
+            	}
+
+
+::Array< ::Dynamic> BinaryExpressionValueCommand_obj::walk(){
+            	HX_STACKFRAME(&_hx_pos_f6d34e9933e7b6a7_74_walk)
+HXLINE(  75)		::Array< ::Dynamic> cmds = ::Array_obj< ::Dynamic>::__new();
+HXLINE(  76)		{
+HXLINE(  76)			int _g = (int)0;
+HXDLIN(  76)			::Array< ::Dynamic> _g1 = this->values;
+HXDLIN(  76)			while((_g < _g1->length)){
+HXLINE(  76)				 ::src::compiler::commands::value::ValueCommand x = _g1->__get(_g).StaticCast<  ::src::compiler::commands::value::ValueCommand >();
+HXDLIN(  76)				_g = (_g + (int)1);
+HXDLIN(  76)				cmds->push(x);
+            			}
+            		}
+HXLINE(  77)		return cmds;
             	}
 
 
  ::src::compiler::object::Object BinaryExpressionValueCommand_obj::run(){
-            	HX_GC_STACKFRAME(&_hx_pos_f6d34e9933e7b6a7_69_run)
-HXLINE(  70)		if ((this->_hx_operator == (int)0)) {
-HXLINE(  71)			 ::src::compiler::object::Object result = this->values->__get((int)0).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run();
-HXLINE(  72)			{
-HXLINE(  72)				int _g1 = (int)1;
-HXDLIN(  72)				int _g = this->values->length;
-HXDLIN(  72)				while((_g1 < _g)){
-HXLINE(  72)					_g1 = (_g1 + (int)1);
-HXDLIN(  72)					int i = (_g1 - (int)1);
-HXLINE(  73)					result = result->_hx_or(this->values->__get(i).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run());
+            	HX_GC_STACKFRAME(&_hx_pos_f6d34e9933e7b6a7_81_run)
+HXLINE(  82)		if ((this->_hx_operator == (int)0)) {
+HXLINE(  83)			 ::src::compiler::object::Object result = this->values->__get((int)0).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run();
+HXLINE(  84)			{
+HXLINE(  84)				int _g1 = (int)1;
+HXDLIN(  84)				int _g = this->values->length;
+HXDLIN(  84)				while((_g1 < _g)){
+HXLINE(  84)					_g1 = (_g1 + (int)1);
+HXDLIN(  84)					int i = (_g1 - (int)1);
+HXLINE(  85)					result = result->_hx_or(this->values->__get(i).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run());
             				}
             			}
-HXLINE(  75)			return result;
+HXLINE(  87)			return result;
             		}
             		else {
-HXLINE(  76)			if ((this->_hx_operator == (int)1)) {
-HXLINE(  77)				 ::src::compiler::object::Object result1 = this->values->__get((int)0).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run();
-HXLINE(  78)				{
-HXLINE(  78)					int _g11 = (int)1;
-HXDLIN(  78)					int _g2 = this->values->length;
-HXDLIN(  78)					while((_g11 < _g2)){
-HXLINE(  78)						_g11 = (_g11 + (int)1);
-HXDLIN(  78)						int i1 = (_g11 - (int)1);
-HXLINE(  79)						result1 = result1->_hx_xor(this->values->__get(i1).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run());
+HXLINE(  88)			if ((this->_hx_operator == (int)1)) {
+HXLINE(  89)				 ::src::compiler::object::Object result1 = this->values->__get((int)0).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run();
+HXLINE(  90)				{
+HXLINE(  90)					int _g11 = (int)1;
+HXDLIN(  90)					int _g2 = this->values->length;
+HXDLIN(  90)					while((_g11 < _g2)){
+HXLINE(  90)						_g11 = (_g11 + (int)1);
+HXDLIN(  90)						int i1 = (_g11 - (int)1);
+HXLINE(  91)						result1 = result1->_hx_xor(this->values->__get(i1).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run());
             					}
             				}
-HXLINE(  81)				return result1;
+HXLINE(  93)				return result1;
             			}
             			else {
-HXLINE(  82)				if ((this->_hx_operator == (int)2)) {
-HXLINE(  83)					 ::src::compiler::object::Object result2 = this->values->__get((int)0).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run();
-HXLINE(  84)					{
-HXLINE(  84)						int _g12 = (int)1;
-HXDLIN(  84)						int _g3 = this->values->length;
-HXDLIN(  84)						while((_g12 < _g3)){
-HXLINE(  84)							_g12 = (_g12 + (int)1);
-HXDLIN(  84)							int i2 = (_g12 - (int)1);
-HXLINE(  85)							result2 = result2->_hx_and(this->values->__get(i2).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run());
+HXLINE(  94)				if ((this->_hx_operator == (int)2)) {
+HXLINE(  95)					 ::src::compiler::object::Object result2 = this->values->__get((int)0).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run();
+HXLINE(  96)					{
+HXLINE(  96)						int _g12 = (int)1;
+HXDLIN(  96)						int _g3 = this->values->length;
+HXDLIN(  96)						while((_g12 < _g3)){
+HXLINE(  96)							_g12 = (_g12 + (int)1);
+HXDLIN(  96)							int i2 = (_g12 - (int)1);
+HXLINE(  97)							result2 = result2->_hx_and(this->values->__get(i2).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run());
             						}
             					}
-HXLINE(  87)					return result2;
+HXLINE(  99)					return result2;
             				}
             				else {
-HXLINE(  88)					if ((this->_hx_operator == (int)3)) {
-HXLINE(  89)						::Array< ::Dynamic> result3 = this->values;
-HXDLIN(  89)						 ::src::compiler::object::Object result4 = result3->__get((this->values->length - (int)1)).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run();
-HXLINE(  90)						{
-HXLINE(  90)							int _g13 = (int)2;
-HXDLIN(  90)							int _g4 = (this->values->length + (int)1);
-HXDLIN(  90)							while((_g13 < _g4)){
-HXLINE(  90)								_g13 = (_g13 + (int)1);
-HXDLIN(  90)								int i3 = (_g13 - (int)1);
-HXLINE(  91)								::Array< ::Dynamic> result5 = this->values;
-HXDLIN(  91)								result4 = result5->__get((this->values->length - i3)).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run()->shiftleft(result4);
+HXLINE( 100)					if ((this->_hx_operator == (int)3)) {
+HXLINE( 101)						::Array< ::Dynamic> result3 = this->values;
+HXDLIN( 101)						 ::src::compiler::object::Object result4 = result3->__get((this->values->length - (int)1)).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run();
+HXLINE( 102)						{
+HXLINE( 102)							int _g13 = (int)2;
+HXDLIN( 102)							int _g4 = (this->values->length + (int)1);
+HXDLIN( 102)							while((_g13 < _g4)){
+HXLINE( 102)								_g13 = (_g13 + (int)1);
+HXDLIN( 102)								int i3 = (_g13 - (int)1);
+HXLINE( 103)								::Array< ::Dynamic> result5 = this->values;
+HXDLIN( 103)								result4 = result5->__get((this->values->length - i3)).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run()->shiftleft(result4);
             							}
             						}
-HXLINE(  93)						return result4;
+HXLINE( 105)						return result4;
             					}
             					else {
-HXLINE(  94)						if ((this->_hx_operator == (int)4)) {
-HXLINE(  95)							::Array< ::Dynamic> result6 = this->values;
-HXDLIN(  95)							 ::src::compiler::object::Object result7 = result6->__get((this->values->length - (int)1)).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run();
-HXLINE(  96)							{
-HXLINE(  96)								int _g14 = (int)2;
-HXDLIN(  96)								int _g5 = (this->values->length + (int)1);
-HXDLIN(  96)								while((_g14 < _g5)){
-HXLINE(  96)									_g14 = (_g14 + (int)1);
-HXDLIN(  96)									int i4 = (_g14 - (int)1);
-HXLINE(  97)									::Array< ::Dynamic> result8 = this->values;
-HXDLIN(  97)									result7 = result8->__get((this->values->length - i4)).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run()->shiftright(result7);
+HXLINE( 106)						if ((this->_hx_operator == (int)4)) {
+HXLINE( 107)							::Array< ::Dynamic> result6 = this->values;
+HXDLIN( 107)							 ::src::compiler::object::Object result7 = result6->__get((this->values->length - (int)1)).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run();
+HXLINE( 108)							{
+HXLINE( 108)								int _g14 = (int)2;
+HXDLIN( 108)								int _g5 = (this->values->length + (int)1);
+HXDLIN( 108)								while((_g14 < _g5)){
+HXLINE( 108)									_g14 = (_g14 + (int)1);
+HXDLIN( 108)									int i4 = (_g14 - (int)1);
+HXLINE( 109)									::Array< ::Dynamic> result8 = this->values;
+HXDLIN( 109)									result7 = result8->__get((this->values->length - i4)).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run()->shiftright(result7);
             								}
             							}
-HXLINE(  99)							return result7;
+HXLINE( 111)							return result7;
             						}
             						else {
-HXLINE( 100)							if ((this->_hx_operator == (int)5)) {
-HXLINE( 101)								if ((this->values->length > (int)1)) {
-HXLINE( 101)									HX_STACK_DO_THROW( ::src::compiler::signals::ValueErrorSignal_obj::__alloc( HX_CTX ,HX_("Cannot take the complement of more than one value",29,3d,45,96)));
+HXLINE( 112)							if ((this->_hx_operator == (int)5)) {
+HXLINE( 113)								if ((this->values->length > (int)1)) {
+HXLINE( 113)									HX_STACK_DO_THROW( ::src::compiler::signals::ValueErrorSignal_obj::__alloc( HX_CTX ,HX_("Cannot take the complement of more than one value",29,3d,45,96)));
             								}
-HXLINE( 102)								return this->values->__get((int)0).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run()->complement();
+HXLINE( 114)								return this->values->__get((int)0).StaticCast<  ::src::compiler::commands::value::ValueCommand >()->run()->complement();
             							}
             						}
             					}
             				}
             			}
             		}
-HXLINE( 104)		HX_STACK_DO_THROW((HX_("Invalid operator ",73,a5,0f,c3) + this->_hx_operator));
-HXDLIN( 104)		return null();
+HXLINE( 116)		HX_STACK_DO_THROW((HX_("Invalid operator ",73,a5,0f,c3) + this->_hx_operator));
+HXDLIN( 116)		return null();
             	}
 
 
 ::String BinaryExpressionValueCommand_obj::getName(){
-            	HX_STACKFRAME(&_hx_pos_f6d34e9933e7b6a7_109_getName)
-HXDLIN( 109)		return HX_("BinaryExpressionValueCommand",93,80,c0,81);
+            	HX_STACKFRAME(&_hx_pos_f6d34e9933e7b6a7_121_getName)
+HXDLIN( 121)		return HX_("BinaryExpressionValueCommand",93,80,c0,81);
+            	}
+
+
+::String BinaryExpressionValueCommand_obj::getFriendlyName(){
+            	HX_STACKFRAME(&_hx_pos_f6d34e9933e7b6a7_126_getFriendlyName)
+HXDLIN( 126)		return HX_("binary expression",57,ab,81,09);
             	}
 
 
  ::src::compiler::bytecode::Bytecode BinaryExpressionValueCommand_obj::getBytecode(){
-            	HX_STACKFRAME(&_hx_pos_f6d34e9933e7b6a7_113_getBytecode)
-HXLINE( 114)		 ::src::compiler::bytecode::Bytecode op = ::src::compiler::bytecode::Bytecode_obj::fromInt(this->_hx_operator,null());
-HXLINE( 115)		::cpp::VirtualArray arr = this->values->copy();
-HXLINE( 116)		arr->insert((int)0,op);
-HXLINE( 117)		return ::src::compiler::bytecode::Bytecode_obj::fromArray(arr,this->getCodeID());
+            	HX_STACKFRAME(&_hx_pos_f6d34e9933e7b6a7_130_getBytecode)
+HXLINE( 131)		 ::src::compiler::bytecode::Bytecode op = ::src::compiler::bytecode::Bytecode_obj::fromInt(this->_hx_operator,null());
+HXLINE( 132)		::cpp::VirtualArray arr = this->values->copy();
+HXLINE( 133)		arr->insert((int)0,op);
+HXLINE( 134)		return ::src::compiler::bytecode::Bytecode_obj::fromArray(arr,this->getCodeID());
             	}
 
 
 ::Array< ::Dynamic> BinaryExpressionValueCommand_obj::reconstruct(){
-            	HX_GC_STACKFRAME(&_hx_pos_f6d34e9933e7b6a7_121_reconstruct)
-HXLINE( 122)		::String op = ::Array_obj< ::String >::fromData( _hx_array_data_3e61d411_12,6)->__get(this->_hx_operator);
-HXLINE( 123)		 ::src::ast::maths::BinaryOperatorToken _hx_tmp =  ::src::ast::maths::BinaryOperatorToken_obj::__alloc( HX_CTX ,op);
-HXDLIN( 123)		return _hx_tmp->join(::src::compiler::commands::Command_obj::reconstructCommands(this->values),null());
+            	HX_GC_STACKFRAME(&_hx_pos_f6d34e9933e7b6a7_138_reconstruct)
+HXLINE( 139)		::String op = ::Array_obj< ::String >::fromData( _hx_array_data_3e61d411_16,6)->__get(this->_hx_operator);
+HXLINE( 140)		 ::src::ast::maths::BinaryOperatorToken _hx_tmp =  ::src::ast::maths::BinaryOperatorToken_obj::__alloc( HX_CTX ,op);
+HXDLIN( 140)		return _hx_tmp->join(::src::compiler::commands::Command_obj::reconstructCommands(this->values),null());
             	}
 
 
  ::src::compiler::commands::value::BinaryExpressionValueCommand BinaryExpressionValueCommand_obj::fromTokens( ::src::compiler::Scope scope,::Array< ::Dynamic> tokens){
-            	HX_GC_STACKFRAME(&_hx_pos_f6d34e9933e7b6a7_18_fromTokens)
-HXLINE(  19)		int state = (int)7;
-HXLINE(  20)		{
-HXLINE(  20)			int _g = (int)0;
-HXDLIN(  20)			while((_g < tokens->length)){
-HXLINE(  20)				 ::src::ast::Token token = tokens->__get(_g).StaticCast<  ::src::ast::Token >();
-HXDLIN(  20)				_g = (_g + (int)1);
-HXLINE(  21)				if ((token->getName() == HX_("BinaryOperatorToken",d4,03,95,d1))) {
-HXLINE(  22)					::String op = ( (::String)(token->getContent()) );
-HXLINE(  23)					if ((op == HX_("|",7c,00,00,00))) {
-HXLINE(  23)						state = (int)0;
+            	HX_GC_STACKFRAME(&_hx_pos_f6d34e9933e7b6a7_19_fromTokens)
+HXLINE(  20)		int state = (int)7;
+HXLINE(  21)		{
+HXLINE(  21)			int _g = (int)0;
+HXDLIN(  21)			while((_g < tokens->length)){
+HXLINE(  21)				 ::src::ast::Token token = tokens->__get(_g).StaticCast<  ::src::ast::Token >();
+HXDLIN(  21)				_g = (_g + (int)1);
+HXLINE(  22)				if ((token->getName() == HX_("BinaryOperatorToken",d4,03,95,d1))) {
+HXLINE(  23)					::String op = ( (::String)(token->getContent()) );
+HXLINE(  24)					if ((op == HX_("|",7c,00,00,00))) {
+HXLINE(  24)						state = (int)0;
             					}
             					else {
-HXLINE(  24)						bool _hx_tmp;
-HXDLIN(  24)						if ((op == HX_("^",5e,00,00,00))) {
-HXLINE(  24)							_hx_tmp = (state > (int)1);
+HXLINE(  25)						bool _hx_tmp;
+HXDLIN(  25)						if ((op == HX_("^",5e,00,00,00))) {
+HXLINE(  25)							_hx_tmp = (state > (int)1);
             						}
             						else {
-HXLINE(  24)							_hx_tmp = false;
+HXLINE(  25)							_hx_tmp = false;
             						}
-HXDLIN(  24)						if (_hx_tmp) {
-HXLINE(  24)							state = (int)1;
+HXDLIN(  25)						if (_hx_tmp) {
+HXLINE(  25)							state = (int)1;
             						}
             						else {
-HXLINE(  25)							bool _hx_tmp1;
-HXDLIN(  25)							if ((op == HX_("&",26,00,00,00))) {
-HXLINE(  25)								_hx_tmp1 = (state > (int)2);
+HXLINE(  26)							bool _hx_tmp1;
+HXDLIN(  26)							if ((op == HX_("&",26,00,00,00))) {
+HXLINE(  26)								_hx_tmp1 = (state > (int)2);
             							}
             							else {
-HXLINE(  25)								_hx_tmp1 = false;
+HXLINE(  26)								_hx_tmp1 = false;
             							}
-HXDLIN(  25)							if (_hx_tmp1) {
-HXLINE(  25)								state = (int)2;
+HXDLIN(  26)							if (_hx_tmp1) {
+HXLINE(  26)								state = (int)2;
             							}
             							else {
-HXLINE(  26)								bool _hx_tmp2;
-HXDLIN(  26)								if ((op == HX_("<<",80,34,00,00))) {
-HXLINE(  26)									_hx_tmp2 = (state > (int)3);
+HXLINE(  27)								bool _hx_tmp2;
+HXDLIN(  27)								if ((op == HX_("<<",80,34,00,00))) {
+HXLINE(  27)									_hx_tmp2 = (state > (int)3);
             								}
             								else {
-HXLINE(  26)									_hx_tmp2 = false;
+HXLINE(  27)									_hx_tmp2 = false;
             								}
-HXDLIN(  26)								if (_hx_tmp2) {
-HXLINE(  26)									state = (int)3;
+HXDLIN(  27)								if (_hx_tmp2) {
+HXLINE(  27)									state = (int)3;
             								}
             								else {
-HXLINE(  27)									bool _hx_tmp3;
-HXDLIN(  27)									if ((op == HX_(">>",40,36,00,00))) {
-HXLINE(  27)										_hx_tmp3 = (state > (int)4);
+HXLINE(  28)									bool _hx_tmp3;
+HXDLIN(  28)									if ((op == HX_(">>",40,36,00,00))) {
+HXLINE(  28)										_hx_tmp3 = (state > (int)4);
             									}
             									else {
-HXLINE(  27)										_hx_tmp3 = false;
+HXLINE(  28)										_hx_tmp3 = false;
             									}
-HXDLIN(  27)									if (_hx_tmp3) {
-HXLINE(  27)										state = (int)4;
+HXDLIN(  28)									if (_hx_tmp3) {
+HXLINE(  28)										state = (int)4;
             									}
             									else {
-HXLINE(  28)										bool _hx_tmp4;
-HXDLIN(  28)										if ((op == HX_("~",7e,00,00,00))) {
-HXLINE(  28)											_hx_tmp4 = (state > (int)5);
+HXLINE(  29)										bool _hx_tmp4;
+HXDLIN(  29)										if ((op == HX_("~",7e,00,00,00))) {
+HXLINE(  29)											_hx_tmp4 = (state > (int)5);
             										}
             										else {
-HXLINE(  28)											_hx_tmp4 = false;
+HXLINE(  29)											_hx_tmp4 = false;
             										}
-HXDLIN(  28)										if (_hx_tmp4) {
-HXLINE(  28)											state = (int)5;
+HXDLIN(  29)										if (_hx_tmp4) {
+HXLINE(  29)											state = (int)5;
             										}
             									}
             								}
@@ -294,33 +325,33 @@ HXLINE(  28)											state = (int)5;
             				}
             			}
             		}
-HXLINE(  33)		if ((state == (int)7)) {
-HXLINE(  34)			if ((tokens->length == (int)1)) {
-HXLINE(  35)				return  ::src::compiler::commands::value::BinaryExpressionValueCommand_obj::__alloc( HX_CTX ,scope,state,::Array_obj< ::Dynamic>::__new(1)->init(0,::src::compiler::commands::value::ValueCommand_obj::fromToken(scope,tokens->__get((int)0).StaticCast<  ::src::ast::Token >())));
+HXLINE(  34)		if ((state == (int)7)) {
+HXLINE(  35)			if ((tokens->length == (int)1)) {
+HXLINE(  36)				return  ::src::compiler::commands::value::BinaryExpressionValueCommand_obj::__alloc( HX_CTX ,scope,state,::Array_obj< ::Dynamic>::__new(1)->init(0,::src::compiler::commands::value::ValueCommand_obj::fromToken(scope,tokens->__get((int)0).StaticCast<  ::src::ast::Token >())));
             			}
             			else {
-HXLINE(  36)				HX_STACK_DO_THROW( ::src::compiler::signals::SyntaxErrorSignal_obj::__alloc( HX_CTX ,(HX_("Invalid binary expression ",92,48,6d,0c) + ::Std_obj::string(tokens))));
+HXLINE(  37)				HX_STACK_DO_THROW( ::src::compiler::signals::SyntaxErrorSignal_obj::__alloc( HX_CTX ,(HX_("Invalid binary expression ",92,48,6d,0c) + ::Std_obj::string(tokens))));
             			}
             		}
             		else {
-HXLINE(  38)			::String op1 = ::Array_obj< ::String >::fromData( _hx_array_data_3e61d411_15,6)->__get(state);
-HXLINE(  39)			::Array< ::Dynamic> spl = ::src::compiler::commands::value::ValueCommand_obj::splitTokens(scope,tokens,HX_("BinaryOperatorToken",d4,03,95,d1),false,op1);
-HXLINE(  40)			return  ::src::compiler::commands::value::BinaryExpressionValueCommand_obj::__alloc( HX_CTX ,scope,state,spl);
+HXLINE(  39)			::String op1 = ::Array_obj< ::String >::fromData( _hx_array_data_3e61d411_19,6)->__get(state);
+HXLINE(  40)			::Array< ::Dynamic> spl = ::src::compiler::commands::value::ValueCommand_obj::splitTokens(scope,tokens,HX_("BinaryOperatorToken",d4,03,95,d1),false,op1);
+HXLINE(  41)			return  ::src::compiler::commands::value::BinaryExpressionValueCommand_obj::__alloc( HX_CTX ,scope,state,spl);
             		}
-HXLINE(  33)		return null();
+HXLINE(  34)		return null();
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC2(BinaryExpressionValueCommand_obj,fromTokens,return )
 
  ::src::compiler::commands::value::BinaryExpressionValueCommand BinaryExpressionValueCommand_obj::fromBytecode( ::src::compiler::Scope scope,::Array< ::Dynamic> arr){
-            	HX_GC_STACKFRAME(&_hx_pos_f6d34e9933e7b6a7_45_fromBytecode)
-HXLINE(  46)		int op = ( (int)(arr->shift().StaticCast<  ::src::compiler::bytecode::Bytecode >()->convert(scope)) );
-HXLINE(  47)		::Array< ::Dynamic> values = ::Array_obj< ::Dynamic>::__new();
-HXLINE(  48)		while((arr->length > (int)0)){
-HXLINE(  48)			values->push(arr->shift().StaticCast<  ::src::compiler::bytecode::Bytecode >()->convert(scope));
+            	HX_GC_STACKFRAME(&_hx_pos_f6d34e9933e7b6a7_46_fromBytecode)
+HXLINE(  47)		int op = ( (int)(arr->shift().StaticCast<  ::src::compiler::bytecode::Bytecode >()->convert(scope)) );
+HXLINE(  48)		::Array< ::Dynamic> values = ::Array_obj< ::Dynamic>::__new();
+HXLINE(  49)		while((arr->length > (int)0)){
+HXLINE(  49)			values->push(arr->shift().StaticCast<  ::src::compiler::bytecode::Bytecode >()->convert(scope));
             		}
-HXLINE(  49)		return  ::src::compiler::commands::value::BinaryExpressionValueCommand_obj::__alloc( HX_CTX ,scope,op,values);
+HXLINE(  50)		return  ::src::compiler::commands::value::BinaryExpressionValueCommand_obj::__alloc( HX_CTX ,scope,op,values);
             	}
 
 
@@ -367,6 +398,7 @@ hx::Val BinaryExpressionValueCommand_obj::__Field(const ::String &inName,hx::Pro
 		if (HX_FIELD_EQ(inName,"run") ) { return hx::Val( run_dyn() ); }
 		break;
 	case 4:
+		if (HX_FIELD_EQ(inName,"copy") ) { return hx::Val( copy_dyn() ); }
 		if (HX_FIELD_EQ(inName,"walk") ) { return hx::Val( walk_dyn() ); }
 		break;
 	case 6:
@@ -377,10 +409,14 @@ hx::Val BinaryExpressionValueCommand_obj::__Field(const ::String &inName,hx::Pro
 		break;
 	case 8:
 		if (HX_FIELD_EQ(inName,"operator") ) { return hx::Val( _hx_operator ); }
+		if (HX_FIELD_EQ(inName,"setScope") ) { return hx::Val( setScope_dyn() ); }
 		break;
 	case 11:
 		if (HX_FIELD_EQ(inName,"getBytecode") ) { return hx::Val( getBytecode_dyn() ); }
 		if (HX_FIELD_EQ(inName,"reconstruct") ) { return hx::Val( reconstruct_dyn() ); }
+		break;
+	case 15:
+		if (HX_FIELD_EQ(inName,"getFriendlyName") ) { return hx::Val( getFriendlyName_dyn() ); }
 	}
 	return super::__Field(inName,inCallProp);
 }
@@ -428,9 +464,12 @@ static hx::StaticInfo *BinaryExpressionValueCommand_obj_sStaticStorageInfo = 0;
 static ::String BinaryExpressionValueCommand_obj_sMemberFields[] = {
 	HX_HCSTRING("operator","\xa4","\x1b","\x73","\x44"),
 	HX_HCSTRING("values","\xe2","\x03","\xb7","\x4f"),
+	HX_HCSTRING("copy","\xb5","\xbb","\xc4","\x41"),
+	HX_HCSTRING("setScope","\x92","\xda","\x0d","\x87"),
 	HX_HCSTRING("walk","\x09","\x5d","\xf2","\x4e"),
 	HX_HCSTRING("run","\x4b","\xe7","\x56","\x00"),
 	HX_HCSTRING("getName","\x01","\x22","\x82","\x1b"),
+	HX_HCSTRING("getFriendlyName","\x0c","\x92","\xf4","\xaf"),
 	HX_HCSTRING("getBytecode","\xeb","\xb6","\x8b","\x7d"),
 	HX_HCSTRING("reconstruct","\x04","\x66","\x1a","\x90"),
 	::String(null()) };

@@ -25,11 +25,23 @@ class FunctionCodeCommand extends Command
         return new FunctionCodeCommand(scope, result);
     }
     
-    private var commands:Array<Command>;
+    public var commands:Array<Command>;
+    private var progress:Int = 0;
     override public function new(scope:Scope, commands:Array<Command>) 
     {
         super(scope);
         this.commands = commands;
+    }
+    
+    override public function copy(scope:Scope):Command 
+    {
+        return new FunctionCodeCommand(scope, Command.copyArray(scope, commands));
+    }
+    
+    override public function setScope(scope:Scope) 
+    {
+        super.setScope(scope);
+        for (cmd in commands) cmd.setScope(scope);
     }
     
     override public function walk():Array<Command> 
@@ -39,9 +51,17 @@ class FunctionCodeCommand extends Command
     
     override public function run():Object 
     {
-        for (command in commands) {
+        var cmd:Command;
+        while (progress < commands.length) {
             try {
-                command.run(); 
+                cmd = commands[progress];
+                if (cmd.getName() == "PipeReadCommand" || cmd.getName() == "PipeWriteCommand") {
+                    progress++;
+                    cmd.run();
+                } else {
+                    cmd.run();
+                    progress++;
+                }
             } catch ( ret : FunctionReturnSignal ) {
                 return ret.getReturn();
             }
@@ -52,6 +72,11 @@ class FunctionCodeCommand extends Command
     override public function getName():String 
     {
         return "FunctionCodeCommand";
+    }
+    
+    override public function getFriendlyName():String 
+    {
+        return "function code";
     }
     
     override public function getBytecode():Bytecode 

@@ -60,6 +60,17 @@ class BoolExpressionValueCommand extends ValueCommand
         this.values = values;
     }
     
+    override public function copy(scope:Scope):Command 
+    {
+        return new BoolExpressionValueCommand(scope, operator, ValueCommand.copyArray(scope, values));
+    }
+    
+    override public function setScope(scope:Scope) 
+    {
+        super.setScope(scope);
+        for (value in values) value.setScope(scope);
+    }
+    
     override public function walk():Array<Command> 
     {
         var cmds:Array<Command> = new Array<Command>();
@@ -71,14 +82,14 @@ class BoolExpressionValueCommand extends ValueCommand
     {
         if (operator == 0) {
             for (value in values) {
-                if (!value.run().rawBool()) return scope.getType("BoolType").createValue(false);
+                if (!value.run().rawBool()) return scope.getType("BoolType").createValue(false, scope);
             }
-            return scope.getType("BoolType").createValue(true);
+            return scope.getType("BoolType").createValue(true, scope);
         } else if (operator == 1) {
             for (value in values) {
-                if (value.run().rawBool()) return scope.getType("BoolType").createValue(true);
+                if (value.run().rawBool()) return scope.getType("BoolType").createValue(true, scope);
             }
-            return scope.getType("BoolType").createValue(false);
+            return scope.getType("BoolType").createValue(false, scope);
         } else if (operator == 2) {
             return values[0].run().not();
         }
@@ -88,6 +99,11 @@ class BoolExpressionValueCommand extends ValueCommand
     override public function getName():String 
     {
         return "BoolExpressionValueCommand";
+    }
+    
+    override public function getFriendlyName():String 
+    {
+        return "boolean expression";
     }
     
     override public function getBytecode():Bytecode 
